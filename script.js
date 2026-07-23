@@ -703,4 +703,40 @@ document.addEventListener('DOMContentLoaded', () => {
         successOverlay.classList.remove('active');
     };
     successCloseBtn.addEventListener('click', closeSuccessOverlay);
+
+    /* ==========================================================================
+       7. Scroll Spy (Active Navigation Link Highlighting)
+       ========================================================================== */
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-link');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px', // Trigger when section is in the middle of viewport
+        threshold: 0
+    };
+
+    const observerCallback = (entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const currentId = entry.target.getAttribute('id');
+                
+                // Remove active class from all links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to corresponding link
+                const activeLinks = document.querySelectorAll(`.nav-link[href="#${currentId}"], .mobile-link[href="#${currentId}"]`);
+                activeLinks.forEach(link => {
+                    link.classList.add('active');
+                });
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    sections.forEach(sec => {
+        observer.observe(sec);
+    });
 });

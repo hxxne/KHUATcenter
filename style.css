@@ -283,7 +283,7 @@ button {
     padding: 8px 0;
 }
 
-.nav-link:hover {
+.nav-link:hover, .nav-link.active {
     color: var(--color-primary);
 }
 
@@ -299,7 +299,7 @@ button {
     transform: translateX(-50%);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after, .nav-link.active::after {
     width: 100%;
 }
 
@@ -377,7 +377,7 @@ button {
     color: var(--color-text-muted);
 }
 
-.mobile-link:hover {
+.mobile-link:hover, .mobile-link.active {
     color: var(--color-primary);
 }
 
@@ -2054,53 +2054,89 @@ button {
 /* ==========================================================================
    Members Section
    ========================================================================== */
-.member-category-title {
-    font-size: 1.5rem;
+.org-chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.org-level {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+.level-4 {
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.org-group {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.org-group-title {
+    font-size: 1.2rem;
     color: var(--color-khu-crimson);
-    margin: 40px 0 20px;
-    font-weight: 700;
+    margin-bottom: 20px;
     text-align: center;
+    font-weight: 700;
 }
 
 .member-grid {
     display: grid;
-    gap: 20px;
-    margin-bottom: 30px;
+    gap: 15px;
 }
 
-/* 5 columns for leadership */
-.leadership-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-}
-
-/* 4 columns for staff */
 .staff-grid, .team-at-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
 }
 
 .member-card {
     background: white;
     border-radius: 12px;
-    padding: 24px;
+    padding: 16px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e2e8f0;
 }
 
 .member-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.ceo-card {
+    border: 2px solid var(--color-khu-crimson);
+    padding: 24px;
+    width: 200px;
 }
 
 .member-avatar {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
-    margin: 0 auto 16px;
+    margin: 0 auto 12px;
     background-color: #f1f5f9;
     background-size: cover;
     background-position: center;
-    border: 3px solid #e2e8f0;
+    border: 2px solid #e2e8f0;
+}
+
+.ceo-card .member-avatar {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--color-khu-crimson);
 }
 
 .placeholder-avatar {
@@ -2108,15 +2144,60 @@ button {
 }
 
 .member-name {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--color-text-dark);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .member-role {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--color-text-muted);
+}
+
+/* Connecting Lines */
+.org-line {
+    background-color: #cbd5e1;
+}
+
+.vertical-line {
+    width: 2px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.horizontal-line {
+    height: 2px;
+    margin: 0 auto;
+}
+
+.tier-2-line { width: 320px; }
+.tier-3-line { width: 320px; }
+.tier-4-line { width: 560px; }
+
+.vertical-branches {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: transparent;
+}
+
+.vertical-branches::before, .vertical-branches::after {
+    content: '';
+    width: 2px;
+    height: 20px;
+    background-color: #cbd5e1;
+}
+
+.tier-2-branches { width: 320px; }
+.tier-3-branches { width: 320px; }
+.tier-4-branches { width: 560px; }
+
+.empty-group-msg {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-style: italic;
+    padding: 20px;
 }
 
 /* ==========================================================================
@@ -2170,7 +2251,22 @@ button {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .leadership-grid, .staff-grid, .team-at-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    .org-level {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .level-4 {
+        align-items: center;
+    }
+    
+    .org-line {
+        display: none;
+    }
+    
+    .vertical-line {
+        display: block;
+        height: 40px;
     }
 }
