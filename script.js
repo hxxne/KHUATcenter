@@ -691,12 +691,37 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
 
-        setTimeout(() => {
+        const formData = new FormData();
+        formData.append("이름_단체명", document.getElementById('form-name').value);
+        formData.append("연락처", phoneInput.value);
+        
+        const affiliationSelect = document.getElementById('form-affiliation');
+        formData.append("소속구분", affiliationSelect.options[affiliationSelect.selectedIndex].text);
+        
+        const typeSelect = document.getElementById('form-type');
+        formData.append("문의유형", typeSelect.options[typeSelect.selectedIndex].text);
+        
+        formData.append("상세내용", document.getElementById('form-message').value);
+        formData.append("_captcha", "false"); // Disable recaptcha
+        formData.append("_template", "table"); // Use clean table template for email
+
+        fetch("https://formsubmit.co/ajax/wlgns10212@khu.ac.kr", {
+            method: "POST",
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
             successOverlay.classList.add('active');
             inquiryForm.reset();
-        }, 1500);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('이메일 전송 중 오류가 발생했습니다. 다시 시도해 주세요.');
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+        });
     });
 
     const closeSuccessOverlay = () => {
