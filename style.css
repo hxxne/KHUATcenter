@@ -417,9 +417,7 @@ button {
     display: flex;
     align-items: center;
     background-color: #000;
-    background-image: url('assets/images/at_center_interior.jpg');
-    background-size: cover;
-    background-position: center;
+    overflow: hidden;
     overflow: hidden;
 }
 
