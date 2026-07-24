@@ -580,6 +580,138 @@ button {
 }
 
 /* --------------------------------------------------------------------------
+   10. Awards Section
+   -------------------------------------------------------------------------- */
+.awards-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.awards-category {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+}
+
+.category-main-title {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid var(--color-primary-light);
+    padding-bottom: 15px;
+    display: inline-block;
+    width: 100%;
+}
+
+.awards-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.awards-col {
+    background: #fdfdfd;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.col-title {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.awards-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.awards-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 10px;
+    border-bottom: 1px dashed #eee;
+    font-size: 1rem;
+}
+
+.awards-list li:last-child {
+    border-bottom: none;
+}
+
+.awards-list li .name {
+    font-weight: 600;
+    color: var(--color-text-dark);
+}
+
+.awards-list li .year {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.ga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 15px;
+}
+
+.ga-card {
+    background: #fdfdfd;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    padding: 15px 10px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ga-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.ga-role {
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.ga-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--color-text-dark);
+    margin-bottom: 5px;
+}
+
+.ga-date {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .awards-columns {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .awards-category {
+        padding: 20px;
+    }
+}
+
+/* --------------------------------------------------------------------------
    5. About Section
    -------------------------------------------------------------------------- */
 .about-grid {
