@@ -68,9 +68,8 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <video class="hero-video" autoplay loop muted playsinline poster="assets/images/at_center_interior.jpg" preload="auto">
-            <source src="assets/videos/hero_video.mp4" type="video/mp4">
-        </video>
+        <!-- Use animated WebP to bypass all video/autoplay blocking policies on iOS/Safari -->
+        <img class="hero-video" src="assets/images/hero_bg.webp" alt="Background Video">
         <div class="hero-bg-overlay"></div>
         <div class="hero-container">
             <!-- 로고(휘장) 영역 제거됨 -->
