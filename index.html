@@ -68,10 +68,10 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <!-- YouTube Embed with Extreme Scaling to Hide UI -->
-        <div class="video-background-wrapper">
-            <div id="youtube-player" class="hero-video"></div>
-        </div>
+        <!-- HTML5 Native Video for absolutely flawless looping with zero UI -->
+        <video class="hero-video" autoplay loop muted playsinline>
+            <source src="assets/videos/final_hero_video.mp4" type="video/mp4">
+        </video>
         <div class="hero-bg-overlay"></div>
         <div class="hero-container">
             <!-- 로고(휘장) 영역 제거됨 -->
@@ -866,51 +866,5 @@
 
     <!-- Script -->
     <script src="script.js"></script>
-
-    <!-- YouTube Iframe API for Seamless Looping -->
-    <script>
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        var player;
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('youtube-player', {
-                videoId: 'Qeuyb2051D0',
-                playerVars: {
-                    'autoplay': 1,
-                    'controls': 0,
-                    'showinfo': 0,
-                    'rel': 0,
-                    'modestbranding': 1,
-                    'iv_load_policy': 3,
-                    'disablekb': 1,
-                    'playsinline': 1,
-                    'mute': 1
-                },
-                events: {
-                    'onReady': onPlayerReady
-                }
-            });
-        }
-
-        function onPlayerReady(event) {
-            event.target.playVideo();
-            event.target.mute();
-            
-            // Seamless loop: seek to 0 before the video ends to prevent UI flash
-            setInterval(function() {
-                if (player && player.getCurrentTime) {
-                    var duration = player.getDuration();
-                    var current = player.getCurrentTime();
-                    // Loop 0.2 seconds before the end
-                    if (duration > 0 && current > duration - 0.2) {
-                        player.seekTo(0);
-                    }
-                }
-            }, 100);
-        }
-    </script>
 </body>
 </html>
