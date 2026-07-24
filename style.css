@@ -2191,18 +2191,7 @@ button {
     overflow: hidden;
 }
 
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: -2;
-}
+
 
 .video-hero .hero-bg-overlay {
     background: linear-gradient(135deg, rgba(165, 0, 52, 0.85) 0%, rgba(30, 41, 59, 0.9) 100%);
