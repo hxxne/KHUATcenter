@@ -68,11 +68,8 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <!-- Use WebP for fast loading, fallback to GIF for older browsers -->
-        <picture>
-            <source srcset="assets/images/hero_bg.webp" type="image/webp">
-            <img class="hero-video" src="assets/images/hero_bg_optimized.gif" alt="Background Video">
-        </picture>
+        <!-- Use GIF only for maximum compatibility across all mobile devices -->
+        <img class="hero-video" src="assets/images/hero_bg_optimized.gif" alt="Background Video">
         <div class="hero-bg-overlay"></div>
         <div class="hero-container">
             <!-- 로고(휘장) 영역 제거됨 -->
