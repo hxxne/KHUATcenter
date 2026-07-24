@@ -68,8 +68,11 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <!-- Use a universally supported GIF to bypass all video/autoplay blocking policies -->
-        <img class="hero-video" src="assets/images/hero_bg_optimized.gif" alt="Background Video">
+        <!-- Use WebP for fast loading, fallback to GIF for older browsers -->
+        <picture>
+            <source srcset="assets/images/hero_bg.webp" type="image/webp">
+            <img class="hero-video" src="assets/images/hero_bg_optimized.gif" alt="Background Video">
+        </picture>
         <div class="hero-bg-overlay"></div>
         <div class="hero-container">
             <!-- 로고(휘장) 영역 제거됨 -->

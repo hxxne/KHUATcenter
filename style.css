@@ -416,9 +416,10 @@ button {
     min-height: 700px;
     display: flex;
     align-items: center;
-    background-color: #F6F4EE;
-    background-image: radial-gradient(circle at 80% 20%, rgba(165, 0, 52, 0.05) 0%, transparent 40%),
-                      radial-gradient(circle at 10% 80%, rgba(197, 160, 89, 0.05) 0%, transparent 35%);
+    background-color: #000;
+    background-image: url('../images/at_center_interior.jpg');
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
 }
 
