@@ -2444,7 +2444,7 @@ button {
 
 /* Connecting Lines */
 .org-line {
-    background-color: transparent;
+    background-color: #ddd;
 }
 
 .vertical-line {
