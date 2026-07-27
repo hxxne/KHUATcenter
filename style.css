@@ -2223,50 +2223,90 @@ button {
 }
 
 .org-group {
-    background: #f8fafc;
-    border-radius: 12px;
-    padding: 24px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 24px 16px;
     width: 100%;
     max-width: 500px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.02);
 }
 
 .org-group-title {
-    font-size: 1.2rem;
-    color: var(--color-khu-crimson);
+    font-size: 1.1rem;
+    color: #1e293b;
     margin-bottom: 20px;
     text-align: center;
     font-weight: 700;
+    position: relative;
+    padding-bottom: 12px;
 }
 
-.member-grid {
-    display: grid;
-    gap: 15px;
+.org-group-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: var(--color-khu-crimson);
+    border-radius: 2px;
 }
 
 .staff-grid, .team-at-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
 }
 
 .member-card {
     background: white;
-    border-radius: 12px;
-    padding: 16px;
+    border-radius: 16px;
+    padding: 20px 24px;
     text-align: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #e2e8f0;
+    border: 1px solid #f1f5f9;
 }
 
 .member-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.staff-grid .member-card, .team-at-grid .member-card {
+    width: calc(50% - 6px);
+    padding: 14px 8px;
+    border: none;
+    border-left: 3px solid var(--color-khu-crimson);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.staff-grid .member-card:hover, .team-at-grid .member-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    background: white;
+}
+
+.staff-grid .member-name, .team-at-grid .member-name {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.team-at-grid .member-role {
+    margin-top: 4px;
+    font-size: 0.75rem;
+    color: #64748b;
 }
 
 .ceo-card {
     border: 2px solid var(--color-khu-crimson);
     padding: 24px;
-    width: 200px;
+    width: 220px;
 }
 
 .member-avatar {
