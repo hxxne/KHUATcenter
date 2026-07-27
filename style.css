@@ -2469,21 +2469,14 @@ button {
     margin: 0 auto;
 }
 
-.tier-3-line::before, .tier-3-line::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 2px;
-    height: 20px;
-    background: #ddd;
-}
-.tier-3-line::before { left: 0; }
-.tier-3-line::after { right: 0; }
+
+
+
 
 .tier-3-branches {
     display: flex;
     justify-content: space-between;
-    width: 1040px;
+    width: 720px;
     margin: 0 auto;
 }
 .tier-4-line { width: 560px; }
@@ -2499,11 +2492,11 @@ button {
     content: '';
     width: 2px;
     height: 20px;
-    background-color: #cbd5e1;
+    background-color: #ddd;
 }
 
 .tier-2-branches { width: 320px; }
-.tier-3-branches { width: 680px; }
+.tier-3-branches { width: 720px; }
 .tier-4-branches { width: 560px; }
 
 .empty-group-msg {
