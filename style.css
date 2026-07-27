@@ -2462,7 +2462,7 @@ button {
 
 .tier-2-line { width: 320px; }
 .tier-3-line {
-    width: 1040px;
+    width: 720px;
     height: 2px;
     background: var(--color-khu-crimson);
     position: relative;
