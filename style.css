@@ -2282,7 +2282,7 @@ button {
     transform: translateX(-50%);
     width: 30px;
     height: 3px;
-    background: var(--color-khu-crimson);
+    background: #ddd;
     border-radius: 2px;
 }
 
@@ -2369,7 +2369,7 @@ button {
 }
 
 .staff-card:hover .staff-avatar-icon {
-    background: var(--color-khu-crimson);
+    background: #ddd;
     color: white;
 }
 
@@ -2464,7 +2464,7 @@ button {
 .tier-3-line {
     width: 720px;
     height: 2px;
-    background: var(--color-khu-crimson);
+    background: #ddd;
     position: relative;
     margin: 0 auto;
 }
@@ -2475,7 +2475,7 @@ button {
     top: 0;
     width: 2px;
     height: 20px;
-    background: var(--color-khu-crimson);
+    background: #ddd;
 }
 .tier-3-line::before { left: 0; }
 .tier-3-line::after { right: 0; }
