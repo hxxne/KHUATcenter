@@ -2444,15 +2444,20 @@ button {
 
 /* Connecting Lines */
 .org-line {
-    display: none;
+    background-color: transparent;
 }
 
 .vertical-line {
-    display: none;
+    width: 2px;
+    height: 30px;
+    margin: 0 auto;
+    background-color: transparent;
 }
 
 .horizontal-line {
-    display: none;
+    height: 2px;
+    margin: 0 auto;
+    background-color: transparent;
 }
 
 .tier-2-line { width: 320px; }
