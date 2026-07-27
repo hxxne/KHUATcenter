@@ -1223,6 +1223,15 @@ button {
     box-shadow: 0 4px 12px rgba(165,0,52,0.25);
 }
 
+.filter-btn.ceo-card {
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.ceo-card .member-role {
+    color: var(--color-khu-crimson);
+}
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2423,18 +2432,15 @@ button {
 
 /* Connecting Lines */
 .org-line {
-    background-color: #cbd5e1;
+    display: none;
 }
 
 .vertical-line {
-    width: 2px;
-    height: 30px;
-    margin: 0 auto;
+    display: none;
 }
 
 .horizontal-line {
-    height: 2px;
-    margin: 0 auto;
+    display: none;
 }
 
 .tier-2-line { width: 320px; }
