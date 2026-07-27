@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css?v=4">
@@ -380,92 +381,32 @@
                             <circle cx="74" cy="210" r="5" fill="#00A2E8" class="chart-dot-blue" data-value="95회"/>
                             <circle cx="164" cy="190" r="5" fill="#00A2E8" class="chart-dot-blue" data-value="140회"/>
                             <circle cx="254" cy="175" r="5" fill="#00A2E8" class="chart-dot-blue" data-value="190회"/>
-                            <circle cx="344" cy="130" r="5" fill="#00A2E8" class="chart-dot-blue" data-value="250회"/>
-                            <circle cx="434" cy="90" r="5" fill="#00A2E8" class="chart-dot-blue" data-value="320회"/>
-
-                            <!-- X-axis labels -->
-                            <text x="74" y="245" class="chart-text" text-anchor="middle">2022</text>
-                            <text x="164" y="245" class="chart-text" text-anchor="middle">2023</text>
-                            <text x="254" y="245" class="chart-text" text-anchor="middle">2024</text>
-                            <text x="344" y="245" class="chart-text" text-anchor="middle">2025</text>
-                            <text x="434" y="245" class="chart-text" text-anchor="middle">2026</text>
-
-                            <!-- Gradient Definitions -->
-                            <defs>
-                                <linearGradient id="crimson-grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                                    <stop offset="0%" stop-color="#A50034" stop-opacity="1"/>
-                                    <stop offset="100%" stop-color="#A50034" stop-opacity="0.2"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                        <!-- Chart Tooltip -->
-                        <div id="chart-tooltip" class="chart-tooltip">설명</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Members Section -->
-    <section id="members" class="section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">구성원</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">경희대학교 AT 센터 조직도</p>
-            </div>
-
-            <div class="org-chart-container">
-                <!-- 1st Tier -->
-                <div class="org-level level-1">
-                    <div class="member-card ceo-card">
-                        <div class="member-avatar placeholder-avatar"></div>
-                        <div class="member-info">
-                            <h4 class="member-name">박지홍</h4>
-                            <p class="member-role">센터장 / 담당교수</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="org-line vertical-line"></div>
-                <div class="org-line horizontal-line tier-2-line"></div>
-                <div class="org-line vertical-branches tier-2-branches"></div>
-
-                <!-- 2nd Tier -->
-                <div class="org-level level-2">
-                    <div class="member-card">
-                        <div class="member-avatar placeholder-avatar"></div>
-                        <div class="member-info">
-                            <h4 class="member-name">오성민</h4>
-                            <p class="member-role">담당교수</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="org-line vertical-line"></div>
-                <div class="org-line horizontal-line tier-3-line"></div>
-                <div class="org-line vertical-branches tier-3-branches">
-                    <!-- Middle vertical drop for the 3-way split -->
-                    <div class="org-line" style="width: 2px; height: 20px;"></div>
-                </div>
-
-                <!-- 3rd Tier and Below Container -->
-                <div class="org-level level-3-container" style="display: flex; width: 100%; justify-content: center; gap: 40px; align-items: flex-start; flex-wrap: wrap; max-width: 1000px; margin: 0 auto;">
-                    
-                    <!-- Left Branch: 김준영 -->
-                    <div class="org-branch" style="display: flex; flex-direction: column; align-items: center; width: 300px;">
+                            <circle cx="344" cy="130" r="                    <!-- Left Branch: 김준영 -->
+                    <div class="org-branch" style="display: flex; flex-direction: column; align-items: center; width: 400px;">
                         <div class="member-card">
                             <div class="member-avatar placeholder-avatar"></div>
                             <div class="member-info">
                                 <h4 class="member-name">김준영</h4>
-                                <p class="member-role">실장</p>
+                                <p class="member-role">AT팀장</p>
                             </div>
                         </div>
                         <div class="org-line vertical-line"></div>
                         <div class="org-group" style="width: 100%;">
                             <h4 class="org-group-title">체육부 전담 AT</h4>
                             <div class="staff-grid">
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-futbol"></i></div><div class="staff-details"><div class="staff-name">강석</div><div class="sport-badge">축구</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><svg class="custom-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M18,15A4,4 0 0,1 22,19A4,4 0 0,1 18,23A4,4 0 0,1 14,19A4,4 0 0,1 18,15M18,17A2,2 0 0,0 16,19A2,2 0 0,0 18,21A2,2 0 0,0 20,19A2,2 0 0,0 18,17M6.05,14.54C6.05,14.54 7.46,13.12 7.47,10.3C7.11,8.11 7.97,5.54 9.94,3.58C12.87,0.65 17.14,0.17 19.5,2.5C21.83,4.86 21.35,9.13 18.42,12.06C16.46,14.03 13.89,14.89 11.7,14.53C8.88,14.54 7.46,15.95 7.46,15.95L3.22,20.19L1.81,18.78L6.05,14.54M18.07,3.93C16.5,2.37 13.5,2.84 11.35,5C9.21,7.14 8.73,10.15 10.29,11.71C11.86,13.27 14.86,12.79 17,10.65C19.16,8.5 19.63,5.5 18.07,3.93Z" /></svg></div><div class="staff-details"><div class="staff-name">권남준</div><div class="sport-badge">배드민턴</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_soccer</span></div><div class="staff-details"><div class="staff-name">강석</div><div class="sport-badge">축구</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_tennis</span></div><div class="staff-details"><div class="staff-name">권남준</div><div class="sport-badge">배드민턴</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_handball</span></div><div class="staff-details"><div class="staff-name">기윤서</div><div class="sport-badge">핸드볼</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_gymnastics</span></div><div class="staff-details"><div class="staff-name">문채연</div><div class="sport-badge">시범단</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_volleyball</span></div><div class="staff-details"><div class="staff-name">박세민</div><div class="sport-badge">배구</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_martial_arts</span></div><div class="staff-details"><div class="staff-name">유승아</div><div class="sport-badge">품새</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_football</span></div><div class="staff-details"><div class="staff-name">유영민</div><div class="sport-badge">럭비</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_baseball</span></div><div class="staff-details"><div class="staff-name">유주승</div><div class="sport-badge">야구</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_martial_arts</span></div><div class="staff-details"><div class="staff-name">유지민</div><div class="sport-badge">겨루기</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_basketball</span></div><div class="staff-details"><div class="staff-name">이상준</div><div class="sport-badge">농구</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_golf</span></div><div class="staff-details"><div class="staff-name">이예인</div><div class="sport-badge">골프</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">sports_martial_arts</span></div><div class="staff-details"><div class="staff-name">한혜서</div><div class="sport-badge">겨루기</div></div></div>
+                            </div>18,17A2,2 0 0,0 16,19A2,2 0 0,0 18,21A2,2 0 0,0 20,19A2,2 0 0,0 18,17M6.05,14.54C6.05,14.54 7.46,13.12 7.47,10.3C7.11,8.11 7.97,5.54 9.94,3.58C12.87,0.65 17.14,0.17 19.5,2.5C21.83,4.86 21.35,9.13 18.42,12.06C16.46,14.03 13.89,14.89 11.7,14.53C8.88,14.54 7.46,15.95 7.46,15.95L3.22,20.19L1.81,18.78L6.05,14.54M18.07,3.93C16.5,2.37 13.5,2.84 11.35,5C9.21,7.14 8.73,10.15 10.29,11.71C11.86,13.27 14.86,12.79 17,10.65C19.16,8.5 19.63,5.5 18.07,3.93Z" /></svg></div><div class="staff-details"><div class="staff-name">권남준</div><div class="sport-badge">배드민턴</div></div></div>
                                 <div class="staff-card"><div class="staff-avatar-icon"><svg class="custom-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M15.83 10.43A6.93 6.93 0 0 1 18.39 14.86A6.64 6.64 0 0 1 17.5 19.5L15.78 18.5A5 5 0 0 0 16.44 16A5.22 5.22 0 0 0 15.46 13.06L9.18 23.93L7.44 22.95L10.44 17.75L8.71 16.76L7.21 19.34L5.5 18.36L10.63 9.45A7 7 0 0 1 8.8 5.46A6.91 6.91 0 0 1 9.69 1.1L11.43 2.13A4.84 4.84 0 0 0 10.91 5.9A4.74 4.74 0 0 0 13.21 8.93M16 5A2 2 0 1 0 18 7A2 2 0 0 0 16 5M13.5 1A1.5 1.5 0 1 0 15 2.5A1.5 1.5 0 0 0 13.5 1Z" /></svg></div><div class="staff-details"><div class="staff-name">기윤서</div><div class="sport-badge">핸드볼</div></div></div>
                                 <div class="staff-card"><div class="staff-avatar-icon"><svg class="custom-icon" viewBox="0 0 24 24"><path fill="currentColor" d="M4 6C4 4.9 4.9 4 6 4S8 4.9 8 6 7.1 8 6 8 4 7.1 4 6M1 9H7L14 4L15.31 5.5L11.14 8.5H14L21.8 4L23 5.4L14.5 12L14 22H12L11.5 12L8 11H1V9Z" /></svg></div><div class="staff-details"><div class="staff-name">문채연</div><div class="sport-badge">시범단</div></div></div>
                                 <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-volleyball"></i></div><div class="staff-details"><div class="staff-name">박세민</div><div class="sport-badge">배구</div></div></div>
@@ -486,7 +427,7 @@
                     </div>
 
                     <!-- Middle Branch: 이재욱 -->
-                    <div class="org-branch" style="display: flex; flex-direction: column; align-items: center; width: 300px;">
+                    <div class="org-branch" style="display: flex; flex-direction: column; align-items: center; width: 240px;">
                         <div class="member-card">
                             <div class="member-avatar placeholder-avatar"></div>
                             <div class="member-info">
@@ -497,7 +438,7 @@
                     </div>
 
                     <!-- Right Branch: 최현곤 -->
-                    <div class="org-branch" style="display: flex; flex-direction: column; align-items: center; width: 300px;">
+                    <div class="org-branch" style="display: flex; flex-direction: column; align-items: center; width: 400px;">
                         <div class="member-card">
                             <div class="member-avatar placeholder-avatar"></div>
                             <div class="member-info">
@@ -509,21 +450,21 @@
                         <div class="org-group" style="width: 100%;">
                             <h4 class="org-group-title">스포츠 재활강사</h4>
                             <div class="staff-grid">
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">기윤서</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">문수연</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">문채연</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">안은지</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">우지윤</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">유승아</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">유영민</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">윤서연</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">이예인</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">이채원</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">조연지</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">조현준</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">진승희</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">천지훈</div><div class="sport-badge">재활강사</div></div></div>
-                                <div class="staff-card"><div class="staff-avatar-icon"><i class="fa-solid fa-heart-pulse"></i></div><div class="staff-details"><div class="staff-name">최민혁</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">기윤서</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">문수연</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">문채연</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">안은지</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">우지윤</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">유승아</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">유영민</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">윤서연</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">이예인</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">이채원</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">조연지</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">조현준</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">진승희</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">천지훈</div><div class="sport-badge">재활강사</div></div></div>
+                                <div class="staff-card"><div class="staff-avatar-icon"><span class="material-symbols-outlined custom-icon">physical_therapy</span></div><div class="staff-details"><div class="staff-name">최민혁</div><div class="sport-badge">재활강사</div></div></div>
                             </div>
                         </div>
                     </div>
