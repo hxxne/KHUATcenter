@@ -869,5 +869,144 @@
 
     <!-- Script -->
     <script src="script.js"></script>
+
+    <!-- Department Modal -->
+    <div id="department-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close-btn" id="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="modal-header">
+                <div class="modal-sport-icon" id="modal-sport-icon">
+                    <i class="fa-solid fa-futbol"></i>
+                </div>
+                <h3 class="modal-sport-title" id="modal-sport-title">축구부</h3>
+            </div>
+            
+            <h4 class="modal-section-title">전담 AT</h4>
+            <div class="modal-main-at">
+                <div class="modal-at-photo" id="modal-at-photo">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="modal-at-info">
+                    <span class="modal-at-role" id="modal-at-role-text">전담 AT</span>
+                    <span class="modal-at-name" id="modal-main-at-name">홍길동</span>
+                </div>
+            </div>
+            
+            <h4 class="modal-section-title">보조 AT 명단</h4>
+            <div class="modal-assistants">
+                <ul class="modal-assistants-list" id="modal-assistants-list">
+                    <!-- Javascript will populate this -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('department-modal');
+            const closeBtn = document.getElementById('modal-close-btn');
+            
+            // Placeholder data for Assistant ATs. 
+            // Update this dictionary when actual names are provided.
+            const assistantData = {
+                "축구": [],
+                "농구": [],
+                "야구": [],
+                "럭비": [],
+                "배구": [],
+                "시범단": [],
+                "겨루기": [],
+                "품새": [],
+                "아이스하키": [],
+                "배드민턴": [],
+                "핸드볼": [],
+                "재활강사": []
+            };
+
+            // Attach click event to all staff cards
+            document.querySelectorAll('.staff-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const sportBadgeEl = card.querySelector('.sport-badge');
+                    const nameEl = card.querySelector('.staff-name');
+                    
+                    if (!sportBadgeEl || !nameEl) return;
+                    
+                    const sportBadge = sportBadgeEl.textContent.trim();
+                    const staffName = nameEl.textContent.trim();
+                    const iconHtml = card.querySelector('.staff-avatar-icon').innerHTML;
+                    
+                    // Determine logic based on whether it's a specific sport or center director etc.
+                    // Usually sport-badge has the sport name (e.g. "축구", "시범단")
+                    // If sport-badge is "경희대학교", it's the center director, skip modal.
+                    if (sportBadge === "경희대학교") return;
+                    
+                    // Populate Modal
+                    document.getElementById('modal-sport-icon').innerHTML = iconHtml;
+                    
+                    // Set titles
+                    if (sportBadge === "재활강사") {
+                        document.getElementById('modal-sport-title').textContent = staffName;
+                        document.getElementById('modal-at-role-text').textContent = "스포츠재활강사";
+                        document.getElementById('modal-main-at-name').textContent = staffName;
+                    } else if (["운영기획", "구기종목", "투기/시범", "라켓/스틱"].includes(sportBadge)) {
+                        document.getElementById('modal-sport-title').textContent = sportBadge + " 파트장";
+                        document.getElementById('modal-at-role-text').textContent = "파트장";
+                        document.getElementById('modal-main-at-name').textContent = staffName;
+                    } else {
+                        document.getElementById('modal-sport-title').textContent = sportBadge + (sportBadge.endsWith("단") || sportBadge.endsWith("팀") ? "" : "부");
+                        document.getElementById('modal-at-role-text').textContent = "전담 AT";
+                        document.getElementById('modal-main-at-name').textContent = staffName;
+                    }
+                    
+                    // Set default user icon (can be replaced with img tags later)
+                    document.getElementById('modal-at-photo').innerHTML = '<i class="fa-solid fa-user"></i>';
+
+                    // Populate Assistants
+                    const listEl = document.getElementById('modal-assistants-list');
+                    listEl.innerHTML = '';
+                    
+                    // Use sportBadge to look up assistants
+                    const assistants = assistantData[sportBadge] || [];
+                    
+                    if (assistants.length === 0) {
+                        const li = document.createElement('li');
+                        li.className = "empty-msg";
+                        li.textContent = "현재 등록된 보조 AT 명단이 없습니다. (업데이트 예정)";
+                        listEl.appendChild(li);
+                    } else {
+                        assistants.forEach(name => {
+                            const li = document.createElement('li');
+                            li.textContent = name;
+                            listEl.appendChild(li);
+                        });
+                    }
+                    
+                    // Show modal
+                    modal.classList.add('show');
+                });
+            });
+            
+            // Close modal events
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('show');
+            });
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                }
+            });
+            
+            // Escape key to close
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.classList.contains('show')) {
+                    modal.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
