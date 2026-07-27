@@ -2451,13 +2451,13 @@ button {
     width: 2px;
     height: 30px;
     margin: 0 auto;
-    background-color: transparent;
+    background-color: #ddd;
 }
 
 .horizontal-line {
     height: 2px;
     margin: 0 auto;
-    background-color: transparent;
+    background-color: #ddd;
 }
 
 .tier-2-line { width: 320px; }
