@@ -865,10 +865,50 @@
     </footer>
 
     <!-- Bootstrap JS (Optional) -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+            const profModal = document.getElementById('prof-modal');
+            const profCloseBtn = document.getElementById('prof-modal-close-btn');
+            
+            profCloseBtn.addEventListener('click', () => {
+                profModal.classList.remove('show');
+            });
+            
+            profModal.addEventListener('click', (e) => {
+                if (e.target === profModal) {
+                    profModal.classList.remove('show');
+                }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && profModal.classList.contains('show')) {
+                    profModal.classList.remove('show');
+                }
+            });
+
+</script> -->
 
     <!-- Script -->
-    <script src="script.js"></script>
+    <script src="script.js">
+            const profModal = document.getElementById('prof-modal');
+            const profCloseBtn = document.getElementById('prof-modal-close-btn');
+            
+            profCloseBtn.addEventListener('click', () => {
+                profModal.classList.remove('show');
+            });
+            
+            profModal.addEventListener('click', (e) => {
+                if (e.target === profModal) {
+                    profModal.classList.remove('show');
+                }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && profModal.classList.contains('show')) {
+                    profModal.classList.remove('show');
+                }
+            });
+
+</script>
 
     <!-- Department Modal -->
     <div id="department-modal" class="modal-overlay">
@@ -910,7 +950,34 @@
             
             // Placeholder data for Assistant ATs or Certifications. 
             // Update this dictionary when actual data is provided.
-            const assistantData = {
+            
+            // Professor Data
+            const professorsData = {
+                "박지홍": {
+                    role: "센터장 / 교수",
+                    degree: "체육과학 박사(Physical Medicine & Rehabilitation 전공)",
+                    edu: "Brigham Young University",
+                    subject: "운동손상, 재활모달리티, 저항운동과컨디셔닝",
+                    lab: "체411호 (031-201-2721)",
+                    email: "jihong.park@khu.ac.kr",
+                    career: [
+                        "현) 경희대학교 생명윤리위원회 위원",
+                        "전) 경희대학교 스포츠의학과 학과장",
+                        "전) Assistant Professor, Marshall University",
+                        "전) Adjunct Professor, Brigham Young University",
+                        "전) Athletic Trainer, The University of Virginia Football"
+                    ],
+                    research: [
+                        "Anticipatory effect on lower extremity muscle recruitment and activation patterns during single leg drop tasks (2026)",
+                        "Bilateral femoral cartilage morphology in athletes with unilateral patellofemoral pain: associations with pain severity and self-reported function (2026)",
+                        "Medial meniscus extrusion after 30-min running in individuals who underwent meniscus surgery or anterior cruciate ligament reconstruction and healthy controls (2026)",
+                        "Lower extremity muscle activation patterns during running in individuals with and without anterior cruciate ligament reconstruction (2026)",
+                        "Sex-specific associations of body mass index with quadriceps neuromuscular function and self-reported function in individuals with and without patellofemoral pain (2025)"
+                    ]
+                }
+            };
+            
+const assistantData = {
                 "축구": [],
                 "농구": [],
                 "야구": [],
@@ -942,7 +1009,45 @@
                     const staffName = nameEl.textContent.trim();
                     const iconHtml = card.querySelector('.staff-avatar-icon').innerHTML;
                     
-                    if (sportBadge === "경희대학교") return; // Center director
+                    
+                    // Handle Center Director / Professor separately
+                    if (sportBadge === "경희대학교") {
+                        const profModal = document.getElementById('prof-modal');
+                        const pData = professorsData[staffName];
+                        
+                        if (pData) {
+                            document.getElementById('prof-modal-name').textContent = staffName;
+                            document.getElementById('prof-modal-role').textContent = pData.role;
+                            document.getElementById('prof-modal-degree').textContent = pData.degree;
+                            document.getElementById('prof-modal-edu').textContent = pData.edu;
+                            document.getElementById('prof-modal-subject').textContent = pData.subject;
+                            document.getElementById('prof-modal-lab').textContent = pData.lab;
+                            document.getElementById('prof-modal-email').textContent = pData.email;
+                            
+                            const careerList = document.getElementById('prof-modal-career');
+                            careerList.innerHTML = '';
+                            pData.career.forEach(item => {
+                                const li = document.createElement('li');
+                                li.textContent = item;
+                                careerList.appendChild(li);
+                            });
+                            
+                            const researchList = document.getElementById('prof-modal-research');
+                            researchList.innerHTML = '';
+                            pData.research.forEach(item => {
+                                const li = document.createElement('li');
+                                li.textContent = item;
+                                researchList.appendChild(li);
+                            });
+                        } else {
+                            document.getElementById('prof-modal-name').textContent = staffName;
+                            document.getElementById('prof-modal-role').textContent = "상세 정보가 업데이트 되지 않았습니다.";
+                        }
+                        
+                        profModal.classList.add('show');
+                        return;
+                    }
+
                     
                     // Populate Modal Icon
                     document.getElementById('modal-sport-icon').innerHTML = iconHtml;
@@ -1023,7 +1128,77 @@
                 }
             });
         });
-    </script>
+    
+            const profModal = document.getElementById('prof-modal');
+            const profCloseBtn = document.getElementById('prof-modal-close-btn');
+            
+            profCloseBtn.addEventListener('click', () => {
+                profModal.classList.remove('show');
+            });
+            
+            profModal.addEventListener('click', (e) => {
+                if (e.target === profModal) {
+                    profModal.classList.remove('show');
+                }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && profModal.classList.contains('show')) {
+                    profModal.classList.remove('show');
+                }
+            });
+
+</script>
+
+
+    <!-- Professor Modal -->
+    <div id="prof-modal" class="modal-overlay">
+        <div class="prof-modal-content">
+            <div class="prof-modal-header-bg">
+                <button class="prof-modal-close-btn" id="prof-modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
+                <div class="prof-modal-profile">
+                    <div class="prof-modal-photo" id="prof-modal-photo">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <h3 class="prof-modal-name" id="prof-modal-name">홍길동</h3>
+                        <div class="prof-modal-role" id="prof-modal-role">교수</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="prof-modal-body">
+                <div class="prof-info-grid">
+                    <div class="prof-info-label">학위명</div>
+                    <div class="prof-info-value" id="prof-modal-degree">-</div>
+                    
+                    <div class="prof-info-label">최종학력</div>
+                    <div class="prof-info-value" id="prof-modal-edu">-</div>
+                    
+                    <div class="prof-info-label">담당과목</div>
+                    <div class="prof-info-value" id="prof-modal-subject">-</div>
+                    
+                    <div class="prof-info-label">연구실</div>
+                    <div class="prof-info-value" id="prof-modal-lab">-</div>
+                    
+                    <div class="prof-info-label">E-mail</div>
+                    <div class="prof-info-value" id="prof-modal-email">-</div>
+                </div>
+                
+                <div class="prof-section">
+                    <div class="prof-section-title">주요경력</div>
+                    <ul class="prof-list" id="prof-modal-career">
+                    </ul>
+                </div>
+                
+                <div class="prof-section">
+                    <div class="prof-section-title">연구실적 (최근 논문)</div>
+                    <ul class="prof-list" id="prof-modal-research">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
