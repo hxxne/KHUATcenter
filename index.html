@@ -998,6 +998,49 @@ const assistantData = {
             };
 
             // Attach click event to all staff cards
+            
+            // Attach click event to member cards (Directors / Professors)
+            document.querySelectorAll('.member-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const nameEl = card.querySelector('.member-name');
+                    if (!nameEl) return;
+                    
+                    const staffName = nameEl.textContent.trim();
+                    const profModal = document.getElementById('prof-modal');
+                    
+                    // professorsData is defined globally above
+                    const pData = typeof professorsData !== 'undefined' ? professorsData[staffName] : null;
+                    
+                    if (pData) {
+                        document.getElementById('prof-modal-name').textContent = staffName;
+                        document.getElementById('prof-modal-role').textContent = pData.role;
+                        document.getElementById('prof-modal-degree').textContent = pData.degree;
+                        document.getElementById('prof-modal-edu').textContent = pData.edu;
+                        document.getElementById('prof-modal-subject').textContent = pData.subject;
+                        document.getElementById('prof-modal-lab').textContent = pData.lab;
+                        document.getElementById('prof-modal-email').textContent = pData.email;
+                        
+                        const careerList = document.getElementById('prof-modal-career');
+                        careerList.innerHTML = '';
+                        pData.career.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = item;
+                            careerList.appendChild(li);
+                        });
+                        
+                        const researchList = document.getElementById('prof-modal-research');
+                        researchList.innerHTML = '';
+                        pData.research.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = item;
+                            researchList.appendChild(li);
+                        });
+                        
+                        profModal.classList.add('show');
+                    }
+                });
+            });
+
             document.querySelectorAll('.staff-card').forEach(card => {
                 card.addEventListener('click', () => {
                     const sportBadgeEl = card.querySelector('.sport-badge');
