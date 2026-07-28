@@ -955,6 +955,7 @@
             const professorsData = {
                 "박지홍": {
                     role: "센터장 / 교수",
+                    photo: "http://sports.khu.ac.kr/data/member_tmp/thumb-1563944723_111x138.jpg",
                     degree: "체육과학 박사(Physical Medicine & Rehabilitation 전공)",
                     edu: "Brigham Young University",
                     subject: "운동손상, 재활모달리티, 저항운동과컨디셔닝",
@@ -1014,6 +1015,14 @@ const assistantData = {
                     if (pData) {
                         document.getElementById('prof-modal-name').textContent = staffName;
                         document.getElementById('prof-modal-role').textContent = pData.role;
+                        
+                        const photoEl = document.getElementById('prof-modal-photo');
+                        if (pData.photo) {
+                            photoEl.innerHTML = `<img src="${pData.photo}" alt="${staffName}">`;
+                        } else {
+                            photoEl.innerHTML = '<i class="fa-solid fa-user-tie"></i>';
+                        }
+
                         document.getElementById('prof-modal-degree').textContent = pData.degree;
                         document.getElementById('prof-modal-edu').textContent = pData.edu;
                         document.getElementById('prof-modal-subject').textContent = pData.subject;
