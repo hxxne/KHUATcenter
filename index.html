@@ -955,6 +955,17 @@
                         "전) 경희대학교 시설운영공단 트레이너"
                     ],
                     research: []
+                },
+                "오성민": {
+                    role: "담당교수",
+                    photo: "",
+                    degree: "스포츠심리학-운동제어 박사(Motor Control 전공)",
+                    edu: "성균관대학교",
+                    subject: "운동손상평가",
+                    lab: "선승관 AT center",
+                    email: "sungminoh@khu.ac.kr",
+                    career: [],
+                    research: []
                 }
             };
             
@@ -1010,20 +1021,30 @@ const assistantData = {
                         document.getElementById('prof-modal-email').textContent = pData.email;
                         
                         const careerList = document.getElementById('prof-modal-career');
-                        careerList.innerHTML = '';
-                        pData.career.forEach(item => {
-                            const li = document.createElement('li');
-                            li.textContent = item;
-                            careerList.appendChild(li);
-                        });
+                            careerList.innerHTML = '';
+                            if (pData.career && pData.career.length > 0) {
+                                careerList.parentElement.style.display = 'block';
+                                pData.career.forEach(item => {
+                                    const li = document.createElement('li');
+                                    li.textContent = item;
+                                    careerList.appendChild(li);
+                                });
+                            } else {
+                                careerList.parentElement.style.display = 'none';
+                            }
                         
                         const researchList = document.getElementById('prof-modal-research');
-                        researchList.innerHTML = '';
-                        pData.research.forEach(item => {
-                            const li = document.createElement('li');
-                            li.textContent = item;
-                            researchList.appendChild(li);
-                        });
+                            researchList.innerHTML = '';
+                            if (pData.research && pData.research.length > 0) {
+                                researchList.parentElement.style.display = 'block';
+                                pData.research.forEach(item => {
+                                    const li = document.createElement('li');
+                                    li.textContent = item;
+                                    researchList.appendChild(li);
+                                });
+                            } else {
+                                researchList.parentElement.style.display = 'none';
+                            }
                         
                         profModal.classList.add('show');
                     }
@@ -1058,11 +1079,16 @@ const assistantData = {
                             
                             const careerList = document.getElementById('prof-modal-career');
                             careerList.innerHTML = '';
-                            pData.career.forEach(item => {
-                                const li = document.createElement('li');
-                                li.textContent = item;
-                                careerList.appendChild(li);
-                            });
+                            if (pData.career && pData.career.length > 0) {
+                                careerList.parentElement.style.display = 'block';
+                                pData.career.forEach(item => {
+                                    const li = document.createElement('li');
+                                    li.textContent = item;
+                                    careerList.appendChild(li);
+                                });
+                            } else {
+                                careerList.parentElement.style.display = 'none';
+                            }
                             
                             const researchList = document.getElementById('prof-modal-research');
                             researchList.innerHTML = '';
