@@ -937,6 +937,24 @@
                         "Lower extremity muscle activation patterns during running in individuals with and without anterior cruciate ligament reconstruction (2026)",
                         "Sex-specific associations of body mass index with quadriceps neuromuscular function and self-reported function in individuals with and without patellofemoral pain (2025)"
                     ]
+                },
+                "김준영": {
+                    role: "실장 / 체육부",
+                    photo: "",
+                    degree: "체육학 석사",
+                    edu: "경희대학교",
+                    subject: "재활운동실습, 스포츠테이핑실습",
+                    lab: "AT센터 (031-201-2787)",
+                    email: "junyoung0366@khu.ac.kr",
+                    career: [
+                        "현) 경희대학교 AT 센터 실장",
+                        "현) 경희대학교 체육대학 강사",
+                        "전) Athletic Trainer, The university of Kyung Hee Basketball",
+                        "전) BNK 썸 여자프로농구단 트레이너",
+                        "전) 평창군보건의료원 운동처방사",
+                        "전) 경희대학교 시설운영공단 트레이너"
+                    ],
+                    research: []
                 }
             };
             
@@ -1048,11 +1066,16 @@ const assistantData = {
                             
                             const researchList = document.getElementById('prof-modal-research');
                             researchList.innerHTML = '';
-                            pData.research.forEach(item => {
-                                const li = document.createElement('li');
-                                li.textContent = item;
-                                researchList.appendChild(li);
-                            });
+                            if (pData.research && pData.research.length > 0) {
+                                researchList.parentElement.style.display = 'block';
+                                pData.research.forEach(item => {
+                                    const li = document.createElement('li');
+                                    li.textContent = item;
+                                    researchList.appendChild(li);
+                                });
+                            } else {
+                                researchList.parentElement.style.display = 'none';
+                            }
                         } else {
                             document.getElementById('prof-modal-name').textContent = staffName;
                             document.getElementById('prof-modal-role').textContent = "상세 정보가 업데이트 되지 않았습니다.";
