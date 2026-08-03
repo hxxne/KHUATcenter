@@ -701,7 +701,7 @@ document.addEventListener('DOMContentLoaded', () => {
             "_template": "table"
         };
 
-        fetch("https://formsubmit.co/ajax/wlgns10212@khu.ac.kr", {
+        fetch("https://formsubmit.co/ajax/khuatlab@gmail.com", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
