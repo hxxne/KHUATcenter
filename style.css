@@ -2463,7 +2463,7 @@ button {
 
 .tier-2-line { width: 320px; }
 .tier-3-line {
-    width: 720px;
+    width: 770px;
     height: 2px;
     background: #ddd;
     position: relative;
@@ -2477,7 +2477,7 @@ button {
 .tier-3-branches {
     display: flex;
     justify-content: space-between;
-    width: 720px;
+    width: 770px;
     margin: 0 auto;
 }
 .tier-4-line { width: 560px; }
