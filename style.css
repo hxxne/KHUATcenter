@@ -2928,3 +2928,49 @@ button {
     border-radius: 50%;
     background: #cbd5e1;
 }
+
+/* Robust dynamic org chart lines for Level 3 */
+@media (min-width: 1101px) {
+    .level-3-container > .org-branch {
+        position: relative;
+        padding-top: 20px;
+    }
+
+    .level-3-container > .org-branch::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 2px;
+        background-color: #ddd;
+    }
+
+    /* Left Branch horizontal line */
+    .level-3-container > .org-branch:first-child::before {
+        left: 50%;
+        width: calc(50% + 20px);
+    }
+
+    /* Right Branch horizontal line */
+    .level-3-container > .org-branch:last-child::before {
+        right: 50%;
+        width: calc(50% + 20px);
+    }
+
+    /* Middle Branch horizontal line */
+    .level-3-container > .org-branch:nth-child(2)::before {
+        left: -20px;
+        width: calc(100% + 40px);
+    }
+    
+    /* Vertical drops for all branches */
+    .level-3-container > .org-branch::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 20px;
+        background-color: #ddd;
+    }
+}
