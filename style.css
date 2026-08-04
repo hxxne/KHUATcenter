@@ -2321,7 +2321,7 @@ button {
     flex-direction: row;
     align-items: center;
     gap: 8px;
-    width: calc(33.333% - 8px);
+    width: 100%;
     background: white;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
