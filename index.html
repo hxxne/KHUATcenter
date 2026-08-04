@@ -1135,7 +1135,8 @@ const assistantData = {
 
                     // Set titles and load specific data
                     if (sportBadge === "재활강사") {
-                        document.querySelector('.modal-list-section').style.display = 'block';
+                        document.getElementById('modal-title-sub').style.display = 'block';
+                        document.querySelector('.modal-assistants').style.display = 'block';
                         document.getElementById('modal-sport-title').textContent = staffName;
                         titleMain.textContent = "스포츠재활강사";
                         document.getElementById('modal-at-role-text').textContent = "스포츠재활강사";
@@ -1154,7 +1155,8 @@ const assistantData = {
                         document.getElementById('modal-sport-title').textContent = "센터 보조 AT";
                         document.getElementById('modal-at-role-text').textContent = "센터 AT";
                         document.getElementById('modal-main-at-name').textContent = staffName;
-                        document.querySelector('.modal-list-section').style.display = 'none';
+                        document.getElementById('modal-title-sub').style.display = 'none';
+                        document.querySelector('.modal-assistants').style.display = 'none';
                         titleMain.textContent = "";
                         titleSub.textContent = "";
                     } else {
@@ -1162,7 +1164,8 @@ const assistantData = {
                         document.getElementById('modal-at-role-text').textContent = "전담 AT";
                         document.getElementById('modal-main-at-name').textContent = staffName;
                         dataList = assistantData[sportBadge] || [];
-                        document.querySelector('.modal-list-section').style.display = 'block';
+                        document.getElementById('modal-title-sub').style.display = 'block';
+                        document.querySelector('.modal-assistants').style.display = 'block';
                     }
                     
                     // Set default user icon
