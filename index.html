@@ -945,7 +945,7 @@
                 "김준영": {
                     role: "실장 / 체육부",
                     photo: "assets/kimjunyoung.png",
-                    degree: "체육학 석사",
+                    degree: "체육학 석사 (Sports Medicine and Science 전공)",
                     edu: "경희대학교",
                     subject: "재활운동실습, 스포츠테이핑실습",
                     lab: "경희대학교 선승관 AT center (031-201-2787)",
@@ -964,7 +964,7 @@
                     role: "연구교수",
                     photo: "",
                     degree: "스포츠심리학-운동제어 박사(Motor Control 전공)",
-                    edu: "성균관대학교",
+                    edu: "Sungkyunkwan University",
                     subject: "운동손상평가",
                     lab: "경희대학교 선승관 AT center (031-201-2787)",
                     email: "sungminoh@khu.ac.kr",
@@ -974,7 +974,7 @@
                 "최현곤": {
                     role: "팀장 / 체육시설운영단",
                     photo: "assets/choihyungon.png",
-                    degree: "체육학석사(Sports Medicine and Science 전공)",
+                    degree: "체육학 석사 (Sports Medicine and Science 전공)",
                     edu: "Kyung Hee University",
                     subject: "체육시설운영단",
                     lab: "경희대학교 선승관 AT center (031-201-2787)",
@@ -1038,6 +1038,8 @@ const assistantData = {
                         document.getElementById('prof-modal-degree').textContent = pData.degree;
                         document.getElementById('prof-modal-edu').textContent = pData.edu;
                         document.getElementById('prof-modal-subject').textContent = pData.subject;
+                        const subjectLabel = document.getElementById('prof-modal-subject-label');
+                        if (subjectLabel) subjectLabel.textContent = staffName === "최현곤" ? "담당부서" : "담당과목";
                         document.getElementById('prof-modal-lab').textContent = pData.lab;
                         document.getElementById('prof-modal-email').textContent = pData.email;
                         
@@ -1095,6 +1097,8 @@ const assistantData = {
                             document.getElementById('prof-modal-degree').textContent = pData.degree;
                             document.getElementById('prof-modal-edu').textContent = pData.edu;
                             document.getElementById('prof-modal-subject').textContent = pData.subject;
+                        const subjectLabel = document.getElementById('prof-modal-subject-label');
+                        if (subjectLabel) subjectLabel.textContent = staffName === "최현곤" ? "담당부서" : "담당과목";
                             document.getElementById('prof-modal-lab').textContent = pData.lab;
                             document.getElementById('prof-modal-email').textContent = pData.email;
                             
@@ -1265,7 +1269,7 @@ const assistantData = {
                     <div class="prof-info-label">최종학력</div>
                     <div class="prof-info-value" id="prof-modal-edu">-</div>
                     
-                    <div class="prof-info-label">담당과목</div>
+                    <div class="prof-info-label" id="prof-modal-subject-label">담당과목</div>
                     <div class="prof-info-value" id="prof-modal-subject">-</div>
                     
                     <div class="prof-info-label">연구실</div>
