@@ -1,7 +1,7 @@
 import re
 
 def remove_cards():
-    names_to_remove = ["권준홍", "이진주", "박서현"]
+    names_to_remove = ["송찬"]
     
     with open('index.html', 'r', encoding='utf-8') as f:
         html = f.read()
