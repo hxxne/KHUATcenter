@@ -753,22 +753,22 @@
                 </div>
 
                 <div class="contact-form-container">
-                    <form id="inquiry-form" class="inquiry-form">
+                    <form id="inquiry-form" class="inquiry-form" action="https://formsubmit.co/khuatlab@gmail.com" method="POST">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="form-name">이름 *</label>
-                                <input type="text" id="form-name" required placeholder="성함을 입력하세요">
+                                <input type="text" id="form-name" name="이름_단체명" required placeholder="이름을 입력해주세요">
                             </div>
                             <div class="form-group">
                                 <label for="form-phone">연락처 *</label>
-                                <input type="tel" id="form-phone" required placeholder="010-1234-5678">
+                                <input type="tel" id="form-phone" name="연락처" required placeholder="010-1234-5678">
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="form-affiliation">소속 구분 *</label>
-                                <select id="form-affiliation" required>
+                                <select id="form-affiliation" name="소속구분" required>
                                     <option value="" disabled selected>소속을 선택하세요</option>
                                     <option value="athlete">체육부 학생 선수</option>
                                     <option value="student">일반 학생</option>
@@ -778,7 +778,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="form-type">문의 유형 *</label>
-                                <select id="form-type" required>
+                                <select id="form-type" name="문의유형" required>
                                     <option value="" disabled selected>문의 유형을 선택하세요</option>
                                     <option value="rehab">스포츠 부상 상담 & 재활 케어</option>
                                     <option value="education">AT 기초 교육 및 스태프 신청</option>
@@ -791,11 +791,11 @@
 
                         <div class="form-group">
                             <label for="form-message">상세 문의 내용 *</label>
-                            <textarea id="form-message" rows="5" required placeholder="부상 정보(부위, 시기 등) 또는 문의 내용을 적어주세요."></textarea>
+                            <textarea id="form-message" name="상세내용" rows="5" required placeholder="상담 목적(통증, 경기력 향상 등) 또는 문의 내용을 적어주세요."></textarea>
                         </div>
 
                         <div class="form-checkbox">
-                            <input type="checkbox" id="form-privacy" required>
+                            <input type="checkbox" id="form-privacy" name="개인정보동의" required>
                             <label for="form-privacy">개인정보 수집 및 이용(문의 응대 목적)에 동의합니다. *</label>
                         </div>
 
