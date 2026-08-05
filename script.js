@@ -668,6 +668,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const successCloseBtn = document.getElementById('success-close-btn');
 
     inquiryForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
         const phoneInput = document.getElementById('form-phone');
         const phoneRegex = /^01[016789]-\d{3,4}-\d{4}$/;
         const rawPhone = phoneInput.value.replace(/\s+/g, '');
@@ -680,7 +682,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 formattedPhone = match[1] + '-' + match[2] + '-' + match[3];
                 phoneInput.value = formattedPhone;
             } else {
-                e.preventDefault(); // Prevent submit on validation failure
                 alert('연락처 형식을 확인해 주세요. (예: 010-1234-5678)');
                 phoneInput.focus();
                 return;
@@ -689,8 +690,42 @@ document.addEventListener('DOMContentLoaded', () => {
 
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
-        
-        // Native form submission will proceed to formsubmit.co because e.preventDefault() was not called
+
+        const dataPayload = {
+            "이름_단체명": document.getElementById('form-name').value,
+            "연락처": phoneInput.value,
+            "소속구분": document.getElementById('form-affiliation').options[document.getElementById('form-affiliation').selectedIndex].text,
+            "문의유형": document.getElementById('form-type').options[document.getElementById('form-type').selectedIndex].text,
+            "상세내용": document.getElementById('form-message').value,
+            "_captcha": "false",
+            "_template": "table"
+        };
+
+        fetch("https://formsubmit.co/ajax/khuatlab@gmail.com", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(dataPayload)
+        })
+        .then(response => response.json())
+        .then(data => {
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+            if (data.success === "true" || data.success === true) {
+                successOverlay.classList.add('active');
+                inquiryForm.reset();
+            } else {
+                alert("이메일 전송에 실패했습니다. (서버 응답 오류)");
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('이메일 전송 중 오류가 발생했습니다. 다시 시도해 주세요.');
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
+        });
     });
 
     const closeSuccessOverlay = () => {
