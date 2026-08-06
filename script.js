@@ -769,3 +769,98 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(sec);
     });
 });
+
+
+// ----------------------------------------------------
+// Research Papers Modal Logic
+// ----------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+    const researchModal = document.getElementById('research-modal');
+    const btnResearchModal = document.getElementById('btn-research-modal');
+    const closeResearchModal = document.getElementById('close-research-modal');
+    const rtabBtns = document.querySelectorAll('.rtab-btn');
+    const rtabPanes = document.querySelectorAll('.rtab-pane');
+
+    // Open Modal
+    if (btnResearchModal) {
+        btnResearchModal.addEventListener('click', () => {
+            researchModal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            // Render placeholders if not already rendered
+            renderDummyPapers();
+        });
+    }
+
+    // Close Modal
+    if (closeResearchModal) {
+        closeResearchModal.addEventListener('click', () => {
+            researchModal.style.display = 'none';
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Close on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target === researchModal) {
+            researchModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Tab Switching
+    rtabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Remove active classes
+            rtabBtns.forEach(b => b.classList.remove('active'));
+            rtabPanes.forEach(p => p.classList.remove('active'));
+            
+            // Add active class to clicked tab
+            btn.classList.add('active');
+            
+            // Show corresponding pane
+            const targetId = btn.getAttribute('data-rtab');
+            document.getElementById(targetId).classList.add('active');
+        });
+    });
+
+    // Placeholder Data Rendering
+    function renderDummyPapers() {
+        const dummyData = {
+            1: [
+                { title: "[예시] 스포츠 재활을 위한 새로운 운동 요법의 임상적 효과 검증", authors: "홍길동, 김철수, 박지홍", journal: "Journal of Sports Rehabilitation" },
+                { title: "[예시] 십자인대 재건술 후 기능적 움직임 회복 패턴 분석", authors: "이영희, 박지홍", journal: "Exercise Science" }
+            ],
+            2: [
+                { title: "[예시] 고강도 인터벌 트레이닝 후 급성 피로 회복 전략의 비교 연구", authors: "박민수, 박지홍", journal: "Journal of Athletic Training" },
+                { title: "[예시] 운동 유발성 근육 손상 완화를 위한 모달리티 적용 효과", authors: "최지연, 김철수, 박지홍", journal: "Sports Medicine" }
+            ],
+            3: [
+                { title: "[예시] 대학 엘리트 태권도 선수의 민첩성 향상을 위한 플라이오메트릭 훈련", authors: "정수진, 박지홍", journal: "International Journal of Sports Science" },
+                { title: "[예시] 야구 투수의 투구 메커니즘 개선이 경기력에 미치는 영향", authors: "강동원, 박지홍", journal: "Biomechanics" }
+            ],
+            4: [
+                { title: "[예시] 대학 운동선수의 종목별 부상 발생률 및 주요 원인 분석", authors: "이재욱, 임준형, 박지홍", journal: "Injury Prevention" },
+                { title: "[예시] 급성 대 만성 부하 비율(ACWR)이 근골격계 부상에 미치는 영향 추적 관찰", authors: "김승연, 박지홍", journal: "Journal of Athletic Training" }
+            ]
+        };
+
+        for (let i = 1; i <= 4; i++) {
+            const listEl = document.getElementById(`paper-list-${i}`);
+            // Only render if empty to avoid duplicates
+            if (listEl && listEl.children.length === 0) {
+                let htmlStr = '';
+                dummyData[i].forEach(paper => {
+                    htmlStr += `
+                        <li class="paper-item">
+                            <h4>${paper.title}</h4>
+                            <div class="paper-authors">${paper.authors}</div>
+                            <div class="paper-journal">${paper.journal}</div>
+                        </li>
+                    `;
+                });
+                listEl.innerHTML = htmlStr;
+            }
+        }
+    }
+});

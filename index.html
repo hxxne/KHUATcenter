@@ -42,7 +42,7 @@
             <nav class="nav-menu">
                 <a href="#about" class="nav-link">센터 소개</a>
                 <a href="#pillars" class="nav-link">핵심 사업</a>
-                <a href="#dashboard" class="nav-link">센터 대시보드</a>
+                <a href="#dashboard" class="nav-link">AT 센터 누적 기록</a>
                 <a href="#members" class="nav-link">구성원</a>
                 <a href="#awards" class="nav-link">수상 및 역대 리더</a>
                 <a href="#gallery" class="nav-link">활동 피드</a>
@@ -61,7 +61,7 @@
         <nav class="mobile-menu">
             <a href="#about" class="mobile-link">센터 소개</a>
             <a href="#pillars" class="mobile-link">핵심 사업</a>
-            <a href="#dashboard" class="mobile-link">센터 대시보드</a>
+            <a href="#dashboard" class="mobile-link">AT 센터 누적 기록</a>
             <a href="#members" class="mobile-link">구성원</a>
             <a href="#awards" class="mobile-link">수상 및 역대 리더</a>
             <a href="#gallery" class="mobile-link">활동 피드</a>
@@ -277,7 +277,7 @@
     <section id="dashboard" class="section-padding">
         <div class="container">
             <div class="section-header text-center">
-                <h2 class="section-title">센터 대시보드</h2>
+                <h2 class="section-title">AT 센터 누적 기록</h2>
                 <div class="divider"></div>
                 <p class="section-subtitle">AT 센터의 정량적 연구 성과 및 현장 지원 실적</p>
             </div>
@@ -302,14 +302,14 @@
                     </div>
                     <h3 class="stat-label">교육 이수 스태프 및 학생 (명)</h3>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card clickable-stat-card" id="btn-research-modal">
                     <div class="stat-icon">
                         <svg viewBox="0 0 24 24" width="24" height="24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2zm0 8H7v-2h10v2z" fill="currentColor"/></svg>
                     </div>
                     <div class="stat-number-wrapper">
                         <span class="stat-number" data-target="85">0</span><span class="stat-suffix">+</span>
                     </div>
-                    <h3 class="stat-label">발표 논문 및 학술 연구 실적 (편)</h3>
+                    <h3 class="stat-label">발표 논문 및 학술 연구 실적 (편) <span style="display:inline-block; margin-left:5px; font-size:14px; background:var(--color-primary); color:#fff; padding:2px 8px; border-radius:12px; vertical-align:middle;">View</span></h3>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
@@ -1292,5 +1292,39 @@ const assistantData = {
         </div>
     </div>
 
+
+    <!-- Research Papers Modal -->
+    <div id="research-modal" class="modal">
+        <div class="modal-content research-modal-content">
+            <span class="close-modal" id="close-research-modal">&times;</span>
+            <div class="research-modal-header">
+                <h2>논문 | 학술발표</h2>
+                <p>AT 센터의 파트별 연구 성과를 확인하실 수 있습니다.</p>
+            </div>
+            <div class="research-modal-body">
+                <div class="research-tabs-container">
+                    <button class="rtab-btn active" data-rtab="rtab-1">Part 1. 스포츠재활</button>
+                    <button class="rtab-btn" data-rtab="rtab-2">Part 2. 운동유발 피로 회복</button>
+                    <button class="rtab-btn" data-rtab="rtab-3">Part 3. 경기력 향상</button>
+                    <button class="rtab-btn" data-rtab="rtab-4">Part 4. 부상 조사 분석</button>
+                </div>
+                
+                <div class="rtab-content-area">
+                    <div id="rtab-1" class="rtab-pane active">
+                        <ul class="paper-list" id="paper-list-1"></ul>
+                    </div>
+                    <div id="rtab-2" class="rtab-pane">
+                        <ul class="paper-list" id="paper-list-2"></ul>
+                    </div>
+                    <div id="rtab-3" class="rtab-pane">
+                        <ul class="paper-list" id="paper-list-3"></ul>
+                    </div>
+                    <div id="rtab-4" class="rtab-pane">
+                        <ul class="paper-list" id="paper-list-4"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

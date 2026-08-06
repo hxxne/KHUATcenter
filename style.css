@@ -2974,3 +2974,120 @@ button {
         background-color: #ddd;
     }
 }
+
+/* Research Modal & Clickable Stat Card */
+.clickable-stat-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+.clickable-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+}
+
+.research-modal-content {
+    max-width: 900px !important;
+    padding: 0 !important;
+    overflow: hidden;
+    background: #f8f9fa;
+}
+
+.research-modal-header {
+    padding: 30px 40px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid var(--color-border);
+}
+.research-modal-header h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--color-text);
+}
+.research-modal-header p {
+    color: var(--color-text-muted);
+    margin-top: 8px;
+    font-size: 1rem;
+}
+
+.research-tabs-container {
+    display: flex;
+    background: #fff;
+    border-bottom: 1px solid var(--color-border);
+    overflow-x: auto;
+    padding: 0 20px;
+}
+
+.rtab-btn {
+    padding: 15px 20px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+.rtab-btn:hover {
+    color: var(--color-primary);
+    background: rgba(164, 15, 22, 0.03);
+}
+.rtab-btn.active {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+}
+
+.rtab-content-area {
+    padding: 30px 40px;
+    min-height: 400px;
+    max-height: 60vh;
+    overflow-y: auto;
+    background: #fafafa;
+}
+
+.rtab-pane {
+    display: none;
+    animation: fadeIn 0.4s ease forwards;
+}
+.rtab-pane.active {
+    display: block;
+}
+
+.paper-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.paper-item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-left: 4px solid var(--color-primary);
+}
+.paper-item h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    line-height: 1.4;
+}
+.paper-item .paper-authors {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 5px;
+}
+.paper-item .paper-journal {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    display: inline-block;
+    background: rgba(164, 15, 22, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
