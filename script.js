@@ -788,7 +788,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.overflow = 'hidden';
             
             // Render placeholders if not already rendered
-            renderDummyPapers();
+            renderPapers();
         });
     }
 
@@ -825,37 +825,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Placeholder Data Rendering
-    function renderDummyPapers() {
-        const dummyData = {
+    function renderPapers() {
+        const papersData = {
             1: [
-                { title: "[예시] 스포츠 재활을 위한 새로운 운동 요법의 임상적 효과 검증", authors: "홍길동, 김철수, 박지홍", journal: "Journal of Sports Rehabilitation" },
-                { title: "[예시] 십자인대 재건술 후 기능적 움직임 회복 패턴 분석", authors: "이영희, 박지홍", journal: "Exercise Science" }
+                { title: "Medial meniscus extrusion after 30-min running in meniscus surgery/ACLR (2026)", authors: '', journal: '' },
+                { title: "Anticipatory effect on lower extremity muscle recruitment during single leg drop tasks (2026)", authors: '', journal: '' },
+                { title: "Lower extremity muscle activation patterns during running in ACLR (2026)", authors: '', journal: '' },
+                { title: "Sex-specific associations of BMI with quadriceps in patellofemoral pain (2025)", authors: '', journal: '' },
+                { title: "Ultrasonography assessment of talar cartilage and ATFL in unstable ankles (2025)", authors: '', journal: '' },
+                { title: "Advancing clinical evaluation and treatment of arthrogenic muscle inhibition (2024)", authors: '', journal: '' },
+                { title: "Lower extremity muscle volume in unilateral/bilateral patellofemoral pain (2024)", authors: '', journal: '' },
+                { title: "Sex differences in knee extensor neuromuscular function in PFP (2024)", authors: '', journal: '' },
+                { title: "Change in pain perception and TENS pulse amplitude in knee pain rehab (2023)", authors: '', journal: '' },
+                { title: "Fatigue affects knee proprioception in ACLR or meniscus surgery (2023)", authors: '', journal: '' },
+                { title: "Quadriceps neuromuscular function during fatigue in patellofemoral pain (2023)", authors: '', journal: '' },
+                { title: "Impact of severity and duration of anterior knee pain on quadriceps function (2022)", authors: '', journal: '' },
+                { title: "Bilateral deficits in quadriceps function in chronic unilateral knee pain (2021/2022)", authors: '', journal: '' },
+                { title: "Anterior knee pain independently alters landing and jumping biomechanics (2021)", authors: '', journal: '' },
+                { title: "Rehabilitation with or without electro-cryotherapy in anterior knee pain (2021)", authors: '', journal: '' },
+                { title: "Bilateral patella cartilage debridement and exercise rehabilitation (2021)", authors: '', journal: '' },
+                { title: "Knee joint/quadriceps dysfunction in AKP, ACLR, and meniscus surgery (2021)", authors: '', journal: '' },
+                { title: "Experimental knee pain affects lower-extremity muscle activation (2017)", authors: '', journal: '' },
+                { title: "Arthroscopic repair vs non-operative treatment of shoulder dislocations (2016)", authors: '', journal: '' },
+                { title: "Overuse capsuloligamentous injury of the 1st MTP joint (2015)", authors: '', journal: '' },
+                { title: "Experimental anterior knee pain model affects movement mechanics (2014)", authors: '', journal: '' },
+                { title: "Experimental knee pain alters lower-extremity mechanics during gait (2013)", authors: '', journal: '' },
+                { title: "Induced knee pain reduces involuntary and voluntary quadriceps activation (2013)", authors: '', journal: '' },
+                { title: "Reliability of maximal voluntary knee extension torque and activation (2013)", authors: '', journal: '' },
+                { title: "Acupuncture and cryotherapy on quadriceps motoneuron pool excitability (2012)", authors: '', journal: '' },
+                { title: "Knee extension exercises and quadriceps activation in AKP (2012)", authors: '', journal: '' },
+                { title: "Psychological consultation in rehabilitation (2012)", authors: '', journal: '' },
             ],
             2: [
-                { title: "[예시] 고강도 인터벌 트레이닝 후 급성 피로 회복 전략의 비교 연구", authors: "박민수, 박지홍", journal: "Journal of Athletic Training" },
-                { title: "[예시] 운동 유발성 근육 손상 완화를 위한 모달리티 적용 효과", authors: "최지연, 김철수, 박지홍", journal: "Sports Medicine" }
+                { title: "Acute recovery in the femoral cartilage morphology following running and cool-down protocols (2024)", authors: '', journal: '' },
+                { title: "Change in femoral cartilage cross-sectional area after aerobic and resistance exercise (2024)", authors: '', journal: '' },
+                { title: "Morphologic response in femoral cartilage during and after 40-min treadmill running (2024)", authors: '', journal: '' },
+                { title: "A warm-up strategy with or without voluntary contraction on athletic performance, lower-leg temperature, and blood lactate concentration (2024)", authors: '', journal: '' },
+                { title: "Bilateral knee joint cooling on anaerobic capacity and wheel cadence during sprint cycling intervals (2022)", authors: '', journal: '' },
+                { title: "A 7-min halftime jog mitigated the reduction in sprint performance for the initial 15-min of the second half in a simulated football match (2022)", authors: '', journal: '' },
+                { title: "Comparison of four different cool-down strategies on lower-leg temperature, blood lactate concentration, and fatigue perception after intense running (2022)", authors: '', journal: '' },
+                { title: "Effects of unilateral lower-extremity joint cooling on movement biomechanics during a two-legged jumping and landing (2022)", authors: '', journal: '' },
+                { title: "Changes in heart rate, muscle temperature, blood lactate concentration, blood pressure, and fatigue perception following jogging and running (2022)", authors: '', journal: '' },
+                { title: "A single-leg drop jump biomechanics after ankle or knee joint cooling in healthy young adults (2021)", authors: '', journal: '' },
+                { title: "Immediate effects of an inverted body position on energy expenditure and blood lactate removal after intense running (2020)", authors: '', journal: '' },
+                { title: "Knee joint cooling altered the quadriceps neuromuscular activation during a single-leg drop jump (2020)", authors: '', journal: '' },
+                { title: "Lower-leg cooling during halftime does not affect second-half performance in a football match (2019)", authors: '', journal: '' },
+                { title: "Ankle or knee joint cooling alters countermovement jump height in healthy collegiate athletes (2017)", authors: '', journal: '' },
+                { title: "Joint cooling does not hinder athletic performance during high-intensity intermittent exercise (2016)", authors: '', journal: '' },
+                { title: "Cold application and functional performance (2015)", authors: '', journal: '' },
             ],
             3: [
-                { title: "[예시] 대학 엘리트 태권도 선수의 민첩성 향상을 위한 플라이오메트릭 훈련", authors: "정수진, 박지홍", journal: "International Journal of Sports Science" },
-                { title: "[예시] 야구 투수의 투구 메커니즘 개선이 경기력에 미치는 영향", authors: "강동원, 박지홍", journal: "Biomechanics" }
+                { title: "Catch-play warm-up with a lightweight baseball increases ball velocity on subsequent throws for baseball position players (2026)", authors: '', journal: '' },
+                { title: "Simple linear equations to estimate a workload of specific repetition maximum for squat exercise in trained and untrained males (2025)", authors: '', journal: '' },
+                { title: "Central vs. peripheral vision during a single-leg drop jump (2022)", authors: '', journal: '' },
+                { title: "Effect of verbal encouragement on quadriceps and knee joint function during three sets of knee extension exercise (2021)", authors: '', journal: '' },
+                { title: "Changes in spinal-reflex excitability during static stretch and/or explosive contraction (2021)", authors: '', journal: '' },
+                { title: "Electroacupuncture and manual acupuncture increase joint flexibility but reduce muscle strength (2020)", authors: '', journal: '' },
+                { title: "Correlation and reliability of two field tests for vertical jump height (2020)", authors: '', journal: '' },
+                { title: "Immediate effects of different types of stretching exercises on badminton smash (2018)", authors: '', journal: '' },
+                { title: "Functional vs. traditional analysis in biomechanical gait data: an alternative statistical approach (2017)", authors: '', journal: '' },
+                { title: "A 6-week sprint interval training program changes anaerobic capacity, quadriceps strength, and subcutaneous tissue thickness (2017)", authors: '', journal: '' },
+                { title: "Quadriceps activation normative values and the affect of subcutaneous tissue thickness (2011)", authors: '', journal: '' },
             ],
             4: [
-                { title: "[예시] 대학 운동선수의 종목별 부상 발생률 및 주요 원인 분석", authors: "이재욱, 임준형, 박지홍", journal: "Injury Prevention" },
-                { title: "[예시] 급성 대 만성 부하 비율(ACWR)이 근골격계 부상에 미치는 영향 추적 관찰", authors: "김승연, 박지홍", journal: "Journal of Athletic Training" }
-            ]
+                { title: "Femoral Cartilage Morphology in Collegiate Archery, Badminton, and Taekwondo Athletes and Non-athletes: A 12-month Prospective Cohort Study (2026)", authors: '', journal: '' },
+                { title: "Injury incidences related to acute-to-chronic workload ratios in taekwondo: A prospective study with a 3-year follow-up (2025)", authors: '', journal: '' },
+                { title: "Sponge mats, but not Taekwondo mats, reduce landing impact from heights of 0.45m, 0.90m, and 1.35m in Taekwondo Gyeokpa players (2025)", authors: '', journal: '' },
+                { title: "Comparisons of musculoskeletal injuries among three different modalities of Taekwondo (Kyorugi, Poomsae, and Shibum) (2023)", authors: '', journal: '' },
+                { title: "Epidemiology of injuries in collegiate men\u2019s badminton: A five-year prospective study (2022)", authors: '', journal: '' },
+                { title: "Emotional changes and functional progressions during postoperative rehabilitation in collegiate student-athletes (2021)", authors: '', journal: '' },
+                { title: "Epidemiology of Korean collegiate injuries for six sports (2016)", authors: '', journal: '' },
+            ],
         };
 
         for (let i = 1; i <= 4; i++) {
             const listEl = document.getElementById(`paper-list-${i}`);
-            // Only render if empty to avoid duplicates
             if (listEl && listEl.children.length === 0) {
                 let htmlStr = '';
-                dummyData[i].forEach(paper => {
+                papersData[i].forEach(paper => {
                     htmlStr += `
-                        <li class="paper-item">
-                            <h4>${paper.title}</h4>
-                            <div class="paper-authors">${paper.authors}</div>
-                            <div class="paper-journal">${paper.journal}</div>
+                        <li class="paper-item" style="margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid #eee;">
+                            <h4 style="margin: 0; font-size: 1.05rem; color: #444; font-weight: 500; line-height: 1.4;">${paper.title}</h4>
                         </li>
                     `;
                 });
