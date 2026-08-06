@@ -866,50 +866,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ----------------------------------------------------
-// Department Activity Photo Modal Logic
+// Gangseok Detail Modal Logic
 // ----------------------------------------------------
+function openGangseokModal() {
+    const modal = document.getElementById('gangseok-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+        // Add a small delay for the fade-in effect
+        setTimeout(() => {
+            modal.style.opacity = '1';
+        }, 10);
+        document.body.style.overflow = 'hidden';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-    const photoModal = document.getElementById('activity-photo-modal');
-    const closePhotoModalBtn = document.getElementById('close-activity-modal');
-    const modalTitle = document.getElementById('activity-modal-title');
-    
-    const btnJeondam = document.getElementById('btn-jeondam-photos');
-    const btnRehab = document.getElementById('btn-rehab-photos');
+    const gangseokModal = document.getElementById('gangseok-modal');
+    const closeGangseokBtn = document.getElementById('close-gangseok-modal');
 
-    function openPhotoModal(title) {
-        if(photoModal) {
-            modalTitle.innerText = title;
-            photoModal.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-    }
-
-    if (btnJeondam) {
-        btnJeondam.addEventListener('click', (e) => {
-            e.preventDefault();
-            openPhotoModal('전담 AT 활동 사진');
-        });
-    }
-
-    if (btnRehab) {
-        btnRehab.addEventListener('click', (e) => {
-            e.preventDefault();
-            openPhotoModal('재활강사 활동 사진');
-        });
-    }
-
-    if (closePhotoModalBtn) {
-        closePhotoModalBtn.addEventListener('click', () => {
-            photoModal.style.display = 'none';
-            document.body.style.overflow = '';
+    if (closeGangseokBtn) {
+        closeGangseokBtn.addEventListener('click', () => {
+            if (gangseokModal) {
+                gangseokModal.style.opacity = '0';
+                setTimeout(() => {
+                    gangseokModal.style.display = 'none';
+                    document.body.style.overflow = '';
+                }, 300); // match transition duration
+            }
         });
     }
 
     // Close on outside click
     window.addEventListener('click', (event) => {
-        if (event.target === photoModal) {
-            photoModal.style.display = 'none';
-            document.body.style.overflow = '';
+        if (event.target === gangseokModal) {
+            gangseokModal.style.opacity = '0';
+            setTimeout(() => {
+                gangseokModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }, 300);
         }
     });
 });
