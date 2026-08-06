@@ -3091,3 +3091,39 @@ button {
     padding: 2px 8px;
     border-radius: 4px;
 }
+
+/* Fix Research Modal Positioning */
+#research-modal.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+}
+#research-modal .research-modal-content {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 90%;
+    max-height: 90vh;
+    overflow: hidden;
+    position: relative;
+    margin: 5vh auto;
+}
+#close-research-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: #666;
+    cursor: pointer;
+    z-index: 10;
+}
+#close-research-modal:hover {
+    color: var(--color-primary);
+}

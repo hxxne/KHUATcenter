@@ -784,7 +784,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Open Modal
     if (btnResearchModal) {
         btnResearchModal.addEventListener('click', () => {
-            researchModal.style.display = 'block';
+            researchModal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
             
             // Render placeholders if not already rendered
