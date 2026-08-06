@@ -440,7 +440,7 @@
 <p class="member-role">연구교수</p>
 </div>
 </div>
-                <div class="member-card">
+                <div class="member-card" style="cursor: pointer;" onclick="openProfModal('이재욱')">
 <div class="member-avatar placeholder-avatar"></div>
 <div class="member-info">
 <h4 class="member-name">이재욱</h4>
@@ -879,6 +879,29 @@
             
             // Professor Data
             const professorsData = {
+
+                "이재욱": {
+                    role: "연구팀장",
+                    photo: "assets/leejaewook.jpg", 
+                    degree: "체육학 석사 (Athletic Training 전공)",
+                    edu: "경희대학교",
+                    subject: "저항운동과컨디셔닝, 운동손상관리, 저항운동실습",
+                    lab: "경희대학교 선승관 AT Center",
+                    email: "jwlee0102@khu.ac.kr",
+                    career: [
+                        "현) 경희대학교 AT Center 연구팀장",
+                        "현) 경희대학교 스포츠의학과 강사",
+                        "전) 경희대학교 AT Center 실장",
+                        "전) Athletic Trainier, Kyung Hee University Taekwondo",
+                        "전) 경희대학교 스포츠재활팀 트레이너"
+                    ],
+                    research: [
+                        "Lower extremity muscle activation patterns during running in individuals with and without anterior cruciate ligament reconstruction (2026)",
+                        "Anticipatory effect on lower extremity muscle recruitment and activation patterns during single leg drop tasks (2026)",
+                        "Injury incidences related to acute-to-chronic workload ratios in Taekwondo: A prospective study with a 3-year follow-up (2025)",
+                        "Change in femoral cartilage cross-sectional area after aerobic and resistance exercise (2024)"
+                    ]
+                },
                 "박지홍": {
                     role: "센터장 / 교수",
                     photo: "assets/parkjihong.jpg",
