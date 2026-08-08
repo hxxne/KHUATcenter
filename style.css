@@ -3200,6 +3200,7 @@ button {
 
 .modern-avatar-container {
     width: 220px;
+    filter: drop-shadow(0 12px 20px rgba(164, 25, 44, 0.15));
     height: 250px;
     position: relative;
     margin-bottom: 30px;
@@ -3212,13 +3213,13 @@ button {
 /* Organic Blob Background using Kyung Hee Color */
 .modern-avatar-blob {
     position: absolute;
-    width: 190px;
-    height: 210px;
+    width: 200px;
+    height: 220px;
     background: linear-gradient(135deg, var(--color-primary) 0%, #7d1320 100%);
-    border-radius: 100px 100px 20px 20px; /* Modern Arch Shape */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border-radius: 0;
     bottom: 15px;
     z-index: 1;
-    box-shadow: 0 12px 24px rgba(164, 25, 44, 0.15);
 }
 
 .modern-avatar-img {
@@ -3236,15 +3237,16 @@ button {
 
 /* For avatars that don't have transparent backgrounds yet */
 .modern-avatar-img-fallback {
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 210px;
     object-fit: cover;
-    border-radius: 50%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    border-radius: 0;
     filter: grayscale(100%);
     z-index: 2;
     position: relative;
     bottom: 20px;
-    border: 3px solid #fff;
+    border: none;
 }
 
 .modern-profile-name {
