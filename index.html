@@ -602,7 +602,7 @@
 
             <!-- Sub Tabs Navigation -->
             <div class="sub-tabs-container">
-                <button class="sub-tab-btn active" id="btn-tab-sports" onclick="switchSubTab('sports')">체육부 전담 AT</button>
+                <button class="sub-tab-btn active" id="btn-tab-sports" onclick="switchSubTab('sports')">체육부 AT</button>
                 <button class="sub-tab-btn" id="btn-tab-rehab" onclick="switchSubTab('rehab')">스포츠 재활 강사</button>
             </div>
 
@@ -610,9 +610,51 @@
             <div id="sub-tab-sports" class="sub-tab-pane active">
                 <div class="sport-card-grid">
                     <div class="sport-card" onclick="openSportModal('축구')">
-                        <div class="sport-card-icon"><i class="fa-solid fa-futbol"></i></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-futbol" style="font-size: 3rem;"></i></div>
                         <div class="sport-card-name">축구</div>
                     </div>
+                    <div class="sport-card" onclick="openSportModal('야구')">
+                        <div class="sport-card-icon"><img src="assets/baseball-icon.png" alt="야구" style="width: 50px; height: 50px; opacity: 0.8;"></div>
+                        <div class="sport-card-name">야구</div>
+                    </div>
+                    <div class="sport-card" onclick="openSportModal('농구')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-basketball" style="font-size: 3rem;"></i></div>
+                        <div class="sport-card-name">농구</div>
+                    </div>
+                    <div class="sport-card" onclick="openSportModal('배구')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-volleyball" style="font-size: 3rem;"></i></div>
+                        <div class="sport-card-name">배구</div>
+                    </div>
+                    <div class="sport-card" onclick="openSportModal('럭비')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-football" style="font-size: 3rem;"></i></div>
+                        <div class="sport-card-name">럭비</div>
+                    </div>
+                    <div class="sport-card" onclick="openSportModal('골프')">
+                        <div class="sport-card-icon"><img src="assets/golf_icon.png" alt="골프" style="width: 50px; height: 50px; opacity: 0.8;"></div>
+                        <div class="sport-card-name">골프</div>
+                    </div>
+                    <div class="sport-card" onclick="openSportModal('배드민턴')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-table-tennis-paddle-ball" style="font-size: 3rem;"></i></div>
+                        <div class="sport-card-name">배드민턴</div>
+                    </div>
+                    <div class="sport-card" onclick="openSportModal('핸드볼')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-hand" style="font-size: 3rem;"></i></div>
+                        <div class="sport-card-name">핸드볼</div>
+                    </div>
+                    <div class="sport-card" onclick="openSportModal('시범단')">
+                        <div class="sport-card-icon"><img src="assets/demo_team_icon.png" alt="시범단" style="width: 50px; height: 50px; opacity: 0.8;"></div>
+                        <div class="sport-card-name">시범단</div>
+                    </div>
+                    <div class="sport-card" onclick="openSportModal('겨루기')">
+                        <div class="sport-card-icon"><img src="assets/kyorugi_icon.png" alt="겨루기" style="width: 50px; height: 50px; opacity: 0.8;"></div>
+                        <div class="sport-card-name">겨루기</div>
+                    </div>
+                    <div class="sport-card" onclick="openSportModal('품새')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-person-martial-arts" style="font-size: 3rem;"></i></div>
+                        <div class="sport-card-name">품새</div>
+                    </div>
+                </div>
+            </div>
                     <div class="sport-card" onclick="openSportModal('골프')">
                         <div class="sport-card-icon"><i class="fa-solid fa-golf-ball-tee"></i></div>
                         <div class="sport-card-name">골프</div>
@@ -821,7 +863,7 @@
             <button class="profile-modal-close" style="top: 15px; right: 15px; color: #fff; background: rgba(0,0,0,0.2);" onclick="closeSportModal()"><i class="fa-solid fa-xmark"></i></button>
             
             <div class="sport-modal-header">
-                <i id="s-modal-icon" class="fa-solid fa-futbol" style="font-size: 2.5rem;"></i>
+                <span id="s-modal-icon" style="font-size: 2.5rem;"><i class="fa-solid fa-futbol"></i></span>
                 <h3 class="sport-modal-title" id="s-modal-title">축구 전담 AT</h3>
             </div>
             

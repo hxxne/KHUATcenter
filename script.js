@@ -978,42 +978,44 @@ function switchSubTab(tabId) {
 // Sport Specific Modal Logic
 // ==========================================
 const sportsData = {
-    "축구": { icon: "fa-futbol", head: "담당자 이름", sub: ["보조 AT 1", "보조 AT 2"] },
-    "골프": { icon: "fa-golf-ball-tee", head: "담당자 이름", sub: ["보조 AT 1"] },
-    "농구": { icon: "fa-basketball", head: "담당자 이름", sub: ["보조 AT 1", "보조 AT 2"] },
-    "배드민턴": { icon: "fa-table-tennis-paddle-ball", head: "담당자 이름", sub: ["보조 AT 1"] },
-    "배구": { icon: "fa-volleyball", head: "담당자 이름", sub: ["보조 AT 1"] },
-    "핸드볼": { icon: "fa-hand", head: "담당자 이름", sub: ["보조 AT 1"] },
-    "럭비": { icon: "fa-football", head: "담당자 이름", sub: ["보조 AT 1"] },
-    "시범단": { icon: "fa-star", head: "담당자 이름", sub: ["보조 AT 1"] },
-    "겨루기": { icon: "fa-hand-fist", head: "담당자 이름", sub: ["보조 AT 1"] },
-    "품새": { icon: "fa-person-martial-arts", head: "담당자 이름", sub: ["보조 AT 1"] },
-    "야구": { icon: "fa-baseball-bat-ball", head: "담당자 이름", sub: ["보조 AT 1"] }
+    "축구": { icon: '<i class="fa-solid fa-futbol"></i>', head: "이강석", sub: ["천지훈", "문채연", "최민혁", "조연지"] },
+    "야구": { icon: '<img src="assets/baseball-icon.png" style="width:40px;height:40px;filter:brightness(0) invert(1);">', head: "오성민", sub: ["천지훈"] },
+    "농구": { icon: '<i class="fa-solid fa-basketball"></i>', head: "이재욱", sub: ["김준영"] },
+    "배구": { icon: '<i class="fa-solid fa-volleyball"></i>', head: "이재욱", sub: [] },
+    "럭비": { icon: '<i class="fa-solid fa-football"></i>', head: "오성민", sub: [] },
+    "골프": { icon: '<img src="assets/golf_icon.png" style="width:40px;height:40px;filter:brightness(0) invert(1);">', head: "이재욱", sub: [] },
+    "배드민턴": { icon: '<i class="fa-solid fa-table-tennis-paddle-ball"></i>', head: "김준영", sub: [] },
+    "핸드볼": { icon: '<i class="fa-solid fa-hand"></i>', head: "오성민", sub: [] },
+    "시범단": { icon: '<img src="assets/demo_team_icon.png" style="width:40px;height:40px;filter:brightness(0) invert(1);">', head: "김준영", sub: [] },
+    "겨루기": { icon: '<img src="assets/kyorugi_icon.png" style="width:40px;height:40px;filter:brightness(0) invert(1);">', head: "김준영", sub: [] },
+    "품새": { icon: '<i class="fa-solid fa-person-martial-arts"></i>', head: "김준영", sub: [] }
 };
 
 function openSportModal(sportName) {
-    const data = sportsData[sportName] || { icon: "fa-star", head: "담당자 이름", sub: ["업데이트 예정"] };
+    const data = sportsData[sportName] || { icon: '<i class="fa-solid fa-star"></i>', head: "담당자 이름", sub: ["업데이트 예정"] };
     
-    // Update Modal Content
     document.getElementById('s-modal-title').innerText = sportName + ' 전담 AT';
-    document.getElementById('s-modal-icon').className = 'fa-solid ' + data.icon;
+    document.getElementById('s-modal-icon').innerHTML = data.icon;
     
-    document.getElementById('s-modal-head-name').innerText = data.head + ' (업데이트 예정)';
+    document.getElementById('s-modal-head-name').innerText = data.head;
     document.getElementById('s-modal-head-role').innerText = '경희대학교 ' + sportName + ' 전담 AT';
     
-    // Update Sub AT list
     const subList = document.getElementById('s-modal-sub-list');
     subList.innerHTML = '';
-    data.sub.forEach(name => {
+    if (data.sub.length > 0) {
+        data.sub.forEach(name => {
+            const li = document.createElement('li');
+            li.innerText = name;
+            subList.appendChild(li);
+        });
+    } else {
         const li = document.createElement('li');
-        li.innerText = name + ' (업데이트 예정)';
+        li.innerText = '보조 AT 없음';
         subList.appendChild(li);
-    });
+    }
     
-    // Show Modal
     const modal = document.getElementById('new-sport-modal');
     modal.style.display = 'flex';
-    // Small delay to trigger CSS transition
     setTimeout(() => {
         modal.classList.add('show');
     }, 10);
