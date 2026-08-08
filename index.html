@@ -594,168 +594,271 @@
 
             </div>
         
-            <!-- Group 4: Sports AT -->
+            <!-- Group 4: Sports AT & Rehab -->
             <div class="modern-group-header">
-                <h3 class="modern-group-title"><span class="seq">04</span> 체육부 AT 소개</h3>
+                <h3 class="modern-group-title"><span class="seq">04</span> 체육부 AT 및 스포츠 재활 강사 소개</h3>
                 <div class="modern-group-line"></div>
             </div>
-            
-            <div class="modern-profile-grid">
-                <!-- 축구 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=축구" alt="축구 AT" class="modern-avatar-img-fallback">
+
+            <!-- Sub Tabs Navigation -->
+            <div class="sub-tabs-container">
+                <button class="sub-tab-btn active" id="btn-tab-sports" onclick="switchSubTab('sports')">체육부 전담 AT</button>
+                <button class="sub-tab-btn" id="btn-tab-rehab" onclick="switchSubTab('rehab')">스포츠 재활 강사</button>
+            </div>
+
+            <!-- Tab Content: Sports AT -->
+            <div id="sub-tab-sports" class="sub-tab-pane active">
+                <div class="sport-card-grid">
+                    <div class="sport-card" onclick="openSportModal('축구')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-futbol"></i></div>
+                        <div class="sport-card-name">축구</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 축구 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
-                </div>
-                <!-- 골프 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=골프" alt="골프 AT" class="modern-avatar-img-fallback">
+                    <div class="sport-card" onclick="openSportModal('골프')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-golf-ball-tee"></i></div>
+                        <div class="sport-card-name">골프</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 골프 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
-                </div>
-                <!-- 농구 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=농구" alt="농구 AT" class="modern-avatar-img-fallback">
+                    <div class="sport-card" onclick="openSportModal('농구')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-basketball"></i></div>
+                        <div class="sport-card-name">농구</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 농구 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
-                </div>
-                <!-- 배드민턴 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=배드민턴" alt="배드민턴 AT" class="modern-avatar-img-fallback">
+                    <div class="sport-card" onclick="openSportModal('배드민턴')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
+                        <div class="sport-card-name">배드민턴</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 배드민턴 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
-                </div>
-                <!-- 배구 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=배구" alt="배구 AT" class="modern-avatar-img-fallback">
+                    <div class="sport-card" onclick="openSportModal('배구')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-volleyball"></i></div>
+                        <div class="sport-card-name">배구</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 배구 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
-                </div>
-                <!-- 핸드볼 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=핸드볼" alt="핸드볼 AT" class="modern-avatar-img-fallback">
+                    <div class="sport-card" onclick="openSportModal('핸드볼')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-hand"></i></div>
+                        <div class="sport-card-name">핸드볼</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 핸드볼 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
-                </div>
-                <!-- 럭비 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=럭비" alt="럭비 AT" class="modern-avatar-img-fallback">
+                    <div class="sport-card" onclick="openSportModal('럭비')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-football"></i></div>
+                        <div class="sport-card-name">럭비</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 럭비 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
-                </div>
-                <!-- 시범단 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=시범단" alt="시범단 AT" class="modern-avatar-img-fallback">
+                    <div class="sport-card" onclick="openSportModal('시범단')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-star"></i></div>
+                        <div class="sport-card-name">시범단</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 시범단 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
-                </div>
-                <!-- 겨루기 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=겨루기" alt="겨루기 AT" class="modern-avatar-img-fallback">
+                    <div class="sport-card" onclick="openSportModal('겨루기')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-hand-fist"></i></div>
+                        <div class="sport-card-name">겨루기</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 겨루기 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
-                </div>
-                <!-- 품새 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=품새" alt="품새 AT" class="modern-avatar-img-fallback">
+                    <div class="sport-card" onclick="openSportModal('품새')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-person-martial-arts"></i></div>
+                        <div class="sport-card-name">품새</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 품새 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
-                </div>
-                <!-- 야구 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=야구" alt="야구 AT" class="modern-avatar-img-fallback">
+                    <div class="sport-card" onclick="openSportModal('야구')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-baseball-bat-ball"></i></div>
+                        <div class="sport-card-name">야구</div>
                     </div>
-                    <div class="modern-profile-name">담당자 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>경희대학교 야구 전담 AT</li>
-                        <li>(이력 추가 예정)</li>
-                    </ul>
                 </div>
             </div>
 
-            <!-- Group 5: Rehab Instructors -->
-            <div class="modern-group-header">
-                <h3 class="modern-group-title"><span class="seq">05</span> 스포츠재활강사 소개</h3>
-                <div class="modern-group-line"></div>
+            <!-- Tab Content: Rehab -->
+            <div id="sub-tab-rehab" class="sub-tab-pane">
+                <div class="modern-profile-grid">
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_기윤서.jpg" alt="기윤서" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">기윤서</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_유승아.jpg" alt="유승아" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">유승아</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_조현준.jpg" alt="조현준" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">조현준</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_진승희.jpg" alt="진승희" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">진승희</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_이예인.jpg" alt="이예인" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">이예인</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_문수연.jpg" alt="문수연" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">문수연</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_안은지.jpg" alt="안은지" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">안은지</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_윤서연.jpg" alt="윤서연" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">윤서연</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_유영민.jpg" alt="유영민" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">유영민</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_우지윤.jpg" alt="우지윤" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">우지윤</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_천지훈.jpg" alt="천지훈" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">천지훈</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_문채연.jpg" alt="문채연" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">문채연</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_최민혁.jpg" alt="최민혁" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">최민혁</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_조연지.jpg" alt="조연지" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">조연지</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                    <div class="modern-profile-card">
+                        <div class="modern-avatar-container">
+                            <div class="modern-avatar-blob"></div>
+                            <img src="assets/profile_이채원.jpg" alt="이채원" class="modern-avatar-img-fallback" onerror="this.src='https://via.placeholder.com/180x180?text=Profile'">
+                        </div>
+                        <div class="modern-profile-name">이채원</div>
+                        <ul class="modern-profile-exp">
+                            <li>스포츠 재활강사</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- New Generic Sport Modal -->
+    <div id="new-sport-modal" class="modal" onclick="closeSportModal()">
+        <div class="modal-content sport-modal-container" style="padding: 0; background: #fff; max-width: 900px; border-radius: 20px;" onclick="event.stopPropagation()">
+            <button class="profile-modal-close" style="top: 15px; right: 15px; color: #fff; background: rgba(0,0,0,0.2);" onclick="closeSportModal()"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="sport-modal-header">
+                <i id="s-modal-icon" class="fa-solid fa-futbol" style="font-size: 2.5rem;"></i>
+                <h3 class="sport-modal-title" id="s-modal-title">축구 전담 AT</h3>
             </div>
             
-            <div class="modern-profile-grid">
-                <!-- 추가 예정 -->
-                <div class="modern-profile-card">
-                    <div class="modern-avatar-container">
-                        <div class="modern-avatar-blob"></div>
-                        <img src="https://via.placeholder.com/180x180?text=Rehab" alt="스포츠재활강사" class="modern-avatar-img-fallback">
+            <div class="sport-modal-body">
+                <div class="sport-at-section">
+                    <div class="sport-at-block">
+                        <h4>전담 AT (Head AT)</h4>
+                        <div class="head-at-profile">
+                            <img id="s-modal-head-img" src="https://via.placeholder.com/100x100?text=AT" alt="전담 AT" class="head-at-avatar">
+                            <div class="head-at-info">
+                                <h5 id="s-modal-head-name">담당자 이름</h5>
+                                <p id="s-modal-head-role">경희대학교 축구 전담 AT</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="modern-profile-name">재활강사 (업데이트 예정)</div>
-                    <ul class="modern-profile-exp">
-                        <li>소속 및 이력 추가 예정</li>
-                    </ul>
+                    
+                    <div class="sport-at-block">
+                        <h4>보조 AT (Assistant AT)</h4>
+                        <ul class="sub-at-list" id="s-modal-sub-list">
+                            <li>업데이트 예정</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="sport-photos-section">
+                    <h4>부서별 활동 사진</h4>
+                    <div class="sport-photo-grid">
+                        <div class="sport-photo-placeholder"><i class="fa-solid fa-camera"></i>활동 사진 1</div>
+                        <div class="sport-photo-placeholder"><i class="fa-solid fa-camera"></i>활동 사진 2</div>
+                        <div class="sport-photo-placeholder"><i class="fa-solid fa-camera"></i>활동 사진 3</div>
+                        <div class="sport-photo-placeholder"><i class="fa-solid fa-camera"></i>활동 사진 4</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
 <!-- Awards Section -->
     <section id="awards" class="section-padding bg-light">
         <div class="container">

@@ -957,3 +957,74 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// ==========================================
+// Sub-Tabs Navigation (Sports AT vs Rehab)
+// ==========================================
+function switchSubTab(tabId) {
+    // 1. Remove active class from all buttons and panes
+    const buttons = document.querySelectorAll('.sub-tab-btn');
+    const panes = document.querySelectorAll('.sub-tab-pane');
+    
+    buttons.forEach(btn => btn.classList.remove('active'));
+    panes.forEach(pane => pane.classList.remove('active'));
+    
+    // 2. Add active class to clicked button and target pane
+    document.getElementById('btn-tab-' + tabId).classList.add('active');
+    document.getElementById('sub-tab-' + tabId).classList.add('active');
+}
+
+// ==========================================
+// Sport Specific Modal Logic
+// ==========================================
+const sportsData = {
+    "축구": { icon: "fa-futbol", head: "담당자 이름", sub: ["보조 AT 1", "보조 AT 2"] },
+    "골프": { icon: "fa-golf-ball-tee", head: "담당자 이름", sub: ["보조 AT 1"] },
+    "농구": { icon: "fa-basketball", head: "담당자 이름", sub: ["보조 AT 1", "보조 AT 2"] },
+    "배드민턴": { icon: "fa-table-tennis-paddle-ball", head: "담당자 이름", sub: ["보조 AT 1"] },
+    "배구": { icon: "fa-volleyball", head: "담당자 이름", sub: ["보조 AT 1"] },
+    "핸드볼": { icon: "fa-hand", head: "담당자 이름", sub: ["보조 AT 1"] },
+    "럭비": { icon: "fa-football", head: "담당자 이름", sub: ["보조 AT 1"] },
+    "시범단": { icon: "fa-star", head: "담당자 이름", sub: ["보조 AT 1"] },
+    "겨루기": { icon: "fa-hand-fist", head: "담당자 이름", sub: ["보조 AT 1"] },
+    "품새": { icon: "fa-person-martial-arts", head: "담당자 이름", sub: ["보조 AT 1"] },
+    "야구": { icon: "fa-baseball-bat-ball", head: "담당자 이름", sub: ["보조 AT 1"] }
+};
+
+function openSportModal(sportName) {
+    const data = sportsData[sportName] || { icon: "fa-star", head: "담당자 이름", sub: ["업데이트 예정"] };
+    
+    // Update Modal Content
+    document.getElementById('s-modal-title').innerText = sportName + ' 전담 AT';
+    document.getElementById('s-modal-icon').className = 'fa-solid ' + data.icon;
+    
+    document.getElementById('s-modal-head-name').innerText = data.head + ' (업데이트 예정)';
+    document.getElementById('s-modal-head-role').innerText = '경희대학교 ' + sportName + ' 전담 AT';
+    
+    // Update Sub AT list
+    const subList = document.getElementById('s-modal-sub-list');
+    subList.innerHTML = '';
+    data.sub.forEach(name => {
+        const li = document.createElement('li');
+        li.innerText = name + ' (업데이트 예정)';
+        subList.appendChild(li);
+    });
+    
+    // Show Modal
+    const modal = document.getElementById('new-sport-modal');
+    modal.style.display = 'flex';
+    // Small delay to trigger CSS transition
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 10);
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSportModal() {
+    const modal = document.getElementById('new-sport-modal');
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }, 300);
+}
