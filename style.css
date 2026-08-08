@@ -3545,3 +3545,26 @@ button {
 .sport-card-icon i, #s-modal-icon i {
     color: #A50034 !important;
 }
+
+
+/* Icon styling to match the user's reference image */
+.sport-card-icon, #s-modal-icon {
+    background-color: #FFF0F2 !important; /* Light red circle */
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0 auto 15px auto !important;
+}
+.sport-card-icon i, #s-modal-icon i {
+    color: #A50034 !important; /* Dark red icon */
+    font-size: 1.8rem !important;
+}
+/* Apply brand red filter to custom image icons */
+.custom-img-icon {
+    width: 32px !important;
+    height: 32px !important;
+    filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%) !important;
+}

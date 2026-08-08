@@ -978,17 +978,17 @@ function switchSubTab(tabId) {
 // Sport Specific Modal Logic
 // ==========================================
 const sportsData = {
-    "축구": { icon: '<i class="fa-solid fa-futbol"></i>', head: "이강석", sub: ["천지훈", "문채연", "최민혁", "조연지"] },
-    "야구": { icon: '<img src="assets/baseball-icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "오성민", sub: ["천지훈"] },
-    "농구": { icon: '<i class="fa-solid fa-basketball"></i>', head: "이재욱", sub: ["김준영"] },
-    "배구": { icon: '<i class="fa-solid fa-volleyball"></i>', head: "이재욱", sub: [] },
-    "럭비": { icon: '<i class="fa-solid fa-football"></i>', head: "오성민", sub: [] },
-    "골프": { icon: '<img src="assets/golf_icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "이재욱", sub: [] },
-    "배드민턴": { icon: '<i class="fa-solid fa-table-tennis-paddle-ball"></i>', head: "김준영", sub: [] },
-    "핸드볼": { icon: '<i class="fa-solid fa-hand"></i>', head: "오성민", sub: [] },
-    "시범단": { icon: '<img src="assets/demo_team_icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "김준영", sub: [] },
-    "겨루기": { icon: '<img src="assets/kyorugi_icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "김준영", sub: [] },
-    "품새": { icon: '<img src="assets/kyorugi_icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "김준영", sub: [] }
+    "축구": { icon: '<i class="fa-solid fa-futbol"></i>', head: "강석", sub: [] },
+    "야구": { icon: '<img src="assets/baseball-icon.png" class="custom-img-icon">', head: "담당자 미정", sub: [] },
+    "농구": { icon: '<i class="fa-solid fa-basketball"></i>', head: "이상준", sub: [] },
+    "배구": { icon: '<i class="fa-solid fa-volleyball"></i>', head: "박세민", sub: [] },
+    "럭비": { icon: '<i class="fa-solid fa-football"></i>', head: "유영민", sub: [] },
+    "골프": { icon: '<img src="assets/golf_icon.png" class="custom-img-icon">', head: "담당자 미정", sub: [] },
+    "배드민턴": { icon: '<i class="fa-solid fa-table-tennis-paddle-ball"></i>', head: "권남준", sub: [] },
+    "핸드볼": { icon: '<i class="fa-solid fa-circle-dot"></i>', head: "기윤서", sub: [] },
+    "시범단": { icon: '<img src="assets/demo_team_icon.png" class="custom-img-icon">', head: "문채연", sub: [] },
+    "겨루기": { icon: '<img src="assets/kyorugi_icon.png" class="custom-img-icon">', head: "유지민, 한혜서", sub: [] },
+    "품새": { icon: '<i class="fa-solid fa-shirt"></i>', head: "유승아", sub: [] }
 };
 
 function openSportModal(sportName) {
