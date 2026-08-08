@@ -988,7 +988,7 @@ const sportsData = {
     "핸드볼": { icon: '<i class="fa-solid fa-hand"></i>', head: "오성민", sub: [] },
     "시범단": { icon: '<img src="assets/demo_team_icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "김준영", sub: [] },
     "겨루기": { icon: '<img src="assets/kyorugi_icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "김준영", sub: [] },
-    "품새": { icon: '<i class="fa-solid fa-person-martial-arts"></i>', head: "김준영", sub: [] }
+    "품새": { icon: '<img src="assets/kyorugi_icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "김준영", sub: [] }
 };
 
 function openSportModal(sportName) {

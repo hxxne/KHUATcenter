@@ -3526,3 +3526,22 @@ button {
     align-items: center !important;
     justify-content: center !important;
 }
+
+
+/* Force Modal to always appear in current viewport center */
+#new-sport-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 999999 !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: rgba(0, 0, 0, 0.75) !important;
+}
+
+/* Ensure all FontAwesome icons match the exact brand red of the image pictograms */
+.sport-card-icon i, #s-modal-icon i {
+    color: #A50034 !important;
+}
