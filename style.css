@@ -3200,7 +3200,6 @@ button {
 
 .modern-avatar-container {
     width: 220px;
-    filter: drop-shadow(0 12px 20px rgba(164, 25, 44, 0.15));
     height: 250px;
     position: relative;
     margin-bottom: 30px;
@@ -3213,12 +3212,13 @@ button {
 /* Organic Blob Background using Kyung Hee Color */
 .modern-avatar-blob {
     position: absolute;
-    width: 200px;
-    height: 220px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #7d1320 100%);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    border-radius: 0;
-    bottom: 15px;
+    width: 100%;
+    height: 85%;
+    /* Soft, muted gray/beige background like the reference posters */
+    background: linear-gradient(135deg, #f0f2f5 0%, #e2e6ea 100%);
+    border-radius: 0; /* Sharp, modern rectangle */
+    bottom: 0;
+    left: 0;
     z-index: 1;
 }
 
@@ -3237,15 +3237,16 @@ button {
 
 /* For avatars that don't have transparent backgrounds yet */
 .modern-avatar-img-fallback {
-    width: 190px;
-    height: 210px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    object-position: bottom center;
+    clip-path: none;
     border-radius: 0;
-    filter: grayscale(100%);
+    filter: grayscale(100%) contrast(1.1);
     z-index: 2;
     position: relative;
-    bottom: 20px;
+    bottom: 0;
     border: none;
 }
 
