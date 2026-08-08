@@ -3568,3 +3568,11 @@ button {
     height: 32px !important;
     filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%) !important;
 }
+
+
+/* Uniform SVG Icons */
+.custom-svg-icon {
+    width: 36px !important;
+    height: 36px !important;
+    filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%) !important;
+}
