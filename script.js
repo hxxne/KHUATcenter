@@ -979,15 +979,15 @@ function switchSubTab(tabId) {
 // ==========================================
 const sportsData = {
     "축구": { icon: '<i class="fa-solid fa-futbol"></i>', head: "이강석", sub: ["천지훈", "문채연", "최민혁", "조연지"] },
-    "야구": { icon: '<img src="assets/baseball-icon.png" style="width:40px;height:40px;filter:brightness(0) invert(1);">', head: "오성민", sub: ["천지훈"] },
+    "야구": { icon: '<img src="assets/baseball-icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "오성민", sub: ["천지훈"] },
     "농구": { icon: '<i class="fa-solid fa-basketball"></i>', head: "이재욱", sub: ["김준영"] },
     "배구": { icon: '<i class="fa-solid fa-volleyball"></i>', head: "이재욱", sub: [] },
     "럭비": { icon: '<i class="fa-solid fa-football"></i>', head: "오성민", sub: [] },
-    "골프": { icon: '<img src="assets/golf_icon.png" style="width:40px;height:40px;filter:brightness(0) invert(1);">', head: "이재욱", sub: [] },
+    "골프": { icon: '<img src="assets/golf_icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "이재욱", sub: [] },
     "배드민턴": { icon: '<i class="fa-solid fa-table-tennis-paddle-ball"></i>', head: "김준영", sub: [] },
     "핸드볼": { icon: '<i class="fa-solid fa-hand"></i>', head: "오성민", sub: [] },
-    "시범단": { icon: '<img src="assets/demo_team_icon.png" style="width:40px;height:40px;filter:brightness(0) invert(1);">', head: "김준영", sub: [] },
-    "겨루기": { icon: '<img src="assets/kyorugi_icon.png" style="width:40px;height:40px;filter:brightness(0) invert(1);">', head: "김준영", sub: [] },
+    "시범단": { icon: '<img src="assets/demo_team_icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "김준영", sub: [] },
+    "겨루기": { icon: '<img src="assets/kyorugi_icon.png" style="width:40px;height:40px; filter: invert(12%) sepia(85%) saturate(5412%) hue-rotate(334deg) brightness(85%) contrast(116%);">', head: "김준영", sub: [] },
     "품새": { icon: '<i class="fa-solid fa-person-martial-arts"></i>', head: "김준영", sub: [] }
 };
 
