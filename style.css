@@ -3275,3 +3275,25 @@ button {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
 }
+
+/* Improve Readability and Word Breaking for Korean Text in Core Pillars */
+.pillar-desc, 
+.pillar-card p,
+.pillar-title,
+.card-title,
+.hero-description,
+.modern-profile-exp li,
+.modern-profile-name {
+    word-break: keep-all !important;
+    word-wrap: break-word !important;
+    white-space: normal !important;
+}
+
+/* Add a bit more line-height to pillar descriptions for better readability */
+.pillar-desc {
+    line-height: 1.7 !important;
+}
+
+.pillar-card p {
+    line-height: 1.6 !important;
+}
