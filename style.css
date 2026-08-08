@@ -3212,13 +3212,13 @@ button {
 /* Organic Blob Background using Kyung Hee Color */
 .modern-avatar-blob {
     position: absolute;
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #800000 100%);
-    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-    bottom: 10px;
+    width: 190px;
+    height: 210px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #7d1320 100%);
+    border-radius: 100px 100px 20px 20px; /* Modern Arch Shape */
+    bottom: 15px;
     z-index: 1;
-    box-shadow: 0 10px 20px rgba(164, 25, 44, 0.2);
+    box-shadow: 0 12px 24px rgba(164, 25, 44, 0.15);
 }
 
 .modern-avatar-img {
