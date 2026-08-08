@@ -979,11 +979,11 @@ function switchSubTab(tabId) {
 // ==========================================
 const sportsData = {
     "축구": { icon: '<i class="fa-solid fa-futbol"></i>', head: "강석", sub: [] },
-    "야구": { icon: '<img src="assets/baseball-icon.png" class="custom-img-icon">', head: "담당자 미정", sub: [] },
+    "야구": { icon: '<img src="assets/baseball-icon.png" class="custom-img-icon">', head: "유주승", sub: [] },
     "농구": { icon: '<i class="fa-solid fa-basketball"></i>', head: "이상준", sub: [] },
     "배구": { icon: '<i class="fa-solid fa-volleyball"></i>', head: "박세민", sub: [] },
     "럭비": { icon: '<i class="fa-solid fa-football"></i>', head: "유영민", sub: [] },
-    "골프": { icon: '<img src="assets/golf_icon.png" class="custom-img-icon">', head: "담당자 미정", sub: [] },
+    "골프": { icon: '<img src="assets/golf_icon.png" class="custom-img-icon">', head: "이예인", sub: [] },
     "배드민턴": { icon: '<i class="fa-solid fa-table-tennis-paddle-ball"></i>', head: "권남준", sub: [] },
     "핸드볼": { icon: '<i class="fa-solid fa-circle-dot"></i>', head: "기윤서", sub: [] },
     "시범단": { icon: '<img src="assets/demo_team_icon.png" class="custom-img-icon">', head: "문채연", sub: [] },
