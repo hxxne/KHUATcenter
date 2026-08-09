@@ -987,7 +987,7 @@ const sportsData = {
     "배드민턴": { icon: '<img src="assets/icons/배드민턴.svg" class="custom-svg-icon">', head: "권남준", sub: [] },
     "핸드볼": { icon: '<img src="assets/icons/핸드볼.svg" class="custom-svg-icon">', head: "기윤서", sub: ["정준영", "남가민", "박다은", "김민지"] },
     "시범단": { icon: '<img src="assets/icons/시범단.svg" class="custom-svg-icon">', head: "문채연", sub: ["우민서", "김한결", "김다은", "권인혜", "김다감", "남수현"] },
-    "겨루기": { icon: '<img src="assets/icons/겨루기.svg" class="custom-svg-icon">', head: "유지민, 한혜서", sub: ["정도엽", "조연지", "박은지"] },
+    "겨루기": { icon: '<img src="assets/icons/겨루기.svg" class="custom-svg-icon">', head: ["유지민", "한혜서"], sub: ["정도엽", "조연지", "박은지"] },
     "품새": { icon: '<img src="assets/icons/품새.svg" class="custom-svg-icon">', head: "유승아", sub: ["홍혜원", "권준휘", "이은채", "김형우"] },
     "센터": { icon: '<img src="assets/icons/센터.svg" class="custom-svg-icon">', head: "담당자 미정", sub: ["권준홍", "천지훈", "안은지", "이천이"] }
 };
