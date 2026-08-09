@@ -3591,7 +3591,7 @@ button {
     position: relative;
     width: 100%;
     border-radius: 20px;
-    background: linear-gradient(135deg, #7a111c, var(--primary-color), #c21d2f);
+    background: linear-gradient(135deg, #7a111c, var(--color-primary), #c21d2f);
     overflow: hidden;
     padding: 60px 40px;
     text-align: center;
@@ -3734,7 +3734,7 @@ button {
 }
 
 .contact-info strong {
-    color: var(--primary-color);
+    color: var(--color-primary);
 }
 
 /* Hall of Fame */
@@ -3792,7 +3792,7 @@ button {
 }
 
 .hof-year-badge {
-    background: var(--primary-color);
+    background: var(--color-primary);
     color: white;
     font-weight: 700;
     padding: 6px 12px;
