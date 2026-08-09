@@ -1,0 +1,222 @@
+
+/* =========================================
+   Donate Section Styles
+========================================= */
+#donate {
+    background-color: var(--light-gray);
+}
+
+.donate-info-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.donate-banner {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.donate-banner-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.donate-banner-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+.donate-icon {
+    font-size: 3.5rem;
+    color: rgba(255,255,255,0.9);
+}
+
+.donate-account-card {
+    background: white;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.donate-account-card h4 {
+    font-size: 1.4rem;
+    color: var(--dark-gray);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.donate-instruction {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.account-box {
+    background-color: #f8f9fa;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.account-box span {
+    display: block;
+}
+
+.bank-name {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.account-number {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.account-holder {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.donate-contact-hint {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: rgba(144, 21, 34, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.donate-contact-hint i {
+    color: var(--primary-color);
+    margin-top: 3px;
+}
+
+.donate-contact-hint p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Donors Accordion */
+.donors-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: var(--dark-gray);
+}
+
+.donor-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.accordion-item:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.accordion-header {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
+
+.accordion-header:hover {
+    background-color: #fafafa;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+    color: #888;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+.accordion-item.active .accordion-header {
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background-color: #fafafa;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 2000px; /* Arbitrary large height */
+    padding: 25px;
+}
+
+.donor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.donor-grid li {
+    background: white;
+    padding: 12px;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid #eee;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .donate-info-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .account-number {
+        font-size: 1.4rem;
+    }
+}
