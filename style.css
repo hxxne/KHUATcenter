@@ -3579,44 +3579,55 @@ button {
 \n\n
 
 
+
 /* =========================================
    Donate Section Styles
 ========================================= */
 #donate {
-    background-color: #f8f9fc;
+    background-color: transparent; /* Match site background */
 }
 
-/* Campaign Banner */
-.campaign-banner {
-    position: relative;
-    width: 100%;
-    border-radius: 20px;
+/* 2-Column Layout */
+.donate-layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+    align-items: center;
+}
+
+/* Left: Campaign Story */
+.campaign-story-card {
     background: linear-gradient(135deg, #7a111c, var(--color-primary), #c21d2f);
-    overflow: hidden;
-    padding: 60px 40px;
-    text-align: center;
     color: white;
-    box-shadow: 0 20px 40px rgba(144, 21, 34, 0.2);
-    margin-bottom: -60px; /* Overlap with banking card */
-    z-index: 1;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(144, 21, 34, 0.15);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
 }
 
-.campaign-banner::before {
+.campaign-story-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: url('https://www.transparenttextures.com/patterns/cubes.png');
     opacity: 0.1;
-    z-index: 2;
+    z-index: 1;
 }
 
-.campaign-content {
+.campaign-story-card > * {
     position: relative;
-    z-index: 3;
+    z-index: 2;
 }
 
 .campaign-badge {
     display: inline-block;
+    align-self: flex-start;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     padding: 6px 16px;
@@ -3624,41 +3635,37 @@ button {
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border: 1px solid rgba(255,255,255,0.3);
 }
 
 .campaign-title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 800;
     margin-bottom: 15px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    line-height: 1.3;
 }
 
 .campaign-subtitle {
     font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    opacity: 0.9;
+    opacity: 0.95;
     line-height: 1.6;
+    margin: 0;
 }
 
-/* Premium Banking Card */
+/* Right: Premium Banking Card */
 .banking-card-wrapper {
+    height: 100%;
     display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 5;
-    margin-bottom: 80px;
-    padding: 0 20px;
+    align-items: center;
 }
 
 .banking-card {
     background: white;
     width: 100%;
-    max-width: 700px;
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08), 0 5px 15px rgba(0,0,0,0.03);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.06), 0 5px 15px rgba(0,0,0,0.02);
     overflow: hidden;
     border: 1px solid rgba(0,0,0,0.05);
 }
@@ -3676,7 +3683,7 @@ button {
     display: flex;
     align-items: center;
     gap: 10px;
-    color: #008485; /* Hana Bank signature color vibe */
+    color: #008485;
 }
 
 .bank-info i {
@@ -3698,7 +3705,7 @@ button {
 }
 
 .banking-card-body {
-    padding: 40px 30px;
+    padding: 45px 30px;
     text-align: center;
 }
 
@@ -3707,7 +3714,7 @@ button {
     font-weight: 700;
     color: #111;
     letter-spacing: 2px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
@@ -3716,19 +3723,20 @@ button {
     color: #666;
     background: #f9f9f9;
     display: inline-block;
-    padding: 6px 16px;
+    padding: 8px 20px;
     border-radius: 20px;
+    margin: 0;
 }
 
 .banking-card-footer {
     background: #fafafa;
-    padding: 15px 30px;
+    padding: 20px 30px;
     text-align: center;
     border-top: 1px dashed #e0e0e0;
 }
 
 .contact-info {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: #777;
     margin: 0;
 }
@@ -3854,18 +3862,12 @@ button {
     color: #0056b3;
 }
 
+@media (max-width: 992px) {
+    .donate-layout-grid {
+        grid-template-columns: 1fr;
+    }
+}
 @media (max-width: 768px) {
-    .campaign-title {
-        font-size: 1.8rem;
-    }
-    .campaign-banner {
-        padding: 40px 20px;
-    }
-    .account-number {
-        font-size: 1.6rem;
-    }
-    .banking-card-header {
-        flex-direction: column;
-        gap: 10px;
-    }
+    .campaign-title { font-size: 1.8rem; }
+    .account-number { font-size: 1.6rem; }
 }
