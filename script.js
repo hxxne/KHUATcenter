@@ -998,7 +998,26 @@ function openSportModal(sportName) {
     document.getElementById('s-modal-title').innerText = sportName + ' 전담 AT';
     document.getElementById('s-modal-icon').innerHTML = data.icon;
     
-    document.getElementById('s-modal-head-name').innerText = data.head;
+    const headContainer = document.getElementById('s-modal-head-container');
+    headContainer.innerHTML = ''; // clear previous
+    
+    // Normalize to array to handle multiple head ATs (e.g. 겨루기 has two)
+    const heads = Array.isArray(data.head) ? data.head : [data.head];
+    
+    heads.forEach(headName => {
+        const profileDiv = document.createElement('div');
+        profileDiv.className = 'head-at-profile';
+        profileDiv.style.marginBottom = '15px'; // spacing if multiple
+        
+        profileDiv.innerHTML = `
+            <img src="${data.img || 'https://via.placeholder.com/100x100?text=AT'}" alt="${headName}" class="head-at-avatar">
+            <div class="head-at-info">
+                <h5>${headName}</h5>
+                <p style="font-size: 0.9rem; color: #666; margin: 4px 0;">경희대학교 스포츠의학과</p>
+            </div>
+        `;
+        headContainer.appendChild(profileDiv);
+    });
     
     
     const subList = document.getElementById('s-modal-sub-list');
