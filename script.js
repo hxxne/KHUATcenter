@@ -999,7 +999,7 @@ function openSportModal(sportName) {
     document.getElementById('s-modal-icon').innerHTML = data.icon;
     
     document.getElementById('s-modal-head-name').innerText = data.head;
-    document.getElementById('s-modal-head-role').innerText = '경희대학교 ' + sportName + ' 전담 AT';
+    
     
     const subList = document.getElementById('s-modal-sub-list');
     subList.innerHTML = '';
