@@ -599,10 +599,12 @@ button {
 }
 
 .awards-category {
-    background: #fff;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid var(--color-primary);
     border-radius: 12px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
     margin-bottom: 40px;
 }
 
@@ -610,13 +612,20 @@ button {
     text-align: center;
     font-size: 1.8rem;
     font-weight: 800;
-    color: var(--color-primary);
+    color: #222;
     margin-bottom: 40px;
     letter-spacing: 1px;
-    border-bottom: 2px solid var(--color-primary-light);
-    padding-bottom: 15px;
-    display: inline-block;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.category-main-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--color-primary);
+    margin-top: 15px;
 }
 
 .awards-columns {
@@ -626,27 +635,45 @@ button {
 }
 
 .awards-col {
-    background: #fdfdfd;
+    background: #ffffff;
     border: 1px solid #eaeaea;
     border-radius: 8px;
-    padding: 20px;
+    padding: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.awards-col:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 .col-title {
     text-align: center;
     font-size: 1.1rem;
     font-weight: 700;
-    color: #333;
-    background: #f4f4f4;
-    padding: 10px;
-    border-radius: 6px;
-    margin-bottom: 20px;
+    background: #f8f9fa;
+    color: var(--color-primary);
+    padding: 18px 10px;
+    margin: 0 0 20px 0;
+    border-bottom: 1px solid #eaeaea;
+    letter-spacing: 0.5px;
 }
 
 .awards-list {
     list-style: none;
-    padding: 0;
+    padding: 0 25px 25px 25px;
     margin: 0;
+}
+.awards-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed #eee;
+}
+.awards-list li:last-child {
+    border-bottom: none;
 }
 
 .awards-list li {
@@ -718,8 +745,14 @@ button {
         gap: 20px;
     }
     .awards-category {
-        padding: 20px;
-    }
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid var(--color-primary);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    margin-bottom: 40px;
+}
 }
 
 /* --------------------------------------------------------------------------
