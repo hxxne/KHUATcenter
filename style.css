@@ -3852,42 +3852,41 @@ button {
 }
 
 
+
 /* ==========================================================================
-   About Center - Premium Overlap Layout
+   About Center - Split Card Layout
    ========================================================================== */
-.about-overlap-layout {
+.about-split-card {
     display: flex;
-    align-items: center;
-    position: relative;
-    padding: 20px 0 40px;
-    margin-top: 20px;
-}
-.about-img-box {
-    width: 55%;
-    position: relative;
-    z-index: 1;
+    background: #ffffff;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-.about-img-box img {
+
+.about-img-side {
+    width: 45%;
+    position: relative;
+}
+
+.about-img-side img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
     display: block;
-    aspect-ratio: 4/3;
+    position: absolute; /* Ensures it fills the height of the flex container exactly */
+    top: 0;
+    left: 0;
 }
-.about-card-box {
+
+.about-content-side {
     width: 55%;
-    margin-left: -10%;
-    position: relative;
-    z-index: 2;
-    background: #ffffff;
-    padding: 50px;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-    border: 1px solid #f5f5f5;
+    padding: 50px 60px;
 }
+
 .about-card-title {
     font-size: 1.55rem;
     font-weight: 800;
@@ -3946,18 +3945,21 @@ button {
     line-height: 1.4;
     margin-top: 4px;
 }
+
 @media (max-width: 991px) {
-    .about-overlap-layout {
+    .about-split-card {
         flex-direction: column;
     }
-    .about-img-box {
+    .about-img-side {
         width: 100%;
-        margin-bottom: -40px;
+        height: 350px;
     }
-    .about-card-box {
-        width: 95%;
-        margin-left: 0;
-        padding: 30px;
+    .about-img-side img {
+        position: relative;
+    }
+    .about-content-side {
+        width: 100%;
+        padding: 40px 30px;
     }
     .about-grid-highlights {
         grid-template-columns: 1fr;
