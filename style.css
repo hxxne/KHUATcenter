@@ -2518,6 +2518,9 @@ button {
 }
 
 .award-card {
+    background-color: #fcfcfc;
+    border: 2px solid var(--color-primary, #901522);
+    border-radius: 12px;
     background: white;
     border-radius: 16px;
     overflow: hidden;
