@@ -3853,11 +3853,13 @@ button {
 
 
 
+
 /* ==========================================================================
    About Center - Split Card Layout
    ========================================================================== */
 .about-split-card {
     display: flex;
+    align-items: center; /* Ensures content is vertically centered */
     background: #ffffff;
     border-radius: 16px;
     overflow: hidden;
@@ -3865,19 +3867,108 @@ button {
     border: 1px solid #f0f0f0;
     margin-top: 20px;
     margin-bottom: 20px;
+    padding: 20px; /* Add padding to the whole card */
 }
 
 .about-img-side {
     width: 45%;
-    position: relative;
+    padding: 10px 20px; /* Space around the image */
 }
 
 .about-img-side img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto; /* Natural height */
+    object-fit: contain; /* Prevent cropping */
     display: block;
-    position: absolute; /* Ensures it fills the height of the flex container exactly */
+    border-radius: 12px; /* Soft edges for the image */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Slight shadow to make it pop */
+}
+
+.about-content-side {
+    width: 55%;
+    padding: 20px 40px 20px 20px;
+}
+
+.about-card-title {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--color-primary);
+    margin-bottom: 25px;
+    line-height: 1.4;
+    letter-spacing: -0.5px;
+}
+.about-lead {
+    font-size: 1.05rem;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+.about-detail {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+.highlight-word {
+    font-weight: 700;
+    color: #111;
+    border-bottom: 2px solid var(--color-primary);
+}
+.about-grid-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+    border-top: 1px solid #eee;
+    padding-top: 30px;
+}
+.hi-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.hi-num {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    background: #fdf2f3;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+.hi-txt {
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
+@media (max-width: 991px) {
+    .about-split-card {
+        flex-direction: column;
+        padding: 15px;
+    }
+    .about-img-side {
+        width: 100%;
+        padding: 10px;
+    }
+    .about-content-side {
+        width: 100%;
+        padding: 20px 10px;
+    }
+    .about-grid-highlights {
+        grid-template-columns: 1fr;
+    }
+    .hi-item[style*="grid-column: span 2;"] {
+        grid-column: span 1 !important;
+    }
+}
+/* Ensures it fills the height of the flex container exactly */
     top: 0;
     left: 0;
 }
