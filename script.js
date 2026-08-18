@@ -915,7 +915,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             "authors": "Kim S, Kim D, Park J.",
-            "title": "Electroacupuncture and munual acupuncture increase joint flexibility but reduce muscle strength.",
+            "title": "Electroacupuncture and manual acupuncture increase joint flexibility but reduce muscle strength.",
             "journal": "Healthcare. 8:414. 2020."
         },
         {
@@ -935,7 +935,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             "authors": "Falk EE, Seeley MK, Hunter I, Park J, Hopkins JT.",
-            "title": "Effect of experimental anterior knee pain model affects perceived paiin and movement mechanics.",
+            "title": "Effect of experimental anterior knee pain model affects perceived pain and movement mechanics.",
             "journal": "Athletic Training & Sports Health Care. 6:7. 2014."
         },
         {
@@ -992,7 +992,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             "authors": "Kim S, Glaviano N, Park J.",
-            "title": "Exercise-induced fatigue affects knee proprioceptive acuilty and quadriceps neuromuscular function more in patients with ACL reconstruction or meniscus surgery than in healthy individuals.",
+            "title": "Exercise-induced fatigue affects knee proprioceptive acuity and quadriceps neuromuscular function more in patients with ACL reconstruction or meniscus surgery than in healthy individuals.",
             "journal": "Knee Surgery, Sports Traumatology, Arthroscopy. 31:5428. 2023."
         },
         {
@@ -1007,7 +1007,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             "authors": "Bang S, Park J.",
-            "title": "A 7-min halftime jog mitigated the reduction in sprint performance for the initial 15-min of the second half in a simlated football match.",
+            "title": "A 7-min halftime jog mitigated the reduction in sprint performance for the initial 15-min of the second half in a simulated football match.",
             "journal": "Plos ONE. 17:e0270898. 2022."
         },
         {
@@ -1022,12 +1022,12 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             "authors": "Kim MS, Park J.",
-            "title": "Immediate effects of an inverted body position on evergy expenditure and blood lactate removal after intense running.",
+            "title": "Immediate effects of an inverted body position on energy expenditure and blood lactate removal after intense running.",
             "journal": "Applied Sciences. 10:6645. 2020."
         },
         {
             "authors": "Park J, Kim D, Park J.",
-            "title": "Lower-leg cooling during halftime does not affect secont-half performance in a football match.",
+            "title": "Lower-leg cooling during halftime does not affect second-half performance in a football match.",
             "journal": "Journal of Applied Sports Sciences. 31:32. 2019."
         },
         {
@@ -1044,12 +1044,12 @@ document.addEventListener('DOMContentLoaded', () => {
     "3": [
         {
             "authors": "Kim M, Park J.",
-            "title": "Catch-play warm-up with a lightweight baseball increases ball velocity on subsequent throws for baseball position playrs.",
+            "title": "Catch-play warm-up with a lightweight baseball increases ball velocity on subsequent throws for baseball position players.",
             "journal": "Exercise Science. In Press; 2026."
         },
         {
             "authors": "Lee J, Doo H, Park JC, Kim E, Park J.",
-            "title": "Anticipatory effect on lower extremity muscl recruitment and activation patterns during single leg drop trasks.",
+            "title": "Anticipatory effect on lower extremity muscle recruitment and activation patterns during single leg drop tasks.",
             "journal": "Journal of Musculoskeletal and Neuronal Interactions. In Press; 2026."
         },
         {
@@ -1065,7 +1065,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             "authors": "Choi J, Song KT, Kim H, Lee SY, Park J.",
             "title": "Effects of unilateral lower-extremity joint cooling on movement biomechanics during a two-legged jumping and landing.",
-            "journal": "Asian Journal of Kinesiologh. 24:38. 2022."
+            "journal": "Asian Journal of Kinesiology. 24:38. 2022."
         },
         {
             "authors": "Ko J, Song KT, Kim H, Lee SY, Park J.",
