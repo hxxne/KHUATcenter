@@ -3263,7 +3263,6 @@ button {
     height: 100%;
     object-fit: cover;
     object-position: bottom center;
-    filter: grayscale(100%) contrast(1.1);
     z-index: 2;
     position: relative;
     /* To prevent the image from spilling out of the blob at the bottom */
@@ -3279,7 +3278,6 @@ button {
     object-position: bottom center;
     clip-path: none;
     border-radius: 0;
-    filter: grayscale(100%) contrast(1.1);
     z-index: 2;
     position: relative;
     bottom: 0;
