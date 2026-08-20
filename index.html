@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1787209976597">
+    <link rel="stylesheet" href="style.css?v=1787210366012">
 </head>
 <body>
 
@@ -697,7 +697,7 @@
                         <div class="sport-card-name">축구</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('야구')">
-                        <div class="sport-card-icon"><img src="assets/baseball-icon.png" alt="야구" class="custom-img-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-baseball-bat-ball"></i></div>
                         <div class="sport-card-name">야구</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('농구')">
@@ -1414,6 +1414,7 @@
     <!-- Modal Logic -->
     <script>
         
+        
         window.closeDepartmentModal = function() {
             const modal = document.getElementById('department-modal');
             if (modal) {
@@ -1425,13 +1426,28 @@
             }
         };
 
+        const sportsData = {
+            "축구": { head: "강석", sub: ["조현준", "김예종", "오승진", "이복음"] },
+            "야구": { head: "유주승", sub: ["송서옥", "채상우", "박서현", "홍진후"] },
+            "농구": { head: "이상준", sub: ["이진호", "정연우", "김민주", "김성준", "김동언", "황이삭"] },
+            "배구": { head: "박세민", sub: ["문민서", "장서현", "이다현", "황성윤", "박인서", "박유빈"] },
+            "럭비": { head: "유영민", sub: ["이도형", "최성찬"] },
+            "골프": { head: "이예인", sub: ["문수연", "유승원", "최주영", "김무건"] },
+            "배드민턴": { head: "권남준", sub: [] },
+            "핸드볼": { head: "기윤서", sub: ["정준영", "남가민", "박다은", "김민지"] },
+            "시범단": { head: "문채연", sub: ["우민서", "김한결", "김다은", "권인혜", "김다감", "남수현"] },
+            "겨루기": { head: ["유지민", "한혜서"], sub: ["정도엽", "조연지", "박은지"] },
+            "품새": { head: "유승아", sub: ["홍혜원", "권준휘", "이은채", "김형우"] },
+            "센터": { head: "담당자 미정", sub: ["권준홍", "천지훈", "안은지", "이천이"] }
+        };
+
         window.openSportModal = function(sportName) {
             const modal = document.getElementById('department-modal');
             if (!modal) return;
 
             const sportIcons = {
                 "축구": '<i class="fa-solid fa-futbol"></i>',
-                "야구": '<img src="assets/baseball-icon.png" alt="야구" class="custom-img-icon" style="filter: brightness(0) invert(1);">',
+                "야구": '<i class="fa-solid fa-baseball-bat-ball"></i>',
                 "농구": '<i class="fa-solid fa-basketball"></i>',
                 "배구": '<i class="fa-solid fa-volleyball"></i>',
                 "럭비": '<i class="fa-solid fa-football"></i>',
@@ -1444,20 +1460,7 @@
                 "센터": '<i class="fa-solid fa-kit-medical"></i>'
             };
 
-            const mainAtMap = {
-                "축구": "김주완",
-                "야구": "윤정섭",
-                "농구": "김준영",
-                "배구": "한승욱",
-                "럭비": "최윤관",
-                "골프": "문수연",
-                "배드민턴": "이승훈",
-                "핸드볼": "이준혁",
-                "시범단": "이서영",
-                "겨루기": "이강훈",
-                "품새": "김무성",
-                "센터": "임준형"
-            };
+            const data = sportsData[sportName] || { head: "담당자 미정", sub: [] };
 
             const iconEl = document.getElementById('modal-sport-icon');
             if (iconEl) {
@@ -1469,15 +1472,31 @@
                 titleEl.textContent = sportName === "센터" ? "센터 AT" : `${sportName}부`;
             }
 
-            const mainAtEl = document.getElementById('modal-main-at-name');
-            if (mainAtEl) {
-                mainAtEl.textContent = mainAtMap[sportName] || "담당 AT 지정 전";
+            const headContainer = document.getElementById('s-modal-head-container');
+            if (headContainer) {
+                headContainer.innerHTML = '';
+                const heads = Array.isArray(data.head) ? data.head : [data.head];
+                heads.forEach((headName, index) => {
+                    const profileDiv = document.createElement('div');
+                    profileDiv.className = 'head-at-profile';
+                    profileDiv.style.cssText = 'display: flex; align-items: center; gap: 12px; margin-bottom: 8px;';
+                    profileDiv.innerHTML = `
+                        <div style="width: 52px; height: 52px; border-radius: 50%; overflow: hidden; background: #e0e0e0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #777; flex-shrink: 0;">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="head-at-info">
+                            <h5 style="margin: 0; font-size: 1.05rem; font-weight: 800; color: #222;">${headName}</h5>
+                            <p style="margin: 2px 0 0 0; font-size: 0.85rem; color: #666; font-weight: 600;">경희대학교 ${sportName} 전담 AT</p>
+                        </div>
+                    `;
+                    headContainer.appendChild(profileDiv);
+                });
             }
 
             const assistantsList = document.getElementById('modal-assistants-list');
             if (assistantsList) {
                 assistantsList.innerHTML = '';
-                const assistants = typeof assistantData !== 'undefined' ? (assistantData[sportName] || []) : [];
+                const assistants = data.sub || [];
                 if (assistants.length > 0) {
                     assistants.forEach(name => {
                         const li = document.createElement('li');
