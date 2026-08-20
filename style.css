@@ -4396,3 +4396,11 @@ button {
         gap: 24px;
     }
 }
+/* AI Generated Pictogram Images */
+.pictogram-img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    border-radius: 50%;
+}
