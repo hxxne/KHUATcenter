@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1787208900951">
+    <link rel="stylesheet" href="style.css?v=1787209342641">
 </head>
 <body>
 
@@ -694,54 +694,54 @@
             <div id="sub-tab-sports" class="sub-tab-pane active">
                 <div class="sport-card-grid">
                     <div class="sport-card" onclick="openSportModal('축구')">
-                        <div class="sport-card-icon"><img src="assets/icons/축구.svg" alt="축구" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-futbol"></i></div>
                         <div class="sport-card-name">축구</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('야구')">
-                        <div class="sport-card-icon"><img src="assets/icons/야구.svg" alt="야구" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-baseball-bat-ball"></i></div>
                         <div class="sport-card-name">야구</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('농구')">
-                        <div class="sport-card-icon"><img src="assets/icons/농구.svg" alt="농구" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-basketball"></i></div>
                         <div class="sport-card-name">농구</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('배구')">
-                        <div class="sport-card-icon"><img src="assets/icons/배구.svg" alt="배구" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-volleyball"></i></div>
                         <div class="sport-card-name">배구</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('럭비')">
-                        <div class="sport-card-icon"><img src="assets/icons/럭비.svg" alt="럭비" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-football"></i></div>
                         <div class="sport-card-name">럭비</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('골프')">
-                        <div class="sport-card-icon"><img src="assets/icons/골프.svg" alt="골프" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-golf-ball-tee"></i></div>
                         <div class="sport-card-name">골프</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('배드민턴')">
-                        <div class="sport-card-icon"><img src="assets/icons/배드민턴.svg" alt="배드민턴" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-medal"></i></div>
                         <div class="sport-card-name">배드민턴</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('핸드볼')">
-                        <div class="sport-card-icon"><img src="assets/icons/핸드볼.svg" alt="핸드볼" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-hand"></i></div>
                         <div class="sport-card-name">핸드볼</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('시범단')">
-                        <div class="sport-card-icon"><img src="assets/icons/시범단.svg" alt="시범단" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-user-ninja"></i></div>
                         <div class="sport-card-name">시범단</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('겨루기')">
-                        <div class="sport-card-icon"><img src="assets/icons/겨루기.svg" alt="겨루기" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-hand-fist"></i></div>
                         <div class="sport-card-name">겨루기</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('품새')">
-                        <div class="sport-card-icon"><img src="assets/icons/품새.svg" alt="품새" class="custom-svg-icon"></div>
+                        <div class="sport-card-icon"><i class="fa-solid fa-child-reaching"></i></div>
                         <div class="sport-card-name">품새</div>
                     </div>
-                                    <div class="sport-card" onclick="openSportModal('센터')">
-                        <div class="sport-card-icon"><img src="assets/icons/센터.svg" alt="센터" class="custom-svg-icon"></div>
+                    <div class="sport-card" onclick="openSportModal('센터')">
+                        <div class="sport-card-icon"><i class="fa-solid fa-kit-medical"></i></div>
                         <div class="sport-card-name">센터</div>
                     </div>
-</div>
+                </div>
             </div>
 
             <!-- Tab Content: Rehab -->
@@ -1355,11 +1355,115 @@
         </div>
     </div>
 
+    
     <!-- Modal Logic -->
     <script>
+        window.switchSubTab = function(tabName) {
+            document.querySelectorAll('.sub-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.sub-tab-pane').forEach(pane => pane.classList.remove('active'));
+
+            if (tabName === 'sports') {
+                document.getElementById('btn-tab-sports').classList.add('active');
+                document.getElementById('sub-tab-sports').classList.add('active');
+            } else {
+                document.getElementById('btn-tab-rehab').classList.add('active');
+                document.getElementById('sub-tab-rehab').classList.add('active');
+            }
+        };
+
+        window.openSportModal = function(sportName) {
+            const modal = document.getElementById('department-modal');
+            if (!modal) return;
+
+            const sportIcons = {
+                "축구": '<i class="fa-solid fa-futbol"></i>',
+                "야구": '<i class="fa-solid fa-baseball-bat-ball"></i>',
+                "농구": '<i class="fa-solid fa-basketball"></i>',
+                "배구": '<i class="fa-solid fa-volleyball"></i>',
+                "럭비": '<i class="fa-solid fa-football"></i>',
+                "골프": '<i class="fa-solid fa-golf-ball-tee"></i>',
+                "배드민턴": '<i class="fa-solid fa-medal"></i>',
+                "핸드볼": '<i class="fa-solid fa-hand"></i>',
+                "시범단": '<i class="fa-solid fa-user-ninja"></i>',
+                "겨루기": '<i class="fa-solid fa-hand-fist"></i>',
+                "품새": '<i class="fa-solid fa-child-reaching"></i>',
+                "센터": '<i class="fa-solid fa-kit-medical"></i>'
+            };
+
+            const mainAtMap = {
+                "축구": "김주완 (전담 AT)",
+                "야구": "윤정섭 (전담 AT)",
+                "농구": "김준영 (전담 AT)",
+                "배구": "한승욱 (전담 AT)",
+                "럭비": "최윤관 (전담 AT)",
+                "골프": "문수연 (전담 AT)",
+                "배드민턴": "이승훈 (전담 AT)",
+                "핸드볼": "이준혁 (전담 AT)",
+                "시범단": "이서영 (전담 AT)",
+                "겨루기": "이강훈 (전담 AT)",
+                "품새": "김무성 (전담 AT)",
+                "센터": "임준형 (전담 AT)"
+            };
+
+            const iconEl = document.getElementById('modal-sport-icon');
+            if (iconEl) {
+                iconEl.innerHTML = sportIcons[sportName] || '<i class="fa-solid fa-trophy"></i>';
+            }
+
+            const titleEl = document.getElementById('modal-sport-title');
+            if (titleEl) {
+                titleEl.textContent = sportName === "센터" ? "센터 AT" : `${sportName}부`;
+            }
+
+            const mainAtEl = document.getElementById('modal-main-at-name');
+            if (mainAtEl) {
+                mainAtEl.textContent = mainAtMap[sportName] || "담당 AT 지정 전";
+            }
+
+            const assistantsList = document.getElementById('modal-assistants-list');
+            if (assistantsList) {
+                assistantsList.innerHTML = '';
+                const assistants = typeof assistantData !== 'undefined' ? (assistantData[sportName] || []) : [];
+                if (assistants.length > 0) {
+                    assistants.forEach(name => {
+                        const li = document.createElement('li');
+                        li.textContent = name;
+                        assistantsList.appendChild(li);
+                    });
+                } else {
+                    const li = document.createElement('li');
+                    li.textContent = "등록된 보조 AT가 없습니다.";
+                    li.style.color = "#888";
+                    assistantsList.appendChild(li);
+                }
+            }
+
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        };
+
         document.addEventListener('DOMContentLoaded', () => {
             const modal = document.getElementById('department-modal');
             const closeBtn = document.getElementById('modal-close-btn');
+            
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    if (modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
+            if (modal) {
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = '';
+                    }
+                });
+            }
+
             
             // Placeholder data for Assistant ATs or Certifications. 
             // Update this dictionary when actual data is provided.
