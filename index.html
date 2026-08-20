@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1787210785229">
+    <link rel="stylesheet" href="style.css?v=1787211029356">
 </head>
 <body>
 
@@ -693,23 +693,23 @@
             <div id="sub-tab-sports" class="sub-tab-pane active">
                 <div class="sport-card-grid">
                     <div class="sport-card" onclick="openSportModal('축구')">
-                        <div class="sport-card-icon"><i class="fa-solid fa-futbol"></i></div>
+                        <div class="sport-card-icon"><img src="assets/pictogram_soccer.jpg" alt="축구" class="pictogram-img"></div>
                         <div class="sport-card-name">축구</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('야구')">
-                        <div class="sport-card-icon"><i class="fa-solid fa-baseball-bat-ball"></i></div>
+                        <div class="sport-card-icon"><img src="assets/pictogram_baseball.jpg" alt="야구" class="pictogram-img"></div>
                         <div class="sport-card-name">야구</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('농구')">
-                        <div class="sport-card-icon"><i class="fa-solid fa-basketball"></i></div>
+                        <div class="sport-card-icon"><img src="assets/pictogram_basketball.jpg" alt="농구" class="pictogram-img"></div>
                         <div class="sport-card-name">농구</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('배구')">
-                        <div class="sport-card-icon"><i class="fa-solid fa-volleyball"></i></div>
+                        <div class="sport-card-icon"><img src="assets/pictogram_volleyball.jpg" alt="배구" class="pictogram-img"></div>
                         <div class="sport-card-name">배구</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('럭비')">
-                        <div class="sport-card-icon"><i class="fa-solid fa-football"></i></div>
+                        <div class="sport-card-icon"><img src="assets/pictogram_rugby.jpg" alt="럭비" class="pictogram-img"></div>
                         <div class="sport-card-name">럭비</div>
                     </div>
                     <div class="sport-card" onclick="openSportModal('골프')">
@@ -738,6 +738,9 @@
                     </div>
                     <div class="sport-card" onclick="openSportModal('센터')">
                         <div class="sport-card-icon"><i class="fa-solid fa-kit-medical"></i></div>
+                        <div class="sport-card-name">센터</div>
+                    </div>
+                </div>
                         <div class="sport-card-name">센터</div>
                     </div>
                 </div>
@@ -1439,12 +1442,12 @@
             const modal = document.getElementById('department-modal');
             if (!modal) return;
 
-                        const sportIcons = {
-                "축구": '<i class="fa-solid fa-futbol"></i>',
-                "야구": '<i class="fa-solid fa-baseball-bat-ball"></i>',
-                "농구": '<i class="fa-solid fa-basketball"></i>',
-                "배구": '<i class="fa-solid fa-volleyball"></i>',
-                "럭비": '<i class="fa-solid fa-football"></i>',
+                                    const sportIcons = {
+                "축구": '<img src="assets/pictogram_soccer.jpg" alt="축구" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
+                "야구": '<img src="assets/pictogram_baseball.jpg" alt="야구" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
+                "농구": '<img src="assets/pictogram_basketball.jpg" alt="농구" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
+                "배구": '<img src="assets/pictogram_volleyball.jpg" alt="배구" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
+                "럭비": '<img src="assets/pictogram_rugby.jpg" alt="럭비" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
                 "골프": '<img src="assets/pictogram_golf.jpg" alt="골프" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
                 "배드민턴": '<img src="assets/pictogram_badminton.jpg" alt="배드민턴" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
                 "핸드볼": '<img src="assets/pictogram_handball.jpg" alt="핸드볼" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
