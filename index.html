@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1787211029356">
+    <link rel="stylesheet" href="style.css?v=1787211165563">
 </head>
 <body>
 
@@ -741,15 +741,6 @@
                         <div class="sport-card-name">센터</div>
                     </div>
                 </div>
-                        <div class="sport-card-name">센터</div>
-                    </div>
-                </div>
-                        <div class="sport-card-name">센터</div>
-                    </div>
-                </div>
-                        <div class="sport-card-name">센터</div>
-                    </div>
-                </div>
             </div>
 
             <!-- Tab Content: Rehab -->
@@ -1344,7 +1335,7 @@
                 </div>
                 <div>
                     <h3 id="modal-sport-title" style="margin: 0; font-size: 1.6rem; color: white; font-weight: 800;">축구부</h3>
-                    <p style="margin: 4px 0 0 0; font-size: 0.95rem; color: rgba(255,255,255,0.85); font-weight: 500;">경희대학교 AT Center 의무 지원팀</p>
+                    <p style="margin: 4px 0 0 0; font-size: 0.95rem; color: rgba(255,255,255,0.85); font-weight: 500;">경희대학교 AT Center</p>
                 </div>
             </div>
             
@@ -1365,7 +1356,7 @@
                                     <i class="fa-solid fa-user"></i>
                                 </div>
                                 <div class="head-at-info">
-                                    <h5 id="modal-main-at-name" style="margin: 0; font-size: 1.1rem; font-weight: 800; color: #222;">김주완</h5>
+                                    <h5 id="modal-main-at-name" style="margin: 0; font-size: 1.1rem; font-weight: 800; color: #222;">전담 AT</h5>
                                     <p id="modal-at-role-text" style="margin: 3px 0 0 0; font-size: 0.85rem; color: #666; font-weight: 600;">경희대학교 전담 AT</p>
                                 </div>
                             </div>
@@ -1470,10 +1461,16 @@
             }
 
             const headContainer = document.getElementById('s-modal-head-container');
+            const mainAtNameEl = document.getElementById('modal-main-at-name');
+            const heads = Array.isArray(data.head) ? data.head : [data.head];
+            
+            if (mainAtNameEl) {
+                mainAtNameEl.textContent = heads.join(', ');
+            }
+
             if (headContainer) {
                 headContainer.innerHTML = '';
-                const heads = Array.isArray(data.head) ? data.head : [data.head];
-                heads.forEach((headName, index) => {
+                heads.forEach((headName) => {
                     const profileDiv = document.createElement('div');
                     profileDiv.className = 'head-at-profile';
                     profileDiv.style.cssText = 'display: flex; align-items: center; gap: 12px; margin-bottom: 8px;';
