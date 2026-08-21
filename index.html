@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1787212032377">
+    <link rel="stylesheet" href="style.css?v=1787315073344">
 </head>
 <body>
 
@@ -1403,6 +1403,18 @@
     <script>
         
         
+        
+        window.switchSubTab = function(tabName) {
+            document.querySelectorAll('.sub-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.sub-tab-pane').forEach(pane => pane.classList.remove('active'));
+
+            const btn = document.getElementById('btn-tab-' + tabName);
+            const pane = document.getElementById('sub-tab-' + tabName);
+
+            if (btn) btn.classList.add('active');
+            if (pane) pane.classList.add('active');
+        };
+
         window.closeDepartmentModal = function() {
             const modal = document.getElementById('department-modal');
             if (modal) {
