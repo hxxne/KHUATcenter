@@ -4404,3 +4404,27 @@ button {
     mix-blend-mode: multiply;
     border-radius: 50%;
 }
+
+/* Alumni & Awards Interactive Styles */
+.clickable-alumni-name {
+    color: inherit;
+    display: inline-block;
+    padding: 1px 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+.clickable-alumni-name:hover {
+    color: #A50034 !important;
+    background: #FFF0F2;
+    text-decoration: underline;
+    font-weight: 700;
+}
+.ga-card {
+    cursor: pointer !important;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.ga-card:hover {
+    transform: translateY(-4px) scale(1.02) !important;
+    border-color: #A50034 !important;
+    box-shadow: 0 8px 20px rgba(165, 0, 52, 0.15) !important;
+}
