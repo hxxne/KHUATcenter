@@ -4040,98 +4040,67 @@ button {
 
 
 /* --------------------------------------------------------------------------
-   About Center - Premium Showcase UI/UX Redesign
+   About Center - Clean Minimalist Redesign (Full Photo, No Cards)
    -------------------------------------------------------------------------- */
 .about-hero-container {
     background: #ffffff;
-    border-radius: 28px;
+    border-radius: 24px;
     border: 1px solid #e5e9f0;
-    box-shadow: 0 12px 48px rgba(15, 23, 42, 0.06);
+    box-shadow: 0 10px 36px rgba(15, 23, 42, 0.05);
     overflow: hidden;
     margin-top: 25px;
-    padding: 24px;
-    transition: all 0.3s ease;
+    padding: 20px;
 }
 
 .about-hero-image-wrap {
     width: 100%;
-    height: 480px;
-    border-radius: 20px;
+    height: auto;
+    border-radius: 16px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    background: #0f172a;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    background: #f8fafc;
 }
 
 .about-hero-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 45%;
+    height: auto;
     display: block;
-    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.about-hero-image-wrap:hover .about-hero-img {
-    transform: scale(1.03);
-}
-
-.about-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(15, 23, 42, 0.6) 100%);
-    pointer-events: none;
+    object-fit: contain;
+    border-radius: 16px;
 }
 
 .about-hero-caption {
     position: absolute;
-    bottom: 20px;
-    right: 22px;
-    background: rgba(15, 23, 42, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    bottom: 16px;
+    right: 18px;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: #ffffff;
-    padding: 8px 18px;
-    border-radius: 30px;
-    font-size: 0.88rem;
+    padding: 7px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: -0.2px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .about-hero-content {
-    padding: 40px 24px 15px 24px;
-}
-
-.about-tagline-wrap {
-    margin-bottom: 20px;
-}
-
-.about-tagline {
-    display: inline-flex;
-    align-items: center;
-    background: #fff5f6;
-    color: #A50034;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 1.2px;
-    padding: 6px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(165, 0, 52, 0.12);
+    padding: 35px 20px 15px 20px;
 }
 
 .about-text-block {
     max-width: 960px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto;
     text-align: center;
 }
 
 .about-lead {
-    font-size: 1.16rem;
+    font-size: 1.15rem;
     color: #0f172a;
     line-height: 1.85;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     font-weight: 600;
     word-break: keep-all;
 }
@@ -4151,104 +4120,64 @@ button {
     border-bottom: 2px solid rgba(165, 0, 52, 0.3);
 }
 
-/* 5 Highlights Grid - Sleek Feature Cards */
-.about-grid-highlights-new {
+/* 5 Clean Highlights List */
+.about-clean-highlights {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-    max-width: 960px;
-    margin: 0 auto;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 35px;
+    gap: 14px 28px;
+    max-width: 880px;
+    margin: 32px auto 0 auto;
+    border-top: 1px solid #edf2f7;
+    padding-top: 26px;
 }
 
-.hi-card {
-    background: #ffffff;
-    border: 1.5px solid #edf2f7;
-    border-radius: 18px;
-    padding: 18px 24px;
+.about-clean-item {
     display: flex;
     align-items: center;
-    gap: 16px;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
-    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
+    gap: 12px;
+    padding: 6px 0;
 }
 
-.hi-card:hover {
-    background: #ffffff;
-    border-color: #fca5a5;
-    transform: translateY(-4px);
-    box-shadow: 0 14px 32px rgba(165, 0, 52, 0.09);
-}
-
-.hi-card-wide {
+.about-clean-wide {
     grid-column: 1 / -1;
+    justify-content: center;
 }
 
-.hi-num-badge {
-    font-size: 0.98rem;
+.about-clean-num {
+    font-size: 0.92rem;
     font-weight: 900;
-    color: #ffffff;
-    background: linear-gradient(135deg, #A50034 0%, #700023 100%);
-    width: 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    flex-shrink: 0;
-    box-shadow: 0 4px 12px rgba(165, 0, 52, 0.28);
-}
-
-.hi-card-icon {
-    font-size: 1.2rem;
-    color: #64748b;
-    width: 36px;
-    height: 36px;
-    background: #f8fafc;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    transition: all 0.25s ease;
-}
-
-.hi-card:hover .hi-card-icon {
     color: #A50034;
-    background: #fff1f2;
+    background: #fff0f2;
+    padding: 4px 10px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
 }
 
-.hi-card-txt {
+.about-clean-txt {
     font-size: 1.02rem;
-    color: #1e293b;
     font-weight: 700;
-    line-height: 1.45;
+    color: #1e293b;
     word-break: keep-all;
-    flex: 1;
 }
 
 @media (max-width: 768px) {
     .about-hero-container {
-        padding: 16px;
-    }
-    .about-hero-image-wrap {
-        height: 280px;
+        padding: 14px;
     }
     .about-hero-content {
-        padding: 25px 5px 5px 5px;
+        padding: 20px 5px 5px 5px;
     }
     .about-lead {
         font-size: 1.05rem;
     }
-    .about-grid-highlights-new {
+    .about-clean-highlights {
         grid-template-columns: 1fr;
         gap: 12px;
     }
-    .hi-card-wide {
+    .about-clean-wide {
         grid-column: auto;
+        justify-content: flex-start;
     }
 }
 
