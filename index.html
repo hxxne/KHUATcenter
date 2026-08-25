@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1787668601622">
+    <link rel="stylesheet" href="style.css?v=1787668860080">
 </head>
 <body>
 
@@ -149,7 +149,7 @@
         </div>
     </section>
 
-                <!-- Core Pillars Section (3-Tier Wide Storytelling Showcase) -->
+                    <!-- Core Pillars Section (Clean 3-Column Bento Grid + 3-Photo Panorama Strip + Instagram Banner) -->
     <section id="pillars" class="section-padding bg-dark-lighter">
         <div class="container">
             <div class="section-header text-center">
@@ -158,253 +158,173 @@
                 <p class="section-subtitle">교육 (Education) · 연구 (Research) · 서비스 (Service)</p>
             </div>
 
-            <!-- 3-Tier Storytelling Blocks -->
-            <div class="pillars-story-container">
+            <!-- Top: 3-Column Modern Bento Grid -->
+            <div class="bento-pillars-grid">
                 
-                <!-- Story Block 1: Education (Photo Left + Content Right) -->
-                <div class="pillar-story-row story-edu">
-                    <div class="story-media-col">
-                        <div class="story-slider-wrap" id="story-slider-edu">
-                            <div class="story-slide-track">
-                                <div class="story-slide active">
-                                    <img src="assets/images/insta/post_3.jpg" alt="정기 학술 세미나 & Taping 실무 교육" class="story-slide-img">
-                                    <div class="story-caption">
-                                        <span class="story-caption-tag"><i class="fa-solid fa-graduation-cap"></i> 정기 세미나</span>
-                                        <p>전 구성원 정기 학술 세미나 & 테이핑 실무 교육</p>
-                                    </div>
-                                </div>
-                                <div class="story-slide">
-                                    <img src="assets/images/insta/post_6.jpg" alt="In-Service 실기 교육 & 기능 실습" class="story-slide-img">
-                                    <div class="story-caption">
-                                        <span class="story-caption-tag"><i class="fa-solid fa-chalkboard-user"></i> In-Service</span>
-                                        <p>스태프 정기 In-Service 실기 및 운동 역학 실습</p>
-                                    </div>
-                                </div>
-                                <div class="story-slide">
-                                    <img src="assets/images/insta/post_7.jpg" alt="소도구 트레이닝 & 부상 케이스 스터디 특강" class="story-slide-img">
-                                    <div class="story-caption">
-                                        <span class="story-caption-tag"><i class="fa-solid fa-user-doctor"></i> 방학 특강</span>
-                                        <p>소도구 트레이닝 및 운동상해 케이스 스터디</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="story-nav-btn prev" onclick="navigateStorySlide('edu', -1)" aria-label="이전 사진"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button class="story-nav-btn next" onclick="navigateStorySlide('edu', 1)" aria-label="다음 사진"><i class="fa-solid fa-chevron-right"></i></button>
-                            <div class="story-dots">
-                                <span class="story-dot active" onclick="setStorySlide('edu', 0)"></span>
-                                <span class="story-dot" onclick="setStorySlide('edu', 1)"></span>
-                                <span class="story-dot" onclick="setStorySlide('edu', 2)"></span>
-                            </div>
+                <!-- Pillar 1: Education -->
+                <div class="bento-card bento-card-edu">
+                    <div class="bento-card-header">
+                        <div class="bento-badge-row">
+                            <span class="bento-badge badge-edu">01. EDUCATION</span>
+                            <span class="bento-cat-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                        </div>
+                        <h3 class="bento-title">교육</h3>
+                        <p class="bento-subtitle">미래 스포츠의학 전문가 양성</p>
+                        <div class="bento-tags">
+                            <span>#전공연계</span>
+                            <span>#실무역량</span>
                         </div>
                     </div>
-
-                    <div class="story-info-col">
-                        <div class="story-header">
-                            <div class="story-badge-row">
-                                <span class="pillar-badge badge-edu">01. EDUCATION</span>
-                                <span class="pillar-tag">#전공연계</span>
-                                <span class="pillar-tag">#실무역량</span>
+                    <div class="bento-card-body">
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-book-open-reader item-bullet-icon"></i>
+                                <h4>전공 교육 과정 연계</h4>
                             </div>
-                            <h3 class="story-title">교육</h3>
-                            <p class="story-subtitle">미래 스포츠의학 전문가 양성</p>
+                            <p class="bento-item-desc">손상 평가·관리 및 재활운동 실습 중심의 심화 전공 과정 지도</p>
                         </div>
-                        <div class="story-items-list">
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-book-open-reader"></i></div>
-                                <div class="s-item-text">
-                                    <h4>전공 교육 과정 연계</h4>
-                                    <p>손상 평가·관리 및 재활운동 실습 중심의 심화 전공 과정 지도</p>
-                                </div>
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-user-doctor item-bullet-icon"></i>
+                                <h4>AT 실무 기초 교육</h4>
                             </div>
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-user-doctor"></i></div>
-                                <div class="s-item-text">
-                                    <h4>AT 실무 기초 교육</h4>
-                                    <p>현장 관찰(Observation) 100시간 및 CPR·응급처치·전문 장비 실습</p>
-                                </div>
+                            <p class="bento-item-desc">현장 관찰(Observation) 100시간 및 CPR·응급처치·전문 장비 실습</p>
+                        </div>
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-microscope item-bullet-icon"></i>
+                                <h4>학술 스터디 & 저널 클럽</h4>
                             </div>
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-microscope"></i></div>
-                                <div class="s-item-text">
-                                    <h4>학술 스터디 & 저널 클럽</h4>
-                                    <p>기능해부학 심층 학습, 최신 스포츠의학 논문 리뷰 및 재활 테크닉 연구</p>
-                                </div>
+                            <p class="bento-item-desc">기능해부학 심층 학습, 최신 스포츠의학 논문 리뷰 및 재활 테크닉 연구</p>
+                        </div>
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-chalkboard-user item-bullet-icon"></i>
+                                <h4>정기 세미나 & In-Service</h4>
                             </div>
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
-                                <div class="s-item-text">
-                                    <h4>정기 세미나 & 인서비스(In-Service)</h4>
-                                    <p>정기 학술 세미나 운영 및 격주 단위 선수 부상 케이스 스터디</p>
-                                </div>
-                            </div>
+                            <p class="bento-item-desc">정기 학술 세미나 운영 및 격주 단위 선수 부상 케이스 스터디</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Story Block 2: Research (Content Left + Photo Right) -->
-                <div class="pillar-story-row story-res story-reversed">
-                    <div class="story-info-col">
-                        <div class="story-header">
-                            <div class="story-badge-row">
-                                <span class="pillar-badge badge-res">02. RESEARCH</span>
-                                <span class="pillar-tag">#생체역학</span>
-                                <span class="pillar-tag">#임상데이터</span>
-                            </div>
-                            <h3 class="story-title">연구</h3>
-                            <p class="story-subtitle">근거 중심 스포츠의학(EBM) 구현</p>
+                <!-- Pillar 2: Research -->
+                <div class="bento-card bento-card-res" onclick="openResearchModal()" style="cursor: pointer;">
+                    <div class="bento-card-header">
+                        <div class="bento-badge-row">
+                            <span class="bento-badge badge-res">02. RESEARCH</span>
+                            <span class="bento-cat-icon"><i class="fa-solid fa-chart-line"></i></span>
                         </div>
-                        <div class="story-items-list">
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-dna"></i></div>
-                                <div class="s-item-text">
-                                    <h4>손상 기전 및 예방 연구</h4>
-                                    <p>생체역학적(Biomechanics) 분석을 통한 부상 위험 요인 규명</p>
-                                </div>
-                            </div>
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-                                <div class="s-item-text">
-                                    <h4>임상 재활 및 통증 완화</h4>
-                                    <p>단계별 기능 재활 프로토콜의 임상적 운동 효과 검증</p>
-                                </div>
-                            </div>
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                                <div class="s-item-text">
-                                    <h4>대학 스포츠 부상 역학</h4>
-                                    <p>부상감시시스템(ISS) 기반 엘리트 선수단 손상 추이 및 역학 분석</p>
-                                </div>
-                            </div>
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-                                <div class="s-item-text">
-                                    <h4>트레이닝 및 리커버리 전략</h4>
-                                    <p>웜업, 저항운동, 쿨다운 등 선수 회복 전략에 대한 과학적 효과 검증</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="story-action-row">
-                            <button type="button" class="btn-research-trigger" onclick="openResearchModal()">
-                                <i class="fa-solid fa-book-bookmark"></i>
-                                <span>센터 연구논문 63편 전체 데이터베이스 열람하기</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
+                        <h3 class="bento-title">연구</h3>
+                        <p class="bento-subtitle">근거 중심 스포츠의학(EBM) 구현 <span class="research-modal-badge">[논문 63편 ↗]</span></p>
+                        <div class="bento-tags">
+                            <span>#생체역학</span>
+                            <span>#임상데이터</span>
                         </div>
                     </div>
-
-                    <div class="story-media-col">
-                        <div class="story-slider-wrap" id="story-slider-res">
-                            <div class="story-slide-track">
-                                <div class="story-slide active">
-                                    <img src="assets/images/insta/post_1.jpg" alt="제63차 대한비만학회 춘계학술대회 참가" class="story-slide-img">
-                                    <div class="story-caption">
-                                        <span class="story-caption-tag"><i class="fa-solid fa-flask"></i> 국내 학술대회</span>
-                                        <p>제63차 대한비만학회 춘계학술대회 연구 발표</p>
-                                    </div>
-                                </div>
-                                <div class="story-slide">
-                                    <img src="assets/images/insta/post_18.jpg" alt="World Congress on Kinesiology 학술대회 발표" class="story-slide-img">
-                                    <div class="story-caption">
-                                        <span class="story-caption-tag"><i class="fa-solid fa-flask"></i> 국제 학술대회</span>
-                                        <p>World Congress on Kinesiology 국제 구두 발표</p>
-                                    </div>
-                                </div>
-                                <div class="story-slide">
-                                    <img src="assets/images/insta/post_30.jpg" alt="European College of Sport Science 발표" class="story-slide-img">
-                                    <div class="story-caption">
-                                        <span class="story-caption-tag"><i class="fa-solid fa-flask"></i> ECSS 2025</span>
-                                        <p>유럽스포츠과학회(ECSS) 글로벌 연구 교류</p>
-                                    </div>
-                                </div>
+                    <div class="bento-card-body">
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-dna item-bullet-icon"></i>
+                                <h4>손상 기전 및 예방 연구</h4>
                             </div>
-                            <button class="story-nav-btn prev" onclick="navigateStorySlide('res', -1)" aria-label="이전 사진"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button class="story-nav-btn next" onclick="navigateStorySlide('res', 1)" aria-label="다음 사진"><i class="fa-solid fa-chevron-right"></i></button>
-                            <div class="story-dots">
-                                <span class="story-dot active" onclick="setStorySlide('res', 0)"></span>
-                                <span class="story-dot" onclick="setStorySlide('res', 1)"></span>
-                                <span class="story-dot" onclick="setStorySlide('res', 2)"></span>
+                            <p class="bento-item-desc">생체역학적(Biomechanics) 분석을 통한 부상 위험 요인 규명</p>
+                        </div>
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-heart-pulse item-bullet-icon"></i>
+                                <h4>임상 재활 및 통증 완화</h4>
                             </div>
+                            <p class="bento-item-desc">단계별 기능 재활 프로토콜의 임상적 운동 효과 검증</p>
+                        </div>
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-shield-halved item-bullet-icon"></i>
+                                <h4>대학 스포츠 부상 역학</h4>
+                            </div>
+                            <p class="bento-item-desc">부상감시시스템(ISS) 기반 엘리트 선수단 손상 추이 및 역학 분석</p>
+                        </div>
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-bolt-lightning item-bullet-icon"></i>
+                                <h4>트레이닝 및 리커버리 전략</h4>
+                            </div>
+                            <p class="bento-item-desc">웜업, 저항운동, 쿨다운 등 선수 회복 전략에 대한 과학적 효과 검증</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Story Block 3: Service (Photo Left + Content Right) -->
-                <div class="pillar-story-row story-srv">
-                    <div class="story-media-col">
-                        <div class="story-slider-wrap" id="story-slider-srv">
-                            <div class="story-slide-track">
-                                <div class="story-slide active">
-                                    <img src="assets/images/insta/post_14.jpg" alt="제1회 라이언매치 대회 현장 의무지원" class="story-slide-img">
-                                    <div class="story-caption">
-                                        <span class="story-caption-tag"><i class="fa-solid fa-briefcase-medical"></i> 현장 의무 지원</span>
-                                        <p>대회 현장 부상 평가 및 테이핑 지원</p>
-                                    </div>
-                                </div>
-                                <div class="story-slide">
-                                    <img src="assets/images/insta/post_17.jpg" alt="Go Free Run 현장 스포츠의학 의무지원" class="story-slide-img">
-                                    <div class="story-caption">
-                                        <span class="story-caption-tag"><i class="fa-solid fa-briefcase-medical"></i> 메디컬 케어</span>
-                                        <p>마라톤 & 러닝 이벤트 스포츠의학 부스 운영</p>
-                                    </div>
-                                </div>
-                                <div class="story-slide">
-                                    <img src="assets/images/insta/post_22.jpg" alt="제106회 전국체육대회 엘리트 선수단 출정식 및 파견" class="story-slide-img">
-                                    <div class="story-caption">
-                                        <span class="story-caption-tag"><i class="fa-solid fa-briefcase-medical"></i> 전국체전 파견</span>
-                                        <p>경희대학교 엘리트 선수단 전담 의무 파견</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="story-nav-btn prev" onclick="navigateStorySlide('srv', -1)" aria-label="이전 사진"><i class="fa-solid fa-chevron-left"></i></button>
-                            <button class="story-nav-btn next" onclick="navigateStorySlide('srv', 1)" aria-label="다음 사진"><i class="fa-solid fa-chevron-right"></i></button>
-                            <div class="story-dots">
-                                <span class="story-dot active" onclick="setStorySlide('srv', 0)"></span>
-                                <span class="story-dot" onclick="setStorySlide('srv', 1)"></span>
-                                <span class="story-dot" onclick="setStorySlide('srv', 2)"></span>
-                            </div>
+                <!-- Pillar 3: Service -->
+                <div class="bento-card bento-card-srv">
+                    <div class="bento-card-header">
+                        <div class="bento-badge-row">
+                            <span class="bento-badge badge-srv">03. SERVICE</span>
+                            <span class="bento-cat-icon"><i class="fa-solid fa-hand-holding-medical"></i></span>
+                        </div>
+                        <h3 class="bento-title">서비스</h3>
+                        <p class="bento-subtitle">실천적 스포츠 케어 및 현장 지원</p>
+                        <div class="bento-tags">
+                            <span>#선수컨디셔닝</span>
+                            <span>#현장의무지원</span>
                         </div>
                     </div>
-
-                    <div class="story-info-col">
-                        <div class="story-header">
-                            <div class="story-badge-row">
-                                <span class="pillar-badge badge-srv">03. SERVICE</span>
-                                <span class="pillar-tag">#선수컨디셔닝</span>
-                                <span class="pillar-tag">#현장의무지원</span>
+                    <div class="bento-card-body">
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-people-group item-bullet-icon"></i>
+                                <h4>엘리트 운동선수 밀착 케어</h4>
                             </div>
-                            <h3 class="story-title">서비스</h3>
-                            <p class="story-subtitle">실천적 스포츠 케어 및 현장 지원</p>
+                            <p class="bento-item-desc">종목별 선수 맞춤형 부상 예방 및 컨디셔닝</p>
                         </div>
-                        <div class="story-items-list">
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-people-group"></i></div>
-                                <div class="s-item-text">
-                                    <h4>엘리트 운동선수 밀착 케어</h4>
-                                    <p>종목별 선수 맞춤형 부상 예방 및 컨디셔닝</p>
-                                </div>
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-hands-holding-child item-bullet-icon"></i>
+                                <h4>교직원 및 학생 대상 근골격계 케어</h4>
                             </div>
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
-                                <div class="s-item-text">
-                                    <h4>교직원 및 학생 대상 근골격계 케어</h4>
-                                    <p>경희대학교 체육시설운영단 스포츠재활 프로그램 운영</p>
-                                </div>
+                            <p class="bento-item-desc">경희대학교 체육시설운영단 스포츠재활 프로그램 운영</p>
+                        </div>
+                        <div class="bento-item">
+                            <div class="bento-item-header">
+                                <i class="fa-solid fa-truck-medical item-bullet-icon"></i>
+                                <h4>스포츠 이벤트 현장 의무 지원</h4>
                             </div>
-                            <div class="story-item">
-                                <div class="s-item-icon"><i class="fa-solid fa-truck-medical"></i></div>
-                                <div class="s-item-text">
-                                    <h4>스포츠 이벤트 현장 의무 지원</h4>
-                                    <p>전지훈련, 전국체전, 생활체육 등 단기 스포츠 AT 서비스</p>
-                                </div>
-                            </div>
+                            <p class="bento-item-desc">전지훈련, 전국체전, 생활체육 등 단기 스포츠 AT 서비스</p>
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Sleek Instagram CTA Banner -->
+            <!-- Middle: 3-Photo Panorama Visual Strip -->
+            <div class="pillars-panorama-strip">
+                <div class="panorama-photo-card">
+                    <img src="assets/images/insta/post_3.jpg" alt="경희대 AT 센터 교육 및 실습 현장" class="panorama-img">
+                    <div class="panorama-overlay"></div>
+                    <div class="panorama-caption">
+                        <span class="panorama-badge"><i class="fa-solid fa-graduation-cap"></i> 01. 교육 현장</span>
+                        <p>정기 학술 세미나 & 테이핑 실무 교육</p>
+                    </div>
+                </div>
+
+                <div class="panorama-photo-card" onclick="openResearchModal()" style="cursor: pointer;">
+                    <img src="assets/images/insta/post_18.jpg" alt="경희대 AT 센터 학술대회 및 연구 발표" class="panorama-img">
+                    <div class="panorama-overlay"></div>
+                    <div class="panorama-caption">
+                        <span class="panorama-badge"><i class="fa-solid fa-chart-line"></i> 02. 연구 발표</span>
+                        <p>국내외 학술대회 발표 & 63편 연구 실적</p>
+                    </div>
+                </div>
+
+                <div class="panorama-photo-card">
+                    <img src="assets/images/insta/post_14.jpg" alt="경희대 AT 센터 대회 파견 및 현장의무지원" class="panorama-img">
+                    <div class="panorama-overlay"></div>
+                    <div class="panorama-caption">
+                        <span class="panorama-badge"><i class="fa-solid fa-hand-holding-medical"></i> 03. 현장 케어</span>
+                        <p>선수단 전담 케어 & 스포츠 이벤트 의무지원</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom: Sleek Instagram CTA Banner -->
             <div class="pillars-instagram-cta-banner">
                 <div class="insta-cta-left">
                     <div class="insta-cta-icon-badge">
@@ -2080,31 +2000,7 @@
         };
 
         
-        // 3-Tier Storytelling Showcase Sliders Controller
-        const storySlideIndices = { edu: 0, res: 0, srv: 0 };
-
-        window.setStorySlide = function(pillarId, index) {
-            const wrap = document.getElementById(`story-slider-${pillarId}`);
-            if (!wrap) return;
-            const slides = wrap.querySelectorAll('.story-slide');
-            const dots = wrap.querySelectorAll('.story-dot');
-            storySlideIndices[pillarId] = (index + slides.length) % slides.length;
-            const currentIdx = storySlideIndices[pillarId];
-
-            slides.forEach((s, i) => s.classList.toggle('active', i === currentIdx));
-            dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
-        };
-
-        window.navigateStorySlide = function(pillarId, delta) {
-            window.setStorySlide(pillarId, storySlideIndices[pillarId] + delta);
-        };
-
-        // Independent auto-rotations for all 3 story sliders
-        ['edu', 'res', 'srv'].forEach((pillarId, pIdx) => {
-            setInterval(() => {
-                window.navigateStorySlide(pillarId, 1);
-            }, 4500 + pIdx * 700);
-        });
+        
 
         // Attach DOM event listeners
         document.addEventListener('DOMContentLoaded', () => {
