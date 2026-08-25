@@ -4040,79 +4040,108 @@ button {
 
 
 /* --------------------------------------------------------------------------
-   About Center - Top Hero Image + Bottom Content Redesign
+   About Center - Premium Showcase UI/UX Redesign
    -------------------------------------------------------------------------- */
 .about-hero-container {
     background: #ffffff;
-    border-radius: 24px;
+    border-radius: 28px;
     border: 1px solid #e5e9f0;
-    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.05);
+    box-shadow: 0 12px 48px rgba(15, 23, 42, 0.06);
     overflow: hidden;
     margin-top: 25px;
     padding: 24px;
+    transition: all 0.3s ease;
 }
 
 .about-hero-image-wrap {
     width: 100%;
-    max-height: 520px;
-    border-radius: 18px;
+    height: 480px;
+    border-radius: 20px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    background: #0f172a;
 }
 
 .about-hero-img {
     width: 100%;
     height: 100%;
-    max-height: 520px;
     object-fit: cover;
+    object-position: center 45%;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .about-hero-image-wrap:hover .about-hero-img {
-    transform: scale(1.02);
+    transform: scale(1.03);
+}
+
+.about-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(15, 23, 42, 0.6) 100%);
+    pointer-events: none;
 }
 
 .about-hero-caption {
     position: absolute;
-    bottom: 16px;
-    right: 20px;
+    bottom: 20px;
+    right: 22px;
     background: rgba(15, 23, 42, 0.75);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     color: #ffffff;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.85rem;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.88rem;
     font-weight: 600;
     letter-spacing: -0.2px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
 }
 
 .about-hero-content {
-    padding: 35px 20px 10px 20px;
+    padding: 40px 24px 15px 24px;
+}
+
+.about-tagline-wrap {
+    margin-bottom: 20px;
+}
+
+.about-tagline {
+    display: inline-flex;
+    align-items: center;
+    background: #fff5f6;
+    color: #A50034;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(165, 0, 52, 0.12);
 }
 
 .about-text-block {
     max-width: 960px;
-    margin: 0 auto 35px auto;
+    margin: 0 auto 40px auto;
     text-align: center;
 }
 
 .about-lead {
-    font-size: 1.15rem;
-    color: #1e293b;
-    line-height: 1.8;
-    margin-bottom: 16px;
-    font-weight: 500;
+    font-size: 1.16rem;
+    color: #0f172a;
+    line-height: 1.85;
+    margin-bottom: 18px;
+    font-weight: 600;
     word-break: keep-all;
 }
 
 .about-detail {
     font-size: 1.02rem;
     color: #475569;
-    line-height: 1.8;
+    line-height: 1.85;
     margin: 0;
+    font-weight: 400;
     word-break: keep-all;
 }
 
@@ -4122,33 +4151,36 @@ button {
     border-bottom: 2px solid rgba(165, 0, 52, 0.3);
 }
 
-/* 5 Highlights Grid */
+/* 5 Highlights Grid - Sleek Feature Cards */
 .about-grid-highlights-new {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    gap: 18px;
     max-width: 960px;
     margin: 0 auto;
     border-top: 1px solid #f1f5f9;
-    padding-top: 30px;
+    padding-top: 35px;
 }
 
 .hi-card {
-    background: #f8fafc;
+    background: #ffffff;
     border: 1.5px solid #edf2f7;
-    border-radius: 16px;
-    padding: 18px 22px;
+    border-radius: 18px;
+    padding: 18px 24px;
     display: flex;
     align-items: center;
     gap: 16px;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.03);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .hi-card:hover {
     background: #ffffff;
-    border-color: #A50034;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 22px rgba(165, 0, 52, 0.08);
+    border-color: #fca5a5;
+    transform: translateY(-4px);
+    box-shadow: 0 14px 32px rgba(165, 0, 52, 0.09);
 }
 
 .hi-card-wide {
@@ -4156,7 +4188,7 @@ button {
 }
 
 .hi-num-badge {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
     font-weight: 900;
     color: #ffffff;
     background: linear-gradient(135deg, #A50034 0%, #700023 100%);
@@ -4165,17 +4197,37 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 12px;
     flex-shrink: 0;
-    box-shadow: 0 3px 10px rgba(165, 0, 52, 0.25);
+    box-shadow: 0 4px 12px rgba(165, 0, 52, 0.28);
+}
+
+.hi-card-icon {
+    font-size: 1.2rem;
+    color: #64748b;
+    width: 36px;
+    height: 36px;
+    background: #f8fafc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+}
+
+.hi-card:hover .hi-card-icon {
+    color: #A50034;
+    background: #fff1f2;
 }
 
 .hi-card-txt {
     font-size: 1.02rem;
-    color: #0f172a;
+    color: #1e293b;
     font-weight: 700;
     line-height: 1.45;
     word-break: keep-all;
+    flex: 1;
 }
 
 @media (max-width: 768px) {
@@ -4183,13 +4235,17 @@ button {
         padding: 16px;
     }
     .about-hero-image-wrap {
-        max-height: 320px;
+        height: 280px;
     }
     .about-hero-content {
-        padding: 20px 5px 5px 5px;
+        padding: 25px 5px 5px 5px;
+    }
+    .about-lead {
+        font-size: 1.05rem;
     }
     .about-grid-highlights-new {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
     .hi-card-wide {
         grid-column: auto;
