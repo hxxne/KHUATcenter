@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1787638716097">
+    <link rel="stylesheet" href="style.css?v=1787638966244">
 </head>
 <body>
 
@@ -1377,34 +1377,8 @@
         </div>
     </div>
 
-    <!-- Modal Logic -->
+        <!-- Modal Logic -->
     <script>
-        
-        
-        
-        window.switchSubTab = function(tabName) {
-            document.querySelectorAll('.sub-tab-btn').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.sub-tab-pane').forEach(pane => pane.classList.remove('active'));
-
-            const btn = document.getElementById('btn-tab-' + tabName);
-            const pane = document.getElementById('sub-tab-' + tabName);
-
-            if (btn) btn.classList.add('active');
-            if (pane) pane.classList.add('active');
-        };
-
-        window.closeDepartmentModal = function() {
-            const modal = document.getElementById('department-modal');
-            if (modal) {
-                modal.classList.remove('show');
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 300);
-                document.body.style.overflow = '';
-            }
-        };
-
-        
         // Comprehensive Professor & Staff Data Dictionary
         const professorsData = {
             "박지홍": {
@@ -1663,7 +1637,7 @@
             }
         };
 
-const sportsData = {
+        const sportsData = {
             "축구": { head: "강석", sub: ["조현준", "김예종", "오승진", "이복음"] },
             "야구": { head: "유주승", sub: ["송서옥", "채상우", "박서현", "홍진후"] },
             "농구": { head: "이상준", sub: ["이진호", "정연우", "김민주", "김성준", "김동언", "황이삭"] },
@@ -1678,11 +1652,12 @@ const sportsData = {
             "센터": { head: null, sub: ["권준홍", "천지훈", "안은지", "이천이"] }
         };
 
+        // Open Department Modal
         window.openSportModal = function(sportName) {
             const modal = document.getElementById('department-modal');
             if (!modal) return;
 
-                                    const sportIcons = {
+            const sportIcons = {
                 "축구": '<img src="assets/pictogram_soccer.jpg" alt="축구" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
                 "야구": '<img src="assets/pictogram_baseball.jpg" alt="야구" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
                 "농구": '<img src="assets/pictogram_basketball.jpg" alt="농구" style="width: 48px; height: 48px; border-radius: 50%; mix-blend-mode: screen;">',
@@ -1709,7 +1684,7 @@ const sportsData = {
                 titleEl.textContent = sportName === "센터" ? "센터 AT" : `${sportName}부`;
             }
 
-                        const headBlock = document.getElementById('modal-head-at-block');
+            const headBlock = document.getElementById('modal-head-at-block');
             const assistantsBlock = document.getElementById('modal-assistants-block');
             const headContainer = document.getElementById('s-modal-head-container');
             const mainAtNameEl = document.getElementById('modal-main-at-name');
@@ -1754,22 +1729,18 @@ const sportsData = {
                 }
             }
 
-const assistantsList = document.getElementById('modal-assistants-list');
+            const assistantsList = document.getElementById('modal-assistants-list');
             if (assistantsList) {
                 assistantsList.innerHTML = '';
-                const assistants = data.sub || [];
-                if (assistants.length > 0) {
-                    assistants.forEach(name => {
-                        const li = document.createElement('li');
-                        li.textContent = name;
-                        li.style.cssText = 'background: #FFF0F2; color: #A50034; padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; border: 1px solid #FFD6DC;';
-                        assistantsList.appendChild(li);
+                if (data.sub && data.sub.length > 0) {
+                    data.sub.forEach(name => {
+                        const span = document.createElement('span');
+                        span.className = 'assistant-badge';
+                        span.textContent = name;
+                        assistantsList.appendChild(span);
                     });
                 } else {
-                    const li = document.createElement('li');
-                    li.textContent = "등록된 보조 AT가 없습니다.";
-                    li.style.cssText = 'color: #888; font-size: 0.85rem;';
-                    assistantsList.appendChild(li);
+                    assistantsList.innerHTML = '<span style="color: #999; font-size: 0.9rem;">배속 보조 AT 없음</span>';
                 }
             }
 
@@ -1780,316 +1751,186 @@ const assistantsList = document.getElementById('modal-assistants-list');
             document.body.style.overflow = 'hidden';
         };
 
-        document.addEventListener('DOMContentLoaded', () => {
+        window.closeDepartmentModal = function() {
             const modal = document.getElementById('department-modal');
-            const closeBtn = document.getElementById('modal-close-btn');
-            
-            if (closeBtn) {
-                closeBtn.addEventListener('click', () => {
-                    if (modal) {
-                        modal.classList.remove('show');
-                        setTimeout(() => {
-                            modal.style.display = 'none';
-                        }, 300);
-                        document.body.style.overflow = '';
-                    }
-                
-        
-        // Attach click listener to modern-profile-cards (Professors, Staff, Researchers, Rehab Instructors)
-        document.querySelectorAll('.modern-profile-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const nameEl = card.querySelector('.modern-profile-name');
-                if (!nameEl) return;
-
-                const rawName = nameEl.textContent.trim();
-                // Strip titles like '교수', '팀장', '실장' to match dictionary keys
-                const cleanName = rawName.replace(/(교수|팀장|실장)$/, '').trim();
-                const profModal = document.getElementById('prof-modal');
-                if (!profModal) return;
-
-                const pData = (typeof professorsData !== 'undefined') ? (professorsData[cleanName] || professorsData[rawName]) : null;
-
-                if (pData) {
-                    document.getElementById('prof-modal-name').textContent = rawName;
-                    document.getElementById('prof-modal-role').textContent = pData.role || "경희대학교 AT Center";
-
-                    const photoEl = document.getElementById('prof-modal-photo');
-                    if (photoEl) {
-                        if (pData.photo) {
-                            photoEl.innerHTML = `<img src="${pData.photo}" alt="${rawName}" style="width: 100%; height: 100%; object-fit: cover;">`;
-                        } else {
-                            const imgInCard = card.querySelector('img');
-                            if (imgInCard && imgInCard.src) {
-                                photoEl.innerHTML = `<img src="${imgInCard.src}" alt="${rawName}" style="width: 100%; height: 100%; object-fit: cover;">`;
-                            } else {
-                                photoEl.innerHTML = '<i class="fa-solid fa-user-tie"></i>';
-                            }
-                        }
-                    }
-
-                    document.getElementById('prof-modal-degree').textContent = pData.degree || "-";
-                    document.getElementById('prof-modal-edu').textContent = pData.edu || "경희대학교";
-                    document.getElementById('prof-modal-subject').textContent = pData.subject || "-";
-
-                    const subjectLabel = document.getElementById('prof-modal-subject-label');
-                    if (subjectLabel) subjectLabel.textContent = (cleanName === "최현곤") ? "담당부서" : "담당과목";
-
-                    document.getElementById('prof-modal-lab').textContent = pData.lab || "선승관 AT center (031-201-2787)";
-                    document.getElementById('prof-modal-email').textContent = pData.email || "khuatcenter@khu.ac.kr";
-
-                    const careerList = document.getElementById('prof-modal-career');
-                    if (careerList) {
-                        careerList.innerHTML = '';
-                        if (pData.career && pData.career.length > 0) {
-                            careerList.parentElement.style.display = 'block';
-                            pData.career.forEach(item => {
-                                const li = document.createElement('li');
-                                li.textContent = item;
-                                careerList.appendChild(li);
-                            });
-                        } else {
-                            careerList.parentElement.style.display = 'none';
-                        }
-                    }
-
-                    const researchList = document.getElementById('prof-modal-research');
-                    if (researchList) {
-                        researchList.innerHTML = '';
-                        if (pData.research && pData.research.length > 0) {
-                            researchList.parentElement.style.display = 'block';
-                            pData.research.forEach(item => {
-                                const li = document.createElement('li');
-                                li.textContent = item;
-                                researchList.appendChild(li);
-                            });
-                        } else {
-                            researchList.parentElement.style.display = 'none';
-                        }
-                    }
-
-                    profModal.style.display = 'flex';
-                    setTimeout(() => { profModal.classList.add('show'); }, 10);
-                    document.body.style.overflow = 'hidden';
-                } else {
-                    // Fallback for other members
-                    document.getElementById('prof-modal-name').textContent = rawName;
-                    document.getElementById('prof-modal-role').textContent = "경희대학교 스포츠재활 강사";
-
-                    const photoEl = document.getElementById('prof-modal-photo');
-                    const imgInCard = card.querySelector('img');
-                    if (photoEl) {
-                        if (imgInCard && imgInCard.src) {
-                            photoEl.innerHTML = `<img src="${imgInCard.src}" alt="${rawName}" style="width: 100%; height: 100%; object-fit: cover;">`;
-                        } else {
-                            photoEl.innerHTML = '<i class="fa-solid fa-user-check"></i>';
-                        }
-                    }
-
-                    document.getElementById('prof-modal-degree').textContent = "스포츠재활 강사";
-                    document.getElementById('prof-modal-edu').textContent = "경희대학교";
-                    document.getElementById('prof-modal-subject').textContent = "스포츠 부상 재활 & 1:1 케어";
-                    document.getElementById('prof-modal-lab').textContent = "선승관 AT center (031-201-2787)";
-                    document.getElementById('prof-modal-email').textContent = "khuatcenter@khu.ac.kr";
-
-                    const careerList = document.getElementById('prof-modal-career');
-                    if (careerList) {
-                        careerList.parentElement.style.display = 'block';
-                        careerList.innerHTML = '<li>현) 경희대학교 AT Center 스포츠재활 강사</li>';
-                    }
-
-                    const researchList = document.getElementById('prof-modal-research');
-                    if (researchList) {
-                        researchList.parentElement.style.display = 'none';
-                    }
-
-                    profModal.style.display = 'flex';
-                    setTimeout(() => { profModal.classList.add('show'); }, 10);
-                    document.body.style.overflow = 'hidden';
-                }
-            });
-        });
-
-
-        // Close prof-modal event listeners
-        const profCloseBtn = document.getElementById('prof-modal-close-btn');
-        const profModalEl = document.getElementById('prof-modal');
-        if (profCloseBtn && profModalEl) {
-            profCloseBtn.addEventListener('click', () => {
-                profModalEl.classList.remove('show');
-                setTimeout(() => { profModalEl.style.display = 'none'; }, 300);
+            if (modal) {
+                modal.classList.remove('show');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 300);
                 document.body.style.overflow = '';
-            });
-            profModalEl.addEventListener('click', (e) => {
-                if (e.target === profModalEl) {
-                    profModalEl.classList.remove('show');
-                    setTimeout(() => { profModalEl.style.display = 'none'; }, 300);
-                    document.body.style.overflow = '';
-                }
-            });
-        }
-        });
+            }
+        };
+
+        window.switchSubTab = function(tabName) {
+            document.querySelectorAll('.sub-tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.sub-tab-pane').forEach(pane => pane.classList.remove('active'));
+
+            const btn = document.getElementById('btn-tab-' + tabName);
+            const pane = document.getElementById('sub-tab-' + tabName);
+
+            if (btn) btn.classList.add('active');
+            if (pane) pane.classList.add('active');
+        };
+
+        // Open Professor / Staff Modal
+        window.openProfModal = function(cardOrName) {
+            let rawName = "";
+            let cardImgSrc = "";
+
+            if (typeof cardOrName === "string") {
+                rawName = cardOrName.trim();
+            } else if (cardOrName && cardOrName.nodeType) {
+                const nameEl = cardOrName.querySelector('.modern-profile-name');
+                if (nameEl) rawName = nameEl.textContent.trim();
+                const imgEl = cardOrName.querySelector('img');
+                if (imgEl && imgEl.src) cardImgSrc = imgEl.src;
             }
 
-            if (modal) {
-                modal.addEventListener('click', (e) => {
-                    if (e.target === modal) {
-                        modal.classList.remove('show');
-                        setTimeout(() => {
-                            modal.style.display = 'none';
-                        }, 300);
-                        document.body.style.overflow = '';
+            if (!rawName) return;
+
+            const cleanName = rawName.replace(/(교수|팀장|실장)$/, '').trim();
+            const profModal = document.getElementById('prof-modal');
+            if (!profModal) return;
+
+            const pData = professorsData[cleanName] || professorsData[rawName] || null;
+
+            if (pData) {
+                document.getElementById('prof-modal-name').textContent = rawName;
+                document.getElementById('prof-modal-role').textContent = pData.role || "경희대학교 AT Center";
+
+                const photoEl = document.getElementById('prof-modal-photo');
+                if (photoEl) {
+                    const imgSrc = pData.photo || cardImgSrc;
+                    if (imgSrc) {
+                        photoEl.innerHTML = `<img src="${imgSrc}" alt="${rawName}" style="width: 100%; height: 100%; object-fit: cover;">`;
+                    } else {
+                        photoEl.innerHTML = '<i class="fa-solid fa-user-tie"></i>';
                     }
+                }
+
+                document.getElementById('prof-modal-degree').textContent = pData.degree || "-";
+                document.getElementById('prof-modal-edu').textContent = pData.edu || "경희대학교";
+                document.getElementById('prof-modal-subject').textContent = pData.subject || "-";
+
+                const subjectLabel = document.getElementById('prof-modal-subject-label');
+                if (subjectLabel) subjectLabel.textContent = (cleanName === "최현곤") ? "담당부서" : "담당과목";
+
+                document.getElementById('prof-modal-lab').textContent = pData.lab || "선승관 AT center (031-201-2787)";
+                document.getElementById('prof-modal-email').textContent = pData.email || "khuatcenter@khu.ac.kr";
+
+                const careerList = document.getElementById('prof-modal-career');
+                if (careerList) {
+                    careerList.innerHTML = '';
+                    if (pData.career && pData.career.length > 0) {
+                        careerList.parentElement.style.display = 'block';
+                        pData.career.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = item;
+                            careerList.appendChild(li);
+                        });
+                    } else {
+                        careerList.parentElement.style.display = 'none';
+                    }
+                }
+
+                const researchList = document.getElementById('prof-modal-research');
+                if (researchList) {
+                    researchList.innerHTML = '';
+                    if (pData.research && pData.research.length > 0) {
+                        researchList.parentElement.style.display = 'block';
+                        pData.research.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = item;
+                            researchList.appendChild(li);
+                        });
+                    } else {
+                        researchList.parentElement.style.display = 'none';
+                    }
+                }
+            } else {
+                // Fallback for general members
+                document.getElementById('prof-modal-name').textContent = rawName;
+                document.getElementById('prof-modal-role').textContent = "경희대학교 스포츠재활 강사";
+
+                const photoEl = document.getElementById('prof-modal-photo');
+                if (photoEl) {
+                    if (cardImgSrc) {
+                        photoEl.innerHTML = `<img src="${cardImgSrc}" alt="${rawName}" style="width: 100%; height: 100%; object-fit: cover;">`;
+                    } else {
+                        photoEl.innerHTML = '<i class="fa-solid fa-user-check"></i>';
+                    }
+                }
+
+                document.getElementById('prof-modal-degree').textContent = "스포츠재활 강사";
+                document.getElementById('prof-modal-edu').textContent = "경희대학교";
+                document.getElementById('prof-modal-subject').textContent = "스포츠 부상 재활 & 1:1 케어";
+                document.getElementById('prof-modal-lab').textContent = "선승관 AT center (031-201-2787)";
+                document.getElementById('prof-modal-email').textContent = "khuatcenter@khu.ac.kr";
+
+                const careerList = document.getElementById('prof-modal-career');
+                if (careerList) {
+                    careerList.parentElement.style.display = 'block';
+                    careerList.innerHTML = '<li>현) 경희대학교 AT Center 스포츠재활 강사</li>';
+                }
+
+                const researchList = document.getElementById('prof-modal-research');
+                if (researchList) {
+                    researchList.parentElement.style.display = 'none';
+                }
+            }
+
+            profModal.style.display = 'flex';
+            setTimeout(() => { profModal.classList.add('show'); }, 10);
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeProfModal = function() {
+            const profModal = document.getElementById('prof-modal');
+            if (profModal) {
+                profModal.classList.remove('show');
+                setTimeout(() => { profModal.style.display = 'none'; }, 300);
+                document.body.style.overflow = '';
+            }
+        };
+
+        // Attach DOM event listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Department modal close
+            const deptModal = document.getElementById('department-modal');
+            const deptCloseBtn = document.getElementById('modal-close-btn');
+            if (deptCloseBtn) {
+                deptCloseBtn.addEventListener('click', window.closeDepartmentModal);
+            }
+            if (deptModal) {
+                deptModal.addEventListener('click', (e) => {
+                    if (e.target === deptModal) window.closeDepartmentModal();
+                });
+            }
+
+            // 2. Professor / Staff cards click
+            document.querySelectorAll('.modern-profile-card').forEach(card => {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', () => {
+                    window.openProfModal(card);
+                });
+            });
+
+            // 3. Professor modal close
+            const profCloseBtn = document.getElementById('prof-modal-close-btn');
+            const profModal = document.getElementById('prof-modal');
+            if (profCloseBtn) {
+                profCloseBtn.addEventListener('click', window.closeProfModal);
+            }
+            if (profModal) {
+                profModal.addEventListener('click', (e) => {
+                    if (e.target === profModal) window.closeProfModal();
                 });
             }
         });
     </script>
 
-
-    <!-- Professor Modal -->
-    <div id="prof-modal" class="modal-overlay">
-        <div class="prof-modal-content">
-            <div class="prof-modal-header-bg">
-                <button class="prof-modal-close-btn" id="prof-modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
-                <div class="prof-modal-profile">
-                    <div class="prof-modal-photo" id="prof-modal-photo">
-                        <i class="fa-solid fa-user-tie"></i>
-                    </div>
-                    <div>
-                        <h3 class="prof-modal-name" id="prof-modal-name">홍길동</h3>
-                        <div class="prof-modal-role" id="prof-modal-role">교수</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="prof-modal-body">
-                <div class="prof-info-grid">
-                    <div class="prof-info-label">학위명</div>
-                    <div class="prof-info-value" id="prof-modal-degree">-</div>
-                    
-                    <div class="prof-info-label">최종학력</div>
-                    <div class="prof-info-value" id="prof-modal-edu">-</div>
-                    
-                    <div class="prof-info-label" id="prof-modal-subject-label">담당과목</div>
-                    <div class="prof-info-value" id="prof-modal-subject">-</div>
-                    
-                    <div class="prof-info-label">연구실</div>
-                    <div class="prof-info-value" id="prof-modal-lab">-</div>
-                    
-                    <div class="prof-info-label">E-mail</div>
-                    <div class="prof-info-value" id="prof-modal-email">-</div>
-                </div>
-                
-                <div class="prof-section">
-                    <div class="prof-section-title">주요경력</div>
-                    <ul class="prof-list" id="prof-modal-career">
-                    </ul>
-                </div>
-                
-                <div class="prof-section">
-                    <div class="prof-section-title">연구실적 (최근 논문)</div>
-                    <ul class="prof-list" id="prof-modal-research">
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- Research Papers Modal -->
-    <div id="research-modal" class="modal">
-        <div class="modal-content research-modal-content">
-            <span class="close-modal" id="close-research-modal">×</span>
-            <div class="research-modal-header">
-                <h2>논문 | 학술발표</h2>
-                <p>AT 센터의 파트별 연구 성과를 확인하실 수 있습니다.</p>
-            </div>
-            <div class="research-modal-body">
-                <div class="research-tabs-container">
-                    <button class="rtab-btn active" data-rtab="rtab-1">Part 1. 스포츠재활 (총 29편)</button>
-                    <button class="rtab-btn" data-rtab="rtab-2">Part 2. 운동유발 피로 회복 (총 13편)</button>
-                    <button class="rtab-btn" data-rtab="rtab-3">Part 3. 경기력 향상 (총 15편)</button>
-                    <button class="rtab-btn" data-rtab="rtab-4">Part 4. 부상 조사 분석 (총 6편)</button>
-                </div>
-                
-                <div class="rtab-content-area">
-                    <div id="rtab-1" class="rtab-pane active">
-    <div style="background:#f4f4f4; padding:15px 20px; border-radius:8px; margin-bottom:20px; font-size:0.95rem; color:#555; line-height:1.6; word-break:keep-all;">무릎 전방 통증(PFP/AKP), 관절원성 근억제(AMI), 전방십자인대(ACL) 및 반월판 수술 후 기능 장애, 만성 발목 불안정성 등 근골격계 손상 평가, 신경근 결손 및 재활 중재(전기자극, 침 치료, 물리/심리 치료) 관련 논문입니다.</div>
-    <ul class="paper-list" id="paper-list-1" style="list-style:none; padding:0; margin:0;"></ul>
-</div>
-                    <div id="rtab-2" class="rtab-pane">
-    <div style="background:#f4f4f4; padding:15px 20px; border-radius:8px; margin-bottom:20px; font-size:0.95rem; color:#555; line-height:1.6; word-break:keep-all;">운동 후 쿨다운(Cool-down) 전략, 관절 냉각(Cryotherapy/Cooling), 젖산 제거 기법, 운동 전·후 대퇴 연골의 형태학적 변화 및 회복 반응, 운동 유발 피로가 근기능에 미치는 영향 관련 논문입니다.</div>
-    <ul class="paper-list" id="paper-list-2" style="list-style:none; padding:0; margin:0;"></ul>
-</div>
-                    <div id="rtab-3" class="rtab-pane">
-    <div style="background:#f4f4f4; padding:15px 20px; border-radius:8px; margin-bottom:20px; font-size:0.95rem; color:#555; line-height:1.6; word-break:keep-all;">웜업(Warm-up) 기법, 스트레칭 방식에 따른 파워/스매시 효과, 스프린트 인터벌 트레이닝, 1RM 부하 추정, 시각 및 언어적 피드백, 관절 제어가 점프/스쿼트 등 운동수행력과 생체역학에 미치는 영향 관련 논문입니다.</div>
-    <ul class="paper-list" id="paper-list-3" style="list-style:none; padding:0; margin:0;"></ul>
-</div>
-                    <div id="rtab-4" class="rtab-pane">
-    <div style="background:#f4f4f4; padding:15px 20px; border-radius:8px; margin-bottom:20px; font-size:0.95rem; color:#555; line-height:1.6; word-break:keep-all;">태권도(겨루기, 품새, 시범), 배드민턴, 대학 6개 종목 엘리트 선수 부상 역학 조사, 급/만성 운동부하 비율(ACWR) 기반 부상 위험도 분석 및 낙하 매트 충격 흡수 연구입니다.</div>
-    <ul class="paper-list" id="paper-list-4" style="list-style:none; padding:0; margin:0;"></ul>
-</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Gangseok Details Modal -->
-    <div id="gangseok-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.7); z-index: 99999; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
-        <div class="modal-content" style="background: #fff; border-radius: 12px; width: 90%; max-width: 600px; max-height: 90vh; overflow-y: auto; position: relative; padding: 30px;">
-            <span class="close-modal" id="close-gangseok-modal" style="position: absolute; top: 20px; right: 30px; font-size: 2rem; color: #666; cursor: pointer;">×</span>
-            
-            <!-- Staff Header -->
-            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
-                <div style="width: 50px; height: 50px; border-radius: 50%; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: var(--color-primary);">
-                    <i class="fa-solid fa-futbol"></i>
-                </div>
-                <div>
-                    <div style="font-size: 0.9rem; color: var(--color-primary); font-weight: 700;">전담 AT</div>
-                    <h3 style="margin: 0; font-size: 1.5rem; color: #333;">강석</h3>
-                </div>
-            </div>
-            
-            <!-- Assistant ATs -->
-            <div style="margin-bottom: 25px;">
-                <h4 style="font-size: 1.1rem; color: #555; margin-bottom: 15px; font-weight: 700;">보조 AT 명단</h4>
-                <ul style="list-style-type: disc; padding-left: 20px; color: #444; line-height: 1.8;">
-                    <li>조현준</li>
-                    <li>김예종</li>
-                    <li>오승진</li>
-                    <li>이복음</li>
-                </ul>
-            </div>
-
-            <!-- Activity Photos -->
-            <div>
-                <h4 style="font-size: 1.1rem; color: #555; margin-bottom: 15px; font-weight: 700;">활동 사진</h4>
-                <div class="photo-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
-                    <div style="background: #eee; aspect-ratio: 1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #777; font-size: 0.9rem; font-weight: 500; border: 1px dashed #ccc;"><i class="fa-regular fa-image" style="font-size: 2rem; margin-bottom: 8px; color: #ccc;"></i><br>사진 없음</div>
-                    <div style="background: #eee; aspect-ratio: 1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #777; font-size: 0.9rem; font-weight: 500; border: 1px dashed #ccc;"><i class="fa-regular fa-image" style="font-size: 2rem; margin-bottom: 8px; color: #ccc;"></i><br>사진 없음</div>
-                    <div style="background: #eee; aspect-ratio: 1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #777; font-size: 0.9rem; font-weight: 500; border: 1px dashed #ccc;"><i class="fa-regular fa-image" style="font-size: 2rem; margin-bottom: 8px; color: #ccc;"></i><br>사진 없음</div>
-                    <div style="background: #eee; aspect-ratio: 1; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #777; font-size: 0.9rem; font-weight: 500; border: 1px dashed #ccc;"><i class="fa-regular fa-image" style="font-size: 2rem; margin-bottom: 8px; color: #ccc;"></i><br>사진 없음</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<script>
-    function toggleAccordion(button) {
-        const item = button.closest('.accordion-item');
-        const isActive = item.classList.contains('active');
-        
-        // Close all accordions
-        document.querySelectorAll('.accordion-item').forEach(i => {
-            i.classList.remove('active');
-        });
-        
-        // Open the clicked one if it wasn't active
-        if (!isActive) {
-            item.classList.add('active');
-        }
-    }
-</script>
-    <!-- Alumni Career Modal -->
+<!-- Alumni Career Modal -->
     <div id="alumni-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); backdrop-filter: blur(6px); z-index: 9999; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
         <div class="alumni-modal-content" style="width: 90%; max-width: 420px; background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 45px rgba(0,0,0,0.3); position: relative; transform: scale(0.95); transition: transform 0.3s ease;">
             <!-- Header with KHU Burgundy Gradient -->
