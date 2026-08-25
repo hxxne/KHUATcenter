@@ -1754,6 +1754,19 @@ button {
     color: var(--color-text-muted);
     font-weight: 400;
     margin-bottom: 30px;
+    line-height: 1.75;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
+
+.contact-details span {
+    font-size: 0.95rem;
+    color: var(--color-text-main);
+    line-height: 1.55;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
 }
 
 .contact-details {
