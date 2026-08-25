@@ -4137,38 +4137,52 @@ button {
     border-bottom: 2px solid rgba(165, 0, 52, 0.3);
 }
 
-/* 5 Clean Highlights List */
+/* 5 Clean Highlights List - Perfect Alignment */
 .about-clean-highlights {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px 28px;
-    max-width: 880px;
+    gap: 14px 20px;
+    max-width: 920px;
     margin: 32px auto 0 auto;
     border-top: 1px solid #edf2f7;
-    padding-top: 26px;
+    padding-top: 28px;
 }
 
 .about-clean-item {
+    background: #f8fafc;
+    border: 1.5px solid #edf2f7;
+    border-radius: 14px;
+    padding: 14px 18px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 6px 0;
+    gap: 14px;
+    transition: all 0.22s ease;
+}
+
+.about-clean-item:hover {
+    background: #ffffff;
+    border-color: #A50034;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(165, 0, 52, 0.08);
 }
 
 .about-clean-wide {
     grid-column: 1 / -1;
-    justify-content: center;
 }
 
 .about-clean-num {
     font-size: 0.92rem;
     font-weight: 900;
-    color: #A50034;
-    background: #fff0f2;
-    padding: 4px 10px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #A50034 0%, #700023 100%);
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 8px;
-    letter-spacing: 0.5px;
     flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(165, 0, 52, 0.25);
 }
 
 .about-clean-txt {
@@ -4179,314 +4193,13 @@ button {
 }
 
 @media (max-width: 768px) {
-    .about-hero-container {
-        padding: 14px;
-    }
-    .about-hero-content {
-        padding: 20px 5px 5px 5px;
-    }
-    .about-lead {
-        font-size: 1.05rem;
-    }
     .about-clean-highlights {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 10px;
     }
     .about-clean-wide {
         grid-column: auto;
-        justify-content: flex-start;
     }
-}
-
-/* --------------------------------------------------------------------------
-   Bento Pillars Grid (Spacious Modern UI/UX Redesign)
-   -------------------------------------------------------------------------- */
-.bento-pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    margin-top: 35px;
-    align-items: stretch;
-}
-
-.bento-card {
-    background: #ffffff;
-    border: 1px solid #e5e9f0;
-    border-radius: 22px;
-    padding: 0;
-    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    position: relative;
-}
-
-.bento-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 20px 45px rgba(165, 0, 52, 0.08);
-    border-color: #f0cdd3;
-}
-
-/* Card Header with subtle tint */
-.bento-card-header {
-    padding: 28px 26px 20px 26px;
-    position: relative;
-    border-bottom: 1px solid #f1f5f9;
-}
-
-.bento-card-edu .bento-card-header {
-    background: linear-gradient(180deg, #fff5f6 0%, #ffffff 100%);
-    border-top: 5px solid #A50034;
-}
-.bento-card-res .bento-card-header {
-    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
-    border-top: 5px solid #1E293B;
-}
-.bento-card-srv .bento-card-header {
-    background: linear-gradient(180deg, #fff9f5 0%, #ffffff 100%);
-    border-top: 5px solid #C2410C;
-}
-
-.bento-badge-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 12px;
-}
-
-.bento-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.8px;
-}
-
-.badge-edu {
-    background: rgba(165, 0, 52, 0.1);
-    color: #A50034;
-}
-.badge-res {
-    background: rgba(30, 41, 59, 0.1);
-    color: #1E293B;
-}
-.badge-srv {
-    background: rgba(194, 65, 12, 0.1);
-    color: #C2410C;
-}
-
-.bento-cat-icon {
-    font-size: 1.25rem;
-    opacity: 0.75;
-}
-.bento-card-edu .bento-cat-icon { color: #A50034; }
-.bento-card-res .bento-cat-icon { color: #1E293B; }
-.bento-card-srv .bento-cat-icon { color: #C2410C; }
-
-.bento-title {
-    font-size: 1.7rem;
-    font-weight: 800;
-    color: #0f172a;
-    margin: 0 0 4px 0;
-    letter-spacing: -0.5px;
-}
-
-.bento-subtitle {
-    font-size: 0.92rem;
-    color: #64748b;
-    font-weight: 600;
-    margin: 0 0 14px 0;
-}
-
-.bento-tags {
-    display: flex;
-    gap: 8px;
-}
-
-.bento-tags span {
-    font-size: 0.78rem;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 6px;
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    color: #475569;
-}
-
-/* Card Body & Spacious Item Blocks */
-.bento-card-body {
-    padding: 22px 24px 26px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    flex: 1;
-    background: #ffffff;
-}
-
-.bento-item {
-    background: #f8fafc;
-    border: 1px solid #edf2f7;
-    border-radius: 14px;
-    padding: 15px 18px;
-    transition: all 0.25s ease;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.bento-item:hover {
-    background: #ffffff;
-    border-color: #cbd5e1;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-    transform: translateX(3px);
-}
-
-.bento-card-edu .bento-item:hover {
-    border-left: 3.5px solid #A50034;
-}
-.bento-card-res .bento-item:hover {
-    border-left: 3.5px solid #1E293B;
-}
-.bento-card-srv .bento-item:hover {
-    border-left: 3.5px solid #C2410C;
-}
-
-.bento-item-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.item-bullet-icon {
-    font-size: 0.88rem;
-    flex-shrink: 0;
-}
-.bento-card-edu .item-bullet-icon { color: #A50034; }
-.bento-card-res .item-bullet-icon { color: #334155; }
-.bento-card-srv .item-bullet-icon { color: #C2410C; }
-
-.bento-item-header h4 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin: 0;
-    line-height: 1.35;
-}
-
-.bento-item-desc {
-    font-size: 0.85rem;
-    color: #475569;
-    margin: 0;
-    line-height: 1.55;
-    word-break: keep-all;
-    font-weight: 500;
-    padding-left: 20px;
-}
-
-@media (max-width: 991px) {
-    .bento-pillars-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-}px;
-    }
-}
-/* AI Generated Pictogram Images */
-.pictogram-img {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
-    mix-blend-mode: multiply;
-    border-radius: 50%;
-}
-
-/* Alumni & Awards Interactive Styles */
-.clickable-alumni-name {
-    color: inherit;
-    display: inline-block;
-    padding: 1px 4px;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-}
-.clickable-alumni-name:hover {
-    color: #A50034 !important;
-    background: #FFF0F2;
-    text-decoration: underline;
-    font-weight: 700;
-}
-.ga-card {
-    cursor: pointer !important;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-.ga-card:hover {
-    transform: translateY(-4px) scale(1.02) !important;
-    border-color: #A50034 !important;
-    box-shadow: 0 8px 20px rgba(165, 0, 52, 0.15) !important;
-}
-
-
-/* Assistant Badge Pill Styling in Sports Modal */
-.assistant-badge {
-    background: #FFF0F2;
-    border: 1.5px solid #FFCCD3;
-    padding: 8px 18px;
-    border-radius: 24px;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #A50034;
-    display: inline-flex;
-    align-items: center;
-    box-shadow: 0 2px 8px rgba(165, 0, 52, 0.08);
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.assistant-badge:hover {
-    background: #A50034;
-    color: #ffffff;
-    border-color: #A50034;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(165, 0, 52, 0.25);
-}
-
-
-/* Clean Typographic Line Breaks & Word Protection */
-.pc-br {
-    display: inline;
-}
-@media (max-width: 991px) {
-    .pc-br {
-        display: none;
-    }
-}
-
-.about-lead, .about-detail {
-    word-break: keep-all;
-    overflow-wrap: break-word;
-    text-wrap: pretty;
-}
-
-.bento-item-desc {
-    font-size: 0.88rem;
-    color: #475569;
-    margin: 0;
-    line-height: 1.6;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-    text-wrap: pretty;
-    font-weight: 500;
-    padding-left: 20px;
-}
-
-.hi-card-txt {
-    font-size: 1.02rem;
-    color: #0f172a;
-    font-weight: 700;
-    line-height: 1.45;
-    word-break: keep-all;
-    overflow-wrap: break-word;
-    text-wrap: pretty;
 }
 
 /* --------------------------------------------------------------------------
