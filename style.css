@@ -4446,3 +4446,42 @@ button {
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(165, 0, 52, 0.25);
 }
+
+
+/* Clean Typographic Line Breaks & Word Protection */
+.pc-br {
+    display: inline;
+}
+@media (max-width: 991px) {
+    .pc-br {
+        display: none;
+    }
+}
+
+.about-lead, .about-detail {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
+
+.bento-item-desc {
+    font-size: 0.88rem;
+    color: #475569;
+    margin: 0;
+    line-height: 1.6;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+    font-weight: 500;
+    padding-left: 20px;
+}
+
+.hi-card-txt {
+    font-size: 1.02rem;
+    color: #0f172a;
+    font-weight: 700;
+    line-height: 1.45;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+}
