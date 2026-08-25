@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1787640426971">
+    <link rel="stylesheet" href="style.css?v=1787640761174">
 </head>
 <body>
 
@@ -1945,6 +1945,7 @@
         };
 
         
+        
         // Research Publications Modal Handlers
         window.openResearchModal = function() {
             const rModal = document.getElementById('research-modal');
@@ -1985,7 +1986,7 @@
                 activeBtn.classList.add('active');
                 activeBtn.style.borderBottomColor = '#A50034';
                 activeBtn.style.color = '#A50034';
-                activeBtn.style.fontWeight = '700';
+                activeBtn.style.fontWeight = '800';
             }
             if (activePane) {
                 activePane.style.display = 'block';
@@ -2031,13 +2032,14 @@
 
 
     <!-- Research Publications Modal (Verified SCIE Papers) -->
+    <!-- Research Publications Modal (Full 63 Research Papers) -->
     <div id="research-modal" class="modal-overlay" onclick="closeResearchModal()">
-        <div class="modal-content research-modal-content" style="max-width: 900px; width: 92%; border-radius: 20px; overflow: hidden; background: #ffffff; padding: 0; box-shadow: 0 25px 50px rgba(0,0,0,0.25);" onclick="event.stopPropagation()">
+        <div class="modal-content research-modal-content" style="max-width: 950px; width: 94%; border-radius: 20px; overflow: hidden; background: #ffffff; padding: 0; box-shadow: 0 25px 50px rgba(0,0,0,0.3);" onclick="event.stopPropagation()">
             <button class="modal-close-btn" id="close-research-modal" onclick="closeResearchModal()" style="position: absolute; top: 18px; right: 22px; z-index: 10; color: #fff; background: rgba(0,0,0,0.25); border: none; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.2rem; transition: all 0.2s ease;"><i class="fa-solid fa-xmark"></i></button>
             
             <div class="research-modal-header" style="background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%); padding: 28px 35px; color: white;">
                 <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 6px;">
-                    <span style="background: rgba(255,255,255,0.15); color: #94a3b8; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.5px;">EBM RESEARCH</span>
+                    <span style="background: rgba(255,255,255,0.15); color: #cbd5e1; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 800; letter-spacing: 0.5px;">EBM RESEARCH (총 63편)</span>
                     <span style="color: rgba(255,255,255,0.6); font-size: 0.85rem;">경희대학교 AT Center 학술 연구 실적</span>
                 </div>
                 <h2 style="font-size: 1.7rem; font-weight: 800; margin: 0; color: #ffffff;">연구실적 및 학술 논문 (Publications)</h2>
@@ -2046,99 +2048,541 @@
             
             <div class="research-modal-body" style="background: #f8fafc;">
                 <div class="research-tabs-container" style="display: flex; background: #ffffff; border-bottom: 1px solid #e2e8f0; overflow-x: auto; padding: 0 20px;">
-                    <button class="rtab-btn active" id="rtab-btn-1" onclick="switchResearchTab(1)" style="padding: 16px 20px; font-weight: 700; font-size: 0.95rem; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid #A50034; color: #A50034;">Part 1. 스포츠재활</button>
-                    <button class="rtab-btn" id="rtab-btn-2" onclick="switchResearchTab(2)" style="padding: 16px 20px; font-weight: 600; font-size: 0.95rem; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent; color: #64748b;">Part 2. 운동유발 피로·신경근</button>
-                    <button class="rtab-btn" id="rtab-btn-3" onclick="switchResearchTab(3)" style="padding: 16px 20px; font-weight: 600; font-size: 0.95rem; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent; color: #64748b;">Part 3. 경기력 향상·생체역학</button>
-                    <button class="rtab-btn" id="rtab-btn-4" onclick="switchResearchTab(4)" style="padding: 16px 20px; font-weight: 600; font-size: 0.95rem; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent; color: #64748b;">Part 4. 부상 조사 분석(ISS)</button>
+                    <button class="rtab-btn active" id="rtab-btn-1" onclick="switchResearchTab(1)" style="padding: 15px 22px; font-weight: 800; font-size: 0.95rem; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid #A50034; color: #A50034; white-space: nowrap; transition: all 0.2s ease;">Part 1. 스포츠재활 <span style="background: rgba(165,0,52,0.1); color: #A50034; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">29편</span></button>
+                    <button class="rtab-btn " id="rtab-btn-2" onclick="switchResearchTab(2)" style="padding: 15px 22px; font-weight: 600; font-size: 0.95rem; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent; color: #64748b; white-space: nowrap; transition: all 0.2s ease;">Part 2. 운동유발 피로 회복 <span style="background: rgba(0,0,0,0.06); color: #64748b; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">13편</span></button>
+                    <button class="rtab-btn " id="rtab-btn-3" onclick="switchResearchTab(3)" style="padding: 15px 22px; font-weight: 600; font-size: 0.95rem; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent; color: #64748b; white-space: nowrap; transition: all 0.2s ease;">Part 3. 경기력 향상 <span style="background: rgba(0,0,0,0.06); color: #64748b; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">15편</span></button>
+                    <button class="rtab-btn " id="rtab-btn-4" onclick="switchResearchTab(4)" style="padding: 15px 22px; font-weight: 600; font-size: 0.95rem; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent; color: #64748b; white-space: nowrap; transition: all 0.2s ease;">Part 4. 부상 조사 분석 <span style="background: rgba(0,0,0,0.06); color: #64748b; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">6편</span></button>
+                    
                 </div>
                 
-                <div class="rtab-content-area" style="padding: 25px 30px; max-height: 55vh; overflow-y: auto;">
-                    <!-- Part 1: Sports Rehabilitation -->
+                <div class="rtab-content-area" style="padding: 25px 30px; max-height: 60vh; overflow-y: auto;">
+                    
+                    <!-- Pane 1: Part 1. 스포츠재활 -->
                     <div id="rtab-pane-1" class="rtab-pane active" style="display: block;">
                         <ul class="paper-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Bilateral femoral cartilage morphology in athletes with unilateral patellofemoral pain: associations with pain severity and self-reported function</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Park JH, Lee JW, Kim JY, et al. (2026)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(165,0,52,0.08); padding: 3px 10px; border-radius: 6px;">Journal of Science and Medicine in Sport (SCIE)</span>
-                            </li>
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Medial meniscus extrusion after 30-min running in individuals who underwent meniscus surgery or anterior cruciate ligament reconstruction and healthy controls</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Park JH, Oh SM, Lee JW, et al. (2026)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(165,0,52,0.08); padding: 3px 10px; border-radius: 6px;">Knee Surgery, Sports Traumatology, Arthroscopy (SCIE)</span>
-                            </li>
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Lower extremity muscle activation patterns during running in individuals with and without anterior cruciate ligament reconstruction</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Park JH, Lim JH, et al. (2026)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(165,0,52,0.08); padding: 3px 10px; border-radius: 6px;">Gait & Posture (SCIE)</span>
-                            </li>
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Effects of foot orthoses on lower extremity biomechanics and pain in individuals with patellofemoral pain: a randomized controlled trial</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Park JH, et al. (2024)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(165,0,52,0.08); padding: 3px 10px; border-radius: 6px;">American Journal of Sports Medicine (SCIE)</span>
-                            </li>
+                            
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#1</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Bilateral femoral cartilage morphology in athletes with unilateral patellofemoral pain: associations with pain severity and self-reported function.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Lim J, Bang HS, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Athletic Training. In press; 2026.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#2</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Medial meniscus extrusion after 30-min running in individuals who underwent meniscus surgery or anterior cruciate ligament reconstruction and healthy controls.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim J, Kang E, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Sport Rehabilitation. In Press; 2026.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#3</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Lower extremity muscle activation patterns during running in individuals with and without anterior cruciate ligament reconstruction.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee J, Lee K, Lee YS, Park SK, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Clinical Biomechanics. 137:106878. 2026.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#4</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Sex-specific associations of body mass index with quadriceps neuromuscular function and self-reported function in individuals with and without patellofemoral pain.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Obesity Research & Clinical Practice. 19:518. 2025.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#5</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Ultrasonography assessment of talar cartilage and ATFL after running in chronically unstable, coper, and healthy ankles: A case-control study.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Seo D, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Physiotherapy Theory and Practice. 41:1228. 2025.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#6</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Advancing clinical evaluation and treatment of arthrogenic muscle inhibition: A need for validation and innovation-Letter to the Editor.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Norte GE, Sherman DA, Ingersoll CD, Bodkin SG, Snyder-Mackler L, Grindstaff TL, Burland JP, Hopkins JT, Blackburn T, Chatput M, Konish Y, Rice D, Hart JH, Harkey MS, Zarzycki R, Palmieri-Smith RM, Lepely LK, Lepley AS, Pamukoff DN, Park J, Lisee C, Pietrosimone B, Thomas AC, Goetschius J, Touville TW, Kidgell DJ, and Kuenze C.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>American Journal of Sports Medicine. 52:NP34. 2024.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#7</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Lower extremity muscle volume in unilateral and bilateral patellofemoral pain: A cross-sectional exploratory study including superficial and deep muscles.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Park J, Boling M, Glaviano N.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Athletic Training. 59:915. 2024.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#8</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Sex differences in knee extensor neuromuscular function in individuals with and without patellofemoral pain.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Glaviano N, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Sports Health. 16:1000. 2024.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#9</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Change in pain perception and TENS pulse amplitude, and progression in aerobic and resistance exercises over a series of ten-session rehabilitation for anterior knee pain.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee J, Doo H, Roh Y, Song S, Oh M, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Asian Journal of Kinesiology. 25:50. 2023.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#10</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Impact of severity and duration of anterior knee pain on quadriceps function and self-reported function.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Athletic Training. 57:771. 2022.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#11</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Patients with chronic unilateral anterior knee pain experience bilateral deficits in quadriceps function and lower quarter flexibility: A cross-sectional study.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Physiotherapy Theory and Practice. 38:2531. 2022.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#12</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Chronic unilateral knee pain experience bilateral deficits in quadriceps function and lower quarter flexibility.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Physiotherapy Theory Practice. 28:2531. 2021.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#13</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Anterior knee pain independently alters landing and jumping biomechanics.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Seeley MK, Denning WM, Park J, Croft K, Hopkins JT.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Clinical Biomechanics. 105458. 2021.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#14</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Training and detraining effects of a rehabilitation programme with or without electro-cryotherapy in patients with anterior knee pain.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Roh Y, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Applied Sciences. 11:4812. 2021.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#15</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Bilateral patella cartilage debridement and exercise rehabilitation for chondromalacia and plica syndrome: A case report.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Kim J, Ko B.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Applied Sciences. 11:4078. 2021.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#16</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Emotional changes and functional progressions during postoperative rehabilitation in collegiate student-athletes: A preliminary study.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee SY, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Healthcare. 92:184. 2021.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#17</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Knee joint and quadriceps dysfunction in individuals with anterior knee pain, anterior cruciate ligament reconstruction, and meniscus surgery: A cross-sectional study.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Kim D, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Sport Rehabilitation. 30:112. 2021.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#18</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Electroacupuncture and manual acupuncture increase joint flexibility but reduce muscle strength.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Kim D, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Healthcare. 8:414. 2020.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#19</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Experimental knee pain affects lower-extremity muscle activation during landing and jumping.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Denning WM, Pitt J, Hopkins JT, Seeley MK.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Sport Rehabilitation. 26:78. 2017.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#20</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Arthroscopic repair versus non-operative treatment of first-time traumatic anterior shoulder dislocations: A numbers-needed-to-treat analysis.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Cosby N.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Clinics in Shoulder and Elbow. 19:110. 2016.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#21</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Overuse capsuloligamentous injury of the first metatarsophalangeal joint: a case report.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Grindstaff TL.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Korean Foot & Ankle Society. 19:128. 2015.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#22</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Effect of experimental anterior knee pain model affects perceived pain and movement mechanics.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Falk EE, Seeley MK, Hunter I, Park J, Hopkins JT.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Athletic Training & Sports Health Care. 6:7. 2014.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#23</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Experimental knee pain alters lower-extremity mechanics during walking and running.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Seeley MK, Park J, Hopkins JT.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Athletic Training. 23:19. 2013.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#24</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Induced knee pain immediately reduces involuntary and voluntary quadriceps activation.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Hopkins JT.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Clinical Journal of Sport Medicine. 23:19. 2013.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#25</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Within and between reliability of the maximal voluntary knee extension torque and activation.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Hopkins JT.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>International Journal of Neuroscience. 123:55. 2013.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#26</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Immediate effects of acupuncture and cryotherapy on quadriceps motoneuron pool excitability: Randomised trial using anterior knee infusion model.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Hopkins JT.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Acupuncture in Medicine. 30:195. 2012.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#27</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Knee extension exercises do not immediately increase quadriceps activation individuals with anterior knee pain.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Grindstaff TL, Hart JM, Hertel J, Ingersoll CD.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Sport Rehabilitation. 21:119. 2012.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#28</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Psychological consultation in rehabilitation.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Nasypany A.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Internet Journal of Allied Health Sciences and Practice. 10:2012.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #A50034; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #A50034; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#29</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Quadriceps activation normative values and the affect of subcutaneous tissue thickness.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Hopkins JT.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #A50034; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Electromyography and Kinesiology. 21:136. 2011.</span>
+                        </li>
                         </ul>
                     </div>
-
-                    <!-- Part 2: Neuromuscular & Fatigue -->
-                    <div id="rtab-pane-2" class="rtab-pane" style="display: none;">
+                    <!-- Pane 2: Part 2. 운동유발 피로 회복 -->
+                    <div id="rtab-pane-2" class="rtab-pane " style="display: none;">
                         <ul class="paper-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Sex-specific associations of body mass index with quadriceps neuromuscular function and self-reported function in individuals with and without patellofemoral pain</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Park JH, Oh SM, et al. (2025)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(30,41,59,0.08); padding: 3px 10px; border-radius: 6px;">Journal of Athletic Training (SCIE)</span>
-                            </li>
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Effects of whole-body vibration on quadriceps neuromuscular function in individuals with knee osteoarthritis: a systematic review and meta-analysis</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Park JH, Lee JW, et al. (2025)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(30,41,59,0.08); padding: 3px 10px; border-radius: 6px;">Clinical Biomechanics (SCIE)</span>
-                            </li>
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Neuromuscular alterations during landing in athletes with chronic ankle instability: a cross-sectional study</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Oh SM, Park JH, et al. (2024)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(30,41,59,0.08); padding: 3px 10px; border-radius: 6px;">Journal of Sports Sciences (SCIE)</span>
-                            </li>
+                            
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#1</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Acute recovery in the femoral cartilage morphology following running and cool-down protocols.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park S, Lim J, Lee J, Jeon S, Kim J, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>PeerJ. 12:e18302. 2024.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#2</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Change in femoral cartilage cross-sectional area after aerobic and resistance exercise.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lim J, Lee J, Park S, Lee J, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>International Journal of Sports Medicine. 45:705. 2024.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#3</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Morphologic response in femoral cartilage during and after 40-min treadmill running.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee J, Lim J, Park S, Kim S, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Athletic Training. 59:906. 2024.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#4</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Exercise-induced fatigue affects knee proprioceptive acuity and quadriceps neuromuscular function more in patients with ACL reconstruction or meniscus surgery than in healthy individuals.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Glaviano N, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Knee Surgery, Sports Traumatology, Arthroscopy. 31:5428. 2023.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#5</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Quadriceps Neuromuscular Function during and after Exercise-induced Fatigue in Patients with Patellofemoral Pain.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim S, Roh Y, Glaviano N, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Athletic Training. 58:554. 2023.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#6</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Bilateral knee joint cooling on anaerobic capacity and wheel cadence during sprint cycling intervals.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Nam A, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Healthcare. 10:1951. 2022.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#7</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">A 7-min halftime jog mitigated the reduction in sprint performance for the initial 15-min of the second half in a simulated football match.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Bang S, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Plos ONE. 17:e0270898. 2022.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#8</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Comparison of four different cool-down strategies on lower-leg temperature, blood lactate concentration, and fatigue perception after intense running.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lim J, Park J, Lee S, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Sport Rehabilitation. 31:1052. 2022.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#9</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Changes in heart rate, muscle temperature, blood lactate concentration, blood pressure, and fatigue perception following jogging and running: An observational study.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lim J, Park H, Lee S, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Exercise Science. 31:72. 2022.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#10</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Immediate effects of an inverted body position on energy expenditure and blood lactate removal after intense running.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim MS, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Applied Sciences. 10:6645. 2020.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#11</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Lower-leg cooling during halftime does not affect second-half performance in a football match.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Kim D, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Applied Sports Sciences. 31:32. 2019.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#12</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Joint cooling does not hinder athletic performance during high-intensity intermittent exercise.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim H, Lee D, Choi HM, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>International Journal of Sports Medicine. 7:641. 2016.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #1E293B; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #1E293B; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#13</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Cold application and functional performance.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #1E293B; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Asian Journal of Kinesiology. 17:29. 2015.</span>
+                        </li>
                         </ul>
                     </div>
-
-                    <!-- Part 3: Performance & Biomechanics -->
-                    <div id="rtab-pane-3" class="rtab-pane" style="display: none;">
+                    <!-- Pane 3: Part 3. 경기력 향상 -->
+                    <div id="rtab-pane-3" class="rtab-pane " style="display: none;">
                         <ul class="paper-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Anticipatory effect on lower extremity muscle recruitment and activation patterns during single leg drop tasks</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Park JH, Lee JW, et al. (2026)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(217,119,6,0.08); padding: 3px 10px; border-radius: 6px;">Journal of Electromyography and Kinesiology (SCIE)</span>
-                            </li>
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Kinematic and kinetic adaptations in collegiate martial arts athletes during high-impact landing</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Lee JW, Choi HG, Park JH, et al. (2025)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(217,119,6,0.08); padding: 3px 10px; border-radius: 6px;">Sports Biomechanics (SCIE)</span>
-                            </li>
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Electromyographic analysis of trunk and lower extremity musculature during sport-specific agility drills</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Kim JY, Park JH, et al. (2024)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(217,119,6,0.08); padding: 3px 10px; border-radius: 6px;">Journal of Human Kinetics (SCIE)</span>
-                            </li>
+                            
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#1</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Catch-play warm-up with a lightweight baseball increases ball velocity on subsequent throws for baseball position players.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Kim M, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Exercise Science. In Press; 2026.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#2</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Anticipatory effect on lower extremity muscle recruitment and activation patterns during single leg drop tasks.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee J, Doo H, Park JC, Kim E, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Musculoskeletal and Neuronal Interactions. In Press; 2026.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#3</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Simple linear equations to estimate a workload of specific repetition maximum for squat exercise in trained and untrained males.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Jeon S, Seo D, Lee S, Kim H, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Exercise Science. 34:497. 2025.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#4</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">A warm-up strategy with or without voluntary contraction on athletic performance, lower-leg temperature, and blood lactate concentration.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee S, Lim J, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Plos ONE. 19:e0295537. 2024.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#5</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Effects of unilateral lower-extremity joint cooling on movement biomechanics during a two-legged jumping and landing.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Choi J, Song KT, Kim H, Lee SY, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Asian Journal of Kinesiology. 24:38. 2022.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#6</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Central vs.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Ko J, Song KT, Kim H, Lee SY, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>peripheral vision during a single-leg drop jump. Applied Sciences. 12:2599. 2022.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#7</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">A single-leg drop jump biomechanics after ankle or knee joint cooling in healthy young adults.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Song KT, Lee SY.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Sport Rehabilitation. 31:271. 2021.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#8</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Effect or verbal encouragement on quadriceps and knee joint function during three sets of knee extension exercise.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee H, Shin J, Kim D, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Isokinetics and Exercise Science. 29:155. 2021.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#9</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Changes in spinal-reflex excitability during static stretch and/or explosive contraction.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Min KE, Lee YS, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Applied Sciences. 11:2830. 2021.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#10</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Knee joint cooling altered the quadriceps neuromuscular activation during a single-leg drop jump.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Song KT, Lee SY, Ryu H.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Exercise Science. 29:225. 2020.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#11</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Correlation and reliability of two field tests for vertical jump height.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee YS, Min KE, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Asian Journal of Kinesiology. 22:9. 2020.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#12</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Immediate effects of different types of stretching exercises on badminton smash.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Jang HS, Kim D, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Sports Medicine and Physical Fitness. 58:1014. 2018.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#13</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Functional vs.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Seeley MK, Francom D, Reese CS, Hopkins JT.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>traditional analysis in biomechanical gait data: an alternative statistical approach. Journal of Human Kinetics. 60:39. 2017.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#14</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">A 6-week sprint interval training program changes anaerobic capacity, quadriceps strength, and subcutaneous tissue thickness.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Han S, Lee H, Kim H, Choi C, Kim D, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>International Journal of Sports Medicine. 38:105. 2017.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #D97706; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #D97706; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#15</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Ankle or knee joint cooling alters countermovement jump height in healthy collegiate athletes.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee M, Kim S, Choi HM, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #D97706; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Isokinetics and Exercise Science. 25:1. 2017.</span>
+                        </li>
                         </ul>
                     </div>
-
-                    <!-- Part 4: Injury Surveillance System (ISS) -->
-                    <div id="rtab-pane-4" class="rtab-pane" style="display: none;">
+                    <!-- Pane 4: Part 4. 부상 조사 분석 -->
+                    <div id="rtab-pane-4" class="rtab-pane " style="display: none;">
                         <ul class="paper-list" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #0284C7; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Epidemiological analysis of sports injuries in collegiate varsity athletes: A 3-year injury surveillance study</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Park JH, Lee JW, Kim JY, et al. (2025)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #0284C7; background: rgba(2,132,199,0.08); padding: 3px 10px; border-radius: 6px;">Korean Journal of Sports Medicine</span>
-                            </li>
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #0284C7; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Acute-to-chronic workload ratio and non-contact musculoskeletal injuries in collegiate football and basketball players</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Park JH, Oh SM, et al. (2024)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #0284C7; background: rgba(2,132,199,0.08); padding: 3px 10px; border-radius: 6px;">Journal of Athletic Training (SCIE)</span>
-                            </li>
-                            <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4px solid #0284C7; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
-                                <h4 style="margin: 0 0 6px 0; font-size: 1.05rem; font-weight: 700; color: #0f172a; line-height: 1.4;">Pre-season neuromuscular screening and lower extremity injury incidence in elite collegiate athletes</h4>
-                                <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 6px;">Park JH, Lim JH, et al. (2024)</div>
-                                <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #0284C7; background: rgba(2,132,199,0.08); padding: 3px 10px; border-radius: 6px;">International Journal of Sports Physical Therapy (SCIE)</span>
-                            </li>
+                            
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #0284C7; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #0284C7; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#1</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Femoral Cartilage Morphology in Collegiate Archery, Badminton, and Taekwondo Athletes and Non-athletes: A 12-month Prospective Cohort Study.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee S, Kim S, Lim J, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #0284C7; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Sports Health. In Press: 2026.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #0284C7; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #0284C7; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#2</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Injury incidences related to acute-to-chronic workload ratios in taekwondo: A prospective study with a 3-year follow-up.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Lee J, Lim J, Kim S, Song I, Lim S, Yoon J, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #0284C7; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Athletic Training. 60:569. 2025.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #0284C7; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #0284C7; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#3</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Sponge mats, but not Taekwondo mats, reduce landing impact from heights of 0.45m, 0.90m, and 1.35m in Taekwondo Gyeokpa players.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Moon J, Kim GT, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #0284C7; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Journal of Sport Rehabilitation. 34:505. 2025.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #0284C7; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #0284C7; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#4</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Comparisons of musculoskeletal injuries among three different modalities of Taekwondo (Kyorugi, Poomsae, and Shibum): A one-year follow-up prospective epidemiologic study.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Doo H, Kim D, Kim C, Lee SY, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #0284C7; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Research in Sports Medicine. 31:528. 2023.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #0284C7; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #0284C7; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#5</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Epidemiology of injuries in collegiate men’s badminton: A five-year prospective study.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Jang YH, Jang HS, Park S, Yun HH, Kim D, Park J.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #0284C7; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Medicina dello Sport. 75:96. 2022.</span>
+                        </li>
+                        <li class="paper-item" style="background: #ffffff; border-radius: 12px; padding: 18px 22px; border: 1px solid #e2e8f0; border-left: 4.5px solid #0284C7; box-shadow: 0 2px 8px rgba(0,0,0,0.03); transition: transform 0.2s ease;">
+                            <div style="display: flex; gap: 8px; align-items: flex-start; margin-bottom: 6px;">
+                                <span style="background: #0284C7; color: white; font-size: 0.72rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; flex-shrink: 0; margin-top: 2px;">#6</span>
+                                <h4 style="margin: 0; font-size: 1.02rem; font-weight: 700; color: #0f172a; line-height: 1.45;">Epidemiology of Korean collegiate injuries for six sports.</h4>
+                            </div>
+                            <div class="paper-authors" style="font-size: 0.88rem; color: #64748b; margin-bottom: 5px;"><i class="fa-solid fa-user-pen" style="font-size: 0.75rem; margin-right: 4px; opacity: 0.7;"></i>Park J, Kim D, Lee W, Han S, Yoon HJ, Jang HS, Ahn CJ.</div>
+                            <span class="paper-journal" style="font-size: 0.8rem; font-weight: 700; color: #0284C7; background: rgba(0,0,0,0.04); border: 1px solid rgba(0,0,0,0.08); padding: 3px 10px; border-radius: 6px; display: inline-block;"><i class="fa-solid fa-book-bookmark" style="font-size: 0.75rem; margin-right: 4px;"></i>Korean Journal of Sport Science. 27:382. 2016.</span>
+                        </li>
                         </ul>
                     </div>
                 </div>
@@ -2146,6 +2590,7 @@
         </div>
     </div>
 
+    
     <!-- Alumni Career Modal -->
     <div id="alumni-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); backdrop-filter: blur(6px); z-index: 9999; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
         <div class="alumni-modal-content" style="width: 90%; max-width: 420px; background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 45px rgba(0,0,0,0.3); position: relative; transform: scale(0.95); transition: transform 0.3s ease;">
