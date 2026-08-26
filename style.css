@@ -3430,7 +3430,7 @@ button {
 
 .modern-profile-card {
     width: 100%;
-    max-width: 320px;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -4858,4 +4858,20 @@ button {
     border-color: #A50034;
     transform: translateY(-2px);
     box-shadow: 0 6px 16px rgba(165, 0, 52, 0.25);
+}
+
+
+/* Degree line single line formatting for Member Cards */
+.modern-profile-exp li.degree-line {
+    font-size: 0.815rem !important;
+    letter-spacing: -0.65px !important;
+    white-space: nowrap !important;
+}
+
+@media (max-width: 480px) {
+    .modern-profile-exp li.degree-line {
+        white-space: normal !important;
+        font-size: 0.78rem !important;
+        letter-spacing: -0.5px !important;
+    }
 }
