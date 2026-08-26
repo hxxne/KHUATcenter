@@ -4671,11 +4671,13 @@ button {
 }
 
 .bento-item-desc {
-    font-size: 0.85rem;
+    font-size: 0.86rem;
     color: #475569;
     margin: 0;
     line-height: 1.55;
     word-break: keep-all;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
     font-weight: 500;
     padding-left: 20px;
 }
