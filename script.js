@@ -290,6 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileToggle = document.querySelector('.mobile-toggle');
     const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
     const mobileLinks = document.querySelectorAll('.mobile-link');
+    const mobileDrawerClose = document.getElementById('mobile-drawer-close');
 
     // Sticky header on scroll
     const handleScroll = () => {
@@ -302,21 +303,54 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
 
-    // Mobile nav toggle
-    const toggleMobileMenu = () => {
-        mobileToggle.classList.toggle('active');
-        mobileNavOverlay.classList.toggle('active');
-        document.body.classList.toggle('no-scroll');
+    // Mobile nav toggle functions
+    const openMobileMenu = () => {
+        if (mobileToggle) mobileToggle.classList.add('active');
+        if (mobileNavOverlay) mobileNavOverlay.classList.add('active');
+        document.body.classList.add('no-scroll');
     };
 
-    mobileToggle.addEventListener('click', toggleMobileMenu);
+    const closeMobileMenu = () => {
+        if (mobileToggle) mobileToggle.classList.remove('active');
+        if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    };
 
+    const toggleMobileMenu = () => {
+        if (mobileNavOverlay && mobileNavOverlay.classList.contains('active')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    };
+
+    if (mobileToggle) {
+        mobileToggle.addEventListener('click', toggleMobileMenu);
+    }
+
+    if (mobileDrawerClose) {
+        mobileDrawerClose.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close on link click
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-            mobileToggle.classList.remove('active');
-            mobileNavOverlay.classList.remove('active');
-            document.body.classList.remove('no-scroll');
+            closeMobileMenu();
         });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileNavOverlay && mobileNavOverlay.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Auto close on window resize over 1080px
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1080 && mobileNavOverlay && mobileNavOverlay.classList.contains('active')) {
+            closeMobileMenu();
+        }
     });
 
 
