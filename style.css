@@ -3550,42 +3550,49 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.modern-profile-card:hover {
+    transform: translateY(-4px);
 }
 
 .modern-avatar-container {
-    width: 220px;
-    height: 250px;
-    position: relative;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    align-self: center; /* Center the image within the card */
+    width: 180px !important;
+    height: 210px !important;
+    position: relative !important;
+    margin-bottom: 20px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    align-self: center !important;
+    border-radius: 18px !important;
+    overflow: hidden !important;
+    background: #f8fafc !important;
+    border: 1.5px solid rgba(165, 0, 52, 0.15) !important;
+    box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.08), 0 2px 6px -1px rgba(0, 0, 0, 0.04) !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
-/* Organic Blob Background using Kyung Hee Color */
+.modern-profile-card:hover .modern-avatar-container {
+    border-color: rgba(165, 0, 52, 0.45);
+    box-shadow: 0 16px 36px -6px rgba(165, 0, 52, 0.18), 0 0 0 1px rgba(165, 0, 52, 0.2);
+}
+
+/* Organic Blob Background - integrated into modern card frame */
 .modern-avatar-blob {
-    position: absolute;
-    width: 100%;
-    height: 85%;
-    /* Soft, muted gray/beige background like the reference posters */
-    background: linear-gradient(135deg, #f0f2f5 0%, #e2e6ea 100%);
-    border-radius: 0; /* Sharp, modern rectangle */
-    bottom: 0;
-    left: 0;
-    z-index: 1;
+    display: none;
 }
 
 .modern-avatar-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: bottom center;
+    object-position: center 20%;
     z-index: 2;
     position: relative;
-    /* To prevent the image from spilling out of the blob at the bottom */
-    mask-image: radial-gradient(circle at bottom, white 90%, transparent 100%);
-    -webkit-mask-image: -webkit-radial-gradient(circle at bottom, white 90%, transparent 100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* For avatars that don't have transparent backgrounds yet */
@@ -3593,14 +3600,19 @@ body.no-scroll {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: bottom center;
-    clip-path: none;
-    border-radius: 0;
+    object-position: center 20%;
+    border-radius: 18px;
     z-index: 2;
     position: relative;
-    bottom: 0;
     border: none;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
+
+.modern-profile-card:hover .modern-avatar-img-fallback,
+.modern-profile-card:hover .modern-avatar-img {
+    transform: scale(1.05);
+}
+
 
 .modern-profile-name {
     color: var(--color-primary);
