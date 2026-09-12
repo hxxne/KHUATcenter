@@ -110,7 +110,41 @@
         </div>
     </section>
 
-                <!-- About Section (Clean Minimalist UI) -->
+    <!-- Quick Access Navigation Bar (방문 목적별 빠른 바로가기) -->
+    <div class="quick-nav-section">
+        <div class="quick-nav-container">
+            <a href="#dashboard" class="quick-nav-card">
+                <div class="quick-nav-icon"><i class="fa-solid fa-person-running"></i></div>
+                <div class="quick-nav-info">
+                    <span class="quick-nav-title">체육부 AT 현황</span>
+                    <span class="quick-nav-desc">12개 종목 전담·보조 AT 배정</span>
+                </div>
+            </a>
+            <a href="#members" class="quick-nav-card">
+                <div class="quick-nav-icon"><i class="fa-solid fa-users"></i></div>
+                <div class="quick-nav-info">
+                    <span class="quick-nav-title">센터 구성원</span>
+                    <span class="quick-nav-desc">교수진 · 스태프 · 대학원 · 강사진</span>
+                </div>
+            </a>
+            <a href="#awards" class="quick-nav-card">
+                <div class="quick-nav-icon"><i class="fa-solid fa-award"></i></div>
+                <div class="quick-nav-info">
+                    <span class="quick-nav-title">역대 리더 &amp; 동문</span>
+                    <span class="quick-nav-desc">수상자 및 진출 동문 데이터베이스</span>
+                </div>
+            </a>
+            <a href="#contact" class="quick-nav-card">
+                <div class="quick-nav-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="quick-nav-info">
+                    <span class="quick-nav-title">센터 위치 &amp; 상담</span>
+                    <span class="quick-nav-desc">선승관 B1 방문 및 온라인 문의</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- About Section (Clean Minimalist UI) -->
     <section id="about" class="section-padding">
         <div class="container">
             <div class="section-header text-center">
@@ -1230,6 +1264,12 @@
                         <div class="ga-card"><div class="ga-role">축구</div><div class="ga-name">김주완</div><div class="ga-date">2026.02</div></div>
                         <div class="ga-card"><div class="ga-role">농구</div><div class="ga-name">김준영</div><div class="ga-date">2026.02</div></div>
                         <div class="ga-card"><div class="ga-role">연구/교육</div><div class="ga-name">임준형</div><div class="ga-date">2026.02</div></div>
+                    </div>
+                    <div class="awards-toggle-wrapper">
+                        <button id="btn-toggle-awards" class="btn-awards-toggle" onclick="toggleAwards()">
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <span id="btn-toggle-awards-text">역대 리더 &amp; 동문 전체보기 (총 35명)</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -3116,7 +3156,77 @@
                     }
                 });
             }
+
+            // 4. Awards Section Show More / Less Collapse
+            let isAwardsExpanded = false;
+            const awardsCards = document.querySelectorAll('.ga-card');
+            const toggleAwardsBtn = document.getElementById('btn-toggle-awards');
+            const toggleAwardsText = document.getElementById('btn-toggle-awards-text');
+
+            function initAwardsCollapse() {
+                if (awardsCards.length > 12) {
+                    awardsCards.forEach((card, idx) => {
+                        if (idx >= 12) {
+                            card.classList.add('award-hidden-card');
+                        }
+                    });
+                    if (toggleAwardsBtn) toggleAwardsBtn.style.display = 'inline-flex';
+                } else if (toggleAwardsBtn) {
+                    toggleAwardsBtn.style.display = 'none';
+                }
+            }
+
+            window.toggleAwards = function() {
+                isAwardsExpanded = !isAwardsExpanded;
+                awardsCards.forEach((card, idx) => {
+                    if (idx >= 12) {
+                        if (isAwardsExpanded) {
+                            card.classList.remove('award-hidden-card');
+                        } else {
+                            card.classList.add('award-hidden-card');
+                        }
+                    }
+                });
+
+                if (toggleAwardsBtn && toggleAwardsText) {
+                    if (isAwardsExpanded) {
+                        toggleAwardsBtn.classList.add('expanded');
+                        toggleAwardsText.textContent = '역대 리더 & 동문 접기';
+                    } else {
+                        toggleAwardsBtn.classList.remove('expanded');
+                        toggleAwardsText.textContent = `역대 리더 & 동문 전체보기 (총 ${awardsCards.length}명)`;
+                        const gaCat = document.querySelector('.awards-category.mt-5');
+                        if (gaCat) {
+                            gaCat.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    }
+                }
+            };
+
+            initAwardsCollapse();
+
+            // 5. Back to Top Floating Button Logic
+            const bttBtn = document.getElementById('btn-back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 350) {
+                    if (bttBtn) bttBtn.classList.add('show');
+                } else {
+                    if (bttBtn) bttBtn.classList.remove('show');
+                }
+            }, { passive: true });
+
+            window.scrollToTop = function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            };
         });
     </script>
+
+    <!-- Back to Top Floating Button (맨 위로 이동 플로팅 버튼) -->
+    <button id="btn-back-to-top" class="back-to-top" aria-label="맨 위로 가기" title="맨 위로 이동" onclick="scrollToTop()">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
 
 </body></html>

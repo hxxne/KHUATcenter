@@ -5169,3 +5169,213 @@ body.no-scroll {
         letter-spacing: -0.5px !important;
     }
 }
+
+/* ==========================================================================
+   14. Quick Access Navigation Bar (히어로 직후 빠른 바로가기)
+   ========================================================================== */
+.quick-nav-section {
+    position: relative;
+    z-index: 10;
+    margin-top: -35px;
+    padding: 0 20px 40px 20px;
+}
+
+.quick-nav-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.quick-nav-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1.5px solid rgba(165, 0, 52, 0.12);
+    border-radius: 16px;
+    padding: 16px 20px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(165, 0, 52, 0.04);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quick-nav-card:hover {
+    transform: translateY(-5px);
+    border-color: #A50034;
+    background: #ffffff;
+    box-shadow: 0 16px 36px -4px rgba(165, 0, 52, 0.16), 0 6px 16px rgba(0, 0, 0, 0.06);
+}
+
+.quick-nav-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(165, 0, 52, 0.08) 0%, rgba(165, 0, 52, 0.15) 100%);
+    color: #A50034;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+}
+
+.quick-nav-card:hover .quick-nav-icon {
+    background: linear-gradient(135deg, #A50034 0%, #700023 100%);
+    color: #ffffff;
+    transform: scale(1.08);
+}
+
+.quick-nav-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.quick-nav-title {
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: #1e293b;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.2s ease;
+}
+
+.quick-nav-card:hover .quick-nav-title {
+    color: #A50034;
+}
+
+.quick-nav-desc {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #64748b;
+    margin-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 992px) {
+    .quick-nav-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    .quick-nav-section {
+        margin-top: -25px;
+        padding-bottom: 25px;
+    }
+}
+
+@media (max-width: 540px) {
+    .quick-nav-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .quick-nav-card {
+        padding: 14px 16px;
+    }
+}
+
+/* ==========================================================================
+   15. Back to Top Floating Button (맨 위로 가기 플로팅 버튼)
+   ========================================================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #A50034 0%, #700023 100%);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    box-shadow: 0 8px 24px rgba(165, 0, 52, 0.35), 0 2px 6px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 999;
+}
+
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    transform: translateY(-4px) scale(1.08);
+    box-shadow: 0 12px 28px rgba(165, 0, 52, 0.5), 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:active {
+    transform: translateY(0) scale(0.96);
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 1.05rem;
+    }
+}
+
+/* ==========================================================================
+   16. Awards Section Show More / Less Toggle (역대 수상자 더보기 토글)
+   ========================================================================== */
+.award-hidden-card {
+    display: none !important;
+}
+
+.awards-toggle-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 36px;
+    position: relative;
+    z-index: 2;
+}
+
+.btn-awards-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    color: #A50034;
+    border: 2px solid #A50034;
+    border-radius: 30px;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(165, 0, 52, 0.1);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-awards-toggle:hover {
+    background: #A50034;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(165, 0, 52, 0.25);
+}
+
+.btn-awards-toggle i {
+    transition: transform 0.25s ease;
+}
+
+.btn-awards-toggle.expanded i {
+    transform: rotate(180deg);
+}
