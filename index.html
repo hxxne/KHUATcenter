@@ -1052,7 +1052,7 @@
                 <div class="sport-at-section">
                     <div class="sport-at-block">
                         <h4>전담 AT (Head AT)</h4>
-                        <div id="s-modal-head-container">
+                        <div id="legacy-s-modal-head-container">
                             <!-- JS will inject profiles here -->
                         </div>
                     </div>
@@ -1836,6 +1836,20 @@
                     "현) 경희대학교 AT Center 보조 AT"
                 ],
                 research: []
+            },
+            "강석": {
+                role: "축구부 전담 AT / 석사과정 연구원",
+                photo: "assets/profile_강석.jpg",
+                degree: "스포츠의학과 석사과정",
+                edu: "경희대학교",
+                subject: "축구 선수 상해 예방 및 경기력 향상 재활 트레이닝",
+                lab: "선승관 AT center (031-201-2787)",
+                email: "khuatcenter@khu.ac.kr",
+                career: [
+                    "현) 경희대학교 축구부 전담 AT",
+                    "현) 경희대학교 AT Center 연구원"
+                ],
+                research: []
             }
         };
 
@@ -1951,20 +1965,20 @@
 
             const data = sportsData[sportName] || { head: "담당자 미정", sub: [], photos: [] };
 
-            const iconEl = document.getElementById('modal-sport-icon');
+            const iconEl = modal.querySelector('#modal-sport-icon') || document.getElementById('modal-sport-icon');
             if (iconEl) {
                 iconEl.innerHTML = sportIcons[sportName] || '<i class="fa-solid fa-trophy"></i>';
             }
 
-            const titleEl = document.getElementById('modal-sport-title');
+            const titleEl = modal.querySelector('#modal-sport-title') || document.getElementById('modal-sport-title');
             if (titleEl) {
                 titleEl.textContent = sportName === "센터" ? "AT Center" : `${sportName}부`;
             }
 
-            const headBlock = document.getElementById('modal-head-at-block');
-            const assistantsBlock = document.getElementById('modal-assistants-block');
-            const headContainer = document.getElementById('s-modal-head-container');
-            const mainAtNameEl = document.getElementById('modal-main-at-name');
+            const headBlock = modal.querySelector('#modal-head-at-block') || document.getElementById('modal-head-at-block');
+            const assistantsBlock = modal.querySelector('#modal-assistants-block') || document.getElementById('modal-assistants-block');
+            const headContainer = modal.querySelector('#s-modal-head-container') || document.getElementById('s-modal-head-container');
+            const mainAtNameEl = modal.querySelector('#modal-main-at-name') || document.getElementById('modal-main-at-name');
 
             if (!data.head) {
                 if (headBlock) headBlock.style.display = 'none';
@@ -1991,13 +2005,25 @@
                     heads.forEach((headName) => {
                         const profileDiv = document.createElement('div');
                         profileDiv.className = 'head-at-profile';
-                        profileDiv.style.cssText = 'display: flex; align-items: center; gap: 12px; margin-bottom: 8px;';
+                        profileDiv.style.cssText = 'display: flex; align-items: center; gap: 14px; margin-bottom: 10px; cursor: pointer; padding: 6px 10px; border-radius: 12px; transition: all 0.2s ease; background: #fff; border: 1px solid rgba(0,0,0,0.05);';
+                        profileDiv.onmouseenter = () => { profileDiv.style.background = '#FFF5F6'; profileDiv.style.borderColor = 'rgba(165, 0, 52, 0.2)'; };
+                        profileDiv.onmouseleave = () => { profileDiv.style.background = '#fff'; profileDiv.style.borderColor = 'rgba(0,0,0,0.05)'; };
+                        profileDiv.onclick = () => {
+                            if (typeof openProfModal === 'function') {
+                                openProfModal(headName);
+                            } else if (typeof openProfileModal === 'function') {
+                                openProfileModal(headName);
+                            }
+                        };
                         profileDiv.innerHTML = `
-                            <div style="width: 52px; height: 52px; border-radius: 50%; overflow: hidden; background: #e0e0e0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #777; flex-shrink: 0;">
-                                <i class="fa-solid fa-user"></i>
+                            <div style="width: 58px; height: 58px; border-radius: 50%; overflow: hidden; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #777; flex-shrink: 0; border: 2px solid #A50034; box-shadow: 0 4px 10px rgba(165,0,52,0.15);">
+                                <img src="assets/profile_${headName}.jpg" alt="${headName}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\\'fa-solid fa-user\\'></i>';">
                             </div>
-                            <div class="head-at-info">
-                                <h5 style="margin: 0; font-size: 1.05rem; font-weight: 800; color: #222;">${headName}</h5>
+                            <div class="head-at-info" style="flex: 1;">
+                                <div style="display: flex; align-items: center; gap: 6px;">
+                                    <h5 style="margin: 0; font-size: 1.1rem; font-weight: 800; color: #222;">${headName}</h5>
+                                    <span style="font-size: 0.72rem; color: #A50034; background: #FFF0F2; padding: 2px 6px; border-radius: 4px; font-weight: 700;">상세보기</span>
+                                </div>
                                 <p style="margin: 2px 0 0 0; font-size: 0.85rem; color: #666; font-weight: 600;">경희대학교 ${sportName === "센터" ? "AT Center" : sportName + "부"} 전담 AT</p>
                             </div>
                         `;
