@@ -1643,10 +1643,10 @@
             
             <div class="prof-modal-body">
                 <div class="prof-info-grid">
-                    <div class="prof-info-label">학위명</div>
+                    <div class="prof-info-label" id="prof-modal-degree-label">학위명</div>
                     <div class="prof-info-value" id="prof-modal-degree">-</div>
                     
-                    <div class="prof-info-label">최종학력</div>
+                    <div class="prof-info-label" id="prof-modal-edu-label">최종학력</div>
                     <div class="prof-info-value" id="prof-modal-edu">-</div>
                     
                     <div class="prof-info-label" id="prof-modal-subject-label">담당과목</div>
@@ -1655,7 +1655,7 @@
                     <div class="prof-info-label" id="prof-modal-lab-label">연구실</div>
                     <div class="prof-info-value" id="prof-modal-lab">-</div>
                     
-                    <div class="prof-info-label">E-mail</div>
+                    <div class="prof-info-label" id="prof-modal-email-label">E-mail</div>
                     <div class="prof-info-value" id="prof-modal-email">-</div>
                 </div>
                 
@@ -1771,10 +1771,13 @@
             },
             "한혜서": {
                 role: "대학원 연구원 / 겨루기부 전담 AT",
+                assignedRole: "겨루기부 전담 AT / 스포츠재활 강사",
                 photo: "assets/profile_한혜서.jpg",
-                degree: "스포츠의학과 석사과정 (대학원 2기)",
+                degree: "경희대학교 일반대학원 석사과정 (2기)",
                 edu: "경희대학교",
-                subject: "태권도 겨루기 손상 분석 및 재활",
+                subject: "태권도 겨루기 손상 분석 및 선수 복귀 재활",
+                cert: "KATA 공인 AT (선수트레이너) / 스포츠마사지",
+                location: "선승관 AT center (031-201-2787)",
                 lab: "선승관 AT center (031-201-2787)",
                 email: "khuatcenter@khu.ac.kr",
                 career: [
@@ -1785,10 +1788,13 @@
             },
             "유승아": {
                 role: "대학원 연구원 / 품새부 전담 AT",
+                assignedRole: "품새부 전담 AT / 스포츠재활 강사",
                 photo: "assets/profile_유승아.jpg",
-                degree: "스포츠의학과 석사과정 (대학원 3기)",
+                degree: "경희대학교 일반대학원 석사과정 (3기)",
                 edu: "경희대학교",
-                subject: "품새 선수 기능성 움직임 및 재활",
+                subject: "품새 선수 기능성 움직임 평가 및 자세 교정",
+                cert: "KATA 공인 AT (선수트레이너) / 스포츠테이핑",
+                location: "선승관 AT center (031-201-2787)",
                 lab: "선승관 AT center (031-201-2787)",
                 email: "khuatcenter@khu.ac.kr",
                 career: [
@@ -1840,10 +1846,13 @@
             },
             "조현준": {
                 role: "대학원 연구원 / 스포츠재활 강사",
+                assignedRole: "축구부 보조 AT / 스포츠재활 강사",
                 photo: "assets/profile_조현준.jpg",
-                degree: "스포츠의학과 석사과정 (대학원 1기)",
+                degree: "경희대학교 일반대학원 석사과정 (1기)",
                 edu: "경희대학교",
-                subject: "축구 선수 기능 회복 및 재활",
+                subject: "축구 선수 하지 관절 손상 및 기능 회복 재활",
+                cert: "KATA 공인 AT (선수트레이너) / 스포츠테이핑",
+                location: "선승관 AT center (031-201-2787)",
                 lab: "선승관 AT center (031-201-2787)",
                 email: "khuatcenter@khu.ac.kr",
                 career: [
@@ -1881,10 +1890,13 @@
             },
             "유영민": {
                 role: "대학원 연구원 / 럭비부 전담 AT",
+                assignedRole: "럭비부 전담 AT / 스포츠재활 강사",
                 photo: "assets/profile_유영민.jpg",
-                degree: "스포츠의학과 석사과정 (대학원 3기)",
+                degree: "경희대학교 일반대학원 석사과정 (3기)",
                 edu: "경희대학교",
-                subject: "럭비 컨택트 손상 및 컨디셔닝",
+                subject: "럭비 컨택트 손상 분석 및 파워 컨디셔닝",
+                cert: "KATA 공인 AT (선수트레이너) / 응급처치(CPR & AED)",
+                location: "선승관 AT center (031-201-2787)",
                 lab: "선승관 AT center (031-201-2787)",
                 email: "khuatcenter@khu.ac.kr",
                 career: [
@@ -1895,10 +1907,13 @@
             },
             "권준홍": {
                 role: "대학원 연구원 / 센터 AT / 스포츠재활 강사",
+                assignedRole: "AT Center 센터 AT / 스포츠재활 강사",
                 photo: "assets/profile_권준홍.jpg",
-                degree: "스포츠의학과 석사과정 (대학원 2기)",
+                degree: "경희대학교 일반대학원 석사과정 (2기)",
                 edu: "경희대학교",
-                subject: "스포츠의학 및 선수 트레이닝",
+                subject: "스포츠의학 및 선수 기능성 트레이닝",
+                cert: "KATA 공인 AT (선수트레이너) / 생활스포츠지도사",
+                location: "선승관 AT center (031-201-2787)",
                 lab: "선승관 AT center (031-201-2787)",
                 email: "khuatcenter@khu.ac.kr",
                 career: [
@@ -1909,10 +1924,13 @@
             },
             "우지윤": {
                 role: "대학원 연구원 / 스포츠재활 강사",
+                assignedRole: "AT Center 연구원 / 스포츠재활 강사",
                 photo: "assets/profile_우지윤.jpg",
-                degree: "스포츠의학과 석사과정 (대학원 4기)",
+                degree: "경희대학교 일반대학원 석사과정 (4기)",
                 edu: "경희대학교",
-                subject: "스포츠 부상 재활 및 체력 관리",
+                subject: "스포츠 부상 재활 및 맞춤형 체력 관리 프로그램",
+                cert: "KATA 공인 AT (선수트레이너) / 운동처방사",
+                location: "선승관 AT center (031-201-2787)",
                 lab: "선승관 AT center (031-201-2787)",
                 email: "khuatcenter@khu.ac.kr",
                 career: [
@@ -2075,10 +2093,13 @@
             },
             "이승민": {
                 role: "대학원 2기 연구원 / 골프부 보조 AT / 스포츠재활 강사",
+                assignedRole: "골프부 보조 AT / 스포츠재활 강사",
                 photo: "assets/profile_이승민.jpg",
-                degree: "스포츠의학과 석사과정 (대학원 2기)",
+                degree: "경희대학교 일반대학원 석사과정 (2기)",
                 edu: "경희대학교",
                 subject: "골프 선수 체간 안정화 및 스포츠 손상 예방 트레이닝",
+                cert: "KATA 공인 AT (선수트레이너) / 건강운동관리사",
+                location: "선승관 AT center (031-201-2787)",
                 lab: "선승관 AT center (031-201-2787)",
                 email: "khuatcenter@khu.ac.kr",
                 career: [
@@ -2439,6 +2460,33 @@
 
             const pData = professorsData[cleanName] || professorsData[rawName] || null;
 
+            // 대학원생 명단 판별 (7인: 조현준, 권준홍, 이승민, 한혜서, 유승아, 유영민, 우지윤)
+            const gradList = ["조현준", "권준홍", "이승민", "한혜서", "유승아", "유영민", "우지윤"];
+            const isGrad = gradList.includes(cleanName);
+
+            // 모달 항목 라벨 엘리먼트
+            const degreeLabel = document.getElementById('prof-modal-degree-label');
+            const eduLabel = document.getElementById('prof-modal-edu-label');
+            const subjectLabel = document.getElementById('prof-modal-subject-label');
+            const labLabel = document.getElementById('prof-modal-lab-label');
+            const emailLabel = document.getElementById('prof-modal-email-label');
+
+            if (isGrad) {
+                // 대학원생 맞춤형 5대 라벨 전환
+                if (degreeLabel) degreeLabel.textContent = "학위과정";
+                if (eduLabel) eduLabel.textContent = "역할";
+                if (subjectLabel) subjectLabel.textContent = "연구분야";
+                if (labLabel) labLabel.textContent = "보유자격";
+                if (emailLabel) emailLabel.textContent = "활동공간";
+            } else {
+                // 일반 교수/스태프 기존 라벨 복구
+                if (degreeLabel) degreeLabel.textContent = "학위명";
+                if (eduLabel) eduLabel.textContent = "최종학력";
+                if (subjectLabel) subjectLabel.textContent = (cleanName === "최현곤") ? "담당부서" : "담당과목";
+                if (labLabel) labLabel.textContent = "연구실";
+                if (emailLabel) emailLabel.textContent = "E-mail";
+            }
+
             if (pData) {
                 document.getElementById('prof-modal-name').textContent = rawName;
                 document.getElementById('prof-modal-role').textContent = pData.role || "경희대학교 AT Center";
@@ -2453,17 +2501,21 @@
                     }
                 }
 
-                document.getElementById('prof-modal-degree').textContent = pData.degree || "-";
-                document.getElementById('prof-modal-edu').textContent = pData.edu || "경희대학교";
-                document.getElementById('prof-modal-subject').textContent = pData.subject || "-";
-
-                const subjectLabel = document.getElementById('prof-modal-subject-label');
-                if (subjectLabel) subjectLabel.textContent = (cleanName === "최현곤") ? "담당부서" : "담당과목";
-                const labLabel = document.getElementById('prof-modal-lab-label');
-                if (labLabel) labLabel.textContent = "연구실";
-
-                document.getElementById('prof-modal-lab').textContent = pData.lab || "선승관 AT center (031-201-2787)";
-                document.getElementById('prof-modal-email').textContent = pData.email || "khuatcenter@khu.ac.kr";
+                if (isGrad) {
+                    // 대학원생 전용 데이터 바인딩
+                    document.getElementById('prof-modal-degree').textContent = pData.degree || "경희대학교 일반대학원 석사과정";
+                    document.getElementById('prof-modal-edu').textContent = pData.assignedRole || pData.role || "경희대학교 AT Center";
+                    document.getElementById('prof-modal-subject').textContent = pData.subject || "-";
+                    document.getElementById('prof-modal-lab').textContent = pData.cert || "KATA 공인 AT (선수트레이너)";
+                    document.getElementById('prof-modal-email').textContent = pData.location || "선승관 AT center (031-201-2787)";
+                } else {
+                    // 일반 교수/스태프 전용 데이터 바인딩
+                    document.getElementById('prof-modal-degree').textContent = pData.degree || "-";
+                    document.getElementById('prof-modal-edu').textContent = pData.edu || "경희대학교";
+                    document.getElementById('prof-modal-subject').textContent = pData.subject || "-";
+                    document.getElementById('prof-modal-lab').textContent = pData.lab || "선승관 AT center (031-201-2787)";
+                    document.getElementById('prof-modal-email').textContent = pData.email || "khuatcenter@khu.ac.kr";
+                }
 
                 const careerList = document.getElementById('prof-modal-career');
                 if (careerList) {
