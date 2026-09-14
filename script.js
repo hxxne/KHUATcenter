@@ -640,10 +640,10 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================================================== */
     const chartDataByYear = {
         "2022": { care: "8,200건", research: "25편", dispatch: "95회", svgX: 80 },
-        "2023": { care: "10,500건", research: "40편", dispatch: "140회", svgX: 195 },
-        "2024": { care: "12,300건", research: "55편", dispatch: "190회", svgX: 310 },
-        "2025": { care: "13,800건", research: "75편", dispatch: "250회", svgX: 425 },
-        "2026": { care: "15,000건", research: "85편", dispatch: "320회", svgX: 540 }
+        "2023": { care: "10,500건", research: "35편", dispatch: "140회", svgX: 195 },
+        "2024": { care: "12,300건", research: "46편", dispatch: "190회", svgX: 310 },
+        "2025": { care: "13,800건", research: "56편", dispatch: "250회", svgX: 425 },
+        "2026": { care: "15,000건", research: "63편", dispatch: "320회", svgX: 540 }
     };
 
     const smartTooltip = document.getElementById('chart-smart-tooltip');
