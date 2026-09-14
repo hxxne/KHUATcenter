@@ -636,60 +636,175 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ==========================================================================
-       5. Interactive SVG Chart Tooltips
+       5. Modern Interactive SVG Area Chart & Smart Inspector
        ========================================================================== */
-    const barGroups = document.querySelectorAll('.bar-group');
-    const chartDots = document.querySelectorAll('.chart-dot, .chart-dot-blue');
-    const chartTooltip = document.getElementById('chart-tooltip');
-    const chartContainer = document.querySelector('.chart-container');
-
-    const showTooltip = (e, valText, labelText) => {
-        chartTooltip.innerHTML = `<strong>${labelText}</strong>: <span style="color:#A50034;">${valText}</span>`;
-        chartTooltip.style.opacity = '1';
-        
-        const rect = chartContainer.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        chartTooltip.style.left = `${x}px`;
-        chartTooltip.style.top = `${y}px`;
-        chartTooltip.style.transform = 'translate(-50%, -125%)';
+    const chartDataByYear = {
+        "2022": { care: "8,200건", research: "25편", dispatch: "95회", svgX: 80 },
+        "2023": { care: "10,500건", research: "40편", dispatch: "140회", svgX: 195 },
+        "2024": { care: "12,300건", research: "55편", dispatch: "190회", svgX: 310 },
+        "2025": { care: "13,800건", research: "75편", dispatch: "250회", svgX: 425 },
+        "2026": { care: "15,000건", research: "85편", dispatch: "320회", svgX: 540 }
     };
 
-    const hideTooltip = () => {
-        chartTooltip.style.opacity = '0';
-    };
+    const smartTooltip = document.getElementById('chart-smart-tooltip');
+    const chartContainerEl = document.getElementById('chart-panel-container');
+    const snappingGuide = document.getElementById('chart-snapping-guide');
+    const ttYearEl = document.getElementById('tt-year');
+    const ttCareVal = document.getElementById('tt-care-val');
+    const ttResearchVal = document.getElementById('tt-research-val');
+    const ttDispatchVal = document.getElementById('tt-dispatch-val');
 
-    barGroups.forEach(group => {
-        group.addEventListener('mousemove', (e) => {
-            const val = group.getAttribute('data-value');
-            const xCoord = group.querySelector('.chart-bar') ? parseFloat(group.querySelector('.chart-bar').getAttribute('x')) : 0;
-            let year = '2026';
-            if (xCoord < 100) year = '2022';
-            else if (xCoord < 200) year = '2023';
-            else if (xCoord < 300) year = '2024';
-            else if (xCoord < 400) year = '2025';
-
-            showTooltip(e, val, `${year}년 선수 케어`);
+    // Chart Filter Tabs Switcher
+    window.setChartFilter = function(filterType) {
+        // 1. Update Tab Buttons
+        document.querySelectorAll('.chart-tab').forEach(tab => {
+            if (tab.getAttribute('data-filter') === filterType) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
         });
-        group.addEventListener('mouseleave', hideTooltip);
+
+        // 2. Update KPI Mini Cards
+        const kpiCards = {
+            care: document.querySelector('.kpi-mini-card.care-kpi'),
+            research: document.querySelector('.kpi-mini-card.research-kpi'),
+            dispatch: document.querySelector('.kpi-mini-card.dispatch-kpi')
+        };
+
+        Object.keys(kpiCards).forEach(key => {
+            const card = kpiCards[key];
+            if (!card) return;
+            if (filterType === 'all') {
+                card.classList.remove('active-kpi-highlight');
+                card.style.opacity = '1';
+            } else if (filterType === key) {
+                card.classList.add('active-kpi-highlight');
+                card.style.opacity = '1';
+            } else {
+                card.classList.remove('active-kpi-highlight');
+                card.style.opacity = '0.45';
+            }
+        });
+
+        // 3. Update Chart SVG Layers (Dimming / Focusing)
+        const layers = {
+            care: document.getElementById('layer-care'),
+            research: document.getElementById('layer-research'),
+            dispatch: document.getElementById('layer-dispatch')
+        };
+
+        Object.keys(layers).forEach(key => {
+            const layer = layers[key];
+            if (!layer) return;
+            layer.classList.remove('layer-dimmed', 'layer-focused');
+
+            if (filterType === 'all') {
+                // All layers normal
+            } else if (filterType === key) {
+                layer.classList.add('layer-focused');
+            } else {
+                layer.classList.add('layer-dimmed');
+            }
+        });
+
+        // 4. Update Tooltip display rows focus
+        const ttRows = {
+            care: document.getElementById('tt-care-row'),
+            research: document.getElementById('tt-research-row'),
+            dispatch: document.getElementById('tt-dispatch-row')
+        };
+        Object.keys(ttRows).forEach(key => {
+            const row = ttRows[key];
+            if (!row) return;
+            if (filterType === 'all' || filterType === key) {
+                row.style.opacity = '1';
+                row.style.fontWeight = (filterType === key) ? '800' : 'normal';
+            } else {
+                row.style.opacity = '0.35';
+                row.style.fontWeight = 'normal';
+            }
+        });
+    };
+
+    // Show Floating Inspector Tooltip for a specific Year
+    const showYearTooltip = (year, clientX, clientY) => {
+        const data = chartDataByYear[year];
+        if (!data || !smartTooltip || !chartContainerEl) return;
+
+        ttYearEl.textContent = `${year}년 실적`;
+        ttCareVal.textContent = data.care;
+        ttResearchVal.textContent = data.research;
+        ttDispatchVal.textContent = data.dispatch;
+
+        smartTooltip.style.opacity = '1';
+
+        const rect = chartContainerEl.getBoundingClientRect();
+        let posX = clientX ? (clientX - rect.left) : ((data.svgX / 580) * rect.width);
+        let posY = clientY ? (clientY - rect.top) : (rect.height * 0.35);
+
+        // Clamp inside container
+        posX = Math.max(90, Math.min(rect.width - 90, posX));
+
+        smartTooltip.style.left = `${posX}px`;
+        smartTooltip.style.top = `${posY}px`;
+
+        // Update SVG snapping guide line
+        if (snappingGuide) {
+            snappingGuide.setAttribute('x1', data.svgX);
+            snappingGuide.setAttribute('x2', data.svgX);
+            snappingGuide.style.display = 'block';
+        }
+
+        // Highlight year text
+        document.querySelectorAll('.chart-year-text').forEach(t => {
+            if (t.textContent.includes(year)) {
+                t.style.fill = '#A50034';
+                t.style.fontSize = '13px';
+                t.style.fontWeight = '900';
+            } else {
+                t.style.fill = '#64748b';
+                t.style.fontSize = '12px';
+                t.style.fontWeight = '700';
+            }
+        });
+    };
+
+    const hideYearTooltip = () => {
+        if (smartTooltip) smartTooltip.style.opacity = '0';
+        if (snappingGuide) snappingGuide.style.display = 'none';
+        document.querySelectorAll('.data-point').forEach(p => p.classList.remove('active-hover'));
+        document.querySelectorAll('.chart-year-text').forEach(t => {
+            if (t.classList.contains('highlight-year')) {
+                t.style.fill = '#A50034';
+            } else {
+                t.style.fill = '#64748b';
+            }
+            t.style.fontSize = '12px';
+            t.style.fontWeight = '700';
+        });
+    };
+
+    // Attach Hover Detectors for columns
+    document.querySelectorAll('.hover-col').forEach(col => {
+        col.addEventListener('mousemove', (e) => {
+            const year = col.getAttribute('data-year');
+            showYearTooltip(year, e.clientX, e.clientY);
+        });
+        col.addEventListener('mouseleave', hideYearTooltip);
     });
 
-    chartDots.forEach(dot => {
+    // Attach Hover for individual data circles
+    document.querySelectorAll('.data-point').forEach(dot => {
         dot.addEventListener('mousemove', (e) => {
-            const val = dot.getAttribute('data-value');
-            const cx = parseFloat(dot.getAttribute('cx'));
-            let year = '2026';
-            if (cx < 100) year = '2022';
-            else if (cx < 200) year = '2023';
-            else if (cx < 300) year = '2024';
-            else if (cx < 400) year = '2025';
-
-            const isBlue = dot.classList.contains('chart-dot-blue');
-            const label = isBlue ? `${year}년 의료 지원` : `${year}년 연구 실적`;
-            showTooltip(e, val, label);
+            const year = dot.getAttribute('data-year');
+            dot.classList.add('active-hover');
+            showYearTooltip(year, e.clientX, e.clientY);
         });
-        dot.addEventListener('mouseleave', hideTooltip);
+        dot.addEventListener('mouseleave', () => {
+            dot.classList.remove('active-hover');
+            hideYearTooltip();
+        });
     });
 
 
