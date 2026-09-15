@@ -8,3 +8,8 @@ Thumbs.db
 
 # Backup images
 *.backup.jpg
+
+# Executables and engine binaries
+*.exe
+**/bin/
+
