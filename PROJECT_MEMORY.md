@@ -304,4 +304,21 @@
   - 디테일 폴리싱(`/impeccable polish`): 타이포그래피, 여백, 계층 구조 정밀 보정
   - 실시간 라이브 인터랙션(`impeccable live`): 브라우저 화면 기반의 실시간 UI 피드백 및 개선
 
+---
+
+## ✨ 23. impeccable & taste-skill 기반 디자인 폴리싱 및 AI 클리셰 제거 (2026-09-16)
+- **개선 대상 파일:** `style.css`, `index.html`
+- **주요 개선 성과:**
+  1. **고대비 디자인 토큰 도입 (WCAG AA 적격):**
+     - `--color-secondary-dark: #8E681A` (4.6:1 이상 명도 대비 확보 골드 텍스트 토큰) 신설
+     - 보조 설명글 텍스트(`--color-text-muted`) 명도를 `#5A5A65`로 강화하여 가독성 개선
+  2. **AI 디자인 클리셰(Side-tab 굵은 선, 네온 발광) 완전 제거:**
+     - `.awards-category`, `.highlight-item`, `.paper-item`, `.donation-instructions`의 둥근 모서리와 충돌하던 4px 단면 굵은 선을 정제된 1px 글래스 테두리(`border: 1px solid rgba(165,0,52,0.12)`)와 2px 슬림 상단 하이라이트 라인으로 전환
+     - 인위적인 제로 오프셋 네온 글로우(`box-shadow: 0 0 20px ...`)를 실제 자연광 기반의 앰비언트 다층 섀도우(`0 12px 28px -4px rgba(...)`)로 교체
+  3. **하이엔드 감속 모션 적용:**
+     - 통통 튀는 바운스 이징(`cubic-bezier(0.175, 0.885, 0.32, 1.275)`)을 애플/Linear 표준 감속 곡선(`cubic-bezier(0.16, 1, 0.3, 1)`)으로 일괄 교체
+  4. **시맨틱 헤딩 계층(Heading Hierarchy) 정상화:**
+     - `index.html` 공식 후원 참여 안내 헤딩을 `<h2>`로 정상 배치하여 `<h1> ➔ <h2> ➔ <h3>`의 접근성 표준 트리 완성
+
+
 

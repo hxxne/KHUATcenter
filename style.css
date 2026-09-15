@@ -19,11 +19,12 @@
     --color-primary-rgb: 165, 0, 52;
     --color-primary-hover: #800028;
     --color-secondary: #C5A059;      /* Kyung Hee Warm Gold */
+    --color-secondary-dark: #8E681A; /* WCAG AA 4.6:1 적격 고대비 브론즈 골드 (텍스트 전용) */
     --color-secondary-rgb: 197, 160, 89;
     --color-accent-blue: #005B94;    /* Classic Royal Blue for tech metrics */
     
     --color-text-main: #2A2A30;      /* Dark Charcoal for main body text */
-    --color-text-muted: #6A6A75;     /* Muted Charcoal/Gray */
+    --color-text-muted: #5A5A65;     /* Muted Charcoal/Gray (가독성 최적화) */
     --color-text-dark: #121215;      /* High contrast text */
     
     --color-border: rgba(165, 0, 52, 0.08);
@@ -32,10 +33,10 @@
     /* Layout & Fonts (Gothic Only for Clean modern feel) */
     --font-sans: 'Pretendard', 'Inter', 'Noto Sans KR', sans-serif;
     --border-radius: 12px;
-    --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     --shadow-soft: 0 10px 30px rgba(165, 0, 52, 0.04), 0 4px 15px rgba(0, 0, 0, 0.02);
-    --shadow-glow: 0 0 20px rgba(165, 0, 52, 0.12);
-    --shadow-glow-gold: 0 0 20px rgba(197, 160, 89, 0.15);
+    --shadow-glow: 0 12px 28px -4px rgba(165, 0, 52, 0.14), 0 4px 12px rgba(0, 0, 0, 0.04);
+    --shadow-glow-gold: 0 12px 28px -4px rgba(197, 160, 89, 0.2), 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 * {
@@ -901,12 +902,24 @@ body.no-scroll {
 
 .awards-category {
     background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-top: 4px solid var(--color-primary);
+    border: 1px solid rgba(165, 0, 52, 0.12);
     border-radius: 12px;
     padding: 40px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
     margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.awards-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    opacity: 0.85;
 }
 
 .category-main-title {
@@ -1035,14 +1048,8 @@ body.no-scroll {
         gap: 20px;
     }
     .awards-category {
-    background: #ffffff;
-    border: 1px solid #e0e0e0;
-    border-top: 4px solid var(--color-primary);
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-    margin-bottom: 40px;
-}
+        padding: 24px 18px;
+    }
 }
 
 /* --------------------------------------------------------------------------
@@ -1124,7 +1131,15 @@ body.no-scroll {
     padding: 14px 20px;
     border-radius: 8px;
     box-shadow: var(--shadow-soft);
-    border-left: 4px solid var(--color-primary);
+    border: 1px solid rgba(165, 0, 52, 0.12);
+    transition: var(--transition-smooth);
+}
+
+.highlight-item:hover {
+    border-color: rgba(165, 0, 52, 0.35);
+    background-color: var(--color-bg-card-hover);
+    transform: translateX(4px);
+    box-shadow: 0 6px 18px rgba(165, 0, 52, 0.08);
 }
 
 .highlight-num {
@@ -1311,8 +1326,9 @@ body.no-scroll {
     top: 0;
     left: 0;
     width: 100%;
-    height: 4px;
+    height: 2px;
     background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    opacity: 0.85;
 }
 
 .stat-card:hover {
@@ -1897,7 +1913,7 @@ body.no-scroll {
     filter: drop-shadow(0 4px 15px rgba(0,0,0,0.3));
     pointer-events: none;
     z-index: 15;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .insta-doubleclick-heart.animate {
@@ -3210,8 +3226,8 @@ body.no-scroll {
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     padding: 30px;
     position: relative;
-    transform: translateY(30px) scale(0.95);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(20px) scale(0.96);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
     overflow: hidden;
 }
 
@@ -3383,8 +3399,8 @@ body.no-scroll {
     box-shadow: 0 20px 40px rgba(0,0,0,0.2);
     padding: 0;
     position: relative;
-    transform: translateY(30px) scale(0.95);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(20px) scale(0.96);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -3667,8 +3683,15 @@ body.no-scroll {
     background: #fff;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    border-left: 4px solid var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    border: 1px solid rgba(165, 0, 52, 0.12);
+    transition: var(--transition-smooth);
+}
+
+.paper-item:hover {
+    border-color: rgba(165, 0, 52, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(165, 0, 52, 0.08);
 }
 .paper-item h4 {
     margin: 0 0 10px 0;
