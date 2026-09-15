@@ -2464,27 +2464,33 @@
             const gradList = ["조현준", "권준홍", "이승민", "한혜서", "유승아", "유영민", "우지윤"];
             const isGrad = gradList.includes(cleanName);
 
-            // 모달 항목 라벨 엘리먼트
+            // 모달 항목 라벨 및 값 엘리먼트
             const degreeLabel = document.getElementById('prof-modal-degree-label');
             const eduLabel = document.getElementById('prof-modal-edu-label');
             const subjectLabel = document.getElementById('prof-modal-subject-label');
             const labLabel = document.getElementById('prof-modal-lab-label');
             const emailLabel = document.getElementById('prof-modal-email-label');
+            const emailVal = document.getElementById('prof-modal-email');
 
             if (isGrad) {
-                // 대학원생 맞춤형 5대 라벨 전환
+                // 대학원생 맞춤형 4대 라벨 전환 (학위과정, 역할, 연구분야, 보유자격)
                 if (degreeLabel) degreeLabel.textContent = "학위과정";
                 if (eduLabel) eduLabel.textContent = "역할";
                 if (subjectLabel) subjectLabel.textContent = "연구분야";
                 if (labLabel) labLabel.textContent = "보유자격";
-                if (emailLabel) emailLabel.textContent = "활동공간";
+                if (emailLabel) emailLabel.style.display = 'none';
+                if (emailVal) emailVal.style.display = 'none';
             } else {
-                // 일반 교수/스태프 기존 라벨 복구
+                // 일반 교수/스태프 기존 라벨 및 5대 항목 복구
                 if (degreeLabel) degreeLabel.textContent = "학위명";
                 if (eduLabel) eduLabel.textContent = "최종학력";
                 if (subjectLabel) subjectLabel.textContent = (cleanName === "최현곤") ? "담당부서" : "담당과목";
                 if (labLabel) labLabel.textContent = "연구실";
-                if (emailLabel) emailLabel.textContent = "E-mail";
+                if (emailLabel) {
+                    emailLabel.textContent = "E-mail";
+                    emailLabel.style.display = '';
+                }
+                if (emailVal) emailVal.style.display = '';
             }
 
             if (pData) {
@@ -2502,14 +2508,13 @@
                 }
 
                 if (isGrad) {
-                    // 대학원생 전용 데이터 바인딩
+                    // 대학원생 전용 4대 항목 데이터 바인딩 (학위과정, 역할, 연구분야, 보유자격)
                     document.getElementById('prof-modal-degree').textContent = pData.degree || "경희대학교 일반대학원 석사과정";
                     document.getElementById('prof-modal-edu').textContent = pData.assignedRole || pData.role || "경희대학교 AT Center";
                     document.getElementById('prof-modal-subject').textContent = pData.subject || "-";
                     document.getElementById('prof-modal-lab').textContent = pData.cert || "KATA 공인 AT (선수트레이너)";
-                    document.getElementById('prof-modal-email').textContent = pData.location || "선승관 AT center (031-201-2787)";
                 } else {
-                    // 일반 교수/스태프 전용 데이터 바인딩
+                    // 일반 교수/스태프 전용 5대 항목 데이터 바인딩
                     document.getElementById('prof-modal-degree').textContent = pData.degree || "-";
                     document.getElementById('prof-modal-edu').textContent = pData.edu || "경희대학교";
                     document.getElementById('prof-modal-subject').textContent = pData.subject || "-";
