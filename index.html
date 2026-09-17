@@ -2079,12 +2079,15 @@
             },
             "이상준": {
                 role: "농구부 전담 AT / 석사과정 연구원",
-                photo: "assets/profile_이상준.jpg?v=1789622370",
-                degree: "스포츠의학과 석사과정",
-                edu: "경희대학교",
-                subject: "농구 선수 점프·착지 메커니즘 및 하지 관절 재활",
-                lab: "선승관 AT center (031-201-2787)",
+                photo: "assets/profile_이상준.jpg?v=1789624581",
+                degree: "체육학 학사",
+                dept: "스포츠의학과",
+                grade: "석사과정",
+                phone: "031-201-2787 (선승관 AT Center)",
                 email: "khuatcenter@khu.ac.kr",
+                edu: "경희대학교 스포츠의학과",
+                subject: "농구 선수 점프·착지 메커니즘 및 하지 관절 재활",
+                lab: "031-201-2787 (선승관 AT Center)",
                 career: [
                     "현) 경희대학교 농구부 전담 AT",
                     "현) 경희대학교 AT Center 연구원"
@@ -2315,8 +2318,8 @@
                             }
                         };
                         profileDiv.innerHTML = `
-                            <div class="head-at-avatar" title="클릭하여 고화질 확대" onclick="event.stopPropagation(); if (typeof openPhotoLightbox === 'function') openPhotoLightbox('assets/profile_${headName}.jpg?v=1789622370', '${headName} (${sportName === '센터' ? 'AT Center' : sportName + '부'} 전담 AT)');">
-                                <img src="assets/profile_${headName}.jpg?v=1789622370" alt="${headName}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\\'fa-solid fa-user\\'></i>';">
+                            <div class="head-at-avatar" title="클릭하여 고화질 확대" onclick="event.stopPropagation(); if (typeof openPhotoLightbox === 'function') openPhotoLightbox('assets/profile_${headName}.jpg?v=1789624581', '${headName} (${sportName === '센터' ? 'AT Center' : sportName + '부'} 전담 AT)');">
+                                <img src="assets/profile_${headName}.jpg?v=1789624581" alt="${headName}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\\'fa-solid fa-user\\'></i>';">
                                 <div class="head-at-avatar-zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                             </div>
                             <div class="head-at-info" style="flex: 1;">
@@ -2461,9 +2464,13 @@
 
             const pData = professorsData[cleanName] || professorsData[rawName] || null;
 
-            // 대학원생 명단 판별 (7인: 조현준, 권준홍, 이승민, 한혜서, 유승아, 유영민, 우지윤)
+            // 전담 AT 명단 판별 (12개 체육부 전담 AT)
+            const headATList = ["강석", "유주승", "이상준", "박세민", "유영민", "문수연", "권남준", "기윤서", "문채연", "한혜서", "유지민", "유승아"];
+            const isHeadAT = headATList.includes(cleanName) || (pData && pData.role && pData.role.includes("전담 AT"));
+
+            // 대학원생 명단 판별 (전담 AT를 제외한 일반 대학원생 연구원)
             const gradList = ["조현준", "권준홍", "이승민", "한혜서", "유승아", "유영민", "우지윤"];
-            const isGrad = gradList.includes(cleanName);
+            const isGrad = !isHeadAT && gradList.includes(cleanName);
 
             // 모달 항목 라벨 및 값 엘리먼트
             const degreeLabel = document.getElementById('prof-modal-degree-label');
@@ -2473,7 +2480,18 @@
             const emailLabel = document.getElementById('prof-modal-email-label');
             const emailVal = document.getElementById('prof-modal-email');
 
-            if (isGrad) {
+            if (isHeadAT) {
+                // 전담 AT 맞춤형 5대 라벨 전환 (학위명, 학과, 학년, 전화번호, E-mail)
+                if (degreeLabel) degreeLabel.textContent = "학위명";
+                if (eduLabel) eduLabel.textContent = "학과";
+                if (subjectLabel) subjectLabel.textContent = "학년";
+                if (labLabel) labLabel.textContent = "전화번호";
+                if (emailLabel) {
+                    emailLabel.textContent = "E-mail";
+                    emailLabel.style.display = '';
+                }
+                if (emailVal) emailVal.style.display = '';
+            } else if (isGrad) {
                 // 대학원생 맞춤형 4대 라벨 전환 (학위과정, 역할, 연구분야, 보유자격)
                 if (degreeLabel) degreeLabel.textContent = "학위과정";
                 if (eduLabel) eduLabel.textContent = "역할";
@@ -2522,7 +2540,14 @@
                     }
                 }
 
-                if (isGrad) {
+                if (isHeadAT) {
+                    // 전담 AT 전용 5대 항목 데이터 바인딩 (학위명, 학과, 학년, 전화번호, E-mail)
+                    document.getElementById('prof-modal-degree').textContent = pData.degree || "체육학 학사";
+                    document.getElementById('prof-modal-edu').textContent = pData.dept || "스포츠의학과";
+                    document.getElementById('prof-modal-subject').textContent = pData.grade || (pData.degree && pData.degree.includes("석사") ? "석사과정" : "학부 4학년");
+                    document.getElementById('prof-modal-lab').textContent = pData.phone || pData.lab || "031-201-2787 (선승관 AT Center)";
+                    document.getElementById('prof-modal-email').textContent = pData.email || "khuatcenter@khu.ac.kr";
+                } else if (isGrad) {
                     // 대학원생 전용 4대 항목 데이터 바인딩 (학위과정, 역할, 연구분야, 보유자격)
                     document.getElementById('prof-modal-degree').textContent = pData.degree || "경희대학교 일반대학원 석사과정";
                     document.getElementById('prof-modal-edu').textContent = pData.assignedRole || pData.role || "경희대학교 AT Center";
