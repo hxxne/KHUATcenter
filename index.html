@@ -2078,19 +2078,18 @@
                 research: []
             },
             "이상준": {
-                role: "농구부 전담 AT / 석사과정 연구원",
+                role: "농구부 전담 AT",
                 photo: "assets/profile_이상준.jpg?v=1789624581",
-                degree: "체육학 학사",
+                degree: "이학사",
                 dept: "스포츠의학과",
-                grade: "석사과정",
-                phone: "031-201-2787 (선승관 AT Center)",
-                email: "khuatcenter@khu.ac.kr",
+                grade: "3학년",
+                phone: "",
+                email: "",
                 edu: "경희대학교 스포츠의학과",
                 subject: "농구 선수 점프·착지 메커니즘 및 하지 관절 재활",
-                lab: "031-201-2787 (선승관 AT Center)",
+                lab: "",
                 career: [
-                    "현) 경희대학교 농구부 전담 AT",
-                    "현) 경희대학교 AT Center 연구원"
+                    "경희대학교 농구부 전담 AT"
                 ],
                 research: []
             },
@@ -2542,11 +2541,11 @@
 
                 if (isHeadAT) {
                     // 전담 AT 전용 5대 항목 데이터 바인딩 (학위명, 학과, 학년, 전화번호, E-mail)
-                    document.getElementById('prof-modal-degree').textContent = pData.degree || "체육학 학사";
-                    document.getElementById('prof-modal-edu').textContent = pData.dept || "스포츠의학과";
-                    document.getElementById('prof-modal-subject').textContent = pData.grade || (pData.degree && pData.degree.includes("석사") ? "석사과정" : "학부 4학년");
-                    document.getElementById('prof-modal-lab').textContent = pData.phone || pData.lab || "031-201-2787 (선승관 AT Center)";
-                    document.getElementById('prof-modal-email').textContent = pData.email || "khuatcenter@khu.ac.kr";
+                    document.getElementById('prof-modal-degree').textContent = (pData.degree !== undefined) ? pData.degree : "이학사";
+                    document.getElementById('prof-modal-edu').textContent = (pData.dept !== undefined) ? pData.dept : "스포츠의학과";
+                    document.getElementById('prof-modal-subject').textContent = (pData.grade !== undefined) ? pData.grade : "-";
+                    document.getElementById('prof-modal-lab').textContent = (pData.phone !== undefined) ? pData.phone : (pData.lab || "-");
+                    document.getElementById('prof-modal-email').textContent = (pData.email !== undefined) ? pData.email : "-";
                 } else if (isGrad) {
                     // 대학원생 전용 4대 항목 데이터 바인딩 (학위과정, 역할, 연구분야, 보유자격)
                     document.getElementById('prof-modal-degree').textContent = pData.degree || "경희대학교 일반대학원 석사과정";
