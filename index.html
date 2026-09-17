@@ -2315,8 +2315,9 @@
                             }
                         };
                         profileDiv.innerHTML = `
-                            <div style="width: 58px; height: 58px; border-radius: 50%; overflow: hidden; background: #f0f0f0; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #777; flex-shrink: 0; border: 2px solid #A50034; box-shadow: 0 4px 10px rgba(165,0,52,0.15);">
+                            <div class="head-at-avatar" title="클릭하여 고화질 확대" onclick="event.stopPropagation(); if (typeof openPhotoLightbox === 'function') openPhotoLightbox('assets/profile_${headName}.jpg?v=1789622370', '${headName} (${sportName === '센터' ? 'AT Center' : sportName + '부'} 전담 AT)');">
                                 <img src="assets/profile_${headName}.jpg?v=1789622370" alt="${headName}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\\'fa-solid fa-user\\'></i>';">
+                                <div class="head-at-avatar-zoom-hint"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                             </div>
                             <div class="head-at-info" style="flex: 1;">
                                 <div style="display: flex; align-items: center; gap: 6px;">
@@ -2501,9 +2502,23 @@
                 if (photoEl) {
                     const imgSrc = pData.photo || cardImgSrc;
                     if (imgSrc) {
-                        photoEl.innerHTML = `<img src="${imgSrc}" alt="${rawName}" style="width: 100%; height: 100%; object-fit: cover;">`;
+                        photoEl.innerHTML = `
+                            <img src="${imgSrc}" alt="${rawName}" style="width: 100%; height: 100%; object-fit: cover;">
+                            <div class="prof-modal-photo-zoom-hint" title="클릭하여 고화질 확대"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                        `;
+                        photoEl.style.cursor = 'zoom-in';
+                        photoEl.title = '클릭하여 고화질 확대';
+                        photoEl.onclick = (e) => {
+                            e.stopPropagation();
+                            if (typeof openPhotoLightbox === 'function') {
+                                openPhotoLightbox(imgSrc, `${rawName} (${pData.role || '경희대학교 AT Center'})`);
+                            }
+                        };
                     } else {
                         photoEl.innerHTML = '<i class="fa-solid fa-user-tie"></i>';
+                        photoEl.style.cursor = 'default';
+                        photoEl.title = '';
+                        photoEl.onclick = null;
                     }
                 }
 

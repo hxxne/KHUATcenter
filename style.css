@@ -3440,6 +3440,7 @@ body.no-scroll {
 }
 
 .prof-modal-photo {
+    position: relative;
     width: 80px;
     height: 80px;
     background: white;
@@ -3451,12 +3452,79 @@ body.no-scroll {
     font-size: 32px;
     overflow: hidden;
     border: 3px solid rgba(255,255,255,0.3);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.prof-modal-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.prof-modal-photo-zoom-hint {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.38);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.25rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.prof-modal-photo:hover .prof-modal-photo-zoom-hint {
+    opacity: 1;
 }
 
 .prof-modal-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* 체육부 전담 AT 모달 내 원형 아바타 확대 힌트 스타일 */
+.head-at-avatar {
+    position: relative;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #777;
+    flex-shrink: 0;
+    border: 2px solid #A50034;
+    box-shadow: 0 4px 10px rgba(165,0,52,0.15);
+    cursor: zoom-in;
+    transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.22s ease;
+}
+
+.head-at-avatar:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 14px rgba(165, 0, 52, 0.3);
+}
+
+.head-at-avatar-zoom-hint {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.05rem;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.head-at-avatar:hover .head-at-avatar-zoom-hint {
+    opacity: 1;
 }
 
 .prof-modal-name {
