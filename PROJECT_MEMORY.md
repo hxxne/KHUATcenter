@@ -374,3 +374,26 @@
   - **전화번호**: 공란 (요청 반영)
   - **E-mail**: 공란 (요청 반영)
   - **주요경력**: `경희대학교 농구부 전담 AT`
+
+---
+
+## 🎨 27. AI 클리셰(AI Slop) 정제 및 시맨틱 헤딩·그림자 표준화 (2026-09-18)
+- **배경 및 목적:**
+  - `impeccable` 및 `design-taste-frontend` 정밀 감사 도구를 활용한 AI 템플릿성 클리셰 요소 전면 검출 및 정제
+  - 산만함을 주는 무한 루프 애니메이션, 상투적인 키커 태그, 비표준 컬러 후광(Glow) 그림자 제거를 통한 프로페셔널 대학 연구·임상 센터 톤앤매너 확립
+- **주요 개선 내역:**
+  1. **무한 루프 스크롤 애니메이션 제거 (`pulsing-dot` 완전 해결):**
+     - 히어로 섹션 마우스 스크롤 휠 무한 애니메이션(`@keyframes scrollMouse`) 및 `.mouse-icon` 삭제
+     - 시선 분산을 방지하고 페이지 도입부의 학술적 신뢰감 및 정보 전달력 극대화
+  2. **상투적 키커(Eyebrow) 레이블 제거 (`kicker-above-heading` 해결):**
+     - 인스타그램 CTA 섹션의 장식성 영문 키커 태그(`<div class="insta-cta-tag">OFFICIAL INSTAGRAM</div>`) 제거
+     - 제목 본래의 가독성과 명료성 회복
+  3. **학술 논문 시맨틱 헤딩 위계 정상화 (`skipped-heading` 63건 완전 해결):**
+     - 학술 연구 실적 63편 목록의 카드 헤딩 태그를 비표준 `<h4 style="...">`에서 표준 계층인 `<h3 style="...">`으로 일괄 치환
+     - `h2(섹션 타이틀)` ➔ `h3(개별 논문 타이틀)`의 W3C 웹 접근성 및 SEO 시맨틱 헤딩 계층 100% 정상화
+  4. **인위적 네온/컬러 글로우 섀도우 뉴트럴화 (`dark-glow` 완전 해결):**
+     - `:root` 변수(`--shadow-soft`, `--shadow-glow`, `--shadow-glow-gold`)의 붉은 계열 섀도우를 자연스러운 뉴트럴 엘리베이션 섀도우로 정제
+     - `.btn-primary`, `.btn-secondary`, `.tab-btn.active`, `.sub-tab-btn.active`, `.head-at-avatar`, `.hero-crest`, `.sport-photo-card:hover` 등 20여 개 요소의 비현실적인 레드/핑크 후광 그림자를 정제된 미세 섀도우로 전환
+  5. **과도한 배너 그라데이션 평탄화 (`grad-activity-banner`, `rehab-activity-banner`):**
+     - 활동 배너의 인위적인 붉은 그라데이션 및 과한 외곽선 대신 정갈한 미니멀 화이트 카드 및 부드러운 보더 스타일 적용
+
