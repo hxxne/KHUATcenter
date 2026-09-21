@@ -2462,13 +2462,13 @@
 
             const pData = professorsData[cleanName] || professorsData[rawName] || null;
 
-            // 전담 AT 명단 판별 (12개 체육부 전담 AT)
-            const headATList = ["강석", "유주승", "이상준", "박세민", "유영민", "문수연", "권남준", "기윤서", "문채연", "한혜서", "유지민", "유승아"];
-            const isHeadAT = headATList.includes(cleanName) || (pData && pData.role && pData.role.includes("전담 AT"));
-
-            // 대학원생 명단 판별 (전담 AT를 제외한 일반 대학원생 연구원)
+            // 대학원생 명단 판별 (대학원생 7명 전원 최우선 적용)
             const gradList = ["조현준", "권준홍", "이승민", "한혜서", "유승아", "유영민", "우지윤"];
-            const isGrad = !isHeadAT && gradList.includes(cleanName);
+            const isGrad = gradList.includes(cleanName);
+
+            // 전담 AT 명단 판별 (대학원생을 제외한 학부생 전담 AT)
+            const headATList = ["강석", "유주승", "이상준", "박세민", "문수연", "권남준", "기윤서", "문채연", "유지민"];
+            const isHeadAT = !isGrad && (headATList.includes(cleanName) || (pData && pData.role && pData.role.includes("전담 AT")));
 
             // 모달 항목 라벨 및 값 엘리먼트
             const degreeLabel = document.getElementById('prof-modal-degree-label');
