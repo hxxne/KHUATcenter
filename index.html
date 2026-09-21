@@ -2490,9 +2490,9 @@
                 }
                 if (emailVal) emailVal.style.display = '';
             } else if (isGrad) {
-                // 대학원생 맞춤형 4대 라벨 전환 (학위과정, 역할, 연구분야, 보유자격)
+                // 대학원생 맞춤형 4대 라벨 전환 (학위과정, 직무, 연구분야, 보유자격)
                 if (degreeLabel) degreeLabel.textContent = "학위과정";
-                if (eduLabel) eduLabel.textContent = "역할";
+                if (eduLabel) eduLabel.textContent = "직무";
                 if (subjectLabel) subjectLabel.textContent = "연구분야";
                 if (labLabel) labLabel.textContent = "보유자격";
                 if (emailLabel) emailLabel.style.display = 'none';
@@ -2546,7 +2546,7 @@
                     document.getElementById('prof-modal-lab').textContent = (pData.phone !== undefined) ? pData.phone : (pData.lab || "-");
                     document.getElementById('prof-modal-email').textContent = (pData.email !== undefined) ? pData.email : "-";
                 } else if (isGrad) {
-                    // 대학원생 전용 4대 항목 데이터 바인딩 (학위과정, 역할, 연구분야, 보유자격)
+                    // 대학원생 전용 4대 항목 데이터 바인딩 (학위과정, 직무, 연구분야, 보유자격)
                     document.getElementById('prof-modal-degree').textContent = pData.degree || "경희대학교 일반대학원 석사과정";
                     document.getElementById('prof-modal-edu').textContent = pData.assignedRole || pData.role || "경희대학교 AT Center";
                     document.getElementById('prof-modal-subject').textContent = pData.subject || "-";
