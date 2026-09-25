@@ -181,8 +181,8 @@
             <!-- Bento 3-Column Grid -->
             <div class="bento-pillars-grid">
                 
-                <!-- Pillar 1: Education -->
-                <div class="bento-card bento-card-edu">
+                <!-- Pillar 1: Education (교육) -->
+                <div class="bento-card bento-card-edu" onclick="openPillarModal('edu')" style="cursor: pointer;" title="클릭하여 교육 사업 세부내용 확인">
                     <!-- Top Media Slider -->
                     <div class="bento-media-slider" data-slider="edu">
                         <div class="bento-slide-track">
@@ -200,9 +200,9 @@
                             </div>
                         </div>
                         <div class="slider-dots">
-                            <span class="slider-dot active" onclick="setSliderSlide('edu', 0)"></span>
-                            <span class="slider-dot" onclick="setSliderSlide('edu', 1)"></span>
-                            <span class="slider-dot" onclick="setSliderSlide('edu', 2)"></span>
+                            <span class="slider-dot active" onclick="event.stopPropagation(); setSliderSlide('edu', 0)"></span>
+                            <span class="slider-dot" onclick="event.stopPropagation(); setSliderSlide('edu', 1)"></span>
+                            <span class="slider-dot" onclick="event.stopPropagation(); setSliderSlide('edu', 2)"></span>
                         </div>
                     </div>
 
@@ -216,42 +216,21 @@
                         <div class="bento-tags">
                             <span>#전공연계</span>
                             <span>#실무역량</span>
+                            <span>#현장실습</span>
                         </div>
                     </div>
-                    <div class="bento-card-body">
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-book-open-reader item-bullet-icon"></i>
-                                <h4>전공 교육 과정 연계</h4>
-                            </div>
-                            <p class="bento-item-desc">손상 평가·관리 및 재활운동 실습 중심의 심화 전공 과정 지도</p>
-                        </div>
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-user-doctor item-bullet-icon"></i>
-                                <h4>AT 실무 기초 교육</h4>
-                            </div>
-                            <p class="bento-item-desc">현장 관찰(Observation) 100시간 및 CPR·응급처치 실습 지도</p>
-                        </div>
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-microscope item-bullet-icon"></i>
-                                <h4>학술 스터디 & 저널 클럽</h4>
-                            </div>
-                            <p class="bento-item-desc">기능해부학 심층 학습, 최신 스포츠의학 논문 리뷰 및 재활 연구</p>
-                        </div>
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-chalkboard-user item-bullet-icon"></i>
-                                <h4>정기 세미나 & In-Service</h4>
-                            </div>
-                            <p class="bento-item-desc">정기 학술 세미나 운영 및 격주 단위 선수 부상 케이스 스터디</p>
+                    
+                    <!-- 인터랙티브 액션 풋터 -->
+                    <div class="bento-card-footer">
+                        <div class="bento-action-btn">
+                            <span>사업 세부내용 보기</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
                         </div>
                     </div>
                 </div>
 
-                <!-- Pillar 2: Research -->
-                <div class="bento-card bento-card-res" onclick="openResearchModal()" style="cursor: pointer;">
+                <!-- Pillar 2: Research (연구) -->
+                <div class="bento-card bento-card-res" onclick="openPillarModal('res')" style="cursor: pointer;" title="클릭하여 연구 사업 세부내용 확인">
                     <!-- Top Media Slider -->
                     <div class="bento-media-slider" data-slider="res">
                         <div class="bento-slide-track">
@@ -269,9 +248,9 @@
                             </div>
                         </div>
                         <div class="slider-dots">
-                            <span class="slider-dot active" onclick="setSliderSlide('res', 0)"></span>
-                            <span class="slider-dot" onclick="setSliderSlide('res', 1)"></span>
-                            <span class="slider-dot" onclick="setSliderSlide('res', 2)"></span>
+                            <span class="slider-dot active" onclick="event.stopPropagation(); setSliderSlide('res', 0)"></span>
+                            <span class="slider-dot" onclick="event.stopPropagation(); setSliderSlide('res', 1)"></span>
+                            <span class="slider-dot" onclick="event.stopPropagation(); setSliderSlide('res', 2)"></span>
                         </div>
                     </div>
 
@@ -285,42 +264,21 @@
                         <div class="bento-tags">
                             <span>#생체역학</span>
                             <span>#임상데이터</span>
+                            <span>#학술논문</span>
                         </div>
                     </div>
-                    <div class="bento-card-body">
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-dna item-bullet-icon"></i>
-                                <h4>손상 기전 및 예방 연구</h4>
-                            </div>
-                            <p class="bento-item-desc">생체역학적(Biomechanics) 분석 기반 부상 위험 요인 규명</p>
-                        </div>
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-heart-pulse item-bullet-icon"></i>
-                                <h4>임상 재활 및 통증 완화</h4>
-                            </div>
-                            <p class="bento-item-desc">단계별 기능 재활 프로토콜의 임상적 운동 치료 효과 검증</p>
-                        </div>
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-shield-halved item-bullet-icon"></i>
-                                <h4>대학 스포츠 부상 역학</h4>
-                            </div>
-                            <p class="bento-item-desc">부상감시시스템(ISS) 기반 엘리트 선수단 손상 추이 분석</p>
-                        </div>
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-bolt-lightning item-bullet-icon"></i>
-                                <h4>트레이닝 및 리커버리 전략</h4>
-                            </div>
-                            <p class="bento-item-desc">웜업, 저항운동, 쿨다운 등 선수 회복 전략의 과학적 효과 규명</p>
+                    
+                    <!-- 인터랙티브 액션 풋터 -->
+                    <div class="bento-card-footer">
+                        <div class="bento-action-btn">
+                            <span>사업 세부내용 보기</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
                         </div>
                     </div>
                 </div>
 
-                <!-- Pillar 3: Service -->
-                <div class="bento-card bento-card-srv">
+                <!-- Pillar 3: Service (서비스) -->
+                <div class="bento-card bento-card-srv" onclick="openPillarModal('srv')" style="cursor: pointer;" title="클릭하여 서비스 사업 세부내용 확인">
                     <!-- Top Media Slider -->
                     <div class="bento-media-slider" data-slider="srv">
                         <div class="bento-slide-track">
@@ -338,9 +296,9 @@
                             </div>
                         </div>
                         <div class="slider-dots">
-                            <span class="slider-dot active" onclick="setSliderSlide('srv', 0)"></span>
-                            <span class="slider-dot" onclick="setSliderSlide('srv', 1)"></span>
-                            <span class="slider-dot" onclick="setSliderSlide('srv', 2)"></span>
+                            <span class="slider-dot active" onclick="event.stopPropagation(); setSliderSlide('srv', 0)"></span>
+                            <span class="slider-dot" onclick="event.stopPropagation(); setSliderSlide('srv', 1)"></span>
+                            <span class="slider-dot" onclick="event.stopPropagation(); setSliderSlide('srv', 2)"></span>
                         </div>
                     </div>
 
@@ -354,36 +312,15 @@
                         <div class="bento-tags">
                             <span>#선수컨디셔닝</span>
                             <span>#현장의무지원</span>
+                            <span>#선수재활</span>
                         </div>
                     </div>
-                    <div class="bento-card-body">
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-people-group item-bullet-icon"></i>
-                                <h4>엘리트 운동선수 밀착 케어</h4>
-                            </div>
-                            <p class="bento-item-desc">종목별 전담 AT 파견 및 선수 맞춤형 부상<br class="pc-br">예방·컨디셔닝</p>
-                        </div>
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-hands-holding-child item-bullet-icon"></i>
-                                <h4>교직원 및 학생 대상 케어</h4>
-                            </div>
-                            <p class="bento-item-desc">체육시설운영단 연계 교내 구성원 스포츠재활 프로그램 운영</p>
-                        </div>
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-truck-medical item-bullet-icon"></i>
-                                <h4>스포츠 이벤트 현장 의무 지원</h4>
-                            </div>
-                            <p class="bento-item-desc">전지훈련, 전국체전, 생활체육 등 주요 대회 현장 AT 의무 파견</p>
-                        </div>
-                        <div class="bento-item">
-                            <div class="bento-item-header">
-                                <i class="fa-solid fa-notes-medical item-bullet-icon"></i>
-                                <h4>선수 부상 관리 & 복귀 지원</h4>
-                            </div>
-                            <p class="bento-item-desc">부상 이력 모니터링 기반 단계별 안전한 필드 복귀(RTP) 지도</p>
+                    
+                    <!-- 인터랙티브 액션 풋터 -->
+                    <div class="bento-card-footer">
+                        <div class="bento-action-btn">
+                            <span>사업 세부내용 보기</span>
+                            <i class="fa-solid fa-arrow-right-long"></i>
                         </div>
                     </div>
                 </div>
@@ -2746,8 +2683,384 @@
                     if (e.target === profModal) window.closeProfModal();
                 });
             }
+
+            // 4. Pillar Detail Modal ESC key close
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const pModal = document.getElementById('pillar-detail-modal');
+                    if (pModal && pModal.classList.contains('show')) {
+                        window.closePillarModal();
+                    }
+                }
+            });
         });
+
+        // ============================================================
+        // 핵심 사업(교육·연구·서비스) 프리미엄 모달 컨트롤러
+        // ============================================================
+        window.openPillarModal = function(type = 'edu') {
+            const pModal = document.getElementById('pillar-detail-modal');
+            if (pModal) {
+                pModal.style.display = 'flex';
+                setTimeout(() => { pModal.classList.add('show'); }, 10);
+                document.body.style.overflow = 'hidden';
+                window.switchPillarModalTab(type);
+            }
+        };
+
+        window.closePillarModal = function() {
+            const pModal = document.getElementById('pillar-detail-modal');
+            if (pModal) {
+                pModal.classList.remove('show');
+                setTimeout(() => { pModal.style.display = 'none'; }, 250);
+                document.body.style.overflow = '';
+            }
+        };
+
+        window.switchPillarModalTab = function(type) {
+            const validTypes = ['edu', 'res', 'srv'];
+            if (!validTypes.includes(type)) type = 'edu';
+
+            const titles = {
+                edu: '교육 사업 (Education)',
+                res: '연구 사업 (Research)',
+                srv: '서비스 사업 (Service)'
+            };
+
+            // 탭 버튼 및 패널 활성화 상태 전환
+            validTypes.forEach(t => {
+                const btn = document.getElementById(`ptab-btn-${t}`);
+                const panel = document.getElementById(`pmodal-panel-${t}`);
+                if (btn) btn.classList.toggle('active', t === type);
+                if (panel) panel.classList.toggle('active', t === type);
+            });
+
+            // 타이틀 업데이트
+            const titleEl = document.getElementById('pmodal-main-title');
+            if (titleEl && titles[type]) {
+                titleEl.textContent = titles[type];
+            }
+
+            // 해당 탭의 슬라이더 첫 번째 슬라이드로 초기화
+            window.setPillarModalSlide(type, 0);
+        };
+
+        window.setPillarModalSlide = function(sliderId, slideIndex) {
+            const sliderWrap = document.querySelector(`.pmodal-slider-wrap[data-pmodal-slider="${sliderId}"]`);
+            if (!sliderWrap) return;
+            const slides = sliderWrap.querySelectorAll('.pmodal-slide');
+            const dots = sliderWrap.querySelectorAll('.pmodal-dot');
+
+            slides.forEach((s, idx) => {
+                s.classList.toggle('active', idx === slideIndex);
+            });
+            dots.forEach((d, idx) => {
+                d.classList.toggle('active', idx === slideIndex);
+            });
+        };
+
+        // 연구 모달에서 학술 논문 63편 모달로 원활하게 전환
+        window.openResearchModalFromPillar = function() {
+            window.closePillarModal();
+            setTimeout(() => {
+                if (window.openResearchModal) window.openResearchModal();
+            }, 260);
+        };
     </script>
+
+
+    <!-- ============================================================
+         핵심 사업(교육·연구·서비스) 프리미엄 상세 모달 (Pillar Detail Modal)
+         비주얼 스플릿 2열 레이아웃 + 3단 스위처 탭 구조
+         ============================================================ -->
+    <div id="pillar-detail-modal" class="modal-overlay" onclick="closePillarModal()">
+        <div class="modal-content pillar-modal-content" onclick="event.stopPropagation()">
+            <!-- 모달 닫기 버튼 -->
+            <button class="modal-close-btn pmodal-close-btn" onclick="closePillarModal()" aria-label="닫기">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- 모달 상단 헤더 & 3단 스위처 탭 -->
+            <div class="pmodal-header">
+                <div class="pmodal-header-top">
+                    <div class="pmodal-brand-badge">
+                        <span class="pmodal-badge-dot"></span>
+                        <span>KHU AT CENTER · CORE PILLARS</span>
+                    </div>
+                    <h2 class="pmodal-title" id="pmodal-main-title">핵심 사업 상세 안내</h2>
+                    <p class="pmodal-desc">경희대학교 AT Center의 3대 핵심 기둥(교육·연구·서비스)의 세부 추진 내용과 비전입니다.</p>
+                </div>
+
+                <!-- 3단 스위처 탭 네비게이션 -->
+                <div class="pmodal-tabs-nav">
+                    <button class="pmodal-tab-btn active" id="ptab-btn-edu" onclick="switchPillarModalTab('edu')">
+                        <span class="ptab-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <span class="ptab-text">01. 교육 (Education)</span>
+                    </button>
+                    <button class="pmodal-tab-btn" id="ptab-btn-res" onclick="switchPillarModalTab('res')">
+                        <span class="ptab-icon"><i class="fa-solid fa-chart-line"></i></span>
+                        <span class="ptab-text">02. 연구 (Research)</span>
+                    </button>
+                    <button class="pmodal-tab-btn" id="ptab-btn-srv" onclick="switchPillarModalTab('srv')">
+                        <span class="ptab-icon"><i class="fa-solid fa-hand-holding-medical"></i></span>
+                        <span class="ptab-text">03. 서비스 (Service)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 모달 본문 영역 (3대 사업별 패널) -->
+            <div class="pmodal-body">
+                
+                <!-- Panel 1: Education (교육) -->
+                <div class="pmodal-panel active" id="pmodal-panel-edu">
+                    <div class="pmodal-split-grid">
+                        <!-- 좌측: 비주얼 컬럼 -->
+                        <div class="pmodal-visual-col">
+                            <div class="pmodal-gallery-card">
+                                <div class="pmodal-slider-wrap" data-pmodal-slider="edu">
+                                    <div class="pmodal-slide-track">
+                                        <div class="pmodal-slide active">
+                                            <img src="assets/images/insta/post_3.jpg" alt="정기 학술 세미나 & Taping 실무 교육" loading="lazy">
+                                            <div class="pmodal-slide-caption">정기 학술 세미나 & Taping 실무 교육</div>
+                                        </div>
+                                        <div class="pmodal-slide">
+                                            <img src="assets/images/insta/post_6.jpg" alt="In-Service 실기 교육 & 기능 실습" loading="lazy">
+                                            <div class="pmodal-slide-caption">In-Service 실기 & 테크닉 실습</div>
+                                        </div>
+                                        <div class="pmodal-slide">
+                                            <img src="assets/images/insta/post_7.jpg" alt="소도구 트레이닝 & 부상 특강" loading="lazy">
+                                            <div class="pmodal-slide-caption">소도구 트레이닝 & 부상 케이스 특강</div>
+                                        </div>
+                                    </div>
+                                    <div class="pmodal-slider-dots">
+                                        <span class="pmodal-dot active" onclick="setPillarModalSlide('edu', 0)"></span>
+                                        <span class="pmodal-dot" onclick="setPillarModalSlide('edu', 1)"></span>
+                                        <span class="pmodal-dot" onclick="setPillarModalSlide('edu', 2)"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pmodal-quote-card theme-edu">
+                                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="quote-text">"체계적인 전공 이론과 풍부한 현장 실무의 결합을 통해 차세대 엘리트 스포츠의학 및 선수트레이너 전문가를 양성합니다."</p>
+                                <div class="quote-author">경희대학교 AT Center 교육 비전</div>
+                            </div>
+                        </div>
+
+                        <!-- 우측: 4대 세부 추진 항목 -->
+                        <div class="pmodal-content-col">
+                            <div class="pmodal-section-badge">
+                                <i class="fa-solid fa-compass"></i> 4대 핵심 추진 영역
+                            </div>
+                            <div class="pmodal-feature-list">
+                                <div class="pmodal-feature-card theme-edu">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-book-open-reader"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>전공 교육 과정 연계</h4>
+                                        <p>손상 평가·관리 및 재활운동 실습 중심의 심화 전공 과정 지도</p>
+                                        <div class="pmodal-feat-tags"><span>#전공심화</span><span>#실기연계</span></div>
+                                    </div>
+                                </div>
+                                <div class="pmodal-feature-card theme-edu">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-user-doctor"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>AT 실무 기초 교육</h4>
+                                        <p>현장 관찰(Observation) 100시간 및 CPR·응급처치 실습 지도</p>
+                                        <div class="pmodal-feat-tags"><span>#현장관찰100h</span><span>#응급처치자격</span></div>
+                                    </div>
+                                </div>
+                                <div class="pmodal-feature-card theme-edu">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-microscope"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>학술 스터디 & 저널 클럽</h4>
+                                        <p>기능해부학 심층 학습, 최신 스포츠의학 논문 리뷰 및 재활 연구</p>
+                                        <div class="pmodal-feat-tags"><span>#기능해부학</span><span>#저널클럽</span></div>
+                                    </div>
+                                </div>
+                                <div class="pmodal-feature-card theme-edu">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>정기 세미나 & In-Service</h4>
+                                        <p>정기 학술 세미나 운영 및 격주 단위 선수 부상 케이스 스터디</p>
+                                        <div class="pmodal-feat-tags"><span>#격주케이스스터디</span><span>#실무역량강화</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 2: Research (연구) -->
+                <div class="pmodal-panel" id="pmodal-panel-res">
+                    <div class="pmodal-split-grid">
+                        <!-- 좌측: 비주얼 컬럼 -->
+                        <div class="pmodal-visual-col">
+                            <div class="pmodal-gallery-card">
+                                <div class="pmodal-slider-wrap" data-pmodal-slider="res">
+                                    <div class="pmodal-slide-track">
+                                        <div class="pmodal-slide active">
+                                            <img src="assets/images/insta/post_1.jpg" alt="제63차 대한비만학회 춘계학술대회 참가" loading="lazy">
+                                            <div class="pmodal-slide-caption">국내외 주요 학술대회 연구 발표</div>
+                                        </div>
+                                        <div class="pmodal-slide">
+                                            <img src="assets/images/insta/post_18.jpg" alt="World Congress on Kinesiology 학술대회 발표" loading="lazy">
+                                            <div class="pmodal-slide-caption">World Congress Kinesiology 참가</div>
+                                        </div>
+                                        <div class="pmodal-slide">
+                                            <img src="assets/images/insta/post_30.jpg" alt="European College of Sport Science 발표" loading="lazy">
+                                            <div class="pmodal-slide-caption">ECSS 국제 스포츠의학 연구 교류</div>
+                                        </div>
+                                    </div>
+                                    <div class="pmodal-slider-dots">
+                                        <span class="pmodal-dot active" onclick="setPillarModalSlide('res', 0)"></span>
+                                        <span class="pmodal-dot" onclick="setPillarModalSlide('res', 1)"></span>
+                                        <span class="pmodal-dot" onclick="setPillarModalSlide('res', 2)"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pmodal-quote-card theme-res">
+                                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="quote-text">"스포츠 현장에서 발생하는 생체역학적 부상 기전을 과학적으로 규명하고, 근거 중심 스포츠의학(EBM)을 선도합니다."</p>
+                                <div class="quote-author">경희대학교 AT Center 연구 비전</div>
+                            </div>
+
+                            <!-- 학술 논문 63편 딥링크 액션 카드 -->
+                            <div class="pmodal-deeplink-btn" onclick="openResearchModalFromPillar()">
+                                <div class="deeplink-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+                                <div class="deeplink-text">
+                                    <strong>학술 연구 및 논문 실적 63편 보기</strong>
+                                    <span>SCIE급 검증된 주요 발표 논문 전체 목록 확인</span>
+                                </div>
+                                <i class="fa-solid fa-arrow-up-right-from-square deeplink-arrow"></i>
+                            </div>
+                        </div>
+
+                        <!-- 우측: 4대 세부 추진 항목 -->
+                        <div class="pmodal-content-col">
+                            <div class="pmodal-section-badge">
+                                <i class="fa-solid fa-compass"></i> 4대 핵심 추진 영역
+                            </div>
+                            <div class="pmodal-feature-list">
+                                <div class="pmodal-feature-card theme-res">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-dna"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>손상 기전 및 예방 연구</h4>
+                                        <p>생체역학적(Biomechanics) 분석 기반 부상 위험 요인 규명</p>
+                                        <div class="pmodal-feat-tags"><span>#생체역학</span><span>#부상원인규명</span></div>
+                                    </div>
+                                </div>
+                                <div class="pmodal-feature-card theme-res">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>임상 재활 및 통증 완화</h4>
+                                        <p>단계별 기능 재활 프로토콜의 임상적 운동 치료 효과 검증</p>
+                                        <div class="pmodal-feat-tags"><span>#기능재활</span><span>#임상효과검증</span></div>
+                                    </div>
+                                </div>
+                                <div class="pmodal-feature-card theme-res">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>대학 스포츠 부상 역학</h4>
+                                        <p>부상감시시스템(ISS) 기반 엘리트 선수단 손상 추이 분석</p>
+                                        <div class="pmodal-feat-tags"><span>#부상감시(ISS)</span><span>#빅데이터분석</span></div>
+                                    </div>
+                                </div>
+                                <div class="pmodal-feature-card theme-res">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>트레이닝 및 리커버리 전략</h4>
+                                        <p>웜업, 저항운동, 쿨다운 등 선수 회복 전략의 과학적 효과 규명</p>
+                                        <div class="pmodal-feat-tags"><span>#리커버리</span><span>#선수퍼포먼스</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel 3: Service (서비스) -->
+                <div class="pmodal-panel" id="pmodal-panel-srv">
+                    <div class="pmodal-split-grid">
+                        <!-- 좌측: 비주얼 컬럼 -->
+                        <div class="pmodal-visual-col">
+                            <div class="pmodal-gallery-card">
+                                <div class="pmodal-slider-wrap" data-pmodal-slider="srv">
+                                    <div class="pmodal-slide-track">
+                                        <div class="pmodal-slide active">
+                                            <img src="assets/images/insta/post_14.jpg" alt="대회 현장 스포츠의학 의무지원" loading="lazy">
+                                            <div class="pmodal-slide-caption">대회 현장 스포츠의학 의무지원</div>
+                                        </div>
+                                        <div class="pmodal-slide">
+                                            <img src="assets/images/insta/post_17.jpg" alt="마라톤 & 러닝 이벤트 메디컬 케어" loading="lazy">
+                                            <div class="pmodal-slide-caption">마라톤 & 러닝 이벤트 메디컬 케어</div>
+                                        </div>
+                                        <div class="pmodal-slide">
+                                            <img src="assets/images/insta/post_22.jpg" alt="전국체전 엘리트 선수단 전담 파견" loading="lazy">
+                                            <div class="pmodal-slide-caption">전국체전 엘리트 선수단 전담 파견</div>
+                                        </div>
+                                    </div>
+                                    <div class="pmodal-slider-dots">
+                                        <span class="pmodal-dot active" onclick="setPillarModalSlide('srv', 0)"></span>
+                                        <span class="pmodal-dot" onclick="setPillarModalSlide('srv', 1)"></span>
+                                        <span class="pmodal-dot" onclick="setPillarModalSlide('srv', 2)"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pmodal-quote-card theme-srv">
+                                <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                                <p class="quote-text">"엘리트 운동선수의 경기력 향상부터 교내 구성원의 건강 증진까지, 최고 수준의 전문 스포츠 재활 케어를 제공합니다."</p>
+                                <div class="quote-author">경희대학교 AT Center 서비스 비전</div>
+                            </div>
+                        </div>
+
+                        <!-- 우측: 4대 세부 추진 항목 -->
+                        <div class="pmodal-content-col">
+                            <div class="pmodal-section-badge">
+                                <i class="fa-solid fa-compass"></i> 4대 핵심 추진 영역
+                            </div>
+                            <div class="pmodal-feature-list">
+                                <div class="pmodal-feature-card theme-srv">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-people-group"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>엘리트 운동선수 밀착 케어</h4>
+                                        <p>종목별 전담 AT 파견 및 선수 맞춤형 부상 예방·컨디셔닝</p>
+                                        <div class="pmodal-feat-tags"><span>#전담AT파견</span><span>#선수밀착관리</span></div>
+                                    </div>
+                                </div>
+                                <div class="pmodal-feature-card theme-srv">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-hands-holding-child"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>교직원 및 학생 대상 케어</h4>
+                                        <p>체육시설운영단 연계 교내 구성원 스포츠재활 프로그램 운영</p>
+                                        <div class="pmodal-feat-tags"><span>#교내재활</span><span>#건강증진프로그램</span></div>
+                                    </div>
+                                </div>
+                                <div class="pmodal-feature-card theme-srv">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-truck-medical"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>스포츠 이벤트 현장 의무 지원</h4>
+                                        <p>전지훈련, 전국체전, 생활체육 등 주요 대회 현장 AT 의무 파견</p>
+                                        <div class="pmodal-feat-tags"><span>#전국체전파견</span><span>#대회의무지원</span></div>
+                                    </div>
+                                </div>
+                                <div class="pmodal-feature-card theme-srv">
+                                    <div class="pmodal-feat-icon"><i class="fa-solid fa-notes-medical"></i></div>
+                                    <div class="pmodal-feat-info">
+                                        <h4>선수 부상 관리 & 복귀 지원</h4>
+                                        <p>부상 이력 모니터링 기반 단계별 안전한 필드 복귀(RTP) 지도</p>
+                                        <div class="pmodal-feat-tags"><span>#안전복귀(RTP)</span><span>#부상이력관리</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 
     <!-- Research Publications Modal (Verified SCIE Papers) -->
