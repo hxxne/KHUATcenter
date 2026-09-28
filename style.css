@@ -4048,14 +4048,27 @@ body.no-scroll {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, border-color 0.2s ease;
     text-align: center;
+}
+
+.sport-card * {
+    pointer-events: none;
 }
 
 .sport-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
     border-color: rgba(165, 0, 52, 0.35);
+}
+
+.sport-card:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 4px 12px rgba(165, 0, 52, 0.15);
+    border-color: #A50034;
 }
 
 .sport-card-icon {
@@ -4066,7 +4079,7 @@ body.no-scroll {
 }
 
 .sport-card:hover .sport-card-icon {
-    transform: scale(1.04);
+    transform: scale(1.05);
 }
 
 .sport-card-name {
@@ -6095,5 +6108,33 @@ body.no-scroll {
     .pmodal-body {
         padding: 22px;
     }
+}
+
+/* ==========================================================================
+   Modal Z-Index Hierarchy & Interactive AT Badges
+   ========================================================================== */
+/* 프로필 상세 모달 레이어를 부서 모달(9999)보다 항상 위에 노출 */
+#prof-modal {
+    z-index: 100000 !important;
+}
+
+/* 활동 사진 라이트박스 뷰어 최상위 레이어 */
+#activity-lightbox-modal {
+    z-index: 100001 !important;
+}
+
+/* 보조 AT 클릭 가능 배지 스타일 */
+.assistant-badge.clickable-badge {
+    cursor: pointer !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.assistant-badge.clickable-badge:hover {
+    background: #A50034 !important;
+    color: #ffffff !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 3px 8px rgba(165, 0, 52, 0.25) !important;
+}
+.assistant-badge.clickable-badge:active {
+    transform: translateY(0) scale(0.96) !important;
 }
 
