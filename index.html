@@ -856,53 +856,184 @@
             <!-- Tab Content: Sports AT -->
             <div id="sub-tab-sports" class="sub-tab-pane active">
                 <div class="sport-card-grid">
-                    <div class="sport-card" onclick="openSportModal('축구')">
+                    <!-- 축구 -->
+                    <div class="sport-card" data-sport="축구" onclick="selectSportCard('축구', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_soccer.jpg" alt="축구" class="pictogram-img"></div>
-                        <div class="sport-card-name">축구</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">축구</div>
+                            <span class="sport-card-head-badge">전담 강석</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('축구', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('야구')">
+
+                    <!-- 야구 -->
+                    <div class="sport-card" data-sport="야구" onclick="selectSportCard('야구', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_baseball.jpg" alt="야구" class="pictogram-img"></div>
-                        <div class="sport-card-name">야구</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">야구</div>
+                            <span class="sport-card-head-badge">전담 유주승</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('야구', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('농구')">
+
+                    <!-- 농구 -->
+                    <div class="sport-card" data-sport="농구" onclick="selectSportCard('농구', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_basketball.jpg" alt="농구" class="pictogram-img"></div>
-                        <div class="sport-card-name">농구</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">농구</div>
+                            <span class="sport-card-head-badge">전담 이상준</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('농구', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('배구')">
+
+                    <!-- 배구 -->
+                    <div class="sport-card" data-sport="배구" onclick="selectSportCard('배구', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_volleyball.jpg" alt="배구" class="pictogram-img"></div>
-                        <div class="sport-card-name">배구</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">배구</div>
+                            <span class="sport-card-head-badge">전담 박세민</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('배구', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('럭비')">
+
+                    <!-- 럭비 -->
+                    <div class="sport-card" data-sport="럭비" onclick="selectSportCard('럭비', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_rugby.jpg" alt="럭비" class="pictogram-img"></div>
-                        <div class="sport-card-name">럭비</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">럭비</div>
+                            <span class="sport-card-head-badge">전담 유영민</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('럭비', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('골프')">
+
+                    <!-- 골프 -->
+                    <div class="sport-card" data-sport="골프" onclick="selectSportCard('골프', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_golf.jpg" alt="골프" class="pictogram-img"></div>
-                        <div class="sport-card-name">골프</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">골프</div>
+                            <span class="sport-card-head-badge">전담 문수연</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('골프', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('배드민턴')">
+
+                    <!-- 배드민턴 -->
+                    <div class="sport-card" data-sport="배드민턴" onclick="selectSportCard('배드민턴', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_badminton.jpg?v=1787716329002" alt="배드민턴" class="pictogram-img"></div>
-                        <div class="sport-card-name">배드민턴</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">배드민턴</div>
+                            <span class="sport-card-head-badge">전담 권남준</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('배드민턴', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('핸드볼')">
+
+                    <!-- 핸드볼 -->
+                    <div class="sport-card" data-sport="핸드볼" onclick="selectSportCard('핸드볼', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_handball.jpg" alt="핸드볼" class="pictogram-img"></div>
-                        <div class="sport-card-name">핸드볼</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">핸드볼</div>
+                            <span class="sport-card-head-badge">전담 기윤서</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('핸드볼', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('시범단')">
+
+                    <!-- 시범단 -->
+                    <div class="sport-card" data-sport="시범단" onclick="selectSportCard('시범단', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_demoteam.jpg" alt="시범단" class="pictogram-img"></div>
-                        <div class="sport-card-name">시범단</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">시범단</div>
+                            <span class="sport-card-head-badge">전담 문채연</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('시범단', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('겨루기')">
+
+                    <!-- 겨루기 -->
+                    <div class="sport-card" data-sport="겨루기" onclick="selectSportCard('겨루기', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_gyeorugi.jpg" alt="겨루기" class="pictogram-img"></div>
-                        <div class="sport-card-name">겨루기</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">겨루기</div>
+                            <span class="sport-card-head-badge">한혜서·유지민</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('겨루기', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('품새')">
+
+                    <!-- 품새 -->
+                    <div class="sport-card" data-sport="품새" onclick="selectSportCard('품새', this)">
                         <div class="sport-card-icon"><img src="assets/pictogram_poomsae.jpg" alt="품새" class="pictogram-img"></div>
-                        <div class="sport-card-name">품새</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">품새</div>
+                            <span class="sport-card-head-badge">전담 유승아</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('품새', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
-                    <div class="sport-card" onclick="openSportModal('센터')">
+
+                    <!-- 센터 -->
+                    <div class="sport-card" data-sport="센터" onclick="selectSportCard('센터', this)">
                         <div class="sport-card-icon"><i class="fa-solid fa-kit-medical"></i></div>
-                        <div class="sport-card-name">센터</div>
+                        <div class="sport-card-content">
+                            <div class="sport-card-name">센터</div>
+                            <span class="sport-card-head-badge">센터 AT 명단</span>
+                        </div>
+                        <div class="sport-card-action">
+                            <div class="sport-action-btn" onclick="event.stopPropagation(); selectSportCard('센터', this.closest('.sport-card'))">
+                                <span>상세보기</span>
+                                <i class="fa-solid fa-arrow-right-long"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2178,6 +2309,27 @@
                 sub: ["권준홍", "천지훈", "이천이", "송찬", "안은지", "이채원"],
                 photos: []
             }
+        };
+
+        // ==========================================
+        // 체육부 종목 카드 선택(Active) 및 상세 모달 호출
+        // ==========================================
+        window.selectSportCard = function(sportName, el) {
+            // 전체 종목 카드 선택 상태 초기화
+            document.querySelectorAll('.sport-card').forEach(function(card) {
+                card.classList.remove('active');
+            });
+
+            // 클릭된 대상 카드에 활성화(active) 클래스 적용
+            if (el) {
+                el.classList.add('active');
+            } else {
+                const targetCard = document.querySelector(`.sport-card[data-sport="${sportName}"]`);
+                if (targetCard) targetCard.classList.add('active');
+            }
+
+            // 체육부 부서별 상세 모달 오픈
+            window.openSportModal(sportName);
         };
 
         // Open Department Modal (부서별 상세 팝업창 열기)
