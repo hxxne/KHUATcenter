@@ -712,3 +712,23 @@
   - 스포츠재활 강사 카드(1026L): `assets/profile_유승아.jpg?v=20260929_crop` 적용.
   - 상세 프로필 모달(1731L): `assets/profile_유승아.jpg?v=20260929_crop` 적용.
 
+---
+
+## 📸 46. 김준영 실장·이재욱 팀장 프로필 사진 1:1 정방형(1000×1000) 표준 규격 크롭 통일 및 고화질 반영 (2026-09-29)
+- **개편 배경:**
+  - 사용자 피드백: "김준영 이재욱 사진 파일에 올려놨는데 사진 규격 통일해서 올려줘"
+  - **정밀 원인 분석:**
+    - 카메라 원본(3024×4032 세로형, EXIF Orientation 포함)이 업로드되어 상단 벽면 여백이 45% 이상 차지하며 구도 불일치 발생.
+    - 기존 `assets/kimjunyoung.png` 및 `assets/leejaewook.jpg` 대신 표준 네이밍인 `assets/profile_김준영.jpg`, `assets/profile_이재욱.jpg`로 일원화 필요.
+- **안전 원본 보존 및 고품질 Lanczos 센터 크롭 가공:**
+  - **영구 백업:** `assets/originals_highres/` 폴더에 `profile_김준영_raw.jpg`, `profile_이재욱_raw.jpg` 안전 보관 완료.
+  - **1:1 정방형 규격 통일:**
+    - 타 구성원 기준 사진들과 100% 동일한 헤드룸(13.3~13.8%), 수평 정중앙 축, 양 어깨·팔짱·버건디 단체복·명찰 노출 황금 구도 적용:
+    - **김준영 (`assets/profile_김준영.jpg` & `assets/kimjunyoung.png`):** `(546, 1621, 2496, 3571)` (크기 1950×1950) 크롭 ➔ `1000×1000px` (Quality 95%) 생성 (헤드룸 13.8%).
+    - **이재욱 (`assets/profile_이재욱.jpg` & `assets/leejaewook.jpg`):** `(558, 1577, 2508, 3527)` (크기 1950×1950) 크롭 ➔ `1000×1000px` (Quality 95%) 생성 (헤드룸 13.3%).
+    - 기존 파일명(`assets/kimjunyoung.png`, `assets/leejaewook.jpg`)도 동일한 고화질 크롭본으로 동기화 저장하여 100% 안전한 하위 호환성 확보.
+- **웹 연동 및 캐시 무효화 (`index.html`):**
+  - 이재욱 연구팀장 카드(670L) 및 상세 모달(1656L): `assets/profile_이재욱.jpg?v=20260929_crop` 적용.
+  - 김준영 실장 카드(685L) 및 상세 모달(1678L): `assets/profile_김준영.jpg?v=20260929_crop` 적용.
+
+
