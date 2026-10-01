@@ -824,5 +824,34 @@
   - 박지홍 센터장/교수 카드(631L): `assets/profile_박지홍.jpg?v=20260930_user` 적용.
   - 박지홍 상세 모달(1619L): `assets/profile_박지홍.jpg?v=20260930_user` 적용.
 
+---
+
+## 🎨 52. 타이포그래피 미세 조율 (Tabular Numbers) 및 히어로 섹션 시각적 몰입도 강화 (2026-10-01)
+- **개편 배경:**
+  - 사용자 요청: 
+    1. 타이포그래피 미세 조율 (Micro-Typography): 숫자(전화번호, 학년 등)에 고정폭(Tabular Numbers, `font-feature-settings: "tnum"`)을 적용하여 상세 모달 내 숫자 정보들을 더욱 단단하고 정밀하게 정렬.
+    2. 히어로 섹션의 시각적 몰입도 강화: 상단 메인 배너의 텍스트와 배경 사이의 미세한 명도 대비를 끌어올려 첫 화면 진입 시 감탄을 자아내는 시각적 임팩트 연출.
+- **주요 개선 내역 (`style.css`):**
+  - **고정폭 숫자(Tabular Numbers) 마이크로 타이포그래피 적용:**
+    - Pretendard & Inter 폰트의 OpenType 기능 활성화: `font-variant-numeric: tabular-nums`, `font-feature-settings: "tnum" 1, "cv05" 1`.
+    - 타겟 요소 전역 반영:
+      - 상세 프로필 모달 정보값 (`.prof-info-value`), 상세 학력/경력 리스트 (`.prof-list li`, `.modern-profile-exp li`).
+      - 메인 통계 지표 숫자 (`.stat-number-wrapper`, `.stat-number`, `.about-clean-num`).
+      - 주요 연혁 순번/날짜 (`.seq`, `.ga-date`), 종목별 인원 태그 (`.sport-member-tag`).
+    - 글자 간격(자간) 미세 조율 (`letter-spacing: -0.015em ~ -0.02em`)로 숫자와 하이픈(`-`), 괄호가 흔들림 없이 수직 칼럼 정렬되도록 정밀 조정.
+  - **히어로 섹션 시각적 몰입도 및 명도 대비 극대화:**
+    - **멀티레이어 듀얼 오버레이 (`.hero-bg-overlay`):**
+      - 비네팅 래디얼 그라데이션(`radial-gradient`) + 상단 헤더 & 하단 전환부 앰비언트 리니어 그라데이션(`linear-gradient`) 결합.
+      - 중앙 배경 영상/이미지의 활기찬 시인성은 살리면서, 텍스트가 얹히는 영역의 명도 대비를 확실하게 확보.
+    - **시네마틱 텍스트 섀도우 & 타이틀 가독성:**
+      - 히어로 메인 타이틀(`.hero-content h1`)에 다층 블러 섀도우(`text-shadow: 0 4px 28px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9)`) 적용.
+      - 핵심 강조 단어(`AT 센터`의 `.gradient-text`)에 고채도 크림슨 레드/골드 그라데이션 및 앰비언트 글로우(`drop-shadow`) 추가.
+    - **서브텍스트 및 CTA 버튼 심미성 고도화:**
+      - 설명문(`.hero-description`) 색상을 `rgba(255, 255, 255, 0.94)`로 상향하고 다크 글로우 섀도우 부여.
+      - 주요 버튼(`.hero-actions .btn-primary`, `.btn-secondary`)에 입체 뎁스 섀도우 및 글래스모피즘 림 라이트(`box-shadow: inset 0 1px 1px rgba(255,255,255,0.2)`) 적용.
+- **캐시 버스팅 갱신 (`index.html`):**
+  - `style.css?v=20261001_micro_hero`로 쿼리 스트링 갱신하여 클라이언트 즉시 반영.
+
+
 
 

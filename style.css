@@ -57,7 +57,24 @@ body {
     font-family: var(--font-sans);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     overflow-x: hidden;
+}
+
+/* Micro-Typography: Tabular Numbers for Data & Numeric Alignment */
+.tabular-nums,
+.stat-number-wrapper,
+.stat-number,
+.about-clean-num,
+.seq,
+.prof-info-value,
+.prof-list li,
+.modern-profile-exp li,
+.ga-date,
+.sport-member-tag {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1, "cv05" 1;
 }
 
 a {
@@ -556,7 +573,9 @@ body.no-scroll {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: 
+        radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.72) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.12) 28%, rgba(0, 0, 0, 0.22) 65%, rgba(10, 5, 8, 0.88) 100%);
     pointer-events: none;
     z-index: 2;
 }
@@ -617,33 +636,42 @@ body.no-scroll {
     letter-spacing: -1.5px;
     animation: fadeInUp 1s ease 0.2s forwards;
     opacity: 0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 4px 28px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.95);
 }
 
 .hero-title .thin {
     font-weight: 300;
     font-size: 2.25rem;
-    color: #e2e8f0;
+    color: #f1f5f9;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.7);
 }
 
 .hero-title .bold {
     font-weight: 800;
 }
 
+.hero-title .accent-text {
+    background: linear-gradient(135deg, #ff4d6d 0%, #ff758f 50%, #e2b76e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 14px rgba(255, 77, 109, 0.45));
+    font-weight: 900;
+}
+
 .hero-description {
     max-width: 780px;
     margin: 0 auto 40px auto;
-    font-size: 1.125rem;
-    color: #f8fafc;
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.94);
     font-weight: 500;
-    letter-spacing: -0.5px;
-    line-height: 1.75;
+    letter-spacing: -0.3px;
+    line-height: 1.8;
     word-break: keep-all;
     overflow-wrap: break-word;
     text-wrap: pretty;
     animation: fadeInUp 1.2s ease 0.3s forwards;
     opacity: 0;
-    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.75), 0 1px 3px rgba(0, 0, 0, 0.95);
 }
 
 .hero-actions {
@@ -653,6 +681,34 @@ body.no-scroll {
     margin-bottom: 50px;
     animation: fadeInUp 1.4s ease 0.4s forwards;
     opacity: 0;
+}
+
+.hero-actions .btn-primary {
+    box-shadow: 0 6px 24px rgba(165, 0, 52, 0.45), 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: var(--transition-smooth);
+}
+
+.hero-actions .btn-primary:hover {
+    box-shadow: 0 10px 32px rgba(165, 0, 52, 0.65), 0 2px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.hero-actions .btn-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: var(--transition-smooth);
+}
+
+.hero-actions .btn-secondary:hover {
+    background: #ffffff;
+    color: #1e293b;
+    border-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.35);
+    transform: translateY(-3px) scale(1.02);
 }
 
 /* Scroll Down Indicator */
@@ -3535,6 +3591,9 @@ body.no-scroll {
     font-size: 0.9rem;
     color: #1e293b;
     word-break: keep-all;
+    letter-spacing: -0.015em;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1, "cv05" 1;
 }
 
 .prof-section {
@@ -3566,7 +3625,10 @@ body.no-scroll {
     margin-bottom: 8px;
     font-size: 0.9rem;
     color: #334155;
-    line-height: 1.5;
+    line-height: 1.55;
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum" 1;
 }
 
 .prof-list li::before {
