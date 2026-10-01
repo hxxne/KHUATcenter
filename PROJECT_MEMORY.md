@@ -875,6 +875,25 @@
     - `.pillars-instagram-cta-banner` 전체 영역에 `onclick="window.open(...)"` 및 `cursor: pointer;`를 부여하여 배너 어디를 마우스로 올리거나 클릭해도 즉시 직관적으로 반응하도록 개선.
     - `style.css?v=20261001_banner_fix`로 캐시 버스팅 갱신.
 
+---
+
+## 🎬 54. 메인 히어로 배너 배경영상 및 오버레이 원래 규격 원복 (2026-10-01)
+- **개편 배경:**
+  - 사용자 피드백: "그 첫 화면에 배경영상 원래대로 바꿔줘 이상한거같아 지금"
+  - 복합 그라데이션 및 비네팅 오버레이가 배경 영상을 과도하게 어둡고 탁하게 만들어 원래의 맑고 생동감 있는 영상미를 해치는 문제 해결.
+- **수정 및 원복 내역 (`style.css`):**
+  - **배경영상 오버레이 원복:** `.hero-bg-overlay`를 원래의 깨끗하고 단정한 단일 반투명 블랙 `background: rgba(0, 0, 0, 0.4);`로 즉시 원복.
+  - **타이틀 및 설명문 텍스트 스타일 원복:**
+    - `.hero-title` 섀도우를 원래의 가볍고 단정한 `text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);`로 원복.
+    - 서브 텍스트 `.hero-title .thin` 색상 `#e2e8f0` 원복.
+    - 인위적이던 `.hero-title .accent-text` 과도한 그라데이션 제거.
+    - 설명문(`.hero-description`) `max-width: 700px`, `color: #f8fafc`, `text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5)`로 원복.
+  - **버그 수정 유지 (포인터 씹힘 방지):**
+    - 배경 비디오의 마우스 투과 속성(`.hero-video { pointer-events: none; }`)과 버튼의 클릭/호버 최우선권(`.hero-actions .btn { cursor: pointer; pointer-events: auto; }`)은 온전히 유지하여 마우스가 잡히지 않던 버그는 완벽히 해결된 상태 유지.
+- **캐시 버스팅 갱신 (`index.html`):**
+  - `style.css?v=20261001_restore_hero`로 캐시 버스팅 파라미터 갱신 완료.
+
+
 
 
 
