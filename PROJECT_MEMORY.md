@@ -852,6 +852,30 @@
 - **캐시 버스팅 갱신 (`index.html`):**
   - `style.css?v=20261001_micro_hero`로 쿼리 스트링 갱신하여 클라이언트 즉시 반영.
 
+---
+
+## 🛠️ 53. 배너 마우스 인터랙션 및 포인터 가로챔 오류 전면 해결 (2026-10-01)
+- **개편 배경:**
+  - 사용자 피드백: "가끔 배너에 마우스 올릴때 안잡히는 경우가 있어서 그거 오류 수정해주라"
+  - 원인 정밀 진단:
+    1. **메인 히어로 배너 비디오 포인터 가로챔:** HTML5 `<video class="hero-video">` 요소에 `pointer-events: none`이 누락되어 마우스 커서가 텍스트/버튼 바깥 영역에 닿을 때 브라우저 네이티브 비디오 컨트롤러가 마우스 이벤트를 가로채 포인터 감지 및 클릭이 씹히는 문제 발생.
+    2. **`style.css` 내 중복된 레거시 `#hero` 블록 간섭:** 하단에 존재하던 이전 `#hero` CSS 블록(80여 줄)이 덮어쓰기되어 상단 최적화 스타일 및 버튼 z-index와 충돌 발생.
+    3. **풀스크린 모바일 드로어(`mobile-nav-overlay`) 포인터 누수:** 비활성 상태(`visibility: hidden`)일 때 `pointer-events: none`이 명시되지 않아 일부 웹 브라우저에서 화면 상단/전체 마우스 입력을 미세하게 흡수할 수 있는 잠재 리스크.
+    4. **핵심 사업 벤토 슬라이더 배너 롤링:** 슬라이더에 마우스를 올려도 멈추지 않고 4초마다 자동으로 넘어가 마우스로 확인하거나 조작하기 어려웠던 점.
+    5. **인스타그램 CTA 배너 클릭 범위:** 우측 버튼에만 링크가 걸려 있어 배너 본체에 마우스를 올렸을 때 반응하지 않았던 점.
+- **수정 및 최적화 내역:**
+  - **`style.css`:**
+    - `.hero-video`에 `pointer-events: none;`, `user-select: none;` 부여하여 마우스 이벤트 가로챔 완벽 차단.
+    - `.hero-container`에 `pointer-events: auto;` 부여, `.hero-actions`에 `position: relative; z-index: 15;` 지정.
+    - `.hero-actions .btn`에 `cursor: pointer !important;`, `pointer-events: auto !important;`, `position: relative; z-index: 20;`, `touch-action: manipulation;` 명시하여 버튼 호버 및 클릭 반응 100% 보장.
+    - `.mobile-nav-overlay` 비활성 상태에 `pointer-events: none;`, 활성 상태에 `pointer-events: auto;` 추가.
+    - 하단 레거시 중복 `#hero` 및 중복 `.mobile-toggle` 블록(178줄) 완전 제거로 CSS 렌더링 충돌 종식.
+  - **`index.html`:**
+    - `startBentoSliders()`에 `mouseenter`(슬라이더 자동 롤링 일시 정지) 및 `mouseleave`(재개) 이벤트 리스너 추가하여 배너에 마우스를 올리면 그 자리에서 딱 멈추도록(잡히도록) 개선.
+    - `.pillars-instagram-cta-banner` 전체 영역에 `onclick="window.open(...)"` 및 `cursor: pointer;`를 부여하여 배너 어디를 마우스로 올리거나 클릭해도 즉시 직관적으로 반응하도록 개선.
+    - `style.css?v=20261001_banner_fix`로 캐시 버스팅 갱신.
+
+
 
 
 
