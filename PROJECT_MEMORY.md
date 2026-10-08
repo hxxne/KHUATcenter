@@ -32,12 +32,15 @@
 
 ---
 
-## 👥 3. 교수진 및 스태프 프로필 상세 기준
-- **박지홍 교수:** `[학위명] 체육과학 박사(Physical Medicine & Rehabilitation 전공)`, `[최종학력] Brigham Young University`, `[담당과목] 운동손상, 재활모달리티, 저항운동과컨디셔닝`, `[연구실] 체411호 (031-201-2721)`, `[E-mail] jihong.park@khu.ac.kr`
-- **오성민 교수:** `[학위명] 스포츠심리학-운동제어 박사(Motor Control 전공)`, `[최종학력] 성균관대학교`, `[담당과목] 운동손상평가`, `[연구실] 경희대학교 선승관 AT Center`, `[E-mail] sungminoh@khu.ac.kr`
-- **이재욱 팀장:** `[학위명] 체육학 석사 (Athletic Training 전공)`, `[최종학력] 경희대학교`, `[담당과목] 저항운동과컨디셔닝, 운동손상관리, 저항운동실습`, `[연구실] 경희대학교 선승관 AT Center`, `[E-mail] jwlee0102@khu.ac.kr`
-- **김준영 실장:** `[학위명] 체육학 석사 (Athletic Training 전공)`, `[최종학력] 경희대학교`, `[담당과목] 재활운동실습, 스포츠테이핑실습`, `[연구실] 경희대학교 선승관 AT Center`, `[E-mail] junyoung0366@khu.ac.kr`
-- **최현곤 팀장:** `[학위명] 체육학 석사 (Sports Medicine and Science 전공)`, `[최종학력] 경희대학교`, `[담당부서] 체육시설운영단`, `[연구실] 경희대학교 선승관 AT Center`, `[E-mail] gusrhs24@khu.ac.kr`
+## 👥 3. 구성원 소개 섹션 구조 및 프로필 상세 기준 (최신 개정)
+- **섹션 메인 타이틀:** `구성원 소개` (`h2.section-title`) + 중앙 구분선 (`divider`)
+- **01 교수진:**
+  - **박지홍 교수:** `[학위명] 체육과학 박사(Physical Medicine & Rehabilitation 전공)`, `[최종학력] Brigham Young University`, `[담당과목] 운동손상, 재활모달리티, 저항운동과컨디셔닝`, `[연구실] 체411호 (031-201-2721)`, `[E-mail] jihong.park@khu.ac.kr`
+  - **오성민 교수:** `[학위명] 스포츠심리학-운동제어 박사(Motor Control 전공)`, `[최종학력] 성균관대학교`, `[담당과목] 운동손상평가`, `[연구실] 경희대학교 선승관 AT Center`, `[E-mail] sungminoh@khu.ac.kr`
+- **02 Leader (실장 -> 재활팀장 -> 연구팀장 순서 엄수):**
+  1. **김준영 실장:** `[학위명] 체육학 석사 (Athletic Training 전공)`, `[최종학력] 경희대학교`, `[담당과목] 재활운동실습, 스포츠테이핑실습`, `[연구실] 경희대학교 선승관 AT Center`, `[E-mail] junyoung0366@khu.ac.kr`
+  2. **최현곤 팀장 (재활팀장):** `[학위명] 체육학 석사 (Sports Medicine and Science 전공)`, `[최종학력] 경희대학교`, `[담당부서] 체육시설운영단 / 스포츠재활팀`, `[연구실] 경희대학교 선승관 AT Center`, `[E-mail] gusrhs24@khu.ac.kr`
+  3. **이재욱 팀장 (연구팀장):** `[학위명] 체육학 석사 (Athletic Training 전공)`, `[최종학력] 경희대학교`, `[담당과목] 저항운동과컨디셔닝, 운동손상관리, 저항운동실습`, `[연구실] 경희대학교 선승관 AT Center`, `[E-mail] jwlee0102@khu.ac.kr`
 
 ---
 
