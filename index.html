@@ -40,7 +40,7 @@
             <nav class="nav-menu">
                 <a href="#about" class="nav-link">센터 소개</a>
                 <a href="#pillars" class="nav-link">핵심 사업</a>
-                <a href="#dashboard" class="nav-link">센터 누적기록</a>
+                <a href="#dashboard" class="nav-link">AT 센터 누적 기록</a>
                 <a href="#members" class="nav-link">구성원</a>
                 <a href="#awards" class="nav-link">역대 수상자 및 리더</a>
                 <a href="#donate" class="nav-link">발전기금</a>
@@ -69,7 +69,7 @@
         <nav class="mobile-menu">
             <a href="#about" class="mobile-link"><i class="fa-regular fa-building"></i> 센터 소개</a>
             <a href="#pillars" class="mobile-link"><i class="fa-solid fa-layer-group"></i> 핵심 사업</a>
-            <a href="#dashboard" class="mobile-link"><i class="fa-solid fa-chart-line"></i> 센터 누적기록</a>
+            <a href="#dashboard" class="mobile-link"><i class="fa-solid fa-chart-line"></i> AT 센터 누적 기록</a>
             <a href="#members" class="mobile-link"><i class="fa-solid fa-users"></i> 구성원</a>
             <a href="#awards" class="mobile-link"><i class="fa-solid fa-award"></i> 역대 수상자 및 리더</a>
             <a href="#donate" class="mobile-link"><i class="fa-solid fa-hand-holding-heart"></i> 발전기금 후원</a>
@@ -350,16 +350,18 @@
     <section id="dashboard" class="section-padding">
         <div class="container">
             <div class="section-header text-center">
-                <h2 class="section-title">센터 누적기록</h2>
+                <div class="dashboard-support-badge">
+                    <i class="fa-solid fa-kit-medical"></i> AT 센터 현장 지원 실적
+                </div>
+                <h2 class="section-title">AT 센터 누적 기록</h2>
                 <div class="divider"></div>
-                <p class="section-subtitle">AT 센터의 현장 지원 실적 및 정량적 연구 성과</p>
             </div>
 
             <!-- Stats Counter Grid -->
             <div class="stats-grid">
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.25z" fill="currentColor"></path></svg>
+                        <i class="fa-solid fa-heart-pulse" style="font-size: 22px;"></i>
                     </div>
                     <div class="stat-number-wrapper">
                         <span class="stat-number" data-target="15000">15,000</span><span class="stat-suffix">+</span>
@@ -368,7 +370,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z" fill="currentColor"></path></svg>
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 22px;"></i>
                     </div>
                     <div class="stat-number-wrapper">
                         <span class="stat-number" data-target="82">82</span><span class="stat-suffix"></span>
@@ -377,7 +379,7 @@
                 </div>
                 <div class="stat-card clickable-stat-card" id="btn-research-modal" onclick="openResearchModal()" style="cursor: pointer;" title="클릭하여 발표 논문 목록 확인">
                     <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2zm0 8H7v-2h10v2z" fill="currentColor"></path></svg>
+                        <i class="fa-solid fa-book-bookmark" style="font-size: 22px;"></i>
                     </div>
                     <div class="stat-number-wrapper">
                         <span class="stat-number" data-target="63">63</span>
@@ -386,7 +388,7 @@
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
-                        <svg viewBox="0 0 24 24" width="24" height="24"><path d="M20 8h-3V4H3v12h17V8zM5 6h10v8H5V6zm13 8h-1V8h1v6z" fill="currentColor"></path></svg>
+                        <i class="fa-solid fa-truck-medical" style="font-size: 22px;"></i>
                     </div>
                     <div class="stat-number-wrapper">
                         <span class="stat-number" data-target="320">320</span><span class="stat-suffix">+</span>
@@ -1393,10 +1395,11 @@
                                 <label for="form-affiliation">소속 구분 *</label>
                                 <select id="form-affiliation" name="소속구분" required="">
                                     <option value="" disabled="" selected="">소속을 선택하세요</option>
-                                    <option value="athlete">체육부 학생 선수</option>
-                                    <option value="student">일반 학생</option>
-                                    <option value="faculty">교직원</option>
-                                    <option value="external">외부기관 / 일반인</option>
+                                    <option value="체육부">체육부</option>
+                                    <option value="교직원">교직원</option>
+                                    <option value="학생">학생</option>
+                                    <option value="외부">외부</option>
+                                    <option value="기타">기타</option>
                                 </select>
                             </div>
                             <div class="form-group">
