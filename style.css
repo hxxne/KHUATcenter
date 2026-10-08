@@ -1168,54 +1168,26 @@ body.no-scroll {
 }
 
 /* --------------------------------------------------------------------------
-   7. Stats & Performance Dashboard
+   7. Stats & Performance Dashboard (AT 센터 누적 기록 3대 핵심 성과)
    -------------------------------------------------------------------------- */
-/* AT Center Field Support Badge (AT 센터 누적 기록 상단 뱃지) */
-.dashboard-support-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 7px 18px;
-    background: linear-gradient(135deg, rgba(165, 0, 52, 0.08), rgba(165, 0, 52, 0.04));
-    color: var(--color-primary);
-    border: 1px solid rgba(165, 0, 52, 0.22);
-    border-radius: 9999px;
-    font-size: 0.88rem;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-    margin-bottom: 14px;
-    box-shadow: 0 2px 8px rgba(165, 0, 52, 0.06);
-    transition: var(--transition-smooth);
-}
-
-.dashboard-support-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(165, 0, 52, 0.12);
-    border-color: rgba(165, 0, 52, 0.35);
-}
-
-.dashboard-support-badge i {
-    font-size: 0.95rem;
-    color: var(--color-primary);
-}
-
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-bottom: 60px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1080px;
+    margin: 0 auto;
 }
 
 .stat-card {
     background-color: var(--color-bg-card);
     border: 1px solid #ECEAE4;
     border-radius: var(--border-radius);
-    padding: 30px 20px;
+    padding: 38px 24px 34px 24px;
     text-align: center;
     position: relative;
     overflow: hidden;
     transition: var(--transition-smooth);
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
 }
 
 .stat-card::before {
@@ -1224,56 +1196,71 @@ body.no-scroll {
     top: 0;
     left: 0;
     width: 100%;
-    height: 2px;
+    height: 3px;
     background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 .stat-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     border-color: var(--color-primary);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 16px 32px rgba(165, 0, 52, 0.09);
 }
 
 .stat-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 56px;
+    height: 56px;
     background-color: rgba(165, 0, 52, 0.06);
     color: var(--color-primary);
     border-radius: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    transition: var(--transition-smooth);
 }
 
-.stat-card:nth-child(even) .stat-icon {
-    background-color: rgba(197, 160, 89, 0.08);
+.stat-card:hover .stat-icon {
+    transform: scale(1.08);
+}
+
+.stat-card:nth-child(2) .stat-icon {
+    background-color: rgba(197, 160, 89, 0.1);
     color: var(--color-secondary);
+}
+
+.stat-card:nth-child(3) .stat-icon {
+    background-color: rgba(165, 0, 52, 0.06);
+    color: var(--color-primary);
 }
 
 .stat-number-wrapper {
     font-family: var(--font-sans);
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: var(--color-text-dark);
+    font-size: 3rem;
+    font-weight: 900;
+    color: #0f172a;
     line-height: 1;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
+    letter-spacing: -1px;
 }
 
 .stat-suffix {
     color: var(--color-primary);
     margin-left: 2px;
+    font-size: 2.25rem;
+    font-weight: 800;
 }
 
-.stat-card:nth-child(even) .stat-suffix {
+.stat-card:nth-child(2) .stat-suffix {
     color: var(--color-secondary);
 }
 
 .stat-label {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    font-weight: 600;
+    font-size: 1.15rem;
+    color: #1e293b;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    line-height: 1.4;
 }
 
 /* ==========================================================================
