@@ -1061,7 +1061,27 @@
        - 아직 사진이 없는 인원은 **경희대 버건디 그라데이션 바탕의 세련된 이니셜 아바타**로 자동 표시되어 페이지의 미적 완성도를 완벽 유지.
        - 향후 새 사진 파일 추가 시 즉시 사진 모드로 전환되는 유연한 확장성 확보.
 
+---
 
-
-
+### [2026-10-09] 06 AT 센터 보조 12개 부서 전용 픽토그램(Pictogram) 전면 복원
+- **배경 및 요청 사항:**
+  - 센터 보조 디자인 리뉴얼 과정에서 부서 헤더 아이콘이 임의의 FontAwesome 아이콘으로 변경되었던 것을, 기존에 맞춤 제작하여 적용해 두었던 **전용 종목 픽토그램 이미지(`assets/pictogram_*.jpg`)** 로 100% 원상 복원 요청.
+- **주요 수정 및 복원 내역:**
+  1. **11개 종목 전용 픽토그램 이미지 매핑 복원:**
+     - **축구:** `assets/pictogram_soccer.jpg`
+     - **야구:** `assets/pictogram_baseball.jpg`
+     - **농구:** `assets/pictogram_basketball.jpg`
+     - **배구:** `assets/pictogram_volleyball.jpg`
+     - **럭비:** `assets/pictogram_rugby.jpg`
+     - **골프:** `assets/pictogram_golf.jpg`
+     - **배드민턴:** `assets/pictogram_badminton.jpg?v=1787716329002` (캐시 무효화 쿼리 유지)
+     - **핸드볼:** `assets/pictogram_handball.jpg`
+     - **태권도 시범단:** `assets/pictogram_demoteam.jpg`
+     - **태권도 겨루기:** `assets/pictogram_gyeorugi.jpg`
+     - **태권도 품새:** `assets/pictogram_poomsae.jpg`
+     - **AT Center (센터 본부):** `<i class="fa-solid fa-kit-medical" style="color: #A50034; font-size: 1.25rem;"></i>` (전용 엠블럼)
+  2. **스타일 최적화 (`style.css`):**
+     - `.assistant-dept-icon`: 직경 44px의 경희대 틴트 핑크 서클(`background: #FFF0F2; border-radius: 50%`)로 감싸 안정적인 비율 형성.
+     - `.assistant-dept-pictogram`: `width: 38px; height: 38px; object-fit: contain; mix-blend-mode: multiply; border-radius: 50%` 속성을 적용하여 픽토그램 배경이 서클 바탕과 자연스럽게 녹아들도록 처리.
+     - 카드 호버 시 픽토그램 서클이 부드럽게 스케일업(`scale(1.08)`)되는 인터랙션 연동.
 
