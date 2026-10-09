@@ -1617,107 +1617,273 @@
                         <p class="category-sub-desc">매년 학술 연구와 임상 현장 실무에서 가장 탁월한 성과와 모범을 보인 학생들에게 수여되는 명예의 상입니다.</p>
                     </div>
 
-                    <div class="honors-board-grid">
-                        
-                        <!-- 1. AT STUDENT OF THE YEAR -->
-                        <div class="honors-column-card honors-card-gold">
-                            <div class="honors-column-header">
-                                <div class="honors-award-emblem"><i class="fa-solid fa-trophy"></i></div>
-                                <h4 class="honors-award-title">AT STUDENT OF THE YEAR</h4>
-                                <span class="honors-award-korean">올해의 AT 학생상 (최고 영예)</span>
-                            </div>
+                    <!-- 10개년(2025~2015) 명예의 전당 아카이브 테이블 -->
+                    <div class="hof-archive-table-wrapper">
+                        <div class="hof-table-responsive">
+                            <table class="hof-archive-table">
+                                <thead>
+                                    <tr>
+                                        <th class="th-year"><i class="fa-regular fa-calendar-check"></i> 연도</th>
+                                        <th class="th-award col-gold">
+                                            <div class="th-title-wrap">
+                                                <span class="th-icon"><i class="fa-solid fa-trophy"></i></span>
+                                                <span class="th-main">AT STUDENT OF THE YEAR</span>
+                                            </div>
+                                            <span class="th-sub">올해의 AT 학생상 (최고 영예)</span>
+                                        </th>
+                                        <th class="th-award col-burgundy">
+                                            <div class="th-title-wrap">
+                                                <span class="th-icon"><i class="fa-solid fa-fire"></i></span>
+                                                <span class="th-main">INSPIRATION</span>
+                                            </div>
+                                            <span class="th-sub">인스피레이션상 (열정 &amp; 귀감)</span>
+                                        </th>
+                                        <th class="th-award col-slate">
+                                            <div class="th-title-wrap">
+                                                <span class="th-icon"><i class="fa-solid fa-bolt"></i></span>
+                                                <span class="th-main">ROOKIE OF THE YEAR</span>
+                                            </div>
+                                            <span class="th-sub">올해의 신인상 (유망 인재)</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- 2025 (Latest) -->
+                                    <tr class="tr-latest-2025">
+                                        <td class="td-year">
+                                            <div class="year-badge-wrap">
+                                                <span class="year-text">2025</span>
+                                                <span class="latest-ribbon"><i class="fa-solid fa-star"></i> 최신 헌액</span>
+                                            </div>
+                                        </td>
+                                        <td class="td-award td-gold">
+                                            <button type="button" class="hof-alumni-chip chip-gold" onclick="openAlumniModal('유승아', '2025 AT Student of the Year')" title="유승아 프로필 보기">
+                                                <span class="chip-name">유승아</span>
+                                                <span class="chip-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award td-burgundy">
+                                            <button type="button" class="hof-alumni-chip chip-burgundy" onclick="openAlumniModal('유주승', '2025 Inspiration')" title="유주승 프로필 보기">
+                                                <span class="chip-name">유주승</span>
+                                                <span class="chip-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award td-slate">
+                                            <button type="button" class="hof-alumni-chip chip-slate" onclick="openAlumniModal('조연지', '2025 Rookie of the Year')" title="조연지 프로필 보기">
+                                                <span class="chip-name">조연지</span>
+                                                <span class="chip-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                                            </button>
+                                        </td>
+                                    </tr>
 
-                            <!-- 2025 최신 수상자 명패 플레이트 -->
-                            <div class="honors-latest-box latest-gold" onclick="openAlumniModal('유승아', '2025 AT Student of the Year')" title="유승아 프로필 보기">
-                                <div class="hlb-badge"><i class="fa-solid fa-star"></i> 2025 HONOREE</div>
-                                <div class="hlb-name">유승아</div>
-                                <div class="hlb-btn">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
-                            </div>
+                                    <!-- 2024 -->
+                                    <tr>
+                                        <td class="td-year"><span class="year-text">2024</span></td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('한혜서', '2024 AT Student of the Year')" title="한혜서 프로필 보기">
+                                                <span class="chip-name">한혜서</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('한혜서', '2024 Inspiration')" title="한혜서 프로필 보기">
+                                                <span class="chip-name">한혜서</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('이정재', '2024 Rookie of the Year')" title="이정재 프로필 보기">
+                                                <span class="chip-name">이정재</span>
+                                            </button>
+                                        </td>
+                                    </tr>
 
-                            <!-- 10년 역대 수상자 2열 명예 롤 (2024 ~ 2015) -->
-                            <div class="honors-archive-wrap">
-                                <div class="honors-archive-title">PAST HONOREES (2024 - 2015)</div>
-                                <ul class="honors-roll-grid awards-list">
-                                    <li class="honors-roll-item"><span class="year">2024</span><span class="name">한혜서</span></li>
-                                    <li class="honors-roll-item"><span class="year">2023</span><span class="name">차정수</span></li>
-                                    <li class="honors-roll-item"><span class="year">2022</span><span class="name">박효진</span></li>
-                                    <li class="honors-roll-item"><span class="year">2021</span><span class="name">김재원</span></li>
-                                    <li class="honors-roll-item"><span class="year">2020</span><span class="name">임선주</span></li>
-                                    <li class="honors-roll-item"><span class="year">2019</span><span class="name">김동현</span></li>
-                                    <li class="honors-roll-item"><span class="year">2018</span><span class="name">오민섭</span></li>
-                                    <li class="honors-roll-item"><span class="year">2017</span><span class="name">조재희, 양창욱</span></li>
-                                    <li class="honors-roll-item"><span class="year">2016</span><span class="name">이선화</span></li>
-                                    <li class="honors-roll-item"><span class="year">2015</span><span class="name">이현욱</span></li>
-                                </ul>
-                            </div>
+                                    <!-- 2023 -->
+                                    <tr>
+                                        <td class="td-year"><span class="year-text">2023</span></td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('차정수', '2023 AT Student of the Year')" title="차정수 프로필 보기">
+                                                <span class="chip-name">차정수</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('문채연', '2023 Inspiration')" title="문채연 프로필 보기">
+                                                <span class="chip-name">문채연</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('한현구', '2023 Rookie of the Year')" title="한현구 프로필 보기">
+                                                <span class="chip-name">한현구</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 2022 -->
+                                    <tr>
+                                        <td class="td-year"><span class="year-text">2022</span></td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('박효진', '2022 AT Student of the Year')" title="박효진 프로필 보기">
+                                                <span class="chip-name">박효진</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('이남송', '2022 Inspiration')" title="이남송 프로필 보기">
+                                                <span class="chip-name">이남송</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('유영수', '2022 Rookie of the Year')" title="유영수 프로필 보기">
+                                                <span class="chip-name">유영수</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 2021 -->
+                                    <tr>
+                                        <td class="td-year"><span class="year-text">2021</span></td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('김재원', '2021 AT Student of the Year')" title="김재원 프로필 보기">
+                                                <span class="chip-name">김재원</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('김태진', '2021 Inspiration')" title="김태진 프로필 보기">
+                                                <span class="chip-name">김태진</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('최유빈', '2021 Rookie of the Year')" title="최유빈 프로필 보기">
+                                                <span class="chip-name">최유빈</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 2020 -->
+                                    <tr>
+                                        <td class="td-year"><span class="year-text">2020</span></td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('임선주', '2020 AT Student of the Year')" title="임선주 프로필 보기">
+                                                <span class="chip-name">임선주</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('김승연', '2020 Inspiration')" title="김승연 프로필 보기">
+                                                <span class="chip-name">김승연</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('김승연', '2020 Rookie of the Year')" title="김승연 프로필 보기">
+                                                <span class="chip-name">김승연</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 2019 -->
+                                    <tr>
+                                        <td class="td-year"><span class="year-text">2019</span></td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('김동현', '2019 AT Student of the Year')" title="김동현 프로필 보기">
+                                                <span class="chip-name">김동현</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('성락훈', '2019 Inspiration')" title="성락훈 프로필 보기">
+                                                <span class="chip-name">성락훈</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('임선주', '2019 Rookie of the Year')" title="임선주 프로필 보기">
+                                                <span class="chip-name">임선주</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 2018 -->
+                                    <tr>
+                                        <td class="td-year"><span class="year-text">2018</span></td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('오민섭', '2018 AT Student of the Year')" title="오민섭 프로필 보기">
+                                                <span class="chip-name">오민섭</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('김동현', '2018 Inspiration')" title="김동현 프로필 보기">
+                                                <span class="chip-name">김동현</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('우태희', '2018 Rookie of the Year')" title="우태희 프로필 보기">
+                                                <span class="chip-name">우태희</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 2017 -->
+                                    <tr>
+                                        <td class="td-year"><span class="year-text">2017</span></td>
+                                        <td class="td-award">
+                                            <div class="chip-multi-wrap">
+                                                <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('조재희', '2017 AT Student of the Year')" title="조재희 프로필 보기">
+                                                    <span class="chip-name">조재희</span>
+                                                </button>
+                                                <span class="chip-comma">,</span>
+                                                <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('양창욱', '2017 AT Student of the Year')" title="양창욱 프로필 보기">
+                                                    <span class="chip-name">양창욱</span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('조유진', '2017 Inspiration')" title="조유진 프로필 보기">
+                                                <span class="chip-name">조유진</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('오민섭', '2017 Rookie of the Year')" title="오민섭 프로필 보기">
+                                                <span class="chip-name">오민섭</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 2016 -->
+                                    <tr>
+                                        <td class="td-year"><span class="year-text">2016</span></td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('이선화', '2016 AT Student of the Year')" title="이선화 프로필 보기">
+                                                <span class="chip-name">이선화</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('안효은', '2016 Inspiration')" title="안효은 프로필 보기">
+                                                <span class="chip-name">안효은</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('이서영', '2016 Rookie of the Year')" title="이서영 프로필 보기">
+                                                <span class="chip-name">이서영</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+
+                                    <!-- 2015 -->
+                                    <tr>
+                                        <td class="td-year"><span class="year-text">2015</span></td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('이현욱', '2015 AT Student of the Year')" title="이현욱 프로필 보기">
+                                                <span class="chip-name">이현욱</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('신재윤', '2015 Inspiration')" title="신재윤 프로필 보기">
+                                                <span class="chip-name">신재윤</span>
+                                            </button>
+                                        </td>
+                                        <td class="td-award">
+                                            <button type="button" class="hof-alumni-chip" onclick="openAlumniModal('김다영', '2015 Rookie of the Year')" title="김다영 프로필 보기">
+                                                <span class="chip-name">김다영</span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-
-                        <!-- 2. INSPIRATION -->
-                        <div class="honors-column-card honors-card-burgundy">
-                            <div class="honors-column-header">
-                                <div class="honors-award-emblem"><i class="fa-solid fa-fire"></i></div>
-                                <h4 class="honors-award-title">INSPIRATION</h4>
-                                <span class="honors-award-korean">인스피레이션상 (열정 &amp; 귀감)</span>
-                            </div>
-
-                            <!-- 2025 최신 수상자 명패 플레이트 -->
-                            <div class="honors-latest-box latest-burgundy" onclick="openAlumniModal('유주승', '2025 Inspiration')" title="유주승 프로필 보기">
-                                <div class="hlb-badge"><i class="fa-solid fa-fire"></i> 2025 HONOREE</div>
-                                <div class="hlb-name">유주승</div>
-                                <div class="hlb-btn">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
-                            </div>
-
-                            <!-- 10년 역대 수상자 2열 명예 롤 (2024 ~ 2015) -->
-                            <div class="honors-archive-wrap">
-                                <div class="honors-archive-title">PAST HONOREES (2024 - 2015)</div>
-                                <ul class="honors-roll-grid awards-list">
-                                    <li class="honors-roll-item"><span class="year">2024</span><span class="name">한혜서</span></li>
-                                    <li class="honors-roll-item"><span class="year">2023</span><span class="name">문채연</span></li>
-                                    <li class="honors-roll-item"><span class="year">2022</span><span class="name">이남송</span></li>
-                                    <li class="honors-roll-item"><span class="year">2021</span><span class="name">김태진</span></li>
-                                    <li class="honors-roll-item"><span class="year">2020</span><span class="name">김승연</span></li>
-                                    <li class="honors-roll-item"><span class="year">2019</span><span class="name">성락훈</span></li>
-                                    <li class="honors-roll-item"><span class="year">2018</span><span class="name">김동현</span></li>
-                                    <li class="honors-roll-item"><span class="year">2017</span><span class="name">조유진</span></li>
-                                    <li class="honors-roll-item"><span class="year">2016</span><span class="name">안효은</span></li>
-                                    <li class="honors-roll-item"><span class="year">2015</span><span class="name">신재윤</span></li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- 3. ROOKIE OF THE YEAR -->
-                        <div class="honors-column-card honors-card-slate">
-                            <div class="honors-column-header">
-                                <div class="honors-award-emblem"><i class="fa-solid fa-bolt"></i></div>
-                                <h4 class="honors-award-title">ROOKIE OF THE YEAR</h4>
-                                <span class="honors-award-korean">올해의 신인상 (유망 인재)</span>
-                            </div>
-
-                            <!-- 2025 최신 수상자 명패 플레이트 -->
-                            <div class="honors-latest-box latest-slate" onclick="openAlumniModal('조연지', '2025 Rookie of the Year')" title="조연지 프로필 보기">
-                                <div class="hlb-badge"><i class="fa-solid fa-bolt"></i> 2025 HONOREE</div>
-                                <div class="hlb-name">조연지</div>
-                                <div class="hlb-btn">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
-                            </div>
-
-                            <!-- 10년 역대 수상자 2열 명예 롤 (2024 ~ 2015) -->
-                            <div class="honors-archive-wrap">
-                                <div class="honors-archive-title">PAST HONOREES (2024 - 2015)</div>
-                                <ul class="honors-roll-grid awards-list">
-                                    <li class="honors-roll-item"><span class="year">2024</span><span class="name">이정재</span></li>
-                                    <li class="honors-roll-item"><span class="year">2023</span><span class="name">한현구</span></li>
-                                    <li class="honors-roll-item"><span class="year">2022</span><span class="name">유영수</span></li>
-                                    <li class="honors-roll-item"><span class="year">2021</span><span class="name">최유빈</span></li>
-                                    <li class="honors-roll-item"><span class="year">2020</span><span class="name">김승연</span></li>
-                                    <li class="honors-roll-item"><span class="year">2019</span><span class="name">임선주</span></li>
-                                    <li class="honors-roll-item"><span class="year">2018</span><span class="name">우태희</span></li>
-                                    <li class="honors-roll-item"><span class="year">2017</span><span class="name">오민섭</span></li>
-                                    <li class="honors-roll-item"><span class="year">2016</span><span class="name">이서영</span></li>
-                                    <li class="honors-roll-item"><span class="year">2015</span><span class="name">김다영</span></li>
-                                </ul>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
@@ -4860,87 +5026,8 @@
             };
 
             // =========================================================
-            // 1. 역대 학생 수상자 (Student Awards) 연도별 탭 전환 로직
+            // 1. 역대 학생 수상자 (Student Awards): 10개년 아카이브 테이블 직접 연동
             // =========================================================
-            const studentAwardsData = {
-                2025: { yearAward: "유승아", inspiration: "유주승", rookie: "조연지" },
-                2024: { yearAward: "한혜서", inspiration: "한혜서", rookie: "이정재" },
-                2023: { yearAward: "차정수", inspiration: "문채연", rookie: "한현구" },
-                2022: { yearAward: "박효진", inspiration: "이남송", rookie: "유영수" },
-                2021: { yearAward: "김재원", inspiration: "김태진", rookie: "최유빈" },
-                2020: { yearAward: "임선주", inspiration: "김승연", rookie: "김승연" },
-                2019: { yearAward: "김동현", inspiration: "성락훈", rookie: "임선주" },
-                2018: { yearAward: "오민섭", inspiration: "김동현", rookie: "우태희" },
-                2017: { yearAward: "조재희, 양창욱", inspiration: "조유진", rookie: "오민섭" },
-                2016: { yearAward: "이선화", inspiration: "안효은", rookie: "이서영" },
-                2015: { yearAward: "이현욱", inspiration: "신재윤", rookie: "김다영" }
-            };
-
-            let currentSelectedYear = 2025;
-
-            window.selectAwardsYear = function(year, btn) {
-                currentSelectedYear = year;
-                document.querySelectorAll('.year-tab-btn').forEach(b => b.classList.remove('active'));
-                if (btn) btn.classList.add('active');
-
-                const data = studentAwardsData[year];
-                if (!data) return;
-
-                const ind1 = document.getElementById('year-indicator-1');
-                const ind2 = document.getElementById('year-indicator-2');
-                const ind3 = document.getElementById('year-indicator-3');
-                const name1 = document.getElementById('name-recipient-1');
-                const name2 = document.getElementById('name-recipient-2');
-                const name3 = document.getElementById('name-recipient-3');
-
-                if (ind1) ind1.textContent = year;
-                if (ind2) ind2.textContent = year;
-                if (ind3) ind3.textContent = year;
-
-                // Split multiple names if exists
-                if (name1) name1.textContent = data.yearAward;
-                if (name2) name2.textContent = data.inspiration;
-                if (name3) name3.textContent = data.rookie;
-
-                const displayBox = document.getElementById('awards-year-display');
-                if (displayBox) {
-                    displayBox.style.opacity = '0';
-                    displayBox.style.transform = 'translateY(6px)';
-                    setTimeout(() => {
-                        displayBox.style.transition = 'all 0.28s ease';
-                        displayBox.style.opacity = '1';
-                        displayBox.style.transform = 'translateY(0)';
-                    }, 40);
-                }
-            };
-
-            window.triggerAwardModal = function(type) {
-                const data = studentAwardsData[currentSelectedYear];
-                if (!data) return;
-
-                let personName = '';
-                let awardTitle = '';
-
-                if (type === 'yearAward') {
-                    personName = data.yearAward;
-                    awardTitle = currentSelectedYear + ' AT Student of the Year';
-                } else if (type === 'inspiration') {
-                    personName = data.inspiration;
-                    awardTitle = currentSelectedYear + ' Inspiration';
-                } else if (type === 'rookie') {
-                    personName = data.rookie;
-                    awardTitle = currentSelectedYear + ' Rookie of the Year';
-                }
-
-                // If comma separated, take the first one or open
-                if (personName.includes(',')) {
-                    personName = personName.split(',')[0].trim();
-                }
-
-                if (window.openAlumniModal) {
-                    window.openAlumniModal(personName, awardTitle);
-                }
-            };
 
             // =========================================================
             // 2. 활동 사진 4대 탭 필터링 & 부서 폴더 스위칭

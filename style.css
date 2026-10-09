@@ -7130,231 +7130,256 @@ body.no-scroll {
 
 
 /* ==========================================================================
-   ATHLETIC TRAINING STUDENT AWARDS: 3열 하이엔드 아너스 보드 (Honor Board)
+   ATHLETIC TRAINING STUDENT AWARDS: 10개년 명예의 전당 아카이브 테이블 (Archive Table)
    ========================================================================== */
-.honors-board-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 26px;
+.hof-archive-table-wrapper {
     margin-top: 32px;
-}
-
-.honors-column-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 28px 24px;
-    display: flex;
-    flex-direction: column;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-    position: relative;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
 }
 
-.honors-column-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.08);
-    border-color: #cbd5e1;
+.hof-table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
-.honors-card-gold {
-    border-top: 4px solid #d97706;
+.hof-archive-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    min-width: 820px;
 }
 
-.honors-card-burgundy {
-    border-top: 4px solid #A50034;
+/* 테이블 헤더 */
+.hof-archive-table thead th {
+    padding: 18px 16px;
+    vertical-align: middle;
+    background: #0f172a;
+    color: #ffffff;
+    border-bottom: 2px solid #1e293b;
 }
 
-.honors-card-slate {
-    border-top: 4px solid #0284c7;
+.hof-archive-table thead th.th-year {
+    width: 13%;
+    background: #090e17;
+    color: #94a3b8;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
-.honors-column-header {
-    margin-bottom: 6px;
+.hof-archive-table thead th.col-gold {
+    width: 29%;
+    border-top: 3px solid #d97706;
 }
 
-.honors-award-emblem {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+.hof-archive-table thead th.col-burgundy {
+    width: 29%;
+    border-top: 3px solid #A50034;
+}
+
+.hof-archive-table thead th.col-slate {
+    width: 29%;
+    border-top: 3px solid #0284c7;
+}
+
+.hof-archive-table .th-title-wrap {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.35rem;
-    margin-bottom: 14px;
-    transition: transform 0.25s ease;
-}
-
-.honors-column-card:hover .honors-award-emblem {
-    transform: scale(1.08);
-}
-
-.honors-card-gold .honors-award-emblem {
-    background: #fef3c7;
-    color: #b45309;
-}
-
-.honors-card-burgundy .honors-award-emblem {
-    background: #ffe4e6;
-    color: #9f1239;
-}
-
-.honors-card-slate .honors-award-emblem {
-    background: #e0f2fe;
-    color: #0369a1;
-}
-
-.honors-award-title {
-    font-size: 1.18rem;
+    gap: 8px;
+    font-size: 0.95rem;
     font-weight: 900;
-    color: #0f172a;
-    letter-spacing: -0.3px;
-    line-height: 1.3;
-    margin: 0 0 4px 0;
+    letter-spacing: -0.2px;
+    color: #ffffff;
 }
 
-.honors-award-korean {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: #64748b;
+.hof-archive-table thead th.col-gold .th-icon { color: #f59e0b; }
+.hof-archive-table thead th.col-burgundy .th-icon { color: #f43f5e; }
+.hof-archive-table thead th.col-slate .th-icon { color: #38bdf8; }
+
+.hof-archive-table .th-sub {
     display: block;
-    margin-bottom: 16px;
-}
-
-/* 2025 최신 수상자 명패 박스 */
-.honors-latest-box {
-    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
-    color: #ffffff;
-    border-radius: 14px;
-    padding: 18px 18px;
-    margin-bottom: 22px;
-    cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.honors-latest-box:hover {
-    transform: translateY(-2px) scale(1.015);
-    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.28);
-    border-color: rgba(255, 255, 255, 0.25);
-}
-
-.latest-gold {
-    border-top: 3px solid #f59e0b;
-}
-
-.latest-burgundy {
-    border-top: 3px solid #f43f5e;
-}
-
-.latest-slate {
-    border-top: 3px solid #38bdf8;
-}
-
-.hlb-badge {
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.latest-gold .hlb-badge { color: #fbbf24; }
-.latest-burgundy .hlb-badge { color: #fda4af; }
-.latest-slate .hlb-badge { color: #7dd3fc; }
-
-.hlb-name {
-    font-size: 1.45rem;
-    font-weight: 900;
-    color: #ffffff;
-    letter-spacing: -0.5px;
-    line-height: 1.2;
-    margin: 2px 0;
-}
-
-.hlb-btn {
-    font-size: 0.76rem;
-    font-weight: 700;
-    color: #cbd5e1;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    margin-top: 2px;
-    transition: color 0.2s ease;
-}
-
-.honors-latest-box:hover .hlb-btn {
-    color: #ffffff;
-}
-
-/* 10년 역대 수상자 2열 명예 롤 */
-.honors-archive-wrap {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.honors-archive-title {
-    font-size: 0.72rem;
-    font-weight: 800;
+    font-size: 0.74rem;
+    font-weight: 600;
     color: #94a3b8;
-    letter-spacing: 1.2px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+/* 테이블 본문 행(Row) */
+.hof-archive-table tbody tr {
     border-bottom: 1px solid #f1f5f9;
-    padding-bottom: 6px;
+    transition: background-color 0.2s ease;
 }
 
-.honors-roll-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 7px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.hof-archive-table tbody tr:hover {
+    background-color: #f8fafc;
 }
 
-.honors-roll-item {
+.hof-archive-table tbody td {
+    padding: 13px 14px;
+    vertical-align: middle;
+}
+
+.hof-archive-table tbody td.td-year {
     background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 6px 10px;
+    border-right: 1px solid #f1f5f9;
+}
+
+.hof-archive-table .year-badge-wrap {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    transition: all 0.2s ease;
+    justify-content: center;
+    gap: 4px;
 }
 
-.honors-roll-item:hover {
-    background: #ffffff;
-    border-color: #cbd5e1;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-}
-
-.honors-roll-item .year {
-    font-size: 0.76rem;
-    font-weight: 700;
-    color: #64748b;
+.hof-archive-table .year-text {
+    font-size: 0.96rem;
+    font-weight: 800;
+    color: #334155;
     font-variant-numeric: tabular-nums;
 }
 
-.honors-roll-item .name {
-    font-size: 0.88rem;
-    font-weight: 700;
-    color: #1e293b;
-    letter-spacing: -0.2px;
+/* 2025 최신 헌액자 행 하이라이트 */
+.hof-archive-table tbody tr.tr-latest-2025 {
+    background-color: #fffdf5;
+    border-bottom: 2px solid #fde68a;
 }
 
-@media (max-width: 992px) {
-    .honors-board-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
+.hof-archive-table tbody tr.tr-latest-2025:hover {
+    background-color: #fefce8;
+}
+
+.hof-archive-table tbody tr.tr-latest-2025 td.td-year {
+    background: #fef9c3;
+    border-right: 1px solid #fef08a;
+}
+
+.hof-archive-table tbody tr.tr-latest-2025 .year-text {
+    color: #854d0e;
+    font-size: 1.05rem;
+}
+
+.latest-ribbon {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: #854d0e;
+    background: #fef08a;
+    border: 1px solid #fde047;
+    padding: 2px 8px;
+    border-radius: 999px;
+    letter-spacing: 0.4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* 수상자 이름 칩 버튼 (.hof-alumni-chip) */
+.hof-alumni-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #f8fafc;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 7px 18px;
+    min-width: 105px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    outline: none;
+}
+
+.hof-alumni-chip:hover {
+    background: #ffffff;
+    border-color: #A50034;
+    color: #A50034;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(165, 0, 52, 0.12);
+}
+
+/* 2025 최신 칩 프리미엄 컬러 */
+.chip-gold {
+    background: #fef3c7;
+    border-color: #fde68a;
+    color: #78350f;
+    font-weight: 800;
+    padding: 8px 20px;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.1);
+}
+
+.chip-gold:hover {
+    background: #fde68a;
+    border-color: #d97706;
+    color: #78350f;
+    box-shadow: 0 6px 16px rgba(217, 119, 6, 0.22);
+}
+
+.chip-burgundy {
+    background: #ffe4e6;
+    border-color: #fecdd3;
+    color: #881337;
+    font-weight: 800;
+    padding: 8px 20px;
+    box-shadow: 0 2px 8px rgba(165, 0, 52, 0.1);
+}
+
+.chip-burgundy:hover {
+    background: #fecdd3;
+    border-color: #A50034;
+    color: #881337;
+    box-shadow: 0 6px 16px rgba(165, 0, 52, 0.2);
+}
+
+.chip-slate {
+    background: #e0f2fe;
+    border-color: #bae6fd;
+    color: #0369a1;
+    font-weight: 800;
+    padding: 8px 20px;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.1);
+}
+
+.chip-slate:hover {
+    background: #bae6fd;
+    border-color: #0284c7;
+    color: #0369a1;
+    box-shadow: 0 6px 16px rgba(2, 132, 199, 0.2);
+}
+
+.hof-alumni-chip .chip-arrow {
+    font-size: 0.7rem;
+    opacity: 0.75;
+    transition: transform 0.2s ease;
+}
+
+.hof-alumni-chip:hover .chip-arrow {
+    transform: translate(1px, -1px);
+    opacity: 1;
+}
+
+/* 2명 이상 공동 수상자 */
+.chip-multi-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.chip-comma {
+    font-size: 0.9rem;
+    font-weight: 800;
+    color: #94a3b8;
+    margin: 0 2px;
 }
 
 
