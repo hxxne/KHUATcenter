@@ -255,9 +255,9 @@ button {
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 36px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -292,7 +292,7 @@ button {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 22px;
 }
 
 .nav-link {
@@ -762,327 +762,453 @@ body.no-scroll {
 }
 
 /* --------------------------------------------------------------------------
-   10. Awards Section (Hall of Fame & Leaders)
+   10. Awards Section (Prestige Honors & Academic Leaders)
    -------------------------------------------------------------------------- */
-.awards-hall-of-fame-section {
+.prestige-awards-section {
     position: relative;
     background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
-.hof-kicker {
+.prestige-header-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.82rem;
+    gap: 8px;
+    background: rgba(165, 0, 52, 0.06);
+    border: 1px solid rgba(165, 0, 52, 0.2);
+    padding: 6px 18px;
+    border-radius: 9999px;
+    font-size: 0.78rem;
     font-weight: 800;
-    letter-spacing: 2px;
-    color: #b45309;
-    background: rgba(245, 158, 11, 0.12);
-    border: 1px solid rgba(245, 158, 11, 0.25);
-    padding: 6px 16px;
-    border-radius: 20px;
-    margin-bottom: 12px;
+    color: var(--color-primary);
+    letter-spacing: 1.5px;
     text-transform: uppercase;
+    margin-bottom: 12px;
 }
 
-.awards-container {
-    max-width: 1120px;
-    margin: 0 auto;
+.prestige-header-badge .phb-icon {
+    color: #d97706;
 }
 
-.hof-main-category {
+.prestige-category-wrap {
     background: #ffffff;
-    border: 1.5px solid rgba(165, 0, 52, 0.12);
-    border-radius: 20px;
-    padding: 44px 36px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid #e8ecf1;
+    border-radius: 24px;
+    padding: 44px 38px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
     margin-bottom: 40px;
     position: relative;
-    overflow: hidden;
 }
 
-.hof-main-category::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #A50034 0%, #d97706 50%, #A50034 100%);
+.prestige-category-head {
+    margin-bottom: 24px;
 }
 
-.hof-category-header {
-    text-align: center;
-    margin-bottom: 34px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.hof-laurel-badge {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-    color: #b45309;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.35rem;
-    margin-bottom: 14px;
-    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
-    border: 1px solid rgba(217, 119, 6, 0.3);
+.pch-kicker {
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: inline-block;
 }
 
 .category-main-title {
     text-align: center;
-    font-size: 1.65rem;
+    font-size: 1.6rem;
     font-weight: 800;
     color: #0f172a;
-    letter-spacing: 0.5px;
-    margin: 0 0 10px 0;
+    letter-spacing: -0.3px;
+    margin: 0 0 8px 0;
 }
 
 .category-sub-desc {
     font-size: 0.95rem;
     color: #64748b;
-    max-width: 800px;
     margin: 0 auto;
+    max-width: 680px;
     line-height: 1.55;
     word-break: keep-all;
 }
 
-.awards-columns {
+.awards-columns.prestige-awards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    margin-top: 28px;
 }
 
-/* ==========================================================================
-   역대 수상자 및 리더 - 학술 아카이브 (Academic Heritage Archive)
-   ========================================================================== */
-.archive-section {
-    background: #fbfcfd;
+/* Prestige Cards */
+.prestige-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 26px 22px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    position: relative;
 }
 
-.archive-kicker {
-    display: inline-block;
-    font-size: 0.78rem;
+.prestige-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.07);
+    border-color: #cbd5e1;
+}
+
+.prestige-gold-card {
+    border-top: 3.5px solid #d97706;
+}
+
+.prestige-burgundy-card {
+    border-top: 3.5px solid #A50034;
+}
+
+.prestige-slate-card {
+    border-top: 3.5px solid #0284c7;
+}
+
+.prestige-card-top {
+    margin-bottom: 14px;
+}
+
+.prestige-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.prestige-num-badge {
+    font-size: 0.7rem;
     font-weight: 800;
-    letter-spacing: 2px;
-    color: #A50034;
-    text-transform: uppercase;
+    color: #94a3b8;
+    letter-spacing: 1.2px;
+    font-family: var(--font-sans);
+}
+
+.prestige-honor-tag {
+    font-size: 0.74rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #e2e8f0;
+}
+
+.tag-gold {
+    background: #fef3c7;
+    color: #92400e;
+    border-color: #fde68a;
+}
+
+.tag-burgundy {
+    background: #ffe4e6;
+    color: #9f1239;
+    border-color: #fecdd3;
+}
+
+.tag-slate {
+    background: #e0f2fe;
+    color: #0369a1;
+    border-color: #bae6fd;
+}
+
+.prestige-card-title {
+    font-size: 1.12rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+    line-height: 1.35;
+    margin: 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+}
+
+/* 2025 최신 수상자 다크 플래티넘 명패 플레이트 */
+.prestige-latest-plaque {
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.prestige-latest-plaque:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+    border-color: rgba(255, 255, 255, 0.22);
+}
+
+.plaque-gold {
+    border-top: 3px solid #f59e0b;
+}
+
+.plaque-burgundy {
+    border-top: 3px solid #f43f5e;
+}
+
+.plaque-slate {
+    border-top: 3px solid #38bdf8;
+}
+
+.plaque-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 8px;
 }
 
-.archive-category {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    padding: 36px 32px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+.plaque-year-badge {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #fbbf24;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
 }
 
-.archive-category-header {
-    margin-bottom: 28px;
+.plaque-sub {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    font-weight: 600;
 }
 
-.archive-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    border-top: 3px solid #A50034;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+.plaque-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.plaque-name {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.plaque-view-btn {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s ease;
+}
+
+.prestige-latest-plaque:hover .plaque-view-btn {
+    color: #ffffff;
+}
+
+/* 역대 수상자 2열 연도 칩 그리드 */
+.prestige-chip-container {
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.archive-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    border-color: #cbd5e1;
-    border-top-color: #A50034;
-}
-
-.archive-card-header {
-    padding: 20px 20px 16px 20px;
-    border-bottom: 1px solid #f1f5f9;
-    background: #fafbfc;
-}
-
-.archive-title-wrap {
-    text-align: center;
-}
-
-.archive-card .col-title {
-    margin: 0 0 4px 0;
-    font-size: 1.02rem;
+.prestige-chip-label {
+    font-size: 0.7rem;
     font-weight: 800;
-    color: #0f172a;
-    letter-spacing: 0.3px;
+    color: #94a3b8;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-.archive-subtag {
-    font-size: 0.78rem;
-    font-weight: 600;
-    color: #64748b;
-    letter-spacing: -0.2px;
-}
-
-.archive-list {
+.awards-list.prestige-chip-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
     list-style: none;
-    padding: 14px 18px 18px 18px;
+    padding: 0;
     margin: 0;
-    flex: 1;
 }
 
-.archive-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 6px;
-    border-bottom: 1px solid #f8fafc;
-    transition: background 0.15s ease;
-}
-
-.archive-list li:last-child {
-    border-bottom: none;
-}
-
-.archive-list li:hover {
+.prestige-chip-item {
     background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
 }
 
-.archive-list li .year {
-    font-size: 0.82rem;
-    font-weight: 600;
+.prestige-chip-item:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.prestige-chip-item .year {
+    font-size: 0.76rem;
+    font-weight: 700;
     color: #64748b;
-    background: #f1f5f9;
-    padding: 2px 7px;
-    border-radius: 6px;
-    letter-spacing: 0.3px;
     font-variant-numeric: tabular-nums;
 }
 
-.archive-list li .name {
-    font-size: 0.95rem;
-    font-weight: 600;
+.prestige-chip-item .name {
+    font-size: 0.88rem;
+    font-weight: 700;
     color: #1e293b;
     letter-spacing: -0.2px;
 }
 
+.clickable-alumni-name {
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
 .clickable-alumni-name:hover {
-    color: #A50034 !important;
+    color: var(--color-primary) !important;
     text-decoration: underline;
 }
 
-/* 2025 최신 수상자 단정하고 세련된 정렬 행 */
-.archive-latest-row {
-    background: #fff5f7 !important;
-    border: 1px solid #fed7e2 !important;
-    border-radius: 8px !important;
-    padding: 9px 12px !important;
-    margin-bottom: 10px !important;
+/* 역대 리더 타임라인 */
+.prestige-timeline-box {
+    background: #fafbfc;
+    border: 1px solid #e8ecf1;
+    border-radius: 12px;
+    padding: 18px 16px;
+    flex: 1;
 }
 
-.archive-latest-row:hover {
-    background: #feeef2 !important;
+.awards-list.prestige-timeline-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
 }
 
-.latest-tag {
-    font-size: 0.74rem;
-    font-weight: 800;
-    color: #A50034;
-    background: #ffffff;
-    border: 1px solid rgba(165, 0, 52, 0.2);
-    padding: 2px 7px;
-    border-radius: 4px;
-    letter-spacing: 0.2px;
+.awards-list.prestige-timeline-list::before {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    bottom: 12px;
+    width: 2px;
+    background: #e2e8f0;
 }
 
-.archive-latest-name {
-    font-size: 1.05rem !important;
-    font-weight: 800 !important;
-    color: #A50034 !important;
+.prestige-timeline-item {
+    position: relative;
+    padding-left: 18px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
 }
 
-/* Timeline format for Past Leaders */
-.archive-timeline-list li .year {
-    font-size: 0.78rem;
-    padding: 3px 8px;
+.prestige-timeline-item:last-child {
+    margin-bottom: 0;
 }
 
-/* GA Grid - Academic Directory */
-.archive-ga-grid {
+.timeline-dot {
+    position: absolute;
+    left: 0px;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1.5px rgba(165, 0, 52, 0.25);
+}
+
+.prestige-timeline-item .year {
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: #64748b;
+    font-variant-numeric: tabular-nums;
+}
+
+.prestige-timeline-item .name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* 역대 GA 명부 그리드 */
+.prestige-ga-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    gap: 10px;
+    margin-top: 24px;
 }
 
-.archive-ga-grid .ga-card {
+.prestige-ga-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 10px;
-    padding: 12px 14px;
-    text-align: left;
-    transition: all 0.2s ease;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+    padding: 11px 14px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 4px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
 }
 
-.archive-ga-grid .ga-card:hover {
+.prestige-ga-card:hover {
+    border-color: var(--color-primary);
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
-    border-color: #cbd5e1;
+    box-shadow: 0 6px 14px rgba(165, 0, 52, 0.07);
 }
 
-.ga-card-header {
+.prestige-ga-card .ga-card-header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
 }
 
-.archive-ga-grid .ga-role {
-    font-size: 0.74rem;
-    font-weight: 700;
-    color: #A50034;
+.prestige-ga-card .ga-role {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--color-primary);
     background: #fff0f3;
     padding: 2px 6px;
     border-radius: 4px;
     letter-spacing: -0.2px;
 }
 
-.archive-ga-grid .ga-date {
-    font-size: 0.76rem;
-    font-weight: 500;
+.prestige-ga-card .ga-date {
+    font-size: 0.74rem;
+    font-weight: 600;
     color: #94a3b8;
-    background: none;
-    padding: 0;
+    font-variant-numeric: tabular-nums;
 }
 
-.archive-ga-grid .ga-name {
+.prestige-ga-card .ga-name {
     font-size: 1.05rem;
     font-weight: 800;
     color: #0f172a;
-    letter-spacing: -0.3px;
     margin: 0;
+    letter-spacing: -0.3px;
 }
 
-@media (max-width: 900px) {
-    .awards-columns {
+@media (max-width: 992px) {
+    .awards-columns.prestige-awards-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    .archive-category {
-        padding: 24px 16px;
+    .prestige-category-wrap {
+        padding: 28px 18px;
     }
-    .archive-ga-grid {
+    .prestige-ga-grid {
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     }
 }
