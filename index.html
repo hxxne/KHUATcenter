@@ -329,24 +329,7 @@
 
             </div>
 
-            <!-- Sleek Instagram CTA Banner -->
-            <div class="pillars-instagram-cta-banner" onclick="window.open('https://www.instagram.com/khuatcenter/', '_blank')" style="cursor: pointer;" title="경희대학교 AT Center 공식 인스타그램 새 창으로 열기">
-                <div class="insta-cta-left">
-                    <div class="insta-cta-icon-badge">
-                        <i class="fa-brands fa-instagram"></i>
-                    </div>
-                    <div class="insta-cta-text">
-                        <h3 class="insta-cta-title">경희대학교 AT Center 공식 인스타그램 <strong>@khuatcenter</strong></h3>
-                        <p class="insta-cta-desc">더 많은 생생한 실시간 현장 소식, 학술 세미나, 대회 파견 스토리를 공식 인스타그램에서 만나보세요.</p>
-                    </div>
-                </div>
-                <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="insta-cta-btn" onclick="event.stopPropagation();">
-                    <span>인스타그램 바로가기</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </a>
-            </div>
-        </div>
-    </section>
+            </section>
 
     <!-- Stats & Dashboard Section -->
     <section id="dashboard" class="section-padding">
@@ -1627,69 +1610,111 @@
             
             <div class="awards-container">
                 
-                <!-- 1. Student Awards (연도별 인터랙티브 타임라인 탭 전환형) -->
+                <!-- 1. Student Awards (3열 하이엔드 아너스 보드 & 10년 아카이브) -->
                 <div class="prestige-category-wrap">
                     <div class="prestige-category-head text-center">
                         <h3 class="category-main-title">ATHLETIC TRAINING STUDENT AWARDS</h3>
-                        <p class="category-sub-desc">학술 연구와 임상 실무에서 탁월한 모범을 보인 명예의 상입니다. 연도를 선택하여 역대 수상자를 확인하실 수 있습니다.</p>
+                        <p class="category-sub-desc">매년 학술 연구와 임상 현장 실무에서 가장 탁월한 성과와 모범을 보인 학생들에게 수여되는 명예의 상입니다.</p>
                     </div>
 
-                    <!-- Year Timeline Tabs (2025 ~ 2015) -->
-                    <div class="awards-year-timeline-wrapper">
-                        <div class="awards-year-timeline" id="awards-year-timeline">
-                            <button type="button" class="year-tab-btn active" onclick="selectAwardsYear(2025, this)">2025</button>
-                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2024, this)">2024</button>
-                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2023, this)">2023</button>
-                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2022, this)">2022</button>
-                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2021, this)">2021</button>
-                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2020, this)">2020</button>
-                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2019, this)">2019</button>
-                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2018, this)">2018</button>
-                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2017, this)">2017</button>
-                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2016, this)">2016</button>
-                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2015, this)">2015</button>
-                        </div>
-                    </div>
-
-                    <!-- Selected Year 3-Award Cards Display -->
-                    <div class="awards-columns awards-year-cards-grid" id="awards-year-display">
+                    <div class="honors-board-grid">
                         
                         <!-- 1. AT STUDENT OF THE YEAR -->
-                        <div class="awards-col prestige-card prestige-gold-card">
-                            <div class="prestige-card-top">
-                                <span class="award-tier-badge tier-gold"><i class="fa-solid fa-trophy"></i> 최고 영예</span>
-                                <h4 class="col-title prestige-card-title">AT STUDENT OF THE YEAR</h4>
+                        <div class="honors-column-card honors-card-gold">
+                            <div class="honors-column-header">
+                                <div class="honors-award-emblem"><i class="fa-solid fa-trophy"></i></div>
+                                <h4 class="honors-award-title">AT STUDENT OF THE YEAR</h4>
+                                <span class="honors-award-korean">올해의 AT 학생상 (최고 영예)</span>
                             </div>
-                            <div class="award-recipient-plaque plaque-gold" id="recipient-year-card" onclick="triggerAwardModal('yearAward')" title="프로필 보기">
-                                <div class="plaque-year-indicator" id="year-indicator-1">2025</div>
-                                <div class="plaque-recipient-name" id="name-recipient-1">유승아</div>
-                                <div class="plaque-action-hint">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
+
+                            <!-- 2025 최신 수상자 명패 플레이트 -->
+                            <div class="honors-latest-box latest-gold" onclick="openAlumniModal('유승아', '2025 AT Student of the Year')" title="유승아 프로필 보기">
+                                <div class="hlb-badge"><i class="fa-solid fa-star"></i> 2025 HONOREE</div>
+                                <div class="hlb-name">유승아</div>
+                                <div class="hlb-btn">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+
+                            <!-- 10년 역대 수상자 2열 명예 롤 (2024 ~ 2015) -->
+                            <div class="honors-archive-wrap">
+                                <div class="honors-archive-title">PAST HONOREES (2024 - 2015)</div>
+                                <ul class="honors-roll-grid awards-list">
+                                    <li class="honors-roll-item"><span class="year">2024</span><span class="name">한혜서</span></li>
+                                    <li class="honors-roll-item"><span class="year">2023</span><span class="name">차정수</span></li>
+                                    <li class="honors-roll-item"><span class="year">2022</span><span class="name">박효진</span></li>
+                                    <li class="honors-roll-item"><span class="year">2021</span><span class="name">김재원</span></li>
+                                    <li class="honors-roll-item"><span class="year">2020</span><span class="name">임선주</span></li>
+                                    <li class="honors-roll-item"><span class="year">2019</span><span class="name">김동현</span></li>
+                                    <li class="honors-roll-item"><span class="year">2018</span><span class="name">오민섭</span></li>
+                                    <li class="honors-roll-item"><span class="year">2017</span><span class="name">조재희, 양창욱</span></li>
+                                    <li class="honors-roll-item"><span class="year">2016</span><span class="name">이선화</span></li>
+                                    <li class="honors-roll-item"><span class="year">2015</span><span class="name">이현욱</span></li>
+                                </ul>
                             </div>
                         </div>
 
                         <!-- 2. INSPIRATION -->
-                        <div class="awards-col prestige-card prestige-burgundy-card">
-                            <div class="prestige-card-top">
-                                <span class="award-tier-badge tier-burgundy"><i class="fa-solid fa-fire"></i> 열정 &amp; 영감</span>
-                                <h4 class="col-title prestige-card-title">INSPIRATION</h4>
+                        <div class="honors-column-card honors-card-burgundy">
+                            <div class="honors-column-header">
+                                <div class="honors-award-emblem"><i class="fa-solid fa-fire"></i></div>
+                                <h4 class="honors-award-title">INSPIRATION</h4>
+                                <span class="honors-award-korean">인스피레이션상 (열정 &amp; 귀감)</span>
                             </div>
-                            <div class="award-recipient-plaque plaque-burgundy" id="recipient-inspiration-card" onclick="triggerAwardModal('inspiration')" title="프로필 보기">
-                                <div class="plaque-year-indicator" id="year-indicator-2">2025</div>
-                                <div class="plaque-recipient-name" id="name-recipient-2">유주승</div>
-                                <div class="plaque-action-hint">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
+
+                            <!-- 2025 최신 수상자 명패 플레이트 -->
+                            <div class="honors-latest-box latest-burgundy" onclick="openAlumniModal('유주승', '2025 Inspiration')" title="유주승 프로필 보기">
+                                <div class="hlb-badge"><i class="fa-solid fa-fire"></i> 2025 HONOREE</div>
+                                <div class="hlb-name">유주승</div>
+                                <div class="hlb-btn">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+
+                            <!-- 10년 역대 수상자 2열 명예 롤 (2024 ~ 2015) -->
+                            <div class="honors-archive-wrap">
+                                <div class="honors-archive-title">PAST HONOREES (2024 - 2015)</div>
+                                <ul class="honors-roll-grid awards-list">
+                                    <li class="honors-roll-item"><span class="year">2024</span><span class="name">한혜서</span></li>
+                                    <li class="honors-roll-item"><span class="year">2023</span><span class="name">문채연</span></li>
+                                    <li class="honors-roll-item"><span class="year">2022</span><span class="name">이남송</span></li>
+                                    <li class="honors-roll-item"><span class="year">2021</span><span class="name">김태진</span></li>
+                                    <li class="honors-roll-item"><span class="year">2020</span><span class="name">김승연</span></li>
+                                    <li class="honors-roll-item"><span class="year">2019</span><span class="name">성락훈</span></li>
+                                    <li class="honors-roll-item"><span class="year">2018</span><span class="name">김동현</span></li>
+                                    <li class="honors-roll-item"><span class="year">2017</span><span class="name">조유진</span></li>
+                                    <li class="honors-roll-item"><span class="year">2016</span><span class="name">안효은</span></li>
+                                    <li class="honors-roll-item"><span class="year">2015</span><span class="name">신재윤</span></li>
+                                </ul>
                             </div>
                         </div>
 
                         <!-- 3. ROOKIE OF THE YEAR -->
-                        <div class="awards-col prestige-card prestige-slate-card">
-                            <div class="prestige-card-top">
-                                <span class="award-tier-badge tier-slate"><i class="fa-solid fa-bolt"></i> 신인상</span>
-                                <h4 class="col-title prestige-card-title">ROOKIE OF THE YEAR</h4>
+                        <div class="honors-column-card honors-card-slate">
+                            <div class="honors-column-header">
+                                <div class="honors-award-emblem"><i class="fa-solid fa-bolt"></i></div>
+                                <h4 class="honors-award-title">ROOKIE OF THE YEAR</h4>
+                                <span class="honors-award-korean">올해의 신인상 (유망 인재)</span>
                             </div>
-                            <div class="award-recipient-plaque plaque-slate" id="recipient-rookie-card" onclick="triggerAwardModal('rookie')" title="프로필 보기">
-                                <div class="plaque-year-indicator" id="year-indicator-3">2025</div>
-                                <div class="plaque-recipient-name" id="name-recipient-3">조연지</div>
-                                <div class="plaque-action-hint">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
+
+                            <!-- 2025 최신 수상자 명패 플레이트 -->
+                            <div class="honors-latest-box latest-slate" onclick="openAlumniModal('조연지', '2025 Rookie of the Year')" title="조연지 프로필 보기">
+                                <div class="hlb-badge"><i class="fa-solid fa-bolt"></i> 2025 HONOREE</div>
+                                <div class="hlb-name">조연지</div>
+                                <div class="hlb-btn">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+
+                            <!-- 10년 역대 수상자 2열 명예 롤 (2024 ~ 2015) -->
+                            <div class="honors-archive-wrap">
+                                <div class="honors-archive-title">PAST HONOREES (2024 - 2015)</div>
+                                <ul class="honors-roll-grid awards-list">
+                                    <li class="honors-roll-item"><span class="year">2024</span><span class="name">이정재</span></li>
+                                    <li class="honors-roll-item"><span class="year">2023</span><span class="name">한현구</span></li>
+                                    <li class="honors-roll-item"><span class="year">2022</span><span class="name">유영수</span></li>
+                                    <li class="honors-roll-item"><span class="year">2021</span><span class="name">최유빈</span></li>
+                                    <li class="honors-roll-item"><span class="year">2020</span><span class="name">김승연</span></li>
+                                    <li class="honors-roll-item"><span class="year">2019</span><span class="name">임선주</span></li>
+                                    <li class="honors-roll-item"><span class="year">2018</span><span class="name">우태희</span></li>
+                                    <li class="honors-roll-item"><span class="year">2017</span><span class="name">오민섭</span></li>
+                                    <li class="honors-roll-item"><span class="year">2016</span><span class="name">이서영</span></li>
+                                    <li class="honors-roll-item"><span class="year">2015</span><span class="name">김다영</span></li>
+                                </ul>
                             </div>
                         </div>
 

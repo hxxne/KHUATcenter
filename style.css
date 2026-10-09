@@ -7127,3 +7127,232 @@ body.no-scroll {
     color: #64748b;
     margin: 0;
 }
+
+
+/* ==========================================================================
+   ATHLETIC TRAINING STUDENT AWARDS: 3열 하이엔드 아너스 보드 (Honor Board)
+   ========================================================================== */
+.honors-board-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 32px;
+}
+
+.honors-column-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    position: relative;
+}
+
+.honors-column-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.08);
+    border-color: #cbd5e1;
+}
+
+.honors-card-gold {
+    border-top: 4px solid #d97706;
+}
+
+.honors-card-burgundy {
+    border-top: 4px solid #A50034;
+}
+
+.honors-card-slate {
+    border-top: 4px solid #0284c7;
+}
+
+.honors-column-header {
+    margin-bottom: 6px;
+}
+
+.honors-award-emblem {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    transition: transform 0.25s ease;
+}
+
+.honors-column-card:hover .honors-award-emblem {
+    transform: scale(1.08);
+}
+
+.honors-card-gold .honors-award-emblem {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.honors-card-burgundy .honors-award-emblem {
+    background: #ffe4e6;
+    color: #9f1239;
+}
+
+.honors-card-slate .honors-award-emblem {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.honors-award-title {
+    font-size: 1.18rem;
+    font-weight: 900;
+    color: #0f172a;
+    letter-spacing: -0.3px;
+    line-height: 1.3;
+    margin: 0 0 4px 0;
+}
+
+.honors-award-korean {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #64748b;
+    display: block;
+    margin-bottom: 16px;
+}
+
+/* 2025 최신 수상자 명패 박스 */
+.honors-latest-box {
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    border-radius: 14px;
+    padding: 18px 18px;
+    margin-bottom: 22px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.honors-latest-box:hover {
+    transform: translateY(-2px) scale(1.015);
+    box-shadow: 0 14px 28px rgba(15, 23, 42, 0.28);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.latest-gold {
+    border-top: 3px solid #f59e0b;
+}
+
+.latest-burgundy {
+    border-top: 3px solid #f43f5e;
+}
+
+.latest-slate {
+    border-top: 3px solid #38bdf8;
+}
+
+.hlb-badge {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.latest-gold .hlb-badge { color: #fbbf24; }
+.latest-burgundy .hlb-badge { color: #fda4af; }
+.latest-slate .hlb-badge { color: #7dd3fc; }
+
+.hlb-name {
+    font-size: 1.45rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin: 2px 0;
+}
+
+.hlb-btn {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #cbd5e1;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2px;
+    transition: color 0.2s ease;
+}
+
+.honors-latest-box:hover .hlb-btn {
+    color: #ffffff;
+}
+
+/* 10년 역대 수상자 2열 명예 롤 */
+.honors-archive-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.honors-archive-title {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #94a3b8;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 6px;
+}
+
+.honors-roll-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 7px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.honors-roll-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.2s ease;
+}
+
+.honors-roll-item:hover {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.honors-roll-item .year {
+    font-size: 0.76rem;
+    font-weight: 700;
+    color: #64748b;
+    font-variant-numeric: tabular-nums;
+}
+
+.honors-roll-item .name {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.2px;
+}
+
+@media (max-width: 992px) {
+    .honors-board-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
