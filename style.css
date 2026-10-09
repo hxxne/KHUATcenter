@@ -858,118 +858,119 @@ body.no-scroll {
     gap: 24px;
 }
 
-.hof-card {
+/* ==========================================================================
+   역대 수상자 및 리더 - 학술 아카이브 (Academic Heritage Archive)
+   ========================================================================== */
+.archive-section {
+    background: #fbfcfd;
+}
+
+.archive-kicker {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #A50034;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.archive-category {
     background: #ffffff;
-    border: 1.5px solid #e2e8f0;
+    border: 1px solid #e2e8f0;
     border-radius: 16px;
-    padding: 0;
+    padding: 36px 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+}
+
+.archive-category-header {
+    margin-bottom: 28px;
+}
+
+.archive-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-top: 3px solid #A50034;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
-    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     display: flex;
     flex-direction: column;
 }
 
-.hof-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.09);
-    border-color: rgba(165, 0, 52, 0.35);
+.archive-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border-color: #cbd5e1;
+    border-top-color: #A50034;
 }
 
-.hof-card-gold {
-    border-color: rgba(217, 119, 6, 0.25);
-}
-.hof-card-gold:hover {
-    border-color: #d97706;
+.archive-card-header {
+    padding: 20px 20px 16px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    background: #fafbfc;
 }
 
-.hof-card-banner {
-    padding: 22px 18px 18px 18px;
+.archive-title-wrap {
     text-align: center;
-    background: linear-gradient(180deg, #fafafa 0%, #f1f5f9 100%);
-    border-bottom: 1.5px solid #e2e8f0;
-    position: relative;
 }
 
-.hof-card-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 12px;
-    font-size: 1.2rem;
-    margin-bottom: 8px;
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-}
-
-.hof-card-gold .hof-card-icon { color: #d97706; }
-.hof-card-burgundy .hof-card-icon { color: #A50034; }
-.hof-card-emerald .hof-card-icon { color: #0284c7; }
-
-.col-title {
-    text-align: center;
-    font-size: 1.05rem;
+.archive-card .col-title {
+    margin: 0 0 4px 0;
+    font-size: 1.02rem;
     font-weight: 800;
-    color: #1e293b;
-    margin: 0 0 8px 0;
-    padding: 0;
-    background: none;
-    border: none;
+    color: #0f172a;
     letter-spacing: 0.3px;
 }
 
-.hof-card-tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 2px 10px;
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.05);
+.archive-subtag {
+    font-size: 0.78rem;
+    font-weight: 600;
     color: #64748b;
+    letter-spacing: -0.2px;
 }
 
-.hof-card-gold .hof-card-tag { background: #fef3c7; color: #b45309; }
-.hof-card-burgundy .hof-card-tag { background: #fce7f3; color: #be185d; }
-.hof-card-emerald .hof-card-tag { background: #e0f2fe; color: #0369a1; }
-
-.awards-list {
+.archive-list {
     list-style: none;
-    padding: 16px 18px 20px 18px;
+    padding: 14px 18px 18px 18px;
     margin: 0;
     flex: 1;
 }
 
-.awards-list li {
+.archive-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 9px 12px;
-    border-radius: 10px;
-    margin-bottom: 4px;
-    transition: background 0.2s ease;
+    padding: 8px 6px;
+    border-bottom: 1px solid #f8fafc;
+    transition: background 0.15s ease;
+}
+
+.archive-list li:last-child {
     border-bottom: none;
 }
 
-.awards-list li:hover {
+.archive-list li:hover {
     background: #f8fafc;
 }
 
-.awards-list li .year {
-    font-size: 0.8rem;
-    font-weight: 700;
+.archive-list li .year {
+    font-size: 0.82rem;
+    font-weight: 600;
     color: #64748b;
     background: #f1f5f9;
-    padding: 3px 9px;
-    border-radius: 14px;
+    padding: 2px 7px;
+    border-radius: 6px;
     letter-spacing: 0.3px;
+    font-variant-numeric: tabular-nums;
 }
 
-.awards-list li .name {
-    font-size: 0.98rem;
-    font-weight: 700;
+.archive-list li .name {
+    font-size: 0.95rem;
+    font-weight: 600;
     color: #1e293b;
+    letter-spacing: -0.2px;
 }
 
 .clickable-alumni-name:hover {
@@ -977,108 +978,112 @@ body.no-scroll {
     text-decoration: underline;
 }
 
-/* 2025 최신 수상자 하이라이트 배너 아이템 */
-.hof-latest-winner-item {
-    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
-    border: 1.5px solid #fde68a !important;
-    padding: 12px 14px !important;
-    margin-bottom: 12px !important;
-    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.12);
+/* 2025 최신 수상자 단정하고 세련된 정렬 행 */
+.archive-latest-row {
+    background: #fff5f7 !important;
+    border: 1px solid #fed7e2 !important;
+    border-radius: 8px !important;
+    padding: 9px 12px !important;
+    margin-bottom: 10px !important;
 }
 
-.hof-latest-winner-item:hover {
-    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+.archive-latest-row:hover {
+    background: #feeef2 !important;
 }
 
-.latest-ribbon {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.72rem;
+.latest-tag {
+    font-size: 0.74rem;
     font-weight: 800;
-    color: #ffffff;
-    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
-    padding: 3px 8px;
-    border-radius: 6px;
-    letter-spacing: 0.5px;
-    box-shadow: 0 2px 4px rgba(180, 83, 9, 0.3);
-}
-
-.hof-latest-name {
-    font-size: 1.12rem !important;
-    font-weight: 800 !important;
-    color: #78350f !important;
-}
-
-/* Past Leaders 전용 서브 배너 */
-.hof-banner-sub {
-    background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
-}
-
-.hof-banner-sub .hof-card-icon {
-    color: #475569;
-}
-
-/* Graduate Assistants (공식 조교 인증 뱃지 그리드) */
-.hof-ga-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
-    gap: 14px;
-}
-
-.ga-card {
+    color: #A50034;
     background: #ffffff;
-    border: 1.5px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 16px 12px;
-    text-align: center;
-    transition: all 0.25s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(165, 0, 52, 0.2);
+    padding: 2px 7px;
+    border-radius: 4px;
+    letter-spacing: 0.2px;
 }
 
-.ga-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-    border-color: #A50034;
+.archive-latest-name {
+    font-size: 1.05rem !important;
+    font-weight: 800 !important;
+    color: #A50034 !important;
 }
 
-.ga-role {
-    display: inline-block;
-    font-size: 0.75rem;
+/* Timeline format for Past Leaders */
+.archive-timeline-list li .year {
+    font-size: 0.78rem;
+    padding: 3px 8px;
+}
+
+/* GA Grid - Academic Directory */
+.archive-ga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.archive-ga-grid .ga-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    text-align: left;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.archive-ga-grid .ga-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+    border-color: #cbd5e1;
+}
+
+.ga-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.archive-ga-grid .ga-role {
+    font-size: 0.74rem;
     font-weight: 700;
     color: #A50034;
-    background: rgba(165, 0, 52, 0.08);
-    padding: 2px 8px;
-    border-radius: 12px;
-    margin-bottom: 8px;
+    background: #fff0f3;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: -0.2px;
 }
 
-.ga-name {
-    font-size: 1.15rem;
+.archive-ga-grid .ga-date {
+    font-size: 0.76rem;
+    font-weight: 500;
+    color: #94a3b8;
+    background: none;
+    padding: 0;
+}
+
+.archive-ga-grid .ga-name {
+    font-size: 1.05rem;
     font-weight: 800;
     color: #0f172a;
-    margin-bottom: 6px;
     letter-spacing: -0.3px;
+    margin: 0;
 }
 
-.ga-date {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #64748b;
-    background: #f8fafc;
-    padding: 2px 6px;
-    border-radius: 6px;
-    display: inline-block;
-}
-
-/* Mobile Responsive */
 @media (max-width: 900px) {
     .awards-columns {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    .hof-main-category {
-        padding: 30px 20px;
+    .archive-category {
+        padding: 24px 16px;
+    }
+    .archive-ga-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     }
 }
 
