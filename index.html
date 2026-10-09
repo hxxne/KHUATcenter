@@ -1501,8 +1501,8 @@
         <div class="donate-hero-overlay"></div>
         <div class="container donate-hero-content">
             <h2 class="dh-subtitle">경희대학교 AT 센터 발전기금</h2>
-            <h1 class="dh-title">미래의 스포츠의학 전문가 양성</h1>
-            <p class="dh-desc">여러분들의 소중한 기부금은 첨단 실습 환경 조성과 학생들의 연구 지원에 투명하게 사용됩니다.</p>
+            <h1 class="dh-title">미래 스포츠의학 전문가 양성</h1>
+            <p class="dh-desc">여러분들의 소중한 기부금은 학생들의 연구 교육 환경 개선에 투명하게 사용되며 세금 혜택을 받으실수 있습니다.</p>
         </div>
     </div>
     
@@ -1524,7 +1524,6 @@
                     <li><strong>기부하실 곳</strong>에 <span style="color: var(--color-primary, #901522); font-weight: 600;">'AT 센터'</span> 작성</li>
                     <li>드롭다운 메뉴에서 <strong>'직접 입력'</strong> 선택 후 <span style="color: var(--color-primary, #901522); font-weight: 600;">'AT 센터'</span> 입력</li>
                     <li><strong>기부 사유</strong>: AT 센터 운영</li>
-                    <li><strong>기부 추천인</strong>: 박지홍</li>
                 </ol>
             </div>
             </div>
@@ -3901,22 +3900,20 @@
             
             <!-- Body -->
             <div style="padding: 24px;">
-                <div style="background: #fdf6f7; border: 1.5px solid #f9dbe0; border-radius: 14px; padding: 18px 20px; margin-bottom: 16px;">
-                    <div style="font-size: 0.82rem; font-weight: 700; color: #A50034; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
-                        <i class="fa-solid fa-briefcase"></i> 현재 직업 및 활동
-                    </div>
-                    <div id="alumni-modal-job" style="font-size: 1.15rem; font-weight: 800; color: #222; word-break: keep-all; line-height: 1.45;">
+                <!-- 직업/소속 표시 영역 (라벨 없이 깔끔하게 정보 강조) -->
+                <div style="background: #fdf6f7; border: 1.5px solid #f9dbe0; border-radius: 14px; padding: 22px 20px; margin-bottom: 16px; text-align: center;">
+                    <div id="alumni-modal-job" style="font-size: 1.25rem; font-weight: 800; color: #1e293b; word-break: keep-all; line-height: 1.45;">
                         -
                     </div>
                 </div>
 
-                <!-- Social & Blog Links (인스타그램 / 블로그 연결 버튼) -->
-                <div id="alumni-modal-links" style="display: flex; gap: 10px;">
-                    <a id="alumni-link-instagram" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 12px; background: #faf5f6; border: 1.5px solid #f2d6dc; border-radius: 12px; color: #E1306C; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: all 0.2s ease;">
+                <!-- Social & Blog Links (인스타그램 / 블로그: 원하시는 분만 선택적으로 노출) -->
+                <div id="alumni-modal-links" style="display: none; gap: 10px; margin-top: 6px;">
+                    <a id="alumni-link-instagram" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; display: none; align-items: center; justify-content: center; gap: 8px; padding: 12px 14px; background: #faf5f6; border: 1.5px solid #f2d6dc; border-radius: 12px; color: #E1306C; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: all 0.2s ease;">
                         <i class="fa-brands fa-instagram" style="font-size: 1.15rem;"></i>
                         <span>인스타그램</span>
                     </a>
-                    <a id="alumni-link-blog" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 12px; background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 12px; color: #03C75A; font-weight: 700; font-size: 0.88rem; text-decoration: none; transition: all 0.2s ease;">
+                    <a id="alumni-link-blog" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; display: none; align-items: center; justify-content: center; gap: 8px; padding: 12px 14px; background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 12px; color: #03C75A; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: all 0.2s ease;">
                         <i class="fa-solid fa-blog" style="font-size: 1.05rem;"></i>
                         <span>블로그</span>
                     </a>
@@ -3996,12 +3993,23 @@
         "한혜서": "경희대학교 겨루기부 (AT)"
     };
 
-    // 졸업생 SNS & 블로그 링크 데이터베이스 (필요 시 계정 URL 추가/관리)
+    /**
+     * [SNS 및 블로그 링크 관리 데이터베이스]
+     * 원하시는 분만 아래 형식으로 링크를 추가하시면 모달에 자동으로 예쁜 버튼이 나타납니다.
+     * 둘 다 입력하지 않거나 비워둘 경우, 해당 동문 모달에는 SNS 버튼 영역이 전혀 노출되지 않습니다.
+     * 
+     * 작성 예시:
+     * "이름": {
+     *     instagram: "https://www.instagram.com/계정아이디",
+     *     blog: "https://blog.naver.com/계정아이디"
+     * },
+     */
     const alumniSocialLinks = {
-        "신재윤": {
-            instagram: "https://www.instagram.com/",
-            blog: "https://section.blog.naver.com/"
-        }
+        // 원하는 동문만 여기에 자유롭게 추가하시면 됩니다:
+        // "신재윤": {
+        //     instagram: "https://www.instagram.com/",
+        //     blog: "https://blog.naver.com/"
+        // }
     };
 
     window.openAlumniModal = function(name, badgeText) {
@@ -4020,54 +4028,48 @@
             if (jobInfo === "미공개" || jobInfo === "정보 준비중") {
                 jobEl.innerHTML = '<span style="color: #64748b; font-weight: 700; background: #f1f5f9; padding: 6px 18px; border-radius: 20px; font-size: 1.05rem; display: inline-block;">미공개</span>';
             } else {
-                jobEl.innerHTML = '<span style="color: #0f172a; font-weight: 800; font-size: 1.15rem;">' + jobInfo + '</span>';
+                jobEl.innerHTML = '<span style="color: #0f172a; font-weight: 800; font-size: 1.2rem;">' + jobInfo + '</span>';
             }
         }
         if (badgeEl) badgeEl.textContent = badgeText || "경희대학교 AT Center 동문";
 
-        // SNS 및 블로그 링크 처리
+        // SNS 및 블로그 링크 처리 (원하시는 분만 선택적으로 노출)
         const social = alumniSocialLinks[nameClean] || {};
+        const linksContainer = document.getElementById('alumni-modal-links');
         const instaBtn = document.getElementById('alumni-link-instagram');
         const blogBtn = document.getElementById('alumni-link-blog');
 
+        let hasAnyLink = false;
+
+        // 1) 인스타그램 링크 확인
         if (instaBtn) {
             if (social.instagram && social.instagram.trim() !== '') {
                 instaBtn.href = social.instagram;
-                instaBtn.style.opacity = '1';
-                instaBtn.style.cursor = 'pointer';
-                instaBtn.style.pointerEvents = 'auto';
+                instaBtn.style.display = 'flex';
                 instaBtn.title = nameClean + ' 인스타그램 바로가기';
-                instaBtn.onclick = null;
+                hasAnyLink = true;
             } else {
+                instaBtn.style.display = 'none';
                 instaBtn.href = '#';
-                instaBtn.style.opacity = '0.45';
-                instaBtn.style.cursor = 'default';
-                instaBtn.title = '인스타그램 등록 준비중';
-                instaBtn.onclick = function(e) {
-                    e.preventDefault();
-                    alert(nameClean + ' 동문의 인스타그램 채널 준비 중입니다.');
-                };
             }
         }
 
+        // 2) 블로그 링크 확인
         if (blogBtn) {
             if (social.blog && social.blog.trim() !== '') {
                 blogBtn.href = social.blog;
-                blogBtn.style.opacity = '1';
-                blogBtn.style.cursor = 'pointer';
-                blogBtn.style.pointerEvents = 'auto';
+                blogBtn.style.display = 'flex';
                 blogBtn.title = nameClean + ' 블로그 바로가기';
-                blogBtn.onclick = null;
+                hasAnyLink = true;
             } else {
+                blogBtn.style.display = 'none';
                 blogBtn.href = '#';
-                blogBtn.style.opacity = '0.45';
-                blogBtn.style.cursor = 'default';
-                blogBtn.title = '블로그 등록 준비중';
-                blogBtn.onclick = function(e) {
-                    e.preventDefault();
-                    alert(nameClean + ' 동문의 블로그 채널 준비 중입니다.');
-                };
             }
+        }
+
+        // 3) 링크가 하나라도 있으면 컨테이너를 보여주고, 둘 다 없으면 완전히 숨김
+        if (linksContainer) {
+            linksContainer.style.display = hasAnyLink ? 'flex' : 'none';
         }
 
         modal.style.display = 'flex';
@@ -4119,7 +4121,7 @@
                         const span = document.createElement('span');
                         span.className = 'clickable-alumni-name';
                         span.textContent = n;
-                        span.title = n + ' 현재 직업 보기';
+                        span.title = n + ' 프로필 보기';
                         span.style.cursor = 'pointer';
                         span.style.transition = 'all 0.2s ease';
                         span.addEventListener('click', (e) => {
