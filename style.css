@@ -3777,7 +3777,7 @@ body.no-scroll {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    align-self: center !important;
+    align-self: flex-start !important;
     border-radius: 18px !important;
     overflow: hidden !important;
     background: #f8fafc !important;
