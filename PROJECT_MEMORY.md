@@ -1083,5 +1083,18 @@
   2. **스타일 최적화 (`style.css`):**
      - `.assistant-dept-icon`: 직경 44px의 경희대 틴트 핑크 서클(`background: #FFF0F2; border-radius: 50%`)로 감싸 안정적인 비율 형성.
      - `.assistant-dept-pictogram`: `width: 38px; height: 38px; object-fit: contain; mix-blend-mode: multiply; border-radius: 50%` 속성을 적용하여 픽토그램 배경이 서클 바탕과 자연스럽게 녹아들도록 처리.
-     - 카드 호버 시 픽토그램 서클이 부드럽게 스케일업(`scale(1.08)`)되는 인터랙션 연동.
+---
 
+### [2026-10-09] 학생 어워드 및 GA 부설명 문구 간결화 및 품격 개선
+- **배경 및 요청 사항:**
+  1. 학생 어워드(STUDENT AWARDS) 설명 문구가 길어 모바일/화면에서 불필요하게 꺾이던 현상을 줄이고 간략하게 한 줄로 최적화.
+  2. 대학원 조교(GRADUATE ASSISTANTS) 설명 문구에서 '대학원 조교' 표현을 지양하고 보다 품격 있는 표현으로 개편.
+- **주요 수정 내역:**
+  1. **학생 어워드 설명 문구 간결화 ([index.html](file:///c:/Users/LG/OneDrive/바탕%20화면/AI/khu-at-center/index.html)):**
+     - 기존: `매년 학술 연구와 임상 현장 실무에서 가장 탁월한 성과와 모범을 보인 학생들에게 수여되는 명예의 상입니다.`
+     - 변경: **`학술 연구와 임상 실무에서 탁월한 모범을 보인 명예의 상입니다.`**
+  2. **GA 설명 문구 개선 ([index.html](file:///c:/Users/LG/OneDrive/바탕%20화면/AI/khu-at-center/index.html)):**
+     - 기존: `센터의 학술 연구와 체육부 현장 실무를 총괄 조율한 역대 대학원 조교(GA) 명단입니다.`
+     - 변경: **`센터의 연구·교육과 체육부 현장 실무를 총괄 지원한 역대 GA(Graduate Assistant)입니다.`**
+  3. **스타일 확장 ([style.css](file:///c:/Users/LG/OneDrive/바탕%20화면/AI/khu-at-center/style.css)):**
+     - `.category-sub-desc`의 `max-width`를 기존 620px에서 800px로 여유롭게 확장하여 데스크톱 및 태블릿에서 줄바꿈 없이 깔끔한 한 줄 텍스트가 유지되도록 보완.

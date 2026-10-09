@@ -846,7 +846,7 @@ body.no-scroll {
 .category-sub-desc {
     font-size: 0.95rem;
     color: #64748b;
-    max-width: 620px;
+    max-width: 800px;
     margin: 0 auto;
     line-height: 1.55;
     word-break: keep-all;
