@@ -257,7 +257,7 @@ button {
 .header-container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 36px;
+    padding: 0 44px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -278,12 +278,12 @@ button {
     width: 1.5px;
     height: 24px;
     background-color: #E2DDD5;
-    margin: 0 12px;
+    margin: 0 14px;
 }
 
 .logo-subtitle {
     font-family: var(--font-sans);
-    font-size: 0.95rem;
+    font-size: 0.96rem;
     font-weight: 800;
     color: var(--color-primary);
     letter-spacing: 0.5px;
@@ -292,15 +292,17 @@ button {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 32px;
 }
 
 .nav-link {
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--color-text-muted);
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #374151;
     position: relative;
     padding: 8px 0;
+    letter-spacing: -0.3px;
+    transition: color 0.2s ease;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -769,26 +771,6 @@ body.no-scroll {
     background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
-.prestige-header-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(165, 0, 52, 0.06);
-    border: 1px solid rgba(165, 0, 52, 0.2);
-    padding: 6px 18px;
-    border-radius: 9999px;
-    font-size: 0.78rem;
-    font-weight: 800;
-    color: var(--color-primary);
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-}
-
-.prestige-header-badge .phb-icon {
-    color: #d97706;
-}
-
 .prestige-category-wrap {
     background: #ffffff;
     border: 1px solid #e8ecf1;
@@ -800,26 +782,16 @@ body.no-scroll {
 }
 
 .prestige-category-head {
-    margin-bottom: 24px;
-}
-
-.pch-kicker {
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    color: var(--color-primary);
-    text-transform: uppercase;
-    margin-bottom: 8px;
-    display: inline-block;
+    margin-bottom: 28px;
 }
 
 .category-main-title {
     text-align: center;
-    font-size: 1.6rem;
+    font-size: 1.65rem;
     font-weight: 800;
     color: #0f172a;
     letter-spacing: -0.3px;
-    margin: 0 0 8px 0;
+    margin: 0 0 10px 0;
 }
 
 .category-sub-desc {
@@ -870,60 +842,19 @@ body.no-scroll {
 }
 
 .prestige-card-top {
-    margin-bottom: 14px;
-}
-
-.prestige-card-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.prestige-num-badge {
-    font-size: 0.7rem;
-    font-weight: 800;
-    color: #94a3b8;
-    letter-spacing: 1.2px;
-    font-family: var(--font-sans);
-}
-
-.prestige-honor-tag {
-    font-size: 0.74rem;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 6px;
-    background: #f1f5f9;
-    color: #475569;
-    border: 1px solid #e2e8f0;
-}
-
-.tag-gold {
-    background: #fef3c7;
-    color: #92400e;
-    border-color: #fde68a;
-}
-
-.tag-burgundy {
-    background: #ffe4e6;
-    color: #9f1239;
-    border-color: #fecdd3;
-}
-
-.tag-slate {
-    background: #e0f2fe;
-    color: #0369a1;
-    border-color: #bae6fd;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid #f1f5f9;
 }
 
 .prestige-card-title {
-    font-size: 1.12rem;
+    font-size: 1.18rem;
     font-weight: 800;
     color: #0f172a;
     letter-spacing: -0.3px;
     line-height: 1.35;
     margin: 0;
-    min-height: 44px;
+    min-height: 48px;
     display: flex;
     align-items: center;
 }
@@ -969,19 +900,13 @@ body.no-scroll {
 }
 
 .plaque-year-badge {
-    font-size: 0.72rem;
+    font-size: 0.76rem;
     font-weight: 800;
     color: #fbbf24;
     letter-spacing: 0.5px;
     display: inline-flex;
     align-items: center;
     gap: 5px;
-}
-
-.plaque-sub {
-    font-size: 0.72rem;
-    color: #94a3b8;
-    font-weight: 600;
 }
 
 .plaque-body {
@@ -991,23 +916,27 @@ body.no-scroll {
 }
 
 .plaque-name {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     font-weight: 900;
     color: #ffffff;
     letter-spacing: -0.5px;
 }
 
 .plaque-view-btn {
-    font-size: 0.75rem;
-    color: #94a3b8;
-    font-weight: 600;
+    font-size: 0.78rem;
+    color: #e2e8f0;
+    font-weight: 700;
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    transition: color 0.2s ease;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
 .prestige-latest-plaque:hover .plaque-view-btn {
+    background: rgba(255, 255, 255, 0.25);
     color: #ffffff;
 }
 
