@@ -7356,3 +7356,107 @@ body.no-scroll {
         gap: 20px;
     }
 }
+
+
+/* ==========================================================================
+   부서별 활동사진: 공식 픽토그램 필터 바 (위쪽 부서 픽토그램과 100% 통일)
+   ========================================================================== */
+.dept-pictogram-filter-wrapper {
+    margin-bottom: 32px;
+    width: 100%;
+}
+
+.dept-pictogram-filter-scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 4px 10px;
+}
+
+.dept-picto-btn {
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 30px;
+    padding: 6px 14px 6px 7px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    font-family: var(--font-sans);
+}
+
+.dept-picto-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(165, 0, 52, 0.35);
+    box-shadow: 0 6px 14px rgba(165, 0, 52, 0.08);
+}
+
+.dept-picto-btn.active {
+    background: #fff7f8;
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(165, 0, 52, 0.14);
+}
+
+.dpb-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    flex-shrink: 0;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dept-picto-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dpb-all {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.82rem;
+}
+
+.dept-picto-btn.active .dpb-all {
+    background: var(--color-primary);
+    color: #ffffff;
+}
+
+.dpb-center {
+    background: #ffe4e6;
+    color: var(--color-primary);
+    font-size: 0.82rem;
+}
+
+.dpb-name {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: #475569;
+    letter-spacing: -0.2px;
+    white-space: nowrap;
+}
+
+.dept-picto-btn.active .dpb-name {
+    color: var(--color-primary);
+    font-weight: 800;
+}
+
+@media (max-width: 768px) {
+    .dept-pictogram-filter-scroll {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+    }
+}
