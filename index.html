@@ -1627,117 +1627,69 @@
             
             <div class="awards-container">
                 
-                <!-- 1. Student Awards (3대 명예의 상) -->
+                <!-- 1. Student Awards (연도별 인터랙티브 타임라인 탭 전환형) -->
                 <div class="prestige-category-wrap">
                     <div class="prestige-category-head text-center">
                         <h3 class="category-main-title">ATHLETIC TRAINING STUDENT AWARDS</h3>
-                        <p class="category-sub-desc">학술 연구와 임상 실무에서 탁월한 모범을 보인 명예의 상입니다.</p>
+                        <p class="category-sub-desc">학술 연구와 임상 실무에서 탁월한 모범을 보인 명예의 상입니다. 연도를 선택하여 역대 수상자를 확인하실 수 있습니다.</p>
                     </div>
 
-                    <div class="awards-columns prestige-awards-grid">
+                    <!-- Year Timeline Tabs (2025 ~ 2015) -->
+                    <div class="awards-year-timeline-wrapper">
+                        <div class="awards-year-timeline" id="awards-year-timeline">
+                            <button type="button" class="year-tab-btn active" onclick="selectAwardsYear(2025, this)">2025</button>
+                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2024, this)">2024</button>
+                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2023, this)">2023</button>
+                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2022, this)">2022</button>
+                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2021, this)">2021</button>
+                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2020, this)">2020</button>
+                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2019, this)">2019</button>
+                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2018, this)">2018</button>
+                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2017, this)">2017</button>
+                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2016, this)">2016</button>
+                            <button type="button" class="year-tab-btn" onclick="selectAwardsYear(2015, this)">2015</button>
+                        </div>
+                    </div>
+
+                    <!-- Selected Year 3-Award Cards Display -->
+                    <div class="awards-columns awards-year-cards-grid" id="awards-year-display">
                         
                         <!-- 1. AT STUDENT OF THE YEAR -->
                         <div class="awards-col prestige-card prestige-gold-card">
                             <div class="prestige-card-top">
+                                <span class="award-tier-badge tier-gold"><i class="fa-solid fa-trophy"></i> 최고 영예</span>
                                 <h4 class="col-title prestige-card-title">AT STUDENT OF THE YEAR</h4>
                             </div>
-
-                            <!-- 2025 최신 수상자 다크 플래티넘 명패 플레이트 -->
-                            <div class="prestige-latest-plaque plaque-gold" onclick="openAlumniModal('유승아', '2025 AT Student of the Year')" title="유승아 프로필 보기">
-                                <div class="plaque-header">
-                                    <span class="plaque-year-badge"><i class="fa-solid fa-star"></i> 2025 Recipient</span>
-                                </div>
-                                <div class="plaque-body">
-                                    <span class="plaque-name">유승아</span>
-                                    <span class="plaque-view-btn">프로필 <i class="fa-solid fa-arrow-right"></i></span>
-                                </div>
-                            </div>
-
-                            <!-- 역대 수상자 2열 그리드 칩 -->
-                            <div class="prestige-chip-container">
-                                <div class="prestige-chip-label">PAST RECIPIENTS (2024 - 2015)</div>
-                                <ul class="awards-list prestige-chip-grid">
-                                    <li class="prestige-chip-item"><span class="year">2024</span><span class="name">한혜서</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2023</span><span class="name">차정수</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2022</span><span class="name">박효진</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2021</span><span class="name">김재원</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2020</span><span class="name">임선주</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2019</span><span class="name">김동현</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2018</span><span class="name">오민섭</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2017</span><span class="name">조재희, 양창욱</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2016</span><span class="name">이선화</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2015</span><span class="name">이현욱</span></li>
-                                </ul>
+                            <div class="award-recipient-plaque plaque-gold" id="recipient-year-card" onclick="triggerAwardModal('yearAward')" title="프로필 보기">
+                                <div class="plaque-year-indicator" id="year-indicator-1">2025</div>
+                                <div class="plaque-recipient-name" id="name-recipient-1">유승아</div>
+                                <div class="plaque-action-hint">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
                             </div>
                         </div>
 
                         <!-- 2. INSPIRATION -->
                         <div class="awards-col prestige-card prestige-burgundy-card">
                             <div class="prestige-card-top">
+                                <span class="award-tier-badge tier-burgundy"><i class="fa-solid fa-fire"></i> 열정 &amp; 영감</span>
                                 <h4 class="col-title prestige-card-title">INSPIRATION</h4>
                             </div>
-
-                            <!-- 2025 최신 수상자 다크 플래티넘 명패 플레이트 -->
-                            <div class="prestige-latest-plaque plaque-burgundy" onclick="openAlumniModal('유주승', '2025 Inspiration')" title="유주승 프로필 보기">
-                                <div class="plaque-header">
-                                    <span class="plaque-year-badge"><i class="fa-solid fa-fire"></i> 2025 Recipient</span>
-                                </div>
-                                <div class="plaque-body">
-                                    <span class="plaque-name">유주승</span>
-                                    <span class="plaque-view-btn">프로필 <i class="fa-solid fa-arrow-right"></i></span>
-                                </div>
-                            </div>
-
-                            <!-- 역대 수상자 2열 그리드 칩 -->
-                            <div class="prestige-chip-container">
-                                <div class="prestige-chip-label">PAST RECIPIENTS (2024 - 2015)</div>
-                                <ul class="awards-list prestige-chip-grid">
-                                    <li class="prestige-chip-item"><span class="year">2024</span><span class="name">한혜서</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2023</span><span class="name">문채연</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2022</span><span class="name">이남송</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2021</span><span class="name">김태진</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2020</span><span class="name">김승연</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2019</span><span class="name">성락훈</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2018</span><span class="name">김동현</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2017</span><span class="name">조유진</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2016</span><span class="name">안효은</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2015</span><span class="name">신재윤</span></li>
-                                </ul>
+                            <div class="award-recipient-plaque plaque-burgundy" id="recipient-inspiration-card" onclick="triggerAwardModal('inspiration')" title="프로필 보기">
+                                <div class="plaque-year-indicator" id="year-indicator-2">2025</div>
+                                <div class="plaque-recipient-name" id="name-recipient-2">유주승</div>
+                                <div class="plaque-action-hint">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
                             </div>
                         </div>
 
                         <!-- 3. ROOKIE OF THE YEAR -->
                         <div class="awards-col prestige-card prestige-slate-card">
                             <div class="prestige-card-top">
+                                <span class="award-tier-badge tier-slate"><i class="fa-solid fa-bolt"></i> 신인상</span>
                                 <h4 class="col-title prestige-card-title">ROOKIE OF THE YEAR</h4>
                             </div>
-
-                            <!-- 2025 최신 수상자 다크 플래티넘 명패 플레이트 -->
-                            <div class="prestige-latest-plaque plaque-slate" onclick="openAlumniModal('조연지', '2025 Rookie of the Year')" title="조연지 프로필 보기">
-                                <div class="plaque-header">
-                                    <span class="plaque-year-badge"><i class="fa-solid fa-bolt"></i> 2025 Recipient</span>
-                                </div>
-                                <div class="plaque-body">
-                                    <span class="plaque-name">조연지</span>
-                                    <span class="plaque-view-btn">프로필 <i class="fa-solid fa-arrow-right"></i></span>
-                                </div>
-                            </div>
-
-                            <!-- 역대 수상자 2열 그리드 칩 -->
-                            <div class="prestige-chip-container">
-                                <div class="prestige-chip-label">PAST RECIPIENTS (2024 - 2015)</div>
-                                <ul class="awards-list prestige-chip-grid">
-                                    <li class="prestige-chip-item"><span class="year">2024</span><span class="name">이정재</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2023</span><span class="name">한현구</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2022</span><span class="name">유영수</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2021</span><span class="name">최유빈</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2020</span><span class="name">김승연</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2019</span><span class="name">임선주</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2018</span><span class="name">우태희</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2017</span><span class="name">오민섭</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2016</span><span class="name">이서영</span></li>
-                                    <li class="prestige-chip-item"><span class="year">2015</span><span class="name">김다영</span></li>
-                                </ul>
+                            <div class="award-recipient-plaque plaque-slate" id="recipient-rookie-card" onclick="triggerAwardModal('rookie')" title="프로필 보기">
+                                <div class="plaque-year-indicator" id="year-indicator-3">2025</div>
+                                <div class="plaque-recipient-name" id="name-recipient-3">조연지</div>
+                                <div class="plaque-action-hint">프로필 보기 <i class="fa-solid fa-arrow-right"></i></div>
                             </div>
                         </div>
 
@@ -1892,21 +1844,130 @@
     <section id="activities" class="section-padding bg-light activities-gallery-section">
         <div class="container">
             <div class="section-header text-center">
-                <span class="archive-kicker">CENTER &amp; SPORTS ARCHIVE</span>
                 <h2 class="section-title">활동 사진</h2>
                 <div class="divider"></div>
                 <p class="section-subtitle">선수 케어 현장과 센터의 생생한 순간들을 담은 아카이브입니다.</p>
             </div>
 
-            <!-- 카테고리 필터 탭 (전체보기 없음! 부서별 활동사진 / 센터 활동 / 의무지원 / 세미나/어워즈) -->
+            <!-- 카테고리 필터 탭 (부서별 활동사진 / 센터 활동 / 의무지원 / 세미나/어워즈) -->
             <div class="gallery-filter-container">
-                <button type="button" class="gallery-filter-btn active" onclick="filterGallery('dept', this)"><i class="fa-solid fa-people-group"></i> 부서별 활동사진</button>
+                <button type="button" class="gallery-filter-btn active" onclick="filterGallery('dept', this)"><i class="fa-solid fa-folder"></i> 부서별 활동사진</button>
                 <button type="button" class="gallery-filter-btn" onclick="filterGallery('center', this)"><i class="fa-solid fa-kit-medical"></i> 센터 활동</button>
                 <button type="button" class="gallery-filter-btn" onclick="filterGallery('medical', this)"><i class="fa-solid fa-truck-medical"></i> 의무지원</button>
                 <button type="button" class="gallery-filter-btn" onclick="filterGallery('seminar', this)"><i class="fa-solid fa-graduation-cap"></i> 세미나 / 어워즈</button>
             </div>
 
-            <!-- 활동 사진 갤러리 그리드 -->
+            <!-- 부서별 전용 폴더 카드 그리드 (부서별 활동사진 탭 선택 시 기본 표시) -->
+            <div class="dept-folder-grid" id="dept-folder-grid">
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('축구부')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-futbol"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">축구부</h4>
+                        <span class="df-subtitle">대회 의무지원 &amp; 컨디셔닝</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('야구부')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-baseball-bat-ball"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">야구부</h4>
+                        <span class="df-subtitle">경기 전 테이핑 &amp; 투수 케어</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('농구부')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-basketball"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">농구부</h4>
+                        <span class="df-subtitle">발목·무릎 보강 및 컨디셔닝</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('배구부')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-volleyball"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">배구부</h4>
+                        <span class="df-subtitle">어깨·점프 착지 리컨디셔닝</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('럭비부')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-football"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">럭비부</h4>
+                        <span class="df-subtitle">접촉 스포츠 손상 예방 케어</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('골프부')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-golf-ball-tee"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">골프부</h4>
+                        <span class="df-subtitle">체간 회전력 &amp; 척추 밸런스</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('배드민턴부')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-table-tennis-paddle-ball"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">배드민턴부</h4>
+                        <span class="df-subtitle">견관절 &amp; 하체 민첩성 서포트</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('핸드볼부')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-hand"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">핸드볼부</h4>
+                        <span class="df-subtitle">경기 중 긴급처치 &amp; 회복</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('태권도 시범단')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">태권도 시범단</h4>
+                        <span class="df-subtitle">고난도 격파 착지 손상 케어</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('태권도 겨루기부')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-user-ninja"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">태권도 겨루기부</h4>
+                        <span class="df-subtitle">타격 손상 관리 및 테이핑</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('태권도 품새부')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-hand-fist"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">태권도 품새부</h4>
+                        <span class="df-subtitle">고관절 가동성 &amp; 밸런스 케어</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+
+                <div class="dept-folder-card" onclick="openDeptAlbumModal('AT Center')">
+                    <div class="df-icon-wrap"><i class="fa-solid fa-hospital"></i></div>
+                    <div class="df-info">
+                        <h4 class="df-title">AT Center (센터/시설)</h4>
+                        <span class="df-subtitle">선승관 B1 센터 내 트레이닝</span>
+                    </div>
+                    <div class="df-arrow"><i class="fa-solid fa-folder-open"></i></div>
+                </div>
+            </div>
+
             <div class="gallery-grid" id="activities-gallery-grid">
                 
                 <!-- [1. 부서별 활동사진 (dept) - 기본 노출] -->
@@ -4814,19 +4875,268 @@
                 });
             };
 
-            // 활동 사진 카테고리 필터링 함수
+            // =========================================================
+            // 1. 역대 학생 수상자 (Student Awards) 연도별 탭 전환 로직
+            // =========================================================
+            const studentAwardsData = {
+                2025: { yearAward: "유승아", inspiration: "유주승", rookie: "조연지" },
+                2024: { yearAward: "한혜서", inspiration: "한혜서", rookie: "이정재" },
+                2023: { yearAward: "차정수", inspiration: "문채연", rookie: "한현구" },
+                2022: { yearAward: "박효진", inspiration: "이남송", rookie: "유영수" },
+                2021: { yearAward: "김재원", inspiration: "김태진", rookie: "최유빈" },
+                2020: { yearAward: "임선주", inspiration: "김승연", rookie: "김승연" },
+                2019: { yearAward: "김동현", inspiration: "성락훈", rookie: "임선주" },
+                2018: { yearAward: "오민섭", inspiration: "김동현", rookie: "우태희" },
+                2017: { yearAward: "조재희, 양창욱", inspiration: "조유진", rookie: "오민섭" },
+                2016: { yearAward: "이선화", inspiration: "안효은", rookie: "이서영" },
+                2015: { yearAward: "이현욱", inspiration: "신재윤", rookie: "김다영" }
+            };
+
+            let currentSelectedYear = 2025;
+
+            window.selectAwardsYear = function(year, btn) {
+                currentSelectedYear = year;
+                document.querySelectorAll('.year-tab-btn').forEach(b => b.classList.remove('active'));
+                if (btn) btn.classList.add('active');
+
+                const data = studentAwardsData[year];
+                if (!data) return;
+
+                const ind1 = document.getElementById('year-indicator-1');
+                const ind2 = document.getElementById('year-indicator-2');
+                const ind3 = document.getElementById('year-indicator-3');
+                const name1 = document.getElementById('name-recipient-1');
+                const name2 = document.getElementById('name-recipient-2');
+                const name3 = document.getElementById('name-recipient-3');
+
+                if (ind1) ind1.textContent = year;
+                if (ind2) ind2.textContent = year;
+                if (ind3) ind3.textContent = year;
+
+                // Split multiple names if exists
+                if (name1) name1.textContent = data.yearAward;
+                if (name2) name2.textContent = data.inspiration;
+                if (name3) name3.textContent = data.rookie;
+
+                const displayBox = document.getElementById('awards-year-display');
+                if (displayBox) {
+                    displayBox.style.opacity = '0';
+                    displayBox.style.transform = 'translateY(6px)';
+                    setTimeout(() => {
+                        displayBox.style.transition = 'all 0.28s ease';
+                        displayBox.style.opacity = '1';
+                        displayBox.style.transform = 'translateY(0)';
+                    }, 40);
+                }
+            };
+
+            window.triggerAwardModal = function(type) {
+                const data = studentAwardsData[currentSelectedYear];
+                if (!data) return;
+
+                let personName = '';
+                let awardTitle = '';
+
+                if (type === 'yearAward') {
+                    personName = data.yearAward;
+                    awardTitle = currentSelectedYear + ' AT Student of the Year';
+                } else if (type === 'inspiration') {
+                    personName = data.inspiration;
+                    awardTitle = currentSelectedYear + ' Inspiration';
+                } else if (type === 'rookie') {
+                    personName = data.rookie;
+                    awardTitle = currentSelectedYear + ' Rookie of the Year';
+                }
+
+                // If comma separated, take the first one or open
+                if (personName.includes(',')) {
+                    personName = personName.split(',')[0].trim();
+                }
+
+                if (window.openAlumniModal) {
+                    window.openAlumniModal(personName, awardTitle);
+                }
+            };
+
+            // =========================================================
+            // 2. 활동 사진 4대 탭 필터링 & 부서 폴더 스위칭
+            // =========================================================
             window.filterGallery = function(category, btn) {
                 document.querySelectorAll('.gallery-filter-btn').forEach(function(b) { b.classList.remove('active'); });
                 if (btn) btn.classList.add('active');
-                var items = document.querySelectorAll('.gallery-card-item');
-                items.forEach(function(item) {
-                    if (category === 'all' || item.getAttribute('data-category') === category) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
+
+                const folderGrid = document.getElementById('dept-folder-grid');
+                const itemsGrid = document.getElementById('activities-gallery-grid');
+
+                if (category === 'dept') {
+                    // 부서별 활동사진: 부서 폴더 그리드 표시
+                    if (folderGrid) folderGrid.style.display = 'grid';
+                    if (itemsGrid) itemsGrid.style.display = 'none';
+                } else {
+                    // 센터 활동, 의무지원, 세미나/어워즈: 사진 카드 그리드 표시
+                    if (folderGrid) folderGrid.style.display = 'none';
+                    if (itemsGrid) itemsGrid.style.display = 'grid';
+
+                    var items = document.querySelectorAll('.gallery-card-item');
+                    items.forEach(function(item) {
+                        if (item.getAttribute('data-category') === category) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
             };
+
+            // =========================================================
+            // 3. 부서별 활동사진 앨범 모달 데이터 및 로직
+            // =========================================================
+            const deptPhotosDict = {
+                "축구부": {
+                    desc: "경희대학교 축구부 라이언매치 및 전국대학축구대회 현장 의무지원과 피지컬 컨디셔닝 케어입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_14.jpg", caption: "축구부 라이언매치 대회 현장 의무지원" },
+                        { img: "assets/images/insta/post_24.jpg", caption: "축구부 경기 전 테이핑 및 컨디셔닝" }
+                    ]
+                },
+                "야구부": {
+                    desc: "경희대학교 야구부 경기 전 부상 예방 테이핑 및 투수 어깨/팔꿈치 컨디셔닝 케어입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_26.jpg", caption: "야구부 경기 전 컨디셔닝 & 테이핑" }
+                    ]
+                },
+                "농구부": {
+                    desc: "경희대학교 농구부 대학농구 U-리그 경기 전 발목 보강 테이핑 및 하체 모빌리티 케어입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_26.jpg", caption: "농구부 발목 보강 및 컨디셔닝" }
+                    ]
+                },
+                "배구부": {
+                    desc: "경희대학교 배구부 스파이크 착지 무릎 손상 관리 및 어깨 회전근개 리컨디셔닝 케어입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_31.jpg", caption: "배구부 리컨디셔닝 & 손상 관리" }
+                    ]
+                },
+                "럭비부": {
+                    desc: "경희대학교 럭비부 고강도 접촉 플레이에 따른 관절 안정화 테이핑 및 경기장 긴급처치 활동입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_14.jpg", caption: "럭비부 경기장 현장 의무지원" }
+                    ]
+                },
+                "골프부": {
+                    desc: "경희대학교 골프부 스윙 메커니즘 흉추 가동성 및 허리 코어 밸런스 컨디셔닝 케어입니다.",
+                    photos: []
+                },
+                "배드민턴부": {
+                    desc: "경희대학교 배드민턴부 전국대학연맹전 코트 현장 의무지원 및 하체 순발력 테이핑입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_3.jpg", caption: "배드민턴부 대회 의무지원 및 케어" }
+                    ]
+                },
+                "핸드볼부": {
+                    desc: "경희대학교 핸드볼부 점프 슛 착지 충격 흡수 테이핑 및 격렬한 경기 중 부상 케어입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_2.jpg", caption: "핸드볼부 대회 현장 의무지원" }
+                    ]
+                },
+                "태권도 시범단": {
+                    desc: "경희대학교 태권도 시범단 고난도 격파 착지 손상 예방 및 체조 아크로바틱 케어입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_31.jpg", caption: "태권도 시범단 현장 리컨디셔닝" }
+                    ]
+                },
+                "태권도 겨루기부": {
+                    desc: "경희대학교 태권도 겨루기부 타격 및 킥 충격 보호 테이핑과 경기 후 쿨다운 케어입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_31.jpg", caption: "태권도 겨루기부 손상 예방 케어" }
+                    ]
+                },
+                "태권도 품새부": {
+                    desc: "경희대학교 태권도 품새부 정밀 고관절 가동성 및 코어 밸런스 컨디셔닝 케어입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_2.jpg", caption: "태권도 품새부 대회 현장 의무지원" }
+                    ]
+                },
+                "AT Center": {
+                    desc: "경희대학교 선승관 AT Center B1 내에서 진행되는 기본 테이핑 실습 교육 및 센터 스터디입니다.",
+                    photos: [
+                        { img: "assets/images/insta/post_1.jpg", caption: "AT Center 테이핑 & 현장 실무 교육" },
+                        { img: "assets/images/insta/post_19.jpg", caption: "AT Center 신입기수 스터디" },
+                        { img: "assets/images/insta/post_21.jpg", caption: "AT Center 대학원 연구 세미나" }
+                    ]
+                }
+            };
+
+            window.openDeptAlbumModal = function(deptName) {
+                const modal = document.getElementById('dept-album-modal');
+                const titleEl = document.getElementById('dept-album-title');
+                const descEl = document.getElementById('dept-album-desc');
+                const gridEl = document.getElementById('dept-album-photo-grid');
+
+                if (!modal) return;
+
+                if (titleEl) titleEl.textContent = deptName + ' 현장 활동사진';
+
+                const data = deptPhotosDict[deptName] || { desc: "해당 부서의 활동 사진입니다.", photos: [] };
+                if (descEl) descEl.textContent = data.desc;
+
+                if (gridEl) {
+                    gridEl.innerHTML = '';
+                    if (data.photos && data.photos.length > 0) {
+                        data.photos.forEach(p => {
+                            const card = document.createElement('div');
+                            card.className = 'dept-modal-photo-card';
+                            card.onclick = function() {
+                                window.openPhotoLightbox(p.img, deptName + ' / ' + p.caption);
+                            };
+                            card.innerHTML = `
+                                <div class="dept-modal-img-wrap">
+                                    <img src="${p.img}" alt="${p.caption}" loading="lazy">
+                                    <div class="dept-modal-img-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                                </div>
+                                <div class="dept-modal-photo-caption">${p.caption}</div>
+                            `;
+                            gridEl.appendChild(card);
+                        });
+                    } else {
+                        // 사진 준비중 카드
+                        gridEl.innerHTML = `
+                            <div class="dept-modal-empty-state">
+                                <i class="fa-solid fa-camera-rotate"></i>
+                                <h5>활동 사진 준비 중</h5>
+                                <p>${deptName}의 최신 현장 활동 및 케어 사진을 정리하여 업데이트할 예정입니다.</p>
+                            </div>
+                        `;
+                    }
+                }
+
+                modal.style.display = 'flex';
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            };
+
+            window.closeDeptAlbumModal = function() {
+                const modal = document.getElementById('dept-album-modal');
+                if (modal) {
+                    modal.style.opacity = '0';
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                    }, 300);
+                    document.body.style.overflow = '';
+                }
+            };
+
+            // 초기 로드 시 dept 탭이 활성화되어 있으므로 폴더 그리드 활성화
+            setTimeout(() => {
+                const folderGrid = document.getElementById('dept-folder-grid');
+                const itemsGrid = document.getElementById('activities-gallery-grid');
+                if (folderGrid && itemsGrid) {
+                    folderGrid.style.display = 'grid';
+                    itemsGrid.style.display = 'none';
+                }
+            }, 100);
         });
     </script>
 
@@ -4834,5 +5144,25 @@
     <button id="btn-back-to-top" class="back-to-top" aria-label="맨 위로 가기" title="맨 위로 이동" onclick="scrollToTop()">
         <i class="fa-solid fa-arrow-up"></i>
     </button>
+
+
+    <!-- Department Activity Photos Album Modal (부서별 활동사진 전용 모달) -->
+    <div id="dept-album-modal" class="modal-overlay" onclick="closeDeptAlbumModal()" style="display: none; opacity: 0; transition: opacity 0.3s ease;">
+        <div class="dept-album-modal-content" onclick="event.stopPropagation()">
+            <div class="dept-album-header">
+                <div class="dept-album-title-wrap">
+                    <span class="dept-album-badge" id="dept-album-badge">체육부 AT</span>
+                    <h3 class="dept-album-title" id="dept-album-title">부서 활동사진 앨범</h3>
+                </div>
+                <button type="button" class="dept-album-close-btn" onclick="closeDeptAlbumModal()" aria-label="닫기"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="dept-album-body">
+                <p class="dept-album-desc" id="dept-album-desc">해당 부서의 현장 트레이닝 및 의무지원 활동 사진입니다.</p>
+                <div class="dept-album-photo-grid" id="dept-album-photo-grid">
+                    <!-- Populated dynamically via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body></html>
