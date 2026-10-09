@@ -44,8 +44,9 @@
                 <a href="#members" class="nav-link">구성원</a>
                 <a href="#awards" class="nav-link">역대 수상자 및 리더</a>
                 <a href="#donate" class="nav-link">발전기금</a>
-                <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="nav-link insta-nav-btn"><i class="fa-brands fa-instagram" style="color: #E1306C; margin-right: 4px;"></i> 인스타그램</a>
+                <a href="#activities" class="nav-link">활동 사진</a>
                 <a href="#contact" class="nav-link btn-header-cta">상담 및 문의</a>
+                <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="nav-link insta-nav-icon" title="경희대학교 AT Center 공식 인스타그램 새 창 열기"><i class="fa-brands fa-instagram"></i></a>
             </nav>
             <button class="mobile-toggle" aria-label="메뉴 열기" id="mobile-menu-toggle">
                 <span class="bar"></span>
@@ -73,8 +74,9 @@
             <a href="#members" class="mobile-link"><i class="fa-solid fa-users"></i> 구성원</a>
             <a href="#awards" class="mobile-link"><i class="fa-solid fa-award"></i> 역대 수상자 및 리더</a>
             <a href="#donate" class="mobile-link"><i class="fa-solid fa-hand-holding-heart"></i> 발전기금 후원</a>
-            <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="mobile-link insta-link"><i class="fa-brands fa-instagram" style="color: #E1306C;"></i> 공식 인스타그램 (@khuatcenter)</a>
+            <a href="#activities" class="mobile-link"><i class="fa-solid fa-camera"></i> 활동 사진</a>
             <a href="#contact" class="mobile-link mobile-cta"><i class="fa-regular fa-paper-plane"></i> 상담 및 문의 신청</a>
+            <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="mobile-link insta-link" style="margin-top: 6px;"><i class="fa-brands fa-instagram" style="color: #E1306C;"></i> 공식 인스타그램 (@khuatcenter)</a>
         </nav>
         <div class="mobile-drawer-footer">
             <p>경희대학교 국제캠퍼스 선승관 B1 AT센터</p>
@@ -1880,6 +1882,204 @@
             </div>
     </div>
 </section>
+
+    <!-- Activities Gallery Section (부서별 & 센터 활동 사진 아카이브) -->
+    <section id="activities" class="section-padding bg-light activities-gallery-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="archive-kicker">CENTER &amp; SPORTS ARCHIVE</span>
+                <h2 class="section-title">활동 사진</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle">선수 케어 현장과 센터의 생생한 순간들을 담은 아카이브입니다.</p>
+            </div>
+
+            <!-- 카테고리 필터 탭 (전체 / 센터 활동 / 체육부 현장 / 학술 세미나) -->
+            <div class="gallery-filter-container">
+                <button type="button" class="gallery-filter-btn active" onclick="filterGallery('all', this)"><i class="fa-solid fa-border-all"></i> 전체보기</button>
+                <button type="button" class="gallery-filter-btn" onclick="filterGallery('center', this)"><i class="fa-solid fa-kit-medical"></i> AT Center (센터 활동)</button>
+                <button type="button" class="gallery-filter-btn" onclick="filterGallery('sports', this)"><i class="fa-solid fa-person-running"></i> 체육부 의무지원 (종목별)</button>
+                <button type="button" class="gallery-filter-btn" onclick="filterGallery('academic', this)"><i class="fa-solid fa-graduation-cap"></i> 학술 연구 &amp; 세미나</button>
+            </div>
+
+            <!-- 활동 사진 갤러리 그리드 -->
+            <div class="gallery-grid" id="activities-gallery-grid">
+                
+                <!-- [센터 활동 1] 정기 학술 세미나 & Taping 실무 교육 -->
+                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/insta/post_3.jpg', 'AT 센터 정기 세미나 &amp; Taping 실무 교육')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_3.jpg" alt="정기 학술 세미나 &amp; Taping 실무 교육" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-center">AT Center</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">정기 학술 세미나 &amp; Taping 실무 교육</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-location-dot"></i> 선승관 B1 AT 센터</span>
+                    </div>
+                </div>
+
+                <!-- [체육부 의무지원 1] 축구부 라이언매치 대회 현장 의무지원 -->
+                <div class="gallery-card-item" data-category="sports" onclick="openPhotoLightbox('assets/images/insta/post_14.jpg', '축구부 / 라이언매치 현장 의무지원')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_14.jpg" alt="축구부 현장 스포츠의학 의무지원" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-sports">축구부</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">축구부 라이언매치 현장 의무지원</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-shield-halved"></i> 엘리트 선수단 밀착 케어</span>
+                    </div>
+                </div>
+
+                <!-- [학술 연구 1] 제63차 대한비만학회 춘계학술대회 -->
+                <div class="gallery-card-item" data-category="academic" onclick="openPhotoLightbox('assets/images/insta/post_1.jpg', '제63차 대한비만학회 춘계학술대회 참가 및 발표')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_1.jpg" alt="대한비만학회 학술대회 참가" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-academic">학술 연구</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">제63차 대한비만학회 춘계학술대회 참가</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-book-open"></i> 연구 성과 학술 발표</span>
+                    </div>
+                </div>
+
+                <!-- [체육부 의무지원 2] 전국체육대회 엘리트 선수단 파견 -->
+                <div class="gallery-card-item" data-category="sports" onclick="openPhotoLightbox('assets/images/insta/post_22.jpg', '제106회 전국체육대회 선수단 전담 의무지원')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_22.jpg" alt="전국체전 엘리트 선수단 파견" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-sports">체육부 종합</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">제106회 전국체육대회 선수단 전담 파견</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-trophy"></i> 대회 전담 컨디셔닝 지원</span>
+                    </div>
+                </div>
+
+                <!-- [센터 활동 2] In-Service 실기 교육 & 기능 평가 -->
+                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/insta/post_6.jpg', 'In-Service 실기 교육 &amp; 기능 실습')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_6.jpg" alt="In-Service 실기 교육" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-center">AT Center</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">In-Service 실기 교육 &amp; 기능 실습</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-stethoscope"></i> 도수 평가 및 테크닉 연마</span>
+                    </div>
+                </div>
+
+                <!-- [학술 연구 2] World Congress on Kinesiology 국제학술대회 -->
+                <div class="gallery-card-item" data-category="academic" onclick="openPhotoLightbox('assets/images/insta/post_18.jpg', 'World Congress on Kinesiology 학술대회 발표')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_18.jpg" alt="World Congress on Kinesiology" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-academic">학술 연구</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">World Congress on Kinesiology 발표</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-globe"></i> 국제 스포츠과학 학술 교류</span>
+                    </div>
+                </div>
+
+                <!-- [체육부 의무지원 3] 농구부 / 야구부 경기 전 컨디셔닝 -->
+                <div class="gallery-card-item" data-category="sports" onclick="openPhotoLightbox('assets/images/insta/post_26.jpg', '농구부 / 야구부 경기 전 컨디셔닝 케어')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_26.jpg" alt="체육부 경기 전 컨디셔닝 케어" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-sports">농구·야구부</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">체육부 경기 전 테이핑 &amp; 컨디셔닝</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-basketball"></i> 부상 예방 밀착 서포트</span>
+                    </div>
+                </div>
+
+                <!-- [센터 활동 3] 소도구 트레이닝 & 케이스 스터디 -->
+                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/insta/post_7.jpg', '소도구 트레이닝 &amp; 부상 케이스 스터디')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_7.jpg" alt="소도구 트레이닝 &amp; 특강" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-center">AT Center</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">소도구 트레이닝 &amp; 부상 케이스 스터디</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-dumbbell"></i> 실전 재활 트레이닝 실습</span>
+                    </div>
+                </div>
+
+                <!-- [체육부 의무지원 4] 마라톤 & 러닝 이벤트 스포츠의학 의무지원 -->
+                <div class="gallery-card-item" data-category="sports" onclick="openPhotoLightbox('assets/images/insta/post_17.jpg', 'Go Free Run 스포츠의학 의무지원')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_17.jpg" alt="마라톤 대회 스포츠의학 의무지원" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-sports">스포츠의무지원</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">Go Free Run 현장 메디컬 케어</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-heart-pulse"></i> 대규모 러닝 이벤트 지원</span>
+                    </div>
+                </div>
+
+                <!-- [학술 연구 3] European College of Sport Science 발표 -->
+                <div class="gallery-card-item" data-category="academic" onclick="openPhotoLightbox('assets/images/insta/post_30.jpg', 'European College of Sport Science 발표')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_30.jpg" alt="ECSS 발표" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-academic">학술 연구</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">ECSS 유럽스포츠과학회 연구 발표</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-microscope"></i> 스포츠의학 임상 데이터 공유</span>
+                    </div>
+                </div>
+
+                <!-- [체육부 의무지원 5] 태권도·배구·럭비부 현장 리컨디셔닝 -->
+                <div class="gallery-card-item" data-category="sports" onclick="openPhotoLightbox('assets/images/insta/post_31.jpg', '태권도 / 배구부 리컨디셔닝 케어')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_31.jpg" alt="태권도 및 배구부 리컨디셔닝" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-sports">태권도·배구부</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">종목별 현장 리컨디셔닝 &amp; 쿨다운</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-hand-holding-medical"></i> 경기 후 빠른 회복 유도</span>
+                    </div>
+                </div>
+
+                <!-- [센터 활동 4] 센터 내부 1:1 맞춤형 재활 케어 -->
+                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/insta/post_25.jpg', '센터 내부 맞춤형 선수 재활 케어')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_25.jpg" alt="센터 내부 맞춤형 선수 케어" class="gallery-img" loading="lazy">
+                        <span class="gallery-badge badge-center">AT Center</span>
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <h4 class="gallery-card-title">센터 내부 1:1 맞춤형 재활 케어</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-user-doctor"></i> 관절 가동성 및 근력 회복</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 하단 인스타그램 공식 연동 배너 -->
+            <div class="gallery-bottom-cta">
+                <div class="gallery-bottom-cta-inner">
+                    <div class="gb-cta-text">
+                        <i class="fa-brands fa-instagram gb-insta-icon"></i>
+                        <div>
+                            <strong>더 많은 생생한 활동 소식은 공식 인스타그램에서!</strong>
+                            <p>실시간 대회 파견, 훈련 현장, 교육 스토리를 매주 업데이트합니다.</p>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="btn btn-insta-visit">
+                        @khuatcenter 바로가기 <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
     <section id="contact" class="section-padding">
         <div class="container">
             <div class="section-header text-center">
@@ -4530,6 +4730,20 @@
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
+                });
+            };
+
+            // 활동 사진 카테고리 필터링 함수
+            window.filterGallery = function(category, btn) {
+                document.querySelectorAll('.gallery-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+                if (btn) btn.classList.add('active');
+                var items = document.querySelectorAll('.gallery-card-item');
+                items.forEach(function(item) {
+                    if (category === 'all' || item.getAttribute('data-category') === category) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
                 });
             };
         });

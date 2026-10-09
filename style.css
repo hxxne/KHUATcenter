@@ -6400,3 +6400,266 @@ body.no-scroll {
 
 
 
+
+
+/* ==========================================================================
+   Header Instagram Icon & Activities Gallery Section
+   ========================================================================== */
+.insta-nav-icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #E1306C !important;
+    background: #fff0f3;
+    font-size: 1.15rem;
+    margin-left: 8px;
+    transition: all 0.25s ease;
+    border: 1px solid #fed7e2;
+    padding: 0 !important;
+    flex-shrink: 0;
+}
+
+.insta-nav-icon:hover {
+    background: #E1306C !important;
+    color: #ffffff !important;
+    border-color: #E1306C;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(225, 48, 108, 0.25);
+}
+
+.activities-gallery-section {
+    background: #fbfcfd;
+}
+
+.gallery-filter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 38px;
+}
+
+.gallery-filter-btn {
+    padding: 10px 20px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #475569;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.gallery-filter-btn:hover {
+    border-color: #cbd5e1;
+    background: #f8fafc;
+    color: #0f172a;
+    transform: translateY(-1px);
+}
+
+.gallery-filter-btn.active {
+    background: #A50034;
+    color: #ffffff;
+    border-color: #A50034;
+    box-shadow: 0 4px 14px rgba(165, 0, 52, 0.25);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.gallery-card-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.09);
+    border-color: rgba(165, 0, 52, 0.35);
+}
+
+.gallery-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    background: #e2e8f0;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-card-item:hover .gallery-img {
+    transform: scale(1.06);
+}
+
+.gallery-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-size: 0.74rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 20px;
+    backdrop-filter: blur(8px);
+    letter-spacing: -0.2px;
+    z-index: 2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-badge.badge-center {
+    background: rgba(165, 0, 52, 0.88);
+    color: #ffffff;
+}
+
+.gallery-badge.badge-sports {
+    background: rgba(15, 23, 42, 0.88);
+    color: #ffffff;
+}
+
+.gallery-badge.badge-academic {
+    background: rgba(3, 105, 161, 0.88);
+    color: #ffffff;
+}
+
+.gallery-hover-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    color: #ffffff;
+    font-size: 1.4rem;
+    z-index: 1;
+}
+
+.gallery-card-item:hover .gallery-hover-overlay {
+    opacity: 1;
+}
+
+.gallery-card-info {
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: #ffffff;
+}
+
+.gallery-card-title {
+    margin: 0;
+    font-size: 1.02rem;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+}
+
+.gallery-card-meta {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.gallery-bottom-cta {
+    background: #ffffff;
+    border: 1.5px solid #fed7e2;
+    border-radius: 16px;
+    padding: 22px 28px;
+    box-shadow: 0 4px 16px rgba(225, 48, 108, 0.06);
+    margin-top: 20px;
+}
+
+.gallery-bottom-cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.gb-cta-text {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.gb-insta-icon {
+    font-size: 2.2rem;
+    color: #E1306C;
+}
+
+.gb-cta-text strong {
+    display: block;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 2px;
+}
+
+.gb-cta-text p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: #64748b;
+}
+
+.btn-insta-visit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #E1306C 0%, #C13584 100%);
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 800;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(225, 48, 108, 0.25);
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-insta-visit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(225, 48, 108, 0.35);
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .gallery-bottom-cta-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .btn-insta-visit {
+        width: 100%;
+        justify-content: center;
+    }
+}
