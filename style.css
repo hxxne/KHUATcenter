@@ -762,162 +762,323 @@ body.no-scroll {
 }
 
 /* --------------------------------------------------------------------------
-   10. Awards Section
+   10. Awards Section (Hall of Fame & Leaders)
    -------------------------------------------------------------------------- */
+.awards-hall-of-fame-section {
+    position: relative;
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+.hof-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #b45309;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+
 .awards-container {
-    max-width: 1000px;
+    max-width: 1120px;
     margin: 0 auto;
 }
 
-.awards-category {
+.hof-main-category {
     background: #ffffff;
-    border: 1px solid rgba(165, 0, 52, 0.12);
-    border-radius: 12px;
-    padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+    border: 1.5px solid rgba(165, 0, 52, 0.12);
+    border-radius: 20px;
+    padding: 44px 36px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05), 0 2px 6px rgba(0, 0, 0, 0.02);
     margin-bottom: 40px;
     position: relative;
     overflow: hidden;
 }
 
-.awards-category::before {
+.hof-main-category::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-    opacity: 0.85;
+    height: 4px;
+    background: linear-gradient(90deg, #A50034 0%, #d97706 50%, #A50034 100%);
 }
 
-.category-main-title {
+.hof-category-header {
     text-align: center;
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: #222;
-    margin-bottom: 40px;
-    letter-spacing: 1px;
+    margin-bottom: 34px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.category-main-title::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: var(--color-primary);
-    margin-top: 15px;
+
+.hof-laurel-badge {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    color: #b45309;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.35rem;
+    margin-bottom: 14px;
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.2);
+    border: 1px solid rgba(217, 119, 6, 0.3);
+}
+
+.category-main-title {
+    text-align: center;
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: 0.5px;
+    margin: 0 0 10px 0;
+}
+
+.category-sub-desc {
+    font-size: 0.95rem;
+    color: #64748b;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.55;
+    word-break: keep-all;
 }
 
 .awards-columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 24px;
 }
 
-.awards-col {
+.hof-card {
     background: #ffffff;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 16px;
     padding: 0;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
 }
-.awards-col:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+.hof-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.09);
+    border-color: rgba(165, 0, 52, 0.35);
 }
+
+.hof-card-gold {
+    border-color: rgba(217, 119, 6, 0.25);
+}
+.hof-card-gold:hover {
+    border-color: #d97706;
+}
+
+.hof-card-banner {
+    padding: 22px 18px 18px 18px;
+    text-align: center;
+    background: linear-gradient(180deg, #fafafa 0%, #f1f5f9 100%);
+    border-bottom: 1.5px solid #e2e8f0;
+    position: relative;
+}
+
+.hof-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.hof-card-gold .hof-card-icon { color: #d97706; }
+.hof-card-burgundy .hof-card-icon { color: #A50034; }
+.hof-card-emerald .hof-card-icon { color: #0284c7; }
 
 .col-title {
     text-align: center;
-    font-size: 1.1rem;
-    font-weight: 700;
-    background: #f8f9fa;
-    color: var(--color-primary);
-    padding: 18px 10px;
-    margin: 0 0 20px 0;
-    border-bottom: 1px solid #eaeaea;
-    letter-spacing: 0.5px;
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 8px 0;
+    padding: 0;
+    background: none;
+    border: none;
+    letter-spacing: 0.3px;
 }
+
+.hof-card-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.05);
+    color: #64748b;
+}
+
+.hof-card-gold .hof-card-tag { background: #fef3c7; color: #b45309; }
+.hof-card-burgundy .hof-card-tag { background: #fce7f3; color: #be185d; }
+.hof-card-emerald .hof-card-tag { background: #e0f2fe; color: #0369a1; }
 
 .awards-list {
     list-style: none;
-    padding: 0 25px 25px 25px;
+    padding: 16px 18px 20px 18px;
     margin: 0;
+    flex: 1;
 }
+
 .awards-list li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 10px;
-    border-bottom: 1px dashed #eee;
-    font-size: 1rem;
-}
-.awards-list li:last-child {
+    padding: 9px 12px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    transition: background 0.2s ease;
     border-bottom: none;
 }
 
-.awards-list li .name {
-    font-weight: 600;
-    color: var(--color-text-dark);
+.awards-list li:hover {
+    background: #f8fafc;
 }
 
 .awards-list li .year {
-    color: #888;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 3px 9px;
+    border-radius: 14px;
+    letter-spacing: 0.3px;
 }
 
-.ga-grid {
+.awards-list li .name {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.clickable-alumni-name:hover {
+    color: #A50034 !important;
+    text-decoration: underline;
+}
+
+/* 2025 최신 수상자 하이라이트 배너 아이템 */
+.hof-latest-winner-item {
+    background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%) !important;
+    border: 1.5px solid #fde68a !important;
+    padding: 12px 14px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.12);
+}
+
+.hof-latest-winner-item:hover {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%) !important;
+}
+
+.latest-ribbon {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #ffffff;
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    padding: 3px 8px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(180, 83, 9, 0.3);
+}
+
+.hof-latest-name {
+    font-size: 1.12rem !important;
+    font-weight: 800 !important;
+    color: #78350f !important;
+}
+
+/* Past Leaders 전용 서브 배너 */
+.hof-banner-sub {
+    background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);
+}
+
+.hof-banner-sub .hof-card-icon {
+    color: #475569;
+}
+
+/* Graduate Assistants (공식 조교 인증 뱃지 그리드) */
+.hof-ga-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(135px, 1fr));
+    gap: 14px;
 }
 
 .ga-card {
-    background: #fdfdfd;
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    padding: 15px 10px;
+    background: #ffffff;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 16px 12px;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
 }
 
 .ga-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border-color: #A50034;
 }
 
 .ga-role {
-    font-size: 0.8rem;
-    color: var(--color-secondary);
-    margin-bottom: 5px;
-    font-weight: 600;
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #A50034;
+    background: rgba(165, 0, 52, 0.08);
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-bottom: 8px;
 }
 
 .ga-name {
     font-size: 1.15rem;
-    font-weight: 700;
-    color: var(--color-text-dark);
-    margin-bottom: 5px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 6px;
+    letter-spacing: -0.3px;
 }
 
 .ga-date {
     font-size: 0.8rem;
-    color: #999;
+    font-weight: 600;
+    color: #64748b;
+    background: #f8fafc;
+    padding: 2px 6px;
+    border-radius: 6px;
+    display: inline-block;
 }
 
-
 /* Mobile Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .awards-columns {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    .awards-category {
-        padding: 24px 18px;
+    .hof-main-category {
+        padding: 30px 20px;
     }
 }
 
@@ -6046,22 +6207,22 @@ body.no-scroll {
 }
 
 /* ==========================================================================
-   06 AT 센터 보조 부서별 카드 그리드 스타일 (Assistant Group Grid)
+   06 AT 센터 보조 부서별 컴팩트 아바타 카드 그리드 (Assistant Avatar Cards)
    ========================================================================== */
 .assistant-group-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(285px, 1fr));
     gap: 24px;
     margin-bottom: 80px;
 }
 
 .assistant-dept-card {
     background: #ffffff;
-    border: 1px solid #eef2f6;
-    border-radius: 16px;
+    border: 1.5px solid #eef2f6;
+    border-radius: 18px;
     padding: 22px 20px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -6069,7 +6230,7 @@ body.no-scroll {
 
 .assistant-dept-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px -4px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 26px -4px rgba(0, 0, 0, 0.08);
     border-color: rgba(165, 0, 52, 0.25);
 }
 
@@ -6077,51 +6238,145 @@ body.no-scroll {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 14px;
+    border-bottom: 1.5px solid #f1f5f9;
 }
 
 .assistant-dept-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
     background: rgba(165, 0, 52, 0.08);
-    color: var(--color-primary);
+    color: var(--color-primary, #A50034);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     flex-shrink: 0;
+}
+
+.assistant-dept-title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .assistant-dept-title {
     margin: 0;
-    font-size: 1.1rem;
+    font-size: 1.12rem;
     font-weight: 800;
     color: #1e293b;
     letter-spacing: -0.3px;
 }
 
-.assistant-badge-list {
+.assistant-dept-count {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 3px 9px;
+    border-radius: 12px;
+    letter-spacing: 0.2px;
+}
+
+/* 2열 컴팩트 아바타 명함 카드 그리드 */
+.assistant-avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.assistant-person-item {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.assistant-name-badge {
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
     background: #f8fafc;
-    color: #334155;
     border: 1px solid #e2e8f0;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    letter-spacing: -0.2px;
-    transition: all 0.2s ease;
+    border-radius: 12px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.assistant-dept-card:hover .assistant-name-badge {
-    border-color: rgba(165, 0, 52, 0.2);
+.assistant-person-item:hover {
+    background: #ffffff;
+    border-color: rgba(165, 0, 52, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
+
+.assistant-person-item.has-photo {
+    cursor: pointer;
+    background: #fdfafb;
+    border-color: #f7d7de;
+}
+
+.assistant-person-item.has-photo:hover {
+    background: #ffffff;
+    border-color: var(--color-primary, #A50034);
+    box-shadow: 0 6px 14px rgba(165, 0, 52, 0.15);
+}
+
+.assistant-avatar-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.assistant-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.assistant-person-item.has-photo:hover .assistant-avatar-img {
+    transform: scale(1.08);
+}
+
+.assistant-avatar-box.fallback {
+    background: linear-gradient(135deg, #A50034 0%, #700023 100%);
+    color: #ffffff;
+    box-shadow: 0 2px 6px rgba(165, 0, 52, 0.2);
+}
+
+.avatar-initial {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+}
+
+.assistant-person-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.assistant-person-item.has-photo .assistant-person-name {
+    color: #0f172a;
+}
+
+@media (max-width: 640px) {
+    .assistant-group-grid {
+        grid-template-columns: 1fr;
+    }
+    .assistant-avatar-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 
