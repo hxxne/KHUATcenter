@@ -840,17 +840,20 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
 
+        // 폼 전송 데이터 구성 (한글 레이블로 표 형식 이메일 수신)
         const dataPayload = {
             "이름_단체명": document.getElementById('form-name').value,
             "연락처": phoneInput.value,
             "소속구분": document.getElementById('form-affiliation').options[document.getElementById('form-affiliation').selectedIndex].text,
             "문의유형": document.getElementById('form-type').options[document.getElementById('form-type').selectedIndex].text,
             "상세내용": document.getElementById('form-message').value,
-            "_captcha": "false",
-            "_template": "table"
+            "_subject": "[KHU AT Center] 새로운 상담 및 문의 신청이 접수되었습니다.", // 메일 수신 시 표시될 제목
+            "_captcha": "false", // 로봇 방지 캡차 화면 건너뛰기
+            "_template": "table" // 수신되는 이메일 본문을 깔끔한 테이블 형태로 표시
         };
 
-        fetch("https://formsubmit.co/ajax/khuatlab@gmail.com", {
+        // FormSubmit AJAX API를 통해 센터 공식 이메일(khuatcenter@khu.ac.kr)로 비동기 전송
+        fetch("https://formsubmit.co/ajax/khuatcenter@khu.ac.kr", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -860,18 +863,24 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(response => response.json())
         .then(data => {
+            // 전송 완료 후 버튼 로딩 상태 해제
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
+
+            // FormSubmit 응답 성공 여부 확인
             if (data.success === "true" || data.success === true) {
+                // 접수 완료 안내 팝업 레이어 표시
                 successOverlay.classList.add('active');
+                // 입력 폼 필드 초기화
                 inquiryForm.reset();
             } else {
-                alert("이메일 전송에 실패했습니다. (서버 응답 오류)");
+                // 실패 시 서버에서 전달한 안내 메시지 표시
+                alert("이메일 전송에 실패했습니다: " + (data.message || "서버 응답 오류"));
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('이메일 전송 중 오류가 발생했습니다. 다시 시도해 주세요.');
+            alert('이메일 전송 중 네트워크 오류가 발생했습니다. 다시 시도해 주세요.');
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
         });
