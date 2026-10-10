@@ -2029,434 +2029,21 @@
                 <p class="section-subtitle">선수 케어 현장과 센터의 생생한 순간들을 담은 아카이브입니다.</p>
             </div>
 
-            <!-- 메인 카테고리 필터 탭 (부서별 활동사진 / 센터 활동 / 의무지원 / 세미나/어워즈) -->
+            <!-- 메인 카테고리 필터 탭 (센터 활동 / 의무지원 / 세미나/어워즈) -->
             <div class="gallery-filter-container">
-                <button type="button" class="gallery-filter-btn active" onclick="filterGallery('dept', this)"><i class="fa-solid fa-folder-open"></i> 부서별 활동사진</button>
-                <button type="button" class="gallery-filter-btn" onclick="filterGallery('center', this)"><i class="fa-solid fa-kit-medical"></i> 센터 활동</button>
+                <button type="button" class="gallery-filter-btn active" onclick="filterGallery('center', this)"><i class="fa-solid fa-kit-medical"></i> 센터 활동</button>
                 <button type="button" class="gallery-filter-btn" onclick="filterGallery('medical', this)"><i class="fa-solid fa-truck-medical"></i> 의무지원</button>
                 <button type="button" class="gallery-filter-btn" onclick="filterGallery('seminar', this)"><i class="fa-solid fa-graduation-cap"></i> 세미나 / 어워즈</button>
             </div>
 
-            <!-- [부서별 활동사진 전용] 상단 12개 부서 공식 픽토그램 필터 바 -->
-            <div class="dept-pictogram-filter-wrapper" id="dept-pictogram-filter-wrapper">
-                <div class="dept-pictogram-filter-scroll">
-                    <button type="button" class="dept-picto-btn active" onclick="filterDeptPhotos('all', this)">
-                        <span class="dpb-icon dpb-all"><i class="fa-solid fa-border-all"></i></span>
-                        <span class="dpb-name">전체 부서</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('soccer', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_soccer.jpg" alt="축구" class="dept-picto-img"></span>
-                        <span class="dpb-name">축구부</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('baseball', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_baseball.jpg" alt="야구" class="dept-picto-img"></span>
-                        <span class="dpb-name">야구부</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('basketball', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_basketball.jpg" alt="농구" class="dept-picto-img"></span>
-                        <span class="dpb-name">농구부</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('volleyball', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_volleyball.jpg" alt="배구" class="dept-picto-img"></span>
-                        <span class="dpb-name">배구부</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('rugby', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_rugby.jpg" alt="럭비" class="dept-picto-img"></span>
-                        <span class="dpb-name">럭비부</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('golf', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_golf.jpg" alt="골프" class="dept-picto-img"></span>
-                        <span class="dpb-name">골프부</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('badminton', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_badminton.jpg?v=1787716329002" alt="배드민턴" class="dept-picto-img"></span>
-                        <span class="dpb-name">배드민턴부</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('handball', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_handball.jpg" alt="핸드볼" class="dept-picto-img"></span>
-                        <span class="dpb-name">핸드볼부</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('demoteam', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_demoteam.jpg" alt="시범단" class="dept-picto-img"></span>
-                        <span class="dpb-name">태권도 시범단</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('gyeorugi', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_gyeorugi.jpg" alt="겨루기" class="dept-picto-img"></span>
-                        <span class="dpb-name">태권도 겨루기부</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('poomsae', this)">
-                        <span class="dpb-icon"><img src="assets/pictogram_poomsae.jpg" alt="품새" class="dept-picto-img"></span>
-                        <span class="dpb-name">태권도 품새부</span>
-                    </button>
-                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('center', this)">
-                        <span class="dpb-icon dpb-center"><i class="fa-solid fa-kit-medical"></i></span>
-                        <span class="dpb-name">AT Center</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 센터활동/의무지원처럼 시원하게 쭉 나오는 활동 사진 갤러리 그리드 -->
+            <!-- 센터 활동, 의무지원, 세미나/어워즈 활동 사진 갤러리 그리드 -->
             <div class="gallery-grid" id="activities-gallery-grid">
                 
                 <!-- ========================================== -->
-                <!-- [1. 부서별 활동사진 (dept)] - 최근 순서 정렬 -->
-                <!-- ========================================== -->
-                <!-- 1. 농구부 U-리그 코트 사이드 밀착 의무지원 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="basketball" onclick="openPhotoLightbox('assets/images/activity/농구/IMG_4280.png', '농구부 / 대학 U-리그 코트 사이드 밀착 의무지원')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/농구/IMG_4280.png" alt="농구부 대학 U-리그 코트 사이드 밀착 의무지원" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">농구부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">농구부 U-리그 코트 사이드 밀착 의무지원</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-basketball"></i> 점프 착지 발목 보강 테이핑 &amp; 쿨다운</span>
-                    </div>
-                </div>
-
-                <!-- 2. 축구부 제1회 라이언매치 현장 의무지원 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="soccer" onclick="openPhotoLightbox('assets/images/insta/post_14.jpg', '축구부 / 제1회 라이언매치 현장 의무지원')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/insta/post_14.jpg" alt="축구부 제1회 라이언매치 현장 의무지원" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">축구부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">제1회 라이언매치 축구부 현장 의무지원</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-futbol"></i> 발목 안정화 테이핑 &amp; 긴급 처치</span>
-                    </div>
-                </div>
-
-                <!-- 3. 배구부 스파이크 착지 무릎 손상 관리 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="volleyball" onclick="openPhotoLightbox('assets/images/activity/배구/IMG_3596.png', '배구부 / 스파이크 착지 무릎 손상 관리 &amp; 리컨디셔닝')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/배구/IMG_3596.png" alt="배구부 스파이크 착지 무릎 손상 관리" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">배구부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">배구부 스파이크 착지 무릎 손상 관리</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-volleyball"></i> 슬개건염 예방 &amp; 착지 밸런스 케어</span>
-                    </div>
-                </div>
-
-                <!-- 4. 겨루기부 매트 현장 급성 손상 아이싱 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="gyeorugi" onclick="openPhotoLightbox('assets/images/activity/겨루기/7M306398.png', '태권도 겨루기부 / 매트 현장 급성 손상 아이싱 케어')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/겨루기/7M306398.png" alt="태권도 겨루기부 매트 현장 급성 손상 아이싱 케어" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">태권도 겨루기</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">겨루기부 매트 현장 급성 손상 아이싱</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-user-ninja"></i> 현장 급성 족관절 염좌 압박 케어</span>
-                    </div>
-                </div>
-
-                <!-- 5. 럭비부 필드 고강도 접촉 플레이 손상 케어 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="rugby" onclick="openPhotoLightbox('assets/images/activity/럭비/7M306149.png', '럭비부 / 필드 고강도 접촉 플레이 손상 케어')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/럭비/7M306149.png" alt="럭비부 필드 고강도 접촉 플레이 손상 케어" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">럭비부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">럭비부 필드 고강도 접촉 플레이 케어</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-football"></i> 태클 충격 완화 테이핑 &amp; 긴급 처치</span>
-                    </div>
-                </div>
-
-                <!-- 6. 핸드볼부 경기 중 긴급 처치 & 회복 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="handball" onclick="openPhotoLightbox('assets/images/activity/핸드볼/7M306340.png', '핸드볼부 / 경기 중 긴급 처치 &amp; 피지컬 리컨디셔닝')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/핸드볼/7M306340.png" alt="핸드볼부 경기 중 긴급 처치 & 피지컬 리컨디셔닝" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">핸드볼부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">핸드볼부 경기 중 긴급 처치 &amp; 회복</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-hand"></i> 점프 슛 착지 발목 안정화 &amp; 어깨 케어</span>
-                    </div>
-                </div>
-
-                <!-- 7. 태권도 시범단 아크로바틱 격파 착지 손상 케어 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="demoteam" onclick="openPhotoLightbox('assets/images/activity/시범단/7M306277.png', '태권도 시범단 / 아크로바틱 격파 착지 손상 케어')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/시범단/7M306277.png" alt="태권도 시범단 아크로바틱 격파 착지 손상 케어" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">태권도 시범단</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">태권도 시범단 격파 착지 손상 케어</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-shield-halved"></i> 고난도 공중 도약 발목·무릎 밀착 테이핑</span>
-                    </div>
-                </div>
-
-                <!-- 8. 골프부 스윙 흉추 회전 가동성 & 밸런스 케어 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="golf" onclick="openPhotoLightbox('assets/images/activity/골프/7M306050.png', '골프부 / 스윙 흉추 회전 가동성 &amp; 밸런스 케어')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/골프/7M306050.png" alt="골프부 스윙 흉추 회전 가동성 케어" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">골프부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">골프부 스윙 흉추 회전 가동성 케어</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-golf-ball-tee"></i> 요추 과부하 방지 &amp; 척추 회전력 증진</span>
-                    </div>
-                </div>
-
-                <!-- 9. 배드민턴부 코트 의무지원 & 풋워크 발목 테이핑 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="badminton" onclick="openPhotoLightbox('assets/images/activity/전담/7M306136.png', '배드민턴부 / 코트 의무지원 &amp; 풋워크 발목 테이핑')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/전담/7M306136.png" alt="배드민턴부 코트 의무지원 & 풋워크 발목 테이핑" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">배드민턴부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">배드민턴부 코트 의무지원 &amp; 테이핑</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-table-tennis-paddle-ball"></i> 빠른 방향 전환 착지 충격 흡수 서포트</span>
-                    </div>
-                </div>
-
-                <!-- 10. 태권도 품새부 고관절 가동성 & 밸런스 서포트 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="poomsae" onclick="openPhotoLightbox('assets/images/activity/겨루기/7M306419.png', '태권도 품새부 / 고관절 가동성 &amp; 밸런스 서포트')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/겨루기/7M306419.png" alt="태권도 품새부 고관절 가동성 & 밸런스 서포트" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">태권도 품새</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">품새부 고관절 가동성 &amp; 밸런스 서포트</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-hand-fist"></i> 정밀한 킥 높이 유지 및 골반 정렬 케어</span>
-                    </div>
-                </div>
-
-                <!-- 11. 야구부 전담 AT 투수 어깨 가동성 케어 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="baseball" onclick="openPhotoLightbox('assets/images/activity/전담/7M306124.png', '야구부 / 전담 AT 투수 어깨 가동성 케어')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/전담/7M306124.png" alt="야구부 전담 AT 투수 어깨 가동성 케어" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">야구부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">야구부 전담 AT 투수 어깨 가동성 케어</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-baseball-bat-ball"></i> 회전근개 웜업 &amp; 견관절 모빌리티</span>
-                    </div>
-                </div>
-
-                <!-- 12. AT Center 정기 스포츠테이핑 실무 교육 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="center" onclick="openPhotoLightbox('assets/images/activity/신입기수/7M306088.png', 'AT Center / 정기 스포츠테이핑 실무 교육')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/신입기수/7M306088.png" alt="AT Center 정기 스포츠테이핑 실무 교육" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-center">AT Center</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">AT Center 정기 스포츠테이핑 실무 교육</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-bandage"></i> 선승관 B1 센터 내 트레이너 실습 교육</span>
-                    </div>
-                </div>
-
-                <!-- 13. 축구부 U-리그 경기 전 피지컬 케어 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="soccer" onclick="openPhotoLightbox('assets/images/post_soccer.jpg', '축구부 / U-리그 경기 전 피지컬 케어')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/post_soccer.jpg" alt="축구부 경기 전 피지컬 케어" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">축구부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">축구부 U-리그 경기 전 피지컬 케어</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-futbol"></i> 필드 경기력 향상 및 하지 근막 이완</span>
-                    </div>
-                </div>
-
-                <!-- 14. 농구부 락커룸 하지 리컨디셔닝 케어 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="basketball" onclick="openPhotoLightbox('assets/images/activity/농구/IMG_4281.png', '농구부 / 락커룸 경기 전 하지 리컨디셔닝 케어')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/농구/IMG_4281.png" alt="농구부 락커룸 하지 리컨디셔닝 케어" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">농구부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">농구부 락커룸 경기 전 하지 리컨디셔닝</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-basketball"></i> 하체 폭발력 회복 &amp; 슬개건 테이핑</span>
-                    </div>
-                </div>
-
-                <!-- 15. 농구부 피지컬 트레이닝 & 코어 세션 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="basketball" onclick="openPhotoLightbox('assets/images/post_basketball.jpg', '농구부 / 피지컬 트레이닝 &amp; 코어 세션')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/post_basketball.jpg" alt="농구부 피지컬 트레이닝 & 코어 세션" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">농구부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">농구부 피지컬 트레이닝 &amp; 코어 세션</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-basketball"></i> 코어 밸런스 및 점프 안정화</span>
-                    </div>
-                </div>
-
-                <!-- 16. 겨루기부 발등·발목 충격 보호 테이핑 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="gyeorugi" onclick="openPhotoLightbox('assets/images/activity/겨루기/7M306355.png', '태권도 겨루기부 / 발등·발목 충격 보호 테이핑')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/겨루기/7M306355.png" alt="태권도 겨루기부 발등·발목 충격 보호 테이핑" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">태권도 겨루기</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">겨루기부 발등·발목 충격 보호 테이핑</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-user-ninja"></i> 타격 킥 충격 완화 및 하지 근막 케어</span>
-                    </div>
-                </div>
-
-                <!-- 17. 겨루기부 전국체전 대비 리커버리 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="gyeorugi" onclick="openPhotoLightbox('assets/images/post_taekwondo.jpg', '태권도 겨루기부 / 전국체전 출전 대비 리커버리')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/post_taekwondo.jpg" alt="태권도 겨루기부 전국체전 출전 대비 리커버리" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">태권도 겨루기</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">겨루기부 전국체전 대비 리커버리</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-user-ninja"></i> 경기 후 젖산 회복 및 스트레칭</span>
-                    </div>
-                </div>
-
-                <!-- 18. 럭비부 경기 전 견관절 & 경추 안정화 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="rugby" onclick="openPhotoLightbox('assets/images/activity/럭비/7M306166.png', '럭비부 / 경기 전 견관절 &amp; 경추 안정화')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/럭비/7M306166.png" alt="럭비부 경기 전 견관절 & 경추 안정화" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">럭비부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">럭비부 경기 전 견관절 &amp; 경추 안정화</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-football"></i> 격렬한 몸싸움 대비 부상 방지</span>
-                    </div>
-                </div>
-
-                <!-- 19. 배구부 어깨 스파이크 가동 범위 회복 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="volleyball" onclick="openPhotoLightbox('assets/images/activity/스재/7M306005.png', '배구부 / 어깨 스파이크 가동 범위 회복')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/스재/7M306005.png" alt="배구부 어깨 스파이크 가동 범위 회복" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">배구부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">배구부 어깨 스파이크 가동 범위 회복</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-volleyball"></i> 관절 가동술 &amp; 상체 유연성 서포트</span>
-                    </div>
-                </div>
-
-                <!-- 20. 시범단 척추 기립근 & 골반 도수 관리 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="demoteam" onclick="openPhotoLightbox('assets/images/activity/시범단/7M306303.png', '태권도 시범단 / 척추 기립근 &amp; 골반 밸런스 도수 관리')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/시범단/7M306303.png" alt="태권도 시범단 척추 기립근 & 골반 밸런스 도수 관리" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">태권도 시범단</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">시범단 척추 기립근 &amp; 골반 도수 관리</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-shield-halved"></i> 착지 충격 흡수 체간 밸런스 교정</span>
-                    </div>
-                </div>
-
-                <!-- 21. 골프부 시합 전 15분 기능적 웜업 실습 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="golf" onclick="openPhotoLightbox('assets/images/activity/골프/7M306060.png', '골프부 / 시합 전 15분 기능적 웜업 실습')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/골프/7M306060.png" alt="골프부 시합 전 15분 기능적 웜업 실습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">골프부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">골프부 시합 전 15분 기능적 웜업 실습</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-golf-ball-tee"></i> 코어 모빌리티 &amp; 필드 맞춤 스트레칭</span>
-                    </div>
-                </div>
-
-                <!-- 22. 핸드볼부 피지컬 테크닉 실습 지도 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="handball" onclick="openPhotoLightbox('assets/images/activity/실장님/7M306215.png', '핸드볼부 / 파워 포지션 &amp; 피지컬 테크닉 지도')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/activity/실장님/7M306215.png" alt="핸드볼부 파워 포지션 및 피지컬 테크닉 지도" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">핸드볼부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">핸드볼부 피지컬 테크닉 실습 지도</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-hand"></i> 선승관 현장 파워포지션 트레이닝</span>
-                    </div>
-                </div>
-
-                <!-- 23. 품새부 대회 전 발목 지지 테이핑 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="poomsae" onclick="openPhotoLightbox('assets/images/insta/post_31.jpg', '태권도 품새부 / 전국대회 경기 전 발목 지지 테이핑')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/insta/post_31.jpg" alt="태권도 품새부 전국대회 경기 전 발목 지지 테이핑" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">태권도 품새</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">품새부 대회 전 발목 지지 테이핑</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-hand-fist"></i> 중심 발 지지력 향상 및 밸런스 보강</span>
-                    </div>
-                </div>
-
-                <!-- 24. 야구부 타자 시각 트레이닝 & 분석 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="baseball" onclick="openPhotoLightbox('assets/images/insta/post_33.jpg', '야구부 / 타자 시각 트레이닝 &amp; 메커니즘 분석')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/insta/post_33.jpg" alt="야구부 타자 시각 트레이닝 & 메커니즘 분석" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">야구부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">야구부 타자 시각 트레이닝 &amp; 분석</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-baseball-bat-ball"></i> 타격 시각 피드백 &amp; 반응속도 강화</span>
-                    </div>
-                </div>
-
-                <!-- 25. 배드민턴부 5개년 상해 역학 분석 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="badminton" onclick="openPhotoLightbox('assets/images/insta/post_34.jpg', '배드민턴부 / 5개년 상해 역학 조사 &amp; 손상 예방')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/insta/post_34.jpg" alt="배드민턴부 5개년 상해 역학 조사" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-dept">배드민턴부</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">배드민턴부 5개년 상해 역학 분석</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-table-tennis-paddle-ball"></i> 라켓 스포츠 관절 손상 예방 전략</span>
-                    </div>
-                </div>
-
-                <!-- 26. AT Center 짐볼 & 소도구 활용 코어 리컨디셔닝 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="center" onclick="openPhotoLightbox('assets/images/stretching_gymball.jpg', 'AT Center / 소도구를 활용한 코어 리컨디셔닝')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/stretching_gymball.jpg" alt="소도구를 활용한 코어 리컨디셔닝" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-center">AT Center</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">짐볼 &amp; 소도구 활용 코어 리컨디셔닝</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-kit-medical"></i> 선수 및 일반 학생 코어 안정화 세션</span>
-                    </div>
-                </div>
-
-                <!-- 27. AT Center 트레이닝 룸 전경 -->
-                <div class="gallery-card-item" data-category="dept" data-dept="center" onclick="openPhotoLightbox('assets/images/at_center_interior.jpg', 'AT Center / 선승관 B1 실내 트레이닝 전경')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/images/at_center_interior.jpg" alt="선승관 B1 AT Center 실내 트레이닝 전경" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-center">AT Center</span>
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <h4 class="gallery-card-title">선승관 B1 AT Center 트레이닝 룸</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-hospital"></i> 최첨단 재활 장비 &amp; 모달리티 시설</span>
-                    </div>
-                </div>
-
-                <!-- ========================================== -->
-                <!-- [2. 센터 활동 (center)] - 요청 4대 핵심 활동  -->
+                <!-- [1. 센터 활동 (center)] - 핵심 활동 아카이브 -->
                 <!-- ========================================== -->
                 <!-- ① 스터디: 신입기수 10주간 정기 스터디 & 실습 교육 -->
-                <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/activity/신입기수/7M306109.png', '신입기수 10주간 정기 스터디 &amp; 실무 테크닉 교육')">
+                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/activity/신입기수/7M306109.png', '신입기수 10주간 정기 스터디 &amp; 실무 테크닉 교육')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/activity/신입기수/7M306109.png" alt="신입기수 정기 스터디 & 실습 교육" class="gallery-img" loading="lazy">
                         <span class="gallery-badge badge-center">신입기수 스터디</span>
@@ -2469,7 +2056,7 @@
                 </div>
 
                 <!-- ② 오리엔테이션: 2026 신입기수 27기 공식 오리엔테이션 -->
-                <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_5.jpg', '선승관 B1 계단강의실 2026 신입기수 27기 오리엔테이션')">
+                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/insta/post_5.jpg', '선승관 B1 계단강의실 2026 신입기수 27기 오리엔테이션')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_5.jpg" alt="신입기수 27기 오리엔테이션" class="gallery-img" loading="lazy">
                         <span class="gallery-badge badge-center">오리엔테이션</span>
@@ -2482,7 +2069,7 @@
                 </div>
 
                 <!-- ③ The Brain 수상: The Brain Awards for Lab 대학원 장려상 수상 -->
-                <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_29.jpg', 'The Brain Awards for Lab 경희대 대학원 장려상 수상')">
+                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/insta/post_29.jpg', 'The Brain Awards for Lab 경희대 대학원 장려상 수상')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_29.jpg" alt="The Brain Awards for Lab 장려상 수상" class="gallery-img" loading="lazy">
                         <span class="gallery-badge badge-center">The Brain 수상</span>
@@ -2495,7 +2082,7 @@
                 </div>
 
                 <!-- ④ 학술대회 발표: 제63차 대한비만학회 춘계학술대회 연구 발표 -->
-                <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_1.jpg', '제63차 대한비만학회 춘계학술대회 구연/포스터 연구 발표')">
+                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/insta/post_1.jpg', '제63차 대한비만학회 춘계학술대회 구연/포스터 연구 발표')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_1.jpg" alt="제63차 대한비만학회 춘계학술대회 참가" class="gallery-img" loading="lazy">
                         <span class="gallery-badge badge-center">학술대회 발표</span>
@@ -5278,52 +4865,15 @@
             // =========================================================
 
             // =========================================================
-            // 2. 활동 사진 4대 탭 필터링 & 부서 폴더 스위칭
+            // 2. 활동 사진 카테고리 탭 필터링 (센터 활동 / 의무지원 / 세미나·어워즈)
             // =========================================================
             window.filterGallery = function(category, btn) {
                 document.querySelectorAll('.gallery-filter-btn').forEach(function(b) { b.classList.remove('active'); });
                 if (btn) btn.classList.add('active');
 
-                const pictoFilter = document.getElementById('dept-pictogram-filter-wrapper');
                 const items = document.querySelectorAll('.gallery-card-item');
-
-                if (category === 'dept') {
-                    // 부서별 활동사진: 상단 12개 부서 픽토그램 필터 바 표시
-                    if (pictoFilter) pictoFilter.style.display = 'block';
-                    document.querySelectorAll('.dept-picto-btn').forEach(b => b.classList.remove('active'));
-                    const allBtn = document.querySelector('.dept-picto-btn');
-                    if (allBtn) allBtn.classList.add('active');
-
-                    // 센터활동이나 의무지원처럼 그리드에 사진 카드들이 쭉 노출
-                    items.forEach(function(item) {
-                        if (item.getAttribute('data-category') === 'dept') {
-                            item.style.display = '';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                } else {
-                    // 센터 활동, 의무지원, 세미나/어워즈: 부서 필터 바 숨기고 해당 카테고리 사진 표시
-                    if (pictoFilter) pictoFilter.style.display = 'none';
-
-                    items.forEach(function(item) {
-                        if (item.getAttribute('data-category') === category) {
-                            item.style.display = '';
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                }
-            };
-
-            // 부서별 픽토그램 클릭 시 실시간 필터링 함수
-            window.filterDeptPhotos = function(deptCode, btn) {
-                document.querySelectorAll('.dept-picto-btn').forEach(b => b.classList.remove('active'));
-                if (btn) btn.classList.add('active');
-
-                const items = document.querySelectorAll('.gallery-card-item[data-category="dept"]');
                 items.forEach(function(item) {
-                    if (deptCode === 'all' || item.getAttribute('data-dept') === deptCode) {
+                    if (item.getAttribute('data-category') === category) {
                         item.style.display = '';
                     } else {
                         item.style.display = 'none';
@@ -5331,13 +4881,11 @@
                 });
             };
 
-            // 초기 로드 시 부서별 활동사진 기본 표시
+            // 초기 로드 시 '센터 활동' 기본 활성화 표시
             setTimeout(() => {
-                const pictoFilter = document.getElementById('dept-pictogram-filter-wrapper');
-                if (pictoFilter) pictoFilter.style.display = 'block';
                 const items = document.querySelectorAll('.gallery-card-item');
                 items.forEach(function(item) {
-                    if (item.getAttribute('data-category') === 'dept') {
+                    if (item.getAttribute('data-category') === 'center') {
                         item.style.display = '';
                     } else {
                         item.style.display = 'none';
