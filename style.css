@@ -7906,17 +7906,17 @@ body.no-scroll {
     transform-origin: 50% 50%;
 }
 
-/* 게이지 트랙 (기본 바탕 원 - 부드러운 샴페인/크림 그레이) */
+/* 게이지 트랙 (기본 바탕 원 - 세련된 소프트 슬레이트 트랙) */
 .gauge-track {
     fill: none;
-    stroke: #F3EFE9;
-    stroke-width: 10px;
+    stroke: #EDF2F7;
+    stroke-width: 9px;
 }
 
 /* 게이지 프로그레스 바 (차오르는 원) */
 .gauge-bar {
     fill: none;
-    stroke-width: 10px;
+    stroke-width: 9px;
     stroke-linecap: round;
     transition: stroke-dashoffset 2.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -8003,134 +8003,156 @@ body.no-scroll {
 }
 
 /* --------------------------------------------------------------------------
-   개별 테마: 1. 서비스 부문 (경희대 시그니처 크림슨 & 샴페인 골드)
+   개별 테마: 1. 교육 부문 (경희대 시그니처 크림슨 - Academic Crimson)
    -------------------------------------------------------------------------- */
-.metric-card-crimson::before {
-    background: linear-gradient(90deg, #A50034, #C5A059);
-}
-
-.metric-card-crimson .metric-cat-badge {
-    color: #A50034;
-    background: #FFF5F7;
-    border: 1px solid #F7D0D9;
-}
-
-.metric-card-crimson .gauge-bar-crimson {
-    stroke: url(#grad-crimson);
-}
-
-.metric-card-crimson .metric-center-icon {
-    background: #FFF8F9;
-    color: #A50034;
-    border: 1px solid #F3CAD3;
-    box-shadow: 0 4px 14px rgba(165, 0, 52, 0.08);
-}
-
-.metric-card-crimson .metric-footer-badge {
-    background: #FFF5F7;
-    color: #A50034;
-    border: 1px solid #F7D0D9;
-}
-
-.metric-card-crimson:hover {
-    transform: translateY(-8px);
-    border-color: #F8CAD5;
-    box-shadow: 0 16px 36px rgba(165, 0, 52, 0.12);
-}
-
-.metric-card-crimson:hover .metric-center-icon {
-    transform: scale(1.1);
-    box-shadow: 0 4px 18px rgba(165, 0, 52, 0.2);
-}
-
-/* --------------------------------------------------------------------------
-   개별 테마: 2. 교육 부문 (경희대 앤틱 골드 & 크림슨 하모니)
-   -------------------------------------------------------------------------- */
+.metric-card-edu::before,
 .metric-card-gold::before {
-    background: linear-gradient(90deg, #C5A059, #A50034);
+    background: #A50034;
 }
 
+.metric-card-edu .metric-cat-badge,
 .metric-card-gold .metric-cat-badge {
-    color: #8C6D23;
-    background: #FFFBF0;
-    border: 1px solid #F1E2B8;
+    color: #A50034;
+    background: rgba(165, 0, 52, 0.06);
+    border: 1px solid rgba(165, 0, 52, 0.15);
 }
 
+.metric-card-edu .gauge-bar-edu,
 .metric-card-gold .gauge-bar-gold {
-    stroke: url(#grad-gold);
+    stroke: url(#grad-edu);
 }
 
+.metric-card-edu .metric-center-icon,
 .metric-card-gold .metric-center-icon {
-    background: #FFFBF2;
-    color: #9A7B2C;
-    border: 1px solid #EEDBB0;
-    box-shadow: 0 4px 14px rgba(197, 160, 89, 0.12);
+    background: rgba(165, 0, 52, 0.05);
+    color: #A50034;
+    border: 1px solid rgba(165, 0, 52, 0.12);
+    box-shadow: 0 4px 14px rgba(165, 0, 52, 0.06);
 }
 
+.metric-card-edu .metric-footer-badge,
 .metric-card-gold .metric-footer-badge {
-    background: #FFFBF0;
-    color: #8C6D23;
-    border: 1px solid #F1E2B8;
+    background: rgba(165, 0, 52, 0.06);
+    color: #A50034;
+    border: 1px solid rgba(165, 0, 52, 0.15);
 }
 
+.metric-card-edu:hover,
 .metric-card-gold:hover {
     transform: translateY(-8px);
-    border-color: #E2CCA0;
-    box-shadow: 0 16px 36px rgba(197, 160, 89, 0.14);
+    border-color: rgba(165, 0, 52, 0.25);
+    box-shadow: 0 16px 36px rgba(165, 0, 52, 0.08);
 }
 
+.metric-card-edu:hover .metric-center-icon,
 .metric-card-gold:hover .metric-center-icon {
     transform: scale(1.1);
-    box-shadow: 0 4px 18px rgba(197, 160, 89, 0.25);
+    box-shadow: 0 4px 18px rgba(165, 0, 52, 0.18);
 }
 
 /* --------------------------------------------------------------------------
-   개별 테마: 3. 연구 부문 (경희대 딥 와인 버건디 & 아카데믹 크림슨)
+   개별 테마: 2. 연구 부문 (경희대 로열 다크 네이비 - Prestige Research Navy)
    -------------------------------------------------------------------------- */
+.metric-card-res::before,
 .metric-card-blue::before {
-    background: linear-gradient(90deg, #830026, #A50034);
+    background: #00305E;
 }
 
+.metric-card-res .metric-cat-badge,
 .metric-card-blue .metric-cat-badge {
-    color: #7A0A26;
-    background: #FFF5F7;
-    border: 1px solid #F7D0D9;
+    color: #00305E;
+    background: rgba(0, 48, 94, 0.06);
+    border: 1px solid rgba(0, 48, 94, 0.15);
 }
 
+.metric-card-res .gauge-bar-res,
 .metric-card-blue .gauge-bar-blue {
-    stroke: url(#grad-blue);
+    stroke: url(#grad-res);
 }
 
+.metric-card-res .metric-center-icon,
 .metric-card-blue .metric-center-icon {
-    background: #FFF8F9;
-    color: #8B0029;
-    border: 1px solid #F3CAD3;
-    box-shadow: 0 4px 14px rgba(165, 0, 52, 0.08);
+    background: rgba(0, 48, 94, 0.05);
+    color: #00305E;
+    border: 1px solid rgba(0, 48, 94, 0.12);
+    box-shadow: 0 4px 14px rgba(0, 48, 94, 0.06);
 }
 
+.metric-card-res:hover,
 .metric-card-blue:hover {
     transform: translateY(-8px);
-    border-color: #F8CAD5;
-    box-shadow: 0 16px 36px rgba(165, 0, 52, 0.12);
+    border-color: rgba(0, 48, 94, 0.25);
+    box-shadow: 0 16px 36px rgba(0, 48, 94, 0.08);
 }
 
+.metric-card-res:hover .metric-center-icon,
 .metric-card-blue:hover .metric-center-icon {
     transform: scale(1.1);
-    box-shadow: 0 4px 18px rgba(165, 0, 52, 0.2);
+    box-shadow: 0 4px 18px rgba(0, 48, 94, 0.18);
 }
 
 .metric-footer-interactive {
-    background: #FFF0F3;
-    border: 1px solid #FBCFE8;
-    color: #9F1239;
+    background: rgba(0, 48, 94, 0.06);
+    border: 1px solid rgba(0, 48, 94, 0.16);
+    color: #00305E;
     cursor: pointer;
+    font-weight: 700;
 }
 
+.metric-card-res:hover .metric-footer-interactive,
 .metric-card-blue:hover .metric-footer-interactive {
-    background: #A50034;
-    border-color: #A50034;
+    background: #00305E;
+    border-color: #00305E;
     color: #ffffff;
-    box-shadow: 0 4px 14px rgba(165, 0, 52, 0.28);
+    box-shadow: 0 4px 14px rgba(0, 48, 94, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   개별 테마: 3. 서비스 부문 (경희대 웜 골드 - Warm Gold Service)
+   -------------------------------------------------------------------------- */
+.metric-card-srv::before,
+.metric-card-crimson::before {
+    background: #C5A059;
+}
+
+.metric-card-srv .metric-cat-badge,
+.metric-card-crimson .metric-cat-badge {
+    color: #8E681A;
+    background: rgba(197, 160, 89, 0.1);
+    border: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.metric-card-srv .gauge-bar-srv,
+.metric-card-crimson .gauge-bar-crimson {
+    stroke: url(#grad-srv);
+}
+
+.metric-card-srv .metric-center-icon,
+.metric-card-crimson .metric-center-icon {
+    background: rgba(197, 160, 89, 0.08);
+    color: #8E681A;
+    border: 1px solid rgba(197, 160, 89, 0.2);
+    box-shadow: 0 4px 14px rgba(197, 160, 89, 0.06);
+}
+
+.metric-card-srv .metric-footer-badge,
+.metric-card-crimson .metric-footer-badge {
+    background: rgba(197, 160, 89, 0.1);
+    color: #8E681A;
+    border: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.metric-card-srv:hover,
+.metric-card-crimson:hover {
+    transform: translateY(-8px);
+    border-color: rgba(197, 160, 89, 0.35);
+    box-shadow: 0 16px 36px rgba(197, 160, 89, 0.1);
+}
+
+.metric-card-srv:hover .metric-center-icon,
+.metric-card-crimson:hover .metric-center-icon {
+    transform: scale(1.1);
+    box-shadow: 0 4px 18px rgba(197, 160, 89, 0.2);
 }
 
 /* 하단 라이브 아카이브 상태 표시 바 */

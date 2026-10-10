@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261010_crimson_gold_palette">
+    <link rel="stylesheet" href="style.css?v=20261010_khu_trinity_colors">
 </head>
 <body>
 
@@ -345,8 +345,8 @@
             <!-- 3대 핵심 역량 원형 프로그레스 게이지 그리드 (교육 -> 연구 -> 서비스 순서) -->
             <div class="circular-metric-grid">
                 
-                <!-- 1. 교육 부문 (경희대 웜 골드 링 - 100% 채움) -->
-                <div class="metric-card metric-card-gold">
+                <!-- 1. 교육 부문 (경희대 시그니처 크림슨 링 - 100% 채움) -->
+                <div class="metric-card metric-card-edu">
                     <div class="metric-card-top">
                         <span class="metric-cat-badge"><i class="fa-solid fa-graduation-cap"></i> 교육 부문 · EDUCATION</span>
                     </div>
@@ -355,16 +355,16 @@
                     <div class="metric-gauge-wrapper">
                         <svg class="metric-gauge-svg" viewBox="0 0 160 160">
                             <defs>
-                                <linearGradient id="grad-gold" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <!-- 교육 부문: 앤틱 웜 골드 -> 경희대 딥 크림슨 그라데이션 -->
-                                    <stop offset="0%" stop-color="#C5A059" />
-                                    <stop offset="100%" stop-color="#A50034" />
+                                <linearGradient id="grad-edu" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <!-- 교육 부문: 경희대 공식 시그니처 크림슨 그라데이션 -->
+                                    <stop offset="0%" stop-color="#C51648" />
+                                    <stop offset="100%" stop-color="#800028" />
                                 </linearGradient>
                             </defs>
                             <!-- 배경 트랙 -->
                             <circle class="gauge-track" cx="80" cy="80" r="64" />
                             <!-- 회전 프로그레스 링 (100% 완전 채움) -->
-                            <circle class="gauge-bar gauge-bar-gold" cx="80" cy="80" r="64" style="stroke-dasharray: 402.12; stroke-dashoffset: 402.12;" data-target-offset="0" />
+                            <circle class="gauge-bar gauge-bar-edu" cx="80" cy="80" r="64" style="stroke-dasharray: 402.12; stroke-dashoffset: 402.12;" data-target-offset="0" />
                         </svg>
 
                         <!-- 게이지 중앙 앰비언트 아이콘 & 백라이트 -->
@@ -388,8 +388,8 @@
                     </div>
                 </div>
 
-                <!-- 2. 연구 부문 (경희대 딥 버건디 크림슨 링 - 100% 채움, 클릭 시 논문 모달) -->
-                <div class="metric-card metric-card-blue clickable-stat-card" id="btn-research-modal" onclick="openResearchModal()" style="cursor: pointer;" title="클릭하여 연구 논문 목록 확인">
+                <!-- 2. 연구 부문 (경희대 로열 다크 네이비 링 - 100% 채움, 클릭 시 논문 모달) -->
+                <div class="metric-card metric-card-res clickable-stat-card" id="btn-research-modal" onclick="openResearchModal()" style="cursor: pointer;" title="클릭하여 연구 논문 목록 확인">
                     <div class="metric-card-top">
                         <span class="metric-cat-badge"><i class="fa-solid fa-microscope"></i> 연구 부문 · RESEARCH</span>
                     </div>
@@ -398,16 +398,16 @@
                     <div class="metric-gauge-wrapper">
                         <svg class="metric-gauge-svg" viewBox="0 0 160 160">
                             <defs>
-                                <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <!-- 연구 부문: 학술적 깊이의 딥 와인 버건디 -> 경희대 크림슨 그라데이션 -->
-                                    <stop offset="0%" stop-color="#830026" />
-                                    <stop offset="100%" stop-color="#A50034" />
+                                <linearGradient id="grad-res" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <!-- 연구 부문: 경희대 공식 아카데믹 다크 네이비 그라데이션 -->
+                                    <stop offset="0%" stop-color="#024B8E" />
+                                    <stop offset="100%" stop-color="#002244" />
                                 </linearGradient>
                             </defs>
                             <!-- 배경 트랙 -->
                             <circle class="gauge-track" cx="80" cy="80" r="64" />
                             <!-- 회전 프로그레스 링 (100% 완전 채움) -->
-                            <circle class="gauge-bar gauge-bar-blue" cx="80" cy="80" r="64" style="stroke-dasharray: 402.12; stroke-dashoffset: 402.12;" data-target-offset="0" />
+                            <circle class="gauge-bar gauge-bar-res" cx="80" cy="80" r="64" style="stroke-dasharray: 402.12; stroke-dashoffset: 402.12;" data-target-offset="0" />
                         </svg>
 
                         <!-- 게이지 중앙 앰비언트 아이콘 & 백라이트 -->
@@ -431,8 +431,8 @@
                     </div>
                 </div>
 
-                <!-- 3. 서비스 부문 (경희대 시그니처 크림슨 & 샴페인 골드 링 - 100% 채움) -->
-                <div class="metric-card metric-card-crimson">
+                <!-- 3. 서비스 부문 (경희대 샴페인 웜 골드 링 - 100% 채움) -->
+                <div class="metric-card metric-card-srv">
                     <div class="metric-card-top">
                         <span class="metric-cat-badge"><i class="fa-solid fa-hand-holding-medical"></i> 서비스 부문 · SERVICE</span>
                     </div>
@@ -441,16 +441,16 @@
                     <div class="metric-gauge-wrapper">
                         <svg class="metric-gauge-svg" viewBox="0 0 160 160">
                             <defs>
-                                <linearGradient id="grad-crimson" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <!-- 서비스 부문: 경희대 시그니처 크림슨 -> 웜 앤틱 골드 그라데이션 -->
-                                    <stop offset="0%" stop-color="#A50034" />
-                                    <stop offset="100%" stop-color="#C5A059" />
+                                <linearGradient id="grad-srv" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <!-- 서비스 부문: 경희대 공식 샴페인 웜 골드 그라데이션 -->
+                                    <stop offset="0%" stop-color="#D4AF37" />
+                                    <stop offset="100%" stop-color="#A67C1E" />
                                 </linearGradient>
                             </defs>
                             <!-- 배경 트랙 -->
                             <circle class="gauge-track" cx="80" cy="80" r="64" />
                             <!-- 회전 프로그레스 링 (100% 완전 채움) -->
-                            <circle class="gauge-bar gauge-bar-crimson" cx="80" cy="80" r="64" style="stroke-dasharray: 402.12; stroke-dashoffset: 402.12;" data-target-offset="0" />
+                            <circle class="gauge-bar gauge-bar-srv" cx="80" cy="80" r="64" style="stroke-dasharray: 402.12; stroke-dashoffset: 402.12;" data-target-offset="0" />
                         </svg>
 
                         <!-- 게이지 중앙 앰비언트 아이콘 & 백라이트 -->
