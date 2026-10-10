@@ -2029,21 +2029,90 @@
                 <p class="section-subtitle">선수 케어 현장과 센터의 생생한 순간들을 담은 아카이브입니다.</p>
             </div>
 
-            <!-- 메인 카테고리 필터 탭 (센터 활동 / 의무지원 / 세미나/어워즈) -->
+            <!-- 메인 카테고리 필터 탭 (부서별 활동사진 / 센터 활동 / 의무지원 / 세미나/어워즈) -->
             <div class="gallery-filter-container">
-                <button type="button" class="gallery-filter-btn active" onclick="filterGallery('center', this)"><i class="fa-solid fa-kit-medical"></i> 센터 활동</button>
+                <button type="button" class="gallery-filter-btn active" onclick="filterGallery('dept', this)"><i class="fa-solid fa-folder-open"></i> 부서별 활동사진</button>
+                <button type="button" class="gallery-filter-btn" onclick="filterGallery('center', this)"><i class="fa-solid fa-kit-medical"></i> 센터 활동</button>
                 <button type="button" class="gallery-filter-btn" onclick="filterGallery('medical', this)"><i class="fa-solid fa-truck-medical"></i> 의무지원</button>
                 <button type="button" class="gallery-filter-btn" onclick="filterGallery('seminar', this)"><i class="fa-solid fa-graduation-cap"></i> 세미나 / 어워즈</button>
+            </div>
+
+            <!-- [부서별 활동사진 전용] 상단 12개 부서 공식 픽토그램 필터 바 -->
+            <div class="dept-pictogram-filter-wrapper" id="dept-pictogram-filter-wrapper">
+                <div class="dept-pictogram-filter-scroll">
+                    <button type="button" class="dept-picto-btn active" onclick="filterDeptPhotos('all', this)">
+                        <span class="dpb-icon dpb-all"><i class="fa-solid fa-border-all"></i></span>
+                        <span class="dpb-name">전체 부서</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('soccer', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_soccer.jpg" alt="축구" class="dept-picto-img"></span>
+                        <span class="dpb-name">축구부</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('baseball', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_baseball.jpg" alt="야구" class="dept-picto-img"></span>
+                        <span class="dpb-name">야구부</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('basketball', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_basketball.jpg" alt="농구" class="dept-picto-img"></span>
+                        <span class="dpb-name">농구부</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('volleyball', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_volleyball.jpg" alt="배구" class="dept-picto-img"></span>
+                        <span class="dpb-name">배구부</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('rugby', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_rugby.jpg" alt="럭비" class="dept-picto-img"></span>
+                        <span class="dpb-name">럭비부</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('golf', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_golf.jpg" alt="골프" class="dept-picto-img"></span>
+                        <span class="dpb-name">골프부</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('badminton', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_badminton.jpg?v=1787716329002" alt="배드민턴" class="dept-picto-img"></span>
+                        <span class="dpb-name">배드민턴부</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('handball', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_handball.jpg" alt="핸드볼" class="dept-picto-img"></span>
+                        <span class="dpb-name">핸드볼부</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('demoteam', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_demoteam.jpg" alt="시범단" class="dept-picto-img"></span>
+                        <span class="dpb-name">태권도 시범단</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('gyeorugi', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_gyeorugi.jpg" alt="겨루기" class="dept-picto-img"></span>
+                        <span class="dpb-name">태권도 겨루기부</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('poomsae', this)">
+                        <span class="dpb-icon"><img src="assets/pictogram_poomsae.jpg" alt="품새" class="dept-picto-img"></span>
+                        <span class="dpb-name">태권도 품새부</span>
+                    </button>
+                    <button type="button" class="dept-picto-btn" onclick="filterDeptPhotos('center', this)">
+                        <span class="dpb-icon dpb-center"><i class="fa-solid fa-kit-medical"></i></span>
+                        <span class="dpb-name">AT Center</span>
+                    </button>
+                </div>
             </div>
 
             <!-- 센터 활동, 의무지원, 세미나/어워즈 활동 사진 갤러리 그리드 -->
             <div class="gallery-grid" id="activities-gallery-grid">
                 
+                <!-- [부서별 활동사진 안내 카드] 사진 준비 중 Empty State -->
+                <div class="gallery-empty-state" data-category="dept" id="dept-empty-placeholder">
+                    <div class="empty-state-icon">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <h4 class="empty-state-title" id="dept-empty-title">부서별 현장 활동 사진 업데이트 준비 중</h4>
+                    <p class="empty-state-desc" id="dept-empty-desc">12개 부서 선수 케어 현장 사진은 정밀 선별 및 매칭 작업 후 순차적으로 업로드될 예정입니다.</p>
+                    <span class="empty-state-badge"><i class="fa-solid fa-clock"></i> COMING SOON</span>
+                </div>
+
                 <!-- ========================================== -->
                 <!-- [1. 센터 활동 (center)] - 핵심 활동 아카이브 -->
                 <!-- ========================================== -->
                 <!-- ① 스터디: 신입기수 10주간 정기 스터디 & 실습 교육 -->
-                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/activity/신입기수/7M306109.png', '신입기수 10주간 정기 스터디 &amp; 실무 테크닉 교육')">
+                <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/activity/신입기수/7M306109.png', '신입기수 10주간 정기 스터디 &amp; 실무 테크닉 교육')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/activity/신입기수/7M306109.png" alt="신입기수 정기 스터디 & 실습 교육" class="gallery-img" loading="lazy">
                         <span class="gallery-badge badge-center">신입기수 스터디</span>
@@ -2056,7 +2125,7 @@
                 </div>
 
                 <!-- ② 오리엔테이션: 2026 신입기수 27기 공식 오리엔테이션 -->
-                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/insta/post_5.jpg', '선승관 B1 계단강의실 2026 신입기수 27기 오리엔테이션')">
+                <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_5.jpg', '선승관 B1 계단강의실 2026 신입기수 27기 오리엔테이션')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_5.jpg" alt="신입기수 27기 오리엔테이션" class="gallery-img" loading="lazy">
                         <span class="gallery-badge badge-center">오리엔테이션</span>
@@ -2069,7 +2138,7 @@
                 </div>
 
                 <!-- ③ The Brain 수상: The Brain Awards for Lab 대학원 장려상 수상 -->
-                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/insta/post_29.jpg', 'The Brain Awards for Lab 경희대 대학원 장려상 수상')">
+                <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_29.jpg', 'The Brain Awards for Lab 경희대 대학원 장려상 수상')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_29.jpg" alt="The Brain Awards for Lab 장려상 수상" class="gallery-img" loading="lazy">
                         <span class="gallery-badge badge-center">The Brain 수상</span>
@@ -2082,7 +2151,7 @@
                 </div>
 
                 <!-- ④ 학술대회 발표: 제63차 대한비만학회 춘계학술대회 연구 발표 -->
-                <div class="gallery-card-item" data-category="center" onclick="openPhotoLightbox('assets/images/insta/post_1.jpg', '제63차 대한비만학회 춘계학술대회 구연/포스터 연구 발표')">
+                <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_1.jpg', '제63차 대한비만학회 춘계학술대회 구연/포스터 연구 발표')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_1.jpg" alt="제63차 대한비만학회 춘계학술대회 참가" class="gallery-img" loading="lazy">
                         <span class="gallery-badge badge-center">학술대회 발표</span>
@@ -4865,31 +4934,90 @@
             // =========================================================
 
             // =========================================================
-            // 2. 활동 사진 카테고리 탭 필터링 (센터 활동 / 의무지원 / 세미나·어워즈)
+            // 2. 활동 사진 4대 카테고리 탭 필터링 & 부서 픽토그램 연동
             // =========================================================
             window.filterGallery = function(category, btn) {
                 document.querySelectorAll('.gallery-filter-btn').forEach(function(b) { b.classList.remove('active'); });
                 if (btn) btn.classList.add('active');
 
+                const pictoFilter = document.getElementById('dept-pictogram-filter-wrapper');
+                const emptyPlaceholder = document.getElementById('dept-empty-placeholder');
                 const items = document.querySelectorAll('.gallery-card-item');
-                items.forEach(function(item) {
-                    if (item.getAttribute('data-category') === category) {
-                        item.style.display = '';
-                    } else {
+
+                if (category === 'dept') {
+                    // 부서별 활동사진: 상단 12개 부서 픽토그램 필터 바 표시
+                    if (pictoFilter) pictoFilter.style.display = 'block';
+                    if (emptyPlaceholder) emptyPlaceholder.style.display = 'flex';
+                    document.querySelectorAll('.dept-picto-btn').forEach(b => b.classList.remove('active'));
+                    const allBtn = document.querySelector('.dept-picto-btn');
+                    if (allBtn) allBtn.classList.add('active');
+
+                    // 일반 사진 카드들은 숨김
+                    items.forEach(function(item) {
                         item.style.display = 'none';
-                    }
-                });
+                    });
+                } else {
+                    // 센터 활동, 의무지원, 세미나/어워즈: 부서 필터 바 및 안내 숨기고 해당 카테고리 사진 표시
+                    if (pictoFilter) pictoFilter.style.display = 'none';
+                    if (emptyPlaceholder) emptyPlaceholder.style.display = 'none';
+
+                    items.forEach(function(item) {
+                        if (item.getAttribute('data-category') === category) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                }
             };
 
-            // 초기 로드 시 '센터 활동' 기본 활성화 표시
+            // 부서별 픽토그램 클릭 시 실시간 안내 변경 함수
+            window.filterDeptPhotos = function(deptCode, btn) {
+                document.querySelectorAll('.dept-picto-btn').forEach(b => b.classList.remove('active'));
+                if (btn) btn.classList.add('active');
+
+                const deptNames = {
+                    'all': '전체 부서',
+                    'soccer': '축구부',
+                    'baseball': '야구부',
+                    'basketball': '농구부',
+                    'volleyball': '배구부',
+                    'rugby': '럭비부',
+                    'golf': '골프부',
+                    'badminton': '배드민턴부',
+                    'handball': '핸드볼부',
+                    'demoteam': '태권도 시범단',
+                    'gyeorugi': '태권도 겨루기부',
+                    'poomsae': '태권도 품새부',
+                    'center': 'AT Center'
+                };
+
+                const emptyTitle = document.getElementById('dept-empty-title');
+                const emptyDesc = document.getElementById('dept-empty-desc');
+                const targetName = deptNames[deptCode] || '해당 부서';
+
+                if (emptyTitle) {
+                    emptyTitle.textContent = deptCode === 'all' 
+                        ? '부서별 현장 활동 사진 업데이트 준비 중' 
+                        : `${targetName} 현장 활동 사진 준비 중`;
+                }
+                if (emptyDesc) {
+                    emptyDesc.textContent = deptCode === 'all'
+                        ? '12개 부서 선수 케어 현장 사진은 정밀 선별 및 매칭 작업 후 순차적으로 업로드될 예정입니다.'
+                        : `${targetName} 선수 케어 및 의무지원 공식 아카이브 사진이 곧 업데이트됩니다.`;
+                }
+            };
+
+            // 초기 로드 시 '부서별 활동사진' 기본 활성화 (픽토그램 바 바로 노출)
             setTimeout(() => {
+                const pictoFilter = document.getElementById('dept-pictogram-filter-wrapper');
+                if (pictoFilter) pictoFilter.style.display = 'block';
+                const emptyPlaceholder = document.getElementById('dept-empty-placeholder');
+                if (emptyPlaceholder) emptyPlaceholder.style.display = 'flex';
+
                 const items = document.querySelectorAll('.gallery-card-item');
                 items.forEach(function(item) {
-                    if (item.getAttribute('data-category') === 'center') {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
+                    item.style.display = 'none';
                 });
             }, 50);
         });
