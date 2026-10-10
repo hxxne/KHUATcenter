@@ -7836,7 +7836,7 @@ body.no-scroll {
     gap: 28px;
     position: relative;
     z-index: 2;
-    margin-bottom: 45px;
+    margin-bottom: 0;
 }
 
 /* 공통 카드 스타일 (프리미엄 퓨어 화이트 카드 & 소프트 섀도우) */
