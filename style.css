@@ -7732,3 +7732,488 @@ body.no-scroll {
     border-top: 1px solid rgba(0, 0, 0, 0.04);
     background: linear-gradient(180deg, #FAFBFD 0%, #F1F5F9 100%) !important;
 }
+
+/* ==========================================================================
+   11. AT 센터 누적 기록: 3대 핵심 역량 원형 게이지 & 차트 (Circular Metric)
+   - 스마트워치 피트니스 링 및 스포츠 바이오메트릭스 시각화 스타일
+   - 12시 방향부터 회전하며 차오르는 다이내믹 SVG Progress Ring
+   ========================================================================== */
+
+.circular-metric-section {
+    position: relative;
+    background: #090d16;
+    background-image: 
+        radial-gradient(circle at 50% 20%, rgba(30, 58, 138, 0.18) 0%, transparent 60%),
+        radial-gradient(circle at 15% 70%, rgba(153, 0, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 70%, rgba(217, 119, 6, 0.12) 0%, transparent 50%);
+    padding: 100px 0 110px 0;
+    overflow: hidden;
+    color: #ffffff;
+    /* 이전/다음 섹션과의 사선 트랜지션 (Slanted Sport Edge) */
+    clip-path: polygon(0 0, 100% 30px, 100% 100%, 0 calc(100% - 30px));
+    margin-top: -30px;
+    margin-bottom: -30px;
+    z-index: 10;
+}
+
+/* 텍스처 및 미세 테크 그리드 오버레이 */
+.metric-bg-grid-overlay {
+    position: absolute;
+    inset: 0;
+    background-size: 36px 36px;
+    background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 섹션 상단 헤더 */
+.metric-header {
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.metric-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #94a3b8;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.metric-live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 10px #10b981;
+    animation: metricPulseDot 2s infinite ease-in-out;
+}
+
+@keyframes metricPulseDot {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.4); opacity: 0.6; }
+}
+
+.metric-main-title {
+    font-family: var(--font-sans);
+    font-size: 2.35rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -0.8px;
+    margin-bottom: 12px;
+}
+
+.metric-title-divider {
+    width: 54px;
+    height: 4px;
+    background: linear-gradient(90deg, #990000 0%, #fbbf24 50%, #2563eb 100%);
+    border-radius: 2px;
+    margin: 0 auto 18px auto;
+}
+
+.metric-sub-desc {
+    font-size: 1.05rem;
+    color: #94a3b8;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+/* 3대 핵심 역량 원형 게이지 그리드 (3열 레이아웃) */
+.circular-metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+/* 공통 카드 스타일 (스마트 다크 글래스모피즘) */
+.metric-card {
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 34px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+/* 카드 상단 카테고리 태그 & 퍼포먼스 칩 */
+.metric-card-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.metric-cat-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.metric-rate-chip {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.06);
+    color: #cbd5e1;
+}
+
+/* 원형 프로그레스 게이지 래퍼 */
+.metric-gauge-wrapper {
+    position: relative;
+    width: 164px;
+    height: 164px;
+    margin: 0 auto 24px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.metric-gauge-svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg); /* 12시 방향부터 채워지도록 회전 */
+    transform-origin: 50% 50%;
+}
+
+/* 게이지 트랙 (기본 바탕 원) */
+.gauge-track {
+    fill: none;
+    stroke: rgba(255, 255, 255, 0.07);
+    stroke-width: 11px;
+}
+
+/* 게이지 프로그레스 바 (차오르는 원) */
+.gauge-bar {
+    fill: none;
+    stroke-width: 11px;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 2.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 게이지 중앙 아이콘 박스 */
+.metric-gauge-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.metric-center-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.55rem;
+    transition: transform 0.3s ease;
+}
+
+/* 데이터 수치 영역 */
+.metric-data-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metric-number-wrap {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.metric-num {
+    font-family: var(--font-sans);
+    font-size: 2.85rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1.2px;
+    color: #ffffff;
+}
+
+.metric-suffix {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #94a3b8;
+}
+
+.metric-item-title {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #f1f5f9;
+    letter-spacing: -0.4px;
+    margin-bottom: 10px;
+}
+
+.metric-item-desc {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    word-break: keep-all;
+    min-height: 42px;
+}
+
+/* 카드 하단 뱃지 */
+.metric-footer-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    color: #cbd5e1;
+    transition: all 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   개별 테마: 1. 케어 부문 (버건디 링 - Crimson)
+   -------------------------------------------------------------------------- */
+.metric-card-crimson::before {
+    background: linear-gradient(90deg, #990000, #ff3366);
+}
+
+.metric-card-crimson .metric-cat-badge {
+    color: #ff4d6d;
+}
+
+.metric-card-crimson .gauge-bar-crimson {
+    stroke: url(#grad-crimson);
+    filter: url(#glow-crimson);
+}
+
+.metric-card-crimson .metric-center-icon {
+    background: rgba(225, 29, 72, 0.12);
+    color: #ff3366;
+    border: 1px solid rgba(255, 51, 102, 0.3);
+    box-shadow: 0 0 20px rgba(225, 29, 72, 0.25);
+}
+
+.metric-card-crimson:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 51, 102, 0.45);
+    box-shadow: 0 16px 40px rgba(153, 0, 0, 0.3);
+}
+
+.metric-card-crimson:hover .metric-center-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 51, 102, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   개별 테마: 2. 교육 부문 (골드 링 - Amber Gold)
+   -------------------------------------------------------------------------- */
+.metric-card-gold::before {
+    background: linear-gradient(90deg, #d97706, #fbbf24);
+}
+
+.metric-card-gold .metric-cat-badge {
+    color: #fbbf24;
+}
+
+.metric-card-gold .gauge-bar-gold {
+    stroke: url(#grad-gold);
+    filter: url(#glow-gold);
+}
+
+.metric-card-gold .metric-center-icon {
+    background: rgba(245, 158, 11, 0.12);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.25);
+}
+
+.metric-card-gold:hover {
+    transform: translateY(-8px);
+    border-color: rgba(251, 191, 36, 0.45);
+    box-shadow: 0 16px 40px rgba(217, 119, 6, 0.3);
+}
+
+.metric-card-gold:hover .metric-center-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   개별 테마: 3. 연구 부문 (로얄 블루 링 - Royal Blue)
+   -------------------------------------------------------------------------- */
+.metric-card-blue::before {
+    background: linear-gradient(90deg, #1d4ed8, #60a5fa);
+}
+
+.metric-card-blue .metric-cat-badge {
+    color: #60a5fa;
+}
+
+.metric-card-blue .gauge-bar-blue {
+    stroke: url(#grad-blue);
+    filter: url(#glow-blue);
+}
+
+.metric-card-blue .metric-center-icon {
+    background: rgba(37, 99, 235, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+}
+
+.metric-card-blue:hover {
+    transform: translateY(-8px);
+    border-color: rgba(96, 165, 250, 0.45);
+    box-shadow: 0 16px 40px rgba(37, 99, 235, 0.3);
+}
+
+.metric-card-blue:hover .metric-center-icon {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(96, 165, 250, 0.6);
+}
+
+.metric-footer-interactive {
+    background: rgba(37, 99, 235, 0.2);
+    border-color: rgba(96, 165, 250, 0.4);
+    color: #93c5fd;
+    cursor: pointer;
+}
+
+.metric-card-blue:hover .metric-footer-interactive {
+    background: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 0 14px rgba(37, 99, 235, 0.5);
+}
+
+/* 하단 라이브 아카이브 상태 표시 바 */
+.metric-bottom-status-bar {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.metric-status-inner {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 24px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    color: #94a3b8;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.metric-status-led {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+    animation: metricPulseDot 2s infinite ease-in-out;
+}
+
+.metric-status-text strong {
+    color: #38bdf8;
+    letter-spacing: 0.5px;
+}
+
+/* --------------------------------------------------------------------------
+   반응형 최적화 (태블릿 & 모바일)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+    .circular-metric-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 22px;
+    }
+    
+    .metric-card:last-child {
+        grid-column: span 2;
+        max-width: 500px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .circular-metric-section {
+        padding: 70px 0 80px 0;
+        clip-path: polygon(0 0, 100% 20px, 100% 100%, 0 calc(100% - 20px));
+        margin-top: -20px;
+        margin-bottom: -20px;
+    }
+
+    .metric-main-title {
+        font-size: 1.85rem;
+    }
+
+    .circular-metric-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .metric-card:last-child {
+        grid-column: span 1;
+        max-width: 100%;
+    }
+
+    .metric-gauge-wrapper {
+        width: 150px;
+        height: 150px;
+    }
+
+    .metric-num {
+        font-size: 2.4rem;
+    }
+}
+

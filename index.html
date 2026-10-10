@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261010_hud_dashboard">
+    <link rel="stylesheet" href="style.css?v=20261010_circular_metric">
 </head>
 <body>
 
@@ -332,103 +332,169 @@
             </section>
 
     <!-- ======================================================= -->
-    <!-- 07. AT 센터 누적 기록: 스포츠 사이언스 랩 HUD 대시보드 -->
+    <!-- 07. AT 센터 누적 기록: 3대 핵심 역량 원형 게이지 (Circular Metric) -->
     <!-- ======================================================= -->
-    <section id="dashboard" class="dashboard-hud-section">
-        <div class="hud-bg-grid-overlay"></div>
+    <section id="dashboard" class="circular-metric-section">
+        <div class="metric-bg-grid-overlay"></div>
         <div class="container relative-z">
-            <div class="hud-header text-center">
-                <div class="hud-pill-badge">
-                    <span class="hud-live-dot"></span>
-                    <span>SPORTS SCIENCE LAB · CUMULATIVE METRICS</span>
+            <div class="metric-header text-center">
+                <div class="metric-pill-badge">
+                    <span class="metric-live-dot"></span>
+                    <span>BIOMETRIC PERFORMANCE · CIRCULAR METRICS</span>
                 </div>
-                <h2 class="hud-main-title">AT 센터 누적 기록</h2>
-                <div class="hud-title-divider"></div>
-                <p class="hud-sub-desc">12개 전담 운동부 현장 케어부터 국제 학술 연구까지, 숫자로 증명하는 스포츠의학 전문성</p>
+                <h2 class="metric-main-title">AT 센터 3대 핵심 역량 기록</h2>
+                <div class="metric-title-divider"></div>
+                <p class="metric-sub-desc">케어 · 교육 · 연구 3대 핵심 영역을 스마트 스포츠의학 바이오메트릭스 게이지로 증명합니다</p>
             </div>
 
-            <!-- Stats Counter HUD Grid (4대 핵심 성과 카드) -->
-            <div class="hud-stats-grid">
+            <!-- 3대 핵심 역량 원형 프로그레스 게이지 그리드 -->
+            <div class="circular-metric-grid">
                 
-                <!-- Card 1: 누적 케어 (버건디 글로우) -->
-                <div class="hud-card hud-card-crimson">
-                    <div class="hud-card-top">
-                        <div class="hud-icon-box">
-                            <i class="fa-solid fa-heart-pulse"></i>
+                <!-- 1. 케어 부문 (버건디 링) -->
+                <div class="metric-card metric-card-crimson">
+                    <div class="metric-card-top">
+                        <span class="metric-cat-badge"><i class="fa-solid fa-notes-medical"></i> 케어 부문 · CARE</span>
+                        <span class="metric-rate-chip">92% PERFORMANCE</span>
+                    </div>
+
+                    <!-- 원형 프로그레스 게이지 SVG -->
+                    <div class="metric-gauge-wrapper">
+                        <svg class="metric-gauge-svg" viewBox="0 0 160 160">
+                            <defs>
+                                <linearGradient id="grad-crimson" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#990000" />
+                                    <stop offset="100%" stop-color="#ff3366" />
+                                </linearGradient>
+                                <filter id="glow-crimson" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#ff3366" flood-opacity="0.6"/>
+                                </filter>
+                            </defs>
+                            <!-- 배경 트랙 -->
+                            <circle class="gauge-track" cx="80" cy="80" r="64" />
+                            <!-- 회전 프로그레스 링 -->
+                            <circle class="gauge-bar gauge-bar-crimson" cx="80" cy="80" r="64" style="stroke-dasharray: 402.12; stroke-dashoffset: 402.12;" data-target-offset="32.17" />
+                        </svg>
+
+                        <!-- 게이지 중앙 앰비언트 아이콘 & 백라이트 -->
+                        <div class="metric-gauge-center">
+                            <div class="metric-center-icon">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                            </div>
                         </div>
-                        <span class="hud-stat-tag">선수 케어</span>
                     </div>
-                    <div class="hud-number-box">
-                        <span class="stat-number hud-num" data-target="15000">15,000</span><span class="hud-suffix">+</span>
-                    </div>
-                    <h3 class="hud-card-title">선수 부상 &amp; 컨디셔닝 케어</h3>
-                    <p class="hud-card-desc">급성 손상 처치, 경기 전 관절 테이핑 및 복귀 리컨디셔닝</p>
-                    <div class="hud-badge-pill">
-                        <i class="fa-solid fa-bolt"></i> 12개 운동부 밀착 전담
+
+                    <!-- 데이터 수치 및 상세 정보 -->
+                    <div class="metric-data-content">
+                        <div class="metric-number-wrap">
+                            <span class="stat-number metric-num" data-target="15000">15,000</span><span class="metric-suffix">+ 건</span>
+                        </div>
+                        <h3 class="metric-item-title">선수 맞춤형 컨디셔닝</h3>
+                        <p class="metric-item-desc">12개 운동부 급성 손상 응급처치, 관절 테이핑 및 복귀 리컨디셔닝</p>
+                        <div class="metric-footer-badge">
+                            <i class="fa-solid fa-bolt"></i> 12개 전담 운동부 밀착 케어
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 2: 전담 운동부 (로얄 블루 글로우) -->
-                <div class="hud-card hud-card-blue">
-                    <div class="hud-card-top">
-                        <div class="hud-icon-box">
-                            <i class="fa-solid fa-shield-halved"></i>
+                <!-- 2. 교육 부문 (골드 링) -->
+                <div class="metric-card metric-card-gold">
+                    <div class="metric-card-top">
+                        <span class="metric-cat-badge"><i class="fa-solid fa-graduation-cap"></i> 교육 부문 · EDUCATION</span>
+                        <span class="metric-rate-chip">85% PERFORMANCE</span>
+                    </div>
+
+                    <!-- 원형 프로그레스 게이지 SVG -->
+                    <div class="metric-gauge-wrapper">
+                        <svg class="metric-gauge-svg" viewBox="0 0 160 160">
+                            <defs>
+                                <linearGradient id="grad-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#d97706" />
+                                    <stop offset="100%" stop-color="#fbbf24" />
+                                </linearGradient>
+                                <filter id="glow-gold" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#fbbf24" flood-opacity="0.6"/>
+                                </filter>
+                            </defs>
+                            <!-- 배경 트랙 -->
+                            <circle class="gauge-track" cx="80" cy="80" r="64" />
+                            <!-- 회전 프로그레스 링 -->
+                            <circle class="gauge-bar gauge-bar-gold" cx="80" cy="80" r="64" style="stroke-dasharray: 402.12; stroke-dashoffset: 402.12;" data-target-offset="60.32" />
+                        </svg>
+
+                        <!-- 게이지 중앙 앰비언트 아이콘 & 백라이트 -->
+                        <div class="metric-gauge-center">
+                            <div class="metric-center-icon">
+                                <i class="fa-solid fa-user-graduate"></i>
+                            </div>
                         </div>
-                        <span class="hud-stat-tag">전담 부서</span>
                     </div>
-                    <div class="hud-number-box">
-                        <span class="stat-number hud-num" data-target="12">12</span><span class="hud-suffix">개 부서</span>
-                    </div>
-                    <h3 class="hud-card-title">공식 전담 지원 운동부</h3>
-                    <p class="hud-card-desc">축구·농구·야구·배구·태권도·럭비 등 전 종목 커버리지</p>
-                    <div class="hud-badge-pill">
-                        <i class="fa-solid fa-trophy"></i> U-리그 &amp; 전국대회 파견
+
+                    <!-- 데이터 수치 및 상세 정보 -->
+                    <div class="metric-data-content">
+                        <div class="metric-number-wrap">
+                            <span class="stat-number metric-num" data-target="82">82</span><span class="metric-suffix">명</span>
+                        </div>
+                        <h3 class="metric-item-title">정규 실무 교육 이수</h3>
+                        <p class="metric-item-desc">스포츠의학 전문 이론 및 10주간 정규 옵저베이션 과정을 수료한 학생 트레이너</p>
+                        <div class="metric-footer-badge">
+                            <i class="fa-solid fa-certificate"></i> 10주 정규 실무 교육 이수
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 3: 교육 이수생 (골드 글로우) -->
-                <div class="hud-card hud-card-gold">
-                    <div class="hud-card-top">
-                        <div class="hud-icon-box">
-                            <i class="fa-solid fa-user-graduate"></i>
-                        </div>
-                        <span class="hud-stat-tag">인재 양성</span>
+                <!-- 3. 연구 부문 (로얄 블루 링 - 클릭 시 논문 모달) -->
+                <div class="metric-card metric-card-blue clickable-stat-card" id="btn-research-modal" onclick="openResearchModal()" style="cursor: pointer;" title="클릭하여 연구 논문 목록 확인">
+                    <div class="metric-card-top">
+                        <span class="metric-cat-badge"><i class="fa-solid fa-microscope"></i> 연구 부문 · RESEARCH</span>
+                        <span class="metric-rate-chip">95% PERFORMANCE</span>
                     </div>
-                    <div class="hud-number-box">
-                        <span class="stat-number hud-num" data-target="82">82</span><span class="hud-suffix">명</span>
-                    </div>
-                    <h3 class="hud-card-title">정규 실무 교육 이수</h3>
-                    <p class="hud-card-desc">스포츠의학 이론 및 테크닉 실습 과정을 수료한 학생 트레이너</p>
-                    <div class="hud-badge-pill">
-                        <i class="fa-solid fa-graduation-cap"></i> 10주간 정규 옵저베이션
-                    </div>
-                </div>
 
-                <!-- Card 4: 연구 논문 (바이올렛 글로우 - 클릭 모달) -->
-                <div class="hud-card hud-card-purple clickable-stat-card" id="btn-research-modal" onclick="openResearchModal()" style="cursor: pointer;" title="클릭하여 연구 논문 목록 확인">
-                    <div class="hud-card-top">
-                        <div class="hud-icon-box">
-                            <i class="fa-solid fa-microscope"></i>
+                    <!-- 원형 프로그레스 게이지 SVG -->
+                    <div class="metric-gauge-wrapper">
+                        <svg class="metric-gauge-svg" viewBox="0 0 160 160">
+                            <defs>
+                                <linearGradient id="grad-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#1d4ed8" />
+                                    <stop offset="100%" stop-color="#60a5fa" />
+                                </linearGradient>
+                                <filter id="glow-blue" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#60a5fa" flood-opacity="0.6"/>
+                                </filter>
+                            </defs>
+                            <!-- 배경 트랙 -->
+                            <circle class="gauge-track" cx="80" cy="80" r="64" />
+                            <!-- 회전 프로그레스 링 -->
+                            <circle class="gauge-bar gauge-bar-blue" cx="80" cy="80" r="64" style="stroke-dasharray: 402.12; stroke-dashoffset: 402.12;" data-target-offset="20.11" />
+                        </svg>
+
+                        <!-- 게이지 중앙 앰비언트 아이콘 & 백라이트 -->
+                        <div class="metric-gauge-center">
+                            <div class="metric-center-icon">
+                                <i class="fa-solid fa-book-bookmark"></i>
+                            </div>
                         </div>
-                        <span class="hud-stat-tag">학술 연구</span>
                     </div>
-                    <div class="hud-number-box">
-                        <span class="stat-number hud-num" data-target="63">63</span><span class="hud-suffix">편</span>
-                    </div>
-                    <h3 class="hud-card-title">스포츠의학 연구 논문</h3>
-                    <p class="hud-card-desc">국제 SCI급 및 한국연구재단(KCI) 등재 전문 학술 성과</p>
-                    <div class="hud-badge-pill hud-badge-interactive">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i> 논문 목록 보기
+
+                    <!-- 데이터 수치 및 상세 정보 -->
+                    <div class="metric-data-content">
+                        <div class="metric-number-wrap">
+                            <span class="stat-number metric-num" data-target="63">63</span><span class="metric-suffix">편</span>
+                        </div>
+                        <h3 class="metric-item-title">국제/국내 학술지 발표</h3>
+                        <p class="metric-item-desc">국제 SCI급 및 한국연구재단(KCI) 등재 전문 학술 성과 및 학술대회 발표</p>
+                        <div class="metric-footer-badge metric-footer-interactive">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> 논문 목록 보기
+                        </div>
                     </div>
                 </div>
 
             </div>
 
             <!-- 하단 라이브 아카이브 스테이터스 바 -->
-            <div class="hud-bottom-status-bar">
-                <div class="hud-status-inner">
-                    <span class="hud-status-led"></span>
-                    <span class="hud-status-text"><strong>LIVE ARCHIVE</strong> : 2026 경희대학교 체육대학 AT Center 공식 통합 데이터베이스 연동</span>
+            <div class="metric-bottom-status-bar">
+                <div class="metric-status-inner">
+                    <span class="metric-status-led"></span>
+                    <span class="metric-status-text"><strong>LIVE BIO-ARCHIVE</strong> : 2026 경희대학교 체육대학 AT Center 공식 통합 데이터베이스 연동</span>
                 </div>
             </div>
 

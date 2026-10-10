@@ -597,12 +597,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ==========================================================================
-       4. Stats Counters (Number counting animation)
+       4. Stats Counters & Circular Progress Rings Animation
+       - AT 센터 누적 기록: 숫자 카운트업 및 원형 프로그레스 링 차오름 인터랙션
        ========================================================================== */
     const statNumbers = document.querySelectorAll('.stat-number');
+    const gaugeBars = document.querySelectorAll('.gauge-bar');
     let countersStarted = false;
 
     const startCounters = () => {
+        // (1) 숫자 카운트업 애니메이션
         statNumbers.forEach(num => {
             const target = parseInt(num.getAttribute('data-target'), 10);
             const duration = 2000;
@@ -621,6 +624,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }, stepTime);
         });
+
+        // (2) 원형 게이지 프로그레스 링 회전 및 차오름 애니메이션
+        setTimeout(() => {
+            gaugeBars.forEach(bar => {
+                const targetOffset = bar.getAttribute('data-target-offset');
+                if (targetOffset) {
+                    bar.style.strokeDashoffset = targetOffset;
+                }
+            });
+        }, 150);
     };
 
     const statsSection = document.getElementById('dashboard');
