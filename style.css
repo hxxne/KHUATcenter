@@ -139,6 +139,23 @@ button {
     background-color: var(--color-bg-secondary);
 }
 
+/* 3대 핵심 사업: 스포츠 브랜드 감성의 다이내믹 사선 앵글 전환 (Slanted Edge) */
+#pillars {
+    position: relative;
+    padding: 135px 0 145px 0;
+    margin: 25px 0;
+    background: linear-gradient(135deg, #F4F2EB 0%, #EAE6DB 100%);
+    clip-path: polygon(0 45px, 100% 0, 100% calc(100% - 45px), 0 100%);
+}
+
+@media (max-width: 768px) {
+    #pillars {
+        padding: 90px 0 100px 0;
+        margin: 15px 0;
+        clip-path: polygon(0 22px, 100% 0, 100% calc(100% - 22px), 0 100%);
+    }
+}
+
 .text-center {
     text-align: center;
 }
@@ -544,7 +561,19 @@ body.no-scroll {
     align-items: center;
     background-color: #000;
     overflow: hidden;
-    overflow: hidden;
+}
+
+/* 히어로 하단 부드러운 그라디언트 페이드 (어두운 영상 -> 아이보리 본문 부드러운 전환) */
+#hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to bottom, rgba(250, 249, 246, 0) 0%, rgba(250, 249, 246, 0.6) 60%, var(--color-bg-primary, #FAF9F6) 100%);
+    pointer-events: none;
+    z-index: 5;
 }
 
 .video-background-wrapper {
@@ -4582,23 +4611,53 @@ body.no-scroll {
     padding-bottom: 100px;
 }
 
-/* Full Width Hero Banner */
+/* Full Width Hero Banner - 나이키 스타일 다이내믹 사선 앵글 & 그라디언트 블렌딩 */
 .donate-hero-banner {
     width: 100%;
-    height: 450px;
+    height: 480px;
     position: relative;
-    background-image: url('assets/images/hero_bg.jpg'); /* Use existing site hero or similar */
+    background-image: url('assets/images/hero_bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-color: #2c3e50;
     display: flex;
     align-items: center;
     color: white;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 55px), 0 100%);
 }
 
-/* Fallback for background image if it doesn't load/exist */
-.donate-hero-banner {
-    background-color: #2c3e50;
+.donate-hero-banner::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 180px;
+    background: linear-gradient(to bottom, transparent 0%, rgba(15, 23, 42, 0.75) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* 후원 안내 카드 플로팅 오버랩 (배너 위로 입체적으로 떠오르는 효과) */
+.donate-content-container {
+    position: relative;
+    z-index: 10;
+    margin-top: -95px;
+}
+
+.minimal-banking-card {
+    background: #ffffff !important;
+    border-radius: 24px !important;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    backdrop-filter: blur(10px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.minimal-banking-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(165, 0, 52, 0.06) !important;
 }
 
 .donate-hero-overlay {
@@ -4804,8 +4863,14 @@ body.no-scroll {
 
 @media (max-width: 768px) {
     .dh-title { font-size: 2.2rem; }
-    .donate-hero-banner { height: 350px; }
-    .minimal-banking-card { padding: 30px 20px; }
+    .donate-hero-banner { 
+        height: 380px; 
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), 0 100%);
+    }
+    .donate-content-container {
+        margin-top: -65px;
+    }
+    .minimal-banking-card { padding: 30px 20px !important; }
     .mb-account-number { font-size: 1.8rem; }
     .ea-year { font-size: 1.2rem; }
 }
@@ -7438,4 +7503,11 @@ body.no-scroll {
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 0.5px;
+}
+
+/* 활동 사진 섹션 상단 소프트 페이드 디바이더 전환 */
+.activities-gallery-section {
+    position: relative;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    background: linear-gradient(180deg, #FAFBFD 0%, #F1F5F9 100%) !important;
 }
