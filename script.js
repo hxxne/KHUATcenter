@@ -625,11 +625,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }, stepTime);
         });
 
-        // (2) 원형 게이지 프로그레스 링 회전 및 차오름 애니메이션
+        // (2) 원형 게이지 프로그레스 링 회전 및 100% 차오름 애니메이션
         setTimeout(() => {
             gaugeBars.forEach(bar => {
                 const targetOffset = bar.getAttribute('data-target-offset');
-                if (targetOffset) {
+                if (targetOffset !== null && targetOffset !== undefined) {
                     bar.style.strokeDashoffset = targetOffset;
                 }
             });
