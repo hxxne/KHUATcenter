@@ -355,222 +355,226 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /* ==========================================================================
-       2. Dynamic Rendering of Instagram Gallery Grid
+       2. Dynamic Rendering of Instagram Gallery Grid (구형 피드 안전 가드)
        ========================================================================== */
     const postsContainer = document.getElementById('instagram-gallery-grid');
     const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('.lightbox-img');
-    const lightboxTitle = lightbox.querySelector('.lightbox-title');
-    const lightboxDesc = lightbox.querySelector('.lightbox-desc');
-    const lightboxClose = lightbox.querySelector('.lightbox-close');
-    const prevBtn = lightbox.querySelector('.lightbox-prev');
-    const nextBtn = lightbox.querySelector('.lightbox-next');
 
-    let currentGalleryIndex = 0;
-    let activeFilter = 'all';
-    let currentFilteredItems = [];
+    if (postsContainer && lightbox) {
+        const lightboxImg = lightbox.querySelector('.lightbox-img');
+        const lightboxTitle = lightbox.querySelector('.lightbox-title');
+        const lightboxDesc = lightbox.querySelector('.lightbox-desc');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+        const prevBtn = lightbox.querySelector('.lightbox-prev');
+        const nextBtn = lightbox.querySelector('.lightbox-next');
 
-    // Main render function
-    const renderPosts = () => {
-        if (!postsContainer) return;
-        postsContainer.innerHTML = '';
+        let currentGalleryIndex = 0;
+        let activeFilter = 'all';
+        let currentFilteredItems = [];
 
-        INSTAGRAM_POSTS.forEach((post, index) => {
-            const card = document.createElement('div');
-            card.className = 'gallery-item';
-            card.setAttribute('data-category', post.category);
-            card.setAttribute('data-index', index);
+        // Main render function
+        const renderPosts = () => {
+            if (!postsContainer) return;
+            postsContainer.innerHTML = '';
 
-            card.innerHTML = `
-                <div class="insta-card">
-                    <div class="insta-header">
-                        <div class="insta-avatar">AT</div>
-                        <div class="insta-meta">
-                            <span class="insta-username">khuatcenter</span>
-                            <span class="insta-location">${post.location}</span>
+            INSTAGRAM_POSTS.forEach((post, index) => {
+                const card = document.createElement('div');
+                card.className = 'gallery-item';
+                card.setAttribute('data-category', post.category);
+                card.setAttribute('data-index', index);
+
+                card.innerHTML = `
+                    <div class="insta-card">
+                        <div class="insta-header">
+                            <div class="insta-avatar">AT</div>
+                            <div class="insta-meta">
+                                <span class="insta-username">khuatcenter</span>
+                                <span class="insta-location">${post.location}</span>
+                            </div>
+                            <span class="insta-more">&#8226;&#8226;&#8226;</span>
                         </div>
-                        <span class="insta-more">&#8226;&#8226;&#8226;</span>
-                    </div>
-                    <div class="gallery-img-wrapper" data-post-index="${index}">
-                        <img src="${post.imageUrl}" alt="${post.location}">
-                        <div class="insta-doubleclick-heart">
-                            <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5 22 12.28 18.6 15.36 13.45 20.03L12 21.35z"/></svg>
+                        <div class="gallery-img-wrapper" data-post-index="${index}">
+                            <img src="${post.imageUrl}" alt="${post.location}">
+                            <div class="insta-doubleclick-heart">
+                                <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5 22 12.28 18.6 15.36 13.45 20.03L12 21.35z"/></svg>
+                            </div>
                         </div>
-                    </div>
-                    <div class="insta-actions">
-                        <div class="actions-left">
-                            <button class="action-btn like-btn" aria-label="좋아요">
-                                <svg class="icon-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5 22 12.28 18.6 15.36 13.45 20.03L12 21.35z"/></svg>
-                            </button>
-                            <button class="action-btn" aria-label="댓글">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-7.6-4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-                            </button>
-                            <button class="action-btn" aria-label="공유">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        <div class="insta-actions">
+                            <div class="actions-left">
+                                <button class="action-btn like-btn" aria-label="좋아요">
+                                    <svg class="icon-heart" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5 22 12.28 18.6 15.36 13.45 20.03L12 21.35z"/></svg>
+                                </button>
+                                <button class="action-btn" aria-label="댓글">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-7.6-4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                                </button>
+                                <button class="action-btn" aria-label="공유">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                                </button>
+                            </div>
+                            <button class="action-btn" aria-label="북마크">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
                             </button>
                         </div>
-                        <button class="action-btn" aria-label="북마크">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
-                        </button>
+                        <div class="insta-feedback-info">
+                            <span class="likes-count">좋아요 ${post.likes}개</span>
+                        </div>
+                        <div class="insta-caption">
+                            <p><strong>khuatcenter</strong> ${post.caption.replace(/\n/g, '<br>')}</p>
+                        </div>
+                        <div class="insta-comments-link">댓글 모두 보기</div>
                     </div>
-                    <div class="insta-feedback-info">
-                        <span class="likes-count">좋아요 ${post.likes}개</span>
-                    </div>
-                    <div class="insta-caption">
-                        <p><strong>khuatcenter</strong> ${post.caption.replace(/\n/g, '<br>')}</p>
-                    </div>
-                    <div class="insta-comments-link">댓글 모두 보기</div>
-                </div>
-            `;
+                `;
 
-            postsContainer.appendChild(card);
+                postsContainer.appendChild(card);
 
-            // Double Click & Likes logic setup
-            const imgWrapper = card.querySelector('.gallery-img-wrapper');
-            const dbClickHeart = card.querySelector('.insta-doubleclick-heart');
-            const likeBtn = card.querySelector('.like-btn');
-            const likesText = card.querySelector('.likes-count');
+                // Double Click & Likes logic setup
+                const imgWrapper = card.querySelector('.gallery-img-wrapper');
+                const dbClickHeart = card.querySelector('.insta-doubleclick-heart');
+                const likeBtn = card.querySelector('.like-btn');
+                const likesText = card.querySelector('.likes-count');
 
-            let isLiked = false;
-            const toggleLike = () => {
-                isLiked = !isLiked;
-                likeBtn.classList.toggle('liked', isLiked);
-                let currentLikes = post.likes;
-                if (isLiked) {
-                    currentLikes++;
-                    likeBtn.querySelector('svg').style.fill = 'var(--color-primary)';
-                } else {
-                    likeBtn.querySelector('svg').style.fill = 'none';
-                }
-                likesText.textContent = `좋아요 ${currentLikes}개`;
-            };
-
-            likeBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                toggleLike();
-            });
-
-            imgWrapper.addEventListener('dblclick', (e) => {
-                dbClickHeart.classList.remove('animate');
-                void dbClickHeart.offsetWidth; // Force reflow
-                dbClickHeart.classList.add('animate');
-
-                if (!isLiked) {
-                    toggleLike();
-                }
-            });
-
-            // Click image to trigger Lightbox (with debounce for double-click)
-            let clickTimeout;
-            imgWrapper.addEventListener('click', (e) => {
-                e.stopPropagation();
-                if (e.detail === 2) return; // Ignore on double click
-
-                clearTimeout(clickTimeout);
-                clickTimeout = setTimeout(() => {
-                    updateFilteredList();
-                    const filteredIndex = currentFilteredItems.indexOf(card);
-                    if (filteredIndex !== -1) {
-                        openLightbox(filteredIndex);
+                let isLiked = false;
+                const toggleLike = () => {
+                    isLiked = !isLiked;
+                    likeBtn.classList.toggle('liked', isLiked);
+                    let currentLikes = post.likes;
+                    if (isLiked) {
+                        currentLikes++;
+                        likeBtn.querySelector('svg').style.fill = 'var(--color-primary)';
+                    } else {
+                        likeBtn.querySelector('svg').style.fill = 'none';
                     }
-                }, 200);
+                    likesText.textContent = `좋아요 ${currentLikes}개`;
+                };
+
+                likeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    toggleLike();
+                });
+
+                imgWrapper.addEventListener('dblclick', (e) => {
+                    dbClickHeart.classList.remove('animate');
+                    void dbClickHeart.offsetWidth; // Force reflow
+                    dbClickHeart.classList.add('animate');
+
+                    if (!isLiked) {
+                        toggleLike();
+                    }
+                });
+
+                // Click image to trigger Lightbox (with debounce for double-click)
+                let clickTimeout;
+                imgWrapper.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (e.detail === 2) return; // Ignore on double click
+
+                    clearTimeout(clickTimeout);
+                    clickTimeout = setTimeout(() => {
+                        updateFilteredList();
+                        const filteredIndex = currentFilteredItems.indexOf(card);
+                        if (filteredIndex !== -1) {
+                            openLightbox(filteredIndex);
+                        }
+                    }, 200);
+                });
             });
-        });
-        updateFilteredList();
-    };
+            updateFilteredList();
+        };
 
-    const updateFilteredList = () => {
-        const allCards = postsContainer.querySelectorAll('.gallery-item');
-        currentFilteredItems = Array.from(allCards).filter(card => {
-            return card.style.display !== 'none';
-        });
-    };
-
-    // Lightbox modal functions
-    const openLightbox = (filteredIndex) => {
-        const card = currentFilteredItems[filteredIndex];
-        if (!card) return;
-
-        currentGalleryIndex = filteredIndex;
-        const postIndex = parseInt(card.querySelector('.gallery-img-wrapper').getAttribute('data-post-index'), 10);
-        const post = INSTAGRAM_POSTS[postIndex];
-
-        lightboxImg.src = post.imageUrl;
-        lightboxTitle.textContent = post.location;
-        lightboxDesc.innerHTML = `<strong>@khuatcenter</strong> ${post.caption.replace(/\n/g, '<br>')}`;
-
-        lightbox.classList.add('active');
-        document.body.classList.add('no-scroll');
-    };
-
-    const closeLightbox = () => {
-        lightbox.classList.remove('active');
-        document.body.classList.remove('no-scroll');
-    };
-
-    const prevImage = () => {
-        let index = currentGalleryIndex - 1;
-        if (index < 0) {
-            index = currentFilteredItems.length - 1;
-        }
-        openLightbox(index);
-    };
-
-    const nextImage = () => {
-        let index = currentGalleryIndex + 1;
-        if (index >= currentFilteredItems.length) {
-            index = 0;
-        }
-        openLightbox(index);
-    };
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
-    nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
-    lightbox.addEventListener('click', closeLightbox);
-    lightbox.querySelector('.lightbox-content-wrapper').addEventListener('click', (e) => e.stopPropagation());
-
-    document.addEventListener('keydown', (e) => {
-        if (!lightbox.classList.contains('active')) return;
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') prevImage();
-        if (e.key === 'ArrowRight') nextImage();
-    });
-
-    // Gallery Category Filtering
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            activeFilter = btn.getAttribute('data-filter');
-
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
+        const updateFilteredList = () => {
             const allCards = postsContainer.querySelectorAll('.gallery-item');
-            allCards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                if (activeFilter === 'all' || category === activeFilter) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'scale(1)';
-                    }, 50);
-                } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'scale(0.85)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 350);
-                }
+            currentFilteredItems = Array.from(allCards).filter(card => {
+                return card.style.display !== 'none';
             });
+        };
 
-            // Update local list after transit
-            setTimeout(updateFilteredList, 380);
+        // Lightbox modal functions
+        const openLightbox = (filteredIndex) => {
+            const card = currentFilteredItems[filteredIndex];
+            if (!card) return;
+
+            currentGalleryIndex = filteredIndex;
+            const postIndex = parseInt(card.querySelector('.gallery-img-wrapper').getAttribute('data-post-index'), 10);
+            const post = INSTAGRAM_POSTS[postIndex];
+
+            lightboxImg.src = post.imageUrl;
+            lightboxTitle.textContent = post.location;
+            lightboxDesc.innerHTML = `<strong>@khuatcenter</strong> ${post.caption.replace(/\n/g, '<br>')}`;
+
+            lightbox.classList.add('active');
+            document.body.classList.add('no-scroll');
+        };
+
+        const closeLightbox = () => {
+            lightbox.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        };
+
+        const prevImage = () => {
+            let index = currentGalleryIndex - 1;
+            if (index < 0) {
+                index = currentFilteredItems.length - 1;
+            }
+            openLightbox(index);
+        };
+
+        const nextImage = () => {
+            let index = currentGalleryIndex + 1;
+            if (index >= currentFilteredItems.length) {
+                index = 0;
+            }
+            openLightbox(index);
+        };
+
+        if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+        if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prevImage(); });
+        if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); nextImage(); });
+        lightbox.addEventListener('click', closeLightbox);
+        const lbWrapper = lightbox.querySelector('.lightbox-content-wrapper');
+        if (lbWrapper) lbWrapper.addEventListener('click', (e) => e.stopPropagation());
+
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') prevImage();
+            if (e.key === 'ArrowRight') nextImage();
         });
-    });
 
-    // Initialize rendering
-    renderPosts();
+        // Gallery Category Filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                activeFilter = btn.getAttribute('data-filter');
+
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const allCards = postsContainer.querySelectorAll('.gallery-item');
+                allCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    if (activeFilter === 'all' || category === activeFilter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.85)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 350);
+                    }
+                });
+
+                // Update local list after transit
+                setTimeout(updateFilteredList, 380);
+            });
+        });
+
+        // Initialize rendering
+        renderPosts();
+    }
 
 
     /* ==========================================================================
@@ -816,80 +820,96 @@ document.addEventListener('DOMContentLoaded', () => {
     const successOverlay = document.getElementById('form-success-overlay');
     const successCloseBtn = document.getElementById('success-close-btn');
 
-    inquiryForm.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (inquiryForm) {
+        inquiryForm.addEventListener('submit', (e) => {
+            // 브라우저의 기본 submit 새로고침 동작 즉시 방지
+            e.preventDefault();
+            e.stopPropagation();
 
-        const phoneInput = document.getElementById('form-phone');
-        const phoneRegex = /^01[016789]-\d{3,4}-\d{4}$/;
-        const rawPhone = phoneInput.value.replace(/\s+/g, '');
-        
-        let formattedPhone = rawPhone;
-        if (!phoneRegex.test(rawPhone)) {
-            const cleaned = ('' + rawPhone).replace(/\D/g, '');
-            const match = cleaned.match(/^(\d{3})(\d{3,4})(\d{4})$/);
-            if (match) {
-                formattedPhone = match[1] + '-' + match[2] + '-' + match[3];
-                phoneInput.value = formattedPhone;
-            } else {
-                alert('연락처 형식을 확인해 주세요. (예: 010-1234-5678)');
-                phoneInput.focus();
-                return;
+            const phoneInput = document.getElementById('form-phone');
+            const phoneRegex = /^01[016789]-\d{3,4}-\d{4}$/;
+            const rawPhone = phoneInput.value.replace(/\s+/g, '');
+            
+            let formattedPhone = rawPhone;
+            if (!phoneRegex.test(rawPhone)) {
+                const cleaned = ('' + rawPhone).replace(/\D/g, '');
+                const match = cleaned.match(/^(\d{3})(\d{3,4})(\d{4})$/);
+                if (match) {
+                    formattedPhone = match[1] + '-' + match[2] + '-' + match[3];
+                    phoneInput.value = formattedPhone;
+                } else {
+                    alert('연락처 형식을 확인해 주세요. (예: 010-1234-5678)');
+                    phoneInput.focus();
+                    return;
+                }
             }
-        }
 
-        submitBtn.classList.add('loading');
-        submitBtn.disabled = true;
-
-        // 폼 전송 데이터 구성 (한글 레이블로 표 형식 이메일 수신)
-        const dataPayload = {
-            "이름_단체명": document.getElementById('form-name').value,
-            "연락처": phoneInput.value,
-            "소속구분": document.getElementById('form-affiliation').options[document.getElementById('form-affiliation').selectedIndex].text,
-            "문의유형": document.getElementById('form-type').options[document.getElementById('form-type').selectedIndex].text,
-            "상세내용": document.getElementById('form-message').value,
-            "_subject": "[KHU AT Center] 새로운 상담 및 문의 신청이 접수되었습니다.", // 메일 수신 시 표시될 제목
-            "_captcha": "false", // 로봇 방지 캡차 화면 건너뛰기
-            "_template": "table" // 수신되는 이메일 본문을 깔끔한 테이블 형태로 표시
-        };
-
-        // FormSubmit AJAX API를 통해 센터 공식 이메일(khuatcenter@khu.ac.kr)로 비동기 전송
-        fetch("https://formsubmit.co/ajax/khuatcenter@khu.ac.kr", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(dataPayload)
-        })
-        .then(response => response.json())
-        .then(data => {
-            // 전송 완료 후 버튼 로딩 상태 해제
-            submitBtn.classList.remove('loading');
-            submitBtn.disabled = false;
-
-            // FormSubmit 응답 성공 여부 확인
-            if (data.success === "true" || data.success === true) {
-                // 접수 완료 안내 팝업 레이어 표시
-                successOverlay.classList.add('active');
-                // 입력 폼 필드 초기화
-                inquiryForm.reset();
-            } else {
-                // 실패 시 서버에서 전달한 안내 메시지 표시
-                alert("이메일 전송에 실패했습니다: " + (data.message || "서버 응답 오류"));
+            if (submitBtn) {
+                submitBtn.classList.add('loading');
+                submitBtn.disabled = true;
             }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('이메일 전송 중 네트워크 오류가 발생했습니다. 다시 시도해 주세요.');
-            submitBtn.classList.remove('loading');
-            submitBtn.disabled = false;
+
+            // 폼 전송 데이터 구성 (한글 레이블로 표 형식 이메일 수신)
+            const dataPayload = {
+                "이름_단체명": document.getElementById('form-name').value,
+                "연락처": phoneInput.value,
+                "소속구분": document.getElementById('form-affiliation').options[document.getElementById('form-affiliation').selectedIndex].text,
+                "문의유형": document.getElementById('form-type').options[document.getElementById('form-type').selectedIndex].text,
+                "상세내용": document.getElementById('form-message').value,
+                "_subject": "[KHU AT Center] 새로운 상담 및 문의 신청이 접수되었습니다.", // 메일 수신 시 표시될 제목
+                "_captcha": "false", // 로봇 방지 캡차 화면 건너뛰기
+                "_template": "table" // 수신되는 이메일 본문을 깔끔한 테이블 형태로 표시
+            };
+
+            // FormSubmit AJAX API를 통해 센터 공식 이메일(khuatcenter@khu.ac.kr)로 비동기 전송
+            fetch("https://formsubmit.co/ajax/khuatcenter@khu.ac.kr", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(dataPayload)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // 전송 완료 후 버튼 로딩 상태 해제
+                if (submitBtn) {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                }
+
+                // FormSubmit 응답 성공 여부 확인
+                if (data.success === "true" || data.success === true) {
+                    // 접수 완료 안내 팝업 레이어 표시
+                    if (successOverlay) {
+                        successOverlay.classList.add('active');
+                    }
+                    // 입력 폼 필드 초기화
+                    inquiryForm.reset();
+                } else {
+                    // 실패 시 서버에서 전달한 안내 메시지 표시
+                    alert("이메일 전송에 실패했습니다: " + (data.message || "서버 응답 오류"));
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('이메일 전송 중 네트워크 오류가 발생했습니다. 다시 시도해 주세요.');
+                if (submitBtn) {
+                    submitBtn.classList.remove('loading');
+                    submitBtn.disabled = false;
+                }
+            });
         });
-    });
+    }
 
     const closeSuccessOverlay = () => {
-        successOverlay.classList.remove('active');
+        if (successOverlay) {
+            successOverlay.classList.remove('active');
+        }
     };
-    successCloseBtn.addEventListener('click', closeSuccessOverlay);
+    if (successCloseBtn) {
+        successCloseBtn.addEventListener('click', closeSuccessOverlay);
+    }
 
     /* ==========================================================================
        7. Scroll Spy (Active Navigation Link Highlighting)

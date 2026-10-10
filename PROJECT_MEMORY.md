@@ -1218,3 +1218,19 @@
      - ② **어워즈 2:** AT Student Awards 명예의 전당 보드 (`post_8.jpg`)
      - ③ **세미나 1:** AT Center 봄 정기 세미나 & 동문 교류회 (`post_3.jpg`)
      - ④ **세미나 2:** 추계 정기 세미나 & 스포츠의학 워크숍 (`post_23.jpg`)
+
+
+---
+
+### [2026-10-10] 상담 및 문의 폼 제출 시 화면 새로고침 버그 수정 & 완료 오버레이 복구
+- **문제 현상:** 상담 및 문의 신청 후 신청 완료 버튼을 누르면 정상적으로 '접수 완료(체크마크)' 오버레이가 뜨지 않고 화면이 새로고침되는 현상 발생.
+- **원인 분석:**
+  - `script.js` 360번째 라인의 구형 인스타그램 갤러리/라이트박스 렌더링 블록(`const lightbox = document.getElementById('lightbox')`)에서 HTML에 없는 요소를 참조하다가 `Uncaught TypeError: Cannot read properties of null (reading 'querySelector')` 런타임 오류 발생.
+  - 이로 인해 이후에 선언되어 있던 `inquiryForm.addEventListener('submit', ...)` 이벤트 리스너가 등록되지 못하고 스크립트 실행이 중단되어, 폼 제출 시 브라우저 기본 동작인 일반 HTTP 새로고침이 실행되었음.
+- **조치 내역:**
+  1. **스크립트 안전 가드 (`script.js`):**
+     - Section 2 블록에 `if (postsContainer && lightbox)` 널 세이프티 가드를 적용하여 런타임 에러 원천 차단.
+     - `inquiryForm` 이벤트 핸들러에도 `if (inquiryForm)` 가드 및 `e.preventDefault()`, `e.stopPropagation()`을 이중 적용.
+  2. **폼 새로고침 원천 차단 (`index.html`):**
+     - `<form id="inquiry-form" action="javascript:void(0);">` 속성 부여로 브라우저 기본 새로고침을 완벽 차단.
+     - `script.js?v=20261010_formfix` 캐시 버스팅 파라미터 갱신으로 최신 스크립트 즉각 적용.
