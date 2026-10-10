@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261010_visual_transitions">
+    <link rel="stylesheet" href="style.css?v=20261010_hud_dashboard">
 </head>
 <body>
 
@@ -331,44 +331,107 @@
 
             </section>
 
-    <!-- Stats & Dashboard Section -->
-    <section id="dashboard" class="section-padding">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">AT 센터 누적 기록</h2>
-                <div class="divider"></div>
+    <!-- ======================================================= -->
+    <!-- 07. AT 센터 누적 기록: 스포츠 사이언스 랩 HUD 대시보드 -->
+    <!-- ======================================================= -->
+    <section id="dashboard" class="dashboard-hud-section">
+        <div class="hud-bg-grid-overlay"></div>
+        <div class="container relative-z">
+            <div class="hud-header text-center">
+                <div class="hud-pill-badge">
+                    <span class="hud-live-dot"></span>
+                    <span>SPORTS SCIENCE LAB · CUMULATIVE METRICS</span>
+                </div>
+                <h2 class="hud-main-title">AT 센터 누적 기록</h2>
+                <div class="hud-title-divider"></div>
+                <p class="hud-sub-desc">12개 전담 운동부 현장 케어부터 국제 학술 연구까지, 숫자로 증명하는 스포츠의학 전문성</p>
             </div>
 
-            <!-- Stats Counter Grid (3대 핵심 성과 카드) -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-bandage" style="font-size: 24px;"></i>
+            <!-- Stats Counter HUD Grid (4대 핵심 성과 카드) -->
+            <div class="hud-stats-grid">
+                
+                <!-- Card 1: 누적 케어 (버건디 글로우) -->
+                <div class="hud-card hud-card-crimson">
+                    <div class="hud-card-top">
+                        <div class="hud-icon-box">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <span class="hud-stat-tag">선수 케어</span>
                     </div>
-                    <div class="stat-number-wrapper">
-                        <span class="stat-number" data-target="15000">15,000</span><span class="stat-suffix">+</span>
+                    <div class="hud-number-box">
+                        <span class="stat-number hud-num" data-target="15000">15,000</span><span class="hud-suffix">+</span>
                     </div>
-                    <h3 class="stat-label">선수 부상 및 컨디셔닝 케어</h3>
+                    <h3 class="hud-card-title">선수 부상 &amp; 컨디셔닝 케어</h3>
+                    <p class="hud-card-desc">급성 손상 처치, 경기 전 관절 테이핑 및 복귀 리컨디셔닝</p>
+                    <div class="hud-badge-pill">
+                        <i class="fa-solid fa-bolt"></i> 12개 운동부 밀착 전담
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-chalkboard-user" style="font-size: 24px;"></i>
+
+                <!-- Card 2: 전담 운동부 (로얄 블루 글로우) -->
+                <div class="hud-card hud-card-blue">
+                    <div class="hud-card-top">
+                        <div class="hud-icon-box">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <span class="hud-stat-tag">전담 부서</span>
                     </div>
-                    <div class="stat-number-wrapper">
-                        <span class="stat-number" data-target="82">82</span><span class="stat-suffix"></span>
+                    <div class="hud-number-box">
+                        <span class="stat-number hud-num" data-target="12">12</span><span class="hud-suffix">개 부서</span>
                     </div>
-                    <h3 class="stat-label">AT 센터 기본 교육 이수(명)</h3>
+                    <h3 class="hud-card-title">공식 전담 지원 운동부</h3>
+                    <p class="hud-card-desc">축구·농구·야구·배구·태권도·럭비 등 전 종목 커버리지</p>
+                    <div class="hud-badge-pill">
+                        <i class="fa-solid fa-trophy"></i> U-리그 &amp; 전국대회 파견
+                    </div>
                 </div>
-                <div class="stat-card clickable-stat-card" id="btn-research-modal" onclick="openResearchModal()" style="cursor: pointer;" title="클릭하여 발표 논문 목록 확인">
-                    <div class="stat-icon">
-                        <i class="fa-solid fa-microscope" style="font-size: 24px;"></i>
+
+                <!-- Card 3: 교육 이수생 (골드 글로우) -->
+                <div class="hud-card hud-card-gold">
+                    <div class="hud-card-top">
+                        <div class="hud-icon-box">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </div>
+                        <span class="hud-stat-tag">인재 양성</span>
                     </div>
-                    <div class="stat-number-wrapper">
-                        <span class="stat-number" data-target="63">63</span>
+                    <div class="hud-number-box">
+                        <span class="stat-number hud-num" data-target="82">82</span><span class="hud-suffix">명</span>
                     </div>
-                    <h3 class="stat-label">연구 논문(편)</h3>
+                    <h3 class="hud-card-title">정규 실무 교육 이수</h3>
+                    <p class="hud-card-desc">스포츠의학 이론 및 테크닉 실습 과정을 수료한 학생 트레이너</p>
+                    <div class="hud-badge-pill">
+                        <i class="fa-solid fa-graduation-cap"></i> 10주간 정규 옵저베이션
+                    </div>
+                </div>
+
+                <!-- Card 4: 연구 논문 (바이올렛 글로우 - 클릭 모달) -->
+                <div class="hud-card hud-card-purple clickable-stat-card" id="btn-research-modal" onclick="openResearchModal()" style="cursor: pointer;" title="클릭하여 연구 논문 목록 확인">
+                    <div class="hud-card-top">
+                        <div class="hud-icon-box">
+                            <i class="fa-solid fa-microscope"></i>
+                        </div>
+                        <span class="hud-stat-tag">학술 연구</span>
+                    </div>
+                    <div class="hud-number-box">
+                        <span class="stat-number hud-num" data-target="63">63</span><span class="hud-suffix">편</span>
+                    </div>
+                    <h3 class="hud-card-title">스포츠의학 연구 논문</h3>
+                    <p class="hud-card-desc">국제 SCI급 및 한국연구재단(KCI) 등재 전문 학술 성과</p>
+                    <div class="hud-badge-pill hud-badge-interactive">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> 논문 목록 보기
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 하단 라이브 아카이브 스테이터스 바 -->
+            <div class="hud-bottom-status-bar">
+                <div class="hud-status-inner">
+                    <span class="hud-status-led"></span>
+                    <span class="hud-status-text"><strong>LIVE ARCHIVE</strong> : 2026 경희대학교 체육대학 AT Center 공식 통합 데이터베이스 연동</span>
                 </div>
             </div>
+
         </div>
     </section>
     <!-- Members Section -->
