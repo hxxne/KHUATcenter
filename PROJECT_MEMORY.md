@@ -6,6 +6,7 @@
 
 ## 📌 1. 프로젝트 기본 정보 & 연락처 표기 기준
 - **GitHub 리포지토리:** `https://github.com/hxxne/KHUATcenter.git`
+- **공식 도메인 (연동):** `https://pacemind.co.kr` (카페24 커스텀 도메인 연동)
 - **로컬 작업 경로:** `C:\Users\LG\.gemini\antigravity\scratch\khu-at-center`
 - **공식 인스타그램:** `https://www.instagram.com/khuatcenter/` (`@khuatcenter`)
 - **전화번호 표기 기준:** `031-201-2787 (AT center) | 031-201-2786 (Laboratory)`
