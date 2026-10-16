@@ -915,8 +915,8 @@ body.no-scroll {
     width: 22px;
     height: 22px;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #5a5d64 0%, #2b2d31 65%, #141517 100%);
-    border: 1px solid #71757e;
+    background: radial-gradient(circle at 35% 35%, #D4AF37 0%, #9B7825 65%, #5C4510 100%);
+    border: 1px solid #E5C158;
     box-shadow: 
         0 4px 10px rgba(0, 0, 0, 0.48), 
         inset 0 1px 2px rgba(255, 255, 255, 0.55);
@@ -925,16 +925,19 @@ body.no-scroll {
 .board-mount-bolt.bolt-right { right: 22px; }
 
 /* ==========================================================================
-   최상단 메인 명판 (Piano Black & Mirror Gold Plaque)
+   최상단 메인 명판 (경희대 딥 버건디 크림슨 & 미러 골드 에나멜 명판)
+   - 원목과 완벽한 하모니를 이루는 품격 있는 프레스티지 컬러
    ========================================================================== */
 .honors-main-plaque {
-    background: #0f1114;
-    border-radius: 5px;
+    background: linear-gradient(180deg, #5c061a 0%, #430413 60%, #34020e 100%);
+    border: 1.5px solid #E5C158;
+    border-radius: 6px;
     padding: 11px 22px;
     margin: 0 auto 26px auto;
     max-width: 580px;
     box-shadow: 
-        0 6px 16px rgba(0, 0, 0, 0.45),
+        0 8px 22px rgba(60, 4, 18, 0.45),
+        0 2px 6px rgba(0, 0, 0, 0.3),
         inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
@@ -946,7 +949,8 @@ body.no-scroll {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0 0 6px rgba(212, 175, 55, 0.25);
+    box-shadow: inset 0 0 8px rgba(212, 175, 55, 0.35);
+    background: rgba(0, 0, 0, 0.12);
 }
 
 .plaque-line-1,
@@ -955,15 +959,16 @@ body.no-scroll {
     font-size: 1.25rem;
     font-weight: 900;
     letter-spacing: 0.14em;
-    color: #F8D978;
+    color: #FDF0CD;
     text-transform: uppercase;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 12px rgba(248, 217, 120, 0.25);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 12px rgba(253, 240, 205, 0.35);
     line-height: 1.25;
     text-align: center;
 }
 
 /* ==========================================================================
-   3대 부문 컬럼 헤더 블랙 명판 (.honors-columns-header)
+   3대 부문 컬럼 헤더 명판 (.honors-columns-header)
+   - 클래식 딥 크림슨 에나멜 & 골드 림
    ========================================================================== */
 .honors-columns-header {
     display: grid;
@@ -973,8 +978,8 @@ body.no-scroll {
 }
 
 .honors-col-plaque {
-    background: #141619;
-    border: 1.5px solid #363b42;
+    background: linear-gradient(180deg, #520516 0%, #3c030f 100%);
+    border: 1px solid rgba(229, 193, 88, 0.45);
     border-radius: 4px;
     padding: 10px 8px;
     text-align: center;
@@ -982,7 +987,7 @@ body.no-scroll {
     align-items: center;
     justify-content: center;
     min-height: 52px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(60, 4, 18, 0.35);
 }
 
 .col-plaque-title {
@@ -990,9 +995,10 @@ body.no-scroll {
     font-size: 0.76rem;
     font-weight: 800;
     letter-spacing: 0.08em;
-    color: #f8fafc;
+    color: #FFF8E7;
     text-transform: uppercase;
     line-height: 1.35;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
 }
 
 /* ==========================================================================
@@ -1010,6 +1016,11 @@ body.no-scroll {
         0 3px 6px rgba(0, 0, 0, 0.22), 
         inset 0 1px 1px rgba(255, 255, 255, 0.92);
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    outline: none;
+    font-family: inherit;
+    text-align: left;
+    width: 100%;
 }
 
 /* 1) 학생 수상자 메탈 명판 */
@@ -1128,10 +1139,15 @@ body.no-scroll {
 }
 
 .leader-plate:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     box-shadow: 
-        0 5px 12px rgba(0, 0, 0, 0.24), 
-        inset 0 1px 1px rgba(255, 255, 255, 1);
+        0 6px 14px rgba(0, 0, 0, 0.26), 
+        inset 0 1px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(180deg, #FFFFFF 0%, #EDF2F7 35%, #D8E1E8 65%, #F1F5F9 100%);
+}
+.leader-plate:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 .leader-date {
@@ -1206,10 +1222,15 @@ body.no-scroll {
 }
 
 .ga-metal-plate:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
     box-shadow: 
-        0 5px 12px rgba(0, 0, 0, 0.22), 
-        inset 0 1px 1px rgba(255, 255, 255, 1);
+        0 6px 14px rgba(0, 0, 0, 0.25), 
+        inset 0 1px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(180deg, #FFFFFF 0%, #EDF2F7 35%, #D8E1E8 65%, #F1F5F9 100%);
+}
+.ga-metal-plate:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 .ga-p-date {
