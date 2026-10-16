@@ -1404,3 +1404,14 @@
      - `style.css?v=20261016_editorial_metrics` 캐시 버스팅 적용.
      - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
 
+---
+
+### [2026-10-16] AT 센터 누적기록: 상단 라벨 제거 및 교육 카드 배지 문구 갱신
+- **요청 사항:** "AT 센터 누적기록 위에 key performance indicator 빼주고 교육에 동그라미 안에 있는거 Modality 교육 포함 이렇게 바꿔줘"
+- **조치 내역:**
+  1. `index.html`:
+     - 타이틀 상단 영문 라벨 `<span class="section-eyebrow">KEY PERFORMANCE INDICATORS</span>` 제거 완료.
+     - 01 교육 카드 하단 둥근 배지 문구 변경: `10주 정규 실무 교육 이수` ➔ **`Modality 교육 포함`**
+  2. GitHub 동기화: 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
