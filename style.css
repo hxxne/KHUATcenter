@@ -793,54 +793,42 @@ body.no-scroll {
 }
 
 /* --------------------------------------------------------------------------
-   10. Awards Section: 애플·리니어 감성의 오픈 캔버스 에디토리얼 (Open Canvas Editorial)
-   - 네모난 상자(Card-in-Card)와 조잡한 알약 뱃지를 완전히 철거한 1px 헤어라인 기반 레이아웃
-   - Student Awards: 상단 단정 헤더 + 11개년(2025~2015) 수평 에디토리얼 로우 (Linear Rows)
-   - Past Leaders: 3개 부서별 얇은 세로 헤어라인 매트릭스 (Editorial 3-Column) + 재임중 인디케이터
-   - GA Directory: 35인 명부 4열 미니멀 텍스트 디렉터리 (NYT/Apple Credits Style)
+   10. Awards Section: 3대 상 부문별 벤토 쇼케이스 (Bento Showcase)
+   - 최신 웹 디자인 트렌드(Apple & Stripe)를 접목한 3-Column Bento Grid
+   - 2025 최신 수상자 포커스 스포트라이트 + 10개년(2024~2015) 아카이브 히스토리
+   - 골드 · 크림슨 · 로열 네이비 3대 시그니처 배색의 입체감과 깊이감
    -------------------------------------------------------------------------- */
 
-.awards-open-section {
+.awards-bento-section {
     position: relative;
-    background: #FFFFFF;
-    padding: 100px 0 110px 0;
+    background: #FBFBFC;
+    background-image: 
+        radial-gradient(circle at 50% 0%, rgba(153, 27, 27, 0.035) 0%, transparent 60%),
+        radial-gradient(circle at 10% 40%, rgba(217, 119, 6, 0.025) 0%, transparent 45%),
+        radial-gradient(circle at 90% 40%, rgba(37, 99, 235, 0.025) 0%, transparent 45%);
+    padding: 100px 0 115px 0;
     color: var(--color-text-main);
     border-top: 1px solid #E5E7EB;
     border-bottom: 1px solid #E5E7EB;
 }
 
-/* 상단 섹션 킥커(Eyebrow) 라벨 */
-.open-kicker {
+.bento-kicker {
     display: inline-block;
     font-size: 0.72rem;
     font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #991B1B; /* 경희대 딥 크림슨 */
+    color: #991B1B;
     margin-bottom: 8px;
 }
 
-.awards-open-container {
-    max-width: 1100px;
+.awards-bento-container {
+    max-width: 1140px;
     margin: 40px auto 0 auto;
 }
 
-/* 오픈 캔버스 블록 (배경/그림자/둥근테두리 없이 호흡하는 영역) */
-.open-archive-block {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    margin-bottom: 80px;
-}
-
-.open-archive-block.mt-section {
-    margin-top: 80px;
-    padding-top: 20px;
-}
-
-/* 서브 블록 헤더 */
-.open-block-header {
+/* 블록 공통 헤더 */
+.bento-block-header {
     margin-bottom: 34px;
 }
 
@@ -854,7 +842,7 @@ body.no-scroll {
     margin-bottom: 6px;
 }
 
-.open-block-title {
+.bento-block-title {
     font-family: var(--font-sans);
     font-size: 1.45rem;
     font-weight: 800;
@@ -863,7 +851,7 @@ body.no-scroll {
     margin: 0 0 10px 0;
 }
 
-.open-block-desc {
+.bento-block-desc {
     font-size: 0.92rem;
     color: #64748B;
     line-height: 1.6;
@@ -873,193 +861,284 @@ body.no-scroll {
 }
 
 /* ==========================================================================
-   1. Student Awards: 상단 단정 헤더 & 11개년 수평 에디토리얼 로우 (Linear Rows)
+   1. Student Awards: 3열 벤토 카드 그리드 (.bento-awards-grid)
    ========================================================================== */
-.awards-linear-header {
+.bento-awards-grid {
     display: grid;
-    grid-template-columns: 85px 1fr;
-    align-items: center;
-    padding: 12px 14px;
-    border-bottom: 1px solid #CBD5E1;
-    margin-bottom: 4px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
-.hdr-year {
-    font-family: 'Inter', var(--font-sans);
-    font-size: 0.75rem;
+.bento-card {
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 20px;
+    padding: 28px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.bento-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+/* 3대 상 상단 2px 하이라이트 액센트 */
+.bento-card.bento-gold { border-top: 3px solid #D97706; }
+.bento-card.bento-crimson { border-top: 3px solid #991B1B; }
+.bento-card.bento-navy { border-top: 3px solid #2563EB; }
+
+/* 벤토 카드 상단 헤더 */
+.bento-pillar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.bento-pillar-tag {
+    font-size: 0.65rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 6px;
+}
+
+.tag-gold { color: #B45309; background: #FEF3C7; border: 1px solid #FDE68A; }
+.tag-crimson { color: #991B1B; background: #FEE2E2; border: 1px solid #FECACA; }
+.tag-navy { color: #1D4ED8; background: #DBEAFE; border: 1px solid #BFDBFE; }
+
+.bento-icon-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.dot-gold { background: #D97706; box-shadow: 0 0 8px rgba(217, 119, 6, 0.5); }
+.dot-crimson { background: #991B1B; box-shadow: 0 0 8px rgba(153, 27, 27, 0.5); }
+.dot-navy { background: #2563EB; box-shadow: 0 0 8px rgba(37, 99, 235, 0.5); }
+
+.bento-award-name {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px 0;
+}
+
+.bento-award-desc {
+    font-size: 0.82rem;
+    color: #64748B;
+    line-height: 1.5;
+    min-height: 40px;
+    margin: 0 0 20px 0;
+    word-break: keep-all;
+}
+
+/* --------------------------------------------------------------------------
+   2025 최신 수상자 포커스 스포트라이트 박스 (.bento-spotlight-box)
+   -------------------------------------------------------------------------- */
+.bento-spotlight-box {
+    padding: 16px 18px 15px 18px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    transition: all 0.2s ease;
+}
+
+.spotlight-gold {
+    background: linear-gradient(180deg, #FFFDF7 0%, #FFFBEB 100%);
+    border: 1px solid rgba(217, 119, 6, 0.24);
+}
+.spotlight-crimson {
+    background: linear-gradient(180deg, #FFF9FA 0%, #FEF2F2 100%);
+    border: 1px solid rgba(153, 27, 27, 0.22);
+}
+.spotlight-navy {
+    background: linear-gradient(180deg, #F8FAFF 0%, #EFF6FF 100%);
+    border: 1px solid rgba(37, 99, 235, 0.22);
+}
+
+.spotlight-badge {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    display: inline-block;
+}
+.badge-gold { color: #B45309; }
+.badge-crimson { color: #991B1B; }
+.badge-navy { color: #1D4ED8; }
+
+.spotlight-winner-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    outline: none;
+    margin-top: 3px;
+}
+
+.spotlight-winner-btn .winner-name {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    transition: color 0.15s ease;
+}
+
+.spotlight-winner-btn .icon-link {
+    font-size: 0.82rem;
+    color: #94A3B8;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.spotlight-winner-btn:hover .icon-link {
+    transform: translate(2px, -2px);
+    color: #0F172A;
+}
+
+.spotlight-gold .spotlight-winner-btn:hover .winner-name { color: #B45309; }
+.spotlight-crimson .spotlight-winner-btn:hover .winner-name { color: #991B1B; }
+.spotlight-navy .spotlight-winner-btn:hover .winner-name { color: #1D4ED8; }
+
+.winner-meta {
+    font-size: 0.78rem;
+    color: #64748B;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   10개년 아카이브 히스토리 리스트 (.bento-archive-wrapper)
+   -------------------------------------------------------------------------- */
+.bento-archive-wrapper {
+    margin-top: auto;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 14px;
+}
+
+.archive-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.archive-title {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     color: #94A3B8;
     text-transform: uppercase;
 }
 
-.hdr-awards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: center;
+.archive-count {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #CBD5E1;
 }
 
-.hdr-col {
-    display: inline-flex;
+.bento-history-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* 슬림 스크롤바 */
+.bento-history-list::-webkit-scrollbar {
+    width: 4px;
+}
+.bento-history-list::-webkit-scrollbar-thumb {
+    background: #E2E8F0;
+    border-radius: 4px;
+}
+
+.history-item {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 7px;
+    padding: 7px 4px;
+    border-bottom: 1px dashed #F1F5F9;
+}
+
+.h-year {
+    font-family: 'Inter', var(--font-sans);
     font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 0.04em;
-    color: #475569;
-    text-transform: uppercase;
-}
-
-.legend-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-}
-
-.legend-dot.dot-gold { background: #D97706; }
-.legend-dot.dot-crimson { background: #991B1B; }
-.legend-dot.dot-navy { background: #2563EB; }
-
-.awards-linear-list {
-    border-top: none;
-}
-
-.awards-linear-row {
-    display: grid;
-    grid-template-columns: 85px 1fr;
-    align-items: center;
-    padding: 15px 14px;
-    border-bottom: 1px solid #F1F5F9;
-    transition: background-color 0.15s ease;
-}
-
-.awards-linear-row:hover {
-    background-color: #F8FAFC;
-}
-
-/* 연도 표기 (모노스페이스 숫자) */
-.row-year {
-    font-family: 'Inter', var(--font-sans);
-    font-size: 0.98rem;
-    font-weight: 700;
-    color: #0F172A;
+    color: #64748B;
     font-variant-numeric: tabular-nums;
-    letter-spacing: -0.02em;
 }
 
-/* 3개 수상 셀 그리드 */
-.row-awards-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: center;
-}
-
-.award-cell {
-    display: flex;
-    align-items: center;
-}
-
-/* 모바일 전용 라벨 (데스크톱에선 완전 숨김) */
-.award-sub-label.mobile-only {
-    display: none;
-}
-
-/* 수상자 텍스트 링크 버튼 (조잡한 칩 테두리 제거) */
-.award-winner-link {
+.h-name-btn {
     background: transparent;
     border: none;
     padding: 0;
-    margin: 0;
-    text-align: left;
-    font-family: inherit;
-    font-size: 0.95rem;
+    font-size: 0.88rem;
     font-weight: 600;
     color: #1E293B;
     cursor: pointer;
     transition: all 0.15s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
     outline: none;
 }
 
-/* 단독 수상자 앞의 4px 컬러 인디케이터 닷 */
-.award-gold .award-winner-link:not(.single-link)::before,
-.award-gold .multi-winner-wrap::before {
-    content: '';
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #D97706;
-    margin-right: 2px;
-}
-
-.award-crimson .award-winner-link::before {
-    content: '';
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #991B1B;
-    margin-right: 2px;
-}
-
-.award-navy .award-winner-link::before {
-    content: '';
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: #2563EB;
-    margin-right: 2px;
-}
-
-.award-winner-link:hover {
+.h-name-btn:hover {
     color: #0F172A;
     text-decoration: underline;
     text-underline-offset: 3px;
-    transform: translateY(-1px);
 }
 
-/* 2인 이상 수상자 래퍼 (2017년 조재희, 양창욱) */
-.multi-winner-wrap {
+.h-multi-wrap {
     display: inline-flex;
     align-items: center;
 }
 
-.multi-winner-wrap .comma {
-    font-size: 0.9rem;
+.h-comma {
+    font-size: 0.85rem;
     color: #94A3B8;
-    margin: 0 1px;
+    margin: 0 2px;
 }
 
 /* ==========================================================================
-   2. Past Leaders: 3열 오픈 리더십 매트릭스
+   2. Past Leaders: 3열 리더십 타임라인 (.bento-leaders-grid)
    ========================================================================== */
-.open-leaders-grid {
+.bento-section-block.mt-block {
+    margin-top: 85px;
+    padding-top: 30px;
+}
+
+.bento-leaders-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 36px;
-    border-top: 1px solid #CBD5E1;
-    padding-top: 32px;
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 20px;
+    padding: 36px 32px;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
 }
 
-.open-leader-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.open-leader-col:not(:last-child) {
+.bento-leader-col:not(:last-child) {
     border-right: 1px solid #F1F5F9;
     padding-right: 36px;
 }
 
-.open-leader-header {
+.bento-leader-head {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1068,18 +1147,7 @@ body.no-scroll {
     border-bottom: 1px solid #E2E8F0;
 }
 
-.leader-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.leader-dot.dot-at { background: #991B1B; }
-.leader-dot.dot-rehab { background: #2563EB; }
-.leader-dot.dot-res { background: #059669; }
-
-.open-dept-name {
+.dept-title {
     font-size: 0.88rem;
     font-weight: 800;
     letter-spacing: 0.04em;
@@ -1088,12 +1156,7 @@ body.no-scroll {
     margin: 0;
 }
 
-.open-leader-list {
-    display: flex;
-    flex-direction: column;
-}
-
-.open-leader-item {
+.b-leader-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1101,26 +1164,26 @@ body.no-scroll {
     border-bottom: 1px dashed #F1F5F9;
 }
 
-.open-leader-item .item-period {
+.b-leader-item .p-date {
     font-family: 'Inter', var(--font-sans);
     font-size: 0.78rem;
     color: #64748B;
     font-variant-numeric: tabular-nums;
 }
 
-.open-leader-item .item-name {
+.b-leader-item .p-name {
     font-size: 0.92rem;
     font-weight: 600;
     color: #1E293B;
 }
 
-.current-name-wrap {
+.p-name-wrap {
     display: inline-flex;
     align-items: center;
     gap: 6px;
 }
 
-.open-leader-item .item-name.current {
+.b-leader-item .p-name.current {
     color: #991B1B;
     font-weight: 800;
 }
@@ -1137,17 +1200,20 @@ body.no-scroll {
 }
 
 /* ==========================================================================
-   3. Graduate Assistants: 4열 미니멀 텍스트 디렉터리 (35인 명부)
+   3. Graduate Assistants: 4열 디렉터리 (.bento-ga-directory)
    ========================================================================== */
-.open-ga-directory {
+.bento-ga-directory {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 6px 14px;
-    border-top: 1px solid #CBD5E1;
-    padding-top: 24px;
+    background: #FFFFFF;
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
 }
 
-.ga-entry-row {
+.bento-ga-directory .ga-entry-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -1157,7 +1223,7 @@ body.no-scroll {
     transition: background-color 0.15s ease;
 }
 
-.ga-entry-row:hover {
+.bento-ga-directory .ga-entry-row:hover {
     background-color: #F1F5F9;
 }
 
@@ -1187,51 +1253,30 @@ body.no-scroll {
    반응형 최적화 (태블릿 & 모바일)
    ========================================================================== */
 @media (max-width: 992px) {
-    .open-leaders-grid {
+    .bento-awards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .bento-leaders-grid {
         grid-template-columns: 1fr;
         gap: 28px;
     }
-    .open-leader-col:not(:last-child) {
+    .bento-leader-col:not(:last-child) {
         border-right: none;
         padding-right: 0;
         border-bottom: 1px solid #E2E8F0;
         padding-bottom: 24px;
     }
-    .open-ga-directory {
+    .bento-ga-directory {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 680px) {
-    .awards-open-section {
+    .awards-bento-section {
         padding: 70px 0 80px 0;
     }
-    .awards-linear-header {
-        display: none; /* 모바일에서는 헤더 숨김 */
-    }
-    .awards-linear-row {
-        grid-template-columns: 1fr;
-        gap: 12px;
-        padding: 16px 10px;
-    }
-    .row-awards-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    .award-cell {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2px;
-    }
-    .award-sub-label.mobile-only {
-        display: block;
-        font-size: 0.65rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: #94A3B8;
-        letter-spacing: 0.04em;
-    }
-    .open-ga-directory {
+    .bento-ga-directory {
         grid-template-columns: 1fr;
     }
 }
