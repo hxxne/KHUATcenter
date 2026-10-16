@@ -13,7 +13,7 @@ const cleanModalScript = `    <!-- Modal Logic -->
                 degree: "체육과학 박사(Physical Medicine & Rehabilitation 전공)",
                 edu: "Brigham Young University",
                 subject: "운동손상, 재활모달리티, 저항운동과컨디셔닝",
-                lab: "체411호 (031-201-2721)",
+                lab: "체422호 (031-201-2721)",
                 email: "jihong.park@khu.ac.kr",
                 career: [
                     "현) 경희대학교 체육대학 스포츠의학과 교수",
