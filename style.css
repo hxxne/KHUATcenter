@@ -831,74 +831,122 @@ body.no-scroll {
 }
 
 /* ==========================================================================
-   원목 보드판 본체 (.honors-wood-board)
-   - 따뜻하고 입체감 넘치는 천연 오크/월넛 나뭇결 패턴 & 베벨 테두리
+   원목 보드판 공통 시스템 (.honors-wood-board)
+   - 최고급 오크/월넛 원목 질감 & 상단 앰비언트 스포트라이트 조명
    ========================================================================== */
+.awards-wooden-section {
+    background-color: #f6f7f9;
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(165, 0, 52, 0.03) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(0, 34, 68, 0.04) 0px, transparent 50%);
+}
+
+.wooden-kicker {
+    display: inline-block;
+    font-family: 'Inter', var(--font-sans);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    color: #991B1B;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.wooden-board-outer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.wooden-board-outer.sub-board-wrap {
+    margin-top: 55px;
+}
+
+/* 원목 보드판 본체 */
 .honors-wood-board {
     position: relative;
     width: 100%;
-    max-width: 820px;
-    background: #c58f55;
+    max-width: 840px;
+    background: #BA854D;
     background-image: 
+        /* 상단 스포트라이트 앰비언트 글로우 */
+        radial-gradient(circle at 50% 0%, rgba(255, 238, 205, 0.32) 0%, rgba(186, 133, 77, 0) 70%),
+        /* 고급 세로 나뭇결 텍스처 */
         linear-gradient(90deg, 
-            rgba(168, 114, 62, 0.28) 0%, 
-            rgba(197, 143, 85, 0.12) 18%, 
-            rgba(145, 96, 50, 0.32) 36%, 
-            rgba(197, 143, 85, 0.12) 55%, 
-            rgba(168, 114, 62, 0.28) 75%, 
-            rgba(135, 87, 44, 0.38) 100%),
+            rgba(145, 96, 50, 0.40) 0%, 
+            rgba(186, 133, 77, 0.16) 12%, 
+            rgba(130, 82, 40, 0.48) 24%, 
+            rgba(197, 145, 90, 0.12) 36%, 
+            rgba(125, 78, 36, 0.45) 48%, 
+            rgba(186, 133, 77, 0.16) 62%, 
+            rgba(140, 92, 46, 0.42) 76%, 
+            rgba(186, 133, 77, 0.14) 88%, 
+            rgba(120, 74, 32, 0.52) 100%),
+        /* 정밀 나뭇결 스트라이프 */
         repeating-linear-gradient(0deg, 
-            rgba(0, 0, 0, 0.02) 0px, 
-            rgba(0, 0, 0, 0.02) 1px, 
+            rgba(0, 0, 0, 0.025) 0px, 
+            rgba(0, 0, 0, 0.025) 1px, 
             transparent 1px, 
             transparent 3px);
-    border: 2px solid #a6723d;
-    border-radius: 18px;
-    padding: 50px 38px 46px 38px;
+    border: 2px solid #8E5B2B;
+    border-radius: 16px;
+    padding: 48px 36px 44px 36px;
     box-shadow: 
-        0 25px 60px -12px rgba(66, 38, 15, 0.38),
-        0 8px 24px -4px rgba(66, 38, 15, 0.2),
-        inset 0 2px 4px rgba(255, 255, 255, 0.45),
-        inset 0 -3px 6px rgba(0, 0, 0, 0.35);
+        0 28px 65px -14px rgba(50, 26, 8, 0.42),
+        0 10px 26px -6px rgba(50, 26, 8, 0.22),
+        inset 0 2px 4px rgba(255, 255, 255, 0.52),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.4);
 }
 
-/* 상단 좌우 실제 마운트 볼트 캡 (2구) */
+/* 세컨더리 보드: Leaders (폭 960px) */
+.honors-wood-board.board-leaders {
+    max-width: 960px;
+}
+
+/* 와이드 보드: GA Directory (폭 1060px) */
+.honors-wood-board.board-ga {
+    max-width: 1060px;
+}
+
+/* 상단 좌우 메탈 마운트 볼트 캡 (2구) */
 .board-mount-bolt {
     position: absolute;
-    top: 20px;
-    width: 24px;
-    height: 24px;
+    top: 18px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #4b4e54 0%, #1f2124 70%, #0d0e10 100%);
+    background: radial-gradient(circle at 35% 35%, #5a5d64 0%, #2b2d31 65%, #141517 100%);
+    border: 1px solid #71757e;
     box-shadow: 
-        0 4px 8px rgba(0, 0, 0, 0.45), 
-        inset 0 1px 2px rgba(255, 255, 255, 0.45);
+        0 4px 10px rgba(0, 0, 0, 0.48), 
+        inset 0 1px 2px rgba(255, 255, 255, 0.55);
 }
-.board-mount-bolt.bolt-left { left: 24px; }
-.board-mount-bolt.bolt-right { right: 24px; }
+.board-mount-bolt.bolt-left { left: 22px; }
+.board-mount-bolt.bolt-right { right: 22px; }
 
 /* ==========================================================================
-   1. 최상단 메인 명판 (Black & Gold Plaque)
+   최상단 메인 명판 (Piano Black & Mirror Gold Plaque)
    ========================================================================== */
 .honors-main-plaque {
-    background: #111315;
-    border-radius: 6px;
-    padding: 12px 24px;
-    margin: 0 auto 30px auto;
+    background: #0f1114;
+    border-radius: 5px;
+    padding: 11px 22px;
+    margin: 0 auto 26px auto;
     max-width: 580px;
     box-shadow: 
-        0 5px 14px rgba(0, 0, 0, 0.4),
-        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+        0 6px 16px rgba(0, 0, 0, 0.45),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3);
 }
 
 .plaque-inner-border {
     border: 1.5px solid #d4af37;
     border-radius: 3px;
-    padding: 10px 18px;
+    padding: 9px 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    box-shadow: inset 0 0 6px rgba(212, 175, 55, 0.25);
 }
 
 .plaque-line-1,
@@ -906,16 +954,16 @@ body.no-scroll {
     font-family: 'Inter', var(--font-sans);
     font-size: 1.25rem;
     font-weight: 900;
-    letter-spacing: 0.12em;
-    color: #f4d068;
+    letter-spacing: 0.14em;
+    color: #F8D978;
     text-transform: uppercase;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 12px rgba(248, 217, 120, 0.25);
     line-height: 1.25;
     text-align: center;
 }
 
 /* ==========================================================================
-   2. 3대 부문 컬럼 헤더 블랙 명판 (.honors-columns-header)
+   3대 부문 컬럼 헤더 블랙 명판 (.honors-columns-header)
    ========================================================================== */
 .honors-columns-header {
     display: grid;
@@ -925,16 +973,16 @@ body.no-scroll {
 }
 
 .honors-col-plaque {
-    background: #16181b;
-    border: 1.5px solid #33383f;
+    background: #141619;
+    border: 1.5px solid #363b42;
     border-radius: 4px;
-    padding: 10px 6px;
+    padding: 10px 8px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 52px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .col-plaque-title {
@@ -948,9 +996,23 @@ body.no-scroll {
 }
 
 /* ==========================================================================
-   3. 실버 헤어라인 메탈 명판 (.metal-plate)
-   - 실물 사진 속 알루미늄/실버 명판 질감 & 이름+연도 각인
+   실버 헤어라인 메탈 명판 공통 질감 (.metal-plate, .leader-plate, .ga-metal-plate)
    ========================================================================== */
+.metal-plate,
+.leader-plate,
+.ga-metal-plate {
+    background: linear-gradient(180deg, #F8FAFC 0%, #E2E8F0 35%, #CBD5E1 65%, #E2E8F0 100%);
+    border: 1px solid #94A3B8;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1.5px solid #64748B;
+    border-radius: 3px;
+    box-shadow: 
+        0 3px 6px rgba(0, 0, 0, 0.22), 
+        inset 0 1px 1px rgba(255, 255, 255, 0.92);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 1) 학생 수상자 메탈 명판 */
 .honors-plates-grid {
     display: flex;
     flex-direction: column;
@@ -964,11 +1026,6 @@ body.no-scroll {
 }
 
 .metal-plate {
-    background: linear-gradient(180deg, #f5f6f8 0%, #e3e6ea 40%, #ccd2da 70%, #dde2e8 100%);
-    border: 1px solid #a3abb5;
-    border-top: 1px solid #ffffff;
-    border-bottom: 1.5px solid #88909c;
-    border-radius: 3px;
     padding: 9px 8px 7px 8px;
     min-height: 56px;
     display: flex;
@@ -977,21 +1034,16 @@ body.no-scroll {
     justify-content: center;
     gap: 2px;
     cursor: pointer;
-    box-shadow: 
-        0 3px 6px rgba(0, 0, 0, 0.2), 
-        inset 0 1px 1px rgba(255, 255, 255, 0.95);
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     outline: none;
     width: 100%;
 }
 
-/* 메탈 명판 호버 인터랙션 (빛 반사 & 리프트) */
 .metal-plate:hover {
     transform: translateY(-2px);
     box-shadow: 
-        0 6px 14px rgba(0, 0, 0, 0.26), 
-        inset 0 1px 1px rgba(255, 255, 255, 1);
-    background: linear-gradient(180deg, #ffffff 0%, #edf1f5 40%, #d5dbe3 70%, #eff3f8 100%);
+        0 7px 16px rgba(0, 0, 0, 0.28), 
+        inset 0 1px 2px rgba(255, 255, 255, 1);
+    background: linear-gradient(180deg, #FFFFFF 0%, #EDF2F7 35%, #D8E1E8 65%, #F1F5F9 100%);
 }
 
 .metal-plate:active {
@@ -1001,15 +1053,14 @@ body.no-scroll {
         inset 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
-/* 이름 각인 스타일 (한글 넓은 자간) */
 .plate-name {
     font-family: var(--font-sans);
     font-size: 1.05rem;
     font-weight: 800;
-    color: #1a1c1e;
+    color: #0F172A;
     letter-spacing: 0.32em;
-    padding-left: 0.32em; /* 가운데 정렬 보정 */
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    padding-left: 0.32em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
     line-height: 1.2;
     transition: color 0.15s ease;
 }
@@ -1025,212 +1076,182 @@ body.no-scroll {
     color: #000000;
 }
 
-/* 연도 각인 */
 .plate-year {
     font-family: 'Inter', var(--font-sans);
     font-size: 0.72rem;
     font-weight: 700;
-    color: #495057;
+    color: #475569;
     font-variant-numeric: tabular-nums;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-/* 2025 최신 헌액 명판 하이라이트 */
 .plate-latest {
-    border-color: #c49b4b;
+    border-color: #D97706;
     box-shadow: 
-        0 3px 8px rgba(197, 143, 85, 0.35), 
+        0 3px 8px rgba(217, 119, 6, 0.35), 
         inset 0 1px 2px rgba(255, 255, 255, 0.95);
 }
 .plate-latest:hover {
     box-shadow: 
-        0 6px 16px rgba(197, 143, 85, 0.45), 
+        0 7px 18px rgba(217, 119, 6, 0.45), 
         inset 0 1px 2px rgba(255, 255, 255, 1);
 }
 
 /* ==========================================================================
-   하단: Past Leaders & GA Directory 서브 섹션
+   2) Past Leaders 원목 보드판 (.board-leaders)
    ========================================================================== */
-.wooden-sub-section {
-    margin-top: 80px;
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.section-sub-header {
-    margin-bottom: 30px;
-}
-
-.sub-kicker {
-    display: block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    color: #88909c;
-    text-transform: uppercase;
-    margin-bottom: 6px;
-}
-
-.sub-section-title {
-    font-family: var(--font-sans);
-    font-size: 1.4rem;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: #0F172A;
-    margin: 0 0 8px 0;
-}
-
-.sub-section-desc {
-    font-size: 0.9rem;
-    color: #64748B;
-    line-height: 1.55;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Past Leaders 3열 그리드 */
-.wooden-leaders-grid {
+.wooden-leaders-board-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    background: #FFFFFF;
-    border: 1px solid #E2DED7;
-    border-radius: 16px;
-    padding: 34px 30px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    gap: 16px;
+    align-items: start;
 }
 
-.w-leader-col:not(:last-child) {
-    border-right: 1px solid #F1EFEA;
-    padding-right: 32px;
-}
-
-.w-leader-head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #EAE6DF;
-}
-
-.w-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-}
-.w-dot.dot-at { background: #991B1B; }
-.w-dot.dot-rehab { background: #2563EB; }
-.w-dot.dot-res { background: #059669; }
-
-.w-dept-name {
-    font-size: 0.88rem;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #0F172A;
-    margin: 0;
-}
-
-.w-leader-list {
+.leader-board-col {
     display: flex;
     flex-direction: column;
 }
 
-.w-leader-item {
+.leader-plates-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.leader-plate {
+    padding: 8px 12px;
+    min-height: 46px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 9px 0;
-    border-bottom: 1px dashed #F1EFEA;
+    border-radius: 3px;
 }
 
-.w-leader-item .w-date {
+.leader-plate:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 5px 12px rgba(0, 0, 0, 0.24), 
+        inset 0 1px 1px rgba(255, 255, 255, 1);
+}
+
+.leader-date {
     font-family: 'Inter', var(--font-sans);
-    font-size: 0.78rem;
-    color: #64748B;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #475569;
     font-variant-numeric: tabular-nums;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+    white-space: nowrap;
 }
 
-.w-leader-item .w-name {
-    font-size: 0.92rem;
-    font-weight: 600;
-    color: #1E293B;
+.leader-name {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: 0.2em;
+    padding-left: 0.2em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
 }
 
-.w-name-wrap {
+.leader-name-wrap {
     display: inline-flex;
     align-items: center;
     gap: 6px;
 }
 
-.w-leader-item .w-name.current {
+/* 현재 재임중 팀장 골드 하이라이트 */
+.leader-plate.plate-active {
+    border: 1.5px solid #D97706;
+    background: linear-gradient(180deg, #FFFBEB 0%, #FEF3C7 50%, #FDE68A 100%);
+    box-shadow: 
+        0 4px 10px rgba(217, 119, 6, 0.35), 
+        inset 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+
+.leader-name.active {
     color: #991B1B;
+    font-weight: 900;
+}
+
+.plate-badge-active {
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
     font-weight: 800;
+    color: #FFFFFF;
+    background: #991B1B;
+    padding: 2px 6px;
+    border-radius: 3px;
+    letter-spacing: 0;
+    box-shadow: 0 1px 3px rgba(153, 27, 27, 0.4);
 }
 
-.badge-current {
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: #991B1B;
-    background: #FEF2F2;
-    border: 1px solid #FECACA;
-    border-radius: 4px;
-    padding: 1px 5px;
-}
-
-/* GA Directory 4열 그리드 */
-.wooden-ga-directory {
+/* ==========================================================================
+   3) GA 35인 헌액 원목 보드판 (.board-ga)
+   ========================================================================== */
+.wooden-ga-plates-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 6px 14px;
-    background: #FFFFFF;
-    border: 1px solid #E2DED7;
-    border-radius: 16px;
-    padding: 26px 22px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+    gap: 8px;
 }
 
-.w-ga-row {
+.ga-metal-plate {
+    padding: 8px 12px;
+    min-height: 44px;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 9px 12px;
-    border-bottom: 1px solid #F6F4F0;
-    border-radius: 6px;
-    transition: background-color 0.15s ease;
+    align-items: center;
+    border-radius: 3px;
 }
 
-.w-ga-row:hover {
-    background-color: #F1EFEA;
+.ga-metal-plate:hover {
+    transform: translateY(-1px);
+    box-shadow: 
+        0 5px 12px rgba(0, 0, 0, 0.22), 
+        inset 0 1px 1px rgba(255, 255, 255, 1);
 }
 
-.w-ga-date {
+.ga-p-date {
     font-family: 'Inter', var(--font-sans);
-    font-size: 0.76rem;
-    color: #88909c;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #475569;
     font-variant-numeric: tabular-nums;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
+    white-space: nowrap;
 }
 
-.w-ga-dept {
-    font-size: 0.76rem;
-    color: #555d68;
-    font-weight: 500;
-    margin: 0 6px;
-    flex: 1;
-    text-align: center;
+.ga-p-dept {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: #991B1B;
+    margin: 0 4px;
+    white-space: nowrap;
 }
 
-.w-ga-name {
+.ga-p-name {
+    font-family: var(--font-sans);
     font-size: 0.88rem;
-    font-weight: 600;
+    font-weight: 800;
     color: #0F172A;
+    letter-spacing: 0.15em;
+    padding-left: 0.15em;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
 }
 
 /* ==========================================================================
    반응형 (Mobile & Tablet)
    ========================================================================== */
+@media (max-width: 1024px) {
+    .wooden-ga-plates-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+}
+
 @media (max-width: 860px) {
     .honors-wood-board {
         padding: 40px 18px 36px 18px;
@@ -1262,18 +1283,10 @@ body.no-scroll {
     .plate-name.multi {
         font-size: 0.75rem;
     }
-    .wooden-leaders-grid {
+
+    .wooden-leaders-board-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
-    }
-    .w-leader-col:not(:last-child) {
-        border-right: none;
-        padding-right: 0;
-        border-bottom: 1px solid #EAE6DF;
-        padding-bottom: 20px;
-    }
-    .wooden-ga-directory {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 }
 
@@ -1298,11 +1311,10 @@ body.no-scroll {
     .plate-year {
         font-size: 0.65rem;
     }
-    .wooden-ga-directory {
+    .wooden-ga-plates-grid {
         grid-template-columns: 1fr;
     }
 }
-
 
 /* --------------------------------------------------------------------------
    5. About Section
