@@ -793,318 +793,449 @@ body.no-scroll {
 }
 
 /* --------------------------------------------------------------------------
-   10. Awards Section: 프리미엄 헤리티지 아카이브 (Heritage Archive)
-   - 10개년 명예의 전당 (Student Awards) & 역대 리더십 타임라인 & 역대 GA 명부
-   - 경희대 3대 시그니처 배색 (크림슨 · 로열 다크 네이비 · 샴페인 웜 골드) 절제 적용
+   10. Awards Section: 애플·리니어 감성의 오픈 캔버스 에디토리얼 (Open Canvas Editorial)
+   - 네모난 상자(Card-in-Card)와 조잡한 알약 뱃지를 완전히 철거한 1px 헤어라인 기반 레이아웃
+   - Student Awards: 상단 단정 헤더 + 11개년(2025~2015) 수평 에디토리얼 로우 (Linear Rows)
+   - Past Leaders: 3개 부서별 얇은 세로 헤어라인 매트릭스 (Editorial 3-Column) + 재임중 인디케이터
+   - GA Directory: 35인 명부 4열 미니멀 텍스트 디렉터리 (NYT/Apple Credits Style)
    -------------------------------------------------------------------------- */
 
-.prestige-awards-section {
+.awards-open-section {
     position: relative;
-    background: #FAF9F8;
-    background-image: 
-        radial-gradient(circle at 50% 0%, rgba(165, 0, 52, 0.025) 0%, transparent 65%),
-        radial-gradient(circle at 10% 90%, rgba(0, 34, 68, 0.025) 0%, transparent 50%),
-        radial-gradient(circle at 90% 90%, rgba(166, 124, 30, 0.03) 0%, transparent 50%);
-    padding: 95px 0 105px 0;
-    overflow: hidden;
-    color: var(--color-text-main);
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.prestige-category-wrap {
     background: #FFFFFF;
-    border: 1px solid rgba(226, 232, 240, 0.88);
-    border-radius: 22px;
-    padding: 44px 38px;
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02);
-    margin-bottom: 38px;
-    position: relative;
+    padding: 100px 0 110px 0;
+    color: var(--color-text-main);
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
 }
 
-.prestige-category-head {
-    margin-bottom: 24px;
-    text-align: center;
+/* 상단 섹션 킥커(Eyebrow) 라벨 */
+.open-kicker {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #991B1B; /* 경희대 딥 크림슨 */
+    margin-bottom: 8px;
 }
 
-.category-main-title {
+.awards-open-container {
+    max-width: 1100px;
+    margin: 40px auto 0 auto;
+}
+
+/* 오픈 캔버스 블록 (배경/그림자/둥근테두리 없이 호흡하는 영역) */
+.open-archive-block {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 80px;
+}
+
+.open-archive-block.mt-section {
+    margin-top: 80px;
+    padding-top: 20px;
+}
+
+/* 서브 블록 헤더 */
+.open-block-header {
+    margin-bottom: 34px;
+}
+
+.block-eyebrow {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: #94A3B8;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.open-block-title {
     font-family: var(--font-sans);
-    font-size: 1.55rem;
-    font-weight: 900;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
     color: #0F172A;
-    letter-spacing: -0.4px;
-    margin: 0 0 8px 0;
+    margin: 0 0 10px 0;
 }
 
-.category-sub-desc {
+.open-block-desc {
     font-size: 0.92rem;
     color: #64748B;
-    margin: 0 auto;
-    max-width: 660px;
     line-height: 1.6;
+    max-width: 620px;
+    margin: 0 auto;
     word-break: keep-all;
 }
 
 /* ==========================================================================
-   2. Past Leaders: 3열 하이엔드 리더십 카드 & 버티컬 타임라인
+   1. Student Awards: 상단 단정 헤더 & 11개년 수평 에디토리얼 로우 (Linear Rows)
    ========================================================================== */
-.awards-columns.prestige-awards-grid {
+.awards-linear-header {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    align-items: center;
+    padding: 12px 14px;
+    border-bottom: 1px solid #CBD5E1;
+    margin-bottom: 4px;
+}
+
+.hdr-year {
+    font-family: 'Inter', var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #94A3B8;
+    text-transform: uppercase;
+}
+
+.hdr-awards-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 26px;
-    margin-top: 20px;
+    gap: 20px;
+    align-items: center;
 }
 
-.prestige-card {
-    background: #FFFFFF;
-    border: 1px solid rgba(226, 232, 240, 0.85);
-    border-radius: 20px;
-    padding: 30px 26px 26px 26px;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02);
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+.hdr-col {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #475569;
+    text-transform: uppercase;
 }
 
-.prestige-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 32px -6px rgba(15, 23, 42, 0.07), 0 2px 6px rgba(15, 23, 42, 0.03);
+.legend-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
 }
 
-/* 리더 카드 상단 3px 엣지 하이라이트 */
-.prestige-card .card-edge-highlight {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    opacity: 0.95;
-    transition: height 0.25s ease;
+.legend-dot.dot-gold { background: #D97706; }
+.legend-dot.dot-crimson { background: #991B1B; }
+.legend-dot.dot-navy { background: #2563EB; }
+
+.awards-linear-list {
+    border-top: none;
 }
 
-.prestige-card:hover .card-edge-highlight {
-    height: 4px;
-}
-
-.card-leader-at .card-edge-highlight { background: #A50034; }
-.card-leader-rehab .card-edge-highlight { background: #A67C1E; }
-.card-leader-res .card-edge-highlight { background: #002244; }
-
-.card-leader-at:hover { border-color: rgba(165, 0, 52, 0.3); }
-.card-leader-rehab:hover { border-color: rgba(166, 124, 30, 0.35); }
-.card-leader-res:hover { border-color: rgba(0, 34, 68, 0.35); }
-
-/* 리더 카드 상단 부서 헤더 */
-.prestige-card-top {
-    margin-bottom: 20px;
-    padding-bottom: 14px;
+.awards-linear-row {
+    display: grid;
+    grid-template-columns: 85px 1fr;
+    align-items: center;
+    padding: 15px 14px;
     border-bottom: 1px solid #F1F5F9;
+    transition: background-color 0.15s ease;
 }
 
-.leader-badge-pill {
+.awards-linear-row:hover {
+    background-color: #F8FAFC;
+}
+
+/* 연도 표기 (모노스페이스 숫자) */
+.row-year {
+    font-family: 'Inter', var(--font-sans);
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: #0F172A;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+}
+
+/* 3개 수상 셀 그리드 */
+.row-awards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: center;
+}
+
+.award-cell {
+    display: flex;
+    align-items: center;
+}
+
+/* 모바일 전용 라벨 (데스크톱에선 완전 숨김) */
+.award-sub-label.mobile-only {
+    display: none;
+}
+
+/* 수상자 텍스트 링크 버튼 (조잡한 칩 테두리 제거) */
+.award-winner-link {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1E293B;
+    cursor: pointer;
+    transition: all 0.15s ease;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 0.8px;
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin-bottom: 10px;
+    outline: none;
 }
 
-.badge-at {
-    color: #A50034;
-    background: rgba(165, 0, 52, 0.05);
-    border: 1px solid rgba(165, 0, 52, 0.14);
-}
-
-.badge-rehab {
-    color: #A67C1E;
-    background: rgba(166, 124, 30, 0.06);
-    border: 1px solid rgba(166, 124, 30, 0.16);
-}
-
-.badge-res {
-    color: #002244;
-    background: rgba(0, 34, 68, 0.05);
-    border: 1px solid rgba(0, 34, 68, 0.14);
-}
-
-.prestige-card-title {
-    font-size: 1.25rem;
-    font-weight: 900;
-    color: #0F172A;
-    letter-spacing: -0.3px;
-    margin: 0;
-}
-
-/* 버티컬 타임라인 트랙 */
-.prestige-timeline-box {
-    position: relative;
-    padding-left: 20px;
-    margin-left: 8px;
-    border-left: 2px solid #EDF2F7;
-}
-
-.awards-list.prestige-timeline-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.prestige-timeline-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: relative;
-    margin-bottom: 15px;
-    transition: transform 0.2s ease;
-}
-
-.prestige-timeline-item:last-child {
-    margin-bottom: 0;
-}
-
-.prestige-timeline-item:hover {
-    transform: translateX(3px);
-}
-
-.prestige-timeline-item .timeline-dot {
-    position: absolute;
-    left: -26px;
-    width: 10px;
-    height: 10px;
+/* 단독 수상자 앞의 4px 컬러 인디케이터 닷 */
+.award-gold .award-winner-link:not(.single-link)::before,
+.award-gold .multi-winner-wrap::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
-    background: #CBD5E1;
-    border: 2px solid #FFFFFF;
-    box-shadow: 0 0 0 2px #E2E8F0;
-    transition: all 0.25s ease;
+    background: #D97706;
+    margin-right: 2px;
 }
 
-.card-leader-at .prestige-timeline-item:hover .timeline-dot {
-    background: #A50034;
-    box-shadow: 0 0 0 2px rgba(165, 0, 52, 0.25);
+.award-crimson .award-winner-link::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #991B1B;
+    margin-right: 2px;
 }
 
-.card-leader-rehab .prestige-timeline-item:hover .timeline-dot {
-    background: #A67C1E;
-    box-shadow: 0 0 0 2px rgba(166, 124, 30, 0.25);
+.award-navy .award-winner-link::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #2563EB;
+    margin-right: 2px;
 }
 
-.card-leader-res .prestige-timeline-item:hover .timeline-dot {
-    background: #002244;
-    box-shadow: 0 0 0 2px rgba(0, 34, 68, 0.25);
-}
-
-.prestige-timeline-item .year {
-    font-size: 0.82rem;
-    font-weight: 700;
-    color: #64748B;
-    font-variant-numeric: tabular-nums;
-    background: #F8FAFC;
-    border: 1px solid #E2E8F0;
-    padding: 4px 10px;
-    border-radius: 6px;
-    letter-spacing: -0.2px;
-}
-
-.prestige-timeline-item .name {
-    font-size: 1.02rem;
-    font-weight: 800;
+.award-winner-link:hover {
     color: #0F172A;
-    letter-spacing: -0.3px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transform: translateY(-1px);
+}
+
+/* 2인 이상 수상자 래퍼 (2017년 조재희, 양창욱) */
+.multi-winner-wrap {
+    display: inline-flex;
+    align-items: center;
+}
+
+.multi-winner-wrap .comma {
+    font-size: 0.9rem;
+    color: #94A3B8;
+    margin: 0 1px;
 }
 
 /* ==========================================================================
-   3. Graduate Assistants: 헤리티지 GA 칩 그리드
+   2. Past Leaders: 3열 오픈 리더십 매트릭스
    ========================================================================== */
-.ga-grid.prestige-ga-grid {
+.open-leaders-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 13px;
-    margin-top: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    border-top: 1px solid #CBD5E1;
+    padding-top: 32px;
 }
 
-.ga-card.prestige-ga-card {
-    background: #FFFFFF;
-    border: 1px solid rgba(226, 232, 240, 0.9);
-    border-radius: 12px;
-    padding: 11px 15px;
+.open-leader-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.open-leader-col:not(:last-child) {
+    border-right: 1px solid #F1F5F9;
+    padding-right: 36px;
+}
+
+.open-leader-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.leader-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.leader-dot.dot-at { background: #991B1B; }
+.leader-dot.dot-rehab { background: #2563EB; }
+.leader-dot.dot-res { background: #059669; }
+
+.open-dept-name {
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #0F172A;
+    margin: 0;
+}
+
+.open-leader-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.open-leader-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #F1F5F9;
+}
+
+.open-leader-item .item-period {
+    font-family: 'Inter', var(--font-sans);
+    font-size: 0.78rem;
+    color: #64748B;
+    font-variant-numeric: tabular-nums;
+}
+
+.open-leader-item .item-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #1E293B;
+}
+
+.current-name-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.open-leader-item .item-name.current {
+    color: #991B1B;
+    font-weight: 800;
+}
+
+.badge-current {
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #991B1B;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    border-radius: 4px;
+    padding: 1px 5px;
+    letter-spacing: 0.02em;
+}
+
+/* ==========================================================================
+   3. Graduate Assistants: 4열 미니멀 텍스트 디렉터리 (35인 명부)
+   ========================================================================== */
+.open-ga-directory {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px 14px;
+    border-top: 1px solid #CBD5E1;
+    padding-top: 24px;
+}
+
+.ga-entry-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    padding: 9px 12px;
+    border-bottom: 1px solid #F8FAFC;
+    border-radius: 6px;
+    transition: background-color 0.15s ease;
 }
 
-.ga-card.prestige-ga-card:hover {
-    border-color: #A50034;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(165, 0, 52, 0.08);
+.ga-entry-row:hover {
+    background-color: #F1F5F9;
 }
 
-.ga-card-header {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-}
-
-.ga-role {
-    font-size: 0.72rem;
-    font-weight: 800;
-    padding: 3px 8px;
-    border-radius: 5px;
-    letter-spacing: -0.3px;
-    background: rgba(165, 0, 52, 0.06);
-    color: #A50034;
-    border: 1px solid rgba(165, 0, 52, 0.12);
-}
-
-.ga-date {
+.ga-ent-date {
+    font-family: 'Inter', var(--font-sans);
     font-size: 0.76rem;
-    font-weight: 600;
     color: #94A3B8;
     font-variant-numeric: tabular-nums;
 }
 
-.ga-name {
-    font-size: 0.95rem;
-    font-weight: 800;
+.ga-ent-dept {
+    font-size: 0.76rem;
+    color: #64748B;
+    font-weight: 500;
+    margin: 0 6px;
+    flex: 1;
+    text-align: center;
+}
+
+.ga-ent-name {
+    font-size: 0.88rem;
+    font-weight: 600;
     color: #0F172A;
-    letter-spacing: -0.4px;
 }
 
 /* ==========================================================================
    반응형 최적화 (태블릿 & 모바일)
    ========================================================================== */
 @media (max-width: 992px) {
-    .awards-columns.prestige-awards-grid {
+    .open-leaders-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 28px;
     }
-    .ga-grid.prestige-ga-grid {
+    .open-leader-col:not(:last-child) {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid #E2E8F0;
+        padding-bottom: 24px;
+    }
+    .open-ga-directory {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-    .prestige-category-wrap {
-        padding: 32px 22px;
     }
 }
 
-@media (max-width: 768px) {
-    .prestige-awards-section {
+@media (max-width: 680px) {
+    .awards-open-section {
         padding: 70px 0 80px 0;
     }
-    .category-main-title {
-        font-size: 1.35rem;
+    .awards-linear-header {
+        display: none; /* 모바일에서는 헤더 숨김 */
     }
-    .ga-grid.prestige-ga-grid {
+    .awards-linear-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 16px 10px;
+    }
+    .row-awards-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .award-cell {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+    }
+    .award-sub-label.mobile-only {
+        display: block;
+        font-size: 0.65rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #94A3B8;
+        letter-spacing: 0.04em;
+    }
+    .open-ga-directory {
         grid-template-columns: 1fr;
     }
 }
+
 
 /* --------------------------------------------------------------------------
    5. About Section
@@ -7350,155 +7481,6 @@ body.no-scroll {
     color: #64748b;
     margin: 0;
 }
-
-
-/* ==========================================================================
-   ATHLETIC TRAINING STUDENT AWARDS: 10개년 명예의 전당 아카이브 테이블 (Archive Table)
-   - 프리미엄 헤리티지 아카이브 테이블 & 골드·크림슨·슬레이트 3대 상 엠블럼
-   ========================================================================== */
-
-.hof-archive-table-wrapper {
-    margin-top: 24px;
-    background: #FFFFFF;
-    border: 1px solid rgba(226, 232, 240, 0.9);
-    border-radius: 16px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.02);
-    overflow: hidden;
-}
-
-.hof-table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-.hof-archive-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    min-width: 820px;
-}
-
-/* 테이블 헤더 */
-.hof-archive-table thead th {
-    padding: 18px 16px;
-    vertical-align: middle;
-    background: #F8FAFC;
-    color: #1E293B;
-    border-bottom: 2px solid #E2E8F0;
-}
-
-.hof-archive-table thead th.th-year {
-    width: 13%;
-    background: #F1F5F9;
-    color: #475569;
-    font-size: 0.85rem;
-    font-weight: 800;
-    letter-spacing: 0.6px;
-    border-right: 1px solid #E2E8F0;
-}
-
-.hof-archive-table thead th.col-gold {
-    width: 29%;
-    border-top: 3px solid #D4AF37;
-}
-
-.hof-archive-table thead th.col-burgundy {
-    width: 29%;
-    border-top: 3px solid #A50034;
-}
-
-.hof-archive-table thead th.col-slate {
-    width: 29%;
-    border-top: 3px solid #002244;
-}
-
-.hof-archive-table .th-title-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    font-size: 0.92rem;
-    font-weight: 800;
-    letter-spacing: 0.4px;
-    color: #0F172A;
-}
-
-.hof-archive-table thead th.col-gold .th-icon { color: #D4AF37; font-size: 1.05rem; }
-.hof-archive-table thead th.col-burgundy .th-icon { color: #A50034; font-size: 1.05rem; }
-.hof-archive-table thead th.col-slate .th-icon { color: #002244; font-size: 1.05rem; }
-
-/* 테이블 본문 행(Row) */
-.hof-archive-table tbody tr {
-    border-bottom: 1px solid #F1F5F9;
-    transition: background-color 0.2s ease;
-}
-
-.hof-archive-table tbody tr:hover {
-    background-color: #FAF9F8;
-}
-
-.hof-archive-table tbody td {
-    padding: 13px 14px;
-    vertical-align: middle;
-}
-
-.hof-archive-table tbody td.td-year {
-    background: #F8FAFC;
-    border-right: 1px solid #F1F5F9;
-}
-
-.hof-archive-table .year-text {
-    font-size: 0.95rem;
-    font-weight: 800;
-    color: #1E293B;
-    font-variant-numeric: tabular-nums;
-}
-
-/* 수상자 이름 칩 버튼 (.hof-alumni-chip) */
-.hof-alumni-chip {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    background: #FFFFFF;
-    color: #1E293B;
-    border: 1px solid #E2E8F0;
-    border-radius: 999px;
-    padding: 6px 16px;
-    min-width: 105px;
-    font-size: 0.92rem;
-    font-weight: 700;
-    letter-spacing: -0.2px;
-    cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    outline: none;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-}
-
-.hof-alumni-chip:hover {
-    background: rgba(165, 0, 52, 0.04);
-    border-color: #A50034;
-    color: #A50034;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 14px rgba(165, 0, 52, 0.12);
-}
-
-/* 2명 이상 공동 수상자 */
-.chip-multi-wrap {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-}
-
-.chip-comma {
-    font-size: 0.9rem;
-    font-weight: 800;
-    color: #94A3B8;
-    margin: 0 2px;
-}
-
 
 
 /* ==========================================================================
