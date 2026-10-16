@@ -793,361 +793,338 @@ body.no-scroll {
 }
 
 /* --------------------------------------------------------------------------
-   10. Awards Section: 3대 상 부문별 벤토 쇼케이스 (Bento Showcase)
-   - 최신 웹 디자인 트렌드(Apple & Stripe)를 접목한 3-Column Bento Grid
-   - 2025 최신 수상자 포커스 스포트라이트 + 10개년(2024~2015) 아카이브 히스토리
-   - 골드 · 크림슨 · 로열 네이비 3대 시그니처 배색의 입체감과 깊이감
+   10. Awards Section: 실물 원목 명예의 전당 보드 (Real Wooden Honors Board)
+   - 센터 현장에 실제로 걸려 있는 원목 명예의 전당 액자(post_8.jpg) 100% 디지털 복원
+   - 따뜻하고 중후한 원목 패널(Oak Wood) + 상단 2구 메탈릭 마운트 볼트
+   - 블랙 & 골드 메인 명판 + 3대 상 부문 헤더 명판
+   - 실물과 똑같은 브러시드 실버 메탈 명판(이름 + 연도 각인)
    -------------------------------------------------------------------------- */
 
-.awards-bento-section {
+.awards-wooden-section {
     position: relative;
-    background: #FBFBFC;
+    background: #F4F3F0;
     background-image: 
-        radial-gradient(circle at 50% 0%, rgba(153, 27, 27, 0.035) 0%, transparent 60%),
-        radial-gradient(circle at 10% 40%, rgba(217, 119, 6, 0.025) 0%, transparent 45%),
-        radial-gradient(circle at 90% 40%, rgba(37, 99, 235, 0.025) 0%, transparent 45%);
-    padding: 100px 0 115px 0;
+        radial-gradient(circle at 50% 15%, rgba(255, 255, 255, 0.95) 0%, rgba(240, 238, 233, 0.7) 100%),
+        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.008) 0px, rgba(0, 0, 0, 0.008) 2px, transparent 2px, transparent 8px);
+    padding: 100px 0 120px 0;
     color: var(--color-text-main);
-    border-top: 1px solid #E5E7EB;
-    border-bottom: 1px solid #E5E7EB;
+    border-top: 1px solid #E2DED7;
+    border-bottom: 1px solid #E2DED7;
 }
 
-.bento-kicker {
+.wooden-kicker {
     display: inline-block;
     font-size: 0.72rem;
     font-weight: 800;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: #991B1B;
     margin-bottom: 8px;
 }
 
-.awards-bento-container {
-    max-width: 1140px;
-    margin: 40px auto 0 auto;
+.wooden-board-outer {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto 85px auto;
+    max-width: 980px;
+    width: 100%;
 }
 
-/* 블록 공통 헤더 */
-.bento-block-header {
-    margin-bottom: 34px;
+/* ==========================================================================
+   원목 보드판 본체 (.honors-wood-board)
+   - 따뜻하고 입체감 넘치는 천연 오크/월넛 나뭇결 패턴 & 베벨 테두리
+   ========================================================================== */
+.honors-wood-board {
+    position: relative;
+    width: 100%;
+    max-width: 820px;
+    background: #c58f55;
+    background-image: 
+        linear-gradient(90deg, 
+            rgba(168, 114, 62, 0.28) 0%, 
+            rgba(197, 143, 85, 0.12) 18%, 
+            rgba(145, 96, 50, 0.32) 36%, 
+            rgba(197, 143, 85, 0.12) 55%, 
+            rgba(168, 114, 62, 0.28) 75%, 
+            rgba(135, 87, 44, 0.38) 100%),
+        repeating-linear-gradient(0deg, 
+            rgba(0, 0, 0, 0.02) 0px, 
+            rgba(0, 0, 0, 0.02) 1px, 
+            transparent 1px, 
+            transparent 3px);
+    border: 2px solid #a6723d;
+    border-radius: 18px;
+    padding: 50px 38px 46px 38px;
+    box-shadow: 
+        0 25px 60px -12px rgba(66, 38, 15, 0.38),
+        0 8px 24px -4px rgba(66, 38, 15, 0.2),
+        inset 0 2px 4px rgba(255, 255, 255, 0.45),
+        inset 0 -3px 6px rgba(0, 0, 0, 0.35);
 }
 
-.block-eyebrow {
+/* 상단 좌우 실제 마운트 볼트 캡 (2구) */
+.board-mount-bolt {
+    position: absolute;
+    top: 20px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #4b4e54 0%, #1f2124 70%, #0d0e10 100%);
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.45), 
+        inset 0 1px 2px rgba(255, 255, 255, 0.45);
+}
+.board-mount-bolt.bolt-left { left: 24px; }
+.board-mount-bolt.bolt-right { right: 24px; }
+
+/* ==========================================================================
+   1. 최상단 메인 명판 (Black & Gold Plaque)
+   ========================================================================== */
+.honors-main-plaque {
+    background: #111315;
+    border-radius: 6px;
+    padding: 12px 24px;
+    margin: 0 auto 30px auto;
+    max-width: 580px;
+    box-shadow: 
+        0 5px 14px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.25);
+}
+
+.plaque-inner-border {
+    border: 1.5px solid #d4af37;
+    border-radius: 3px;
+    padding: 10px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.plaque-line-1,
+.plaque-line-2 {
+    font-family: 'Inter', var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    color: #f4d068;
+    text-transform: uppercase;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
+    line-height: 1.25;
+    text-align: center;
+}
+
+/* ==========================================================================
+   2. 3대 부문 컬럼 헤더 블랙 명판 (.honors-columns-header)
+   ========================================================================== */
+.honors-columns-header {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.honors-col-plaque {
+    background: #16181b;
+    border: 1.5px solid #33383f;
+    border-radius: 4px;
+    padding: 10px 6px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+}
+
+.col-plaque-title {
+    font-family: 'Inter', var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #f8fafc;
+    text-transform: uppercase;
+    line-height: 1.35;
+}
+
+/* ==========================================================================
+   3. 실버 헤어라인 메탈 명판 (.metal-plate)
+   - 실물 사진 속 알루미늄/실버 명판 질감 & 이름+연도 각인
+   ========================================================================== */
+.honors-plates-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.plate-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.metal-plate {
+    background: linear-gradient(180deg, #f5f6f8 0%, #e3e6ea 40%, #ccd2da 70%, #dde2e8 100%);
+    border: 1px solid #a3abb5;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1.5px solid #88909c;
+    border-radius: 3px;
+    padding: 9px 8px 7px 8px;
+    min-height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    cursor: pointer;
+    box-shadow: 
+        0 3px 6px rgba(0, 0, 0, 0.2), 
+        inset 0 1px 1px rgba(255, 255, 255, 0.95);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    outline: none;
+    width: 100%;
+}
+
+/* 메탈 명판 호버 인터랙션 (빛 반사 & 리프트) */
+.metal-plate:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 14px rgba(0, 0, 0, 0.26), 
+        inset 0 1px 1px rgba(255, 255, 255, 1);
+    background: linear-gradient(180deg, #ffffff 0%, #edf1f5 40%, #d5dbe3 70%, #eff3f8 100%);
+}
+
+.metal-plate:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.2), 
+        inset 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/* 이름 각인 스타일 (한글 넓은 자간) */
+.plate-name {
+    font-family: var(--font-sans);
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: #1a1c1e;
+    letter-spacing: 0.32em;
+    padding-left: 0.32em; /* 가운데 정렬 보정 */
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+    line-height: 1.2;
+    transition: color 0.15s ease;
+}
+
+.plate-name.multi {
+    font-size: 0.85rem;
+    line-height: 1.25;
+    letter-spacing: 0.22em;
+    padding-left: 0.22em;
+}
+
+.metal-plate:hover .plate-name {
+    color: #000000;
+}
+
+/* 연도 각인 */
+.plate-year {
+    font-family: 'Inter', var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #495057;
+    font-variant-numeric: tabular-nums;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+/* 2025 최신 헌액 명판 하이라이트 */
+.plate-latest {
+    border-color: #c49b4b;
+    box-shadow: 
+        0 3px 8px rgba(197, 143, 85, 0.35), 
+        inset 0 1px 2px rgba(255, 255, 255, 0.95);
+}
+.plate-latest:hover {
+    box-shadow: 
+        0 6px 16px rgba(197, 143, 85, 0.45), 
+        inset 0 1px 2px rgba(255, 255, 255, 1);
+}
+
+/* ==========================================================================
+   하단: Past Leaders & GA Directory 서브 섹션
+   ========================================================================== */
+.wooden-sub-section {
+    margin-top: 80px;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-sub-header {
+    margin-bottom: 30px;
+}
+
+.sub-kicker {
     display: block;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.14em;
-    color: #94A3B8;
+    color: #88909c;
     text-transform: uppercase;
     margin-bottom: 6px;
 }
 
-.bento-block-title {
+.sub-section-title {
     font-family: var(--font-sans);
-    font-size: 1.45rem;
+    font-size: 1.4rem;
     font-weight: 800;
     letter-spacing: -0.02em;
     color: #0F172A;
-    margin: 0 0 10px 0;
+    margin: 0 0 8px 0;
 }
 
-.bento-block-desc {
-    font-size: 0.92rem;
+.sub-section-desc {
+    font-size: 0.9rem;
     color: #64748B;
-    line-height: 1.6;
-    max-width: 620px;
+    line-height: 1.55;
+    max-width: 600px;
     margin: 0 auto;
-    word-break: keep-all;
 }
 
-/* ==========================================================================
-   1. Student Awards: 3열 벤토 카드 그리드 (.bento-awards-grid)
-   ========================================================================== */
-.bento-awards-grid {
+/* Past Leaders 3열 그리드 */
+.wooden-leaders-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.bento-card {
+    gap: 32px;
     background: #FFFFFF;
-    border: 1px solid rgba(226, 232, 240, 0.95);
-    border-radius: 20px;
-    padding: 28px 24px 24px 24px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03), 0 1px 3px rgba(15, 23, 42, 0.02);
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
-    position: relative;
-    overflow: hidden;
+    border: 1px solid #E2DED7;
+    border-radius: 16px;
+    padding: 34px 30px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
 }
 
-.bento-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px -6px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03);
+.w-leader-col:not(:last-child) {
+    border-right: 1px solid #F1EFEA;
+    padding-right: 32px;
 }
 
-/* 3대 상 상단 2px 하이라이트 액센트 */
-.bento-card.bento-gold { border-top: 3px solid #D97706; }
-.bento-card.bento-crimson { border-top: 3px solid #991B1B; }
-.bento-card.bento-navy { border-top: 3px solid #2563EB; }
-
-/* 벤토 카드 상단 헤더 */
-.bento-pillar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-}
-
-.bento-pillar-tag {
-    font-size: 0.65rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 3px 9px;
-    border-radius: 6px;
-}
-
-.tag-gold { color: #B45309; background: #FEF3C7; border: 1px solid #FDE68A; }
-.tag-crimson { color: #991B1B; background: #FEE2E2; border: 1px solid #FECACA; }
-.tag-navy { color: #1D4ED8; background: #DBEAFE; border: 1px solid #BFDBFE; }
-
-.bento-icon-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-}
-.dot-gold { background: #D97706; box-shadow: 0 0 8px rgba(217, 119, 6, 0.5); }
-.dot-crimson { background: #991B1B; box-shadow: 0 0 8px rgba(153, 27, 27, 0.5); }
-.dot-navy { background: #2563EB; box-shadow: 0 0 8px rgba(37, 99, 235, 0.5); }
-
-.bento-award-name {
-    font-family: var(--font-sans);
-    font-size: 1.25rem;
-    font-weight: 800;
-    color: #0F172A;
-    letter-spacing: -0.02em;
-    margin: 0 0 6px 0;
-}
-
-.bento-award-desc {
-    font-size: 0.82rem;
-    color: #64748B;
-    line-height: 1.5;
-    min-height: 40px;
-    margin: 0 0 20px 0;
-    word-break: keep-all;
-}
-
-/* --------------------------------------------------------------------------
-   2025 최신 수상자 포커스 스포트라이트 박스 (.bento-spotlight-box)
-   -------------------------------------------------------------------------- */
-.bento-spotlight-box {
-    padding: 16px 18px 15px 18px;
-    border-radius: 14px;
-    margin-bottom: 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    transition: all 0.2s ease;
-}
-
-.spotlight-gold {
-    background: linear-gradient(180deg, #FFFDF7 0%, #FFFBEB 100%);
-    border: 1px solid rgba(217, 119, 6, 0.24);
-}
-.spotlight-crimson {
-    background: linear-gradient(180deg, #FFF9FA 0%, #FEF2F2 100%);
-    border: 1px solid rgba(153, 27, 27, 0.22);
-}
-.spotlight-navy {
-    background: linear-gradient(180deg, #F8FAFF 0%, #EFF6FF 100%);
-    border: 1px solid rgba(37, 99, 235, 0.22);
-}
-
-.spotlight-badge {
-    font-size: 0.62rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    display: inline-block;
-}
-.badge-gold { color: #B45309; }
-.badge-crimson { color: #991B1B; }
-.badge-navy { color: #1D4ED8; }
-
-.spotlight-winner-btn {
-    background: transparent;
-    border: none;
-    padding: 0;
-    text-align: left;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    outline: none;
-    margin-top: 3px;
-}
-
-.spotlight-winner-btn .winner-name {
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: #0F172A;
-    letter-spacing: -0.02em;
-    transition: color 0.15s ease;
-}
-
-.spotlight-winner-btn .icon-link {
-    font-size: 0.82rem;
-    color: #94A3B8;
-    transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.spotlight-winner-btn:hover .icon-link {
-    transform: translate(2px, -2px);
-    color: #0F172A;
-}
-
-.spotlight-gold .spotlight-winner-btn:hover .winner-name { color: #B45309; }
-.spotlight-crimson .spotlight-winner-btn:hover .winner-name { color: #991B1B; }
-.spotlight-navy .spotlight-winner-btn:hover .winner-name { color: #1D4ED8; }
-
-.winner-meta {
-    font-size: 0.78rem;
-    color: #64748B;
-    font-weight: 500;
-    margin-top: 2px;
-}
-
-/* --------------------------------------------------------------------------
-   10개년 아카이브 히스토리 리스트 (.bento-archive-wrapper)
-   -------------------------------------------------------------------------- */
-.bento-archive-wrapper {
-    margin-top: auto;
-    border-top: 1px solid #F1F5F9;
-    padding-top: 14px;
-}
-
-.archive-header-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 8px;
-    margin-bottom: 6px;
-    border-bottom: 1px solid #E2E8F0;
-}
-
-.archive-title {
-    font-size: 0.68rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #94A3B8;
-    text-transform: uppercase;
-}
-
-.archive-count {
-    font-size: 0.68rem;
-    font-weight: 600;
-    color: #CBD5E1;
-}
-
-.bento-history-list {
-    display: flex;
-    flex-direction: column;
-    max-height: 250px;
-    overflow-y: auto;
-    padding-right: 4px;
-}
-
-/* 슬림 스크롤바 */
-.bento-history-list::-webkit-scrollbar {
-    width: 4px;
-}
-.bento-history-list::-webkit-scrollbar-thumb {
-    background: #E2E8F0;
-    border-radius: 4px;
-}
-
-.history-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px 4px;
-    border-bottom: 1px dashed #F1F5F9;
-}
-
-.h-year {
-    font-family: 'Inter', var(--font-sans);
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: #64748B;
-    font-variant-numeric: tabular-nums;
-}
-
-.h-name-btn {
-    background: transparent;
-    border: none;
-    padding: 0;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: #1E293B;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    outline: none;
-}
-
-.h-name-btn:hover {
-    color: #0F172A;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-.h-multi-wrap {
-    display: inline-flex;
-    align-items: center;
-}
-
-.h-comma {
-    font-size: 0.85rem;
-    color: #94A3B8;
-    margin: 0 2px;
-}
-
-/* ==========================================================================
-   2. Past Leaders: 3열 리더십 타임라인 (.bento-leaders-grid)
-   ========================================================================== */
-.bento-section-block.mt-block {
-    margin-top: 85px;
-    padding-top: 30px;
-}
-
-.bento-leaders-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 36px;
-    background: #FFFFFF;
-    border: 1px solid rgba(226, 232, 240, 0.95);
-    border-radius: 20px;
-    padding: 36px 32px;
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
-}
-
-.bento-leader-col:not(:last-child) {
-    border-right: 1px solid #F1F5F9;
-    padding-right: 36px;
-}
-
-.bento-leader-head {
+.w-leader-head {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 16px;
     padding-bottom: 12px;
-    border-bottom: 1px solid #E2E8F0;
+    border-bottom: 1px solid #EAE6DF;
 }
 
-.dept-title {
+.w-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+}
+.w-dot.dot-at { background: #991B1B; }
+.w-dot.dot-rehab { background: #2563EB; }
+.w-dot.dot-res { background: #059669; }
+
+.w-dept-name {
     font-size: 0.88rem;
     font-weight: 800;
     letter-spacing: 0.04em;
@@ -1156,34 +1133,39 @@ body.no-scroll {
     margin: 0;
 }
 
-.b-leader-item {
+.w-leader-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.w-leader-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px dashed #F1F5F9;
+    padding: 9px 0;
+    border-bottom: 1px dashed #F1EFEA;
 }
 
-.b-leader-item .p-date {
+.w-leader-item .w-date {
     font-family: 'Inter', var(--font-sans);
     font-size: 0.78rem;
     color: #64748B;
     font-variant-numeric: tabular-nums;
 }
 
-.b-leader-item .p-name {
+.w-leader-item .w-name {
     font-size: 0.92rem;
     font-weight: 600;
     color: #1E293B;
 }
 
-.p-name-wrap {
+.w-name-wrap {
     display: inline-flex;
     align-items: center;
     gap: 6px;
 }
 
-.b-leader-item .p-name.current {
+.w-leader-item .w-name.current {
     color: #991B1B;
     font-weight: 800;
 }
@@ -1196,87 +1178,127 @@ body.no-scroll {
     border: 1px solid #FECACA;
     border-radius: 4px;
     padding: 1px 5px;
-    letter-spacing: 0.02em;
 }
 
-/* ==========================================================================
-   3. Graduate Assistants: 4열 디렉터리 (.bento-ga-directory)
-   ========================================================================== */
-.bento-ga-directory {
+/* GA Directory 4열 그리드 */
+.wooden-ga-directory {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 6px 14px;
     background: #FFFFFF;
-    border: 1px solid rgba(226, 232, 240, 0.95);
-    border-radius: 20px;
-    padding: 28px 24px;
-    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.03);
+    border: 1px solid #E2DED7;
+    border-radius: 16px;
+    padding: 26px 22px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
 }
 
-.bento-ga-directory .ga-entry-row {
+.w-ga-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 9px 12px;
-    border-bottom: 1px solid #F8FAFC;
+    border-bottom: 1px solid #F6F4F0;
     border-radius: 6px;
     transition: background-color 0.15s ease;
 }
 
-.bento-ga-directory .ga-entry-row:hover {
-    background-color: #F1F5F9;
+.w-ga-row:hover {
+    background-color: #F1EFEA;
 }
 
-.ga-ent-date {
+.w-ga-date {
     font-family: 'Inter', var(--font-sans);
     font-size: 0.76rem;
-    color: #94A3B8;
+    color: #88909c;
     font-variant-numeric: tabular-nums;
 }
 
-.ga-ent-dept {
+.w-ga-dept {
     font-size: 0.76rem;
-    color: #64748B;
+    color: #555d68;
     font-weight: 500;
     margin: 0 6px;
     flex: 1;
     text-align: center;
 }
 
-.ga-ent-name {
+.w-ga-name {
     font-size: 0.88rem;
     font-weight: 600;
     color: #0F172A;
 }
 
 /* ==========================================================================
-   반응형 최적화 (태블릿 & 모바일)
+   반응형 (Mobile & Tablet)
    ========================================================================== */
-@media (max-width: 992px) {
-    .bento-awards-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
+@media (max-width: 860px) {
+    .honors-wood-board {
+        padding: 40px 18px 36px 18px;
     }
-    .bento-leaders-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
+    .board-mount-bolt {
+        top: 14px;
+        width: 18px;
+        height: 18px;
     }
-    .bento-leader-col:not(:last-child) {
+    .board-mount-bolt.bolt-left { left: 16px; }
+    .board-mount-bolt.bolt-right { right: 16px; }
+
+    .honors-main-plaque {
+        padding: 10px 14px;
+        margin-bottom: 20px;
+    }
+    .plaque-line-1,
+    .plaque-line-2 {
+        font-size: 1.05rem;
+    }
+    .col-plaque-title {
+        font-size: 0.68rem;
+    }
+    .plate-name {
+        font-size: 0.92rem;
+        letter-spacing: 0.2em;
+        padding-left: 0.2em;
+    }
+    .plate-name.multi {
+        font-size: 0.75rem;
+    }
+    .wooden-leaders-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .w-leader-col:not(:last-child) {
         border-right: none;
         padding-right: 0;
-        border-bottom: 1px solid #E2E8F0;
-        padding-bottom: 24px;
+        border-bottom: 1px solid #EAE6DF;
+        padding-bottom: 20px;
     }
-    .bento-ga-directory {
+    .wooden-ga-directory {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 680px) {
-    .awards-bento-section {
-        padding: 70px 0 80px 0;
+@media (max-width: 580px) {
+    .honors-columns-header,
+    .plate-row {
+        gap: 8px;
     }
-    .bento-ga-directory {
+    .col-plaque-title {
+        font-size: 0.6rem;
+        letter-spacing: 0.02em;
+    }
+    .metal-plate {
+        min-height: 48px;
+        padding: 6px 4px;
+    }
+    .plate-name {
+        font-size: 0.82rem;
+        letter-spacing: 0.1em;
+        padding-left: 0.1em;
+    }
+    .plate-year {
+        font-size: 0.65rem;
+    }
+    .wooden-ga-directory {
         grid-template-columns: 1fr;
     }
 }
