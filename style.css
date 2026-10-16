@@ -831,14 +831,12 @@ body.no-scroll {
 }
 
 /* ==========================================================================
-   원목 보드판 공통 시스템 (.honors-wood-board)
-   - 최고급 오크/월넛 원목 질감 & 상단 앰비언트 스포트라이트 조명
+   명예의 전당 보드 시스템: 모던 퓨어 화이트 & 매트 실버 (Apple/미술관 스타일)
+   - 알록달록한 원색(빨강/노랑/원목) 완전 제거, 극도의 깨끗함과 세련미
    ========================================================================== */
 .awards-wooden-section {
-    background-color: #f6f7f9;
-    background-image: 
-        radial-gradient(at 0% 0%, rgba(165, 0, 52, 0.03) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(0, 34, 68, 0.04) 0px, transparent 50%);
+    background-color: #F8FAFC;
+    background-image: radial-gradient(at 50% 0%, rgba(241, 245, 249, 0.9) 0px, transparent 65%);
 }
 
 .wooden-kicker {
@@ -847,7 +845,7 @@ body.no-scroll {
     font-size: 0.74rem;
     font-weight: 800;
     letter-spacing: 0.16em;
-    color: #991B1B;
+    color: #64748B;
     text-transform: uppercase;
     margin-bottom: 8px;
 }
@@ -859,162 +857,116 @@ body.no-scroll {
 }
 
 .wooden-board-outer.sub-board-wrap {
-    margin-top: 55px;
+    margin-top: 50px;
 }
 
-/* 원목 보드판 본체 */
+/* 1. 보드 캔버스 본체 (.honors-wood-board) */
 .honors-wood-board {
     position: relative;
     width: 100%;
     max-width: 840px;
-    background: #BA854D;
-    background-image: 
-        /* 상단 스포트라이트 앰비언트 글로우 */
-        radial-gradient(circle at 50% 0%, rgba(255, 238, 205, 0.32) 0%, rgba(186, 133, 77, 0) 70%),
-        /* 고급 세로 나뭇결 텍스처 */
-        linear-gradient(90deg, 
-            rgba(145, 96, 50, 0.40) 0%, 
-            rgba(186, 133, 77, 0.16) 12%, 
-            rgba(130, 82, 40, 0.48) 24%, 
-            rgba(197, 145, 90, 0.12) 36%, 
-            rgba(125, 78, 36, 0.45) 48%, 
-            rgba(186, 133, 77, 0.16) 62%, 
-            rgba(140, 92, 46, 0.42) 76%, 
-            rgba(186, 133, 77, 0.14) 88%, 
-            rgba(120, 74, 32, 0.52) 100%),
-        /* 정밀 나뭇결 스트라이프 */
-        repeating-linear-gradient(0deg, 
-            rgba(0, 0, 0, 0.025) 0px, 
-            rgba(0, 0, 0, 0.025) 1px, 
-            transparent 1px, 
-            transparent 3px);
-    border: 2px solid #8E5B2B;
-    border-radius: 16px;
-    padding: 48px 36px 44px 36px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 20px;
+    padding: 44px 34px 40px 34px;
     box-shadow: 
-        0 28px 65px -14px rgba(50, 26, 8, 0.42),
-        0 10px 26px -6px rgba(50, 26, 8, 0.22),
-        inset 0 2px 4px rgba(255, 255, 255, 0.52),
-        inset 0 -3px 6px rgba(0, 0, 0, 0.4);
+        0 18px 45px -12px rgba(15, 23, 42, 0.05),
+        0 4px 16px -2px rgba(15, 23, 42, 0.02);
 }
 
-/* 세컨더리 보드: Leaders (폭 960px) */
+/* Past Leaders 보드 (폭 960px) */
 .honors-wood-board.board-leaders {
     max-width: 960px;
 }
 
-/* 와이드 보드: GA Directory (폭 1060px) */
+/* GA 35인 보드 (폭 1060px) */
 .honors-wood-board.board-ga {
     max-width: 1060px;
 }
 
-/* 상단 좌우 메탈 마운트 볼트 캡 (2구) */
+/* 불필요한 노란 볼트 캡 제거 */
 .board-mount-bolt {
-    position: absolute;
-    top: 18px;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 35%, #D4AF37 0%, #9B7825 65%, #5C4510 100%);
-    border: 1px solid #E5C158;
-    box-shadow: 
-        0 4px 10px rgba(0, 0, 0, 0.48), 
-        inset 0 1px 2px rgba(255, 255, 255, 0.55);
+    display: none;
 }
-.board-mount-bolt.bolt-left { left: 22px; }
-.board-mount-bolt.bolt-right { right: 22px; }
 
 /* ==========================================================================
-   최상단 메인 명판 (경희대 딥 버건디 크림슨 & 미러 골드 에나멜 명판)
-   - 원목과 완벽한 하모니를 이루는 품격 있는 프레스티지 컬러
+   2. 최상단 타이틀 명판 (매트 슬레이트 & 퓨어 화이트)
    ========================================================================== */
 .honors-main-plaque {
-    background: linear-gradient(180deg, #5c061a 0%, #430413 60%, #34020e 100%);
-    border: 1.5px solid #E5C158;
-    border-radius: 6px;
-    padding: 11px 22px;
-    margin: 0 auto 26px auto;
-    max-width: 580px;
-    box-shadow: 
-        0 8px 22px rgba(60, 4, 18, 0.45),
-        0 2px 6px rgba(0, 0, 0, 0.3),
-        inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 8px 16px;
+    margin: 0 auto 24px auto;
+    max-width: 540px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
 }
 
 .plaque-inner-border {
-    border: 1.5px solid #d4af37;
-    border-radius: 3px;
-    padding: 9px 18px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    padding: 8px 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0 0 8px rgba(212, 175, 55, 0.35);
-    background: rgba(0, 0, 0, 0.12);
+    background: #FFFFFF;
 }
 
 .plaque-line-1,
 .plaque-line-2 {
     font-family: 'Inter', var(--font-sans);
-    font-size: 1.25rem;
-    font-weight: 900;
-    letter-spacing: 0.14em;
-    color: #FDF0CD;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    color: #0F172A;
     text-transform: uppercase;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95), 0 0 12px rgba(253, 240, 205, 0.35);
     line-height: 1.25;
     text-align: center;
 }
 
 /* ==========================================================================
-   3대 부문 컬럼 헤더 명판 (.honors-columns-header)
-   - 클래식 딥 크림슨 에나멜 & 골드 림
+   3. 컬럼 헤더 (.honors-columns-header)
    ========================================================================== */
 .honors-columns-header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 16px;
+    gap: 14px;
+    margin-bottom: 14px;
 }
 
 .honors-col-plaque {
-    background: linear-gradient(180deg, #520516 0%, #3c030f 100%);
-    border: 1px solid rgba(229, 193, 88, 0.45);
-    border-radius: 4px;
+    background: #F1F5F9;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
     padding: 10px 8px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 52px;
-    box-shadow: 0 4px 10px rgba(60, 4, 18, 0.35);
+    min-height: 48px;
 }
 
 .col-plaque-title {
     font-family: 'Inter', var(--font-sans);
-    font-size: 0.76rem;
+    font-size: 0.74rem;
     font-weight: 800;
-    letter-spacing: 0.08em;
-    color: #FFF8E7;
+    letter-spacing: 0.06em;
+    color: #334155;
     text-transform: uppercase;
     line-height: 1.35;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.85);
 }
 
 /* ==========================================================================
-   실버 헤어라인 메탈 명판 공통 질감 (.metal-plate, .leader-plate, .ga-metal-plate)
+   4. 실버 메탈 명판 칩 공통 (.metal-plate, .leader-plate, .ga-metal-plate)
    ========================================================================== */
 .metal-plate,
 .leader-plate,
 .ga-metal-plate {
-    background: linear-gradient(180deg, #F8FAFC 0%, #E2E8F0 35%, #CBD5E1 65%, #E2E8F0 100%);
-    border: 1px solid #94A3B8;
-    border-top: 1px solid #FFFFFF;
-    border-bottom: 1.5px solid #64748B;
-    border-radius: 3px;
-    box-shadow: 
-        0 3px 6px rgba(0, 0, 0, 0.22), 
-        inset 0 1px 1px rgba(255, 255, 255, 0.92);
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
     outline: none;
@@ -1023,45 +975,45 @@ body.no-scroll {
     width: 100%;
 }
 
-/* 1) 학생 수상자 메탈 명판 */
+.metal-plate:hover,
+.leader-plate:hover,
+.ga-metal-plate:hover {
+    transform: translateY(-2px);
+    border-color: #CBD5E1;
+    box-shadow: 
+        0 10px 22px -4px rgba(15, 23, 42, 0.08),
+        0 4px 8px -2px rgba(15, 23, 42, 0.03);
+    background: #FFFFFF;
+}
+
+.metal-plate:active,
+.leader-plate:active,
+.ga-metal-plate:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* 4-1) 학생 수상자 명판 */
 .honors-plates-grid {
     display: flex;
     flex-direction: column;
-    gap: 11px;
+    gap: 10px;
 }
 
 .plate-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 14px;
 }
 
 .metal-plate {
-    padding: 9px 8px 7px 8px;
-    min-height: 56px;
+    padding: 10px 8px;
+    min-height: 58px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2px;
-    cursor: pointer;
-    outline: none;
-    width: 100%;
-}
-
-.metal-plate:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-        0 7px 16px rgba(0, 0, 0, 0.28), 
-        inset 0 1px 2px rgba(255, 255, 255, 1);
-    background: linear-gradient(180deg, #FFFFFF 0%, #EDF2F7 35%, #D8E1E8 65%, #F1F5F9 100%);
-}
-
-.metal-plate:active {
-    transform: translateY(0);
-    box-shadow: 
-        0 2px 4px rgba(0, 0, 0, 0.2), 
-        inset 0 1px 1px rgba(0, 0, 0, 0.15);
+    gap: 3px;
 }
 
 .plate-name {
@@ -1071,7 +1023,6 @@ body.no-scroll {
     color: #0F172A;
     letter-spacing: 0.32em;
     padding-left: 0.32em;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
     line-height: 1.2;
     transition: color 0.15s ease;
 }
@@ -1084,37 +1035,27 @@ body.no-scroll {
 }
 
 .metal-plate:hover .plate-name {
-    color: #000000;
+    color: #A50034;
 }
 
 .plate-year {
     font-family: 'Inter', var(--font-sans);
     font-size: 0.72rem;
     font-weight: 700;
-    color: #475569;
+    color: #64748B;
     font-variant-numeric: tabular-nums;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .plate-latest {
-    border-color: #D97706;
-    box-shadow: 
-        0 3px 8px rgba(217, 119, 6, 0.35), 
-        inset 0 1px 2px rgba(255, 255, 255, 0.95);
-}
-.plate-latest:hover {
-    box-shadow: 
-        0 7px 18px rgba(217, 119, 6, 0.45), 
-        inset 0 1px 2px rgba(255, 255, 255, 1);
+    border-color: #94A3B8;
+    background: #F8FAFC;
 }
 
-/* ==========================================================================
-   2) Past Leaders 원목 보드판 (.board-leaders)
-   ========================================================================== */
+/* 4-2) Past Leaders 명판 */
 .wooden-leaders-board-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 14px;
     align-items: start;
 }
 
@@ -1130,33 +1071,19 @@ body.no-scroll {
 }
 
 .leader-plate {
-    padding: 8px 12px;
-    min-height: 46px;
+    padding: 9px 14px;
+    min-height: 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 3px;
-}
-
-.leader-plate:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-        0 6px 14px rgba(0, 0, 0, 0.26), 
-        inset 0 1px 2px rgba(255, 255, 255, 1);
-    background: linear-gradient(180deg, #FFFFFF 0%, #EDF2F7 35%, #D8E1E8 65%, #F1F5F9 100%);
-}
-.leader-plate:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 .leader-date {
     font-family: 'Inter', var(--font-sans);
     font-size: 0.72rem;
     font-weight: 700;
-    color: #475569;
+    color: #64748B;
     font-variant-numeric: tabular-nums;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
     white-space: nowrap;
 }
 
@@ -1167,45 +1094,15 @@ body.no-scroll {
     color: #0F172A;
     letter-spacing: 0.2em;
     padding-left: 0.2em;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
     white-space: nowrap;
+    transition: color 0.15s ease;
 }
 
-.leader-name-wrap {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
+.leader-plate:hover .leader-name {
+    color: #A50034;
 }
 
-/* 현재 재임중 팀장 골드 하이라이트 */
-.leader-plate.plate-active {
-    border: 1.5px solid #D97706;
-    background: linear-gradient(180deg, #FFFBEB 0%, #FEF3C7 50%, #FDE68A 100%);
-    box-shadow: 
-        0 4px 10px rgba(217, 119, 6, 0.35), 
-        inset 0 1px 2px rgba(255, 255, 255, 0.95);
-}
-
-.leader-name.active {
-    color: #991B1B;
-    font-weight: 900;
-}
-
-.plate-badge-active {
-    font-family: var(--font-sans);
-    font-size: 0.62rem;
-    font-weight: 800;
-    color: #FFFFFF;
-    background: #991B1B;
-    padding: 2px 6px;
-    border-radius: 3px;
-    letter-spacing: 0;
-    box-shadow: 0 1px 3px rgba(153, 27, 27, 0.4);
-}
-
-/* ==========================================================================
-   3) GA 35인 헌액 원목 보드판 (.board-ga)
-   ========================================================================== */
+/* 4-3) GA 35인 헌액 명판 */
 .wooden-ga-plates-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1213,41 +1110,30 @@ body.no-scroll {
 }
 
 .ga-metal-plate {
-    padding: 8px 12px;
+    padding: 9px 12px;
     min-height: 44px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 3px;
-}
-
-.ga-metal-plate:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-        0 6px 14px rgba(0, 0, 0, 0.25), 
-        inset 0 1px 2px rgba(255, 255, 255, 1);
-    background: linear-gradient(180deg, #FFFFFF 0%, #EDF2F7 35%, #D8E1E8 65%, #F1F5F9 100%);
-}
-.ga-metal-plate:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(0, 0, 0, 0.15);
 }
 
 .ga-p-date {
     font-family: 'Inter', var(--font-sans);
     font-size: 0.72rem;
     font-weight: 700;
-    color: #475569;
+    color: #64748B;
     font-variant-numeric: tabular-nums;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.65);
     white-space: nowrap;
 }
 
 .ga-p-dept {
     font-family: var(--font-sans);
-    font-size: 0.72rem;
-    font-weight: 800;
-    color: #991B1B;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #475569;
+    background: #F1F5F9;
+    padding: 2px 6px;
+    border-radius: 4px;
     margin: 0 4px;
     white-space: nowrap;
 }
@@ -1259,8 +1145,12 @@ body.no-scroll {
     color: #0F172A;
     letter-spacing: 0.15em;
     padding-left: 0.15em;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
     white-space: nowrap;
+    transition: color 0.15s ease;
+}
+
+.ga-metal-plate:hover .ga-p-name {
+    color: #A50034;
 }
 
 /* ==========================================================================
