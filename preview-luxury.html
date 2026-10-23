@@ -291,6 +291,72 @@
       gap: 1.25rem;
     }
 
+    /* 모바일 햄버거 버튼 */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      width: 32px;
+      padding: 4px;
+      cursor: pointer;
+      z-index: 1100;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--text-primary);
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 991px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
+    }
+
+    /* 모바일 풀스크린 네비게이션 드로어 */
+    .mobile-nav-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 13, 12, 0.98);
+      backdrop-filter: blur(20px);
+      z-index: 1050;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s var(--transition-smooth);
+    }
+
+    .mobile-nav-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .mobile-nav-list {
+      list-style: none;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .mobile-nav-link {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      letter-spacing: 0.05em;
+      color: var(--text-primary);
+      transition: color 0.3s ease;
+    }
+
+    .mobile-nav-link:hover {
+      color: var(--accent-gold);
+    }
+
     /* ==========================================================================
        5. Hero 섹션 (시네마틱 에디토리얼 비주얼 & 대형 타이포그래피)
        ========================================================================== */
@@ -1155,13 +1221,42 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="#consultation" class="btn-luxury">
+        <a href="#consultation" class="btn-luxury" style="display: inline-flex;">
           <span>Book a Visit</span>
           <i class="fa-solid fa-arrow-right-long"></i>
         </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle mobile menu" onclick="toggleMobileNav()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- 모바일 풀스크린 오버레이 네비게이션 -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMobileNav(false)">
+    <ul class="mobile-nav-list" onclick="event.stopPropagation()">
+      <li>
+        <a href="#about" class="mobile-nav-link" onclick="toggleMobileNav(false)">(01) About</a>
+      </li>
+      <li>
+        <a href="#pillars" class="mobile-nav-link" onclick="toggleMobileNav(false)">(02) Disciplines</a>
+      </li>
+      <li>
+        <a href="#beliefs" class="mobile-nav-link" onclick="toggleMobileNav(false)">(03) Philosophy</a>
+      </li>
+      <li>
+        <a href="#consultation" class="mobile-nav-link" onclick="toggleMobileNav(false)">(04) Consultation</a>
+      </li>
+      <li style="margin-top: 1rem;">
+        <a href="#consultation" class="btn-luxury btn-solid" onclick="toggleMobileNav(false)" style="padding: 1rem 2.5rem;">
+          <span>Book a Visit</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
 
   <main>
     <!-- ==========================================================================
@@ -1245,28 +1340,28 @@
         </div>
 
         <!-- Elyse 스타일의 럭셔리 카운터 스탯 -->
-        <div class="stats-container">
+        <div class="stats-container" id="statsContainer">
           <div class="stat-card">
             <div class="stat-card-label">Return to Play</div>
-            <div class="stat-card-num">98.4<span class="unit">%</span></div>
+            <div class="stat-card-num"><span class="counter-val" data-target="98.4" data-decimals="1">0</span><span class="unit">%</span></div>
             <div class="stat-card-desc">체계적 단계별 재활 프로토콜을 통한 안전하고 완벽한 경기 복귀율</div>
           </div>
 
           <div class="stat-card">
             <div class="stat-card-label">Elite Athletes</div>
-            <div class="stat-card-num">15<span class="unit">+</span></div>
+            <div class="stat-card-num"><span class="counter-val" data-target="15" data-decimals="0">0</span><span class="unit">+</span></div>
             <div class="stat-card-desc">프로리그 및 국가대표팀으로 진출한 경희대 출신 엘리트 선수 육성</div>
           </div>
 
           <div class="stat-card">
             <div class="stat-card-label">Research Papers</div>
-            <div class="stat-card-num">60<span class="unit">+</span></div>
+            <div class="stat-card-num"><span class="counter-val" data-target="60" data-decimals="0">0</span><span class="unit">+</span></div>
             <div class="stat-card-desc">국제 저명 SCI/KCI급 학술지에 게재된 스포츠의학 및 바이오메카닉스 논문</div>
           </div>
 
           <div class="stat-card">
             <div class="stat-card-label">Dedicated Triage</div>
-            <div class="stat-card-num">24<span class="unit">/7</span></div>
+            <div class="stat-card-num"><span class="counter-val" data-target="24" data-decimals="0">0</span><span class="unit">/7</span></div>
             <div class="stat-card-desc">선수단 훈련 및 공식 대회를 상시 커버하는 실시간 의무 대응 시스템</div>
           </div>
         </div>
@@ -1751,6 +1846,68 @@
         toast.classList.remove('show');
       }, 4000);
     }
+
+    // 4. 모바일 메뉴 열기/닫기 토글
+    function toggleMobileNav(forceState) {
+      const overlay = document.getElementById('mobileNavOverlay');
+      const isOpen = overlay.classList.contains('is-open');
+      const nextState = forceState !== undefined ? forceState : !isOpen;
+
+      if (nextState) {
+        overlay.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      } else {
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    // 5. 스탯 숫자 카운트업 애니메이션 (IntersectionObserver)
+    function initCounters() {
+      const counters = document.querySelectorAll('.counter-val');
+      let animated = false;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            counters.forEach(counter => {
+              const target = parseFloat(counter.getAttribute('data-target'));
+              const decimals = parseInt(counter.getAttribute('data-decimals')) || 0;
+              const duration = 2000;
+              const startTime = performance.now();
+
+              function updateNumber(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // easeOutExpo 효과
+                const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                const currentVal = (target * ease).toFixed(decimals);
+                counter.textContent = currentVal;
+
+                if (progress < 1) {
+                  requestAnimationFrame(updateNumber);
+                } else {
+                  counter.textContent = target.toFixed(decimals);
+                }
+              }
+
+              requestAnimationFrame(updateNumber);
+            });
+          }
+        });
+      }, { threshold: 0.3 });
+
+      const statsEl = document.getElementById('statsContainer');
+      if (statsEl) {
+        observer.observe(statsEl);
+      }
+    }
+
+    // 페이지 로드 후 카운터 초기화
+    document.addEventListener('DOMContentLoaded', () => {
+      initCounters();
+    });
   </script>
 </body>
 </html>
