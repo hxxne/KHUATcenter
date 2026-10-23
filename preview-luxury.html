@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KHU AT Center — Holistic Athletic Excellence</title>
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/logo.png" type="image/png" />
+
+  <!-- Google Fonts: Cormorant Garamond (럭셔리 에디토리얼 세리프) & Plus Jakarta Sans / Pretendard (모던 산세리프) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* ==========================================================================
+       1. CSS 변수 및 디자인 토큰 (Elyse Residence Inspired Luxury Palette)
+       ========================================================================== */
+    :root {
+      --bg-dark: #0A0D0C;          /* 극도로 깊은 다크 에보니 틴트 */
+      --bg-card: #121614;          /* 부드러운 다크 올리브 차콜 */
+      --bg-card-hover: #171D1A;    /* 호버 시 은은한 상승감 */
+      --bg-surface: #1E2522;       /* 인터랙티브 요소 표면 */
+      
+      --accent-gold: #C5A880;      /* 럭셔리 웜 골드/브론즈 액센트 */
+      --accent-gold-light: #DFC8A8;/* 골드 하이라이트 */
+      --accent-khu-red: #A32638;   /* 경희대 헤리티지 딥 크림슨 포인트 */
+      
+      --text-primary: #F5F4F0;     /* 소프트 오프화이트 / 린넨 */
+      --text-secondary: rgba(245, 244, 240, 0.65); /* 차분한 보조 텍스트 */
+      --text-muted: rgba(245, 244, 240, 0.40);     /* 캡션/보조 인덱스 */
+      
+      --border-subtle: rgba(245, 244, 240, 0.08); /* 극도로 얇고 세련된 경계선 */
+      --border-accent: rgba(197, 168, 128, 0.35); /* 골드 테두리 액센트 */
+      
+      --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+      --font-sans: 'Pretendard', 'Plus Jakarta Sans', -apple-system, sans-serif;
+      
+      --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+      --container-max: 1440px;
+    }
+
+    /* ==========================================================================
+       2. 기본 리셋 및 글로벌 타이포그래피
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-dark);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 0 1.25rem;
+      }
+    }
+
+    /* Elyse 스타일 소괄호 에디토리얼 인덱스 캡션 */
+    .caption-index {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .caption-index span {
+      opacity: 0.6;
+    }
+
+    /* ==========================================================================
+       3. 버튼 및 럭셔리 UI 요소
+       ========================================================================== */
+    .btn-luxury {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      padding: 0.85rem 2rem;
+      border: 1px solid var(--accent-gold);
+      border-radius: 9999px;
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: transparent;
+      transition: all 0.4s var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-luxury::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: var(--accent-gold);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.4s var(--transition-smooth);
+      z-index: 0;
+    }
+
+    .btn-luxury:hover::before {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .btn-luxury:hover {
+      color: var(--bg-dark);
+      border-color: var(--accent-gold);
+    }
+
+    .btn-luxury span, .btn-luxury i {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-solid {
+      background-color: var(--text-primary);
+      color: var(--bg-dark);
+      border-color: var(--text-primary);
+    }
+
+    .btn-solid:hover {
+      background-color: var(--accent-gold);
+      border-color: var(--accent-gold);
+      color: var(--bg-dark);
+    }
+
+    /* ==========================================================================
+       4. 상단 네비게이션 (Floating Glass Header)
+       ========================================================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 1.5rem 0;
+      transition: all 0.4s ease;
+      background: linear-gradient(180deg, rgba(10, 13, 12, 0.85) 0%, rgba(10, 13, 12, 0) 100%);
+    }
+
+    .header.is-scrolled {
+      padding: 1rem 0;
+      background: rgba(10, 13, 12, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .nav-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+
+    .brand-logo .logo-main {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
+      line-height: 1;
+    }
+
+    .brand-logo .logo-sub {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    @media (max-width: 991px) {
+      .nav-menu {
+        display: none;
+      }
+    }
+
+    .nav-link {
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      position: relative;
+      padding: 0.5rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-link .nav-num {
+      font-size: 0.7rem;
+      color: var(--accent-gold);
+      opacity: 0.7;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--accent-gold);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+    }
+
+    .nav-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    /* ==========================================================================
+       5. Hero 섹션 (시네마틱 에디토리얼 비주얼 & 대형 타이포그래피)
+       ========================================================================== */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      padding-bottom: 4rem;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.42) contrast(1.1);
+      transform: scale(1.03);
+      transition: transform 10s ease;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(10, 13, 12, 0.4) 0%,
+        rgba(10, 13, 12, 0.2) 50%,
+        rgba(10, 13, 12, 0.95) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-top-info {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 2rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-top-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+    }
+
+    .hero-badge-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.4rem 1rem;
+      background: rgba(197, 168, 128, 0.12);
+      border: 1px solid var(--border-accent);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-gold-light);
+      margin-bottom: 1rem;
+    }
+
+    .hero-tagline {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      font-style: italic;
+      color: var(--accent-gold);
+      max-width: 500px;
+      line-height: 1.3;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      max-width: 440px;
+      line-height: 1.8;
+      text-align: right;
+    }
+
+    @media (max-width: 900px) {
+      .hero-desc {
+        text-align: left;
+      }
+    }
+
+    /* Elyse 스타일의 초대형 타이틀 */
+    .hero-title-main {
+      font-family: var(--font-serif);
+      font-size: clamp(3.2rem, 10vw, 9.5rem);
+      font-weight: 400;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title-main .title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .hero-title-main .title-gold {
+      color: var(--accent-gold);
+      font-style: italic;
+    }
+
+    .hero-bottom-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .scroll-indicator {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .scroll-indicator i {
+      animation: bounceDown 2s infinite ease-in-out;
+    }
+
+    @keyframes bounceDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ==========================================================================
+       6. About & Philosophy (비대칭 에디토리얼 레이아웃 & 스탯 박스)
+       ========================================================================== */
+    .about-section {
+      padding: 9rem 0;
+      position: relative;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5rem;
+      align-items: center;
+      margin-bottom: 6rem;
+    }
+
+    @media (max-width: 991px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .about-heading-large {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4.5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+    }
+
+    .about-heading-large em {
+      font-style: italic;
+      color: var(--accent-gold);
+    }
+
+    .about-lead {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-visual-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .about-visual-card img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      filter: brightness(0.85);
+      transition: transform 0.8s var(--transition-smooth);
+    }
+
+    .about-visual-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .about-image-overlay-tag {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      background: rgba(10, 13, 12, 0.75);
+      backdrop-filter: blur(10px);
+      padding: 0.6rem 1.2rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      color: var(--text-primary);
+    }
+
+    /* Elyse 스타일 모던 스탯 그리드 */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 4rem;
+    }
+
+    @media (max-width: 991px) {
+      .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 2.25rem 2rem;
+      border-radius: 4px;
+      position: relative;
+      transition: all 0.4s ease;
+    }
+
+    .stat-card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+    }
+
+    .stat-card-num {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 4vw, 3.8rem);
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.25rem;
+    }
+
+    .stat-card-num .unit {
+      font-family: var(--font-sans);
+      font-size: 1.1rem;
+      color: var(--accent-gold);
+      font-style: italic;
+    }
+
+    .stat-card-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .stat-card-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       7. Core Pillars (4대 전문 영역 — Elyse 'Our Livings' Showcase 스타일)
+       ========================================================================== */
+    .pillars-section {
+      padding: 8rem 0;
+      background: #0E1210;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .section-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .section-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--accent-gold);
+    }
+
+    /* 쇼케이스 카드 그리드 */
+    .showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .showcase-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .showcase-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.5s var(--transition-smooth);
+      position: relative;
+    }
+
+    .showcase-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .showcase-image-wrap {
+      width: 100%;
+      height: 340px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .showcase-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s var(--transition-smooth);
+    }
+
+    .showcase-card:hover .showcase-image-wrap img {
+      transform: scale(1.06);
+    }
+
+    .showcase-badge-pill {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: rgba(10, 13, 12, 0.75);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-subtle);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--accent-gold-light);
+    }
+
+    .showcase-body {
+      padding: 2.5rem 2.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .showcase-index {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--accent-gold);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+
+    .showcase-title {
+      font-family: var(--font-serif);
+      font-size: 1.85rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .showcase-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+    }
+
+    .showcase-specs {
+      display: flex;
+      gap: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-subtle);
+      margin-bottom: 1.75rem;
+    }
+
+    .spec-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+
+    .spec-item .label {
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .spec-item .value {
+      font-family: var(--font-serif);
+      font-size: 1.2rem;
+      color: var(--accent-gold-light);
+    }
+
+    /* ==========================================================================
+       8. Values & Philosophy (Elyse 'Our Beliefs' 차용)
+       ========================================================================== */
+    .beliefs-section {
+      padding: 9rem 0;
+      position: relative;
+    }
+
+    .beliefs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    @media (max-width: 991px) {
+      .beliefs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 540px) {
+      .beliefs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .belief-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 2.5rem 1.75rem;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+      transition: all 0.4s ease;
+      position: relative;
+    }
+
+    .belief-card:hover {
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+    }
+
+    .belief-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .belief-num {
+      font-size: 0.78rem;
+      color: var(--accent-gold);
+      letter-spacing: 0.15em;
+    }
+
+    .belief-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .belief-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ==========================================================================
+       9. Consultation & Inquiry 폼 (Elyse 'Envision Your Life' 스타일)
+       ========================================================================== */
+    .cta-section {
+      padding: 8rem 0;
+      background: radial-gradient(circle at 50% 50%, #151C19 0%, #0A0D0C 100%);
+      border-top: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .cta-box-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      padding: 4rem 3.5rem;
+      border-radius: 6px;
+      position: relative;
+    }
+
+    @media (max-width: 768px) {
+      .cta-box-wrapper {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+
+    .cta-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .cta-header h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .cta-header p {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .cta-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.75rem;
+    }
+
+    @media (max-width: 768px) {
+      .cta-form {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+    }
+
+    .form-input {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      padding: 0.95rem 1.25rem;
+      border-radius: 4px;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--accent-gold);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .cta-submit-wrap {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .form-notice {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    /* ==========================================================================
+       10. Footer (에디토리얼 푸터)
+       ========================================================================== */
+    .footer {
+      padding: 5rem 0 3rem;
+      border-top: 1px solid var(--border-subtle);
+      background: var(--bg-dark);
+      font-size: 0.85rem;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    @media (max-width: 900px) {
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    @media (max-width: 768px) {
+      .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+
+    /* ==========================================================================
+       11. Elyse 스타일 인터랙티브 모달 Drawer
+       ========================================================================== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(5, 7, 6, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 2000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .modal-overlay.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-drawer {
+      width: 100%;
+      max-width: 680px;
+      height: 100%;
+      background: var(--bg-card);
+      border-left: 1px solid var(--border-subtle);
+      padding: 3.5rem;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.5s var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .modal-overlay.is-active .modal-drawer {
+      transform: translateX(0);
+    }
+
+    @media (max-width: 768px) {
+      .modal-drawer {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    .modal-close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      transition: all 0.3s ease;
+    }
+
+    .modal-close-btn:hover {
+      color: var(--accent-gold);
+      transform: rotate(90deg);
+    }
+
+    .modal-hero-img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .modal-desc {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    .modal-specs-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      padding: 1.5rem;
+      border-radius: 4px;
+      margin-bottom: 2.5rem;
+    }
+
+    .modal-spec-item .k {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 0.3rem;
+    }
+
+    .modal-spec-item .v {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--text-primary);
+    }
+
+    /* 플로팅 알림 토스트 */
+    .toast-msg {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-card);
+      border: 1px solid var(--accent-gold);
+      color: var(--text-primary);
+      padding: 1rem 1.75rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      z-index: 3000;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.4s var(--transition-smooth);
+    }
+
+    .toast-msg.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       헤더 (Floating Glass Navigation)
+       ========================================================================== -->
+  <header class="header" id="navbar">
+    <div class="container nav-wrap">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-main">KHU AT CENTER</span>
+        <span class="logo-sub">Sports Medicine &amp; Performance</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li>
+            <a href="#about" class="nav-link">
+              <span class="nav-num">(01)</span> About
+            </a>
+          </li>
+          <li>
+            <a href="#pillars" class="nav-link">
+              <span class="nav-num">(02)</span> Disciplines
+            </a>
+          </li>
+          <li>
+            <a href="#beliefs" class="nav-link">
+              <span class="nav-num">(03)</span> Philosophy
+            </a>
+          </li>
+          <li>
+            <a href="#consultation" class="nav-link">
+              <span class="nav-num">(04)</span> Consultation
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#consultation" class="btn-luxury">
+          <span>Book a Visit</span>
+          <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         Hero Section (시네마틱 에디토리얼 비주얼 & 초대형 타이포)
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg">
+        <!-- 고해상도 선수 트레이닝 / 스포츠의학 감성 비주얼 -->
+        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=2070&auto=format&fit=crop" alt="Athlete training background" />
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-top-info">
+          <div>
+            <div class="hero-badge-wrap">
+              <i class="fa-solid fa-medal"></i>
+              <span>Kyung Hee University Athletic Training</span>
+            </div>
+            <div class="hero-tagline">
+              Where Scientific Precision Meets Timeless Athletic Mastery.
+            </div>
+          </div>
+          <p class="hero-desc">
+            경희대학교 스포츠의학 &amp; 선수트레이닝센터는 임상 연구 데이터와 최고 수준의 AT 전문성을 결합하여 선수의 부상 예방, 기능 재활, 그리고 한계 없는 퍼포먼스를 설계합니다.
+          </p>
+        </div>
+
+        <div class="hero-title-main">
+          <div class="title-row">
+            <span>ATHLETIC</span>
+            <span class="title-gold">( 01 )</span>
+          </div>
+          <div class="title-row">
+            <span class="title-gold">EXCELLENCE</span>
+            <span style="font-size: 0.35em; font-family: var(--font-sans); letter-spacing: 0.1em; opacity: 0.6;">EST. 2020</span>
+          </div>
+        </div>
+
+        <div class="hero-bottom-bar">
+          <div>( SEONSEUNGGWAN GYMNASIUM · SUWON CAMPUS )</div>
+          <div class="scroll-indicator" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+            <span>SCROLL TO EXPLORE</span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </div>
+          <div>SCIENTIFIC WELL-BEING &amp; TRIAGE</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         About & Stats Section (비대칭 에디토리얼 레이아웃)
+         ========================================================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="caption-index">
+          <span>( 01 )</span> ABOUT KHU AT CENTER
+        </div>
+
+        <div class="about-grid">
+          <div>
+            <h2 class="about-heading-large">
+              단순한 치료를 넘어, <br>
+              <em>최상의 퍼포먼스</em>를 완성하는 <br>
+              통합 스포츠의학 센터
+            </h2>
+            <p class="about-lead">
+              선수의 신체는 하나의 정교한 예술이자 공학적 시스템입니다. KHU AT Center는 국내 최고 수준의 스포츠의학 교수진과 공인 선수트레이너(KATA/NATA-BOC)가 하나 되어 선수의 손상 초기 처치부터 필드 복귀까지 전 과정을 데이터 기반으로 동행합니다.
+            </p>
+            <p class="about-lead" style="color: var(--text-muted); font-size: 0.92rem;">
+              농구, 배구, 배드민턴, 축구, 럭비, 태권도 등 경희대학교를 대표하는 6대 엘리트 스포츠 구단의 전담 의무 케어를 책임지며, 동시에 최신 SCI급 스포츠과학 논문 60편 이상의 임상 연구를 지속하고 있습니다.
+            </p>
+          </div>
+
+          <div class="about-visual-card">
+            <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=1470&auto=format&fit=crop" alt="Center Facility" />
+            <div class="about-image-overlay-tag">
+              <i class="fa-solid fa-shield-halved" style="color: var(--accent-gold); margin-right: 0.4rem;"></i>
+              State-of-the-Art Rehab &amp; Training Suite
+            </div>
+          </div>
+        </div>
+
+        <!-- Elyse 스타일의 럭셔리 카운터 스탯 -->
+        <div class="stats-container">
+          <div class="stat-card">
+            <div class="stat-card-label">Return to Play</div>
+            <div class="stat-card-num">98.4<span class="unit">%</span></div>
+            <div class="stat-card-desc">체계적 단계별 재활 프로토콜을 통한 안전하고 완벽한 경기 복귀율</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-label">Elite Athletes</div>
+            <div class="stat-card-num">15<span class="unit">+</span></div>
+            <div class="stat-card-desc">프로리그 및 국가대표팀으로 진출한 경희대 출신 엘리트 선수 육성</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-label">Research Papers</div>
+            <div class="stat-card-num">60<span class="unit">+</span></div>
+            <div class="stat-card-desc">국제 저명 SCI/KCI급 학술지에 게재된 스포츠의학 및 바이오메카닉스 논문</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-card-label">Dedicated Triage</div>
+            <div class="stat-card-num">24<span class="unit">/7</span></div>
+            <div class="stat-card-desc">선수단 훈련 및 공식 대회를 상시 커버하는 실시간 의무 대응 시스템</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Core Pillars (4대 전문 영역 — Elyse 'Our Livings' Showcase 차용)
+         ========================================================================== -->
+    <section class="pillars-section" id="pillars">
+      <div class="container">
+        <div class="section-header-flex">
+          <div>
+            <div class="caption-index">
+              <span>( 02 )</span> OUR DISCIPLINES
+            </div>
+            <h2 class="section-title">
+              Disciplines Tailored for <br>
+              <em>Peak Athletic Mastery</em>
+            </h2>
+          </div>
+          <p style="color: var(--text-secondary); max-width: 380px; font-size: 0.9rem;">
+            엘리트 선수의 부상 평가부터 경기력 향상, 현장 응급 처치 및 기초 학술 연구까지 유기적으로 연결된 4대 핵심 분야입니다.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- Pillar 1: 손상 평가 및 재활 -->
+          <div class="showcase-card">
+            <div class="showcase-image-wrap">
+              <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1469&auto=format&fit=crop" alt="Athletic Rehabilitation" />
+              <div class="showcase-badge-pill">Phase-based Rehab</div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-index">( 01 / REHABILITATION )</div>
+              <h3 class="showcase-title">Athletic Rehabilitation</h3>
+              <p class="showcase-desc">
+                관절 가동성, 신경근 조절, 동적 안정성 회복을 위한 1:1 전담 단계별 재활 시스템. 등속성 근력 장비와 3D 동작 분석을 결합하여 재손상 위험을 0%에 가깝게 통제합니다.
+              </p>
+              <div class="showcase-specs">
+                <div class="spec-item">
+                  <span class="label">Protocol</span>
+                  <span class="value">5-Step Matrix</span>
+                </div>
+                <div class="spec-item">
+                  <span class="label">Evaluation</span>
+                  <span class="value">Isokinetic &amp; EMG</span>
+                </div>
+                <div class="spec-item">
+                  <span class="label">Success Rate</span>
+                  <span class="value">99.1%</span>
+                </div>
+              </div>
+              <button class="btn-luxury" onclick="openPillarModal(0)">
+                <span>Explore Discipline</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Pillar 2: 선수 퍼포먼스 향상 -->
+          <div class="showcase-card">
+            <div class="showcase-image-wrap">
+              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop" alt="Performance Optimization" />
+              <div class="showcase-badge-pill">Power &amp; Agility</div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-index">( 02 / PERFORMANCE )</div>
+              <h3 class="showcase-title">Performance Optimization</h3>
+              <p class="showcase-desc">
+                종목별 특화된 폭발적 파워, 스피드, 코어 밸런스를 구축하는 엘리트 스트렝스 &amp; 컨디셔닝. 생체역학적 효율성을 극대화하여 코트 위 경쟁력을 결정짓습니다.
+              </p>
+              <div class="showcase-specs">
+                <div class="spec-item">
+                  <span class="label">Focus</span>
+                  <span class="value">VBT &amp; Force Plate</span>
+                </div>
+                <div class="spec-item">
+                  <span class="label">Method</span>
+                  <span class="value">Periodization</span>
+                </div>
+                <div class="spec-item">
+                  <span class="label">Peak Jump</span>
+                  <span class="value">+18.5%</span>
+                </div>
+              </div>
+              <button class="btn-luxury" onclick="openPillarModal(1)">
+                <span>Explore Discipline</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Pillar 3: 현장 의무 및 대회 커버리지 -->
+          <div class="showcase-card">
+            <div class="showcase-image-wrap">
+              <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=1470&auto=format&fit=crop" alt="Field AT Coverage" />
+              <div class="showcase-badge-pill">On-Pitch Triage</div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-index">( 03 / FIELD COVERAGE )</div>
+              <h3 class="showcase-title">Field AT &amp; Team Triage</h3>
+              <p class="showcase-desc">
+                경기장 사이드라인에서 벌어지는 급성 부상에 대한 즉각적 응급 처치, 키네시오 테이핑, 시합 전/후 전문 리커버리. 선수가 오직 시합에만 몰입할 수 있는 든든한 방패입니다.
+              </p>
+              <div class="showcase-specs">
+                <div class="spec-item">
+                  <span class="label">Teams</span>
+                  <span class="value">6 Varsity Teams</span>
+                </div>
+                <div class="spec-item">
+                  <span class="label">Coverage</span>
+                  <span class="value">National League</span>
+                </div>
+                <div class="spec-item">
+                  <span class="label">Response</span>
+                  <span class="value">&lt; 30 Seconds</span>
+                </div>
+              </div>
+              <button class="btn-luxury" onclick="openPillarModal(2)">
+                <span>Explore Discipline</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Pillar 4: 스포츠의학 학술 연구 -->
+          <div class="showcase-card">
+            <div class="showcase-image-wrap">
+              <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1470&auto=format&fit=crop" alt="Sports Science Research" />
+              <div class="showcase-badge-pill">Clinical Research</div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-index">( 04 / RESEARCH LAB )</div>
+              <h3 class="showcase-title">Evidence-based Science</h3>
+              <p class="showcase-desc">
+                경희대학교 스포츠의학과 석·박사 연구진과 연계한 최고 수준의 학술적 근거 창출. 실제 필드 선수 데이터와 임상 시험을 융합하여 스포츠의학의 글로벌 표준을 선도합니다.
+              </p>
+              <div class="showcase-specs">
+                <div class="spec-item">
+                  <span class="label">Publications</span>
+                  <span class="value">60+ SCI Papers</span>
+                </div>
+                <div class="spec-item">
+                  <span class="label">Affiliation</span>
+                  <span class="value">JSCR, AJSM, KSMR</span>
+                </div>
+                <div class="spec-item">
+                  <span class="label">Impact</span>
+                  <span class="value">Q1 Quartile</span>
+                </div>
+              </div>
+              <button class="btn-luxury" onclick="openPillarModal(3)">
+                <span>Explore Discipline</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Values & Philosophy (Elyse 'Our Beliefs' 차용)
+         ========================================================================== -->
+    <section class="beliefs-section" id="beliefs">
+      <div class="container">
+        <div class="caption-index">
+          <span>( 03 )</span> CORE PHILOSOPHY
+        </div>
+        <h2 class="section-title">
+          Guiding Beliefs Behind <br>
+          <em>Every Single Victory</em>
+        </h2>
+
+        <div class="beliefs-grid">
+          <div class="belief-card">
+            <div class="belief-card-top">
+              <span class="belief-num">( 01 )</span>
+              <i class="fa-solid fa-microscope" style="color: var(--accent-gold);"></i>
+            </div>
+            <div>
+              <h3>Scientific Rigor</h3>
+              <p>직관이나 관행에 의존하지 않고, 검증된 의학적 근거와 정밀한 생체 역학 데이터에 기반해 선수를 케어합니다.</p>
+            </div>
+          </div>
+
+          <div class="belief-card">
+            <div class="belief-card-top">
+              <span class="belief-num">( 02 )</span>
+              <i class="fa-solid fa-person-running" style="color: var(--accent-gold);"></i>
+            </div>
+            <div>
+              <h3>Athlete-First Empathy</h3>
+              <p>부상 선수의 심리적 불안감과 복귀에 대한 열망을 깊이 이해하며, 전인적(Holistic) 관점에서 회복을 돕습니다.</p>
+            </div>
+          </div>
+
+          <div class="belief-card">
+            <div class="belief-card-top">
+              <span class="belief-num">( 03 )</span>
+              <i class="fa-solid fa-arrows-spin" style="color: var(--accent-gold);"></i>
+            </div>
+            <div>
+              <h3>Continuous Innovation</h3>
+              <p>최신 스포츠 재활 테크놀로지와 트레이닝 방법론을 능동적으로 도입하여 항상 필드 최전선의 프로토콜을 유지합니다.</p>
+            </div>
+          </div>
+
+          <div class="belief-card">
+            <div class="belief-card-top">
+              <span class="belief-num">( 04 )</span>
+              <i class="fa-solid fa-handshake-angle" style="color: var(--accent-gold);"></i>
+            </div>
+            <div>
+              <h3>Unshakable Trust</h3>
+              <p>코칭스태프, 선수, 의무팀 간의 완벽한 신뢰를 바탕으로 최적의 컨디션에서 경기에 출전할 수 있도록 조율합니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Consultation & Request Form (Elyse 'Envision Your Life' 스타일)
+         ========================================================================== -->
+    <section class="cta-section" id="consultation">
+      <div class="container">
+        <div class="cta-box-wrapper">
+          <div class="cta-header">
+            <div class="caption-index" style="justify-content: center;">
+              <span>( 04 )</span> CONSULTATION &amp; VISIT
+            </div>
+            <h2>Envision Your Peak Athletic Form</h2>
+            <p>부상 평가, 재활 상담 또는 센터 견학을 원하시면 아래 양식을 작성해 주세요. 전문 AT 팀에서 신속히 안내해 드립니다.</p>
+          </div>
+
+          <form class="cta-form" id="consultForm" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+              <label class="form-label" for="athleteName">Athlete / Coach Name *</label>
+              <input type="text" id="athleteName" class="form-input" placeholder="성함 또는 코칭스태프 성명" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="athleteContact">Contact Number *</label>
+              <input type="tel" id="athleteContact" class="form-input" placeholder="010-0000-0000" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="sportsDiscipline">Sports Discipline / Team *</label>
+              <input type="text" id="sportsDiscipline" class="form-input" placeholder="예: 농구부, 축구부, 배드민턴 등" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inquiryType">Inquiry Type</label>
+              <select id="inquiryType" class="form-input" style="cursor: pointer;">
+                <option value="rehab">부상 진단 및 선수 재활 상담</option>
+                <option value="performance">선수 기능성 트레이닝 평가</option>
+                <option value="field_at">대회 및 전지훈련 AT 지원 요청</option>
+                <option value="visit">센터 시설 견학 및 연구 협업</option>
+              </select>
+            </div>
+
+            <div class="form-group full-width">
+              <label class="form-label" for="message">Detailed Condition / Notes</label>
+              <textarea id="message" rows="3" class="form-input" placeholder="통증 부위, 손상 시점, 또는 상담 희망 사항을 자유롭게 적어주세요."></textarea>
+            </div>
+
+            <div class="cta-submit-wrap">
+              <button type="submit" class="btn-luxury btn-solid" style="padding: 1rem 3rem;">
+                <span>Submit Consultation Request</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+              <p class="form-notice">
+                * 본 양식은 예시용 데모(Mockup)이며, 제출 시 화면상에 시뮬레이션 알림이 표시됩니다.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       푸터 (Editorial Footer)
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 1.5rem;">
+            <span class="logo-main" style="font-size: 1.8rem;">KHU AT CENTER</span>
+            <span class="logo-sub">Athletic Training &amp; Sports Medicine</span>
+          </div>
+          <p>
+            경희대학교 체육대학 스포츠의학 및 선수트레이닝센터는 학문적 탐구와 스포츠 현장의 완벽한 조화를 추구하며, 모든 선수의 건강한 잠재력을 깨웁니다.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>( Location )</h4>
+          <p>
+            경기도 용인시 기흥구 덕영대로 1732<br>
+            경희대학교 국제캠퍼스 선승관 체육관 1층<br>
+            스포츠의학센터 &amp; AT실
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>( Contact )</h4>
+          <p>
+            E. atcenter@khu.ac.kr<br>
+            T. 031-201-2700<br>
+            Operating Hours: Mon - Fri 09:00 - 21:00
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 KHU AT Center. All Rights Reserved. Kyung Hee University.</div>
+        <div style="color: var(--accent-gold);">Inspired by Elyse Residence Luxury Minimalist UI/UX</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       인터랙티브 모달 Drawer (Elyse Residence Modal Vibe)
+       ========================================================================== -->
+  <div class="modal-overlay" id="pillarModal" onclick="closePillarModal(event)">
+    <div class="modal-drawer" onclick="event.stopPropagation()">
+      <button class="modal-close-btn" onclick="closePillarModal()" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="caption-index" id="modalIndex">
+        <span>( 01 )</span> DISCIPLINE SPECIFICATION
+      </div>
+
+      <h2 class="modal-title" id="modalTitle">Athletic Rehabilitation</h2>
+      <img id="modalImg" class="modal-hero-img" src="" alt="Modal Hero" />
+
+      <p class="modal-desc" id="modalDesc">
+        상세 내용이 표시되는 공간입니다.
+      </p>
+
+      <div class="modal-specs-list" id="modalSpecsContainer">
+        <!-- JS로 동적 생성 -->
+      </div>
+
+      <a href="#consultation" class="btn-luxury btn-solid" onclick="closePillarModal()" style="align-self: flex-start;">
+        <span>Book This Program</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- 토스트 알림 메시지 -->
+  <div class="toast-msg" id="toastMsg">
+    <i class="fa-solid fa-circle-check" style="color: var(--accent-gold); margin-right: 0.5rem;"></i>
+    상담 신청이 정상적으로 시뮬레이션 접수되었습니다.
+  </div>
+
+  <!-- ==========================================================================
+       자바스크립트 인터랙션 (Pure Vanilla JS & 독립 동작)
+       ========================================================================== -->
+  <script>
+    // 1. 스크롤에 따른 헤더 배경 블러 전환 (Scrolled state)
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        navbar.classList.add('is-scrolled');
+      } else {
+        navbar.classList.remove('is-scrolled');
+      }
+    });
+
+    // 2. 4대 분야 모달 상세 데이터
+    const pillarsData = [
+      {
+        index: "( 01 / REHABILITATION )",
+        title: "Athletic Rehabilitation Matrix",
+        img: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?q=80&w=1469&auto=format&fit=crop",
+        desc: "부상 발생 초기(Acute Phase)의 부종 및 통증 완화부터 단계별 저항 운동, 고유수용성 감각 훈련, 플라이오메트릭스 및 실전 전술 훈련 연계까지 5단계 매트릭스를 기반으로 선수를 단계별로 통제 관리합니다.",
+        specs: [
+          { k: "Target Joints", v: "ACL, Ankle, Shoulder, Hamstring" },
+          { k: "Testing Devices", v: "Cybex Norm Isokinetic / Biodex" },
+          { k: "Average Return Rate", v: "98.4% without Re-injury" },
+          { k: "Protocol Standard", v: "NATA & KSMR Evidence-based" }
+        ]
+      },
+      {
+        index: "( 02 / PERFORMANCE )",
+        title: "Elite Performance Optimization",
+        img: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop",
+        desc: "속도 기반 훈련(VBT)과 포스 플레이트 지면반력 분석을 통해 선수의 미세한 좌우 불균형을 교정하고, 스프린트 가속도와 수직 점프력을 극대화합니다. 종목별 에너지 시스템 요구도에 맞춘 주기화 모델을 적용합니다.",
+        specs: [
+          { k: "Primary Metrics", v: "RFD (Rate of Force Development)" },
+          { k: "Technology", v: "Dual Force Plates & Linear Encoders" },
+          { k: "Average Power Gain", v: "+14.8% peak wattage" },
+          { k: "Periodization", v: "In-season & Off-season Block" }
+        ]
+      },
+      {
+        index: "( 03 / FIELD COVERAGE )",
+        title: "Field AT & Rapid Triage",
+        img: "https://images.unsplash.com/photo-1526676037777-05a232554f77?q=80&w=1470&auto=format&fit=crop",
+        desc: "대학 농구 리그, 대학 축구 U리그, 럭비 전국체전, 배드민턴 및 태권도 대회 현장에서 공인 AT가 상주하며 30초 이내 골든타임 응급처치, 전문 관절 테이핑, 시합 전 다이나믹 웜업 및 쿨다운 리커버리를 밀착 지원합니다.",
+        specs: [
+          { k: "Coverage Teams", v: "Basketball, Soccer, Rugby, etc." },
+          { k: "Certifications", v: "KATA, NATA-BOC, BLS Provider" },
+          { k: "Rapid Response", v: "&lt; 30s Sideline Evaluation" },
+          { k: "Recovery Gear", v: "GameReady Cryo, NormaTec Boots" }
+        ]
+      },
+      {
+        index: "( 04 / RESEARCH LAB )",
+        title: "Sports Medicine & Science Lab",
+        img: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=1470&auto=format&fit=crop",
+        desc: "실제 선수들의 임상 데이터를 바탕으로 하지 부상 위험 요인 규명, 전방십자인대 재건술 후 기능적 회복 예측 모델 구축 등 스포츠의학 저명 학술지에 매년 다수의 SCI 논문을 발표하며 국내외 학술 교류를 선도합니다.",
+        specs: [
+          { k: "Research Fields", v: "Biomechanics & Sports Rehab" },
+          { k: "Published Journals", v: "AJSM, JSCR, Sports Health" },
+          { k: "Cumulative Papers", v: "60+ SCI/KCI Certified" },
+          { k: "Clinical Translation", v: "100% Lab-to-Field Integration" }
+        ]
+      }
+    ];
+
+    // 모달 열기 함수
+    function openPillarModal(index) {
+      const data = pillarsData[index];
+      if (!data) return;
+
+      document.getElementById('modalIndex').innerHTML = `<span>( 0${index + 1} )</span> DISCIPLINE SPECIFICATION`;
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalImg').src = data.img;
+      document.getElementById('modalDesc').innerHTML = data.desc;
+
+      const specsContainer = document.getElementById('modalSpecsContainer');
+      specsContainer.innerHTML = '';
+      data.specs.forEach(s => {
+        const item = document.createElement('div');
+        item.className = 'modal-spec-item';
+        item.innerHTML = `
+          <div class="k">${s.k}</div>
+          <div class="v">${s.v}</div>
+        `;
+        specsContainer.appendChild(item);
+      });
+
+      document.getElementById('pillarModal').classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // 모달 닫기 함수
+    function closePillarModal(event) {
+      document.getElementById('pillarModal').classList.remove('is-active');
+      document.body.style.overflow = '';
+    }
+
+    // ESC 키로 모달 닫기
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closePillarModal();
+      }
+    });
+
+    // 3. 상담 신청 폼 시뮬레이션 처리 (Mockup)
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('athleteName').value;
+      
+      // 토스트 메시지 띄우기
+      const toast = document.getElementById('toastMsg');
+      toast.innerHTML = `<i class="fa-solid fa-circle-check" style="color: var(--accent-gold); margin-right: 0.5rem;"></i> <strong>${name}</strong> 님의 상담 신청이 정상 접수(시뮬레이션)되었습니다.`;
+      toast.classList.add('show');
+
+      // 폼 리셋
+      document.getElementById('consultForm').reset();
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 4000);
+    }
+  </script>
+</body>
+</html>

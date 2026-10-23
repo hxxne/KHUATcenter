@@ -1769,3 +1769,30 @@ Observation 100시간 실무 과정,
   5. **GitHub 동기화:**
      - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
 
+
+
+---
+
+## 🏛️ 37. Dribbble/Awwwards 'Elyse Residence' 럭셔리 에디토리얼 UI/UX 독립 프로토타입 구축 (2026-10-23)
+- **개요 및 목적:**
+  - 글로벌 디자인 플랫폼 Awwwards / Dribbble 수상작인 **"Elyse Residence – Luxury Real Estate Website Design"**(Phenomenon Studio 제작)의 하이엔드 럭셔리 미니멀리스트 감성을 벤치마킹하여, 경희대학교 스포츠의학 & AT 센터를 위한 독립형 UI/UX 프로토타입 페이지([preview-luxury.html](file:///c:/Users/LG/OneDrive/바탕%20화면/AI/khu-at-center/preview-luxury.html)) 구축.
+  - 사용자의 요청("예시로 만드는 거라 연동하지 말고 만들어줘")에 따라, 복잡한 Supabase 백엔드 실시간 연동 없이 순수 프론트엔드 목업 형태로 구현하여 기존 웹사이트(`index.html`, `style.css`)는 100% 무결하게 유지·보존.
+- **핵심 디자인 시스템 & UI/UX 차용 요소:**
+  1. **하이엔드 에디토리얼 타이포그래피:**
+     - 우아하고 위엄 있는 구글 세리프 폰트 `Cormorant Garamond` + 모던 산세리프 `Pretendard / Plus Jakarta Sans` 조화.
+     - 대형 영문 세리프 헤드라인(`ATHLETIC EXCELLENCE`), 소괄호 에디토리얼 인덱싱 `( 01 )`, `( About )`, `( Disciplines )` 적용.
+  2. **다크 에보니 & 웜 골드 팔레트:**
+     - 심도 있는 다크 에보니(`#0A0D0C`), 딥 올리브 차콜(`#121614`), 소프트 웜 골드(`#C5A880`)를 매칭하여 기존 스포츠 사이트의 투박함을 벗겨내고 극도의 품격 연출.
+  3. **시네마틱 히어로 & 플로팅 글래스 네비게이션:**
+     - 상단 스크롤 감응형 글래스모피즘 헤더(`backdrop-filter: blur(16px)`).
+     - 웅장한 시네마틱 트레이닝 비주얼 오버레이, 태그라인, 하단 `( SCROLL TO EXPLORE )` 인터랙션.
+  4. **비대칭 에디토리얼 About & 모던 카운터 스탯:**
+     - `98.4%` 안전 복귀율, `15+` 엘리트 프로/국가대표 배출, `60+` SCI 논문, `24/7` 상시 트리아지 스탯 카드.
+  5. **Core Pillars (4대 전문 영역 쇼케이스) & 슬라이드인 모달 드로어:**
+     - Elyse의 펜트하우스/듀플렉스 쇼케이스 디자인을 차용하여 4대 분야(재활, 퍼포먼스, 현장 AT, 연구) 대형 카드 구성.
+     - `Explore Discipline` 클릭 시 화면 우측에서 부드럽게 슬라이드되는 전용 모달 드로어(`modal-drawer`), 고화질 이미지 및 세부 스펙 시트, ESC 키 및 배경 클릭 닫기 지원.
+  6. **Envision Your Peak Athletic Form 컨설테이션 폼:**
+     - 미니멀 럭셔리 입력 필드, 제출 시 화면 우하단 시뮬레이션 토스트 메시지 안내.
+- **안전성 및 검증:**
+  - 헤드리스 브라우저 자동화(Browser Subagent) 검증 완료: 히어로 섹션, 비대칭 어바웃, 쇼케이스 카드 호버, 모달 드로어 오픈/클로즈 100% 정상 작동 확인.
+  - 기존 실시간 서비스 파일에 영향 없는 완전 독립 실행형 프리뷰 파일 보장.
