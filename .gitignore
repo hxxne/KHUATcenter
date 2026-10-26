@@ -6,8 +6,10 @@
 .DS_Store
 Thumbs.db
 
-# Backup images
+# Backup images and directories
 *.backup.jpg
+assets/backups_*/
+scratch*
 
 # Executables and engine binaries
 *.exe
