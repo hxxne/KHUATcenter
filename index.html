@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261016_warm_oatmeal_gold">
+    <link rel="stylesheet" href="style.css?v=20261027_plate_click">
 </head>
 <body>
 
@@ -1745,10 +1745,13 @@
 
                         <!-- 2017 -->
                         <div class="plate-row">
-                            <button type="button" class="metal-plate plate-multi" onclick="openAlumniModal('조재희 · 양창욱', '2017 AT Student of the Year')" title="조재희·양창욱 프로필 보기">
-                                <span class="plate-name multi">조  재  희<br>양  창  욱</span>
+                            <div class="metal-plate plate-multi" onclick="openAlumniModal('조재희 · 양창욱', '2017 AT Student of the Year')" role="button" tabindex="0" title="2017 공동 수상: 조재희 · 양창욱 프로필 보기">
+                                <div class="plate-name multi">
+                                    <span class="multi-sub-name" onclick="event.stopPropagation(); openAlumniModal('조재희', '2017 AT Student of the Year (공동 수상)');" title="조재희 프로필 보기">조  재  희</span>
+                                    <span class="multi-sub-name" onclick="event.stopPropagation(); openAlumniModal('양창욱', '2017 AT Student of the Year (공동 수상)');" title="양창욱 프로필 보기">양  창  욱</span>
+                                </div>
                                 <span class="plate-year">2017</span>
-                            </button>
+                            </div>
                             <button type="button" class="metal-plate" onclick="openAlumniModal('조유진', '2017 Inspiration')" title="조유진 프로필 보기">
                                 <span class="plate-name">조  유  진</span>
                                 <span class="plate-year">2017</span>
@@ -4865,6 +4868,9 @@
         "조유진": "미공개",
         "조재희": "미공개",
         "조재희 · 양창욱": "조재희: 미공개<br>양창욱: 현) 진에어 객실승무원",
+        "조재희 양창욱": "조재희: 미공개<br>양창욱: 현) 진에어 객실승무원",
+        "조재희, 양창욱": "조재희: 미공개<br>양창욱: 현) 진에어 객실승무원",
+        "조재희,양창욱": "조재희: 미공개<br>양창욱: 현) 진에어 객실승무원",
         "조현준": "현) 경희대학교 일반대학원 (1기) / 스포츠재활 강사",
         "차정수": "현) 팀 제로베이스 (동탄)",
         "최유빈": "현) 롯데웰푸드 영양사",
@@ -4916,7 +4922,27 @@
 
         if (nameEl) nameEl.textContent = nameClean;
         if (jobEl) {
-            if (jobInfo === "미공개" || jobInfo === "정보 준비중") {
+            // 복수 수상자 (조재희, 양창욱 등)일 경우 카드 2개로 분리하여 한눈에 명확하게 노출
+            if (nameClean.includes('조재희') && nameClean.includes('양창욱')) {
+                jobEl.innerHTML = `
+                    <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 320px; margin: 0 auto; text-align: left;">
+                        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <span style="font-size: 0.8rem; font-weight: 700; color: #A50034; display: block; margin-bottom: 2px;">2017 공동 수상</span>
+                                <strong style="font-size: 1.05rem; color: #0f172a;">조재희</strong>
+                            </div>
+                            <span style="color: #64748b; font-weight: 700; background: #e2e8f0; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem;">미공개</span>
+                        </div>
+                        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <span style="font-size: 0.8rem; font-weight: 700; color: #A50034; display: block; margin-bottom: 2px;">2017 공동 수상</span>
+                                <strong style="font-size: 1.05rem; color: #0f172a;">양창욱</strong>
+                            </div>
+                            <span style="color: #0f172a; font-weight: 800; font-size: 0.95rem;">현) 진에어 객실승무원</span>
+                        </div>
+                    </div>
+                `;
+            } else if (jobInfo === "미공개" || jobInfo === "정보 준비중") {
                 jobEl.innerHTML = '<span style="color: #64748b; font-weight: 700; background: #f1f5f9; padding: 6px 18px; border-radius: 20px; font-size: 1.05rem; display: inline-block;">미공개</span>';
             } else if (jobInfo === "휴직") {
                 jobEl.innerHTML = '<span style="color: #64748b; font-weight: 700; background: #f1f5f9; padding: 6px 18px; border-radius: 20px; font-size: 1.05rem; display: inline-block;">휴직</span>';

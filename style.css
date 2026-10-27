@@ -1049,6 +1049,32 @@ body.no-scroll {
     line-height: 1.25;
     letter-spacing: 0.22em;
     padding-left: 0.22em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    width: 100%;
+}
+
+/* 2인 공동 수상자 개별 터치/클릭 활성화 */
+.plate-multi .multi-sub-name {
+    pointer-events: auto !important; /* 상위 pointer-events: none 재정의 */
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.plate-multi .multi-sub-name:hover {
+    background: rgba(200, 164, 104, 0.25);
+    color: #A50034;
+    transform: scale(1.06);
+}
+
+.plate-multi .multi-sub-name:active {
+    background: rgba(165, 0, 52, 0.15);
+    transform: scale(0.97);
 }
 
 .metal-plate:hover .plate-name {
