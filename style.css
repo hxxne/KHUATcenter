@@ -980,6 +980,16 @@ body.no-scroll {
     font-family: inherit;
     text-align: left;
     width: 100%;
+    touch-action: manipulation; /* 모바일 더블탭 300ms 딜레이 제거 및 터치 반응 즉각화 */
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+/* 명판 내부 자식 요소들이 클릭 이벤트를 가로채거나 씹히지 않도록 방지 */
+.metal-plate *,
+.leader-plate *,
+.ga-metal-plate * {
+    pointer-events: none;
 }
 
 .metal-plate:hover,

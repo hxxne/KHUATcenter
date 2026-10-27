@@ -1745,7 +1745,7 @@
 
                         <!-- 2017 -->
                         <div class="plate-row">
-                            <button type="button" class="metal-plate plate-multi" onclick="openAlumniModal('조재희', '2017 AT Student of the Year')" title="조재희·양창욱 프로필 보기">
+                            <button type="button" class="metal-plate plate-multi" onclick="openAlumniModal('조재희 · 양창욱', '2017 AT Student of the Year')" title="조재희·양창욱 프로필 보기">
                                 <span class="plate-name multi">조  재  희<br>양  창  욱</span>
                                 <span class="plate-year">2017</span>
                             </button>
@@ -4806,6 +4806,7 @@
         const alumniCareerData = {
         "강성훈": "현) 킹스짐 (광교)",
         "고준영": "현) MS Physical (서울)",
+        "권준홍": "현) 경희대학교 일반대학원 (2기) / 스포츠재활 강사",
         "기윤서": "현) 경희대학교 핸드볼부",
         "김다영": "현) 성남시청",
         "김대호": "현) 경일대학교 스포츠재활의학과 교수",
@@ -4853,6 +4854,7 @@
         "이주희": "미공개",
         "이준혁": "현) 대한항공 점보스 프로배구단",
         "이진우": "미공개",
+        "이진호": "현) 경희대학교 스포츠의학과",
         "이현욱": "현) 국민대학교 스포츠건강재활학과 교수",
         "임선주": "현) HD 하이드로젠 (성남)",
         "임준형": "현) 부산스포츠과학센터 (부산)",
@@ -4862,6 +4864,8 @@
         "조연지": "현) 경희대학교 스포츠재활 강사",
         "조유진": "미공개",
         "조재희": "미공개",
+        "조재희 · 양창욱": "조재희: 미공개<br>양창욱: 현) 진에어 객실승무원",
+        "조현준": "현) 경희대학교 일반대학원 (1기) / 스포츠재활 강사",
         "차정수": "현) 팀 제로베이스 (동탄)",
         "최유빈": "현) 롯데웰푸드 영양사",
         "최윤관": "미공개",
@@ -4890,9 +4894,18 @@
         // }
     };
 
+    // 모달 닫기 애니메이션 타이머 (빠른 연속 클릭 시 모달이 즉시 닫혀버리는 현상 방지)
+    let alumniModalTimer = null;
+
     window.openAlumniModal = function(name, badgeText) {
         const modal = document.getElementById('alumni-modal');
         if (!modal) return;
+
+        // 이전에 실행 대기 중이던 닫기 타이머가 있다면 즉시 취소하여 새 모달이 닫히지 않도록 보장
+        if (alumniModalTimer) {
+            clearTimeout(alumniModalTimer);
+            alumniModalTimer = null;
+        }
 
         const nameClean = name.trim();
         const jobInfo = alumniCareerData[nameClean] || "미공개";
@@ -4953,28 +4966,34 @@
         }
 
         modal.style.display = 'flex';
-        setTimeout(() => {
+        // 브라우저 렌더링 프레임에 맞춰 즉각적이고 부드러운 전환
+        requestAnimationFrame(() => {
             modal.classList.add('show');
             modal.style.opacity = '1';
             const content = modal.querySelector('.alumni-modal-content');
             if (content) content.style.transform = 'scale(1)';
-        }, 10);
+        });
         document.body.style.overflow = 'hidden';
     };
 
     window.closeAlumniModal = function() {
-            const modal = document.getElementById('alumni-modal');
-            if (modal) {
-                modal.style.opacity = '0';
-                const content = modal.querySelector('.alumni-modal-content');
-                if (content) content.style.transform = 'scale(0.95)';
-                modal.classList.remove('show');
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 300);
-                document.body.style.overflow = '';
+        const modal = document.getElementById('alumni-modal');
+        if (modal) {
+            modal.style.opacity = '0';
+            const content = modal.querySelector('.alumni-modal-content');
+            if (content) content.style.transform = 'scale(0.95)';
+            modal.classList.remove('show');
+            
+            if (alumniModalTimer) {
+                clearTimeout(alumniModalTimer);
             }
-        };
+            alumniModalTimer = setTimeout(() => {
+                modal.style.display = 'none';
+                alumniModalTimer = null;
+            }, 250);
+            document.body.style.overflow = '';
+        }
+    };
 
         // Attach click listeners to Awards, Past Leaders, and Graduate Assistants
         document.addEventListener('DOMContentLoaded', () => {
