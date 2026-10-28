@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261028_leaders_luxury_v4">
+    <link rel="stylesheet" href="style.css?v=20261028_i18n_v1">
 </head>
 <body>
 
@@ -47,6 +47,12 @@
                 <a href="#activities" class="nav-link">활동 사진</a>
                 <a href="#contact" class="nav-link btn-header-cta">상담 및 문의</a>
                 <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="nav-link insta-nav-icon" title="경희대학교 AT Center 공식 인스타그램 새 창 열기"><i class="fa-brands fa-instagram"></i></a>
+                <!-- 다국어 선택 토글 (옵션 1: 한국어 | English) -->
+                <div class="lang-switcher" role="group" aria-label="언어 선택 (Language Switcher)">
+                    <button type="button" class="lang-btn active" data-lang="ko" onclick="setSiteLanguage('ko')">한국어</button>
+                    <span class="lang-divider">|</span>
+                    <button type="button" class="lang-btn" data-lang="en" onclick="setSiteLanguage('en')">English</button>
+                </div>
             </nav>
             <button class="mobile-toggle" aria-label="메뉴 열기" id="mobile-menu-toggle">
                 <span class="bar"></span>
@@ -63,9 +69,16 @@
                 <img src="assets/images/logo_emblem_only.png" alt="경희대학교 엠블럼" style="height: 36px; width: auto;">
                 <span style="font-size: 13px; font-weight: 800; color: #1e293b; margin-left: 8px;">KHU AT CENTER</span>
             </div>
-            <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="메뉴 닫기">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
+            <div class="mobile-drawer-actions">
+                <div class="lang-switcher mobile-lang-switcher" role="group" aria-label="언어 선택 (Language Switcher)">
+                    <button type="button" class="lang-btn active" data-lang="ko" onclick="setSiteLanguage('ko')">한국어</button>
+                    <span class="lang-divider">|</span>
+                    <button type="button" class="lang-btn" data-lang="en" onclick="setSiteLanguage('en')">English</button>
+                </div>
+                <button class="mobile-drawer-close" id="mobile-drawer-close" aria-label="메뉴 닫기">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
         </div>
         <nav class="mobile-menu">
             <a href="#about" class="mobile-link"><i class="fa-regular fa-building"></i> 센터 소개</a>
@@ -5515,4 +5528,6 @@ window.showEditorialYear = function(year, btn) {
 };
 </script>
 
+<!-- 다국어 전환 엔진 (한국어 | English) -->
+<script src="i18n.js?v=20261028_i18n_v1"></script>
 </body></html>

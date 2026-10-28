@@ -9025,3 +9025,100 @@ img, picture, svg, a, button {
         font-size: 2.75rem;
     }
 }
+
+/* ==========================================================================
+   Language Switcher (한국어 | English 텍스트 토글 스위치 - 옵션 1)
+   ========================================================================== */
+#main-header .nav-menu {
+    gap: 22px;
+}
+
+@media (max-width: 1320px) {
+    .header-container {
+        padding: 0 24px;
+    }
+    #main-header .nav-menu {
+        gap: 14px;
+    }
+    #main-header .nav-link {
+        font-size: 0.91rem;
+    }
+}
+
+.lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 4px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(165, 0, 52, 0.16);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    flex-shrink: 0;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+#main-header.scrolled .lang-switcher {
+    background: rgba(248, 250, 252, 0.95);
+    border-color: rgba(165, 0, 52, 0.2);
+}
+
+.lang-btn {
+    font-family: var(--font-sans);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #64748b;
+    background: transparent;
+    border: none;
+    padding: 2px 3px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+    letter-spacing: -0.2px;
+    line-height: 1.2;
+}
+
+.lang-btn:hover {
+    color: #0f172a;
+}
+
+.lang-btn.active {
+    color: var(--color-primary, #A50034);
+    font-weight: 800;
+}
+
+.lang-btn.active::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    bottom: -2px;
+    height: 2px;
+    background-color: var(--color-primary, #A50034);
+    border-radius: 2px;
+}
+
+.lang-divider {
+    font-size: 0.74rem;
+    color: #cbd5e1;
+    user-select: none;
+    font-weight: 400;
+}
+
+/* 모바일 드로어 상단 액션 래퍼 및 언어 토글 */
+.mobile-drawer-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mobile-lang-switcher {
+    margin-left: 0;
+    padding: 6px 12px;
+    background: #f8fafc;
+    border: 1px solid rgba(165, 0, 52, 0.18);
+}
+
