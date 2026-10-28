@@ -1,0 +1,1935 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경희대학교 AT 센터 · 명예의 전당 (Official Hall of Fame Archive)</title>
+    
+    <!-- Google Fonts & Pretendard -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+    /* ==========================================================================
+       Global Standalone Reset & Typography
+       ========================================================================== */
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+        background-color: #FAF8F5;
+        color: #0F172A;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    /* 상단 미니멀 네비게이션 바 */
+    .standalone-nav {
+        background: #FFFFFF;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+        padding: 16px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.03);
+    }
+
+    .standalone-nav .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .standalone-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: #0F172A;
+    }
+
+    .brand-emblem {
+        width: 36px;
+        height: 36px;
+        background: #A50034;
+        color: #FFFFFF;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 14px;
+        letter-spacing: -0.05em;
+    }
+
+    .brand-text {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .brand-title {
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #0F172A;
+    }
+
+    .brand-subtitle {
+        font-size: 11px;
+        font-weight: 600;
+        color: #8C7853;
+        letter-spacing: 0.05em;
+    }
+
+    .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .nav-link-btn {
+        font-size: 13px;
+        font-weight: 600;
+        color: #475569;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 9999px;
+        border: 1px solid rgba(15, 23, 42, 0.1);
+        transition: all 0.2s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .nav-link-btn:hover {
+        background: #0F172A;
+        color: #FFFFFF;
+        border-color: #0F172A;
+    }
+
+    .standalone-footer {
+        background: #FFFFFF;
+        border-top: 1px solid rgba(15, 23, 42, 0.08);
+        padding: 40px 0;
+        text-align: center;
+        color: #64748B;
+        font-size: 13px;
+        margin-top: 60px;
+    }
+
+    /* ==========================================================================
+       Awards Section Styles (Editorial Hairline Anti-Card)
+       ========================================================================== */
+/* ==========================================================================
+   KHU AT Center - Awards Section (Editorial Typography Hover Index)
+   Design System: Anti-Card, Editorial Hairline Split Layout, Museum Archive
+   ========================================================================== */
+
+/* 1. 섹션 기본 컨테이너 */
+.awards-editorial-section {
+    background-color: #FAF8F5 !important; /* 웜 화이트 / 갤러리 도록 배경 */
+    color: #0F172A;
+    position: relative;
+    padding: 100px 0 120px 0;
+    overflow: hidden;
+}
+
+/* 2. 섹션 헤더 (에디토리얼 키커 & 타이틀) */
+.editorial-header {
+    margin-bottom: 48px;
+}
+
+.editorial-kicker {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #8C7853; /* 샴페인 브론즈 / 골드 */
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.editorial-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #0F172A;
+    margin-bottom: 14px;
+}
+
+.editorial-subtitle {
+    font-size: 0.98rem;
+    color: #64748B;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.65;
+}
+
+/* 3. 텍스트 서브 내비게이션 (Anti-Box Pill) */
+.editorial-nav-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.editorial-sub-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    padding: 6px;
+    border-radius: 9999px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.editorial-tab-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748B;
+    cursor: pointer;
+    border-radius: 9999px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.editorial-tab-btn .tab-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #CBD5E1;
+    transition: background-color 0.2s ease;
+}
+
+.editorial-tab-btn:hover {
+    color: #0F172A;
+    background: rgba(15, 23, 42, 0.03);
+}
+
+.editorial-tab-btn.active {
+    background: #0F172A;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.editorial-tab-btn.active .tab-indicator {
+    background: #C5A059; /* 샴페인 골드 인디케이터 */
+}
+
+/* 4. 탭 패널 기본 전환 */
+.editorial-panel {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.editorial-panel.active {
+    display: block;
+    opacity: 1;
+    animation: edFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes edFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   패널 1: 역대 학생 수상자 (좌우 2열 분할 에디토리얼 호버 인덱스)
+   ========================================================================== */
+.editorial-split-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 56px;
+    align-items: start;
+    margin-bottom: 70px;
+}
+
+/* 좌측 컬럼: 대형 연도 인덱스 */
+.editorial-year-index-col {
+    position: sticky;
+    top: 100px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.index-col-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #94A3B8;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.editorial-year-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ed-year-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 3px solid transparent;
+}
+
+.ed-year-num {
+    font-family: 'Playfair Display', 'Cinzel', 'Pretendard', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
+    color: #64748B;
+    letter-spacing: -0.02em;
+    transition: all 0.2s ease;
+}
+
+.ed-year-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(165, 0, 52, 0.08);
+    color: #A50034;
+}
+
+.ed-year-arrow {
+    font-size: 13px;
+    color: #CBD5E1;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.2s ease;
+}
+
+.ed-year-item:hover {
+    background: rgba(165, 0, 52, 0.03);
+}
+
+.ed-year-item:hover .ed-year-num {
+    color: #0F172A;
+    transform: translateX(4px);
+}
+
+.ed-year-item.active {
+    background: rgba(165, 0, 52, 0.05);
+    border-left-color: #A50034;
+}
+
+.ed-year-item.active .ed-year-num {
+    color: #A50034;
+    font-weight: 700;
+    transform: translateX(6px);
+}
+
+.ed-year-item.active .ed-year-arrow {
+    opacity: 1;
+    color: #A50034;
+    transform: translateX(0);
+}
+
+/* 우측 컬럼: 선택된 연도 3대 수상자 리빌 패널 */
+.editorial-display-col {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 40px 48px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+    min-height: 520px;
+}
+
+.ed-reveal-panel {
+    display: none;
+}
+
+.ed-reveal-panel.active {
+    display: block;
+    animation: edFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-header {
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.reveal-year-label {
+    font-family: 'Playfair Display', 'Cinzel', serif;
+    font-size: 44px;
+    font-weight: 700;
+    color: #0F172A;
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin: 0;
+}
+
+.reveal-year-sub {
+    font-size: 13px;
+    font-weight: 600;
+    color: #8C7853;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+/* 3대 부문 개별 리빌 아이템 (Anti-Card Hairline Rows) */
+.reveal-award-item {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.reveal-award-item:last-child {
+    border-bottom: none;
+    padding-bottom: 8px;
+}
+
+.item-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.item-tag .ed-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.tag-burgundy {
+    color: #A50034;
+}
+.tag-burgundy .ed-dot {
+    background: #A50034;
+}
+
+.tag-gold {
+    color: #8C7853;
+}
+.tag-gold .ed-dot {
+    background: #C5A059;
+}
+
+.tag-silver {
+    color: #475569;
+}
+.tag-silver .ed-dot {
+    background: #64748B;
+}
+
+.item-main {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.item-name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.item-name:hover {
+    color: #A50034;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+}
+
+.item-sub {
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 500;
+}
+
+.item-meta {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.6;
+    margin: 2px 0 6px 0;
+}
+
+.item-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #94A3B8;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    transition: color 0.2s ease;
+}
+
+.item-action:hover {
+    color: #A50034;
+}
+
+/* 2017년 2인 공동 수상 전용 분할 래퍼 */
+.dual-name-split-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 4px 0 8px 0;
+}
+
+.dual-btn-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 23, 42, 0.02);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dual-btn-box:hover {
+    border-color: #A50034;
+    background: rgba(165, 0, 52, 0.04);
+}
+
+.dual-btn-box:hover .item-name {
+    color: #A50034;
+}
+
+.dual-sep-line {
+    width: 1px;
+    height: 28px;
+    background: rgba(15, 23, 42, 0.12);
+}
+
+/* ==========================================================================
+   하단: 전체 연도 아카이브 마스터 테이블 (Editorial Master Table)
+   ========================================================================== */
+.editorial-master-table-wrap {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 36px 40px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    margin-top: 40px;
+}
+
+.ed-table-header {
+    margin-bottom: 24px;
+}
+
+.ed-tbl-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #8C7853;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.ed-tbl-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.ed-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ed-minimal-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.ed-minimal-table th {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #475569;
+    padding: 14px 18px;
+    border-bottom: 2px solid #0F172A;
+    background: transparent;
+}
+
+.ed-minimal-table th .th-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.th-dot.dot-burgundy { background: #A50034; }
+.th-dot.dot-gold { background: #C5A059; }
+.th-dot.dot-silver { background: #64748B; }
+
+.ed-minimal-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    color: #1E293B;
+    vertical-align: middle;
+}
+
+.ed-minimal-table tr:hover td {
+    background-color: rgba(165, 0, 52, 0.02);
+}
+
+.ed-minimal-table .col-yr {
+    font-family: 'Playfair Display', 'Cinzel', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.ed-minimal-table .row-highlight td {
+    background-color: rgba(165, 0, 52, 0.03);
+}
+
+.ed-name-link {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s ease;
+}
+
+.ed-name-link:hover {
+    color: #A50034;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.ed-dual-split {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ed-dual-split span {
+    color: #CBD5E1;
+}
+
+/* ==========================================================================
+   패널 2: 역대 팀장 리더십 (18인 에디토리얼 스트림 그리드)
+   ========================================================================== */
+.ed-leaders-split-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+}
+
+.ed-stream-block {
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 32px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.ed-stream-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    margin-bottom: 16px;
+}
+
+.ed-stream-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+}
+
+.ed-stream-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #8C7853;
+    text-transform: uppercase;
+}
+
+.ed-stream-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.ed-stream-row {
+    display: grid;
+    grid-template-columns: 140px 100px 1fr;
+    align-items: center;
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.ed-stream-row:last-child {
+    border-bottom: none;
+}
+
+.ed-stream-row:hover {
+    background-color: rgba(165, 0, 52, 0.02);
+}
+
+.ed-stream-row .ed-term {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #8C7853;
+}
+
+.ed-stream-row .ed-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.ed-stream-row .ed-cnt {
+    font-size: 13px;
+    color: #64748B;
+    text-align: right;
+}
+
+/* ==========================================================================
+   패널 3: 역대 대학원 간사 (35인 에디토리얼 그리드)
+   ========================================================================== */
+.ed-ga-container {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.ed-ga-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 36px auto;
+}
+
+.ed-ga-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+}
+
+.ed-ga-sub {
+    font-size: 14px;
+    color: #64748B;
+    line-height: 1.5;
+}
+
+.ed-ga-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.ed-ga-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.02);
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    transition: all 0.2s ease;
+}
+
+.ed-ga-item:hover {
+    background: #FFFFFF;
+    border-color: rgba(165, 0, 52, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.ed-ga-item .ed-term {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8C7853;
+}
+
+.ed-ga-item .ed-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+/* ==========================================================================
+   반응형 모바일 & 태블릿 스타일링
+   ========================================================================== */
+@media (max-width: 991px) {
+    .editorial-split-layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .editorial-year-index-col {
+        position: static;
+        padding: 16px;
+    }
+
+    .editorial-year-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .ed-year-item {
+        width: auto;
+        flex-shrink: 0;
+        padding: 8px 14px;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+    }
+
+    .ed-year-item.active {
+        border-left-color: transparent;
+        border-bottom-color: #A50034;
+    }
+
+    .ed-year-item .ed-year-num {
+        font-size: 20px;
+    }
+
+    .ed-year-arrow {
+        display: none;
+    }
+
+    .editorial-display-col {
+        padding: 28px 24px;
+    }
+
+    .reveal-year-label {
+        font-size: 36px;
+    }
+
+    .item-name {
+        font-size: 22px;
+    }
+
+    .ed-leaders-split-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .ed-ga-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .editorial-sub-nav {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 16px;
+        padding: 6px;
+    }
+
+    .editorial-tab-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .ed-ga-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .editorial-master-table-wrap {
+        padding: 24px 16px;
+    }
+
+    .ed-stream-row {
+        grid-template-columns: 120px 80px 1fr;
+        font-size: 13px;
+    }
+}
+
+    /* Modal Animation Utilities */
+    .modal-overlay.open {
+        display: flex !important;
+        opacity: 1 !important;
+    }
+    .modal-overlay.open .alumni-modal-content {
+        transform: scale(1) !important;
+    }
+    </style>
+</head>
+<body>
+
+    <!-- 상단 심플 내비게이션 -->
+    <header class="standalone-nav">
+        <div class="container nav-container">
+            <a href="https://pacemind.co.kr" class="standalone-brand">
+                <div class="brand-emblem">KHU</div>
+                <div class="brand-text">
+                    <span class="brand-title">경희대학교 AT 센터 명예의 전당</span>
+                    <span class="brand-subtitle">KYUNG HEE UNIVERSITY AT CENTER · ARCHIVE</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <a href="https://pacemind.co.kr" target="_blank" class="nav-link-btn">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> 메인 사이트 열기
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 에디토리얼 명예의 전당 섹션 마크업 -->
+    <main>
+<section id="awards" class="section-padding awards-editorial-section">
+        <div class="container">
+            <!-- 1. 섹션 헤더: 에디토리얼 타이포그래피 인트로 -->
+            <div class="section-header text-center editorial-header">
+                <span class="editorial-kicker">KYUNG HEE UNIVERSITY AT CENTER · OFFICIAL ARCHIVE</span>
+                <h2 class="section-title editorial-title">역대 수상자 및 리더</h2>
+                <div class="divider"></div>
+                <p class="section-subtitle editorial-subtitle">2015년부터 2025년까지 선승관 AT 센터를 빛낸 역대 학생 수상자 및 리더십 공식 헌액 기록입니다.</p>
+            </div>
+
+            <!-- 2. 에디토리얼 텍스트 네비게이션 탭 -->
+            <div class="editorial-nav-wrap">
+                <nav class="editorial-sub-nav" aria-label="명예의 전당 분류">
+                    <button type="button" class="editorial-tab-btn active" onclick="switchEditorialTab('student-awards', this)">
+                        <span class="tab-indicator"></span> 역대 학생 수상자 (2015 — 2025)
+                    </button>
+                    <button type="button" class="editorial-tab-btn" onclick="switchEditorialTab('past-leaders', this)">
+                        <span class="tab-indicator"></span> 역대 팀장 리더십 (18인)
+                    </button>
+                    <button type="button" class="editorial-tab-btn" onclick="switchEditorialTab('graduate-assistants', this)">
+                        <span class="tab-indicator"></span> 역대 대학원 간사 (35인)
+                    </button>
+                </nav>
+            </div>
+
+            <!-- =================================================================
+                 패널 1: 학생 수상자 (대형 타이포그래피 호버 인덱스 2열 분할 레이아웃)
+                 ================================================================= -->
+            <div id="ed-tab-student-awards" class="editorial-panel active">
+                <div class="editorial-split-layout">
+                    
+                    <!-- 좌측 컬럼: 대형 연도 인덱스 타임라인 (2025 ~ 2015) -->
+                    <div class="editorial-year-index-col">
+                        <span class="index-col-label">SELECT YEAR (2015 — 2025)</span>
+                        <div class="editorial-year-list" id="editorial-year-list">
+                            <button type="button" class="ed-year-item active" onmouseenter="showEditorialYear('2025', this)" onclick="showEditorialYear('2025', this)">
+                                <span class="ed-year-num">2025</span>
+                                <span class="ed-year-badge">LATEST</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                            <button type="button" class="ed-year-item" onmouseenter="showEditorialYear('2024', this)" onclick="showEditorialYear('2024', this)">
+                                <span class="ed-year-num">2024</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                            <button type="button" class="ed-year-item" onmouseenter="showEditorialYear('2023', this)" onclick="showEditorialYear('2023', this)">
+                                <span class="ed-year-num">2023</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                            <button type="button" class="ed-year-item" onmouseenter="showEditorialYear('2022', this)" onclick="showEditorialYear('2022', this)">
+                                <span class="ed-year-num">2022</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                            <button type="button" class="ed-year-item" onmouseenter="showEditorialYear('2021', this)" onclick="showEditorialYear('2021', this)">
+                                <span class="ed-year-num">2021</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                            <button type="button" class="ed-year-item" onmouseenter="showEditorialYear('2020', this)" onclick="showEditorialYear('2020', this)">
+                                <span class="ed-year-num">2020</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                            <button type="button" class="ed-year-item" onmouseenter="showEditorialYear('2019', this)" onclick="showEditorialYear('2019', this)">
+                                <span class="ed-year-num">2019</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                            <button type="button" class="ed-year-item" onmouseenter="showEditorialYear('2018', this)" onclick="showEditorialYear('2018', this)">
+                                <span class="ed-year-num">2018</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                            <button type="button" class="ed-year-item" onmouseenter="showEditorialYear('2017', this)" onclick="showEditorialYear('2017', this)">
+                                <span class="ed-year-num">2017</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                            <button type="button" class="ed-year-item" onmouseenter="showEditorialYear('2016', this)" onclick="showEditorialYear('2016', this)">
+                                <span class="ed-year-num">2016</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                            <button type="button" class="ed-year-item" onmouseenter="showEditorialYear('2015', this)" onclick="showEditorialYear('2015', this)">
+                                <span class="ed-year-num">2015</span>
+                                <i class="fa-solid fa-arrow-right ed-year-arrow"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 우측 컬럼: 수상자 실시간 타이포그래피 리빌 디스플레이 -->
+                    <div class="editorial-display-col">
+                        
+                        <!-- 2025 리빌 패널 (기본 활성) -->
+                        <div class="ed-reveal-panel active" id="ed-panel-2025">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2025</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자 3인</span>
+                            </div>
+
+                            <div class="reveal-award-item item-coty" onclick="openAlumniModal('유승아', '2025 AT Student of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">유  승  아</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('유주승', '2025 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">유  주  승</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('조연지', '2025 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">조  연  지</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2024 리빌 패널 -->
+                        <div class="ed-reveal-panel" id="ed-panel-2024">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2024</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자</span>
+                            </div>
+                            <div class="reveal-award-item item-coty" onclick="openAlumniModal('한혜서', '2024 AT Student of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">한  혜  서</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('한혜서', '2024 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">한  혜  서</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('권준홍', '2024 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">권  준  홍</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2023 리빌 패널 -->
+                        <div class="ed-reveal-panel" id="ed-panel-2023">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2023</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자</span>
+                            </div>
+                            <div class="reveal-award-item item-coty" onclick="openAlumniModal('조현준', '2023 AT Student of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">조  현  준</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('이진호', '2023 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">이  진  호</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('유승아', '2023 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">유  승  아</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2022 리빌 패널 -->
+                        <div class="ed-reveal-panel" id="ed-panel-2022">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2022</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자</span>
+                            </div>
+                            <div class="reveal-award-item item-coty" onclick="openAlumniModal('박효진', '2022 AT Student of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">박  효  진</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('이남송', '2022 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">이  남  송</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('유영수', '2022 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">유  영  수</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2021 리빌 패널 -->
+                        <div class="ed-reveal-panel" id="ed-panel-2021">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2021</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자</span>
+                            </div>
+                            <div class="reveal-award-item item-coty" onclick="openAlumniModal('김재원', '2021 AT Student of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">김  재  원</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('김태진', '2021 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">김  태  진</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('최유빈', '2021 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">최  유  빈</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2020 리빌 패널 -->
+                        <div class="ed-reveal-panel" id="ed-panel-2020">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2020</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자</span>
+                            </div>
+                            <div class="reveal-award-item item-coty" onclick="openAlumniModal('임선주', '2020 AT Student of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">임  선  주</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('김승연', '2020 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">김  승  연</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('김승연', '2020 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">김  승  연</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2019 리빌 패널 -->
+                        <div class="ed-reveal-panel" id="ed-panel-2019">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2019</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자</span>
+                            </div>
+                            <div class="reveal-award-item item-coty" onclick="openAlumniModal('김동현', '2019 AT Student of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">김  동  현</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('성락훈', '2019 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">성  락  훈</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('임선주', '2019 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">임  선  주</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2018 리빌 패널 -->
+                        <div class="ed-reveal-panel" id="ed-panel-2018">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2018</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자</span>
+                            </div>
+                            <div class="reveal-award-item item-coty" onclick="openAlumniModal('오민섭', '2018 AT Student of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">오  민  섭</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('김동현', '2018 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">김  동  현</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('우태희', '2018 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">우  태  희</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2017 리빌 패널 (조재희 · 양창욱 듀얼 스마트 리빌) -->
+                        <div class="ed-reveal-panel" id="ed-panel-2017">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2017</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자 (공동 수상)</span>
+                            </div>
+
+                            <div class="reveal-award-item item-coty-dual">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR (공동 수상)</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="dual-name-split-wrap">
+                                    <div class="dual-btn-box" onclick="openAlumniModal('조재희', '2017 AT Student of the Year (공동 수상)')">
+                                        <h3 class="item-name">조  재  희</h3>
+                                        <span class="item-action">조재희 프로필 <i class="fa-solid fa-arrow-right"></i></span>
+                                    </div>
+                                    <div class="dual-sep-line"></div>
+                                    <div class="dual-btn-box" onclick="openAlumniModal('양창욱', '2017 AT Student of the Year (공동 수상)')">
+                                        <h3 class="item-name">양  창  욱</h3>
+                                        <span class="item-action">양창욱 프로필 <i class="fa-solid fa-arrow-right"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('조유진', '2017 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">조  유  진</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('오민섭', '2017 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">오  민  섭</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2016 리빌 패널 -->
+                        <div class="ed-reveal-panel" id="ed-panel-2016">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2016</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자</span>
+                            </div>
+                            <div class="reveal-award-item item-coty" onclick="openAlumniModal('이선화', '2016 AT Student of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">이  선  화</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('안효은', '2016 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">안  효  은</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('이서영', '2016 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">이  서  영</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2015 리빌 패널 -->
+                        <div class="ed-reveal-panel" id="ed-panel-2015">
+                            <div class="reveal-header">
+                                <span class="reveal-year-label">HONOREES OF 2015</span>
+                                <span class="reveal-year-sub">경희대학교 AT 센터 올해의 헌액자</span>
+                            </div>
+                            <div class="reveal-award-item item-coty" onclick="openAlumniModal('이현욱', '2015 AT Student of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-gold">AT STUDENT OF THE YEAR</span>
+                                    <span class="item-sub">올해의 AT 최우수 학생상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">이  현  욱</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-insp" onclick="openAlumniModal('신재윤', '2015 Inspiration')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-burgundy">INSPIRATION</span>
+                                    <span class="item-sub">영감 및 헌신상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">신  재  윤</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                            <div class="reveal-award-item item-rookie" onclick="openAlumniModal('김다영', '2015 Rookie of the Year')">
+                                <div class="item-meta">
+                                    <span class="item-tag tag-silver">ROOKIE OF THE YEAR</span>
+                                    <span class="item-sub">올해의 신인상</span>
+                                </div>
+                                <div class="item-main">
+                                    <h3 class="item-name">김  다  영</h3>
+                                    <span class="item-action">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 11개년 전체 마스터 인덱스 (초미니멀 헤어라인 테이블) -->
+                <div class="editorial-master-table-wrap">
+                    <div class="ed-table-header">
+                        <span class="ed-tbl-tag">COMPLETE RECORD ARCHIVE</span>
+                        <h4 class="ed-tbl-title">11개년 역대 학생 수상자 공식 마스터 기록 (2015 — 2025)</h4>
+                    </div>
+                    <div class="ed-table-scroll">
+                        <table class="ed-minimal-table">
+                            <thead>
+                                <tr>
+                                    <th>연도</th>
+                                    <th><span class="th-dot dot-gold"></span> AT STUDENT OF THE YEAR</th>
+                                    <th><span class="th-dot dot-burgundy"></span> INSPIRATION</th>
+                                    <th><span class="th-dot dot-silver"></span> ROOKIE OF THE YEAR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="row-highlight">
+                                    <td class="col-yr"><strong>2025</strong></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('유승아', '2025 AT Student of the Year')">유  승  아</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('유주승', '2025 Inspiration')">유  주  승</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('조연지', '2025 Rookie of the Year')">조  연  지</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-yr">2024</td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('한혜서', '2024 AT Student of the Year')">한  혜  서</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('한혜서', '2024 Inspiration')">한  혜  서</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('권준홍', '2024 Rookie of the Year')">권  준  홍</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-yr">2023</td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('조현준', '2023 AT Student of the Year')">조  현  준</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('이진호', '2023 Inspiration')">이  진  호</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('유승아', '2023 Rookie of the Year')">유  승  아</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-yr">2022</td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('박효진', '2022 AT Student of the Year')">박  효  진</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('이남송', '2022 Inspiration')">이  남  송</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('유영수', '2022 Rookie of the Year')">유  영  수</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-yr">2021</td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('김재원', '2021 AT Student of the Year')">김  재  원</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('김태진', '2021 Inspiration')">김  태  진</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('최유빈', '2021 Rookie of the Year')">최  유  빈</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-yr">2020</td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('임선주', '2020 AT Student of the Year')">임  선  주</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('김승연', '2020 Inspiration')">김  승  연</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('김승연', '2020 Rookie of the Year')">김  승  연</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-yr">2019</td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('김동현', '2019 AT Student of the Year')">김  동  현</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('성락훈', '2019 Inspiration')">성  락  훈</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('임선주', '2019 Rookie of the Year')">임  선  주</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-yr">2018</td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('오민섭', '2018 AT Student of the Year')">오  민  섭</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('김동현', '2018 Inspiration')">김  동  현</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('우태희', '2018 Rookie of the Year')">우  태  희</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-yr">2017</td>
+                                    <td>
+                                        <div class="ed-dual-split">
+                                            <button type="button" class="ed-name-link" onclick="openAlumniModal('조재희', '2017 AT Student of the Year (공동 수상)')">조  재  희</button>
+                                            <span class="ed-dot">·</span>
+                                            <button type="button" class="ed-name-link" onclick="openAlumniModal('양창욱', '2017 AT Student of the Year (공동 수상)')">양  창  욱</button>
+                                        </div>
+                                    </td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('조유진', '2017 Inspiration')">조  유  진</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('오민섭', '2017 Rookie of the Year')">오  민  섭</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-yr">2016</td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('이선화', '2016 AT Student of the Year')">이  선  화</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('안효은', '2016 Inspiration')">안  효  은</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('이서영', '2016 Rookie of the Year')">이  서  영</button></td>
+                                </tr>
+                                <tr>
+                                    <td class="col-yr">2015</td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('이현욱', '2015 AT Student of the Year')">이  현  욱</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('신재윤', '2015 Inspiration')">신  재  윤</button></td>
+                                    <td><button type="button" class="ed-name-link" onclick="openAlumniModal('김다영', '2015 Rookie of the Year')">김  다  영</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- =================================================================
+                 패널 2: 역대 팀장 리더십 (18인 에디토리얼 3열 스트라이프 리스트)
+                 ================================================================= -->
+            <div id="ed-tab-past-leaders" class="editorial-panel">
+                <div class="ed-leaders-split-grid">
+                    
+                    <!-- 1. Athletic Training 팀장 (10인) -->
+                    <div class="ed-stream-block">
+                        <div class="ed-stream-header">
+                            <span class="ed-stream-tag tag-burgundy">ATHLETIC TRAINING</span>
+                            <h4 class="ed-stream-title">선수트레이닝 팀장 <span class="ed-cnt">10인</span></h4>
+                        </div>
+                        <div class="ed-stream-list">
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('한승욱', 'Athletic Training 팀장 (2015.03 — 2017.02)')"><span class="ed-term">2015.03 — 2017.02</span><span class="ed-name">한  승  욱</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('강성훈', 'Athletic Training 팀장 (2017.03 — 2018.02)')"><span class="ed-term">2017.03 — 2018.02</span><span class="ed-name">강  성  훈</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('박지현', 'Athletic Training 팀장 (2018.03 — 2019.02)')"><span class="ed-term">2018.03 — 2019.02</span><span class="ed-name">박  지  현</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('김성완', 'Athletic Training 팀장 (2019.03 — 2020.02)')"><span class="ed-term">2019.03 — 2020.02</span><span class="ed-name">김  성  완</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('이승희', 'Athletic Training 팀장 (2020.03 — 2021.02)')"><span class="ed-term">2020.03 — 2021.02</span><span class="ed-name">이  승  희</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('장영훈', 'Athletic Training 팀장 (2021.03 — 2022.02)')"><span class="ed-term">2021.03 — 2022.02</span><span class="ed-name">장  영  훈</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('박상협', 'Athletic Training 팀장 (2022.03 — 2023.02)')"><span class="ed-term">2022.03 — 2023.02</span><span class="ed-name">박  상  협</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('김지원', 'Athletic Training 팀장 (2023.03 — 2024.02)')"><span class="ed-term">2023.03 — 2024.02</span><span class="ed-name">김  지  원</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('이강훈', 'Athletic Training 팀장 (2024.03 — 2025.02)')"><span class="ed-term">2024.03 — 2025.02</span><span class="ed-name">이  강  훈</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('이상준', 'Athletic Training 팀장 (2025.03 — 2026.02)')"><span class="ed-term">2025.03 — 2026.02</span><span class="ed-name">이  상  준</span></button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Rehabilitation 팀장 (7인) -->
+                    <div class="ed-stream-block">
+                        <div class="ed-stream-header">
+                            <span class="ed-stream-tag tag-gold">REHABILITATION</span>
+                            <h4 class="ed-stream-title">스포츠재활 팀장 <span class="ed-cnt">7인</span></h4>
+                        </div>
+                        <div class="ed-stream-list">
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('장휘수', 'Rehabilitation 팀장 (2016.03 — 2018.02)')"><span class="ed-term">2016.03 — 2018.02</span><span class="ed-name">장  휘  수</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('민경은', 'Rehabilitation 팀장 (2018.03 — 2019.02)')"><span class="ed-term">2018.03 — 2019.02</span><span class="ed-name">민  경  은</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('노유연', 'Rehabilitation 팀장 (2019.03 — 2020.02)')"><span class="ed-term">2019.03 — 2020.02</span><span class="ed-name">노  유  연</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('이주희', 'Rehabilitation 팀장 (2020.03 — 2022.02)')"><span class="ed-term">2020.03 — 2022.02</span><span class="ed-name">이  주  희</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('박상협', 'Rehabilitation 팀장 (2022.03 — 2024.02)')"><span class="ed-term">2022.03 — 2024.02</span><span class="ed-name">박  상  협</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('김지원', 'Rehabilitation 팀장 (2024.03 — 2025.02)')"><span class="ed-term">2024.03 — 2025.02</span><span class="ed-name">김  지  원</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('이준혁', 'Rehabilitation 팀장 (2025.03 — 2025.08)')"><span class="ed-term">2025.03 — 2025.08</span><span class="ed-name">이  준  혁</span></button>
+                        </div>
+                    </div>
+
+                    <!-- 3. Research 팀장 (1인) -->
+                    <div class="ed-stream-block">
+                        <div class="ed-stream-header">
+                            <span class="ed-stream-tag tag-silver">RESEARCH</span>
+                            <h4 class="ed-stream-title">연구기획 팀장 <span class="ed-cnt">1인</span></h4>
+                        </div>
+                        <div class="ed-stream-list">
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('임준형', 'Research 팀장 (2024.03 — 2025.12)')"><span class="ed-term">2024.03 — 2025.12</span><span class="ed-name">임  준  형</span></button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- =================================================================
+                 패널 3: 역대 대학원 간사 (35인 슬림 텍스트 4열 매트릭스)
+                 ================================================================= -->
+            <div id="ed-tab-graduate-assistants" class="editorial-panel">
+                <div class="ed-ga-container">
+                    <div class="ed-ga-header text-center">
+                        <h4 class="ed-ga-title">선승관 AT 센터를 거쳐간 역대 대학원 임상 간사 및 조교진 (총 35인)</h4>
+                        <p class="ed-ga-sub">각 체육부 종목별 전담 케어 및 센터 행정·연구를 지원한 헌액 명단입니다.</p>
+                    </div>
+
+                    <div class="ed-ga-grid">
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('이송현', 'Graduate Assistant (2015.02 연구/교육)')"><span class="gt">2015.02</span><span class="gb">연구/교육</span><span class="gn">이  송  현</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('한승욱', 'Graduate Assistant (2015.08 배구)')"><span class="gt">2015.08</span><span class="gb">배구</span><span class="gn">한  승  욱</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('장휘수', 'Graduate Assistant (2016.08 배드민턴)')"><span class="gt">2016.08</span><span class="gb">배드민턴</span><span class="gn">장  휘  수</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('강성훈', 'Graduate Assistant (2017.02 스포츠재활)')"><span class="gt">2017.02</span><span class="gb">스포츠재활</span><span class="gn">강  성  훈</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('민경은', 'Graduate Assistant (2018.02 스포츠재활)')"><span class="gt">2018.02</span><span class="gb">스포츠재활</span><span class="gn">민  경  은</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('박지현', 'Graduate Assistant (2018.08 축구)')"><span class="gt">2018.08</span><span class="gb">축구</span><span class="gn">박  지  현</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('김성완', 'Graduate Assistant (2018.08 배구)')"><span class="gt">2018.08</span><span class="gb">배구</span><span class="gn">김  성  완</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('노유연', 'Graduate Assistant (2019.02 스포츠재활)')"><span class="gt">2019.02</span><span class="gb">스포츠재활</span><span class="gn">노  유  연</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('윤정섭', 'Graduate Assistant (2019.08 야구)')"><span class="gt">2019.08</span><span class="gb">야구</span><span class="gn">윤  정  섭</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('김무성', 'Graduate Assistant (2020.02 품새)')"><span class="gt">2020.02</span><span class="gb">품새</span><span class="gn">김  무  성</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('이주희', 'Graduate Assistant (2020.02 스포츠재활)')"><span class="gt">2020.02</span><span class="gb">스포츠재활</span><span class="gn">이  주  희</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('남아공', 'Graduate Assistant (2020.02 스포츠재활)')"><span class="gt">2020.02</span><span class="gb">스포츠재활</span><span class="gn">남  아  공</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('이서영', 'Graduate Assistant (2020.08 시범단)')"><span class="gt">2020.08</span><span class="gb">시범단</span><span class="gn">이  서  영</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('고준영', 'Graduate Assistant (2021.08 연구/교육)')"><span class="gt">2021.08</span><span class="gb">연구/교육</span><span class="gn">고  준  영</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('방수일', 'Graduate Assistant (2021.08 연구/교육)')"><span class="gt">2021.08</span><span class="gb">연구/교육</span><span class="gn">방  수  일</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('이승희', 'Graduate Assistant (2021.08 스포츠재활)')"><span class="gt">2021.08</span><span class="gb">스포츠재활</span><span class="gn">이  승  희</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('장영훈', 'Graduate Assistant (2021.08 스포츠재활)')"><span class="gt">2021.08</span><span class="gb">스포츠재활</span><span class="gn">장  영  훈</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('최지현', 'Graduate Assistant (2021.08 연구/교육)')"><span class="gt">2021.08</span><span class="gb">연구/교육</span><span class="gn">최  지  현</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('두현지', 'Graduate Assistant (2022.08 연구/교육)')"><span class="gt">2022.08</span><span class="gb">연구/교육</span><span class="gn">두  현  지</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('이재욱', 'Graduate Assistant (2022.08 태권도)')"><span class="gt">2022.08</span><span class="gb">태권도</span><span class="gn">이  재  욱</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('박상협', 'Graduate Assistant (2022.08 스포츠재활)')"><span class="gt">2022.08</span><span class="gb">스포츠재활</span><span class="gn">박  상  협</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('이진우', 'Graduate Assistant (2023.02 연구/교육)')"><span class="gt">2023.02</span><span class="gb">연구/교육</span><span class="gn">이  진  우</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('서동균', 'Graduate Assistant (2023.08 연구/교육)')"><span class="gt">2023.08</span><span class="gb">연구/교육</span><span class="gn">서  동  균</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('문정은', 'Graduate Assistant (2023.08 시범단)')"><span class="gt">2023.08</span><span class="gb">시범단</span><span class="gn">문  정  은</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('전성규', 'Graduate Assistant (2024.08 배구)')"><span class="gt">2024.08</span><span class="gb">배구</span><span class="gn">전  성  규</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('이승훈', 'Graduate Assistant (2024.08 배드민턴)')"><span class="gt">2024.08</span><span class="gb">배드민턴</span><span class="gn">이  승  훈</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('김민준', 'Graduate Assistant (2025.02 야구)')"><span class="gt">2025.02</span><span class="gb">야구</span><span class="gn">김  민  준</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('최윤관', 'Graduate Assistant (2025.02 럭비)')"><span class="gt">2025.02</span><span class="gb">럭비</span><span class="gn">최  윤  관</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('김지원', 'Graduate Assistant (2025.02 스포츠재활)')"><span class="gt">2025.02</span><span class="gb">스포츠재활</span><span class="gn">김  지  원</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('이강훈', 'Graduate Assistant (2025.02 태권도)')"><span class="gt">2025.02</span><span class="gb">태권도</span><span class="gn">이  강  훈</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('이준혁', 'Graduate Assistant (2025.08 핸드볼)')"><span class="gt">2025.08</span><span class="gb">핸드볼</span><span class="gn">이  준  혁</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('기윤서', 'Graduate Assistant (2025.08 핸드볼)')"><span class="gt">2025.08</span><span class="gb">핸드볼</span><span class="gn">기  윤  서</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('김주완', 'Graduate Assistant (2026.02 축구)')"><span class="gt">2026.02</span><span class="gb">축구</span><span class="gn">김  주  완</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('김준영', 'Graduate Assistant (2026.02 농구)')"><span class="gt">2026.02</span><span class="gb">농구</span><span class="gn">김  준  영</span></button>
+                        <button type="button" class="ed-ga-item" onclick="openAlumniModal('임준형', 'Graduate Assistant (2026.02 연구/교육)')"><span class="gt">2026.02</span><span class="gb">연구/교육</span><span class="gn">임  준  형</span></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    </main>
+
+    <!-- 동문 상세 모달 (All-in-One Standalone) -->
+<div id="alumni-modal" class="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); backdrop-filter: blur(6px); z-index: 9999; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;">
+        <div class="alumni-modal-content" style="width: 90%; max-width: 420px; background: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 45px rgba(0,0,0,0.3); position: relative; transform: scale(0.95); transition: transform 0.3s ease;">
+            <!-- Header with KHU Burgundy Gradient -->
+            <div style="background: linear-gradient(135deg, #A50034 0%, #700023 100%); padding: 28px 24px 22px 24px; color: white; position: relative; text-align: center;">
+                <button id="alumni-modal-close-btn" onclick="closeAlumniModal()" style="position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.2); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1rem; transition: background 0.2s;"><i class="fa-solid fa-xmark"></i></button>
+                <div style="width: 64px; height: 64px; border-radius: 50%; background: rgba(255,255,255,0.2); margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; color: #ffffff; border: 2px solid rgba(255,255,255,0.3);">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <h3 id="alumni-modal-name" style="margin: 0; font-size: 1.45rem; font-weight: 800; color: white; letter-spacing: -0.5px;">이름</h3>
+                <div id="alumni-modal-badge" style="display: inline-block; margin-top: 8px; padding: 4px 14px; border-radius: 20px; background: rgba(255,255,255,0.25); font-size: 0.8rem; font-weight: 600; color: #ffffff;">경희대학교 AT Center 동문</div>
+            </div>
+            
+            <!-- Body -->
+            <div style="padding: 24px;">
+                <!-- 직업/소속 표시 영역 (라벨 없이 깔끔하게 정보 강조) -->
+                <div style="background: #fdf6f7; border: 1.5px solid #f9dbe0; border-radius: 14px; padding: 22px 20px; margin-bottom: 16px; text-align: center;">
+                    <div id="alumni-modal-job" style="font-size: 1.25rem; font-weight: 800; color: #1e293b; word-break: keep-all; line-height: 1.45;">
+                        -
+                    </div>
+                </div>
+
+                <!-- Social & Blog Links (인스타그램 / 블로그: 원하시는 분만 선택적으로 노출) -->
+                <div id="alumni-modal-links" style="display: none; gap: 10px; margin-top: 6px;">
+                    <a id="alumni-link-instagram" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; display: none; align-items: center; justify-content: center; gap: 8px; padding: 12px 14px; background: #faf5f6; border: 1.5px solid #f2d6dc; border-radius: 12px; color: #E1306C; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: all 0.2s ease;">
+                        <i class="fa-brands fa-instagram" style="font-size: 1.15rem;"></i>
+                        <span>인스타그램</span>
+                    </a>
+                    <a id="alumni-link-blog" href="#" target="_blank" rel="noopener noreferrer" style="flex: 1; display: none; align-items: center; justify-content: center; gap: 8px; padding: 12px 14px; background: #f0fdf4; border: 1.5px solid #bbf7d0; border-radius: 12px; color: #03C75A; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: all 0.2s ease;">
+                        <i class="fa-solid fa-blog" style="font-size: 1.05rem;"></i>
+                        <span>블로그</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 동문 상세 모달 팝업 구조 -->
+
+
+    <!-- 독립 푸터 -->
+    <footer class="standalone-footer">
+        <div class="container">
+            <p style="font-weight: 600; color: #0F172A; margin-bottom: 6px;">KYUNG HEE UNIVERSITY ATHLETIC TRAINING CENTER</p>
+            <p>경기도 용인시 기흥구 덕영대로 1732 경희대학교 국제캠퍼스 선승관 체육대학 B105호</p>
+            <p style="font-size: 12px; color: #94A3B8; margin-top: 12px;">© 2015-2026 KHU AT Center. All Rights Reserved. Official Digital Archive.</p>
+        </div>
+    </footer>
+
+    <!-- 자바스크립트 로직 (전체 독립 구동) -->
+    <script>
+    // 1. 3대 서브 탭 전환 함수
+    window.switchEditorialTab = function(tabId, btn) {
+        document.querySelectorAll('.editorial-tab-btn').forEach(function(b) {
+            b.classList.remove('active');
+        });
+        document.querySelectorAll('.editorial-panel').forEach(function(p) {
+            p.classList.remove('active');
+        });
+        if (btn) {
+            btn.classList.add('active');
+        }
+        var target = document.getElementById('ed-tab-' + tabId);
+        if (target) {
+            target.classList.add('active');
+        }
+    };
+
+    // 2. 연도 선택 및 호버 전환 함수
+    window.showEditorialYear = function(year, btn) {
+        document.querySelectorAll('#editorial-year-list .ed-year-item').forEach(function(b) {
+            b.classList.remove('active');
+        });
+        document.querySelectorAll('.editorial-display-col .ed-reveal-panel').forEach(function(p) {
+            p.classList.remove('active');
+        });
+        if (btn) {
+            btn.classList.add('active');
+        }
+        var target = document.getElementById('ed-panel-' + year);
+        if (target) {
+            target.classList.add('active');
+        }
+    };
+
+    // 3. 64인 전체 동문 현직/경력 데이터베이스
+    const alumniCareerData = {
+        "강성훈": "현) 킹스짐 (광교)",
+        "고준영": "현) MS Physical (서울)",
+        "권준홍": "현) 경희대학교 일반대학원 (2기) / 스포츠재활 강사",
+        "기윤서": "현) 경희대학교 핸드볼부",
+        "김다영": "현) 성남시청",
+        "김대호": "현) 경일대학교 스포츠재활의학과 교수",
+        "김동현": "현) University of Connecticut (Korey Stringer Institute)",
+        "김무성": "미공개",
+        "김민준": "현) 키움히어로즈 프로야구단",
+        "김성완": "현) 부산대학교 스포츠과학과 교수",
+        "김승연": "미공개",
+        "김재원": "현) William Penn University",
+        "김주완": "현) 부산스포츠과학센터 (부산)",
+        "김준영": "현) 경희대학교 AT 센터 실장",
+        "김지원": "휴직",
+        "김태진": "현) University of Nebraska PhD 진행중",
+        "남아공": "미공개",
+        "노윤서": "미공개",
+        "노유연": "미공개",
+        "두현지": "미공개",
+        "문정은": "현) 장애인 컬링 국가대표팀",
+        "문채연": "현) 경희대학교 시범단",
+        "민경은": "현) 아비타즈 운동 센터 (화성)",
+        "박상협": "현) 스텝업 트레이닝 센터 (동탄)",
+        "박지현": "현) 이강인 선수 전담",
+        "박효진": "현) 기계체조 국가대표팀",
+        "방수일": "미공개",
+        "서동균": "현) 경희대학교 스포츠의학과 강사",
+        "성락훈": "현) The Athletics (MLB)",
+        "신재윤": "현) 키움히어로즈 프로야구단",
+        "안효은": "현) 스피드 스케이팅 국가대표팀",
+        "양창욱": "현) 진에어 객실승무원",
+        "오민섭": "현) 국민대학교 스포츠건강재활학과 조교수",
+        "우태희": "현) 더프로 트레이닝센터 (서울)",
+        "유승아": "현) 경희대학교 품새부",
+        "유영수": "미공개",
+        "유주승": "현) 경희대학교 야구부",
+        "윤정섭": "현) 윤 피지오 운동센터 (화성)",
+        "이강훈": "미공개",
+        "이남송": "현) 핸드볼 국가대표팀",
+        "이서영": "현) 성남시청",
+        "이선화": "현) 화성국민체육센터",
+        "이송현": "미공개",
+        "이승훈": "현) 스텝업 트레이닝 센터 (동탄)",
+        "이승희": "현) 김제시 체육회",
+        "이재욱": "현) 경희대학교 AT센터 연구팀장",
+        "이정재": "현) 스텝업 트레이닝 센터 (동탄)",
+        "이주희": "미공개",
+        "이준혁": "현) 대한항공 점보스 프로배구단",
+        "이진우": "미공개",
+        "이진호": "현) 경희대학교 스포츠의학과",
+        "이현욱": "현) 국민대학교 스포츠건강재활학과 교수",
+        "임선주": "현) HD 하이드로젠 (성남)",
+        "임준형": "현) 부산스포츠과학센터 (부산)",
+        "장영훈": "현) DMC 움직임 한의원 (서울)",
+        "장휘수": "현) 스텝업 트레이닝 센터 (동탄)",
+        "전성규": "현) 삼성 라이온즈 프로야구단",
+        "조연지": "현) 경희대학교 스포츠재활 강사",
+        "조유진": "미공개",
+        "조재희": "미공개",
+        "조재희 · 양창욱": "조재희: 미공개<br>양창욱: 현) 진에어 객실승무원",
+        "조재희 양창욱": "조재희: 미공개<br>양창욱: 현) 진에어 객실승무원",
+        "조재희, 양창욱": "조재희: 미공개<br>양창욱: 현) 진에어 객실승무원",
+        "조재희,양창욱": "조재희: 미공개<br>양창욱: 현) 진에어 객실승무원",
+        "조현준": "현) 경희대학교 일반대학원 (1기) / 스포츠재활 강사",
+        "차정수": "현) 팀 제로베이스 (동탄)",
+        "최유빈": "현) 롯데웰푸드 영양사",
+        "최윤관": "미공개",
+        "최지현": "현) 경남 FC 프로축구단",
+        "한승욱": "현) 부산대학교 스포츠과학과 교수",
+        "한현구": "미공개",
+        "한혜서": "현) 경희대학교 겨루기부"
+    };
+
+    // 4. 동문 상세 모달 열기/닫기 로직
+    let alumniModalTimer = null;
+
+    window.openAlumniModal = function(name, badgeText) {
+        const modal = document.getElementById('alumni-modal');
+        if (!modal) return;
+
+        if (alumniModalTimer) {
+            clearTimeout(alumniModalTimer);
+            alumniModalTimer = null;
+        }
+
+        const nameClean = name.trim();
+        const jobInfo = alumniCareerData[nameClean] || "미공개";
+
+        const nameEl = document.getElementById('alumni-modal-name');
+        const jobEl = document.getElementById('alumni-modal-job');
+        const badgeEl = document.getElementById('alumni-modal-badge');
+
+        if (nameEl) nameEl.textContent = nameClean;
+        if (jobEl) {
+            if (nameClean.includes('조재희') && nameClean.includes('양창욱')) {
+                jobEl.innerHTML = `
+                    <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 320px; margin: 0 auto; text-align: left;">
+                        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <span style="font-size: 0.8rem; font-weight: 700; color: #A50034; display: block; margin-bottom: 2px;">2017 공동 수상</span>
+                                <strong style="font-size: 1.05rem; color: #0f172a;">조재희</strong>
+                            </div>
+                            <span style="color: #64748b; font-weight: 700; background: #e2e8f0; padding: 4px 12px; border-radius: 12px; font-size: 0.85rem;">미공개</span>
+                        </div>
+                        <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;">
+                            <div>
+                                <span style="font-size: 0.8rem; font-weight: 700; color: #A50034; display: block; margin-bottom: 2px;">2017 공동 수상</span>
+                                <strong style="font-size: 1.05rem; color: #0f172a;">양창욱</strong>
+                            </div>
+                            <span style="color: #0f172a; font-weight: 800; font-size: 0.95rem;">현) 진에어 객실승무원</span>
+                        </div>
+                    </div>
+                `;
+            } else if (jobInfo === "미공개" || jobInfo === "정보 준비중") {
+                jobEl.innerHTML = '<span style="color: #64748b; font-weight: 700; background: #f1f5f9; padding: 6px 18px; border-radius: 20px; font-size: 1.05rem; display: inline-block;">미공개</span>';
+            } else if (jobInfo === "휴직") {
+                jobEl.innerHTML = '<span style="color: #64748b; font-weight: 700; background: #f1f5f9; padding: 6px 18px; border-radius: 20px; font-size: 1.05rem; display: inline-block;">휴직</span>';
+            } else {
+                jobEl.innerHTML = '<span style="color: #0f172a; font-weight: 800; font-size: 1.2rem;">' + jobInfo + '</span>';
+            }
+        }
+        if (badgeEl) badgeEl.textContent = badgeText || "경희대학교 AT Center 동문";
+
+        // 모달 표시
+        modal.style.display = 'flex';
+        requestAnimationFrame(() => {
+            modal.classList.add('open');
+        });
+    };
+
+    window.closeAlumniModal = function() {
+        const modal = document.getElementById('alumni-modal');
+        if (!modal) return;
+        modal.classList.remove('open');
+        alumniModalTimer = setTimeout(() => {
+            modal.style.display = 'none';
+        }, 300);
+    };
+
+    // 바깥 영역 클릭 시 닫기
+    document.addEventListener('click', function(e) {
+        const modal = document.getElementById('alumni-modal');
+        if (modal && e.target === modal) {
+            closeAlumniModal();
+        }
+    });
+
+    // ESC 키 입력 시 닫기
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeAlumniModal();
+        }
+    });
+    </script>
+</body>
+</html>
