@@ -9457,3 +9457,187 @@ html[lang="en"] #contact .contact-desc {
     cursor: pointer !important;
     user-select: none;
 }
+
+
+/* ==========================================================================
+   [디자인 고도화 #3] 섹션 간 배경 톤 교차 리듬(Contrast) & 카드 입체감(Depth) 강화
+   - 연속된 밝은 배경으로 인해 경계가 밋밋해 보이던 현상을 해소
+   - Pure White (#FFFFFF) ↔ Soft Cool Slate (#EFF3F8 / #F1F5F9) 교차 배치
+   - 누적 기록(#dashboard) 3대 지표 카드 및 핵심 사업·구성원 카드의 입체 그림자 강화
+   ========================================================================== */
+
+/* 1. 센터 소개 (#about): 깨끗한 Pure White 배경 & 5대 핵심 하이라이트 카드 입체감 */
+#about {
+    background: #ffffff !important;
+    position: relative;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#about .about-clean-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #A50034;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+#about .about-clean-item:hover {
+    background: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px -4px rgba(165, 0, 52, 0.12), 0 4px 8px rgba(15, 23, 42, 0.04);
+}
+
+/* 2. 핵심 사업 (#pillars): 고급스러운 쿨 슬레이트(Cool Slate) 배경으로 앞뒤 흰색 섹션과 확실한 대비 */
+#pillars {
+    background: linear-gradient(180deg, #eff3f8 0%, #e9eff6 100%) !important;
+    border-top: 1px solid #dde5ef;
+    border-bottom: 1px solid #dde5ef;
+    position: relative;
+}
+
+#pillars .bento-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(203, 213, 225, 0.85) !important;
+    box-shadow: 0 14px 32px -8px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+#pillars .bento-card:hover {
+    transform: translateY(-6px) !important;
+    border-color: rgba(165, 0, 52, 0.35) !important;
+    box-shadow: 0 22px 44px -10px rgba(15, 23, 42, 0.14), 0 8px 18px rgba(165, 0, 52, 0.08) !important;
+}
+
+/* 3. AT 센터 누적 기록 (#dashboard): 순백색 배경 + 3대 대형 숫자 카드 입체 그림자 & 컬러 포인트 극대화 */
+#dashboard.editorial-metric-section {
+    background: #ffffff !important;
+    background-image:
+        radial-gradient(circle at 18% 15%, rgba(165, 0, 52, 0.045) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(0, 34, 68, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 85% 20%, rgba(166, 124, 30, 0.045) 0%, transparent 45%) !important;
+    border-top: none !important;
+    border-bottom: 1px solid #dde5ef !important;
+    padding: 105px 0 115px 0;
+}
+
+/* 누적 기록 3대 카드 입체 엘리베이션 및 테두리 선명도 강화 */
+#dashboard .editorial-card {
+    background: linear-gradient(180deg, #ffffff 0%, #fcfdfe 100%);
+    border: 1.5px solid #e2e8f0;
+    border-radius: 22px;
+    box-shadow:
+        0 16px 38px -10px rgba(15, 23, 42, 0.08),
+        0 4px 12px -2px rgba(15, 23, 42, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.32s ease, border-color 0.32s ease;
+}
+
+/* 상단 시그니처 컬러 바를 더 선명하고 존재감 있게 (3px -> 5px) */
+#dashboard .card-edge-highlight {
+    height: 5px;
+    opacity: 1;
+}
+
+#dashboard .editorial-card:hover {
+    transform: translateY(-7px);
+}
+
+/* 01 교육 카드 호버 & 숫자 포인트 */
+#dashboard .card-edu {
+    background: linear-gradient(180deg, #ffffff 0%, #fffafb 100%);
+}
+#dashboard .card-edu .metric-num {
+    color: #8E002B;
+}
+#dashboard .card-edu:hover {
+    border-color: rgba(165, 0, 52, 0.45);
+    box-shadow: 0 24px 48px -12px rgba(165, 0, 52, 0.15), 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+/* 02 연구 카드 호버 & 숫자 포인트 */
+#dashboard .card-res {
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafd 100%);
+}
+#dashboard .card-res .metric-num {
+    color: #002244;
+}
+#dashboard .card-res:hover {
+    border-color: rgba(0, 34, 68, 0.45);
+    box-shadow: 0 24px 48px -12px rgba(0, 34, 68, 0.16), 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+/* 03 서비스 카드 호버 & 숫자 포인트 */
+#dashboard .card-srv {
+    background: linear-gradient(180deg, #ffffff 0%, #fdfbf6 100%);
+}
+#dashboard .card-srv .metric-num {
+    color: #8C6512;
+}
+#dashboard .card-srv:hover {
+    border-color: rgba(166, 124, 30, 0.45);
+    box-shadow: 0 24px 48px -12px rgba(166, 124, 30, 0.16), 0 6px 16px rgba(15, 23, 42, 0.05);
+}
+
+/* 4. 구성원 소개 (#members): 차분한 소프트 슬레이트 배경으로 흰색 인물 카드들이 또렷하게 부각되도록 설정 */
+#members {
+    background: linear-gradient(180deg, #f1f5f9 0%, #eaeff6 100%) !important;
+    border-top: 1px solid #dde5ef;
+    border-bottom: 1px solid #dde5ef;
+    position: relative;
+}
+
+#members .modern-profile-card,
+#members .assistant-dept-card {
+    background: #ffffff !important;
+    border: 1px solid rgba(203, 213, 225, 0.85) !important;
+    box-shadow: 0 10px 26px -6px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.03) !important;
+}
+
+#members .modern-profile-card:hover,
+#members .assistant-dept-card:hover {
+    border-color: rgba(165, 0, 52, 0.35) !important;
+    box-shadow: 0 18px 36px -8px rgba(165, 0, 52, 0.13), 0 4px 12px rgba(15, 23, 42, 0.05) !important;
+}
+
+#members .modern-group-line {
+    background: linear-gradient(90deg, rgba(165, 0, 52, 0.28) 0%, rgba(148, 163, 184, 0.25) 100%) !important;
+    height: 2px !important;
+}
+
+/* 5. 역대 수상자 및 리더 (#awards): 다시 깨끗한 Pure White 배경으로 환기 + 캐러셀 박스 입체화 */
+#awards.awards-stream-section {
+    background: #ffffff !important;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+#awards .award-carousel-container {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 24px;
+    padding: 28px 26px 24px 26px;
+    box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.06);
+}
+
+/* 6. 활동 사진 (#activities): 밝고 정갈한 화이트-쿨톤 배경 유지 및 갤러리 카드 입체감 강화 */
+#activities.activities-gallery-section {
+    background: #ffffff !important;
+    border-top: 1px solid #e2e8f0 !important;
+    border-bottom: 1px solid #dde5ef !important;
+}
+
+#activities .gallery-card-item {
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 24px -6px rgba(15, 23, 42, 0.06);
+}
+
+/* 7. 상담 및 문의 (#contact): 차분한 쿨 슬레이트 배경 위에 흰색 상담 폼 카드가 선명하게 떠오르도록 대비 */
+#contact {
+    background: linear-gradient(180deg, #eff3f8 0%, #e6ecf5 100%) !important;
+    border-top: 1px solid #dde5ef;
+}
+
+#contact .contact-form-container {
+    background: #ffffff !important;
+    border: 1px solid rgba(203, 213, 225, 0.9) !important;
+    box-shadow: 0 18px 40px -10px rgba(15, 23, 42, 0.09), 0 4px 12px rgba(15, 23, 42, 0.04) !important;
+}
