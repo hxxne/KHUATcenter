@@ -2072,8 +2072,6 @@
                     <div class="award-carousel-counter">
                         <span class="counter-label">기록 연도:</span>
                         <strong id="awardSlideCurrentYear" class="counter-year">2025</strong>
-                        <span class="counter-sep">/</span>
-                        <span class="counter-total">11개년 공식 아카이브</span>
                     </div>
                 </div>
 
@@ -5131,14 +5129,16 @@
         document.body.style.overflow = 'hidden';
     };
 
-    // ============================================================
-        // 🏆 역대 수상자 및 리더 캐러셀 슬라이더 컨트롤러 (2025 -> 2015)
+        // ============================================================
+        // 🏆 역대 수상자 및 리더 캐러셀 슬라이더 컨트롤러 (2025 -> 2015, 자동 슬라이드쇼)
         // ============================================================
         let currentAwardSlideIndex = 0;
         const totalAwardSlides = 11;
         const awardYearsList = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015];
+        let awardAutoplayTimer = null;
+        const AWARD_AUTOPLAY_INTERVAL = 4500; // 4.5초마다 부드럽게 다음 연도로 자동 전환
 
-        window.goToAwardSlide = function(index) {
+        window.goToAwardSlide = function(index, resetAutoplay = true) {
             if (index < 0) index = 0;
             if (index >= totalAwardSlides) index = totalAwardSlides - 1;
             currentAwardSlideIndex = index;
@@ -5172,23 +5172,60 @@
             if (yearEl) {
                 yearEl.textContent = awardYearsList[currentAwardSlideIndex];
             }
+
+            // 수동 클릭 조작 시 자동 재생 타이머 리셋
+            if (resetAutoplay) {
+                startAwardAutoplay();
+            }
         };
 
-        window.moveAwardSlide = function(direction) {
+        window.moveAwardSlide = function(direction, resetAutoplay = true) {
             let nextIndex = currentAwardSlideIndex + direction;
             if (nextIndex < 0) nextIndex = totalAwardSlides - 1;
             else if (nextIndex >= totalAwardSlides) nextIndex = 0;
-            window.goToAwardSlide(nextIndex);
+            window.goToAwardSlide(nextIndex, resetAutoplay);
         };
 
-        // 모바일 터치 스와이프 리스너 등록
+        // 자동 슬라이드쇼 시작 함수
+        function startAwardAutoplay() {
+            stopAwardAutoplay();
+            awardAutoplayTimer = setInterval(() => {
+                window.moveAwardSlide(1, false);
+            }, AWARD_AUTOPLAY_INTERVAL);
+        }
+
+        // 자동 슬라이드쇼 일시정지 함수
+        function stopAwardAutoplay() {
+            if (awardAutoplayTimer) {
+                clearInterval(awardAutoplayTimer);
+                awardAutoplayTimer = null;
+            }
+        }
+
+        // 이벤트 리스너 등록: 자동 슬라이드쇼 실행, 마우스 호버 시 일시정지/재개 및 터치 스와이프
         document.addEventListener('DOMContentLoaded', () => {
+            // 1. 자동 슬라이드쇼 재생 개시
+            startAwardAutoplay();
+
+            // 2. 마우스 호버 시 일시정지 (사용자가 카드를 편하게 읽고 클릭할 수 있도록 배려)
+            const carouselContainer = document.querySelector('.award-carousel-container');
+            if (carouselContainer) {
+                carouselContainer.addEventListener('mouseenter', () => {
+                    stopAwardAutoplay();
+                });
+                carouselContainer.addEventListener('mouseleave', () => {
+                    startAwardAutoplay();
+                });
+            }
+
+            // 3. 모바일 터치 스와이프 리스너 등록
             const viewport = document.getElementById('awardCarouselViewport');
             if (viewport) {
                 let startX = 0;
                 let endX = 0;
 
                 viewport.addEventListener('touchstart', (e) => {
+                    stopAwardAutoplay();
                     startX = e.touches[0].clientX;
                 }, { passive: true });
 
@@ -5201,6 +5238,8 @@
                         } else {
                             window.moveAwardSlide(-1); // 이전 연도
                         }
+                    } else {
+                        startAwardAutoplay();
                     }
                 }, { passive: true });
             }
