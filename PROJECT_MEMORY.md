@@ -2290,3 +2290,28 @@ Observation 100시간 실무 과정,
      - 마우스 호버 시 버건디(#A50034) 색상 전환 및 미세 우측 이동(`transform: translateX(3px)`) 인터랙션 추가.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+---
+
+## 🪪 57. 핵심 구성원 13인 공식 프로필 데이터(이메일·학과/학번/학력·연구주제) 전면 동기화 및 모달 연동 (2026-10-28)
+- **사용자 요청:**
+  - 안은지, 박서현, 강석, 조현준, 이상준, 기윤서, 유주승, 유지민, 조연지, 문수연, 이승민, 권준홍, 천지훈 13인의 공식 이메일, 학과/학번/학력, 연구주제 최신화 반영 요청.
+- **반영 및 동기화 내역 (`index.html`):**
+  1. **안은지:** 이메일 `aej1228@khu.ac.kr`, 학과/학번 `체육학과 23학번` (카드 및 professorsData 동기화)
+  2. **박서현:** 이메일 `dawnsun@khu.ac.kr`, 학과/학번 `스포츠지도학과 25학번` (카드 및 professorsData 동기화)
+  3. **강석:** 이메일 `7390570@khu.ac.kr`, 학과/학번 `스포츠의학과 21학번` (카드 및 professorsData 동기화)
+  4. **조현준:** 이메일 `chj0471@khu.ac.kr`, 학력 `경희대학교 스포츠의학과 졸업`, 연구주제 `운동 동호인들의 무릎, 발목 골관절염 실태조사 진행중` (대학원생/강사 카드 및 professorsData/연구과제 리스트 동기화)
+  5. **이상준:** 이메일 `dltkdwns111@khu.ac.kr`, 학과/학번 `스포츠의학과 22학번` (카드 및 professorsData 동기화)
+  6. **기윤서:** 이메일 `dbstj1104@khu.ac.kr`, 학력 `일반대학원 체육학과 석사 졸업 / 덕성여자대학교 레저스포츠학과 졸업`, 연구주제 `Changes in Workload, EMG signal, and Muscle Thickness in the Gastrocnemius during a Nine-Week Calf-Raise Exercise in Novice Individuals` (카드, professorsData 및 연구과제 리스트 동기화)
+  7. **유주승:** 이메일 `yujins3512@khu.ac.kr`, 학력 `경희대학교 스포츠의학과 졸업` (카드 및 professorsData 동기화)
+  8. **유지민:** 이메일 `dbwlals3538@khu.ac.kr`, 학과/학번 `스포츠의학과 21학번` (카드 및 professorsData 동기화)
+  9. **조연지:** 이메일 `Khsmyj35@khu.ac.kr`, 학과/학번 `스포츠의학과 24학번` (카드 및 professorsData 동기화)
+  10. **문수연:** 이메일 `msy2004713@khu.ac.kr`, 학과/학번 `체육학과 23학번` (전담 AT/강사 카드 및 professorsData 동기화)
+  11. **이승민:** 이메일 `dltmdals3543@khu.ac.kr`, 학력 `조선대학교 체육학과 졸업`, 연구주제 `운동 동호인들의 무릎, 발목 골관절염 실태조사 진행중` (대학원생 카드 및 professorsData/연구과제 리스트 동기화)
+  12. **권준홍:** 이메일 `zauzza2@khu.ac.kr`, 학력 `성결대학교 체육교육과 졸업`, 연구주제 `운동 동호인들의 무릎, 발목 골관절염 실태조사 진행중` (대학원생/강사 카드 및 professorsData/연구과제 리스트 동기화)
+  13. **천지훈:** 이메일 `wlgns10212@khu.ac.kr`, 학과/학번 `스포츠의학과 21학번` (카드 및 professorsData 동기화)
+  14. **대학원생 모달 UX 고도화 (`openProfModal`):**
+      - 대학원생 모달에서도 이메일 라벨 및 값이 숨겨지지 않고 정상 노출되도록 개방.
+      - 4대 항목 라벨을 [학위과정, 출신학력, 연구주제, 보유자격, E-mail]로 확장하여 개인별 세부 이력 및 연구 실적을 완벽히 표출.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
