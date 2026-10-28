@@ -797,6 +797,303 @@ body.no-scroll {
    Design System: Anti-Card, Editorial Hairline Split Layout, Museum Archive
    ========================================================================== */
 
+/* ==========================================================================
+   KHU AT Center - Awards Section (2025 -> 2015 Sequential Stream & Unified Archive)
+   Design System: Editorial Timeline Stream, Unified Roster Flow, Luxury Museum Archive
+   ========================================================================== */
+
+/* 1. 섹션 기본 컨테이너 */
+.awards-stream-section {
+    background-color: #FAF8F5 !important; /* 웜 화이트 / 갤러리 도록 배경 */
+    color: #0F172A;
+    position: relative;
+    padding: 100px 0 120px 0;
+    overflow: hidden;
+}
+
+/* 2. 11개년 학생 수상자 순차 타임라인 스트림 */
+.award-timeline-stream {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.award-year-stream-block {
+    background: #FFFFFF;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 20px;
+    padding: 32px 36px 36px 36px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.award-year-stream-block:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+    border-color: rgba(140, 120, 83, 0.2);
+}
+
+.award-year-row-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.award-year-badge {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    font-family: 'Playfair Display', 'Pretendard', sans-serif;
+    line-height: 1;
+}
+
+.award-year-status-chip {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #A50034;
+    background: rgba(165, 0, 52, 0.08);
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(165, 0, 52, 0.15);
+}
+
+.award-year-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.award-stream-card {
+    background: #FAF8F5;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 14px;
+    padding: 24px 22px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+}
+
+.award-stream-card:hover {
+    background: #FFFFFF;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    border-color: rgba(165, 0, 52, 0.35);
+}
+
+.award-stream-card-dual {
+    background: #FAF8F5;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    border-radius: 14px;
+    padding: 24px 22px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.award-pill {
+    display: inline-block;
+    align-self: flex-start;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+}
+
+.pill-gold {
+    color: #8C7853;
+    background: rgba(140, 120, 83, 0.12);
+    border: 1px solid rgba(140, 120, 83, 0.25);
+}
+
+.pill-burgundy {
+    color: #A50034;
+    background: rgba(165, 0, 52, 0.08);
+    border: 1px solid rgba(165, 0, 52, 0.18);
+}
+
+.pill-silver {
+    color: #475569;
+    background: rgba(71, 85, 105, 0.08);
+    border: 1px solid rgba(71, 85, 105, 0.18);
+}
+
+.award-stream-name {
+    font-size: 21px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0 0 6px 0;
+    letter-spacing: 0.08em;
+}
+
+.award-stream-desc {
+    font-size: 13.5px;
+    color: #475569;
+    font-weight: 500;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.award-stream-subtext {
+    font-size: 12px;
+    color: #94A3B8;
+    margin-bottom: 14px;
+}
+
+.award-click-hint {
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px dashed rgba(15, 23, 42, 0.08);
+    font-size: 12px;
+    font-weight: 600;
+    color: #8C7853;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.75;
+    transition: all 0.2s ease;
+}
+
+.award-stream-card:hover .award-click-hint {
+    opacity: 1;
+    color: #A50034;
+    transform: translateX(2px);
+}
+
+.award-dual-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.award-stream-subbtn {
+    padding: 10px 8px;
+    background: #FFFFFF;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 8px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0F172A;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+    font-family: inherit;
+}
+
+.award-stream-subbtn:hover {
+    background: #A50034;
+    color: #FFFFFF;
+    border-color: #A50034;
+    box-shadow: 0 4px 12px rgba(165, 0, 52, 0.25);
+}
+
+/* 3. 연달아 배치되는 역대 팀장 & 간사 섹션 공통 */
+.award-sub-section-stream {
+    margin-top: 80px;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stream-divider-bar {
+    width: 60px;
+    height: 3px;
+    background: #8C7853;
+    margin: 0 auto 36px auto;
+    border-radius: 2px;
+}
+
+.stream-sub-header {
+    margin-bottom: 36px;
+}
+
+.stream-sub-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #8C7853;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.stream-sub-title {
+    font-size: 26px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+}
+
+.stream-sub-desc {
+    font-size: 14.5px;
+    color: #64748B;
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* 팀장/간사 버튼 태그 기본 스타일 초기화 */
+.ed-stream-row, .ed-ga-item {
+    background: transparent;
+    border: none;
+    font-family: inherit;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+}
+.ed-stream-row:focus, .ed-ga-item:focus {
+    outline: none;
+}
+
+/* 반응형 미디어 쿼리 */
+@media (max-width: 992px) {
+    .award-year-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .award-year-stream-block {
+        padding: 24px 20px 28px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .award-year-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .award-year-row-header {
+        margin-bottom: 18px;
+    }
+    .award-year-badge {
+        font-size: 26px;
+    }
+    .ed-leaders-split-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    .ed-ga-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .ed-ga-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* 1. 섹션 기본 컨테이너 */
 .awards-editorial-section {
     background-color: #FAF8F5 !important; /* 웜 화이트 / 갤러리 도록 배경 */
