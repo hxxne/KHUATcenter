@@ -2051,3 +2051,30 @@ Observation 100시간 실무 과정,
      - 연도 전환(2025➔2024➔2017), 조재희 프로필 모달 팝업 오픈 및 닫기, 탭 3종 전환 등 전 기능 이상 없음 확인.
 - **Git 동기화:**
   - `origin main` 커밋 및 푸시 완료.
+
+
+## 🎖️ 47. 실물 원목 현판(post_8.jpg) 및 공식 아카이브 기반 역대 학생 수상자(2015~2025) 100% 정밀 정정 복원 (2026-10-28)
+- **사용자 피드백 및 정밀 검증 착수:**
+  - *"역대 학생 수상자 다시 확인해줘 이거 아니야"*
+- **불일치 원인 정밀 규명 및 해결:**
+  1. 센터 내 실제 실물 현판 사진(`assets/images/insta/post_8.jpg`)과 초기 원본 커밋(`8875495`)을 전수 대조한 결과, 이전 작업 과정에서 2023년과 2024년 수상자 명단이 잘못 기재되어 있었음을 확인:
+     - **2023년:** 실제 공식 수상자는 **차정수** (`Student of the Year`) / **문채연** (`Inspiration`) / **한현구** (`Rookie of the Year`)이나, 잘못된 이름(`조현준 / 이진호 / 유승아`)으로 왜곡되어 있었음 ➔ 100% 원본 일치 정정 복원.
+     - **2024년:** 실제 공식 Rookie of the Year는 **이정재** 이나, `권준홍`으로 잘못 기재되어 있었음 ➔ **이정재** 로 100% 정정 복원.
+     - **2020년:** 김승연 동문이 `Inspiration`과 `Rookie of the Year` 2개 부문을 동시 석권(2관왕)하였음을 명확히 재검증.
+- **최종 확정된 11개년(2015~2025) 공식 학생 수상자 33인 완전 명단:**
+  - **2025:** 유승아 (`Student of the Year`) / 유주승 (`Inspiration`) / 조연지 (`Rookie of the Year`)
+  - **2024:** 한혜서 (`Student of the Year`) / 한혜서 (`Inspiration`) / **이정재** (`Rookie of the Year`)
+  - **2023:** **차정수** (`Student of the Year`) / **문채연** (`Inspiration`) / **한현구** (`Rookie of the Year`)
+  - **2022:** 박효진 (`Student of the Year`) / 이남송 (`Inspiration`) / 유영수 (`Rookie of the Year`)
+  - **2021:** 김재원 (`Student of the Year`) / 김태진 (`Inspiration`) / 최유빈 (`Rookie of the Year`)
+  - **2020:** 임선주 (`Student of the Year`) / 김승연 (`Inspiration`) / **김승연** (`Rookie of the Year`, 2관왕)
+  - **2019:** 김동현 (`Student of the Year`) / 성락훈 (`Inspiration`) / 임선주 (`Rookie of the Year`)
+  - **2018:** 오민섭 (`Student of the Year`) / 김동현 (`Inspiration`) / 우태희 (`Rookie of the Year`)
+  - **2017:** **조재희 · 양창욱** (공동 수상, 2분할 개별 프로필 지원) / 조유진 (`Inspiration`) / 오민섭 (`Rookie of the Year`)
+  - **2016:** 이선화 (`Student of the Year`) / 안효은 (`Inspiration`) / 이서영 (`Rookie of the Year`)
+  - **2015:** 이현욱 (`Student of the Year`) / 신재윤 (`Inspiration`) / 김다영 (`Rookie of the Year`)
+- **반영 파일:**
+  - `standalone_awards_editorial.html` (독립 단독 에디토리얼 페이지)
+  - `index.html` (메인 사이트 명예의 전당 섹션 및 마스터 테이블)
+- **Git 동기화:**
+  - `origin main` 커밋 및 푸시 완료.
