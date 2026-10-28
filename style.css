@@ -793,715 +793,796 @@ body.no-scroll {
 }
 
 /* ==========================================================================
-   10. Awards Section: Figma Modern Timeline & Archive (Anti-AI Cliché)
-   - 피그마 커뮤니티 감성의 연도별 타임라인 칩 네비게이터 & 3대 상 모던 쇼케이스
-   - 11개년(2015~2025) 마스터 아카이브 테이블 및 역대 리더/조교 일체형 디자인
+   KHU AT Center - Awards Section (Editorial Typography Hover Index)
+   Design System: Anti-Card, Editorial Hairline Split Layout, Museum Archive
    ========================================================================== */
 
-.awards-figma-section {
-    background-color: #FAF8F5;
-    background-image: 
-        radial-gradient(at 50% -10%, rgba(165, 0, 52, 0.04) 0%, transparent 60%),
-        radial-gradient(at 90% 90%, rgba(197, 160, 89, 0.05) 0%, transparent 50%);
-    position: relative;
-    padding-top: 90px;
-    padding-bottom: 110px;
-}
-
-/* --- Section Header --- */
-.figma-awards-header {
-    margin-bottom: 36px;
-}
-
-.figma-kicker {
-    display: inline-block;
-    font-size: 11.5px;
-    font-weight: 800;
-    letter-spacing: 0.18em;
-    color: #A50034;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.figma-title {
-    font-size: 34px;
-    font-weight: 800;
+/* 1. 섹션 기본 컨테이너 */
+.awards-editorial-section {
+    background-color: #FAF8F5 !important; /* 웜 화이트 / 갤러리 도록 배경 */
     color: #0F172A;
-    letter-spacing: -0.02em;
-    margin-bottom: 14px;
-}
-
-.figma-subtitle {
-    font-size: 15px;
-    color: #475569;
-    max-width: 660px;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* --- Main Category Navigation (Segmented Pill Nav) --- */
-.figma-category-nav-wrap {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 34px;
-}
-
-.figma-category-nav {
-    display: inline-flex;
-    background: #FFFFFF;
-    border: 1.5px solid #E2E8F0;
-    border-radius: 9999px;
-    padding: 5px;
-    gap: 4px;
-    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
-}
-
-.figma-cat-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 22px;
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #64748B;
-    background: transparent;
-    border: none;
-    border-radius: 9999px;
-    cursor: pointer;
-    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-    outline: none;
-    user-select: none;
-}
-
-.figma-cat-btn i {
-    font-size: 13px;
-}
-
-.figma-cat-btn:hover {
-    color: #0F172A;
-    background: #F8FAFC;
-}
-
-.figma-cat-btn.active {
-    background: #A50034;
-    color: #FFFFFF;
-    box-shadow: 0 3px 10px rgba(165, 0, 52, 0.25);
-}
-
-/* --- Tab Panels --- */
-.figma-tab-panel {
-    display: none;
-    animation: figmaFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.figma-tab-panel.active {
-    display: block;
-}
-
-@keyframes figmaFadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* --- Year Chips Bar (Timeline Nav) --- */
-.figma-year-bar-wrap {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
-}
-
-.year-bar-label {
-    font-size: 13px;
-    font-weight: 700;
-    color: #475569;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.figma-year-chips {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    overflow-x: auto;
-    padding: 4px;
-    max-width: 100%;
-    scrollbar-width: none;
-}
-
-.figma-year-chips::-webkit-scrollbar {
-    display: none;
-}
-
-.year-chip {
-    padding: 7px 16px;
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #475569;
-    background: #FFFFFF;
-    border: 1px solid #CBD5E1;
-    border-radius: 9999px;
-    cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    outline: none;
-    white-space: nowrap;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    user-select: none;
-}
-
-.year-chip:hover {
-    border-color: #A50034;
-    color: #A50034;
-    background: #FFF5F7;
-    transform: translateY(-1px);
-}
-
-.year-chip.active {
-    background: #0F172A;
-    color: #FFFFFF;
-    border-color: #0F172A;
-    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.2);
-}
-
-.chip-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: #D4AF37;
-    display: inline-block;
-}
-
-/* --- Year Showcase Container & Rows --- */
-.figma-year-showcase {
-    max-width: 1100px;
-    margin: 0 auto 50px;
-}
-
-.year-cards-row {
-    display: none;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.year-cards-row.active {
-    display: grid;
-    animation: figmaRowFade 0.25s ease forwards;
-}
-
-@keyframes figmaRowFade {
-    from { opacity: 0; transform: scale(0.985); }
-    to { opacity: 1; transform: scale(1); }
-}
-
-/* --- Modern Award Card --- */
-.figma-award-card {
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 18px;
-    padding: 26px 24px 22px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
-    cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     position: relative;
+    padding: 100px 0 120px 0;
     overflow: hidden;
 }
 
-.figma-award-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px -4px rgba(15, 23, 42, 0.1);
+/* 2. 섹션 헤더 (에디토리얼 키커 & 타이틀) */
+.editorial-header {
+    margin-bottom: 48px;
 }
 
-/* Theme Borders */
-.figma-award-card.card-coty {
-    border-top: 4px solid #C5A059;
-}
-.figma-award-card.card-coty:hover {
-    border-color: #C5A059;
-}
-
-.figma-award-card.card-insp {
-    border-top: 4px solid #A50034;
-}
-.figma-award-card.card-insp:hover {
-    border-color: #A50034;
-}
-
-.figma-award-card.card-rookie {
-    border-top: 4px solid #64748B;
-}
-.figma-award-card.card-rookie:hover {
-    border-color: #64748B;
-}
-
-.award-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 18px;
-}
-
-.award-category-badge {
+.editorial-kicker {
     font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    padding: 4px 10px;
-    border-radius: 6px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
-}
-
-.badge-gold {
-    background: #FFF9EC;
-    color: #9E7D3B;
-    border: 1px solid rgba(197, 160, 89, 0.35);
-}
-
-.badge-burgundy {
-    background: #FFF0F2;
-    color: #A50034;
-    border: 1px solid rgba(165, 0, 52, 0.25);
-}
-
-.badge-silver {
-    background: #F1F5F9;
-    color: #475569;
-    border: 1px solid #CBD5E1;
-}
-
-.award-year-tag {
-    font-size: 12px;
-    font-weight: 700;
-    color: #94A3B8;
-}
-
-.award-card-body {
-    margin-bottom: 22px;
-}
-
-.awardee-name {
-    font-size: 23px;
-    font-weight: 800;
-    color: #0F172A;
-    letter-spacing: 0.18em;
-    margin: 0 0 6px 0;
-}
-
-.awardee-desc {
-    font-size: 13px;
-    color: #64748B;
-    margin: 0;
-    line-height: 1.5;
-}
-
-.award-card-footer {
-    padding-top: 14px;
-    border-top: 1px solid #F1F5F9;
-}
-
-.btn-profile-view {
-    font-size: 13px;
-    font-weight: 700;
-    color: #A50034;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: gap 0.2s ease;
-}
-
-.figma-award-card:hover .btn-profile-view {
-    gap: 10px;
-}
-
-/* 2017 Dual Card Body */
-.card-coty-dual .dual-body {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 18px;
-}
-
-.dual-person-col {
-    flex: 1;
-    padding: 10px;
-    border-radius: 10px;
-    transition: background 0.2s ease;
-}
-
-.dual-person-col:hover {
-    background: #FFF9EC;
-}
-
-.dual-person-col .awardee-name {
-    font-size: 19px;
-}
-
-.btn-sub-view {
-    font-size: 11.5px;
-    font-weight: 700;
-    color: #9E7D3B;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.dual-mid-divider {
-    width: 1px;
-    height: 40px;
-    background-color: #E2E8F0;
-}
-
-/* --- Master Archive Table --- */
-.figma-master-table-section {
-    max-width: 1100px;
-    margin: 0 auto;
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 18px;
-    padding: 28px;
-    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
-}
-
-.master-table-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.master-tag {
-    font-size: 10.5px;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    color: #A50034;
-    display: block;
-    margin-bottom: 2px;
-}
-
-.master-title {
-    font-size: 16.5px;
-    font-weight: 800;
-    color: #0F172A;
-    margin: 0;
-}
-
-.master-notice {
-    font-size: 12.5px;
-    color: #64748B;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.figma-table-container {
-    overflow-x: auto;
-}
-
-.figma-archive-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-}
-
-.figma-archive-table th {
-    background: #F8FAFC;
-    padding: 12px 14px;
-    border-bottom: 1.5px solid #E2E8F0;
-}
-
-.th-year {
-    width: 80px;
-    font-size: 12px;
-    font-weight: 800;
-    color: #475569;
-    text-align: center;
-}
-
-.th-badge {
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    padding: 3px 8px;
-    border-radius: 4px;
-}
-
-.figma-archive-table td {
-    padding: 12px 14px;
-    border-bottom: 1px solid #F1F5F9;
-    vertical-align: middle;
-}
-
-.td-year {
-    text-align: center;
-}
-
-.year-pill {
+    color: #8C7853; /* 샴페인 브론즈 / 골드 */
     display: inline-block;
-    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.editorial-title {
+    font-size: 2.5rem;
     font-weight: 700;
-    color: #475569;
-    background: #F1F5F9;
-    padding: 3px 8px;
-    border-radius: 6px;
+    letter-spacing: -0.03em;
+    color: #0F172A;
+    margin-bottom: 14px;
 }
 
-.year-pill.pill-latest {
-    background: #0F172A;
-    color: #FFFFFF;
+.editorial-subtitle {
+    font-size: 0.98rem;
+    color: #64748B;
+    max-width: 680px;
+    margin: 0 auto;
+    line-height: 1.65;
 }
 
-.tr-latest td {
-    background: #FFFDF9;
+/* 3. 텍스트 서브 내비게이션 (Anti-Box Pill) */
+.editorial-nav-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
 }
 
-.tbl-name-btn {
+.editorial-sub-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: #FFFFFF;
+    padding: 6px;
+    border-radius: 9999px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.editorial-tab-btn {
     background: transparent;
     border: none;
-    font-size: 14.5px;
-    font-weight: 700;
-    color: #0F172A;
-    letter-spacing: 0.16em;
-    cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
     outline: none;
-    text-align: left;
-}
-
-.tbl-name-btn:hover {
-    color: #A50034;
-    background: #FFF0F2;
-}
-
-.tbl-dual-btn-wrap {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.tbl-mid-dot {
-    color: #94A3B8;
-    font-weight: 800;
-}
-
-/* --- Past Leaders Section --- */
-.figma-stream-grid {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-}
-
-.stream-card-box {
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 18px;
-    padding: 24px 20px;
-    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
-}
-
-.stream-header {
-    padding-bottom: 14px;
-    border-bottom: 1.5px solid #F1F5F9;
-    margin-bottom: 16px;
-}
-
-.stream-eng {
-    font-size: 10.5px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    display: block;
-    margin-bottom: 3px;
-}
-
-.stream-burgundy .stream-eng { color: #A50034; }
-.stream-gold .stream-eng { color: #9E7D3B; }
-.stream-silver .stream-eng { color: #475569; }
-
-.stream-kor {
-    font-size: 16px;
-    font-weight: 800;
-    color: #0F172A;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.stream-count {
-    font-size: 11px;
-    font-weight: 700;
+    padding: 10px 22px;
+    font-size: 14px;
+    font-weight: 600;
     color: #64748B;
-    background: #F1F5F9;
-    padding: 2px 8px;
-    border-radius: 10px;
-}
-
-.stream-list {
-    display: flex;
-    flex-direction: column;
+    cursor: pointer;
+    border-radius: 9999px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
     gap: 8px;
 }
 
-.stream-item-btn {
-    background: #F8FAFC;
-    border: 1px solid #E2E8F0;
-    border-radius: 10px;
-    padding: 9px 12px;
+.editorial-tab-btn .tab-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #CBD5E1;
+    transition: background-color 0.2s ease;
+}
+
+.editorial-tab-btn:hover {
+    color: #0F172A;
+    background: rgba(15, 23, 42, 0.03);
+}
+
+.editorial-tab-btn.active {
+    background: #0F172A;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.12);
+}
+
+.editorial-tab-btn.active .tab-indicator {
+    background: #C5A059; /* 샴페인 골드 인디케이터 */
+}
+
+/* 4. 탭 패널 기본 전환 */
+.editorial-panel {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.editorial-panel.active {
+    display: block;
+    opacity: 1;
+    animation: edFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes edFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   패널 1: 역대 학생 수상자 (좌우 2열 분할 에디토리얼 호버 인덱스)
+   ========================================================================== */
+.editorial-split-layout {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 56px;
+    align-items: start;
+    margin-bottom: 70px;
+}
+
+/* 좌측 컬럼: 대형 연도 인덱스 */
+.editorial-year-index-col {
+    position: sticky;
+    top: 100px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.index-col-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #94A3B8;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.editorial-year-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.ed-year-item {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    cursor: pointer;
-    transition: all 0.2s ease;
+    background: transparent;
+    border: none;
     outline: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
     text-align: left;
-    width: 100%;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    border-left: 3px solid transparent;
 }
 
-.stream-item-btn:hover {
-    background: #FFFFFF;
-    border-color: #A50034;
-    transform: translateX(3px);
-    box-shadow: 0 3px 10px rgba(165, 0, 52, 0.08);
-}
-
-.s-term {
-    font-size: 11px;
-    font-weight: 600;
+.ed-year-num {
+    font-family: 'Playfair Display', 'Cinzel', 'Pretendard', sans-serif;
+    font-size: 26px;
+    font-weight: 500;
     color: #64748B;
-    pointer-events: none;
+    letter-spacing: -0.02em;
+    transition: all 0.2s ease;
 }
 
-.s-name {
-    font-size: 13.5px;
+.ed-year-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 4px;
+    background: rgba(165, 0, 52, 0.08);
+    color: #A50034;
+}
+
+.ed-year-arrow {
+    font-size: 13px;
+    color: #CBD5E1;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all 0.2s ease;
+}
+
+.ed-year-item:hover {
+    background: rgba(165, 0, 52, 0.03);
+}
+
+.ed-year-item:hover .ed-year-num {
+    color: #0F172A;
+    transform: translateX(4px);
+}
+
+.ed-year-item.active {
+    background: rgba(165, 0, 52, 0.05);
+    border-left-color: #A50034;
+}
+
+.ed-year-item.active .ed-year-num {
+    color: #A50034;
+    font-weight: 700;
+    transform: translateX(6px);
+}
+
+.ed-year-item.active .ed-year-arrow {
+    opacity: 1;
+    color: #A50034;
+    transform: translateX(0);
+}
+
+/* 우측 컬럼: 선택된 연도 3대 수상자 리빌 패널 */
+.editorial-display-col {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 40px 48px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+    min-height: 520px;
+}
+
+.ed-reveal-panel {
+    display: none;
+}
+
+.ed-reveal-panel.active {
+    display: block;
+    animation: edFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-header {
+    padding-bottom: 24px;
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.reveal-year-label {
+    font-family: 'Playfair Display', 'Cinzel', serif;
+    font-size: 44px;
     font-weight: 700;
     color: #0F172A;
-    letter-spacing: 0.18em;
-    pointer-events: none;
-}
-
-/* --- Graduate Assistants (35인) --- */
-.figma-ga-container {
-    max-width: 1100px;
-    margin: 0 auto;
-    background: #FFFFFF;
-    border: 1px solid #E2E8F0;
-    border-radius: 18px;
-    padding: 28px;
-    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.03);
-}
-
-.ga-section-intro {
-    margin-bottom: 24px;
-}
-
-.ga-intro-title {
-    font-size: 17px;
-    font-weight: 800;
-    color: #0F172A;
-    margin: 0 0 6px 0;
-}
-
-.ga-intro-sub {
-    font-size: 13px;
-    color: #64748B;
+    letter-spacing: -0.03em;
+    line-height: 1;
     margin: 0;
 }
 
-.figma-ga-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
-.figma-ga-card {
-    background: #F8FAFC;
-    border: 1px solid #E2E8F0;
-    border-radius: 10px;
-    padding: 9px 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    outline: none;
-    width: 100%;
-    text-align: left;
-}
-
-.figma-ga-card:hover {
-    background: #FFFFFF;
-    border-color: #A50034;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(165, 0, 52, 0.08);
-}
-
-.ga-t {
-    font-size: 11px;
+.reveal-year-sub {
+    font-size: 13px;
     font-weight: 600;
-    color: #64748B;
-    pointer-events: none;
+    color: #8C7853;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
 }
 
-.ga-b {
-    font-size: 10.5px;
+/* 3대 부문 개별 리빌 아이템 (Anti-Card Hairline Rows) */
+.reveal-award-item {
+    padding: 24px 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.reveal-award-item:last-child {
+    border-bottom: none;
+    padding-bottom: 8px;
+}
+
+.item-tag {
+    font-size: 11px;
     font-weight: 700;
-    color: #A50034;
-    background: rgba(165, 0, 52, 0.08);
-    border: 1px solid rgba(165, 0, 52, 0.16);
-    border-radius: 4px;
-    padding: 1px 6px;
-    pointer-events: none;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.ga-n {
-    font-size: 13.5px;
+.item-tag .ed-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.tag-burgundy {
+    color: #A50034;
+}
+.tag-burgundy .ed-dot {
+    background: #A50034;
+}
+
+.tag-gold {
+    color: #8C7853;
+}
+.tag-gold .ed-dot {
+    background: #C5A059;
+}
+
+.tag-silver {
+    color: #475569;
+}
+.tag-silver .ed-dot {
+    background: #64748B;
+}
+
+.item-main {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.item-name {
+    font-size: 26px;
     font-weight: 700;
     color: #0F172A;
-    letter-spacing: 0.18em;
-    pointer-events: none;
+    letter-spacing: -0.02em;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+    position: relative;
+    transition: all 0.2s ease;
 }
 
-/* --- Responsive Adjustments --- */
+.item-name:hover {
+    color: #A50034;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 2px;
+}
+
+.item-sub {
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 500;
+}
+
+.item-meta {
+    font-size: 14px;
+    color: #334155;
+    line-height: 1.6;
+    margin: 2px 0 6px 0;
+}
+
+.item-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #94A3B8;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    transition: color 0.2s ease;
+}
+
+.item-action:hover {
+    color: #A50034;
+}
+
+/* 2017년 2인 공동 수상 전용 분할 래퍼 */
+.dual-name-split-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 4px 0 8px 0;
+}
+
+.dual-btn-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(15, 23, 42, 0.02);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dual-btn-box:hover {
+    border-color: #A50034;
+    background: rgba(165, 0, 52, 0.04);
+}
+
+.dual-btn-box:hover .item-name {
+    color: #A50034;
+}
+
+.dual-sep-line {
+    width: 1px;
+    height: 28px;
+    background: rgba(15, 23, 42, 0.12);
+}
+
+/* ==========================================================================
+   하단: 전체 연도 아카이브 마스터 테이블 (Editorial Master Table)
+   ========================================================================== */
+.editorial-master-table-wrap {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 36px 40px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    margin-top: 40px;
+}
+
+.ed-table-header {
+    margin-bottom: 24px;
+}
+
+.ed-tbl-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: #8C7853;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.ed-tbl-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.ed-table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ed-minimal-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.ed-minimal-table th {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #475569;
+    padding: 14px 18px;
+    border-bottom: 2px solid #0F172A;
+    background: transparent;
+}
+
+.ed-minimal-table th .th-dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.th-dot.dot-burgundy { background: #A50034; }
+.th-dot.dot-gold { background: #C5A059; }
+.th-dot.dot-silver { background: #64748B; }
+
+.ed-minimal-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    color: #1E293B;
+    vertical-align: middle;
+}
+
+.ed-minimal-table tr:hover td {
+    background-color: rgba(165, 0, 52, 0.02);
+}
+
+.ed-minimal-table .col-yr {
+    font-family: 'Playfair Display', 'Cinzel', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+.ed-minimal-table .row-highlight td {
+    background-color: rgba(165, 0, 52, 0.03);
+}
+
+.ed-name-link {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.2s ease;
+}
+
+.ed-name-link:hover {
+    color: #A50034;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.ed-dual-split {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ed-dual-split span {
+    color: #CBD5E1;
+}
+
+/* ==========================================================================
+   패널 2: 역대 팀장 리더십 (18인 에디토리얼 스트림 그리드)
+   ========================================================================== */
+.ed-leaders-split-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+}
+
+.ed-stream-block {
+    background: #FFFFFF;
+    border-radius: 18px;
+    padding: 32px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.ed-stream-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    margin-bottom: 16px;
+}
+
+.ed-stream-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    margin: 0;
+}
+
+.ed-stream-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #8C7853;
+    text-transform: uppercase;
+}
+
+.ed-stream-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.ed-stream-row {
+    display: grid;
+    grid-template-columns: 140px 100px 1fr;
+    align-items: center;
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.ed-stream-row:last-child {
+    border-bottom: none;
+}
+
+.ed-stream-row:hover {
+    background-color: rgba(165, 0, 52, 0.02);
+}
+
+.ed-stream-row .ed-term {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #8C7853;
+}
+
+.ed-stream-row .ed-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: #0F172A;
+}
+
+.ed-stream-row .ed-cnt {
+    font-size: 13px;
+    color: #64748B;
+    text-align: right;
+}
+
+/* ==========================================================================
+   패널 3: 역대 대학원 간사 (35인 에디토리얼 그리드)
+   ========================================================================== */
+.ed-ga-container {
+    background: #FFFFFF;
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.ed-ga-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 36px auto;
+}
+
+.ed-ga-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 8px;
+}
+
+.ed-ga-sub {
+    font-size: 14px;
+    color: #64748B;
+    line-height: 1.5;
+}
+
+.ed-ga-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.ed-ga-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.02);
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    transition: all 0.2s ease;
+}
+
+.ed-ga-item:hover {
+    background: #FFFFFF;
+    border-color: rgba(165, 0, 52, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.ed-ga-item .ed-term {
+    font-size: 12px;
+    font-weight: 600;
+    color: #8C7853;
+}
+
+.ed-ga-item .ed-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #0F172A;
+}
+
+/* ==========================================================================
+   반응형 모바일 & 태블릿 스타일링
+   ========================================================================== */
 @media (max-width: 991px) {
-    .year-cards-row {
+    .editorial-split-layout {
         grid-template-columns: 1fr;
+        gap: 32px;
     }
-    .figma-stream-grid {
+
+    .editorial-year-index-col {
+        position: static;
+        padding: 16px;
+    }
+
+    .editorial-year-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .ed-year-item {
+        width: auto;
+        flex-shrink: 0;
+        padding: 8px 14px;
+        border-left: none;
+        border-bottom: 2px solid transparent;
+    }
+
+    .ed-year-item.active {
+        border-left-color: transparent;
+        border-bottom-color: #A50034;
+    }
+
+    .ed-year-item .ed-year-num {
+        font-size: 20px;
+    }
+
+    .ed-year-arrow {
+        display: none;
+    }
+
+    .editorial-display-col {
+        padding: 28px 24px;
+    }
+
+    .reveal-year-label {
+        font-size: 36px;
+    }
+
+    .item-name {
+        font-size: 22px;
+    }
+
+    .ed-leaders-split-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
     }
-    .figma-ga-grid {
+
+    .ed-ga-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-    .figma-category-nav {
-        flex-direction: column;
-        border-radius: 14px;
-        width: 100%;
-    }
-    .figma-cat-btn {
-        border-radius: 10px;
-        justify-content: center;
     }
 }
 
 @media (max-width: 640px) {
-    .figma-ga-grid {
+    .editorial-sub-nav {
+        flex-direction: column;
+        width: 100%;
+        border-radius: 16px;
+        padding: 6px;
+    }
+
+    .editorial-tab-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+
+    .ed-ga-grid {
         grid-template-columns: 1fr;
     }
-    .figma-title {
-        font-size: 26px;
+
+    .editorial-master-table-wrap {
+        padding: 24px 16px;
+    }
+
+    .ed-stream-row {
+        grid-template-columns: 120px 80px 1fr;
+        font-size: 13px;
     }
 }
+
 
 /* --------------------------------------------------------------------------
    5. About Section
