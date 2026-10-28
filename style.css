@@ -9457,3 +9457,56 @@ html[lang="en"] #contact .contact-desc {
     cursor: pointer !important;
     user-select: none;
 }
+
+
+/* ==========================================================================
+   [단일 배경 통일] 전 섹션 프리미엄 실크 오프화이트 (#F8F9FA) 원톤 캔버스 적용
+   - 기존 섹션마다 제각각이던 노란 베이지(#F4F2EB), 아이보리(#FAF9F6), 푸른 회색(#F1F5F9) 제거
+   - 눈부심 없는 중립 실크 화이트(#F8F9FA) 하나로 페이지 처음부터 끝까지 깔끔하게 통일
+   - 순백색(#FFFFFF) 카드들과 경희대 시그니처 버건디(#A50034)가 가장 깨끗하게 돋보이는 최적 명도(98%)
+   ========================================================================== */
+
+:root {
+    --color-bg-primary: #F8F9FA !important;
+    --color-bg-secondary: #F8F9FA !important;
+}
+
+html,
+body,
+#about,
+#pillars,
+#pillars.bg-dark-lighter,
+#dashboard,
+#dashboard.editorial-metric-section,
+#members,
+#awards,
+#awards.awards-stream-section,
+#donate,
+#donate.donate-minimal-section,
+#activities,
+#activities.activities-gallery-section,
+#contact,
+.bg-light,
+.bg-dark-lighter {
+    background: #F8F9FA !important;
+    background-color: #F8F9FA !important;
+    background-image: none !important;
+    clip-path: none !important;
+}
+
+/* 섹션 간 인위적인 배경 번짐(Glow) 및 불필요한 마진 단절 제거하여 하나의 캔버스로 연결 */
+#pillars {
+    margin: 0 !important;
+    padding: 100px 0 !important;
+}
+
+.metric-subtle-glow {
+    display: none !important;
+}
+
+#dashboard.editorial-metric-section,
+#activities.activities-gallery-section,
+#awards.awards-stream-section {
+    border-top: none !important;
+    border-bottom: none !important;
+}
