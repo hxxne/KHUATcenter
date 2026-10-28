@@ -1874,151 +1874,274 @@ body.no-scroll {
 }
 
 /* ==========================================================================
-   패널 2: 역대 팀장 리더십 (18인 에디토리얼 스트림 그리드)
+   선승관 AT 센터 - 역대 리더 & 대학원 졸업자 럭셔리 아카이브 디자인 시스템
    ========================================================================== */
+
+/* 0. 전역 이미지 드래그 고스트 차단 (마우스로 잡을 때 사진 모형 뜸 & 클릭 씹힘 원천 방지) */
+img, picture, svg, a, button {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* 1. 역대 리더 그리드 & 분과별 럭셔리 블록 */
 .ed-leaders-split-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
+    gap: 28px;
+}
+
+/* 3번째 분과(Research)는 단독으로 2열 전체를 세련되게 채우거나 조화롭게 배치 */
+.ed-leaders-split-grid .ed-stream-block:nth-child(3) {
+    grid-column: 1 / -1;
+    max-width: 620px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .ed-stream-block {
     background: #FFFFFF;
-    border-radius: 18px;
-    padding: 32px;
-    border: 1px solid rgba(15, 23, 42, 0.06);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border-radius: 20px;
+    padding: 32px 30px;
+    border: 1px solid rgba(140, 120, 83, 0.18);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.03);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
 }
 
+.ed-stream-block:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(15, 23, 42, 0.07);
+    border-color: rgba(165, 0, 52, 0.35);
+}
+
+/* 상단 분과별 컬러 액센트 탑 라인 */
+.ed-stream-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+.ed-stream-block:nth-child(1)::before {
+    background: linear-gradient(90deg, #A50034, #D1345B);
+}
+.ed-stream-block:nth-child(2)::before {
+    background: linear-gradient(90deg, #C5A059, #E5C378);
+}
+.ed-stream-block:nth-child(3)::before {
+    background: linear-gradient(90deg, #475569, #94A3B8);
+}
+
+/* 분과 헤더 (검은색 텍스트 없음, 엠블럼 아이콘 + 대형 영문 태그) */
 .ed-stream-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding-bottom: 16px;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-    margin-bottom: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+    margin-bottom: 20px;
 }
 
-.ed-stream-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #0F172A;
-    margin: 0;
+.leader-brand-wrap {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.leader-icon-badge {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    transition: transform 0.25s ease;
+}
+
+.ed-stream-block:hover .leader-icon-badge {
+    transform: scale(1.08) rotate(3deg);
+}
+
+.icon-at {
+    background: rgba(165, 0, 52, 0.08);
+    color: #A50034;
+    border: 1px solid rgba(165, 0, 52, 0.2);
+}
+
+.icon-rehab {
+    background: rgba(197, 160, 89, 0.12);
+    color: #8C7853;
+    border: 1px solid rgba(197, 160, 89, 0.25);
+}
+
+.icon-res {
+    background: rgba(71, 85, 105, 0.08);
+    color: #475569;
+    border: 1px solid rgba(71, 85, 105, 0.2);
 }
 
 .ed-stream-tag {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    color: #8C7853;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
 }
+.tag-burgundy { color: #A50034; }
+.tag-gold { color: #8C7853; }
+.tag-silver { color: #475569; }
 
+/* 리스트 아이템 행 */
 .ed-stream-list {
     display: flex;
     flex-direction: column;
+    gap: 4px;
 }
 
 .ed-stream-row {
-    display: grid;
-    grid-template-columns: 140px 100px 1fr;
-    align-items: center;
-    padding: 12px 14px;
-    border-bottom: 1px solid rgba(15, 23, 42, 0.05);
-    border-radius: 6px;
-    transition: background-color 0.2s ease;
-}
-
-.ed-stream-row:last-child {
-    border-bottom: none;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 16px !important;
+    border-radius: 10px !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    text-align: left !important;
+    font-family: inherit !important;
 }
 
 .ed-stream-row:hover {
-    background-color: rgba(165, 0, 52, 0.02);
+    background: rgba(165, 0, 52, 0.03) !important;
+    border-color: rgba(165, 0, 52, 0.12) !important;
+    transform: translateX(4px) !important;
 }
 
 .ed-stream-row .ed-term {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', monospace;
     font-size: 13px;
     font-weight: 700;
     color: #8C7853;
+    letter-spacing: 0.02em;
 }
 
 .ed-stream-row .ed-name {
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 15.5px;
+    font-weight: 800;
     color: #0F172A;
+    letter-spacing: 0.06em;
+    transition: color 0.2s ease;
 }
 
-.ed-stream-row .ed-cnt {
-    font-size: 13px;
-    color: #64748B;
-    text-align: right;
+.ed-stream-row:hover .ed-name {
+    color: #A50034;
 }
 
 /* ==========================================================================
-   패널 3: 역대 대학원 간사 (35인 에디토리얼 그리드)
+   2. 대학원 졸업자 (구 35인) 럭셔리 아카이브 카드 시스템
    ========================================================================== */
 .ed-ga-container {
     background: #FFFFFF;
-    border-radius: 20px;
-    padding: 40px;
-    border: 1px solid rgba(15, 23, 42, 0.06);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-}
-
-.ed-ga-header {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto 36px auto;
-}
-
-.ed-ga-title {
-    font-size: 22px;
-    font-weight: 700;
-    color: #0F172A;
-    margin-bottom: 8px;
-}
-
-.ed-ga-sub {
-    font-size: 14px;
-    color: #64748B;
-    line-height: 1.5;
+    border-radius: 24px;
+    padding: 44px 36px;
+    border: 1px solid rgba(140, 120, 83, 0.18);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.03);
+    position: relative;
 }
 
 .ed-ga-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 12px;
 }
 
 .ed-ga-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 18px;
-    border-radius: 8px;
-    background: rgba(15, 23, 42, 0.02);
-    border: 1px solid rgba(15, 23, 42, 0.04);
-    transition: all 0.2s ease;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 12px 16px !important;
+    border-radius: 12px !important;
+    background: #FAF8F5 !important;
+    border: 1px solid rgba(15, 23, 42, 0.06) !important;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    cursor: pointer !important;
+    font-family: inherit !important;
+    width: 100% !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
 }
 
 .ed-ga-item:hover {
-    background: #FFFFFF;
-    border-color: rgba(165, 0, 52, 0.2);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    background: #FFFFFF !important;
+    border-color: rgba(165, 0, 52, 0.3) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06) !important;
 }
 
-.ed-ga-item .ed-term {
+.ed-ga-item .gt {
+    font-family: 'Inter', monospace;
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     color: #8C7853;
+    background: #FFFFFF;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(140, 120, 83, 0.2);
+    letter-spacing: 0.02em;
 }
 
-.ed-ga-item .ed-name {
-    font-size: 14px;
+.ed-ga-item .gb {
+    font-size: 11.5px;
     font-weight: 700;
+    color: #A50034;
+    background: rgba(165, 0, 52, 0.07);
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin: 0 8px;
+}
+
+.ed-ga-item .gn {
+    font-size: 15px;
+    font-weight: 800;
     color: #0F172A;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+}
+
+.ed-ga-item:hover .gn {
+    color: #A50034;
+}
+
+/* 반응형 태블릿/모바일 */
+@media (max-width: 992px) {
+    .ed-leaders-split-grid {
+        grid-template-columns: 1fr;
+    }
+    .ed-leaders-split-grid .ed-stream-block:nth-child(3) {
+        max-width: 100%;
+    }
+    .ed-ga-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .ed-ga-grid {
+        grid-template-columns: 1fr;
+    }
+    .ed-ga-container {
+        padding: 28px 20px;
+    }
+    .ed-stream-block {
+        padding: 24px 20px;
+    }
 }
 
 /* ==========================================================================

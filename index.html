@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261028_carousel_perfect_v3">
+    <link rel="stylesheet" href="style.css?v=20261028_leaders_luxury_v4">
 </head>
 <body>
 
@@ -2086,16 +2086,18 @@
                 <div class="stream-divider-bar"></div>
                 <div class="stream-sub-header text-center">
                     <span class="stream-sub-tag">LEADERSHIP ARCHIVE</span>
-                    <h3 class="stream-sub-title">선승관 AT 센터 역대 팀장 리더십 (18인)</h3>
-                    <p class="stream-sub-desc">각 분과를 이끌며 센터의 학술 연구와 임상 현장 실무를 총괄해 온 역대 팀장 명단입니다.</p>
+                    <h3 class="stream-sub-title">역대 리더</h3>
+                    <p class="stream-sub-desc">각 분과를 이끌며 센터의 학술 연구와 임상 현장 실무를 총괄해 온 역대 리더십 명단입니다.</p>
                 </div>
 
                 <div class="ed-leaders-split-grid">
                     <!-- 1. Athletic Training 팀장 (10인) -->
                     <div class="ed-stream-block">
-                        <div class="ed-stream-header">
-                            <span class="ed-stream-tag tag-burgundy">ATHLETIC TRAINING</span>
-                            <h4 class="ed-stream-title">선수트레이닝 팀장 <span class="ed-cnt">10인</span></h4>
+                        <div class="ed-stream-header leader-header-at">
+                            <div class="leader-brand-wrap">
+                                <div class="leader-icon-badge icon-at"><i class="fa-solid fa-medal"></i></div>
+                                <span class="ed-stream-tag tag-burgundy">ATHLETIC TRAINING</span>
+                            </div>
                         </div>
                         <div class="ed-stream-list">
                             <button type="button" class="ed-stream-row" onclick="openAlumniModal('한승욱', 'Athletic Training 팀장 (2015.03 — 2017.02)')"><span class="ed-term">2015.03 — 2017.02</span><span class="ed-name">한  승  욱</span></button>
@@ -2113,9 +2115,11 @@
 
                     <!-- 2. Rehabilitation 팀장 (7인) -->
                     <div class="ed-stream-block">
-                        <div class="ed-stream-header">
-                            <span class="ed-stream-tag tag-gold">REHABILITATION</span>
-                            <h4 class="ed-stream-title">스포츠재활 팀장 <span class="ed-cnt">7인</span></h4>
+                        <div class="ed-stream-header leader-header-rehab">
+                            <div class="leader-brand-wrap">
+                                <div class="leader-icon-badge icon-rehab"><i class="fa-solid fa-heart-pulse"></i></div>
+                                <span class="ed-stream-tag tag-gold">REHABILITATION</span>
+                            </div>
                         </div>
                         <div class="ed-stream-list">
                             <button type="button" class="ed-stream-row" onclick="openAlumniModal('장휘수', 'Rehabilitation 팀장 (2016.03 — 2018.02)')"><span class="ed-term">2016.03 — 2018.02</span><span class="ed-name">장  휘  수</span></button>
@@ -2130,9 +2134,11 @@
 
                     <!-- 3. Research 팀장 (1인) -->
                     <div class="ed-stream-block">
-                        <div class="ed-stream-header">
-                            <span class="ed-stream-tag tag-silver">RESEARCH</span>
-                            <h4 class="ed-stream-title">연구기획 팀장 <span class="ed-cnt">1인</span></h4>
+                        <div class="ed-stream-header leader-header-res">
+                            <div class="leader-brand-wrap">
+                                <div class="leader-icon-badge icon-res"><i class="fa-solid fa-microscope"></i></div>
+                                <span class="ed-stream-tag tag-silver">RESEARCH</span>
+                            </div>
                         </div>
                         <div class="ed-stream-list">
                             <button type="button" class="ed-stream-row" onclick="openAlumniModal('임준형', 'Research 팀장 (2024.03 — 2025.12)')"><span class="ed-term">2024.03 — 2025.12</span><span class="ed-name">임  준  형</span></button>
@@ -2148,8 +2154,8 @@
                 <div class="stream-divider-bar"></div>
                 <div class="stream-sub-header text-center">
                     <span class="stream-sub-tag">GRADUATE DIRECTORY</span>
-                    <h3 class="stream-sub-title">선승관 AT 센터 역대 대학원 임상 간사 및 조교진 (35인)</h3>
-                    <p class="stream-sub-desc">각 체육부 종목별 전담 케어 및 센터 행정·연구를 지원한 헌액 명단입니다.</p>
+                    <h3 class="stream-sub-title">대학원 졸업자</h3>
+                    <p class="stream-sub-desc">선승관 AT 센터에서 학술 연구와 임상 현장 수련을 완수한 대학원 졸업 동문 명단입니다.</p>
                 </div>
 
                 <div class="ed-ga-container">
@@ -5199,6 +5205,21 @@
                 }, { passive: true });
             }
         });
+
+        // ============================================================
+        // 🛡️ 사진 모형 잔상 및 클릭 씹힘 원천 방지 (이미지 드래그 차단)
+        // ============================================================
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG' || e.target.closest('img')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // 원치 않는 사진 확대 팝업(라이트박스)으로 인한 클릭 가로챔 방지
+        window.openPhotoLightbox = function() {
+            return false;
+        };
 
         window.closeAlumniModal = function() {
         const modal = document.getElementById('alumni-modal');
