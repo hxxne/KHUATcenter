@@ -9381,3 +9381,79 @@ html[lang="en"] #contact .contact-desc {
     word-spacing: 0.5px;
     line-height: 1.65;
 }
+
+
+/* ==========================================================================
+   [버그 픽스] 인물 카드 클릭 씹힘 / 투명 모달 오버레이 클릭 가로챔 원천 차단
+   ========================================================================== */
+
+/* 1. 닫히는 중이거나 비활성화된 모든 모달 오버레이가 마우스 클릭을 가로채지 못하도록 강제 차단 */
+.modal-overlay:not(.show),
+.activity-lightbox:not(.show),
+#alumni-modal:not(.show),
+#prof-modal:not(.show),
+#department-modal:not(.show),
+#pillar-detail-modal:not(.show),
+#research-modal:not(.show) {
+    pointer-events: none !important;
+}
+
+.modal-overlay.show,
+.activity-lightbox.show,
+#alumni-modal.show,
+#prof-modal.show,
+#department-modal.show,
+#pillar-detail-modal.show,
+#research-modal.show {
+    pointer-events: auto !important;
+}
+
+/* 2. 06 AT 센터 보조 (.assistant-person-item) 전 인원 클릭 활성화 및 호버 피드백 */
+.assistant-person-item {
+    cursor: pointer !important;
+    user-select: none;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 10px;
+    padding: 4px 2px;
+}
+
+.assistant-person-item:hover {
+    transform: translateY(-3px);
+    background-color: rgba(165, 0, 52, 0.05);
+}
+
+.assistant-person-item:hover .assistant-avatar-box {
+    border-color: #A50034 !important;
+    box-shadow: 0 4px 12px rgba(165, 0, 52, 0.18);
+}
+
+.assistant-person-item:hover .assistant-person-name {
+    color: #A50034;
+    font-weight: 800;
+}
+
+/* 3. 체육부 상세 모달 내 보조 AT 배지 (.assistant-badge) 전원 클릭 활성화 */
+.assistant-badge {
+    cursor: pointer !important;
+    user-select: none;
+    transition: all 0.2s ease;
+}
+
+.assistant-badge:hover {
+    background: #A50034 !important;
+    color: #ffffff !important;
+    border-color: #A50034 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(165, 0, 52, 0.2);
+}
+
+/* 4. 모든 인물 카드 클릭 영역 안정화 (드래그나 자식 태그로 인한 클릭 유실 방지) */
+.modern-profile-card,
+.award-stream-card,
+.ga-card,
+.ed-person-card,
+.ed-leader-card,
+.head-at-profile {
+    cursor: pointer !important;
+    user-select: none;
+}

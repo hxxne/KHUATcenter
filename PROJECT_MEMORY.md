@@ -2350,3 +2350,28 @@ Observation 100시간 실무 과정,
      - **발전기금 (`#donate`):** `.dh-desc`에 걸려 있던 `white-space: nowrap`을 영문 모드에서 `normal` (`max-width: 780px`)로 해제하여 화면 양옆으로 문장이 잘리던 현상 해결.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+---
+
+## 🛠️ 60. 인물 카드 간헐적 클릭 먹통 / 무반응 버그 5대 원인 정밀 진단 및 완벽 해결 (2026-10-28)
+- **사용자 요청:**
+  - *"이거 화면 가끔씩 사람 클릭 못하는거 이거 버그 뭐야? 고쳐줘"*
+- **5대 근본 원인(Root Causes) 진단 및 해결 내역 (`index.html`, `style.css`, `i18n.js`):**
+  1. **모달 닫기 `setTimeout` 타이머 충돌(Race Condition) 및 투명 오버레이 클릭 가로챔 차단:**
+     - **원인:** 인물 모달(`#prof-modal`, `#department-modal` 등)을 닫고 0.3초(300ms) 이내에 다른 사람을 클릭하면, 이전 닫기 함수의 `setTimeout(() => { modal.style.display = 'none'; }, 300)`이 뒤늦게 실행되어 새로 열린 모달을 꺼버리거나 투명한 `.modal-overlay:not(.show)`가 화면 전체(`z-index: 9999`)를 덮어 마우스 클릭을 가로채던 현상.
+     - **해결:** `window.profModalTimer`, `window.deptModalTimer`, `window.lightboxModalTimer`, `window.researchModalTimer`를 추적하여 모달 오픈 시 이전 닫기 타이머를 즉시 `clearTimeout`하고, `style.css`에서 `.modal-overlay:not(.show)` 및 비활성 모달에 `pointer-events: none !important;`를 강제 적용.
+  2. **`.modern-profile-card` 이중 클릭 이벤트(Double Firing) 제거:**
+     - **원인:** HTML 인라인 `onclick="openProfModal(this)"`와 하단 스크립트의 `card.addEventListener('click', () => window.openProfModal(card))`가 중복 등록되어 한 번 클릭할 때마다 `openProfModal`이 2번 연속 실행되던 문제.
+     - **해결:** 중복 `addEventListener`를 제거하고 인라인 `onclick` 단일 호출로 일원화.
+  3. **`06 AT 센터 보조` (49명) 및 부서 모달 내 보조 AT 배지 클릭 먹통 완벽 해결:**
+     - **원인:** `06 AT 센터 보조`의 사진 있는 9명은 `onclick="openPhotoLightbox(...)"`로 연결되어 있었으나 하단 스크립트의 `window.openPhotoLightbox = function() { return false; };` 오버라이드로 인해 클릭이 완전히 무효화되어 있었고, 나머지 40명은 클릭 이벤트가 아예 없었음.
+     - **해결:** `return false` 오버라이드를 제거하고, `06 AT 센터 보조`의 49개 `.assistant-person-item` 전원 및 부서 모달 내 `.assistant-badge` 전원에 `openProfModal` 클릭 이벤트를 연결. `findAssistantSportDept()` 헬퍼를 추가하여 개별 상세 데이터가 없는 학부 보조 AT 클릭 시에도 소속 운동부(`축구부 보조 AT` 등)가 자동 매칭된 프로필 모달이 열리도록 구현.
+  4. **직함·괄호 포함 인물(`최현곤 재활팀장`, `이재욱 연구팀장`, `조연지 (회장)`, `이도형 (부회장)`, `홍진후 (총무)`) 이름 파싱 오류 수정:**
+     - **원인:** 기존 정규식 `rawName.replace(/(교수|팀장|실장)$/, '')`이 `"최현곤 재활"`, `"이재욱 연구"`, `"조연지 (회장)"`으로 이름을 남겨 `professorsData` 매칭에 실패하던 버그.
+     - **해결:** 괄호(`(...)`)와 한·영 직함 키워드를 모두 제거하고 공백을 정리하여 순수 성명(`cleanName`)으로 100% 정확히 매칭되도록 개선.
+  5. **`#awards` 역대 수상자 캐러셀 호버 중 자동 슬라이드 타이머 재시작 방지:**
+     - **원인:** 캐러셀 위에 마우스를 올린 채로 연도 탭(`2024`, `2023` 등)이나 화살표를 클릭하면 `goToAwardSlide`가 `startAwardAutoplay()`를 재가동하여, 인물을 클릭하려는 순간 슬라이드가 다른 연도로 넘어가 버리던 현상.
+     - **해결:** `isAwardCarouselHovered` 상태 변수를 도입하여 마우스가 캐러셀 내부에 머무는 동안에는 절대 자동 슬라이드 타이머가 켜지지 않도록 보호.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.

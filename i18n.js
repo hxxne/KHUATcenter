@@ -639,6 +639,8 @@
             .replace(/학사과정/g, 'Undergraduate')
             .replace(/학사 졸업/g, 'B.S. Graduate')
             .replace(/석사 졸업/g, 'M.S. Graduate')
+            .replace(/학부 연구생 \/ 보조 AT/g, 'Undergraduate Student / Assistant AT')
+            .replace(/선수 케어 및 필드 의무지원/g, 'Athlete Care & Field Medical Support')
             .replace(/재학생/g, 'Undergraduate Student');
     }
 
@@ -998,6 +1000,7 @@
                     '학위명': 'Degree',
                     '최종학력': 'Alma Mater',
                     '담당과목': 'Courses / Topic',
+                    '담당부서': 'Department / Team',
                     '연구실': 'Office / Lab',
                     '학과': 'Department',
                     '학년': 'Class / Year',
@@ -1007,6 +1010,9 @@
                     '연구주제': 'Research Topic',
                     '보유자격': 'Certifications',
                     '소속': 'Affiliation',
+                    '소속과정': 'Program / Role',
+                    '소속학과': 'Department',
+                    '위치/연락처': 'Location / Tel',
                     '직책': 'Position'
                 };
 
