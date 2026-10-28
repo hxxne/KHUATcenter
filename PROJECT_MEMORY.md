@@ -2237,16 +2237,18 @@ Observation 100시간 실무 과정,
      - 원치 않는 사진 확대창으로 인한 화면 가로챔 방지를 위해 `openPhotoLightbox` 안전 무력화.
 ---
 
-## 🎠 54. 역대 수상자 슬라이드쇼 자동 넘김(Autoplay) 및 카운터 문구 정돈 (2026-10-28)
+## 🎠 54. 역대 수상자 슬라이드쇼 자동 넘김(Autoplay) 및 카운터/기록연도 완전 제거 (2026-10-28)
 - **사용자 요청:**
   - *"11개년 공식 아카이브 이 말 빼주고 수상자 2025 2024 일정 시간 되면 슬라이드 쇼처럼 자동으로 넘어갈 수 있게"*
+  - *"기록연도 없애도 될거 같아"*
 - **핵심 개선 내역:**
-  1. **슬라이더 카운터 문구 정돈 (`index.html`):**
-     - 수상자 캐러셀 하단 카운터에서 ` / 11개년 공식 아카이브` 텍스트를 제거하고 `<span class="counter-label">기록 연도:</span> <strong id="awardSlideCurrentYear" class="counter-year">2025</strong>`만 깔끔하게 노출하도록 간결화.
+  1. **슬라이더 카운터 및 '기록 연도' 완전 제거 (`index.html`, `style.css`):**
+     - 상단 연도 필(Pill)과 카드 헤더(`Honorees of 2025`)에 이미 연도가 명확히 표기되어 있으므로, 하단에 중복 노출되던 `<div class="award-carousel-counter">` 영역 전체를 깔끔하게 제거.
+     - 하단 컨트롤러(`award-carousel-footer`)를 `justify-content: center`로 변경하여 11개년 인디케이터 도트(`award-dot`)들이 카드 하단 정중앙에 단정하고 세련되게 정렬되도록 레이아웃 정돈.
   2. **일정 시간 자동 넘김(Autoplay Slideshow) 엔진 탑재 (`index.html`):**
      - `AWARD_AUTOPLAY_INTERVAL = 4500` (4.5초) 주기로 설정하여 방문자가 카드를 읽고 음미하기에 가장 적합한 템포로 자동 전환.
      - `startAwardAutoplay()` 및 `stopAwardAutoplay()` 함수를 통해 무한 루프 슬라이드쇼 자동 진행.
-     - 상단 연도 필(`award-year-pill`), 중앙 수상자 카드, 하단 인디케이터 도트(`award-dot`), 기록 연도 카운터가 4.5초마다 부드러운 페이드인과 함께 유기적으로 동기화 전환.
+     - 상단 연도 필(`award-year-pill`), 중앙 수상자 카드, 하단 인디케이터 도트(`award-dot`)가 4.5초마다 부드러운 페이드인과 함께 유기적으로 동기화 전환.
   3. **사용자 경험(UX) 배려 기능 (Smart Pause & Reset):**
      - **마우스 호버 시 일시 정지 (`mouseenter`):** 사용자가 특정 수상자의 프로필을 읽거나 클릭하려고 마우스를 올리면 슬라이드가 멈추어 화면이 갑자기 넘어가지 않도록 일시 정지 처리.
      - **마우스 이탈 시 자동 재개 (`mouseleave`):** 마우스가 슬라이더 영역을 벗어나면 즉시 슬라이드쇼가 재개됨.
