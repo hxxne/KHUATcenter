@@ -5147,13 +5147,21 @@
                 slide.classList.toggle('active', isActive);
             });
 
-            // 상단 연도 칩 활성화 상태 전환 및 뷰포트 내 중앙 스크롤 정렬
+            // 상단 연도 칩 활성화 상태 전환 및 연도 바 내부 가로 스크롤 정렬 (창 스크롤에 전혀 영향 주지 않음)
+            const pillsBar = document.getElementById('awardYearPillsBar');
             const pills = document.querySelectorAll('.award-year-pill');
             pills.forEach((pill, idx) => {
                 const isActive = idx === currentAwardSlideIndex;
                 pill.classList.toggle('active', isActive);
-                if (isActive) {
-                    pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                if (isActive && pillsBar) {
+                    // 부모 연도 바 내부의 가로 스크롤만 계산하여 정중앙으로 이동 (전체 페이지 수직 스크롤 100% 무영향)
+                    const pillLeft = pill.offsetLeft;
+                    const pillWidth = pill.offsetWidth;
+                    const barWidth = pillsBar.clientWidth;
+                    pillsBar.scrollTo({
+                        left: pillLeft - (barWidth / 2) + (pillWidth / 2),
+                        behavior: 'smooth'
+                    });
                 }
             });
 
