@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261028_awards_stream">
+    <link rel="stylesheet" href="style.css?v=20261028_carousel_perfect_v3">
 </head>
 <body>
 
@@ -1681,10 +1681,40 @@
                 <p class="section-subtitle editorial-subtitle">2015년부터 2025년까지 선승관 AT 센터를 빛낸 역대 학생 수상자 및 리더십 공식 헌액 기록입니다.</p>
             </div>
 
-            <!-- 2. 11개년 학생 수상자 순차 타임라인 스트림 (2025 -> 2015) -->
-            <div class="award-timeline-stream">
+                                    <!-- 2. 핵심사업 스타일 11개년 학생 수상자 캐러셀 슬라이더 (2025 -> 2015) -->
+            <div class="award-carousel-container">
+                
+                <!-- 상단 연도 컨트롤러 & 퀵 네비게이션 칩 바 -->
+                <div class="award-carousel-control-header">
+                    <button type="button" class="award-carousel-nav-btn btn-prev" onclick="moveAwardSlide(-1)" aria-label="이전 연도 수상자 보기" title="이전 연도 (최신순)">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
 
-                <!-- 2025 -->
+                    <div class="award-year-pills-bar" id="awardYearPillsBar">
+                        <button type="button" class="award-year-pill active" onclick="goToAwardSlide(0)">2025 <span class="pill-chip">NEW</span></button>
+                        <button type="button" class="award-year-pill" onclick="goToAwardSlide(1)">2024</button>
+                        <button type="button" class="award-year-pill" onclick="goToAwardSlide(2)">2023</button>
+                        <button type="button" class="award-year-pill" onclick="goToAwardSlide(3)">2022</button>
+                        <button type="button" class="award-year-pill" onclick="goToAwardSlide(4)">2021</button>
+                        <button type="button" class="award-year-pill" onclick="goToAwardSlide(5)">2020</button>
+                        <button type="button" class="award-year-pill" onclick="goToAwardSlide(6)">2019</button>
+                        <button type="button" class="award-year-pill" onclick="goToAwardSlide(7)">2018</button>
+                        <button type="button" class="award-year-pill" onclick="goToAwardSlide(8)">2017</button>
+                        <button type="button" class="award-year-pill" onclick="goToAwardSlide(9)">2016</button>
+                        <button type="button" class="award-year-pill" onclick="goToAwardSlide(10)">2015</button>
+                    </div>
+
+                    <button type="button" class="award-carousel-nav-btn btn-next" onclick="moveAwardSlide(1)" aria-label="다음 연도 수상자 보기" title="다음 연도 (과거순)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- 슬라이더 뷰포트 & 트랙 -->
+                <div class="award-carousel-viewport" id="awardCarouselViewport">
+                    <div class="award-carousel-track" id="awardCarouselTrack">
+                    <!-- Slide 0: 2025년 공식 수상자 -->
+                    <div class="award-carousel-slide active" data-year="2025" data-index="0" style="display: block;">
+                        <!-- 2025 -->
                 <div class="award-year-stream-block" id="award-year-2025">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2025</span>
@@ -1711,8 +1741,11 @@
                         </div>
                     </div>
                 </div>
+                    </div>
 
-                <!-- 2024 -->
+                    <!-- Slide 1: 2024년 공식 수상자 -->
+                    <div class="award-carousel-slide" data-year="2024" data-index="1" style="display: none;">
+                        <!-- 2024 -->
                 <div class="award-year-stream-block" id="award-year-2024">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2024</span>
@@ -1738,8 +1771,11 @@
                         </div>
                     </div>
                 </div>
+                    </div>
 
-                <!-- 2023 -->
+                    <!-- Slide 2: 2023년 공식 수상자 -->
+                    <div class="award-carousel-slide" data-year="2023" data-index="2" style="display: none;">
+                        <!-- 2023 -->
                 <div class="award-year-stream-block" id="award-year-2023">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2023</span>
@@ -1765,8 +1801,11 @@
                         </div>
                     </div>
                 </div>
+                    </div>
 
-                <!-- 2022 -->
+                    <!-- Slide 3: 2022년 공식 수상자 -->
+                    <div class="award-carousel-slide" data-year="2022" data-index="3" style="display: none;">
+                        <!-- 2022 -->
                 <div class="award-year-stream-block" id="award-year-2022">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2022</span>
@@ -1792,8 +1831,11 @@
                         </div>
                     </div>
                 </div>
+                    </div>
 
-                <!-- 2021 -->
+                    <!-- Slide 4: 2021년 공식 수상자 -->
+                    <div class="award-carousel-slide" data-year="2021" data-index="4" style="display: none;">
+                        <!-- 2021 -->
                 <div class="award-year-stream-block" id="award-year-2021">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2021</span>
@@ -1819,8 +1861,11 @@
                         </div>
                     </div>
                 </div>
+                    </div>
 
-                <!-- 2020 -->
+                    <!-- Slide 5: 2020년 공식 수상자 -->
+                    <div class="award-carousel-slide" data-year="2020" data-index="5" style="display: none;">
+                        <!-- 2020 -->
                 <div class="award-year-stream-block" id="award-year-2020">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2020</span>
@@ -1846,8 +1891,11 @@
                         </div>
                     </div>
                 </div>
+                    </div>
 
-                <!-- 2019 -->
+                    <!-- Slide 6: 2019년 공식 수상자 -->
+                    <div class="award-carousel-slide" data-year="2019" data-index="6" style="display: none;">
+                        <!-- 2019 -->
                 <div class="award-year-stream-block" id="award-year-2019">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2019</span>
@@ -1873,8 +1921,11 @@
                         </div>
                     </div>
                 </div>
+                    </div>
 
-                <!-- 2018 -->
+                    <!-- Slide 7: 2018년 공식 수상자 -->
+                    <div class="award-carousel-slide" data-year="2018" data-index="7" style="display: none;">
+                        <!-- 2018 -->
                 <div class="award-year-stream-block" id="award-year-2018">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2018</span>
@@ -1900,8 +1951,11 @@
                         </div>
                     </div>
                 </div>
+                    </div>
 
-                <!-- 2017 -->
+                    <!-- Slide 8: 2017년 공식 수상자 -->
+                    <div class="award-carousel-slide" data-year="2017" data-index="8" style="display: none;">
+                        <!-- 2017 -->
                 <div class="award-year-stream-block" id="award-year-2017">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2017</span>
@@ -1936,8 +1990,11 @@
                         </div>
                     </div>
                 </div>
+                    </div>
 
-                <!-- 2016 -->
+                    <!-- Slide 9: 2016년 공식 수상자 -->
+                    <div class="award-carousel-slide" data-year="2016" data-index="9" style="display: none;">
+                        <!-- 2016 -->
                 <div class="award-year-stream-block" id="award-year-2016">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2016</span>
@@ -1963,8 +2020,11 @@
                         </div>
                     </div>
                 </div>
+                    </div>
 
-                <!-- 2015 -->
+                    <!-- Slide 10: 2015년 공식 수상자 -->
+                    <div class="award-carousel-slide" data-year="2015" data-index="10" style="display: none;">
+                        <!-- 2015 -->
                 <div class="award-year-stream-block" id="award-year-2015">
                     <div class="award-year-row-header">
                         <span class="award-year-badge">2015</span>
@@ -1988,6 +2048,32 @@
                             <span class="award-stream-desc">올해의 신인상</span>
                             <span class="award-click-hint">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                <!-- 하단 인디케이터 도트 & 진행 카운터 -->
+                <div class="award-carousel-footer">
+                    <div class="award-carousel-dots" id="awardCarouselDots">
+                        <span class="award-dot active" onclick="goToAwardSlide(0)" title="2025년"></span>
+                        <span class="award-dot" onclick="goToAwardSlide(1)" title="2024년"></span>
+                        <span class="award-dot" onclick="goToAwardSlide(2)" title="2023년"></span>
+                        <span class="award-dot" onclick="goToAwardSlide(3)" title="2022년"></span>
+                        <span class="award-dot" onclick="goToAwardSlide(4)" title="2021년"></span>
+                        <span class="award-dot" onclick="goToAwardSlide(5)" title="2020년"></span>
+                        <span class="award-dot" onclick="goToAwardSlide(6)" title="2019년"></span>
+                        <span class="award-dot" onclick="goToAwardSlide(7)" title="2018년"></span>
+                        <span class="award-dot" onclick="goToAwardSlide(8)" title="2017년"></span>
+                        <span class="award-dot" onclick="goToAwardSlide(9)" title="2016년"></span>
+                        <span class="award-dot" onclick="goToAwardSlide(10)" title="2015년"></span>
+                    </div>
+                    <div class="award-carousel-counter">
+                        <span class="counter-label">기록 연도:</span>
+                        <strong id="awardSlideCurrentYear" class="counter-year">2025</strong>
+                        <span class="counter-sep">/</span>
+                        <span class="counter-total">11개년 공식 아카이브</span>
                     </div>
                 </div>
 
@@ -5039,7 +5125,82 @@
         document.body.style.overflow = 'hidden';
     };
 
-    window.closeAlumniModal = function() {
+    // ============================================================
+        // 🏆 역대 수상자 및 리더 캐러셀 슬라이더 컨트롤러 (2025 -> 2015)
+        // ============================================================
+        let currentAwardSlideIndex = 0;
+        const totalAwardSlides = 11;
+        const awardYearsList = [2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015];
+
+        window.goToAwardSlide = function(index) {
+            if (index < 0) index = 0;
+            if (index >= totalAwardSlides) index = totalAwardSlides - 1;
+            currentAwardSlideIndex = index;
+
+            // 핵심 사업 스타일: 활성화된 슬라이드만 block 표시 및 페이드 전환
+            const slides = document.querySelectorAll('.award-carousel-slide');
+            slides.forEach((slide, idx) => {
+                const isActive = idx === currentAwardSlideIndex;
+                slide.style.display = isActive ? 'block' : 'none';
+                slide.classList.toggle('active', isActive);
+            });
+
+            // 상단 연도 칩 활성화 상태 전환 및 뷰포트 내 중앙 스크롤 정렬
+            const pills = document.querySelectorAll('.award-year-pill');
+            pills.forEach((pill, idx) => {
+                const isActive = idx === currentAwardSlideIndex;
+                pill.classList.toggle('active', isActive);
+                if (isActive) {
+                    pill.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            });
+
+            // 하단 인디케이터 도트 활성화 상태 전환
+            const dots = document.querySelectorAll('.award-dot');
+            dots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === currentAwardSlideIndex);
+            });
+
+            // 카운터 연도 텍스트 갱신
+            const yearEl = document.getElementById('awardSlideCurrentYear');
+            if (yearEl) {
+                yearEl.textContent = awardYearsList[currentAwardSlideIndex];
+            }
+        };
+
+        window.moveAwardSlide = function(direction) {
+            let nextIndex = currentAwardSlideIndex + direction;
+            if (nextIndex < 0) nextIndex = totalAwardSlides - 1;
+            else if (nextIndex >= totalAwardSlides) nextIndex = 0;
+            window.goToAwardSlide(nextIndex);
+        };
+
+        // 모바일 터치 스와이프 리스너 등록
+        document.addEventListener('DOMContentLoaded', () => {
+            const viewport = document.getElementById('awardCarouselViewport');
+            if (viewport) {
+                let startX = 0;
+                let endX = 0;
+
+                viewport.addEventListener('touchstart', (e) => {
+                    startX = e.touches[0].clientX;
+                }, { passive: true });
+
+                viewport.addEventListener('touchend', (e) => {
+                    endX = e.changedTouches[0].clientX;
+                    const diffX = startX - endX;
+                    if (Math.abs(diffX) > 45) {
+                        if (diffX > 0) {
+                            window.moveAwardSlide(1); // 다음 연도
+                        } else {
+                            window.moveAwardSlide(-1); // 이전 연도
+                        }
+                    }
+                }, { passive: true });
+            }
+        });
+
+        window.closeAlumniModal = function() {
         const modal = document.getElementById('alumni-modal');
         if (modal) {
             modal.style.opacity = '0';

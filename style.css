@@ -798,6 +798,240 @@ body.no-scroll {
    ========================================================================== */
 
 /* ==========================================================================
+   KHU AT Center - Awards Section Bento Carousel Slider (Core Pillars Style)
+   ========================================================================== */
+
+.award-carousel-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* 1. 상단 컨트롤러 & 연도 칩 바 */
+.award-carousel-control-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.award-carousel-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(15, 23, 42, 0.12);
+    background: #FFFFFF;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.22s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    flex-shrink: 0;
+}
+
+.award-carousel-nav-btn:hover {
+    background: #A50034;
+    color: #FFFFFF;
+    border-color: #A50034;
+    transform: scale(1.06);
+    box-shadow: 0 4px 14px rgba(165, 0, 52, 0.25);
+}
+
+.award-carousel-nav-btn:active {
+    transform: scale(0.96);
+}
+
+.award-year-pills-bar {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 4px 2px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    flex: 1;
+    justify-content: center;
+}
+
+.award-year-pills-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.award-year-pill {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(15, 23, 42, 0.09);
+    background: #FFFFFF;
+    color: #64748B;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: inherit;
+}
+
+.award-year-pill:hover {
+    color: #0F172A;
+    background: #F8FAFC;
+    border-color: rgba(140, 120, 83, 0.35);
+}
+
+.award-year-pill.active {
+    background: #0F172A;
+    color: #FFFFFF;
+    border-color: #0F172A;
+    box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18);
+}
+
+.award-year-pill .pill-chip {
+    font-size: 9px;
+    font-weight: 800;
+    background: #A50034;
+    color: #FFFFFF;
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    line-height: 1;
+}
+
+.award-year-pill.active .pill-chip {
+    background: #C5A059;
+    color: #0F172A;
+}
+
+/* 2. 슬라이더 뷰포트 & 트랙 */
+.award-carousel-viewport {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    min-height: 380px;
+}
+
+.award-carousel-track {
+    width: 100%;
+    position: relative;
+}
+
+.award-carousel-slide {
+    display: none;
+    opacity: 0;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 36px 40px 40px 40px;
+    animation: awardSlideFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.award-carousel-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+@keyframes awardSlideFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.award-carousel-slide .award-year-stream-block {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+}
+
+/* 3. 하단 컨트롤러 & 인디케이터 도트 */
+.award-carousel-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+    padding: 0 10px;
+}
+
+.award-carousel-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.award-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(15, 23, 42, 0.16);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.award-dot:hover {
+    background: rgba(15, 23, 42, 0.38);
+}
+
+.award-dot.active {
+    width: 28px;
+    background: #A50034;
+    border-radius: 4px;
+}
+
+.award-carousel-counter {
+    font-size: 13.5px;
+    color: #64748B;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.counter-year {
+    color: #A50034;
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+}
+
+.counter-sep {
+    color: #CBD5E1;
+}
+
+.counter-total {
+    font-size: 13px;
+    color: #94A3B8;
+}
+
+/* 반응형 모바일 최적화 */
+@media (max-width: 768px) {
+    .award-carousel-slide {
+        padding: 24px 20px 28px 20px;
+    }
+    .award-year-pills-bar {
+        justify-content: flex-start;
+    }
+    .award-carousel-footer {
+        flex-direction: column;
+        gap: 14px;
+        align-items: center;
+    }
+}
+
+/* ==========================================================================
    KHU AT Center - Awards Section (2025 -> 2015 Sequential Stream & Unified Archive)
    Design System: Editorial Timeline Stream, Unified Roster Flow, Luxury Museum Archive
    ========================================================================== */
