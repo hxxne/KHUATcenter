@@ -1961,20 +1961,14 @@
                         <span class="award-year-badge">2017</span>
                     </div>
                     <div class="award-year-cards-grid">
-                        <div class="award-stream-card card-coty-dual">
+                        <div class="award-stream-card card-coty" onclick="openAlumniModal('조재희, 양창욱', '2017 AT Student of the Year (공동 수상)')">
                             <span class="award-pill pill-gold">AT STUDENT OF THE YEAR (공동 수상)</span>
-                            <div class="dual-stream-split">
-                                <button type="button" class="dual-stream-btn" onclick="openAlumniModal('조재희', '2017 AT Student of the Year (공동 수상)')">
-                                    <h3 class="award-stream-name">조  재  희</h3>
-                                    <span class="dual-btn-link">프로필 <i class="fa-solid fa-arrow-right"></i></span>
-                                </button>
-                                <span class="dual-mid-divider"></span>
-                                <button type="button" class="dual-stream-btn" onclick="openAlumniModal('양창욱', '2017 AT Student of the Year (공동 수상)')">
-                                    <h3 class="award-stream-name">양  창  욱</h3>
-                                    <span class="dual-btn-link">프로필 <i class="fa-solid fa-arrow-right"></i></span>
-                                </button>
+                            <div class="award-stream-name-dual">
+                                <h3 class="dual-name-row" onclick="event.stopPropagation(); openAlumniModal('조재희', '2017 AT Student of the Year (공동 수상)')">조  재  희</h3>
+                                <h3 class="dual-name-row" onclick="event.stopPropagation(); openAlumniModal('양창욱', '2017 AT Student of the Year (공동 수상)')">양  창  욱</h3>
                             </div>
                             <span class="award-stream-desc">올해의 AT 최우수 학생상</span>
+                            <span class="award-click-hint">프로필 보기 <i class="fa-solid fa-arrow-right"></i></span>
                         </div>
                         <div class="award-stream-card card-insp" onclick="openAlumniModal('조유진', '2017 Inspiration')">
                             <span class="award-pill pill-burgundy">INSPIRATION</span>

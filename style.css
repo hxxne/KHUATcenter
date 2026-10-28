@@ -1172,6 +1172,30 @@ body.no-scroll {
     letter-spacing: 0.08em;
 }
 
+/* 2인 공동 수상자 (조재희, 양창욱) 두 줄 세로 정렬 스타일 */
+.award-stream-name-dual {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 0 8px 0;
+}
+
+.award-stream-name-dual .dual-name-row {
+    font-size: 21px;
+    font-weight: 800;
+    color: #0F172A;
+    margin: 0;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+    transition: color 0.2s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.award-stream-name-dual .dual-name-row:hover {
+    color: #A50034;
+    transform: translateX(3px);
+}
+
 .award-stream-desc {
     font-size: 13.5px;
     color: #475569;
