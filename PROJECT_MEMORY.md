@@ -2111,3 +2111,49 @@ Observation 100시간 실무 과정,
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
 
+---
+
+## 🏛️ 49. Squarespace 피트니스 코칭 템플릿('Core Movement') 1:1 형태·디자인 기반 신규 독립형 웹페이지(standalone_squarespace.html) 구축 (2026-10-28)
+- **사용자 요청:**
+  - *"방금 올려준 사진 squarespace 그냥 저 형태, 디자인을 유지하고 내용만 참고해서 새롭게 구성해줘 이것도 독립적으로"*
+- **핵심 요구사항 및 레퍼런스 이미지 분석 ([assets/squarespace_ref.webp](file:///c:/Users/LG/OneDrive/바탕%20화면/AI/khu-at-center/assets/squarespace_ref.webp)):**
+  - 바탕화면에 저장된 Squarespace 피트니스 & 헬스 코칭 템플릿(`CORE MOVEMENT`)의 시각적 형태와 레이아웃을 100% 동일하게 복원.
+  - 고대비 대형 투톤 타이포그래피(`FITNESS + HEALTH COACHING`), 비대칭 스플릿 블랙/이미지 블록, 웜 샌드 베이지 배경의 3열 세로 카드, 2열 삼각형 불릿 목록의 코치 스포트라이트, `KIND WORDS` 인용 캐러셀, `PROVEN RESULTS` 3열 화이트 스탯, 회전 스탬프 배지가 달린 상담 폼, 6열 인스타그램 피드 및 무한 롤링 텍스트 마퀴 리본을 체계적으로 구현.
+- **주요 구현 내역:**
+  1. **헤더 & 히어로 (Header & Hero):**
+     - 브랜드: `KYUNG HEE AT CENTER` (ATHLETIC TRAINING & SPORTS MEDICINE)
+     - 8대 네비게이션 및 둥근 CTA 버튼 (`CONSULTATION`)
+     - 풀블리드 히어로 배경 & 투톤 대형 타이포그래피 (`ATHLETIC TRAINING + SPORTS MEDICINE FOR ELITE PERFORMANCE`)
+  2. **비대칭 스플릿 블록 1 (Split Image & Dark Box):**
+     - 좌측: 체육부 의무지원 현장 실물 사진
+     - 우측: 올블랙 박스 (`EVIDENCE-BASED SPORTS MEDICINE` 키커 + `SPECIALIZED REHAB & ATHLETIC TRAINING` + 선승관 B1 소개)
+  3. **미니멀 인트로 & 워터마크 영문 배경 (Innovate Intro):**
+     - 웜 샌드 라이트 배경, 투톤 타이틀 (`INNOVATIVE SPORTS SCIENCE FOR ATHLETIC HEALTH`)
+     - 뒷배경 초대형 은은한 워터마크 텍스트: `KHU AT CENTER`
+  4. **3열 카드 쇼케이스 (3 Column Core Pillars):**
+     - 웜 샌드 배경, 3대 핵심 사업(01. EDUCATION, 02. RESEARCH, 03. SERVICE) 정방형 실물 사진 카드 & 블랙 버튼
+  5. **코치 & 디렉터 스포트라이트 (Split Black & Light Grid):**
+     - 좌측: 올블랙 카드, 삼각형 불릿(▶) 2열 리스트 (박지홍 센터장, 오성민 교수, 김준영 실장, 최현곤 팀장, 이재욱 팀장, 12개 체육부 전담 AT)
+     - 우측: 웜 샌드 배경의 교수진/스태프 고화질 사진
+  6. **명예의 전당 인용 캐러셀 (Hall of Fame 2025 / Kind Words):**
+     - 웜 샌드 배경, 원형 아바타, 좌우 화살표 원형 버튼, 최신 헌액자(유승아, 유주승, 조연지) 소감 및 인터랙티브 슬라이더
+  7. **누적 기록 3열 스탯 박스 (Proven Results):**
+     - `15,000+` 선수 부상 & 케어 / `82` 기본 교육 이수 (명) / `63` 학술 연구 논문 (편)
+  8. **체육부 전담팀 스플릿 블록 2 (Split Image & Dark Box):**
+     - 좌측: 럭비부 등 체육부 케어 실물 사진
+     - 우측: 올블랙 박스 (`EXPERT ATHLETIC TRAINERS FOR 12 VARSITY TEAMS`)
+  9. **무료 상담 & 문의 폼 (Consultation Form & Rotating Stamp):**
+     - 좌측: 성명, 소속 구분, 연락처, 상담 유형, 이메일 입력 폼
+     - 우측: 실물 케어 사진 + 우상단 360도 무한 회전 스탬프 배지 (`★ KHU AT CENTER • EST. 2015 ★`)
+  10. **파이널 CTA (Embrace Your Journey):**
+      - 퓨어 화이트 배경, 투톤 타이틀 (`EMBRACE YOUR ATHLETIC JOURNEY`) & 라운드 알약 버튼
+  11. **6열 인스타그램 피드 & 무한 롤링 텍스트 마퀴 & 푸터:**
+      - 6열 정방형 실물 활동사진 그리드
+      - 무한 스크롤 마퀴 리본 (`@KHUATCENTER INSTAGRAM • ATHLETIC TRAINING CENTER • ...`)
+      - 선승관 AT 센터 B1 공식 푸터
+- **완전 독립 완결성:**
+  - 메인 사이트(`index.html`, `style.css`)는 100% 안전 보존, 신규 파일 `standalone_squarespace.html`로 단독 완결.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
