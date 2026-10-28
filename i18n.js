@@ -37,10 +37,10 @@
         { selector: '#mobile-nav-drawer .mobile-menu a[href="#pillars"]', en: '<i class="fa-solid fa-layer-group"></i> Core Pillars' },
         { selector: '#mobile-nav-drawer .mobile-menu a[href="#dashboard"]', en: '<i class="fa-solid fa-chart-line"></i> AT Center Milestones' },
         { selector: '#mobile-nav-drawer .mobile-menu a[href="#members"]', en: '<i class="fa-solid fa-users"></i> Members' },
-        { selector: '#mobile-nav-drawer .mobile-menu a[href="#awards"]', en: '<i class="fa-solid fa-award"></i> Hall of Fame & Leaders' },
+        { selector: '#mobile-nav-drawer .mobile-menu a[href="#awards"]', en: '<i class="fa-solid fa-award"></i> Hall of Fame &amp; Leaders' },
         { selector: '#mobile-nav-drawer .mobile-menu a[href="#donate"]', en: '<i class="fa-solid fa-hand-holding-heart"></i> Development Fund' },
         { selector: '#mobile-nav-drawer .mobile-menu a[href="#activities"]', en: '<i class="fa-solid fa-camera"></i> Activity Gallery' },
-        { selector: '#mobile-nav-drawer .mobile-menu a[href="#contact"]', en: '<i class="fa-regular fa-paper-plane"></i> Consultation & Inquiry' },
+        { selector: '#mobile-nav-drawer .mobile-menu a[href="#contact"]', en: '<i class="fa-regular fa-paper-plane"></i> Consultation &amp; Inquiry' },
         { selector: '#mobile-nav-drawer .mobile-menu a.insta-link', en: '<i class="fa-brands fa-instagram" style="color: #E1306C;"></i> Official Instagram (@khuatcenter)' },
         { selector: '#mobile-nav-drawer .mobile-drawer-footer p:first-child', en: 'AT Center (B1), Seonseung-gwan, KHU Global Campus' },
 
@@ -51,25 +51,25 @@
         },
         {
             selector: '#hero .hero-description',
-            en: 'Located at the Kyung Hee University Global Campus, the Athletic Training Center<br>integrates professional sports medicine education, clinical care for student-athletes,<br>and scientific research to deliver the highest standard of care.'
+            en: 'Located at Kyung Hee University Global Campus, the Athletic Training Center<br>integrates sports medicine education, clinical care, and scientific research.'
         },
         { selector: '#hero .hero-actions a[href="#pillars"]', en: 'Explore Core Pillars' },
         { selector: '#hero .hero-actions a[href="#contact"]', en: 'Book a Consultation' },
 
         // [센터 소개 섹션 (#about)]
         { selector: '#about .section-title', en: 'About the Center' },
-        { selector: '#about .section-subtitle', en: 'A Practical Sports Medicine Hub for Athletic Performance & Faculty Wellness' },
+        { selector: '#about .section-subtitle', en: 'A Practical Sports Medicine Hub for Athletic Performance &amp; Campus Wellness' },
         {
             selector: '#about .about-hero-caption',
             en: '<i class="fa-solid fa-location-dot" style="color: #f87171; margin-right: 4px;"></i> Kyung Hee University Global Campus Open-Air Theater'
         },
         {
             selector: '#about .about-lead',
-            en: 'Located in Seonseung-gwan, the <strong>Athletic Training Center (AT Center)</strong> is a practical academic and sports care space<br class="pc-br"> operated by graduate researchers and undergraduate staff of the College of Physical Education\'s Athletic Training club.'
+            en: 'Located in Seonseung-gwan, the <strong>Athletic Training Center (AT Center)</strong> is a practical sports medicine space<br class="pc-br"> operated by graduate researchers and undergraduate staff of the College of Physical Education.'
         },
         {
             selector: '#about .about-detail',
-            en: 'We provide specialized conditioning and rehabilitation services for varsity student-athletes, faculty, staff, and general students,<br class="pc-br"> advancing sports medicine excellence through the organic synergy of <span class="highlight-word">Education</span>, <span class="highlight-word">Research</span>, and <span class="highlight-word">Service</span>.'
+            en: 'We provide specialized conditioning and rehabilitation for varsity student-athletes, faculty, and students,<br class="pc-br"> advancing sports medicine through the synergy of <span class="highlight-word">Education</span>, <span class="highlight-word">Research</span>, and <span class="highlight-word">Service</span>.'
         },
 
         // [핵심 사업 섹션 (#pillars)]
@@ -78,20 +78,20 @@
 
         // Pillar 1: Education
         { selector: '.bento-card-edu .bento-title', en: 'Education' },
-        { selector: '.bento-card-edu .bento-subtitle', en: 'Nurturing Future Sports Medicine Specialists' },
-        { selector: '.bento-card-edu .bento-tags', en: '<span>#Curriculum</span><span>#ClinicalSkills</span><span>#FieldPracticum</span>' },
+        { selector: '.bento-card-edu .bento-subtitle', en: 'Nurturing Sports Medicine Specialists' },
+        { selector: '.bento-card-edu .bento-tags', en: '<span>#Curriculum</span><span>#ClinicalSkills</span><span>#Practicum</span>' },
         { selector: '.bento-card-edu .bento-action-btn span', en: 'View Details' },
 
         // Pillar 2: Research
         { selector: '.bento-card-res .bento-title', en: 'Research' },
-        { selector: '.bento-card-res .bento-subtitle', en: 'Advancing Evidence-Based Sports Medicine (EBM)' },
-        { selector: '.bento-card-res .bento-tags', en: '<span>#Biomechanics</span><span>#ClinicalData</span><span>#Publications</span>' },
+        { selector: '.bento-card-res .bento-subtitle', en: 'Evidence-Based Sports Medicine (EBM)' },
+        { selector: '.bento-card-res .bento-tags', en: '<span>#Biomechanics</span><span>#ClinicalData</span><span>#Papers</span>' },
         { selector: '.bento-card-res .bento-action-btn span', en: 'View Details' },
 
         // Pillar 3: Service
         { selector: '.bento-card-srv .bento-title', en: 'Service' },
-        { selector: '.bento-card-srv .bento-subtitle', en: 'Practical Sports Care & On-Field Medical Support' },
-        { selector: '.bento-card-srv .bento-tags', en: '<span>#AthleteConditioning</span><span>#MedicalSupport</span><span>#Rehabilitation</span>' },
+        { selector: '.bento-card-srv .bento-subtitle', en: 'Sports Care &amp; On-Field Medical Support' },
+        { selector: '.bento-card-srv .bento-tags', en: '<span>#Conditioning</span><span>#MedicalSupport</span><span>#Rehab</span>' },
         { selector: '.bento-card-srv .bento-action-btn span', en: 'View Details' },
 
         // [핵심 사업 상세 모달 (#pillar-detail-modal)]
@@ -131,12 +131,12 @@
         // 02 연구 지표
         { selector: '#dashboard .card-res .stat-unit', en: 'Papers' },
         { selector: '#dashboard .card-res .editorial-card-title', en: 'Published Research Papers' },
-        { selector: '#dashboard .card-res .editorial-card-desc', en: 'Published in top international (SCI/SCIE) &amp; KCI journals,<br>sports medicine papers and conference presentations' },
+        { selector: '#dashboard .card-res .editorial-card-desc', en: 'Published in top international (SCI/SCIE)<br>&amp; KCI sports medicine journals' },
         { selector: '#dashboard .card-res .editorial-action-btn span', en: 'View All 63 Publications' },
         // 03 서비스 지표
         { selector: '#dashboard .card-srv .stat-unit', en: 'Cases' },
-        { selector: '#dashboard .card-srv .editorial-card-title', en: 'Athlete Injury &amp; Conditioning Care' },
-        { selector: '#dashboard .card-srv .editorial-card-desc', en: 'Acute &amp; chronic rehabilitation, conditioning, performance,<br>resistance exercise, and sports taping care' },
+        { selector: '#dashboard .card-srv .editorial-card-title', en: 'Injury &amp; Conditioning Care' },
+        { selector: '#dashboard .card-srv .editorial-card-desc', en: 'Acute &amp; chronic rehab, conditioning,<br>resistance training, and sports taping' },
         { selector: '#dashboard .card-srv .editorial-spec-tag span', en: 'Dedicated Support for 12 Varsity Teams' },
 
         // [연구 논문 모달 (#research-modal)]
@@ -197,10 +197,10 @@
         // [상담 및 문의 (#contact)]
         { selector: '#contact .section-title', en: 'Support &amp; Inquiry' },
         { selector: '#contact .section-subtitle', en: 'Rehabilitation Consultation &amp; Education/Research Collaboration' },
-        { selector: '#contact .contact-info h3', en: 'Kyung Hee Univ. College of Physical Education AT Center' },
+        { selector: '#contact .contact-info h3', en: 'KHU College of Physical Education AT Center' },
         {
             selector: '#contact .contact-desc',
-            en: 'Inquiries regarding varsity athlete injury management &amp; rehabilitation, general student sports injuries,<br class="pc-br">educational staff participation, and research collaborations are always welcome.'
+            en: 'Inquiries regarding varsity athlete injury management &amp; rehabilitation, general student sports injuries, educational staff participation, and research collaborations are always welcome.'
         },
         {
             selector: '#contact .contact-details li:first-child span',
@@ -239,8 +239,8 @@
                 'Training Field Experts in Sports Medicine',
                 'Clinical &amp; Data-Driven Performance Research',
                 'Dedicated Care for Elite Student-Athletes',
-                'Sports Rehabilitation Programs for Faculty &amp; Staff',
-                'On-Site Medical Support for Sports Events'
+                'Sports Rehabilitation for Faculty &amp; Staff',
+                'On-Site Medical Care for Sports Events'
             ]
         },
         // 핵심 사업 슬라이드 캡션 - 교육 (#pillars)
@@ -394,9 +394,9 @@
                 '2026 27th Cohort Official Orientation',
                 'The Brain Awards for Lab — Excellence Prize',
                 '63rd KSSO Spring Congress Research Presentation',
-                '37th KHU President\'s Cup National High School Taekwondo',
-                '1st Lion Match (KHU vs. Hanyang) On-Field Medical Support',
-                '2025 Go Free Run Marathon Official Medical Support',
+                '37th KHU President\'s Cup High School Taekwondo',
+                '1st Lion Match (KHU vs. Hanyang) Medical Support',
+                '2025 Go Free Run Marathon Official Medical Care',
                 '2025 AT Center Student Awards Ceremony',
                 'AT Student Awards Hall of Fame Induction',
                 'AT Center Spring Seminar &amp; Alumni Networking',
@@ -407,17 +407,17 @@
         {
             selector: '#activities .gallery-card-item .gallery-card-meta',
             items: [
-                '<i class="fa-solid fa-chalkboard-user"></i> Foundational knowledge &amp; techniques linked to 10-week Observation',
-                '<i class="fa-solid fa-users"></i> Seonseung-gwan B1 Lecture Hall — Center system &amp; activity guide',
-                '<i class="fa-solid fa-award"></i> Selected as an Outstanding Lab by KHU Graduate School Innovation Team',
-                '<i class="fa-solid fa-book-open"></i> Grand Walkerhill Seoul — Femoral cartilage &amp; rehabilitation research',
+                '<i class="fa-solid fa-chalkboard-user"></i> Foundational theory &amp; skills linked to 10-week Observation',
+                '<i class="fa-solid fa-users"></i> Seonseung-gwan B1 Lecture Hall — Center system &amp; guide',
+                '<i class="fa-solid fa-award"></i> Selected as an Outstanding Lab by KHU Graduate School',
+                '<i class="fa-solid fa-book-open"></i> Grand Walkerhill Seoul — Cartilage &amp; rehabilitation research',
                 '<i class="fa-solid fa-truck-medical"></i> Hongcheon, Gangwon — 10-day dedicated care by 16 AT staff',
-                '<i class="fa-solid fa-truck-medical"></i> Acute injury care &amp; sports taping at soccer and basketball venues',
+                '<i class="fa-solid fa-truck-medical"></i> Acute injury care &amp; taping at soccer and basketball venues',
                 '<i class="fa-solid fa-person-running"></i> Yeouido Park — Sports massage &amp; physical recovery support',
-                '<i class="fa-solid fa-trophy"></i> Presentation of AT Student of the Year, Inspiration &amp; Rookie Awards',
+                '<i class="fa-solid fa-trophy"></i> Presentation of AT Student of the Year, Inspiration &amp; Rookie',
                 '<i class="fa-solid fa-award"></i> 2025 AT of the Year Seung-A Yoo · Inspiration Se-Min Park',
-                '<i class="fa-solid fa-graduation-cap"></i> Theory presentations, taping practice &amp; foot volleyball tournament',
-                '<i class="fa-solid fa-user-graduate"></i> Academic exchange among club members, graduate students &amp; alumni'
+                '<i class="fa-solid fa-graduation-cap"></i> Theory presentations, taping practice &amp; foot volleyball',
+                '<i class="fa-solid fa-user-graduate"></i> Academic exchange among club members, grads &amp; alumni'
             ]
         }
     ];
@@ -434,9 +434,25 @@
         '골프부': 'Golf Team',
         '배드민턴부': 'Badminton Team',
         '핸드볼부': 'Handball Team',
-        '태권도 시범단': 'Taekwondo Demo Team',
-        '태권도 겨루기부': 'Taekwondo Kyorugi Team',
-        '태권도 품새부': 'Taekwondo Poomsae Team',
+        '태권도 시범단': 'TKD Demo Team',
+        '태권도 겨루기부': 'TKD Kyorugi Team',
+        '태권도 품새부': 'TKD Poomsae Team',
+        'AT Center (센터 AT)': 'AT Center'
+    };
+
+    // 06 AT 센터 보조 카드 헤더용 간결한 부서명
+    const ASSISTANT_DEPT_TITLE_EN = {
+        '축구부': 'Soccer',
+        '야구부': 'Baseball',
+        '농구부': 'Basketball',
+        '배구부': 'Volleyball',
+        '럭비부': 'Rugby',
+        '골프부': 'Golf',
+        '배드민턴부': 'Badminton',
+        '핸드볼부': 'Handball',
+        '태권도 시범단': 'TKD Demo',
+        '태권도 겨루기부': 'TKD Kyorugi',
+        '태권도 품새부': 'TKD Poomsae',
         'AT Center (센터 AT)': 'AT Center'
     };
 
@@ -444,17 +460,17 @@
         '올해의 AT 최우수 학생상': 'AT Student of the Year Award',
         '영감 및 헌신상': 'Inspiration & Dedication Award',
         '올해의 신인상': 'Rookie of the Year Award',
-        '올해의 신인상 (2관왕)': 'Rookie of the Year (Double Crown)'
+        '올해의 신인상 (2관왕)': 'Rookie of the Year (2x Winner)'
     };
 
     const GA_BADGE_KO_TO_EN = {
-        '연구/교육': 'Research/Edu',
-        '스포츠재활': 'Sports Rehab',
+        '연구/교육': 'Res/Edu',
+        '스포츠재활': 'Rehab',
         '배구': 'Volleyball',
         '배드민턴': 'Badminton',
         '축구': 'Soccer',
         '야구': 'Baseball',
-        '품새': 'TKD Poomsae',
+        '품새': 'Poomsae',
         '시범단': 'TKD Demo',
         '럭비': 'Rugby',
         '농구': 'Basketball',
@@ -463,31 +479,31 @@
         '핸드볼': 'Handball'
     };
 
-    // 구성원 카드 내 세부 항목 줄 단위 영문 변환 함수
+    // 구성원 카드 내 세부 항목 줄 단위 영문 변환 함수 (350px 카드 내 1줄 유지 보장)
     function translateMemberBulletLine(text) {
         let t = text.trim();
 
         const exactBulletMap = {
-            '학위명: 체육과학 박사(Physical Medicine & Rehabilitation 전공)': 'Degree: Ph.D. in Physical Medicine & Rehabilitation',
+            '학위명: 체육과학 박사(Physical Medicine & Rehabilitation 전공)': 'Degree: Ph.D. in Physical Medicine & Rehab',
             '최종학력: Brigham Young University': 'Alma Mater: Brigham Young University',
-            '담당과목: 운동손상, 재활모달리티, 저항운동과컨디셔닝': 'Courses: Athletic Injuries, Therapeutic Modalities, S&C',
-            '연구실: 체422호 (031-201-2721)': 'Office: College of PE Rm. 422 (031-201-2721)',
-            '학위명: 스포츠심리학-운동제어 박사(Motor Control 전공)': 'Degree: Ph.D. in Sport Psychology & Motor Control',
+            '담당과목: 운동손상, 재활모달리티, 저항운동과컨디셔닝': 'Courses: Athletic Injuries, Modalities, S&C',
+            '연구실: 체422호 (031-201-2721)': 'Office: College of PE #422 (031-201-2721)',
+            '학위명: 스포츠심리학-운동제어 박사(Motor Control 전공)': 'Degree: Ph.D. in Motor Control & Sport Psych',
             '최종학력: 성균관대학교': 'Alma Mater: Sungkyunkwan University',
             '담당과목: 운동손상평가': 'Courses: Evaluation of Athletic Injuries',
             '연구실: 경희대학교 선승관 AT Center': 'Office: Seonseung-gwan AT Center, KHU',
-            '학위명: 체육학 석사 (Athletic Training 전공)': 'Degree: M.S. in Physical Education (Athletic Training)',
-            '학위명: 체육학 석사 (Sports Medicine and Science 전공)': 'Degree: M.S. in Physical Education (Sports Medicine & Science)',
+            '학위명: 체육학 석사 (Athletic Training 전공)': 'Degree: M.S. in PE (Athletic Training)',
+            '학위명: 체육학 석사 (Sports Medicine and Science 전공)': 'Degree: M.S. in PE (Sports Medicine & Sci.)',
             '최종학력: 경희대학교': 'Alma Mater: Kyung Hee University',
             '담당부서: 체육부': 'Division: Varsity Athletics Department',
             '담당부서: 체육시설운영단': 'Division: Sports Facility Management Corps',
-            '담당과목: 재활운동실습, 스포츠테이핑실습': 'Courses: Rehabilitation Exercise Lab, Sports Taping Lab',
-            '담당과목: 저항운동과컨디셔닝, 운동손상관리, 저항운동실습': 'Courses: Resistance Training & Conditioning, Injury Management',
+            '담당과목: 재활운동실습, 스포츠테이핑실습': 'Courses: Rehab Exercise & Sports Taping Lab',
+            '담당과목: 저항운동과컨디셔닝, 운동손상관리, 저항운동실습': 'Courses: S&C, Athletic Injury Management',
             '경희대학교 무용학과 졸업': 'B.A. in Dance, Kyung Hee University',
-            '경희대학교 스포츠의학과 졸업': 'B.S. in Sports Medicine, Kyung Hee University',
+            '경희대학교 스포츠의학과 졸업': 'B.S. in Sports Medicine, Kyung Hee Univ.',
             '경희대학교 태권도학과 졸업': 'B.S. in Taekwondo, Kyung Hee University',
-            '조선대학교 체육학과 졸업': 'B.S. in Physical Education, Chosun University',
-            '성결대학교 체육교육과 졸업': 'B.S. in Physical Education, Sungkyul University',
+            '조선대학교 체육학과 졸업': 'B.S. in Physical Education, Chosun Univ.',
+            '성결대학교 체육교육과 졸업': 'B.S. in Physical Education, Sungkyul Univ.',
             '경희대학교 체육대학': 'College of Physical Education, KHU',
             'AT 동아리 회장': 'President, Athletic Training Club',
             'AT 동아리 부회장': 'Vice President, Athletic Training Club',
@@ -502,33 +518,33 @@
         // 일반대학원 기수
         const gradMatch = t.match(/^일반대학원\s*(\d+)기$/);
         if (gradMatch) {
-            return `Graduate School of Physical Education (Cohort ${gradMatch[1]})`;
+            return `KHU Graduate School of PE (Cohort ${gradMatch[1]})`;
         }
 
-        // 연구주제
+        // 연구주제 (카드 폭에 맞게 핵심 키워드 중심 1줄 요약)
         if (t.startsWith('연구주제:')) {
             return t
-                .replace('연구주제: 스포츠 부상 재활 및 맞춤형 체력 관리 프로그램', 'Research: Sports Injury Rehab & Tailored Conditioning')
-                .replace('연구주제: 품새 선수 기능성 움직임 평가 및 자세 교정', 'Research: Functional Movement & Posture in Poomsae Athletes')
-                .replace('연구주제: 럭비 컨택트 손상 분석 및 파워 컨디셔닝', 'Research: Contact Injury Analysis & Power Conditioning in Rugby')
-                .replace('연구주제: 운동 동호인들의 무릎, 발목 골관절염 실태조사 진행중', 'Research: Knee & Ankle Osteoarthritis in Recreational Athletes')
-                .replace('연구주제: 태권도 겨루기 손상 분석 및 선수 복귀 재활', 'Research: Taekwondo Kyorugi Injury Analysis & Return-to-Play');
+                .replace('연구주제: 스포츠 부상 재활 및 맞춤형 체력 관리 프로그램', 'Research: Sports Injury Rehab & Conditioning')
+                .replace('연구주제: 품새 선수 기능성 움직임 평가 및 자세 교정', 'Research: Functional Movement in Poomsae')
+                .replace('연구주제: 럭비 컨택트 손상 분석 및 파워 컨디셔닝', 'Research: Rugby Contact Injury & Power S&C')
+                .replace('연구주제: 운동 동호인들의 무릎, 발목 골관절염 실태조사 진행중', 'Research: Knee & Ankle OA in Active Adults')
+                .replace('연구주제: 태권도 겨루기 손상 분석 및 선수 복귀 재활', 'Research: Taekwondo Injury & Return-to-Play');
         }
 
         // 학과 + 학번 패턴
         const majorYearMatch = t.match(/^(스포츠의학과|체육학과|스포츠지도학과|태권도학과)\s*(\d+)학번$/);
         if (majorYearMatch) {
             const majorMap = {
-                '스포츠의학과': 'Dept. of Sports Medicine',
-                '체육학과': 'Dept. of Physical Education',
-                '스포츠지도학과': 'Dept. of Sports Coaching',
-                '태권도학과': 'Dept. of Taekwondo'
+                '스포츠의학과': 'Sports Medicine',
+                '체육학과': 'Physical Education',
+                '스포츠지도학과': 'Sports Coaching',
+                '태권도학과': 'Taekwondo'
             };
             return `${majorMap[majorYearMatch[1]] || majorYearMatch[1]} (Class of '${majorYearMatch[2]})`;
         }
 
         if (t === '일반대학원 체육학과 석사 졸업') {
-            return 'M.S. in Physical Education, KHU Graduate School';
+            return 'M.S. in Physical Education, KHU';
         }
         if (t === '스포츠의학과 학사과정') {
             return 'B.S. Program in Sports Medicine, KHU';
@@ -556,7 +572,6 @@
     function translateProfModalText(str) {
         if (!str) return str;
         let s = str.trim();
-        // 주요 구문 치환
         return s
             .replace(/현\)\s*/g, 'Current: ')
             .replace(/전\)\s*/g, 'Former: ')
@@ -774,13 +789,13 @@
             if (nameEl && nameEl.dataset.koOrig !== undefined) {
                 if (lang === 'en') {
                     nameEl.innerHTML = nameEl.dataset.koOrig
-                        .replace('박지홍 교수', '박지홍 <span style="font-size:0.85rem; font-weight:700; color:var(--color-primary);">Prof. / Director</span>')
-                        .replace('오성민 교수', '오성민 <span style="font-size:0.85rem; font-weight:700; color:var(--color-primary);">Research Prof.</span>')
-                        .replace('김준영 실장', '김준영 <span style="font-size:0.85rem; font-weight:700; color:var(--color-primary);">General Manager</span>')
-                        .replace('최현곤 재활팀장', '최현곤 <span style="font-size:0.85rem; font-weight:700; color:var(--color-primary);">Rehab Lead</span>')
-                        .replace('이재욱 연구팀장', '이재욱 <span style="font-size:0.85rem; font-weight:700; color:var(--color-primary);">Research Lead</span>')
+                        .replace('박지홍 교수', '박지홍 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Prof. / Director</span>')
+                        .replace('오성민 교수', '오성민 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research Prof.</span>')
+                        .replace('김준영 실장', '김준영 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">General Manager</span>')
+                        .replace('최현곤 재활팀장', '최현곤 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Rehab Lead</span>')
+                        .replace('이재욱 연구팀장', '이재욱 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research Lead</span>')
                         .replace('(회장)', '(President)')
-                        .replace('(부회장)', '(Vice President)')
+                        .replace('(부회장)', '(Vice Pres.)')
                         .replace('(총무)', '(Secretary)');
                 } else {
                     nameEl.innerHTML = nameEl.dataset.koOrig;
@@ -796,20 +811,20 @@
             });
         });
 
-        // 5) 06 AT 센터 보조(.assistant-dept-card) 부서명 및 인원수 전환
+        // 5) 06 AT 센터 보조(.assistant-dept-card) 부서명 및 인원수 전환 (4열 카드 헤더 내 줄바꿈 방지)
         document.querySelectorAll('.assistant-dept-card').forEach(card => {
             const titleEl = card.querySelector('.assistant-dept-title');
             const countEl = card.querySelector('.assistant-dept-count');
             if (titleEl && titleEl.dataset.koOrig !== undefined) {
                 const koTitle = titleEl.dataset.koOrig.trim();
                 titleEl.innerHTML = (lang === 'en')
-                    ? (DEPARTMENT_KO_TO_EN[koTitle] || koTitle)
+                    ? (ASSISTANT_DEPT_TITLE_EN[koTitle] || DEPARTMENT_KO_TO_EN[koTitle] || koTitle)
                     : titleEl.dataset.koOrig;
             }
             if (countEl && countEl.dataset.koOrig !== undefined) {
                 const koCount = countEl.dataset.koOrig.trim();
                 countEl.innerHTML = (lang === 'en')
-                    ? koCount.replace('명', ' Assistants')
+                    ? koCount.replace('명', ' ATs')
                     : countEl.dataset.koOrig;
             }
         });

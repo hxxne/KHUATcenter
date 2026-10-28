@@ -9122,3 +9122,262 @@ img, picture, svg, a, button {
     border: 1px solid rgba(165, 0, 52, 0.18);
 }
 
+
+/* ==========================================================================
+   English Mode (html[lang="en"]) Typography, Word-Spacing & Line-Wrap Fixes
+   - 한국어 전용 음수 자간(letter-spacing)으로 인해 영문 띄어쓰기가 좁아 보이는 현상 해소
+   - 영문 전환 시 텍스트 길이 증가로 인해 줄이 어색하게 잘리거나 넘어가는 현상 방지
+   ========================================================================== */
+html[lang="en"] body {
+    letter-spacing: 0px;
+    word-spacing: 0.5px;
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+/* 섹션 공통 타이틀 & 서브타이틀 자간/띄어쓰기 보정 */
+html[lang="en"] .section-title,
+html[lang="en"] .dh-title {
+    letter-spacing: -0.3px;
+    word-spacing: 1px;
+}
+
+html[lang="en"] .section-subtitle,
+html[lang="en"] .stream-sub-desc,
+html[lang="en"] .pmodal-desc {
+    letter-spacing: 0px;
+    word-spacing: 0.5px;
+}
+
+/* 1. 상단 네비게이션 메뉴 줄바꿈 방지 및 간격 최적화 */
+html[lang="en"] #main-header .nav-menu {
+    gap: 18px;
+}
+
+html[lang="en"] #main-header .nav-link {
+    letter-spacing: 0px;
+    word-spacing: 0.5px;
+    white-space: nowrap;
+    font-size: 0.93rem;
+}
+
+@media (max-width: 1360px) {
+    html[lang="en"] #main-header .nav-menu {
+        gap: 12px;
+    }
+    html[lang="en"] #main-header .nav-link {
+        font-size: 0.86rem;
+    }
+}
+
+/* 2. 히어로 메인 배너 (#hero) 줄 잘림 방지 */
+html[lang="en"] #hero .hero-title {
+    letter-spacing: -0.4px;
+    word-spacing: 1.5px;
+    line-height: 1.22;
+}
+
+html[lang="en"] #hero .hero-description {
+    max-width: 860px;
+    letter-spacing: 0px;
+    word-spacing: 0.6px;
+    line-height: 1.65;
+}
+
+/* 3. 센터 소개 섹션 (#about) 본문 및 5대 하이라이트 카드 보정 */
+html[lang="en"] #about .about-text-block {
+    max-width: 1060px;
+}
+
+html[lang="en"] #about .about-lead {
+    font-size: 1.24rem;
+    letter-spacing: -0.1px;
+    word-spacing: 0.6px;
+    line-height: 1.65;
+}
+
+html[lang="en"] #about .about-detail {
+    font-size: 1.06rem;
+    letter-spacing: 0px;
+    word-spacing: 0.5px;
+    line-height: 1.75;
+}
+
+html[lang="en"] #about .about-clean-item {
+    padding: 20px 14px;
+}
+
+html[lang="en"] #about .about-clean-txt {
+    font-size: 0.9rem;
+    line-height: 1.38;
+    letter-spacing: -0.1px;
+    word-spacing: 0.4px;
+}
+
+/* 4. 핵심 사업 섹션 (#pillars) 카드 타이틀/서브타이틀/태그 보정 */
+html[lang="en"] .bento-title {
+    letter-spacing: -0.2px;
+}
+
+html[lang="en"] .bento-subtitle {
+    font-size: 0.94rem;
+    letter-spacing: 0px;
+    word-spacing: 0.4px;
+    line-height: 1.45;
+}
+
+html[lang="en"] .bento-tags {
+    gap: 6px;
+}
+
+html[lang="en"] .bento-tags span {
+    font-size: 0.78rem;
+    padding: 5px 10px;
+    letter-spacing: 0px;
+    white-space: nowrap;
+}
+
+/* 5. 누적 기록 대시보드 (#dashboard) 카드 내 줄바꿈 방지 */
+html[lang="en"] #dashboard .editorial-card-title {
+    font-size: 1.22rem;
+    letter-spacing: -0.2px;
+    word-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+html[lang="en"] #dashboard .editorial-card-desc {
+    font-size: 0.92rem;
+    letter-spacing: 0px;
+    word-spacing: 0.4px;
+    line-height: 1.55;
+}
+
+html[lang="en"] #dashboard .editorial-spec-tag span,
+html[lang="en"] #dashboard .editorial-action-btn span {
+    letter-spacing: 0px;
+    word-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+/* 6. 구성원 소개 (#members) 프로필 카드 약력 1줄 고정 & 자간 복원 */
+html[lang="en"] .modern-profile-name {
+    letter-spacing: -0.2px;
+    word-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+html[lang="en"] .modern-profile-exp li,
+html[lang="en"] .modern-profile-exp li.degree-line {
+    font-size: 0.81rem !important;
+    letter-spacing: -0.1px !important;
+    word-spacing: 0.5px !important;
+    white-space: nowrap !important;
+    line-height: 1.45;
+}
+
+/* 06 AT 센터 보조 카드 헤더(부서명 + 인원수) 줄바꿈 방지 */
+html[lang="en"] .assistant-dept-header {
+    gap: 6px;
+    flex-wrap: nowrap;
+}
+
+html[lang="en"] .assistant-dept-title {
+    font-size: 0.95rem;
+    letter-spacing: -0.2px;
+    word-spacing: 0.4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+html[lang="en"] .assistant-dept-count {
+    font-size: 0.74rem;
+    padding: 3px 8px;
+    letter-spacing: 0px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* 7. 역대 수상자 및 리더 (#awards) 이름/배지 쪼개짐 방지 */
+html[lang="en"] #awards .award-stream-name,
+html[lang="en"] #awards .dual-name-row {
+    white-space: nowrap;
+}
+
+html[lang="en"] #awards .award-stream-desc {
+    font-size: 0.82rem;
+    letter-spacing: -0.1px;
+    word-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+html[lang="en"] #awards .ed-stream-row .ed-term,
+html[lang="en"] #awards .ed-stream-row .ed-name {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+html[lang="en"] #awards .ed-ga-item {
+    gap: 5px;
+    padding: 7px 9px;
+    flex-wrap: nowrap;
+}
+
+html[lang="en"] #awards .ed-ga-item .gt {
+    font-size: 0.74rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+html[lang="en"] #awards .ed-ga-item .gb {
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    letter-spacing: -0.1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+html[lang="en"] #awards .ed-ga-item .gn {
+    font-size: 0.88rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* 8. 발전기금 (#donate) 배너 설명글 화면 밖 잘림(nowrap) 해제 */
+html[lang="en"] #donate .dh-desc {
+    white-space: normal;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    letter-spacing: 0px;
+    word-spacing: 0.5px;
+}
+
+/* 9. 활동 사진 (#activities) 카드 타이틀 및 메타 설명 정돈 */
+html[lang="en"] #activities .gallery-card-title {
+    font-size: 1.02rem;
+    letter-spacing: -0.1px;
+    word-spacing: 0.4px;
+    line-height: 1.38;
+}
+
+html[lang="en"] #activities .gallery-card-meta {
+    font-size: 0.81rem;
+    letter-spacing: 0px;
+    word-spacing: 0.3px;
+    line-height: 1.45;
+}
+
+/* 10. 상담 및 문의 (#contact) 본문 자간/줄바꿈 보정 */
+html[lang="en"] #contact .contact-info h3 {
+    font-size: 1.32rem;
+    letter-spacing: -0.2px;
+    word-spacing: 0.5px;
+}
+
+html[lang="en"] #contact .contact-desc {
+    letter-spacing: 0px;
+    word-spacing: 0.5px;
+    line-height: 1.65;
+}
