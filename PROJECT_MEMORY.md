@@ -2411,3 +2411,47 @@ Observation 100시간 실무 과정,
      - 각 연도 헤더(`.award-year-row-header`) 우측 끝에도 `🏆 KHU AT CENTER · HALL OF FAME` 공식 인증 배지를 배치하여 좌우 균형 완성.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+
+---
+
+## 🪪 63. 대학원생·전담 AT·스포츠재활 강사 8인(한혜서·문채연·우지윤·박세민·권남준·이진주·송찬·윤서연) 프로필 정보 정식 반영 (2026-10-29)
+- **사용자 요청:**
+  - 나머지 8명의 부원(한혜서, 문채연, 우지윤, 박세민, 권남준, 이진주, 송찬, 윤서연)에 대한 이메일, 출신학력/학과·학번, 연구주제 정식 데이터 기입 요청.
+- **반영 인원 및 세부 정보 (`index.html`, `i18n.js`, `style.css`):**
+  1. **한혜서** (`03 대학원생`, `05 체육부 AT - 태권도 겨루기부`, `professorsData["한혜서"]`):
+     - **이메일:** `hshan416@khu.ac.kr`
+     - **학력:** `경희대학교 스포츠의학과 졸업` (일반대학원 석사 2기)
+     - **연구주제 및 학술발표 3건:**
+       1. `A One-Year Follow-Up of Musculoskeletal Injury Epidemiology and the Acute: Chronic Workload Ratio in Collegiate Taekwondo Kyorugi (2024 운동학 학술대회)`
+       2. `Quadriceps Muscle Thickness and Peak Torque According to the Knee Injury and Osteoarthritis Outcome Score and Limb symmetry in Individuals with ACL Reconstruction (2025 World Congress on Kinesiology and Sport Science)`
+       3. `Injury Incidence And Characteristics Related To Acute: Chronic Workload Ratio In Collegiate Handball (2026 American College of Sports Medicine)`
+  2. **문채연** (`05 체육부 AT - 태권도 시범단`, `professorsData["문채연"]`):
+     - **이메일:** `1012yeon@khu.ac.kr`
+     - **학번:** `스포츠의학과 22학번`
+  3. **우지윤** (`03 대학원생`, `05 스포츠재활 강사`, `professorsData["우지윤"]`):
+     - **이메일:** `juliawjy@khu.ac.kr`
+     - **학력:** `경희대학교 무용학부 한국무용 졸업` (일반대학원 석사 4기)
+     - **연구주제:** `저체중, 마른비만, 정상체중 여성 성인의 혈액지표, 신체구성, 신체기능 및 자가보고 설문 비교`
+  4. **박세민** (`05 체육부 AT - 배구부`, `professorsData["박세민"]`):
+     - **이메일:** `semin9937@khu.ac.kr`
+     - **학번:** `스포츠의학과 22학번`
+  5. **권남준** (`05 체육부 AT - 배드민턴부`, `professorsData["권남준"]`):
+     - **이메일:** `artknj@khu.ac.kr`
+     - **학번:** `체육학과 21학번`
+  6. **이진주** (`05 스포츠재활 강사`, `professorsData["이진주"]`):
+     - **이메일:** `janju8415@khu.ac.kr`
+     - **학번:** `체육학과 18학번`
+  7. **송찬** (`05 스포츠재활 강사`, `06 AT 센터 보조`, `professorsData["송찬"]`):
+     - **이메일:** `chan7952@khu.ac.kr`
+     - **학번:** `스포츠의학과 21학번`
+  8. **윤서연** (`05 스포츠재활 강사`, `professorsData["윤서연"]`):
+     - **이메일:** `seoyeonyun@khu.ac.kr`
+     - **학번:** `스포츠의학과 24학번`
+  - **추가 개선 사항:**
+    - `05 스포츠재활 강사` 내 `권준홍` 카드의 이메일 오타(`chj0471@khu.ac.kr` ➔ `zauzza2@khu.ac.kr`) 함께 정정.
+    - `openProfModal` 컨텍스트 판별 로직을 고도화하여, 겸직 대학원생(`한혜서`, `유승아`, `유영민`)을 `03 대학원생` 섹션에서 클릭할 때는 대학원생 전용 모달 포맷(`학위과정 / 출신학력 / 연구주제 / 보유자격 / E-mail` + `연구실적`)이 노출되고, `05 체육부 AT` 및 부서 모달에서 클릭할 때는 전담 AT 모달 포맷이 노출되도록 개선.
+    - `i18n.js` 영문 번역 사전에 `경희대학교 무용학부 한국무용 졸업` 및 신규 연구주제 영문 번역 매핑 추가.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.

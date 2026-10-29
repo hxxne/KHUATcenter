@@ -9766,3 +9766,15 @@ body,
 .award-stream-card-dual .award-pill {
     max-width: calc(100% - 58px);
 }
+
+
+/* 03 대학원생 프로필 카드 내 다줄 연구주제(.research-topic-item) 자연스러운 줄바꿈 및 가독성 최적화 */
+.modern-profile-exp li.research-topic-item,
+html[lang="en"] .modern-profile-exp li.research-topic-item {
+    white-space: normal !important;
+    font-size: 0.8rem !important;
+    line-height: 1.48 !important;
+    word-break: keep-all !important;
+    overflow-wrap: break-word !important;
+    margin-bottom: 3px;
+}
