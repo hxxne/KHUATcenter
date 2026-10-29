@@ -369,9 +369,9 @@
                 'AT Center'
             ]
         },
-        // 활동 사진 갤러리 카드 11개 배지
+        // 활동 사진 갤러리 카드 11개 배지 (센터/의무지원/세미나)
         {
-            selector: '#activities .gallery-card-item .gallery-badge',
+            selector: '#activities .gallery-card-item:not(.dept-gallery-card) .gallery-badge',
             items: [
                 'New Cohort Study',
                 'Orientation',
@@ -388,7 +388,7 @@
         },
         // 활동 사진 갤러리 카드 11개 제목
         {
-            selector: '#activities .gallery-card-item .gallery-card-title',
+            selector: '#activities .gallery-card-item:not(.dept-gallery-card) .gallery-card-title',
             items: [
                 'New Cohort 10-Week Study &amp; Practical Training',
                 '2026 27th Cohort Official Orientation',
@@ -405,7 +405,7 @@
         },
         // 활동 사진 갤러리 카드 11개 하단 메타 설명
         {
-            selector: '#activities .gallery-card-item .gallery-card-meta',
+            selector: '#activities .gallery-card-item:not(.dept-gallery-card) .gallery-card-meta',
             items: [
                 '<i class="fa-solid fa-chalkboard-user"></i> Foundational theory &amp; skills linked to 10-week Observation',
                 '<i class="fa-solid fa-users"></i> Seonseung-gwan B1 Lecture Hall — Center system &amp; guide',
@@ -740,6 +740,16 @@
             }
         });
 
+        // 8-b) 부서별 활동사진 카드(.dept-gallery-card) 원본 백업
+        document.querySelectorAll('#activities .dept-gallery-card').forEach(card => {
+            const bEl = card.querySelector('.gallery-badge');
+            const tEl = card.querySelector('.gallery-card-title');
+            const mEl = card.querySelector('.gallery-card-meta');
+            if (bEl && bEl.dataset.koOrig === undefined) bEl.dataset.koOrig = bEl.innerHTML;
+            if (tEl && tEl.dataset.koOrig === undefined) tEl.dataset.koOrig = tEl.innerHTML;
+            if (mEl && mEl.dataset.koOrig === undefined) mEl.dataset.koOrig = mEl.innerHTML;
+        });
+
         isBackedUp = true;
     }
 
@@ -872,7 +882,16 @@
             resHeaderSpans[1].innerHTML = (lang === 'en') ? 'KHU AT Center Academic Achievements' : resHeaderSpans[1].dataset.koOrig;
         }
 
-        // 8) 활동 사진 부서별 Empty State 문구 동기화
+        // 8) 활동 사진 부서별 카드(.dept-gallery-card) 및 Empty State 문구 동기화
+        document.querySelectorAll('#activities .dept-gallery-card').forEach(card => {
+            const bEl = card.querySelector('.gallery-badge');
+            const tEl = card.querySelector('.gallery-card-title');
+            const mEl = card.querySelector('.gallery-card-meta');
+            if (bEl) bEl.innerHTML = (lang === 'en') ? (card.getAttribute('data-en-badge') || bEl.dataset.koOrig) : (bEl.dataset.koOrig || bEl.innerHTML);
+            if (tEl) tEl.innerHTML = (lang === 'en') ? (card.getAttribute('data-en-title') || tEl.dataset.koOrig) : (tEl.dataset.koOrig || tEl.innerHTML);
+            if (mEl) mEl.innerHTML = (lang === 'en') ? (card.getAttribute('data-en-meta') || mEl.dataset.koOrig) : (mEl.dataset.koOrig || mEl.innerHTML);
+        });
+
         const activePictoBtn = document.querySelector('.dept-picto-btn.active');
         if (activePictoBtn && typeof window.filterDeptPhotos === 'function') {
             const onclickAttr = activePictoBtn.getAttribute('onclick') || '';
