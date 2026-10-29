@@ -525,8 +525,11 @@
         // 연구주제 (카드 폭에 맞게 영문 변환)
         if (t.startsWith('연구주제:')) {
             return t
-                .replace('연구주제: 저체중, 마른비만, 정상체중 여성 성인의 혈액지표, 신체구성, 신체기능 및 자가보고 설문 비교', 'Research: Blood Biomarkers, Body Composition, Physical Function & Self-Reported Surveys in Adult Women')
-                .replace('연구주제: 1. A One-Year Follow-Up of Musculoskeletal Injury Epidemiology and the Acute: Chronic Workload Ratio in Collegiate Taekwondo Kyorugi (2024 운동학 학술대회)', 'Research: 1. A One-Year Follow-Up of Musculoskeletal Injury Epidemiology and the Acute: Chronic Workload Ratio in Collegiate Taekwondo Kyorugi (2024 KAK Conference)')
+                .replace('연구주제: 여성 성인 체형별 혈액지표·신체구성 및 신체기능 비교', 'Research: Blood Biomarkers, Body Comp. & Function in Women')
+                .replace('연구주제: 무릎 및 발목 골관절염 및 신체활동 설문조사', 'Research: Knee & Ankle OA & Physical Activity Survey')
+                .replace('연구주제: 대학 핸드볼 선수 훈련부하 비율 및 부상 역학 (2026)', 'Research: Injury & ACWR in Collegiate Handball (2026)')
+                .replace('연구주제: 저체중, 마른비만, 정상체중 여성 성인의 혈액지표, 신체구성, 신체기능 및 자가보고 설문 비교', 'Research: Blood Biomarkers, Body Comp. & Function in Women')
+                .replace('연구주제: 1. A One-Year Follow-Up of Musculoskeletal Injury Epidemiology and the Acute: Chronic Workload Ratio in Collegiate Taekwondo Kyorugi (2024 운동학 학술대회)', 'Research: Injury & ACWR in Collegiate Handball (2026)')
                 .replace('연구주제: 스포츠 부상 재활 및 맞춤형 체력 관리 프로그램', 'Research: Sports Injury Rehab & Conditioning')
                 .replace('연구주제: 품새 선수 기능성 움직임 평가 및 자세 교정', 'Research: Functional Movement in Poomsae')
                 .replace('연구주제: 럭비 컨택트 손상 분석 및 파워 컨디셔닝', 'Research: Rugby Contact Injury & Power S&C')
@@ -587,6 +590,7 @@
             .replace(/경희대학교 무용학과 졸업/g, 'B.A. in Dance, KHU')
             .replace(/무용학부 한국무용/g, 'School of Dance (Korean Dance)')
             .replace(/저체중, 마른비만, 정상체중 여성 성인의 혈액지표, 신체구성, 신체기능 및 자가보고 설문 비교/g, 'Comparison of Blood Biomarkers, Body Composition, Physical Function, and Self-Reported Questionnaires in Underweight, Normal-Weight Obese, and Normal-Weight Adult Women')
+            .replace(/무릎 및 발목 골관절염 및 신체활동 설문조사/g, 'Knee and Ankle Osteoarthritis and Physical Activity Survey')
             .replace(/2024 운동학 학술대회/g, '2024 Korean Academy of Kinesiology Conference')
             .replace(/조선대학교 체육학과 졸업/g, 'B.S. in Physical Education, Chosun Univ.')
             .replace(/성결대학교 체육교육과 졸업/g, 'B.S. in Physical Education, Sungkyul Univ.')

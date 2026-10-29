@@ -9768,13 +9768,35 @@ body,
 }
 
 
-/* 03 대학원생 프로필 카드 내 다줄 연구주제(.research-topic-item) 자연스러운 줄바꿈 및 가독성 최적화 */
-.modern-profile-exp li.research-topic-item,
-html[lang="en"] .modern-profile-exp li.research-topic-item {
-    white-space: normal !important;
-    font-size: 0.8rem !important;
-    line-height: 1.48 !important;
-    word-break: keep-all !important;
-    overflow-wrap: break-word !important;
-    margin-bottom: 3px;
+/* 구성원 소개(.modern-profile-grid) 전 섹션 카드 칸 및 행 높이 1:1 수평 정렬 최적화 */
+.modern-profile-grid {
+    align-items: start;
+}
+
+.modern-profile-card {
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.modern-profile-exp {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.modern-profile-exp li {
+    font-size: 0.83rem !important;
+    line-height: 1.65 !important;
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.45px !important;
+    white-space: nowrap !important;
+}
+
+@media (max-width: 480px) {
+    .modern-profile-exp li {
+        white-space: normal !important;
+        font-size: 0.8rem !important;
+    }
 }
