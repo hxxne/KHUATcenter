@@ -7998,29 +7998,42 @@ img, picture, svg, a, button {
 }
 
 .gallery-card-info {
-    padding: 16px 18px;
+    padding: 15px 16px;
+    flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 6px;
     background: #ffffff;
 }
 
 .gallery-card-title {
     margin: 0;
-    font-size: 1.02rem;
+    font-size: 0.98rem;
     font-weight: 800;
     color: #1e293b;
     line-height: 1.4;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.35px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 .gallery-card-meta {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: #64748b;
+    line-height: 1.45;
+    letter-spacing: -0.35px;
     display: flex;
-    align-items: center;
-    gap: 5px;
+    align-items: flex-start;
+    gap: 6px;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.gallery-card-meta i {
+    margin-top: 3px;
+    flex-shrink: 0;
 }
 
 .gallery-bottom-cta {

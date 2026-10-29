@@ -2567,3 +2567,19 @@ Observation 100시간 실무 과정,
      - **CSS 칸 맞춤 정렬 (`.modern-profile-grid`, `.modern-profile-exp li`):** 모든 카드의 세부 항목 줄(`li`)에 고정 행 높이(`min-height: 24px`, `display: flex; align-items: center;`, `white-space: nowrap`)를 적용하여 좌우 카드 간 각 줄의 위치가 수평 일직선으로 완벽히 정렬되도록 개선.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+---
+
+## 🛠️ 67. 부서별 활동사진 41장 문구 담백·간결화(`축구부 정기 스터디` 등) 및 하단 부연설명 잘림 방지 개선 (2026-10-29)
+- **사용자 요청:**
+  - *"지금 사진 분석해서 적어놓은거 좀 이상한게 쓰여 있는게 좀 있는것 같아서 부상 데이터 분석 이거 말고 축구부 스터디로 바꿔주고 밑에 부연설명 짤리는거 수정 부탁해"*
+- **수정 및 반영 내역 (`index.html`, `style.css`):**
+  1. **축구부 5번 사진(`assets/축구 5.jpg`):**
+     - 기존 `축구부 AT 팀 부상 데이터 분석 & 정기 회의` ➔ **`축구부 정기 스터디`** (`축구부 전담·보조 AT 학술 스터디 및 회의`)로 변경 완료.
+  2. **41장 전체 제목·부연설명 과장/추측성 표현 제거 및 1줄 간결화:**
+     - 모든 사진의 제목을 11~16자 내외, 하단 부연설명(`.gallery-card-meta`)을 16~20자 내외로 담백하고 직관적인 실제 현장 활동 명칭으로 정돈하여 카드 안에서 글자가 길어져 짤리거나 어색하게 줄바꿈되는 현상을 원천 해결.
+  3. **갤러리 카드 하단 정보 영역 CSS 개선 (`.gallery-card-info`, `.gallery-card-title`, `.gallery-card-meta`):**
+     - `.gallery-card-meta`에 `word-break: keep-all`, `overflow-wrap: break-word`, `align-items: flex-start`, 아이콘 `flex-shrink: 0`을 적용하여 어떤 해상도에서도 부연설명이 잘리지 않고 온전히 표시되도록 수정.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
