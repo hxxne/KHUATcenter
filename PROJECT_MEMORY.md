@@ -2643,3 +2643,21 @@ Observation 100시간 실무 과정,
     - **부연설명:** `밴드를 활용한 하지 부상 예방 그룹 운동` ➔ **`밴드를 활용한 코어 그룹 운동`** (영문: `Band-Assisted Core Group Exercise`)
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+---
+
+## ⚾ 72. 야구부 현장 활동사진(`야구 1.jpg`) 업로드 최적화 및 아카이브·부서 모달 연동 (2026-10-30)
+- **사용자 요청:**
+  - *"야구 1 사진 assets에 올려놨어 올려줘"*
+- **추가된 야구부 활동사진 (`assets/야구 1.jpg`):**
+  - **국문 제목:** `야구부 경기장 발목 테이핑`
+  - **국문 부연설명:** `<i class="fa-solid fa-bandage"></i> 시합 전 선수 발목 관절 보호 및 고정 테이핑`
+  - **라이트박스 설명:** `야구장 더그아웃 벤치에서 선수의 발목 보호 및 부상 예방 테이핑을 시행하는 모습`
+  - **영문 번역:** `Baseball Ankle Taping Care` / `Pre-Game Ankle Joint Stabilization Taping`
+- **최적화 및 연동 내역 (`index.html`, `assets/야구 1.jpg`):**
+  - 6.85MB 원본 사진을 EXIF 정방향 회전 보정 및 FHD 웹 경량화(약 844KB) 최적화.
+  - `#activities` 갤러리 그리드 내 축구부 뒤, 농구부 앞(`data-dept="baseball"`)에 10번째 부서 카드로 배치.
+  - 체육부 `야구부` 상세 모달(`sportsData["야구"].photos`)에 동시 연동 완료 (총 10개 부서 48장 아카이브 구축).
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
