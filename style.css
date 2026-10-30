@@ -8534,10 +8534,18 @@ img, picture, svg, a, button {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    max-width: 1180px;
+    gap: 10px 10px;
+    max-width: 860px;
     margin: 0 auto;
     padding: 4px 10px;
+}
+
+.dept-picto-row-break {
+    flex-basis: 100%;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .dept-picto-btn {
@@ -8620,7 +8628,11 @@ img, picture, svg, a, button {
         justify-content: flex-start;
         overflow-x: auto;
         flex-wrap: nowrap;
+        max-width: 100%;
         padding-bottom: 8px;
+    }
+    .dept-picto-row-break {
+        display: none;
     }
 }
 
