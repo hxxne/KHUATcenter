@@ -2707,3 +2707,21 @@ Observation 100시간 실무 과정,
   - 체육부 `품새` 상세 모달(`sportsData["품새"].photos`)에 6장 동시 연동 완료.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+---
+
+## 🥋 75. 태권도 겨루기부 현장 활동사진 2장(`겨루기 11, 12.jpg`) 추가 최적화 및 연동 (2026-10-30)
+- **사용자 요청:**
+  - *"겨루기 사진 추가로 assets 파일에 넣어놨어"*
+- **추가된 태권도 겨루기부 활동사진 2장 (`assets/겨루기 11.jpg`, `assets/겨루기 12.jpg`):**
+  1. `assets/겨루기 11.jpg`: **아시아 프레지던트컵 발목 테이핑** (`국제대회 시합 전 발목 관절 안정화 및 부상 예방`)
+     - 영문: `Asian President's Cup Ankle Taping` / `International Tournament Pre-Match Ankle Stabilization Taping`
+  2. `assets/겨루기 12.jpg`: **태권도 겨루기부 전기자극 케어** (`시합 전 대퇴사두근 근신경 활성화 및 컨디셔닝`)
+     - 영문: `Warm-up Zone Muscle Stimulation Care` / `Portable EMS Quadriceps & Leg Conditioning Care`
+- **최적화 및 연동 내역 (`index.html`, `assets/겨루기 11, 12.jpg`):**
+  - 원본 사진(5.6MB, 2.9MB)을 EXIF 정방향 자동 보정 및 FHD(1920px) 해상도 웹 경량화(각각 458KB, 431KB) 최적화.
+  - `#activities` 갤러리 그리드 내 태권도 겨루기부 카드에 2장 추가 (겨루기부 총 11장, 전체 11개 부서 56장 아카이브 확장).
+  - 체육부 `겨루기` 상세 모달(`sportsData["겨루기"].photos`)에 2장 동시 연동 완료 (모달 내 겨루기 사진 총 11장).
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
