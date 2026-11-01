@@ -2794,3 +2794,25 @@ Observation 100시간 실무 과정,
      - 다국어 영문(`i18n.js`) 번역 매핑 동기화 완료.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+
+---
+
+## 🏥 79. AT Center 현장 활동사진 2장(`센터 at 1, 2.jpg`) 업로드 및 아카이브 연동 (2026-11-02)
+- **사용자 요청:**
+  - *"센터 at 1, 2 파일 assets에 올려놨어 AT Center 현장 활동 사진에 올려줘"*
+- **신규 연동된 AT Center 현장 활동사진 2장 (`assets/센터 at 1.jpg`, `assets/센터 at 2.jpg`):**
+  1. `assets/센터 at 1.jpg`: **AT Center 선수 재활 트레이닝** (`선승관 AT Center 기구 활용 맞춤형 기능 재활`)
+     - 영문: `Functional Rehabilitation Training` / `Customized Functional Rehabilitation at AT Center`
+     - 라이트박스 캡션: `선승관 AT Center 훈련 공간에서 선수의 기능 회복 및 경기력 향상을 위한 맞춤형 재활 운동 지도`
+  2. `assets/센터 at 2.jpg`: **AT Center 메디컬 케어 & 컨디셔닝** (`선수 신체 정렬 평가 및 전문 도수 케어`)
+     - 영문: `Medical Care & Conditioning` / `Manual Therapy & Conditioning Care at AT Center`
+     - 라이트박스 캡션: `선승관 AT Center 치료 베드에서 선수의 관절 가동성 회복 및 통증 완화를 위한 전문 도수 컨디셔닝 케어`
+- **반영 및 연동 내역 (`index.html`):**
+  1. `#activities` 갤러리 내 `[0. 부서별 활동사진 (dept)]` 12번째 부서 카드(`data-dept="center"`)로 2장 추가 ➔ **12개 전 부서 총 58장 공식 아카이브 완성**.
+  2. 상단 픽토그램 필터에서 `AT Center` 클릭 시 Empty State 없이 선명한 현장 사진 2장 즉시 필터링 노출.
+  3. 체육부 모달 데이터 `sportsData["센터"].photos`에 2장 동시 연동하여 모달 팝업에서도 갤러리 확인 가능.
+  4. 메인 카테고리 필터 `[1. 센터 활동 (center)]` 섹션에도 연동하여 상단 `센터 활동` 탭 클릭 시에도 원활히 노출.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
