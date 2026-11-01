@@ -543,6 +543,7 @@
                 .replace('연구주제: 스포츠 부상 재활 및 맞춤형 체력 관리 프로그램', 'Research: Sports Injury Rehab & Conditioning')
                 .replace('연구주제: 품새 선수 기능성 움직임 평가 및 자세 교정', 'Research: Functional Movement in Poomsae')
                 .replace('연구주제: 럭비 컨택트 손상 분석 및 파워 컨디셔닝', 'Research: Rugby Contact Injury & Power S&C')
+                .replace('연구주제: 운동 동호인들의 무릎, 발목 골관절염 실태조사', 'Research: Knee & Ankle OA in Active Adults')
                 .replace('연구주제: 운동 동호인들의 무릎, 발목 골관절염 실태조사 진행중', 'Research: Knee & Ankle OA in Active Adults')
                 .replace('연구주제: 태권도 겨루기 손상 분석 및 선수 복귀 재활', 'Research: Taekwondo Injury & Return-to-Play');
         }
@@ -600,6 +601,7 @@
             .replace(/경희대학교 무용학과 졸업/g, 'B.A. in Dance, KHU')
             .replace(/무용학부 한국무용/g, 'School of Dance (Korean Dance)')
             .replace(/저체중, 마른비만, 정상체중 여성 성인의 혈액지표, 신체구성, 신체기능 및 자가보고 설문 비교/g, 'Comparison of Blood Biomarkers, Body Composition, Physical Function, and Self-Reported Questionnaires in Underweight, Normal-Weight Obese, and Normal-Weight Adult Women')
+            .replace(/운동 동호인들의 무릎, 발목 골관절염 실태조사/g, 'Knee & Ankle Osteoarthritis Survey in Active Adults')
             .replace(/무릎 및 발목 골관절염 및 신체활동 설문조사/g, 'Knee and Ankle Osteoarthritis and Physical Activity Survey')
             .replace(/2024 운동학 학술대회/g, '2024 Korean Academy of Kinesiology Conference')
             .replace(/조선대학교 체육학과 졸업/g, 'B.S. in Physical Education, Chosun Univ.')
