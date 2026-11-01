@@ -232,6 +232,15 @@
     // 2. 다중 리스트 요소(순서 기반) 번역 데이터
     // ------------------------------------------------------------------------
     const LIST_TRANSLATIONS = [
+        // 역대 리더 분과 한글 서브라벨 (#stream-past-leaders)
+        {
+            selector: '#stream-past-leaders .ed-stream-sublabel',
+            items: [
+                'Athletic Training Div.',
+                'Sports Rehab Div.',
+                'Academic Research Div.'
+            ]
+        },
         // 센터 소개 5대 하이라이트 (#about)
         {
             selector: '#about .about-clean-item .about-clean-txt',
@@ -511,7 +520,8 @@
             'AT 동아리 총무': 'Secretary General, Athletic Training Club',
             '스포츠재활 강사': 'Sports Rehabilitation Instructor',
             'AT Center 센터 AT': 'Center Athletic Trainer (AT Center)',
-            '센터 AT': 'Center Athletic Trainer'
+            '센터 AT': 'Center Athletic Trainer',
+            '연구주제: 미정': 'Research: TBD'
         };
 
         if (exactBulletMap[t]) return exactBulletMap[t];
@@ -652,7 +662,8 @@
             .replace(/석사 졸업/g, 'M.S. Graduate')
             .replace(/학부 연구생 \/ 보조 AT/g, 'Undergraduate Student / Assistant AT')
             .replace(/선수 케어 및 필드 의무지원/g, 'Athlete Care & Field Medical Support')
-            .replace(/재학생/g, 'Undergraduate Student');
+            .replace(/재학생/g, 'Undergraduate Student')
+            .replace(/^미정$/g, 'TBD');
     }
 
     // ------------------------------------------------------------------------
@@ -717,7 +728,7 @@
         });
 
         // 6) 역대 수상자 카드 설명, 힌트, 배지, 대학원 졸업자 종목 태그 백업
-        document.querySelectorAll('#awards .award-stream-desc, #awards .award-click-hint, #awards .award-pill, #awards .ed-ga-item .gb').forEach(el => {
+        document.querySelectorAll('#awards .award-year-archive-meta, #awards .award-stream-desc, #awards .award-click-hint, #awards .award-pill, #awards .ed-ga-item .gb').forEach(el => {
             if (el.dataset.koOrig === undefined) {
                 el.dataset.koOrig = el.innerHTML;
             }
@@ -852,7 +863,12 @@
             }
         });
 
-        // 6) 역대 수상자 카드 설명, 클릭 힌트, 공동 수상 배지, 대학원 졸업자 종목 전환
+        // 6) 역대 수상자 연도 헌액 메타, 카드 설명, 클릭 힌트, 공동 수상 배지, 대학원 졸업자 종목 전환
+        document.querySelectorAll('#awards .award-year-archive-meta').forEach(el => {
+            if (el.dataset.koOrig === undefined) return;
+            el.innerHTML = (lang === 'en') ? 'Official Student Honor Roll' : el.dataset.koOrig;
+        });
+
         document.querySelectorAll('#awards .award-stream-desc').forEach(el => {
             if (el.dataset.koOrig === undefined) return;
             const koTxt = el.dataset.koOrig.trim();

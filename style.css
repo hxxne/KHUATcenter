@@ -9343,29 +9343,26 @@ html[lang="en"] #awards .ed-stream-row .ed-name {
 }
 
 html[lang="en"] #awards .ed-ga-item {
-    gap: 5px;
-    padding: 7px 9px;
-    flex-wrap: nowrap;
+    gap: 8px !important;
+    padding: 11px 2px !important;
 }
 
 html[lang="en"] #awards .ed-ga-item .gt {
-    font-size: 0.74rem;
+    font-size: 0.76rem !important;
     white-space: nowrap;
-    flex-shrink: 0;
 }
 
 html[lang="en"] #awards .ed-ga-item .gb {
-    font-size: 0.7rem;
-    padding: 2px 5px;
-    letter-spacing: -0.1px;
+    font-size: 0.76rem !important;
+    padding: 0 !important;
+    letter-spacing: 0px;
     white-space: nowrap;
-    flex-shrink: 0;
 }
 
 html[lang="en"] #awards .ed-ga-item .gn {
-    font-size: 0.88rem;
+    font-size: 0.9rem !important;
+    letter-spacing: 0.06em !important;
     white-space: nowrap;
-    flex-shrink: 0;
 }
 
 /* 8. 발전기금 (#donate) 배너 설명글 화면 밖 잘림(nowrap) 해제 */
@@ -9621,175 +9618,586 @@ body,
     border-color: #A50034 !important;
 }
 
-.ed-ga-item {
-    background: #F8F9FA !important;
-    border: 1px solid #E2E8F0 !important;
-}
-
-.ed-stream-block,
-.ed-ga-container {
-    border: 1px solid #E2E8F0 !important;
-}
-
 ::-webkit-scrollbar-thumb {
     background: #CBD5E1 !important;
 }
 
-/* --------------------------------------------------------------------------
-   2. 역대 수상자 카드(.award-stream-card) 우측 옆 시그니처 메달/트로피 엠블럼 디자인
-   -------------------------------------------------------------------------- */
+/* ==========================================================================
+   2. 역대 수상자 및 리더 (#awards) — 아이비리그 학술 아카이브 에디션
+      (아이콘·무지개 그라데이션·알약 배지·회색 미니박스 전면 제거,
+       수직 헤어라인 보드 + 학술 연보 탭 + 동문 인명록 밑줄 타이포그래피)
+   ========================================================================== */
 
-/* 연도 헤더 우측 옆에 공식 명예의 전당(HALL OF FAME) 인증 라벨 추가 */
-.award-year-row-header {
+/* [A] 상단 연도 인덱스 탭 바 (Editorial Chronology Index Bar) */
+#awards .award-carousel-control-header {
     display: flex;
     align-items: center;
-    gap: 14px;
-    position: relative;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    border-bottom: 1px solid #E2E8F0;
 }
 
-.award-year-row-header::after {
-    content: "\f091  KHU AT CENTER · HALL OF FAME";
-    font-family: "Font Awesome 6 Free", "Pretendard", sans-serif;
-    font-weight: 800;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    color: #64748B;
-    background: #F8F9FA;
+#awards .award-carousel-nav-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 4px;
     border: 1px solid #E2E8F0;
-    padding: 5px 13px;
-    border-radius: 999px;
+    background: #FFFFFF;
+    color: #475569;
+    font-size: 12px;
+    box-shadow: none;
+    margin-bottom: 8px;
+    transition: color 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
+}
+
+#awards .award-carousel-nav-btn:hover {
+    background: #0F172A;
+    color: #FFFFFF;
+    border-color: #0F172A;
+    transform: none;
+    box-shadow: none;
+}
+
+#awards .award-year-pills-bar {
+    display: flex;
+    gap: 4px;
+    padding: 0;
+    align-items: stretch;
+    justify-content: center;
+}
+
+#awards .award-year-pill {
+    padding: 10px 15px 12px 15px;
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 2.5px solid transparent !important;
+    background: transparent !important;
+    color: #64748B;
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    box-shadow: none !important;
+    transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+#awards .award-year-pill:hover {
+    color: #0F172A;
+    background: transparent !important;
+}
+
+#awards .award-year-pill.active {
+    color: #A50034;
+    font-weight: 800;
+    border-bottom-color: #A50034 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* [B] 11개년 학생 어워드 헌액 명판 보드 (Divided Honor Roll Sheet) */
+#awards .award-carousel-viewport {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-top: 2.5px solid #0F172A !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.025) !important;
+    min-height: auto !important;
+}
+
+#awards .award-carousel-slide {
+    padding: 32px 38px 34px 38px !important;
+}
+
+#awards .award-year-row-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 0 !important;
+    padding-bottom: 20px !important;
+    border-bottom: 1px solid #E2E8F0 !important;
+}
+
+/* 기존 트로피 알약(::after) 영구 제거 */
+#awards .award-year-row-header::after {
+    content: none !important;
+    display: none !important;
+}
+
+#awards .award-year-badge {
+    font-family: 'Inter', 'Pretendard', sans-serif !important;
+    font-variant-numeric: tabular-nums;
+    font-size: 32px !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    letter-spacing: -0.03em !important;
+    line-height: 1 !important;
+}
+
+#awards .award-year-archive-meta {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #64748B;
+    letter-spacing: 0.02em;
     margin-left: auto;
 }
 
-@media (max-width: 640px) {
-    .award-year-row-header::after {
-        display: none;
+/* 3열 수직 구분선 명판 그리드 (개별 카드 박스 대신 1px 헤어라인 구획) */
+#awards .award-year-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0 !important;
+}
+
+#awards .award-stream-card,
+#awards .award-stream-card-dual {
+    background: transparent !important;
+    border: none !important;
+    border-right: 1px solid #E2E8F0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    padding: 26px 28px 20px 28px !important;
+    overflow: visible !important;
+    transition: background-color 0.2s ease !important;
+}
+
+#awards .award-stream-card:first-child {
+    padding-left: 6px !important;
+}
+
+#awards .award-stream-card:last-child {
+    border-right: none !important;
+    padding-right: 6px !important;
+}
+
+/* 카드 상단 무지개 그라데이션 바(::before) & 우측 동그란 메달/트로피(::after) 전면 제거 */
+#awards .award-stream-card::before,
+#awards .award-stream-card::after,
+#awards .award-stream-card-dual::before,
+#awards .award-stream-card-dual::after {
+    content: none !important;
+    display: none !important;
+}
+
+#awards .award-stream-card:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* 알약 배지를 순수 학술 영문 캡션 타이포그래피로 정제 */
+#awards .award-pill {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 14px !important;
+    max-width: 100% !important;
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase;
+}
+
+/* 최우수상만 경희 시그니처 버건디 단일 포인트, 나머지는 절제된 다크 슬레이트 통일 */
+#awards .award-pill.pill-gold {
+    color: #A50034 !important;
+}
+
+#awards .award-pill.pill-burgundy,
+#awards .award-pill.pill-silver {
+    color: #475569 !important;
+}
+
+#awards .award-stream-name {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    letter-spacing: 0.12em !important;
+    margin: 0 0 8px 0 !important;
+    line-height: 1.25 !important;
+    transition: color 0.18s ease;
+}
+
+#awards .award-stream-card:hover .award-stream-name {
+    color: #A50034 !important;
+}
+
+/* 2017년 2인 공동 수상자 가로 병렬 정렬 (슬라이드 높이 11개년 완벽 일치) */
+#awards .award-stream-name-dual {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    flex-wrap: wrap;
+    gap: 14px !important;
+    margin: 0 0 8px 0 !important;
+}
+
+#awards .award-stream-name-dual .dual-name-row {
+    font-size: 24px !important;
+    font-weight: 800 !important;
+    color: #0F172A !important;
+    letter-spacing: 0.1em !important;
+    line-height: 1.25 !important;
+    margin: 0 !important;
+    position: relative;
+    transition: color 0.18s ease !important;
+    transform: none !important;
+}
+
+#awards .award-stream-name-dual .dual-name-row:first-child::after {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 16px;
+    background: #CBD5E1;
+    margin-left: 14px;
+    vertical-align: -2px;
+}
+
+#awards .award-stream-name-dual .dual-name-row:hover {
+    color: #A50034 !important;
+    transform: none !important;
+}
+
+#awards .award-stream-desc {
+    font-size: 13.5px !important;
+    color: #64748B !important;
+    font-weight: 500 !important;
+    margin-bottom: 22px !important;
+}
+
+#awards .award-click-hint {
+    margin-top: auto !important;
+    padding-top: 0 !important;
+    border-top: none !important;
+    font-size: 12.5px !important;
+    font-weight: 600 !important;
+    color: #94A3B8 !important;
+    opacity: 1 !important;
+    gap: 5px !important;
+    transform: none !important;
+}
+
+#awards .award-click-hint i {
+    font-size: 10px;
+    transform: rotate(-45deg);
+    transition: transform 0.2s ease;
+}
+
+#awards .award-stream-card:hover .award-click-hint {
+    color: #A50034 !important;
+    transform: none !important;
+}
+
+#awards .award-stream-card:hover .award-click-hint i {
+    transform: translate(2px, -2px) rotate(-45deg);
+}
+
+/* 하단 슬라이드 인디케이터 미니멀 정돈 */
+#awards .award-carousel-footer {
+    margin-top: 18px;
+}
+
+#awards .award-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: #CBD5E1;
+}
+
+#awards .award-dot.active {
+    width: 22px;
+    background: #0F172A;
+}
+
+/* [C] 하위 섹션 공통 에디토리얼 헤더 (역대 리더 / 대학원 졸업자) */
+#awards .award-sub-section-stream {
+    margin-top: 72px;
+}
+
+#awards .stream-sub-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding-top: 40px;
+    margin-bottom: 24px;
+    border-top: 1px solid #E2E8F0;
+    text-align: left;
+}
+
+#awards .stream-sub-title {
+    font-size: 23px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+#awards .stream-sub-desc {
+    font-size: 14px;
+    color: #64748B;
+    margin: 0;
+    max-width: none;
+}
+
+/* [D] 역대 리더 (18인) — 좌우 1:1 높이 균형 학술 연표 보드 */
+#awards .ed-leaders-split-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    align-items: stretch;
+}
+
+#awards .ed-leaders-col {
+    display: flex;
+    flex-direction: column;
+}
+
+#awards .ed-leaders-col > .ed-stream-block {
+    flex: 1;
+}
+
+#awards .ed-leaders-right-stack {
+    gap: 24px;
+    justify-content: space-between;
+}
+
+#awards .ed-leaders-right-stack > .ed-stream-block {
+    flex: 0 0 auto;
+}
+
+#awards .ed-leaders-right-stack > .ed-stream-block:first-child {
+    flex: 1;
+}
+
+#awards .ed-stream-block {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-top: 2px solid #0F172A !important;
+    border-radius: 6px !important;
+    padding: 24px 28px !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+#awards .ed-stream-block::before {
+    content: none !important;
+    display: none !important;
+}
+
+#awards .ed-stream-block:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    border-color: #E2E8F0 !important;
+    border-top-color: #0F172A !important;
+}
+
+#awards .ed-stream-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding-bottom: 14px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+#awards .ed-stream-tag {
+    font-family: 'Inter', 'Pretendard', sans-serif;
+    font-size: 12.5px !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.12em !important;
+    color: #0F172A !important;
+}
+
+#awards .ed-stream-tag.tag-burgundy {
+    color: #A50034 !important;
+}
+
+#awards .ed-stream-sublabel {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #64748B;
+}
+
+#awards .ed-stream-list {
+    gap: 0 !important;
+}
+
+#awards .ed-stream-row {
+    padding: 10.5px 2px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border-bottom: 1px solid #F1F5F9 !important;
+    background: transparent !important;
+    transform: none !important;
+    transition: border-color 0.18s ease !important;
+}
+
+#awards .ed-stream-row:last-child {
+    border-bottom: none !important;
+}
+
+#awards .ed-stream-row:hover {
+    background: transparent !important;
+    border-bottom-color: rgba(165, 0, 52, 0.35) !important;
+    transform: none !important;
+}
+
+#awards .ed-stream-row .ed-term {
+    font-family: 'Inter', 'Pretendard', sans-serif !important;
+    font-variant-numeric: tabular-nums;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: #64748B !important;
+    letter-spacing: 0 !important;
+}
+
+#awards .ed-stream-row .ed-name {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    letter-spacing: 0.1em !important;
+}
+
+#awards .ed-stream-row:hover .ed-name {
+    color: #A50034 !important;
+}
+
+/* [E] 대학원 졸업자 (35인) — 3열 대학 동문 인명록 (Alumni Directory) */
+#awards .ed-ga-container {
+    background: #FFFFFF !important;
+    border: 1px solid #E2E8F0 !important;
+    border-top: 2px solid #0F172A !important;
+    border-radius: 6px !important;
+    padding: 24px 32px !important;
+    box-shadow: none !important;
+}
+
+#awards .ed-ga-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px !important;
+    row-gap: 0 !important;
+}
+
+#awards .ed-ga-item {
+    display: grid !important;
+    grid-template-columns: 58px 1fr auto !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 11px 2px !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid #F1F5F9 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: border-color 0.18s ease !important;
+}
+
+#awards .ed-ga-item:hover {
+    background: transparent !important;
+    border-bottom-color: rgba(165, 0, 52, 0.4) !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+#awards .ed-ga-item .gt {
+    font-family: 'Inter', 'Pretendard', sans-serif !important;
+    font-variant-numeric: tabular-nums;
+    font-size: 12.5px !important;
+    font-weight: 500 !important;
+    color: #64748B !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    text-align: left;
+}
+
+#awards .ed-ga-item .gb {
+    font-size: 12.5px !important;
+    font-weight: 500 !important;
+    color: #64748B !important;
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    text-align: left;
+}
+
+#awards .ed-ga-item .gn {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #0F172A !important;
+    letter-spacing: 0.1em !important;
+    text-align: right;
+    transition: color 0.18s ease;
+}
+
+#awards .ed-ga-item:hover .gn {
+    color: #A50034 !important;
+}
+
+/* [F] 태블릿 & 모바일 반응형 최적화 */
+@media (max-width: 992px) {
+    #awards .ed-leaders-split-grid {
+        grid-template-columns: 1fr;
+    }
+    #awards .ed-ga-grid {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 28px !important;
     }
 }
 
-/* 수상자 카드 기본 배경을 누런 #FAF8F5에서 깨끗한 #F8F9FA 실크 오프화이트로 정화 */
-.award-stream-card,
-.award-stream-card-dual {
-    background: #F8F9FA !important;
-    border: 1px solid #E2E8F0 !important;
-    border-radius: 16px !important;
-    padding: 24px 22px !important;
-    position: relative !important;
-    overflow: hidden !important;
+@media (max-width: 820px) {
+    #awards .award-carousel-slide {
+        padding: 24px 22px 26px 22px !important;
+    }
+    #awards .award-year-pills-bar {
+        justify-content: flex-start;
+    }
+    #awards .award-year-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    #awards .award-stream-card,
+    #awards .award-stream-card:first-child,
+    #awards .award-stream-card:last-child {
+        border-right: none !important;
+        border-bottom: 1px solid #E2E8F0 !important;
+        padding: 20px 2px !important;
+    }
+    #awards .award-stream-card:last-child {
+        border-bottom: none !important;
+        padding-bottom: 4px !important;
+    }
+    #awards .stream-sub-header {
+        flex-direction: column;
+        gap: 6px;
+    }
 }
 
-.award-stream-card:hover,
-.award-stream-card-dual:hover {
-    background: #FFFFFF !important;
-    border-color: rgba(165, 0, 52, 0.35) !important;
-    box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.08) !important;
-}
-
-/* 카드 상단 3px 시그니처 컬러 액센트 바 (::before) */
-.award-stream-card::before,
-.award-stream-card-dual::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3.5px;
-    opacity: 0.9;
-    transition: height 0.25s ease;
-}
-
-.award-stream-card.card-coty::before {
-    background: linear-gradient(90deg, #C5A059 0%, #E2C178 100%);
-}
-
-.award-stream-card.card-insp::before {
-    background: linear-gradient(90deg, #A50034 0%, #D92654 100%);
-}
-
-.award-stream-card.card-rookie::before,
-.award-stream-card-dual::before {
-    background: linear-gradient(90deg, #334155 0%, #64748B 100%);
-}
-
-/* 수상자 이름 오른쪽 옆(우측 중앙~상단)에 품격 있는 원형 메달/트로피 엠블럼 배지 (::after) 배치 */
-.award-stream-card::after,
-.award-stream-card-dual::after {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute;
-    top: 24px;
-    right: 20px;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.3s ease;
-    pointer-events: none;
-}
-
-/* 1) AT STUDENT OF THE YEAR 우측 옆: 골드 트로피 엠블럼 */
-.award-stream-card.card-coty::after {
-    content: "\f091"; /* fa-trophy */
-    color: #9A7422;
-    background: linear-gradient(135deg, rgba(197, 160, 89, 0.16) 0%, rgba(197, 160, 89, 0.05) 100%);
-    border: 1px solid rgba(197, 160, 89, 0.3);
-    box-shadow: 0 4px 12px rgba(197, 160, 89, 0.12);
-}
-
-/* 2) INSPIRATION 우측 옆: 경희 버건디 어워드 메달 엠블럼 */
-.award-stream-card.card-insp::after {
-    content: "\f559"; /* fa-award */
-    color: #A50034;
-    background: linear-gradient(135deg, rgba(165, 0, 52, 0.12) 0%, rgba(165, 0, 52, 0.04) 100%);
-    border: 1px solid rgba(165, 0, 52, 0.24);
-    box-shadow: 0 4px 12px rgba(165, 0, 52, 0.1);
-}
-
-/* 3) ROOKIE OF THE YEAR 우측 옆: 실버/네이비 스타 메달 엠블럼 */
-.award-stream-card.card-rookie::after,
-.award-stream-card-dual::after {
-    content: "\f5a2"; /* fa-medal */
-    color: #334155;
-    background: linear-gradient(135deg, rgba(71, 85, 105, 0.13) 0%, rgba(71, 85, 105, 0.04) 100%);
-    border: 1px solid rgba(71, 85, 105, 0.24);
-    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.06);
-}
-
-/* 카드 호버 시 우측 메달 엠블럼 인터랙티브 모션 */
-.award-stream-card:hover::after,
-.award-stream-card-dual:hover::after {
-    transform: scale(1.1) rotate(-6deg);
-}
-
-.award-stream-card.card-coty:hover::after {
-    background: #C5A059;
-    color: #FFFFFF;
-    border-color: #C5A059;
-    box-shadow: 0 6px 16px rgba(197, 160, 89, 0.32);
-}
-
-.award-stream-card.card-insp:hover::after {
-    background: #A50034;
-    color: #FFFFFF;
-    border-color: #A50034;
-    box-shadow: 0 6px 16px rgba(165, 0, 52, 0.28);
-}
-
-.award-stream-card.card-rookie:hover::after,
-.award-stream-card-dual:hover::after {
-    background: #1E293B;
-    color: #FFFFFF;
-    border-color: #1E293B;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.24);
-}
-
-/* 수상자 이름 및 배지가 우측 엠블럼(48px)과 겹치지 않도록 우측 여백 확보 */
-.award-stream-card .award-pill,
-.award-stream-card-dual .award-pill {
-    max-width: calc(100% - 58px);
+@media (max-width: 640px) {
+    #awards .award-year-archive-meta {
+        font-size: 11.5px;
+    }
+    #awards .ed-ga-grid {
+        grid-template-columns: 1fr;
+    }
+    #awards .ed-ga-container,
+    #awards .ed-stream-block {
+        padding: 20px 18px !important;
+    }
 }
 
 
