@@ -2747,3 +2747,25 @@ Observation 100시간 실무 과정,
   5. **한/영 다국어(`i18n.js`) 동기화:** 신규 아카이브 메타 라벨(`Official Student Honor Roll`), 분과 서브라벨(`Athletic Training Div.`, `Sports Rehab Div.`, `Academic Research Div.`), 유승아 연구주제(`연구주제: 미정` -> `Research: TBD`) 영문 전환 완벽 연동.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+
+---
+
+## 🏛️ 77. 역대 수상자 및 리더 피드백 세부 조정 (2026-11-02)
+- **사용자 요청:**
+  1. `학생 어워드 공식 헌액` 문구 삭제
+  2. 섹션 서브타이틀에서 `헌액` 단어 제외 ➔ `리더십 공식 기록입니다.`로 변경
+  3. 역대 리더 분과 헤더 서브라벨에서 `~분과` 단어 제외 (`선수트레이닝`, `스포츠재활`, `학술연구`)
+  4. 대학원 졸업자 명단에 전처럼 **버건디 시그니처 틴트 컬러(`color: #A50034; background: rgba(165,0,52,0.08)`)** 다시 적용
+- **수정 내역 (`index.html`, `style.css`, `i18n.js`):**
+  1. `index.html`:
+     - 11개 슬라이드 내 `<span class="award-year-archive-meta">학생 어워드 공식 헌액</span>` 일괄 제거.
+     - 섹션 서브타이틀: `2015년부터 2025년까지 선승관 AT 센터를 빛낸 역대 학생 수상자 및 리더십 공식 기록입니다.`로 간결화.
+     - 리더십 서브라벨: `선수트레이닝 분과` ➔ `선수트레이닝`, `스포츠재활 분과` ➔ `스포츠재활`, `학술연구 분과` ➔ `학술연구`.
+  2. `style.css`:
+     - `#awards .ed-ga-item .gb`에 `color: #A50034`, `background: rgba(165, 0, 52, 0.08)`, `border: 1px solid rgba(165, 0, 52, 0.15)`, `border-radius: 4px`, `padding: 2px 7px` 적용하여 동문 종목/분야가 단정한 버건디 틴트 뱃지로 살아나도록 복원.
+  3. `i18n.js`:
+     - 리더십 서브라벨 영문 번역을 `['Athletic Training', 'Sports Rehab', 'Academic Research']`로 일치시키고 미사용 메타 번역 정리.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.

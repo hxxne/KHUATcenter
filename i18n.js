@@ -236,9 +236,9 @@
         {
             selector: '#stream-past-leaders .ed-stream-sublabel',
             items: [
-                'Athletic Training Div.',
-                'Sports Rehab Div.',
-                'Academic Research Div.'
+                'Athletic Training',
+                'Sports Rehab',
+                'Academic Research'
             ]
         },
         // 센터 소개 5대 하이라이트 (#about)
@@ -728,7 +728,7 @@
         });
 
         // 6) 역대 수상자 카드 설명, 힌트, 배지, 대학원 졸업자 종목 태그 백업
-        document.querySelectorAll('#awards .award-year-archive-meta, #awards .award-stream-desc, #awards .award-click-hint, #awards .award-pill, #awards .ed-ga-item .gb').forEach(el => {
+        document.querySelectorAll('#awards .award-stream-desc, #awards .award-click-hint, #awards .award-pill, #awards .ed-ga-item .gb').forEach(el => {
             if (el.dataset.koOrig === undefined) {
                 el.dataset.koOrig = el.innerHTML;
             }
@@ -863,12 +863,7 @@
             }
         });
 
-        // 6) 역대 수상자 연도 헌액 메타, 카드 설명, 클릭 힌트, 공동 수상 배지, 대학원 졸업자 종목 전환
-        document.querySelectorAll('#awards .award-year-archive-meta').forEach(el => {
-            if (el.dataset.koOrig === undefined) return;
-            el.innerHTML = (lang === 'en') ? 'Official Student Honor Roll' : el.dataset.koOrig;
-        });
-
+        // 6) 역대 수상자 카드 설명, 클릭 힌트, 공동 수상 배지, 대학원 졸업자 종목 전환
         document.querySelectorAll('#awards .award-stream-desc').forEach(el => {
             if (el.dataset.koOrig === undefined) return;
             const koTxt = el.dataset.koOrig.trim();
