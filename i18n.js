@@ -527,7 +527,7 @@
         if (exactBulletMap[t]) return exactBulletMap[t];
 
         // 일반대학원 기수
-        const gradMatch = t.match(/^일반대학원\s*(\d+)기$/);
+        const gradMatch = t.match(/^일반대학원\s*(?:석사과정\s*)?(\d+)기$/);
         if (gradMatch) {
             return `KHU Graduate School of PE (Cohort ${gradMatch[1]})`;
         }
