@@ -2816,3 +2816,26 @@ Observation 100시간 실무 과정,
   4. 메인 카테고리 필터 `[1. 센터 활동 (center)]` 섹션에도 연동하여 상단 `센터 활동` 탭 클릭 시에도 원활히 노출.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+
+---
+
+## 🏷️ 80. AT Center 활동사진 2장 제목 및 설명 사용자 맞춤 갱신 (2026-11-02)
+- **사용자 요청:**
+  - *"센터 at 2 사진 발목 가동성 운동이야"*
+  - *"at 1 사진은 발목 재활 운동"*
+- **갱신 내역 (`index.html`):**
+  1. `assets/센터 at 1.jpg`:
+     - 제목: **발목 재활 운동**
+     - 메타: `<i class="fa-solid fa-dumbbell"></i> 선승관 AT Center 맞춤형 발목 기능 재활`
+     - 캡션: `선승관 AT Center에서 선수의 발목 관절 기능 회복 및 안정화를 위한 맞춤형 발목 재활 운동 지도`
+     - 영문: `Ankle Rehabilitation Exercise` / `Targeted Ankle Functional Rehab at AT Center`
+  2. `assets/센터 at 2.jpg`:
+     - 제목: **발목 가동성 운동**
+     - 메타: `<i class="fa-solid fa-person-walking"></i> 발목 관절 가동 범위 확보 및 기능성 가동성 운동`
+     - 캡션: `선승관 AT Center에서 선수의 발목 관절 가동 범위(ROM) 개선 및 움직임 회복을 위한 발목 가동성 운동`
+     - 영문: `Ankle Mobility Exercise` / `Joint Range of Motion & Ankle Mobility Exercise`
+  3. 부서별 갤러리 카드, 카테고리별 센터 활동 카드, 체육부 모달(`sportsData["센터"].photos`) 3곳 전역 일괄 갱신 완료.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
