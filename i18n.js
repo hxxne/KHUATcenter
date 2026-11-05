@@ -1103,12 +1103,16 @@
                     const jobEl = document.getElementById('alumni-modal-job');
 
                     if (badgeEl) {
-                        badgeEl.textContent = badgeEl.textContent
+                        let bTxt = badgeEl.textContent
                             .replace('경희대학교 AT Center 동문', 'KHU AT Center Alumni')
                             .replace('공동 수상', 'Co-Winner')
                             .replace('팀장', 'Team Lead')
                             .replace('연구/교육', 'Research/Edu')
                             .replace('스포츠재활', 'Sports Rehab');
+                        Object.keys(GA_BADGE_KO_TO_EN).forEach(function (koKey) {
+                            bTxt = bTxt.replace(koKey, GA_BADGE_KO_TO_EN[koKey]);
+                        });
+                        badgeEl.textContent = bTxt;
                     }
                     if (jobEl) {
                         jobEl.innerHTML = jobEl.innerHTML

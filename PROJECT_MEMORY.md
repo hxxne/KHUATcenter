@@ -2967,3 +2967,17 @@ Observation 100시간 실무 과정,
   - 11건 모든 행 클릭 시 `openAlumniModal` 동문 상세 커리어 모달 및 `i18n.js` 영문 변환(`Sports Rehabilitation`) 100% 연동.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+---
+
+## 🎓 87. 대학원 졸업자(Graduate Assistants) 2026.08 졸업 동문 3인 추가 (총 35인 ➔ 총 38인) (2026-11-05)
+- **사용자 요청:**
+  - *"졸업생 명단에 골프 이예인 2026.08 / 시범단 최현곤 2026.08 / 스포츠재활 진승희 2026.08 추가해줘"*
+- **추가된 동문 3인 (`#stream-graduate-assistants`, `index.html`):**
+  1. `2026.08` | **골프** | **이예인** (`openAlumniModal('이예인', 'Graduate Assistant (2026.08 골프)')` — `"이예인": "미공개"`)
+  2. `2026.08` | **시범단** | **최현곤** (`openAlumniModal('최현곤', 'Graduate Assistant (2026.08 시범단)')` — `"최현곤": "현) 경희대학교 AT 센터 재활팀장"`)
+  3. `2026.08` | **스포츠재활** | **진승희** (`openAlumniModal('진승희', 'Graduate Assistant (2026.08 스포츠재활)')` — `"진승희": "미공개"`)
+- **다국어(`i18n.js`) 모달 배지 보강:**
+  - 영문 모드(`EN`)에서 졸업 동문 명단 클릭 시 모달 상단 배지의 종목명(`골프` ➔ `Golf`, `시범단` ➔ `TKD Demo`, `스포츠재활` ➔ `Sports Rehab` 등 전 종목)까지 모두 영문으로 자동 변환되도록 `GA_BADGE_KO_TO_EN` 연동 보강.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
