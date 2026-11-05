@@ -55,15 +55,15 @@
             unitEn: 'Trainees',
             labelKo: '연도별 누적 이수 추이',
             labelEn: 'Cumulative Trainees',
-            badgeKo: '+24명 / 년 평균',
-            badgeEn: '+24 / yr avg',
+            badgeKo: '+45명 / 년 평균',
+            badgeEn: '+45 / yr avg',
             series: [
-                { year: '2016', val: 48 },
-                { year: '2018', val: 94 },
-                { year: '2020', val: 142 },
-                { year: '2022', val: 192 },
-                { year: '2024', val: 240 },
-                { year: '2026', val: 288 }
+                { year: '2016', val: 91 },
+                { year: '2018', val: 182 },
+                { year: '2020', val: 274 },
+                { year: '2022', val: 365 },
+                { year: '2024', val: 456 },
+                { year: '2026', val: 547 }
             ]
         },
         {
