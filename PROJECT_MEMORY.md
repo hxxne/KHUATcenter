@@ -3002,3 +3002,22 @@ Observation 100시간 실무 과정,
      - 반응형 높이(`max-height: 92vh` 플렉스 스크롤) 및 한국어/영어(`setSiteLanguage`) 실시간 텍스트 동기화, `prefers-reduced-motion` 접근성 완벽 지원.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료 (사용자 1단계 확인 후 2단계 스크롤 리빌·진행 바 진행 예정).
+
+
+---
+
+## 🌐 89. 구성원 영문(`English`) 전환 누락 전수 보완 — 우지윤 `경희대학교 무용학부 졸업` 외 전 카드·모달 100% 동기화 (2026-11-05)
+- **사용자 요청:**
+  - *"우지윤만 english 버전으로 바꿨을때 경희대학교 무용학부 졸업이 영어로 안바뀌어"*
+- **원인 진단 및 전수 점검 결과 (`i18n.js`):**
+  1. `i18n.js`의 `exactBulletMap` 및 `translateProfModalText`에 `'경희대학교 무용학과 졸업'`과 `'경희대학교 무용학부 한국무용 졸업'`만 등록되어 있고, 우지윤 카드·모달의 실제 문구인 **`'경희대학교 무용학부 졸업'`** 및 **`'무용학부'`**가 빠져 있었음.
+  2. 헤드리스 브라우저 전수 감사(43개 전체 구성원 카드 및 상세 모달 클릭 검사)를 통해 추가 발견된 미세 누락:
+     - 박지홍 교수 카드 학위명의 `&amp;` HTML 엔티티(`Physical Medicine &amp; Rehabilitation 전공`) 디코딩 전처리 누락.
+     - 기윤서 카드(`체육부 AT` / `스포츠재활 강사`)의 `'일반대학원 석사 졸업'` 매핑 누락.
+     - 상세 프로필 모달(`#prof-modal`) 내 자격증(`KATA 공인 AT`, `운동처방사` 등)·담당과목·세부 전문분야 문구 영문화 보강.
+- **조치 내역 (`i18n.js`, `index.html`):**
+  - `translateMemberBulletLine`에 `&amp;` 디코딩 및 `'경희대학교 무용학부 졸업'` ➔ `'B.A. in Dance, Kyung Hee University'`, `'일반대학원 석사 졸업'` ➔ `'M.S. in Physical Education, KHU'` 추가.
+  - `translateProfModalText`에 `/경희대학교 무용학부 졸업/g` ➔ `'B.A. in Dance, KHU'`, `/무용학부/g` ➔ `'School of Dance'` 및 전체 구성원 상세 모달 항목 영문 매핑 완비.
+  - `index.html` 내 `i18n.js?v=20261105_i18n_dance` 캐시 버스팅 갱신 및 Playwright 전수 재검증으로 미번역 항목 **0건** 확인 완료.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.

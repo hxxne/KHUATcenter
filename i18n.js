@@ -490,7 +490,7 @@
 
     // 구성원 카드 내 세부 항목 줄 단위 영문 변환 함수 (350px 카드 내 1줄 유지 보장)
     function translateMemberBulletLine(text) {
-        let t = text.trim();
+        let t = text.replace(/&amp;/g, '&').trim();
 
         const exactBulletMap = {
             '학위명: 체육과학 박사(Physical Medicine & Rehabilitation 전공)': 'Degree: Ph.D. in Physical Medicine & Rehab',
@@ -508,8 +508,12 @@
             '담당부서: 체육시설운영단': 'Division: Sports Facility Management Corps',
             '담당과목: 재활운동실습, 스포츠테이핑실습': 'Courses: Rehab Exercise & Sports Taping Lab',
             '담당과목: 저항운동과컨디셔닝, 운동손상관리, 저항운동실습': 'Courses: S&C, Athletic Injury Management',
+            '경희대학교 무용학부 졸업': 'B.A. in Dance, Kyung Hee University',
             '경희대학교 무용학과 졸업': 'B.A. in Dance, Kyung Hee University',
             '경희대학교 무용학부 한국무용 졸업': 'B.A. in Korean Dance, Kyung Hee Univ.',
+            '경희대학교 체육학과 졸업': 'B.S. in Physical Education, Kyung Hee Univ.',
+            '일반대학원 석사 졸업': 'M.S. in Physical Education, KHU',
+            '경희대학교 일반대학원 석사 졸업': 'M.S. in Physical Education, KHU',
             '경희대학교 스포츠의학과 졸업': 'B.S. in Sports Medicine, Kyung Hee Univ.',
             '경희대학교 태권도학과 졸업': 'B.S. in Taekwondo, Kyung Hee University',
             '조선대학교 체육학과 졸업': 'B.S. in Physical Education, Chosun Univ.',
@@ -598,8 +602,12 @@
             .replace(/경희대학교 스포츠의학과 졸업/g, 'B.S. in Sports Medicine, KHU')
             .replace(/경희대학교 태권도학과 졸업/g, 'B.S. in Taekwondo, KHU')
             .replace(/경희대학교 무용학부 한국무용 졸업/g, 'B.A. in Korean Dance, KHU')
+            .replace(/경희대학교 무용학부 졸업/g, 'B.A. in Dance, KHU')
             .replace(/경희대학교 무용학과 졸업/g, 'B.A. in Dance, KHU')
+            .replace(/경희대학교 체육학과 졸업/g, 'B.S. in Physical Education, KHU')
+            .replace(/일반대학원 석사 졸업/g, 'M.S. in Physical Education, KHU Graduate School')
             .replace(/무용학부 한국무용/g, 'School of Dance (Korean Dance)')
+            .replace(/무용학부/g, 'School of Dance')
             .replace(/저체중, 마른비만, 정상체중 여성 성인의 혈액지표, 신체구성, 신체기능 및 자가보고 설문 비교/g, 'Comparison of Blood Biomarkers, Body Composition, Physical Function, and Self-Reported Questionnaires in Underweight, Normal-Weight Obese, and Normal-Weight Adult Women')
             .replace(/운동 동호인들의 무릎, 발목 골관절염 실태조사/g, 'Knee & Ankle Osteoarthritis Survey in Active Adults')
             .replace(/무릎 및 발목 골관절염 및 신체활동 설문조사/g, 'Knee and Ankle Osteoarthritis and Physical Activity Survey')
@@ -659,6 +667,35 @@
             .replace(/센터 AT/g, 'Center AT')
             .replace(/(\d+)학번/g, 'Class of \'$1')
             .replace(/석사 (\d+)기/g, 'M.S. Cohort $1')
+            .replace(/\((\d+)기\)/g, '(Cohort $1)')
+            .replace(/\(석사학위논문\)/g, '(Master\'s Thesis)')
+            .replace(/운동손상, 재활모달리티, 저항운동과컨디셔닝/g, 'Athletic Injuries, Therapeutic Modalities, Strength & Conditioning')
+            .replace(/운동손상평가/g, 'Evaluation of Athletic Injuries')
+            .replace(/재활운동실습, 스포츠테이핑실습/g, 'Rehabilitation Exercise Lab, Sports Taping Lab')
+            .replace(/저항운동과컨디셔닝, 운동손상관리, 저항운동실습/g, 'S&C, Athletic Injury Management, Resistance Exercise Lab')
+            .replace(/체422호/g, 'College of PE #422')
+            .replace(/KATA 공인 AT \(선수트레이너\)/g, 'KATA Certified Athletic Trainer (AT)')
+            .replace(/운동처방사/g, 'Exercise Prescription Specialist')
+            .replace(/건강운동관리사/g, 'Health & Exercise Specialist')
+            .replace(/생활스포츠지도사/g, 'Certified Sports Instructor')
+            .replace(/스포츠테이핑/g, 'Sports Taping')
+            .replace(/스포츠마사지/g, 'Sports Massage')
+            .replace(/응급처치/g, 'First Aid')
+            .replace(/BNK 썸 여자프로농구단 트레이너/g, 'Athletic Trainer, BNK Sum Women\'s Pro Basketball')
+            .replace(/평창군보건의료원/g, 'Pyeongchang County Medical Center')
+            .replace(/시설운영공단 트레이너/g, 'Sports Facility Management Trainer')
+            .replace(/스포츠재활팀 트레이너/g, 'Sports Rehabilitation Team Trainer')
+            .replace(/격파부/g, 'Breaking Team')
+            .replace(/근골격계 질환 맞춤형 재활 및 운동처방/g, 'Customized Musculoskeletal Rehab & Exercise Prescription')
+            .replace(/AT 동아리 운영 및 스포츠의학 현장 실무 지원/g, 'AT Club Operations & Sports Medicine Field Practice')
+            .replace(/AT 동아리 회계·총무 및 스포츠의학 실무 지원/g, 'AT Club Accounting, Administration & Field Support')
+            .replace(/스포츠 부상 예방 및 재활/g, 'Sports Injury Prevention & Rehabilitation')
+            .replace(/선수 트레이닝 및 재활운동/g, 'Athletic Training & Rehabilitation Exercise')
+            .replace(/근골격계 기능 평가 및 스포츠재활 트레이닝/g, 'Musculoskeletal Assessment & Sports Rehab Training')
+            .replace(/노인 및 선수 서스펜션 트레이닝, 기능성 재활운동/g, 'Suspension Training & Functional Rehab Exercise')
+            .replace(/스포츠 손상 재활 및 운동 지도/g, 'Sports Injury Rehabilitation & Exercise Coaching')
+            .replace(/라켓 스포츠 상해 예방 및 선수 재활 트레이닝/g, 'Racket Sports Injury Prevention & Rehab Training')
+            .replace(/선수 컨디셔닝 및 기능성 스트렝스 트레이닝/g, 'Athlete Conditioning & Functional Strength Training')
             .replace(/학사과정/g, 'Undergraduate')
             .replace(/학사 졸업/g, 'B.S. Graduate')
             .replace(/석사 졸업/g, 'M.S. Graduate')
