@@ -237,7 +237,7 @@
             selector: '#stream-past-leaders .ed-stream-sublabel',
             items: [
                 'Athletic Training',
-                'Sports Rehab',
+                'Sports Rehabilitation',
                 'Academic Research'
             ]
         },

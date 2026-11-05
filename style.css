@@ -9946,34 +9946,40 @@ body,
     max-width: none;
 }
 
-/* [D] 역대 리더 (18인) — 좌우 1:1 높이 균형 학술 연표 보드 */
+/* [D] 역대 리더 (총 11건) — 좌측(AT 4인 + Research 1인) / 우측(Sports Rehab 6인) 1:1 높이 균형 보드 */
 #awards .ed-leaders-split-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 28px;
+    grid-template-rows: auto 1fr;
+    gap: 20px 28px;
     align-items: stretch;
 }
 
-#awards .ed-leaders-col {
+#awards .ed-leaders-split-grid > .leader-block-at {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#awards .ed-leaders-split-grid > .leader-block-rehab {
+    grid-column: 2;
+    grid-row: 1 / span 2;
     display: flex;
     flex-direction: column;
 }
 
-#awards .ed-leaders-col > .ed-stream-block {
+#awards .ed-leaders-split-grid > .leader-block-rehab .ed-stream-list {
     flex: 1;
-}
-
-#awards .ed-leaders-right-stack {
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
     justify-content: space-between;
 }
 
-#awards .ed-leaders-right-stack > .ed-stream-block {
-    flex: 0 0 auto;
-}
-
-#awards .ed-leaders-right-stack > .ed-stream-block:first-child {
-    flex: 1;
+#awards .ed-leaders-split-grid > .leader-block-res {
+    grid-column: 1;
+    grid-row: 2;
+    max-width: none !important;
+    margin: 0 !important;
+    width: 100% !important;
 }
 
 #awards .ed-stream-block {
@@ -10153,6 +10159,13 @@ body,
 @media (max-width: 992px) {
     #awards .ed-leaders-split-grid {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    #awards .ed-leaders-split-grid > .leader-block-at,
+    #awards .ed-leaders-split-grid > .leader-block-rehab,
+    #awards .ed-leaders-split-grid > .leader-block-res {
+        grid-column: 1 !important;
+        grid-row: auto !important;
     }
     #awards .ed-ga-grid {
         grid-template-columns: repeat(2, 1fr);
