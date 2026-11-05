@@ -605,6 +605,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let countersStarted = false;
 
     const startCounters = () => {
+        // anime.js(ui-motion-bklit.js) 감속 카운터가 활성화된 경우 기존 등속 카운터 중복 실행 방지
+        if (window.__bklitCountersHandled) return;
+
         // (1) 숫자 카운트업 애니메이션
         statNumbers.forEach(num => {
             const target = parseInt(num.getAttribute('data-target'), 10);

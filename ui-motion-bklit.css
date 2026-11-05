@@ -1,0 +1,413 @@
+/* ==========================================================================
+   KHU AT Center × Bklit UI · anime.js · Motion 통합 스타일시트
+   - 기존 style.css를 침범하지 않는 독립 네임스페이스(.bklit-*) 설계
+   - 숫자 정렬(tabular-nums) 및 고대비 접근성(WCAG AA), 동작 줄이기(prefers-reduced-motion) 준수
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. AT 센터 누적 기록 (#dashboard) — Bklit UI Area Sparkline
+   -------------------------------------------------------------------------- */
+#dashboard .stat-number.metric-num {
+    font-variant-numeric: tabular-nums;
+}
+
+.bklit-spark-container {
+    position: relative;
+    width: 100%;
+    margin: 14px 0 18px 0;
+    padding: 10px 12px 8px 12px;
+    border-radius: 12px;
+    background: #F8FAFC;
+    border: 1px solid #EEF2F6;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.card-edu:hover .bklit-spark-container {
+    background: rgba(165, 0, 52, 0.025);
+    border-color: rgba(165, 0, 52, 0.16);
+}
+
+.card-res:hover .bklit-spark-container {
+    background: rgba(0, 34, 68, 0.025);
+    border-color: rgba(0, 34, 68, 0.16);
+}
+
+.card-srv:hover .bklit-spark-container {
+    background: rgba(166, 124, 30, 0.03);
+    border-color: rgba(166, 124, 30, 0.2);
+}
+
+.bklit-spark-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: #64748B;
+    font-variant-numeric: tabular-nums;
+}
+
+.bklit-spark-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 800;
+    font-size: 0.73rem;
+}
+
+.card-edu .bklit-spark-trend { color: #A50034; }
+.card-res .bklit-spark-trend { color: #002244; }
+.card-srv .bklit-spark-trend { color: #926B14; }
+
+.bklit-spark-svg {
+    display: block;
+    width: 100%;
+    height: 52px;
+    overflow: visible;
+    cursor: crosshair;
+}
+
+.bklit-spark-axis {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #94A3B8;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 스파크라인 마우스 스냅 플로팅 배지 */
+.bklit-spark-tooltip {
+    position: absolute;
+    top: 6px;
+    right: 10px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    background: #0F172A;
+    color: #FFFFFF;
+    font-size: 0.72rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(2px);
+    transition: opacity 0.16s ease, transform 0.16s ease;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.16);
+    z-index: 4;
+    white-space: nowrap;
+}
+
+.bklit-spark-container.is-scrubbing .bklit-spark-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bklit-spark-container.is-scrubbing .bklit-spark-meta {
+    opacity: 0.25;
+}
+
+/* --------------------------------------------------------------------------
+   2. 연구 논문 64편 모달 (#research-modal) — Bklit UI 학술 인사이트 요약 보드
+   -------------------------------------------------------------------------- */
+#research-modal .research-modal-content {
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#research-modal .research-modal-header {
+    flex-shrink: 0;
+    padding: 22px 32px !important;
+}
+
+#research-modal .research-modal-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#research-modal .research-tabs-container {
+    flex-shrink: 0;
+}
+
+#research-modal .rtab-content-area {
+    flex: 1;
+    min-height: 0;
+    max-height: none !important;
+    overflow-y: auto;
+}
+
+.bklit-research-summary {
+    flex-shrink: 0;
+    display: grid;
+    grid-template-columns: 1.08fr 1.22fr;
+    gap: 14px;
+    padding: 14px 24px;
+    background: #F8FAFC;
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.bklit-chart-panel {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 14px 18px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bklit-panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.bklit-panel-title {
+    font-size: 0.84rem;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.bklit-panel-sub {
+    font-size: 0.73rem;
+    font-weight: 600;
+    color: #64748B;
+    font-variant-numeric: tabular-nums;
+}
+
+/* 좌측: Bklit 동심원 RingChart + 인터랙티브 범례 */
+.bklit-ring-layout {
+    display: grid;
+    grid-template-columns: 132px 1fr;
+    align-items: center;
+    gap: 16px;
+}
+
+.bklit-ring-stage {
+    position: relative;
+    width: 132px;
+    height: 132px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.bklit-ring-svg {
+    width: 132px;
+    height: 132px;
+    overflow: visible;
+}
+
+.bklit-ring-arc {
+    cursor: pointer;
+    transition: opacity 0.22s ease, filter 0.22s ease;
+}
+
+.bklit-ring-track {
+    transition: opacity 0.22s ease;
+}
+
+.bklit-ring-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    text-align: center;
+}
+
+.bklit-ring-center-val {
+    font-size: 1.18rem;
+    font-weight: 900;
+    color: #0F172A;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-variant-numeric: tabular-nums;
+}
+
+.bklit-ring-center-lbl {
+    font-size: 0.66rem;
+    font-weight: 700;
+    color: #64748B;
+    margin-top: 2px;
+}
+
+.bklit-ring-legend {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.bklit-legend-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 5px 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background-color 0.18s ease, opacity 0.2s ease, border-color 0.18s ease;
+    font-variant-numeric: tabular-nums;
+}
+
+.bklit-legend-item:hover,
+.bklit-legend-item.is-active {
+    background: #F8FAFC;
+    border-color: #E2E8F0;
+}
+
+.bklit-ring-layout.has-hover .bklit-legend-item:not(.is-hovered) {
+    opacity: 0.38;
+}
+
+.bklit-legend-left {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+}
+
+.bklit-legend-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    flex-shrink: 0;
+}
+
+.bklit-legend-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: #1E293B;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.bklit-legend-right {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.bklit-legend-count {
+    font-size: 0.8rem;
+    font-weight: 800;
+    color: #0F172A;
+}
+
+.bklit-legend-pct {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #64748B;
+}
+
+/* 우측: Bklit 연도별 게재 추이 BarChart (2011–2026) */
+.bklit-bar-stage {
+    position: relative;
+    width: 100%;
+    padding-top: 4px;
+}
+
+.bklit-bar-svg {
+    display: block;
+    width: 100%;
+    height: 112px;
+    overflow: visible;
+}
+
+.bklit-bar-rect {
+    cursor: pointer;
+    transition: opacity 0.18s ease, fill 0.18s ease;
+}
+
+.bklit-bar-stage.has-hover .bklit-bar-rect:not(.is-hovered) {
+    opacity: 0.32;
+}
+
+.bklit-bar-axis {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    padding: 0 2px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #94A3B8;
+    font-variant-numeric: tabular-nums;
+}
+
+.bklit-bar-tooltip {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    transform: translate(-50%, -100%);
+    background: #0F172A;
+    color: #FFFFFF;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 4px 9px;
+    border-radius: 6px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+    z-index: 6;
+}
+
+.bklit-bar-stage.has-hover .bklit-bar-tooltip {
+    opacity: 1;
+}
+
+/* 반응형 (태블릿 및 모바일) */
+@media (max-width: 820px) {
+    #research-modal .research-modal-body {
+        overflow-y: auto;
+    }
+    #research-modal .rtab-content-area {
+        overflow-y: visible;
+        flex: none;
+    }
+    .bklit-research-summary {
+        grid-template-columns: 1fr;
+        padding: 12px 14px;
+        gap: 10px;
+    }
+    .bklit-ring-layout {
+        grid-template-columns: 112px 1fr;
+        gap: 12px;
+    }
+    .bklit-ring-stage,
+    .bklit-ring-svg {
+        width: 112px;
+        height: 112px;
+    }
+}
+
+/* 접근성: 시스템 '동작 줄이기' 설정 존중 */
+@media (prefers-reduced-motion: reduce) {
+    .bklit-spark-tooltip,
+    .bklit-ring-arc,
+    .bklit-legend-item,
+    .bklit-bar-rect {
+        transition: none !important;
+    }
+}

@@ -2981,3 +2981,24 @@ Observation 100시간 실무 과정,
   - 영문 모드(`EN`)에서 졸업 동문 명단 클릭 시 모달 상단 배지의 종목명(`골프` ➔ `Golf`, `시범단` ➔ `TKD Demo`, `스포츠재활` ➔ `Sports Rehab` 등 전 종목)까지 모두 영문으로 자동 변환되도록 `GA_BADGE_KO_TO_EN` 연동 보강.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+---
+
+## 📊 88. anime.js · Motion · Bklit UI 통합 [1단계: 누적 기록 스파크라인 & 연구 논문 64편 학술 차트 보드] (2026-11-05)
+- **사용자 요청:**
+  - *"anime.js / Motion / Bklit UI 를 깃허브에서 받아와서 지금 내 홈페이지에서 활용할 수 있는 부분 넣어줘"* (3단계 구현 계획서 승인 후 1단계 우선 적용)
+- **오픈소스 로컬 번들 및 독립 모듈 구성 (`assets/vendor/`, `ui-motion-bklit.css`, `ui-motion-bklit.js`):**
+  1. `assets/vendor/anime.umd.min.js`: `juliangarnier/anime` 공식 v4.5.0 UMD 번들 (MIT).
+  2. `assets/vendor/motion.min.js`: `motiondivision/motion` 공식 v14.9.1 UMD 번들 (MIT).
+  3. `assets/vendor/bklit-Reference.md`: `bklit/bklit-ui` 차트 모듈(`AreaGradientDefs`, `ChartRevealClip`, `RingChart`, `BarChart`) 네이티브 포팅 명세서.
+- **1단계 구현 내역:**
+  1. **AT 센터 누적 기록(`#dashboard`) 3대 지표 카드 업그레이드:**
+     - `Motion.inView` 뷰포트 트리거 + `anime.js` `outExpo` 감속 카운트업(`288명` / `64편` / `173,316건`, `tabular-nums` 숫자 폭 고정 및 `script.js` 기존 등속 카운터 중복 실행 방지 가드 적용).
+     - `Bklit UI` 스타일 그라데이션 에어리어 스파크라인(`#spark-edu`, `#spark-res`, `#spark-srv`) + 좌→우 클립 리빌 + 마우스 호버 연도별 스냅 툴팁 적용.
+  2. **연구 논문 64편 모달(`#research-modal`) 학술 인사이트 요약 보드(`#bklit-research-summary`) 신설:**
+     - 좌측 패널: 4대 핵심 파트별 논문 비중(`Part 1: 31편 #A50034`, `Part 2: 9편 #1E293B`, `Part 3: 18편 #D97706`, `Part 4: 6편 #0284C7`) 동심원 4중 `RingChart` + 호버 디밍 + 하단 탭(`switchResearchTab`) 양방향 클릭 연동.
+     - 우측 패널: 실제 등록된 64편 논문의 2011–2026 연도별 학술지 게재 건수(실측 합계 64편) 16개 연도 `BarChart` + 시차 상승 모션 및 호버 스냅 툴팁.
+     - 반응형 높이(`max-height: 92vh` 플렉스 스크롤) 및 한국어/영어(`setSiteLanguage`) 실시간 텍스트 동기화, `prefers-reduced-motion` 접근성 완벽 지원.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료 (사용자 1단계 확인 후 2단계 스크롤 리빌·진행 바 진행 예정).

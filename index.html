@@ -24,6 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css?v=20261105_past_leaders">
+    <link rel="stylesheet" href="ui-motion-bklit.css?v=20261105_step1">
 </head>
 <body>
 
@@ -382,6 +383,8 @@
                         <p class="editorial-card-desc">Observation 100시간 실무 과정,<br>학술 세미나 전 과정 이수</p>
                     </div>
 
+                    <div class="bklit-spark-container" id="spark-edu"></div>
+
                     <div class="editorial-card-footer">
                         <div class="editorial-spec-tag">
                             <i class="fa-solid fa-certificate"></i>
@@ -413,6 +416,8 @@
                         <p class="editorial-card-desc">국제 저명 학술지(SCI급) 및 KCI 등재,<br>스포츠의학 전문 연구 논문 및 학술대회 발표</p>
                     </div>
 
+                    <div class="bklit-spark-container" id="spark-res"></div>
+
                     <div class="editorial-card-footer">
                         <div class="editorial-action-btn">
                             <span>논문 64편 목록 보기</span>
@@ -443,6 +448,8 @@
                         <h3 class="editorial-card-title">선수 부상 및 컨디셔닝 케어(건)</h3>
                         <p class="editorial-card-desc">급성 · 만성 손상 재활, 컨디셔닝, 퍼포먼스 향상,<br>저항 운동, 스포츠 테이핑 등 케어</p>
                     </div>
+
+                    <div class="bklit-spark-container" id="spark-srv"></div>
 
                     <div class="editorial-card-footer">
                         <div class="editorial-spec-tag">
@@ -5212,6 +5219,8 @@
             </div>
             
             <div class="research-modal-body" style="background: #f8fafc;">
+                <!-- Bklit UI 학술 데이터 인사이트 요약 보드 (동심원 RingChart + 연도별 BarChart) -->
+                <div class="bklit-research-summary" id="bklit-research-summary"></div>
                 <div class="research-tabs-container" style="display: flex; background: #ffffff; border-bottom: 1px solid #e2e8f0; overflow-x: auto; padding: 0 20px;">
                     <button class="rtab-btn active" id="rtab-btn-1" onclick="switchResearchTab(1)" style="padding: 15px 22px; font-weight: 800; font-size: 0.95rem; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid #A50034; color: #A50034; white-space: nowrap; transition: all 0.2s ease;">Part 1. 스포츠재활 <span style="background: rgba(165,0,52,0.1); color: #A50034; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">31편</span></button>
                     <button class="rtab-btn " id="rtab-btn-2" onclick="switchResearchTab(2)" style="padding: 15px 22px; font-weight: 600; font-size: 0.95rem; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent; color: #64748b; white-space: nowrap; transition: all 0.2s ease;">Part 2. 운동유발 피로 회복 <span style="background: rgba(0,0,0,0.06); color: #64748b; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">9편</span></button>
@@ -6398,4 +6407,8 @@ window.showEditorialYear = function(year, btn) {
 
 <!-- 다국어 전환 엔진 (한국어 | English) -->
 <script src="i18n.js?v=20261105_papers64"></script>
+<!-- 오픈소스 모션 & 데이터 시각화 엔진 (anime.js v4.5 · Motion v14.9 · Bklit UI) -->
+<script src="assets/vendor/anime.umd.min.js"></script>
+<script src="assets/vendor/motion.min.js"></script>
+<script src="ui-motion-bklit.js?v=20261105_step1"></script>
 </body></html>
