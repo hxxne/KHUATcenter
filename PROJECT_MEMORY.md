@@ -110,8 +110,8 @@
 
 ---
 
-## 🔬 7. 학술 연구 논문 63편 전체 데이터베이스 (Research Publications)
-- 63편 전체 데이터베이스 및 모달 시스템 완비
+## 🔬 7. 학술 연구 논문 64편 전체 데이터베이스 (Research Publications)
+- **총 64편** 최신 학술 연구 논문 전체 데이터베이스 및 모달/다국어 시스템 완비 (`Part 1. 스포츠재활 31편` · `Part 2. 운동유발 피로 회복 9편` · `Part 3. 경기력 향상 18편` · `Part 4. 부상 조사 분석 6편`, 전 저자 풀네임 표기 적용)
 
 ---
 
@@ -2881,3 +2881,23 @@ Observation 100시간 실무 과정,
      - `email`: **`jinu4321@khu.ac.kr`**
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+---
+
+## 📚 83. 학술 연구 논문 리스트 전면 개정 (총 63편 ➔ 총 64편 / 저자 풀네임 반영) (2026-11-05)
+- **사용자 요청:**
+  - 4개 핵심 파트별 최신 연구 논문 총 64편 리스트 및 서지 정보 전면 업데이트 요청.
+- **주요 변경 사항 (`index.html`, `script.js`, `i18n.js`):**
+  1. **총 논문 수 및 파트별 편수 재편:**
+     - 전체 누적 논문 수: **63편 ➔ 64편** (`#dashboard` 연구 지표 카운터 `data-target="64"`, 핵심 사업 상세 모달 딥링크 카드, `#research-modal` 헤더 배지 일괄 반영)
+     - **Part 1. 스포츠재활:** `29편` ➔ **`31편`** (2026 신규 In Press 논문 `Selective neuromuscular activity by task intensity...` 추가 및 최신 권호 `61:569` 등 반영)
+     - **Part 2. 운동유발 피로 회복:** `13편` ➔ **`9편`**
+     - **Part 3. 경기력 향상:** `15편` ➔ **`18편`** (`Journal of Musculoskeletal and Neuronal Interactions. 26:369. 2026.` 최신 권호 반영 및 과거 `Central vs.`, `Functional vs.` 제목 잘림 오류 100% 정정)
+     - **Part 4. 부상 조사 분석:** `6편` ➔ **`6편`** (저자 풀네임 및 `Doo Ri Kim` 등 최신 서지 반영)
+  2. **저자 표기 방식 고도화:**
+     - 기존의 이니셜 축약형(`Kim S, Park J.`)에서 공식 **풀네임 표기(`Sungwan Kim, Jihong Park.`)**로 64편 전수 업그레이드.
+  3. **다국어(`i18n.js`) 100% 동기화:**
+     - 영문 전환 시 `View All 64 Publications`, `View All 64 Research Publications`, `EBM RESEARCH (64 Papers)` 및 탭별 편수 배지(`31 / 9 / 18 / 6`)가 오차 없이 동기화되도록 반영.
+- **Git 동기화:**
+  - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+

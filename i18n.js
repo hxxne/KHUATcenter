@@ -112,7 +112,7 @@
         { selector: '#pmodal-panel-res .quote-author', en: 'KHU AT Center Research Vision' },
         {
             selector: '#pmodal-panel-res .deeplink-text',
-            en: '<strong>View All 63 Research Publications</strong><span>Explore our full list of verified SCIE &amp; KCI journal articles</span>'
+            en: '<strong>View All 64 Research Publications</strong><span>Explore our full list of verified SCIE &amp; KCI journal articles</span>'
         },
         {
             selector: '#pmodal-panel-srv .quote-text',
@@ -132,7 +132,7 @@
         { selector: '#dashboard .card-res .stat-unit', en: 'Papers' },
         { selector: '#dashboard .card-res .editorial-card-title', en: 'Published Research Papers' },
         { selector: '#dashboard .card-res .editorial-card-desc', en: 'Published in top international (SCI/SCIE)<br>&amp; KCI sports medicine journals' },
-        { selector: '#dashboard .card-res .editorial-action-btn span', en: 'View All 63 Publications' },
+        { selector: '#dashboard .card-res .editorial-action-btn span', en: 'View All 64 Publications' },
         // 03 서비스 지표
         { selector: '#dashboard .card-srv .stat-unit', en: 'Cases' },
         { selector: '#dashboard .card-srv .editorial-card-title', en: 'Injury &amp; Conditioning Care' },
@@ -144,15 +144,15 @@
         { selector: '#research-modal .research-modal-header p', en: 'Explore our research achievements across 4 core Evidence-Based Sports Medicine (EBM) domains.' },
         {
             selector: '#rtab-btn-1',
-            en: 'Part 1. Sports Rehabilitation <span style="background: rgba(165,0,52,0.1); color: #A50034; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">29</span>'
+            en: 'Part 1. Sports Rehabilitation <span style="background: rgba(165,0,52,0.1); color: #A50034; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">31</span>'
         },
         {
             selector: '#rtab-btn-2',
-            en: 'Part 2. Fatigue Recovery <span style="background: rgba(0,0,0,0.06); color: #64748b; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">13</span>'
+            en: 'Part 2. Fatigue Recovery <span style="background: rgba(0,0,0,0.06); color: #64748b; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">9</span>'
         },
         {
             selector: '#rtab-btn-3',
-            en: 'Part 3. Performance Enhancement <span style="background: rgba(0,0,0,0.06); color: #64748b; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">15</span>'
+            en: 'Part 3. Performance Enhancement <span style="background: rgba(0,0,0,0.06); color: #64748b; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">18</span>'
         },
         {
             selector: '#rtab-btn-4',
@@ -895,7 +895,7 @@
         // 7) 연구 논문 모달 상단 배지 전환
         const resHeaderSpans = document.querySelectorAll('#research-modal .research-modal-header span');
         if (resHeaderSpans.length >= 2) {
-            resHeaderSpans[0].innerHTML = (lang === 'en') ? 'EBM RESEARCH (63 Papers)' : resHeaderSpans[0].dataset.koOrig;
+            resHeaderSpans[0].innerHTML = (lang === 'en') ? 'EBM RESEARCH (64 Papers)' : resHeaderSpans[0].dataset.koOrig;
             resHeaderSpans[1].innerHTML = (lang === 'en') ? 'KHU AT Center Academic Achievements' : resHeaderSpans[1].dataset.koOrig;
         }
 
