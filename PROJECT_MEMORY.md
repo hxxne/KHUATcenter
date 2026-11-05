@@ -3038,3 +3038,18 @@ Observation 100시간 실무 과정,
      - `센터 활동` 탭(`data-category="center"`) 상단에 중복 등록되어 있던 동일 사진 카드 2장을 제거하여, `센터 활동` 탭에는 고유 아카이브 4장(신입기수 스터디·오리엔테이션·Brain Awards·대한비만학회)만 깔끔히 노출되고 `i18n.js` 영문 번역 인덱스(총 11장)와도 1:1 정확히 일치하도록 정렬 완료.
 - **Git 동기화:**
   - 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+---
+
+## 🌊 91. anime.js · Motion · Bklit UI 통합 [2단계: 상단 헤더 스크롤 진행 바 & 아카데믹 시차 리빌 모션] (2026-11-05)
+- **사용자 요청:**
+  - *"모션 2단계 진행해봐"*
+- **2단계 구현 내역 (`index.html`, `ui-motion-bklit.css`, `ui-motion-bklit.js`):**
+  1. **상단 헤더 초슬림 스크롤 진행 바 (`Motion.scroll()`):**
+     - `#main-header` 하단에 `2.5px` 두께의 경희 버건디–골드 그라데이션 바(`#bklit-scroll-progress-bar`)를 마운트하고 `Motion.scroll((progress) => ...)`로 GPU 합성 레이어(`transform: scaleX(...)`)만 갱신하여 리플로우 없이 0%~100% 실시간 진행률 표시.
+  2. **절제된 아카데믹 스크롤 리빌 (`Motion.inView()` + `anime.stagger()`):**
+     - `센터 소개` 5대 하이라이트(`48ms`), `핵심 사업` 3대 벤토 카드(`80ms`), `누적 기록` 3대 지표 카드(`80ms`), `구성원` 그룹별 카드 그리드(`38ms`) 및 12개 부서 보조 카드(`30ms`), `역대 리더` 3대 블록(`70ms`), `대학원 졸업 동문록` 38인(`16ms`), `발전기금` 및 `상담 문의` 섹션에 `14px` 상승 + `outQuart` 감속 1회 리빌 적용.
+     - **무충돌 설계:** 리빌 완료(`onComplete`) 즉시 `.bklit-reveal-pending` 클래스와 인라인 `opacity/transform` 스타일을 제거하여 기존 `style.css`의 카드 호버 리프트(`:hover`) 효과를 100% 온전히 보존. 또한 초기 뷰포트 노출 요소 제외 처리, 고속 앵커 점프 시 지나간 섹션 자동 노출 안전망, OS `prefers-reduced-motion` 접근성 완벽 반영.
+- **검증 및 Git 동기화:**
+  - Playwright 헤드리스 스크롤 전수 검증(`initial_bar: scaleX(0)` ➔ `final_bar: scaleX(1)`, `remaining_pending: 0`, `inline_transforms_left: 0`, `page_errors: []`) 통과 후 원격 저장소(`origin main`) 커밋 및 푸시 완료.

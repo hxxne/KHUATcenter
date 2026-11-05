@@ -1,13 +1,17 @@
 /**
- * KHU AT Center × anime.js · Motion · Bklit UI 통합 컨트롤러 (Step 1: 데이터 시각화)
+ * KHU AT Center × anime.js · Motion · Bklit UI 통합 컨트롤러 (Step 1 & Step 2)
  * --------------------------------------------------------------------------
+ * [Step 1: 데이터 시각화]
  * 1) AT 센터 누적 기록 (#dashboard):
- *    - anime.js (v4.5) outExpo 감속 숫자 카운트업
+ *    - anime.js (v4.5) outExpo 감속 숫자 카운트업 (547명 / 64편 / 173,316건)
  *    - Bklit UI AreaGradientDefs + ChartRevealClip 스타일 누적 성장 스파크라인 & 크로스헤어 스냅 툴팁
  *    - Motion (v14.9) inView 뷰포트 감지 트리거
  * 2) 연구 논문 64편 모달 (#research-modal):
  *    - Bklit UI 동심원 4중 RingChart (파트별 비중 31 / 9 / 18 / 6편) + 탭 양방향 연동
  *    - Bklit UI 2011–2026 실제 64편 연도별 게재 추이 BarChart + 호버 스냅 툴팁
+ * [Step 2: 스크롤 프로그레스 & 절제된 아카데믹 리빌]
+ * 3) 상단 헤더 하단 초슬림 경희 버건디 스크롤 진행 바 (Motion scroll())
+ * 4) 주요 섹션 및 카드 그리드 미세 시차(Stagger) 1회 리빌 (Motion inView() + anime.js stagger())
  */
 (function () {
     'use strict';
@@ -670,12 +674,171 @@
     }
 
     /* ======================================================================
+       3. 상단 헤더 초슬림 스크롤 진행 바 (Step 2 — Motion scroll())
+       ====================================================================== */
+    function setupScrollProgressBar() {
+        const bar = document.getElementById('bklit-scroll-progress-bar');
+        if (!bar) return;
+
+        const applyProgress = (p) => {
+            const clamped = Math.max(0, Math.min(1, Number(p) || 0));
+            bar.style.transform = `scaleX(${clamped.toFixed(4)})`;
+        };
+
+        // Motion v14 scroll() 엔진 우선 바인딩 (GPU 합성 레이어 scaleX만 갱신)
+        if (window.Motion && typeof window.Motion.scroll === 'function') {
+            window.Motion.scroll((progress) => {
+                applyProgress(progress);
+            });
+        } else {
+            const updateFallback = () => {
+                const docEl = document.documentElement;
+                const maxScroll = Math.max(1, docEl.scrollHeight - window.innerHeight);
+                applyProgress(window.scrollY / maxScroll);
+            };
+            window.addEventListener('scroll', updateFallback, { passive: true });
+            window.addEventListener('resize', updateFallback, { passive: true });
+            updateFallback();
+        }
+    }
+
+    /* ======================================================================
+       4. 절제된 아카데믹 스크롤 리빌 (Step 2 — Motion inView() + anime.js stagger())
+       ====================================================================== */
+    function setupAcademicScrollReveals() {
+        if (prefersReducedMotion()) return;
+        const hasAnime = !!(window.anime && typeof window.anime.animate === 'function');
+        if (!hasAnime) return;
+
+        const cleanElementStyles = (els) => {
+            els.forEach((el) => {
+                el.classList.remove('bklit-reveal-pending');
+                el.style.opacity = '';
+                el.style.transform = '';
+                el.style.willChange = '';
+            });
+        };
+
+        const pendingGroups = [];
+
+        const registerRevealGroup = (triggerEl, targetEls, staggerMs, amount) => {
+            if (!triggerEl || !targetEls || !targetEls.length) return;
+
+            // 새로고침 시 이미 화면 위쪽이나 현재 뷰포트 안에 보이는 요소는 깜빡임 방지를 위해 즉시 노출 유지
+            const rect = triggerEl.getBoundingClientRect();
+            const vh = window.innerHeight || document.documentElement.clientHeight || 800;
+            if (rect.top < vh * 0.90) {
+                return;
+            }
+
+            targetEls.forEach((el) => el.classList.add('bklit-reveal-pending'));
+
+            const groupState = { triggerEl, targetEls, revealed: false };
+            pendingGroups.push(groupState);
+
+            const playReveal = () => {
+                if (groupState.revealed) return;
+                groupState.revealed = true;
+
+                const delayOpt = (targetEls.length > 1 && typeof window.anime.stagger === 'function')
+                    ? window.anime.stagger(staggerMs || 45)
+                    : 0;
+
+                window.anime.animate(targetEls, {
+                    opacity: [0, 1],
+                    translateY: [14, 0],
+                    duration: 620,
+                    delay: delayOpt,
+                    ease: 'outQuart',
+                    onComplete: function () {
+                        cleanElementStyles(targetEls);
+                    }
+                });
+            };
+
+            if (window.Motion && typeof window.Motion.inView === 'function') {
+                const stop = window.Motion.inView(triggerEl, () => {
+                    playReveal();
+                    if (typeof stop === 'function') stop();
+                }, { amount: amount || 0.12 });
+            } else if ('IntersectionObserver' in window) {
+                const obs = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            playReveal();
+                            obs.disconnect();
+                        }
+                    });
+                }, { threshold: amount || 0.12 });
+                obs.observe(triggerEl);
+            } else {
+                groupState.revealed = true;
+                cleanElementStyles(targetEls);
+            }
+        };
+
+        // 1) 주요 섹션 헤더 및 단독 블록 리빌
+        const singleSelectors = [
+            '#about .section-header',
+            '#about .about-hero-image-wrap',
+            '#about .about-text-block',
+            '#pillars .section-header',
+            '#dashboard .section-header',
+            '#members .section-header',
+            '#members .modern-group-header',
+            '#awards .section-header',
+            '#awards .award-carousel-container',
+            '#awards .stream-sub-header',
+            '#activities .section-header',
+            '#activities .gallery-filter-container',
+            '#contact .section-header'
+        ];
+        document.querySelectorAll(singleSelectors.join(', ')).forEach((el) => {
+            registerRevealGroup(el, [el], 0, 0.15);
+        });
+
+        // 2) 시차(Stagger) 그룹 리빌 — 섹션별 리듬에 맞춘 정갈한 시차 간격
+        const staggerConfigs = [
+            { container: '#about .about-clean-highlights', items: '.about-clean-item', stagger: 48, amount: 0.15 },
+            { container: '#pillars .bento-pillars-grid',   items: '.bento-card',       stagger: 80, amount: 0.12 },
+            { container: '#dashboard .editorial-metric-grid', items: '.editorial-card', stagger: 80, amount: 0.12 },
+            { container: '#members .modern-profile-grid',  items: '.modern-profile-card', stagger: 38, amount: 0.08 },
+            { container: '#members .assistant-dept-grid',  items: '.assistant-dept-card', stagger: 30, amount: 0.08 },
+            { container: '#stream-past-leaders .ed-leaders-split-grid', items: '.ed-stream-block', stagger: 70, amount: 0.12 },
+            { container: '#stream-graduate-assistants .ed-ga-grid',     items: '.ed-ga-item',      stagger: 16, amount: 0.08 },
+            { container: '#donate .donate-content-container', items: '.minimal-banking-card, .donation-instructions', stagger: 75, amount: 0.15 },
+            { container: '#contact .contact-wrapper',      items: '.contact-info, .contact-form-container', stagger: 85, amount: 0.12 }
+        ];
+
+        staggerConfigs.forEach((cfg) => {
+            document.querySelectorAll(cfg.container).forEach((box) => {
+                const children = Array.from(box.querySelectorAll(cfg.items));
+                if (children.length) {
+                    registerRevealGroup(box, children, cfg.stagger, cfg.amount);
+                }
+            });
+        });
+
+        // 고속 앵커 점프(예: 상단 메뉴에서 맨 아래 #contact 클릭) 시 이미 지나간 위쪽 섹션을 즉시 표시하는 안전망
+        window.addEventListener('scroll', () => {
+            pendingGroups.forEach((g) => {
+                if (!g.revealed && g.triggerEl.getBoundingClientRect().bottom < 0) {
+                    g.revealed = true;
+                    cleanElementStyles(g.targetEls);
+                }
+            });
+        }, { passive: true });
+    }
+
+    /* ======================================================================
        초기화 실행
        ====================================================================== */
     document.addEventListener('DOMContentLoaded', function () {
         renderDashboardSparklines();
         setupDashboardObserver();
         buildResearchSummaryCharts();
+        setupScrollProgressBar();
+        setupAcademicScrollReveals();
         // i18n.js가 먼저 로드된 뒤 래핑되도록 마이크로태스크 지연 후 연결
         setTimeout(hookResearchModalAndLang, 0);
     });
