@@ -443,6 +443,67 @@
     will-change: opacity, transform;
 }
 
+/* --------------------------------------------------------------------------
+   5. 탭 슬라이딩 인디케이터 & 모달 스프링 오픈 (Step 3 — Motion spring() + anime.js)
+   -------------------------------------------------------------------------- */
+
+/* (A) 활동 사진 카테고리 탭 슬라이딩 버건디 캡슐 */
+.gallery-filter-container.has-spring-pill {
+    position: relative;
+}
+
+.bklit-gallery-spring-pill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    background: #A50034;
+    box-shadow: 0 4px 14px rgba(165, 0, 52, 0.25);
+    pointer-events: none;
+    z-index: 0;
+    will-change: transform, width, height;
+}
+
+.gallery-filter-container.has-spring-pill .gallery-filter-btn {
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-filter-container.has-spring-pill .gallery-filter-btn.active {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+}
+
+/* (B) 연구 논문 모달 4개 파트 탭 슬라이딩 밑줄 */
+.research-tabs-container.has-spring-underline {
+    position: relative;
+}
+
+.bklit-rtab-spring-line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: #A50034;
+    pointer-events: none;
+    z-index: 2;
+    will-change: transform, width;
+}
+
+.research-tabs-container.has-spring-underline .rtab-btn {
+    border-bottom-color: transparent !important;
+}
+
+/* (C) 갤러리 필터 정돈 및 모달 스프링 오픈 진행 중 기존 CSS transition 간섭 일시 차단 */
+.bklit-gallery-animating,
+.bklit-modal-springing {
+    transition: none !important;
+    will-change: opacity, transform;
+}
+
 /* 접근성: 시스템 '동작 줄이기' 설정 존중 */
 @media (prefers-reduced-motion: reduce) {
     .bklit-spark-tooltip,
@@ -452,7 +513,8 @@
     .bklit-scroll-progress-track {
         transition: none !important;
     }
-    .bklit-reveal-pending {
+    .bklit-reveal-pending,
+    .bklit-gallery-animating {
         opacity: 1 !important;
         transform: none !important;
         will-change: auto !important;

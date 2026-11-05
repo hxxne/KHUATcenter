@@ -1005,6 +1005,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tab Switching
     rtabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            // switchResearchTab(onclick) 방식 버튼(data-rtab 미사용)일 경우 레거시 핸들러 스킵
+            const targetId = btn.getAttribute('data-rtab');
+            if (!targetId || !document.getElementById(targetId)) return;
             // Remove active classes
             rtabBtns.forEach(b => b.classList.remove('active'));
             rtabPanes.forEach(p => p.classList.remove('active'));
@@ -1013,7 +1016,6 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
             
             // Show corresponding pane
-            const targetId = btn.getAttribute('data-rtab');
             document.getElementById(targetId).classList.add('active');
         });
     });
@@ -1397,6 +1399,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tab Switching
     rtabBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            // switchResearchTab(onclick) 방식 버튼(data-rtab 미사용)일 경우 레거시 핸들러 스킵
+            const targetId = btn.getAttribute('data-rtab');
+            if (!targetId || !document.getElementById(targetId)) return;
             // Remove active classes
             rtabBtns.forEach(b => b.classList.remove('active'));
             rtabPanes.forEach(p => p.classList.remove('active'));
@@ -1405,7 +1410,6 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
             
             // Show corresponding pane
-            const targetId = btn.getAttribute('data-rtab');
             document.getElementById(targetId).classList.add('active');
         });
     });

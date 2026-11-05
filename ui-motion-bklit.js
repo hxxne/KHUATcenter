@@ -1,5 +1,5 @@
 /**
- * KHU AT Center × anime.js · Motion · Bklit UI 통합 컨트롤러 (Step 1 & Step 2)
+ * KHU AT Center × anime.js · Motion · Bklit UI 통합 컨트롤러 (Step 1 · 2 · 3 완비)
  * --------------------------------------------------------------------------
  * [Step 1: 데이터 시각화]
  * 1) AT 센터 누적 기록 (#dashboard):
@@ -12,6 +12,10 @@
  * [Step 2: 스크롤 프로그레스 & 절제된 아카데믹 리빌]
  * 3) 상단 헤더 하단 초슬림 경희 버건디 스크롤 진행 바 (Motion scroll())
  * 4) 주요 섹션 및 카드 그리드 미세 시차(Stagger) 1회 리빌 (Motion inView() + anime.js stagger())
+ * [Step 3: 탭 슬라이딩 인디케이터 & 모달 스프링 전환]
+ * 5) 활동 사진 카테고리 탭 버건디 캡슐 & 연구 논문 파트 탭 밑줄 슬라이딩 (Motion spring())
+ * 6) 활동 사진 카테고리·12개 부서 픽토그램 필터 시차 정돈 (anime.js stagger())
+ * 7) 5대 주요 모달(구성원·동문·논문·핵심사업·부서) 팝업 스프링 스케일 오픈 (Motion spring())
  */
 (function () {
     'use strict';
@@ -620,14 +624,20 @@
         });
     }
 
+    // Step 3 공유 참조 변수 (언어 전환·모달 오픈 시 인디케이터 위치 재동기화용)
+    let syncGalleryPillFn = null;
+    let syncResearchLineFn = null;
+    let isLangSwitching = false;
+
     function hookResearchModalAndLang() {
-        // 1) openResearchModal 래핑: 모달 열릴 때마다 차트 애니메이션 재생
+        // 1) openResearchModal 래핑: 모달 열릴 때마다 차트 애니메이션 & 탭 밑줄 초기 위치 동기화
         const origOpen = window.openResearchModal;
         if (typeof origOpen === 'function') {
             window.openResearchModal = function () {
                 origOpen.apply(this, arguments);
                 requestAnimationFrame(() => {
                     playResearchChartAnimations();
+                    if (typeof syncResearchLineFn === 'function') syncResearchLineFn(true);
                 });
             };
         }
@@ -636,28 +646,44 @@
         const btnRes = document.getElementById('btn-research-modal');
         if (btnRes) {
             btnRes.addEventListener('click', () => {
-                setTimeout(playResearchChartAnimations, 40);
+                setTimeout(() => {
+                    playResearchChartAnimations();
+                    if (typeof syncResearchLineFn === 'function') syncResearchLineFn(true);
+                }, 40);
             });
         }
 
-        // 2) switchResearchTab 래핑: 아래 탭 클릭 시 위쪽 차트 범례 활성 상태 동기화
+        // 2) switchResearchTab 래핑: 아래 탭 클릭 시 위쪽 차트 범례 & 스프링 밑줄 동기화
         const origSwitch = window.switchResearchTab;
         if (typeof origSwitch === 'function') {
             window.switchResearchTab = function (partNum) {
                 origSwitch.apply(this, arguments);
                 activeResearchPart = Number(partNum) || 1;
+                document.querySelectorAll('#research-modal .rtab-btn').forEach((b) => {
+                    b.classList.toggle('active', b.id === `rtab-btn-${activeResearchPart}`);
+                });
                 document.querySelectorAll('#bklit-research-summary .bklit-legend-item').forEach((li) => {
                     li.classList.toggle('is-active', parseInt(li.getAttribute('data-part'), 10) === activeResearchPart);
                 });
+                if (typeof syncResearchLineFn === 'function') syncResearchLineFn(false);
             };
         }
 
-        // 3) 다국어 전환(setSiteLanguage) 래핑: 차트 내 모든 텍스트 즉시 한/영 동기화
+        // 3) 다국어 전환(setSiteLanguage) 래핑: 차트 텍스트 동기화 및 탭 인디케이터 폭 재계산
         const origSetLang = window.setSiteLanguage;
         if (typeof origSetLang === 'function') {
             window.setSiteLanguage = function (lang) {
-                origSetLang.apply(this, arguments);
+                isLangSwitching = true;
+                try {
+                    origSetLang.apply(this, arguments);
+                } finally {
+                    isLangSwitching = false;
+                }
                 syncChartLanguage(lang);
+                requestAnimationFrame(() => {
+                    if (typeof syncGalleryPillFn === 'function') syncGalleryPillFn(true);
+                    if (typeof syncResearchLineFn === 'function') syncResearchLineFn(true);
+                });
             };
         }
     }
@@ -831,6 +857,229 @@
     }
 
     /* ======================================================================
+       5. 슬라이딩 탭 인디케이터 (Step 3 — Motion spring())
+       ====================================================================== */
+    function setupSpringTabIndicators() {
+        const hasMotionSpring = !!(
+            window.Motion &&
+            typeof window.Motion.animate === 'function' &&
+            typeof window.Motion.spring === 'function'
+        );
+
+        // (A) 활동 사진 4대 카테고리 탭 버건디 캡슐 인디케이터
+        const galleryTabWrap = document.querySelector('#activities .gallery-filter-container');
+        if (galleryTabWrap) {
+            const pill = document.createElement('span');
+            pill.className = 'bklit-gallery-spring-pill';
+            pill.setAttribute('aria-hidden', 'true');
+            galleryTabWrap.appendChild(pill);
+            galleryTabWrap.classList.add('has-spring-pill');
+
+            const moveGalleryPill = (instant) => {
+                const activeBtn = galleryTabWrap.querySelector('.gallery-filter-btn.active');
+                if (!activeBtn) return;
+                const x = activeBtn.offsetLeft;
+                const y = activeBtn.offsetTop;
+                const w = activeBtn.offsetWidth;
+                const h = activeBtn.offsetHeight;
+                if (!w || !h) return;
+
+                if (instant || prefersReducedMotion() || !hasMotionSpring) {
+                    pill.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+                    pill.style.width = `${w}px`;
+                    pill.style.height = `${h}px`;
+                } else {
+                    window.Motion.animate(
+                        pill,
+                        {
+                            transform: `translate3d(${x}px, ${y}px, 0)`,
+                            width: `${w}px`,
+                            height: `${h}px`
+                        },
+                        { type: window.Motion.spring, stiffness: 430, damping: 32, mass: 0.78 }
+                    );
+                }
+            };
+
+            syncGalleryPillFn = moveGalleryPill;
+            moveGalleryPill(true);
+
+            // 웹폰트 로드 완료 및 창 리사이즈 시 캡슐 위치 정밀 보정
+            if (document.fonts && document.fonts.ready) {
+                document.fonts.ready.then(() => moveGalleryPill(true));
+            }
+            window.addEventListener('resize', () => moveGalleryPill(true), { passive: true });
+        }
+
+        // (B) 연구 논문 64편 모달 4개 파트 탭 슬라이딩 밑줄 인디케이터
+        const researchTabWrap = document.querySelector('#research-modal .research-tabs-container');
+        if (researchTabWrap) {
+            const line = document.createElement('span');
+            line.className = 'bklit-rtab-spring-line';
+            line.setAttribute('aria-hidden', 'true');
+            researchTabWrap.appendChild(line);
+            researchTabWrap.classList.add('has-spring-underline');
+
+            const moveResearchLine = (instant) => {
+                const activeBtn =
+                    document.getElementById(`rtab-btn-${activeResearchPart}`) ||
+                    researchTabWrap.querySelector('.rtab-btn.active');
+                if (!activeBtn) return;
+                const x = activeBtn.offsetLeft;
+                const w = activeBtn.offsetWidth;
+                if (!w) return;
+
+                if (instant || prefersReducedMotion() || !hasMotionSpring) {
+                    line.style.transform = `translate3d(${x}px, 0px, 0)`;
+                    line.style.width = `${w}px`;
+                } else {
+                    window.Motion.animate(
+                        line,
+                        {
+                            transform: `translate3d(${x}px, 0px, 0)`,
+                            width: `${w}px`
+                        },
+                        { type: window.Motion.spring, stiffness: 450, damping: 33, mass: 0.75 }
+                    );
+                }
+            };
+
+            syncResearchLineFn = moveResearchLine;
+            window.addEventListener('resize', () => moveResearchLine(true), { passive: true });
+        }
+    }
+
+    /* ======================================================================
+       6. 활동 사진 카테고리 & 12개 부서 픽토그램 필터 시차 정돈 (Step 3 — anime.js)
+       ====================================================================== */
+    function setupGalleryStaggerFilter() {
+        let galleryReady = false;
+        // 초기 자동 세팅(50ms) 이후 실제 사용자 클릭부터 시차 정돈 모션 활성화
+        setTimeout(() => { galleryReady = true; }, 160);
+
+        const animateVisibleGalleryCards = () => {
+            if (!galleryReady || isLangSwitching || prefersReducedMotion()) return;
+            if (!window.anime || typeof window.anime.animate !== 'function') return;
+
+            const allItems = Array.from(document.querySelectorAll('#activities .gallery-card-item'));
+            if (typeof window.anime.remove === 'function') {
+                window.anime.remove(allItems);
+            }
+            allItems.forEach((el) => {
+                el.classList.remove('bklit-gallery-animating');
+                el.style.opacity = '';
+                el.style.transform = '';
+                el.style.willChange = '';
+            });
+
+            const visibleItems = allItems.filter((el) => el.style.display !== 'none');
+            if (!visibleItems.length) return;
+
+            visibleItems.forEach((el) => el.classList.add('bklit-gallery-animating'));
+
+            window.anime.animate(visibleItems, {
+                opacity: [0, 1],
+                translateY: [10, 0],
+                scale: [0.985, 1],
+                duration: 420,
+                delay: function (_, idx) {
+                    // 사진 수가 많을 때 전체 대기 시간이 길어지지 않도록 최대 14번째 카드까지만 시차 부여
+                    return Math.min(idx, 14) * 22;
+                },
+                ease: 'outQuart',
+                onComplete: function () {
+                    visibleItems.forEach((el) => {
+                        el.classList.remove('bklit-gallery-animating');
+                        el.style.opacity = '';
+                        el.style.transform = '';
+                        el.style.willChange = '';
+                    });
+                }
+            });
+        };
+
+        // 1) 메인 4대 카테고리 필터(filterGallery) 래핑
+        const origFilterGallery = window.filterGallery;
+        if (typeof origFilterGallery === 'function') {
+            window.filterGallery = function (category, btn) {
+                origFilterGallery.apply(this, arguments);
+                if (typeof syncGalleryPillFn === 'function') syncGalleryPillFn(false);
+                // 'dept' 카테고리는 내부에서 filterDeptPhotos를 바로 호출하므로 중복 실행 방지
+                if (category !== 'dept') {
+                    animateVisibleGalleryCards();
+                }
+            };
+        }
+
+        // 2) 12개 부서 픽토그램 필터(filterDeptPhotos) 래핑
+        const origFilterDept = window.filterDeptPhotos;
+        if (typeof origFilterDept === 'function') {
+            window.filterDeptPhotos = function () {
+                origFilterDept.apply(this, arguments);
+                animateVisibleGalleryCards();
+            };
+        }
+    }
+
+    /* ======================================================================
+       7. 주요 모달 팝업 스프링 스케일 오픈 (Step 3 — Motion spring())
+       ====================================================================== */
+    function setupModalSpringTransitions() {
+        const hasMotionSpring = !!(
+            window.Motion &&
+            typeof window.Motion.animate === 'function' &&
+            typeof window.Motion.spring === 'function'
+        );
+
+        const springOpenModalBox = (selector, keepScaleOneInline) => {
+            if (prefersReducedMotion() || !hasMotionSpring) return;
+            const box = document.querySelector(selector);
+            if (!box) return;
+
+            box.classList.add('bklit-modal-springing');
+            const ctrl = window.Motion.animate(
+                box,
+                {
+                    transform: ['translate3d(0, 12px, 0) scale(0.96)', 'translate3d(0, 0px, 0) scale(1)'],
+                    opacity: [0.35, 1]
+                },
+                { type: window.Motion.spring, stiffness: 450, damping: 31, mass: 0.78 }
+            );
+
+            if (ctrl && ctrl.finished && typeof ctrl.finished.then === 'function') {
+                ctrl.finished.then(() => {
+                    box.classList.remove('bklit-modal-springing');
+                    box.style.opacity = '';
+                    box.style.transform = keepScaleOneInline ? 'scale(1)' : '';
+                }).catch(() => {
+                    box.classList.remove('bklit-modal-springing');
+                });
+            }
+        };
+
+        const modalHooks = [
+            { fnName: 'openProfModal',     boxSel: '#prof-modal .prof-modal-content',             keepScale: false },
+            { fnName: 'openAlumniModal',   boxSel: '#alumni-modal .alumni-modal-content',         keepScale: true  },
+            { fnName: 'openResearchModal', boxSel: '#research-modal .research-modal-content',     keepScale: false },
+            { fnName: 'openPillarModal',   boxSel: '#pillar-detail-modal .pillar-modal-content',  keepScale: false },
+            { fnName: 'openSportModal',    boxSel: '#department-modal .sport-modal-container',    keepScale: false }
+        ];
+
+        modalHooks.forEach((cfg) => {
+            const orig = window[cfg.fnName];
+            if (typeof orig === 'function') {
+                window[cfg.fnName] = function () {
+                    const res = orig.apply(this, arguments);
+                    requestAnimationFrame(() => {
+                        springOpenModalBox(cfg.boxSel, cfg.keepScale);
+                    });
+                    return res;
+                };
+            }
+        });
+    }
+
+    /* ======================================================================
        초기화 실행
        ====================================================================== */
     document.addEventListener('DOMContentLoaded', function () {
@@ -839,7 +1088,12 @@
         buildResearchSummaryCharts();
         setupScrollProgressBar();
         setupAcademicScrollReveals();
-        // i18n.js가 먼저 로드된 뒤 래핑되도록 마이크로태스크 지연 후 연결
-        setTimeout(hookResearchModalAndLang, 0);
+        setupSpringTabIndicators();
+        // i18n.js 및 인라인 스크립트가 모두 등록된 뒤 래핑되도록 마이크로태스크 지연 후 연결
+        setTimeout(() => {
+            hookResearchModalAndLang();
+            setupGalleryStaggerFilter();
+            setupModalSpringTransitions();
+        }, 0);
     });
 })();

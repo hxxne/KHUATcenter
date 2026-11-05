@@ -3053,3 +3053,20 @@ Observation 100시간 실무 과정,
      - **무충돌 설계:** 리빌 완료(`onComplete`) 즉시 `.bklit-reveal-pending` 클래스와 인라인 `opacity/transform` 스타일을 제거하여 기존 `style.css`의 카드 호버 리프트(`:hover`) 효과를 100% 온전히 보존. 또한 초기 뷰포트 노출 요소 제외 처리, 고속 앵커 점프 시 지나간 섹션 자동 노출 안전망, OS `prefers-reduced-motion` 접근성 완벽 반영.
 - **검증 및 Git 동기화:**
   - Playwright 헤드리스 스크롤 전수 검증(`initial_bar: scaleX(0)` ➔ `final_bar: scaleX(1)`, `remaining_pending: 0`, `inline_transforms_left: 0`, `page_errors: []`) 통과 후 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+---
+
+## 🎛️ 92. anime.js · Motion · Bklit UI 통합 [3단계 완결: 탭 스프링 인디케이터 · 갤러리 필터 시차 정돈 · 5대 모달 스프링 오픈] (2026-11-05)
+- **사용자 요청:**
+  - *"3단계도 이어서 진행"* (`anime.js` · `Motion` · `Bklit UI` 3단계 통합 구현 계획 최종 완결)
+- **3단계 주요 구현 내역 (`ui-motion-bklit.css`, `ui-motion-bklit.js`, `script.js`, `index.html`):**
+  1. **슬라이딩 탭 인디케이터 (`Motion.spring()`):**
+     - **활동 사진(`#activities`) 4대 카테고리 탭:** `.gallery-filter-container` 내부에 버건디 캡슐 배경(`.bklit-gallery-spring-pill`)을 동적 마운트하고, 탭 전환 시 활성 버튼의 `(offsetLeft, offsetTop, offsetWidth, offsetHeight)`로 `Motion.spring` (`stiffness: 430, damping: 32, mass: 0.78`) 탄성 이동 적용. 웹폰트 로드 완료(`document.fonts.ready`), 창 리사이즈, 한/영 언어 전환(`setSiteLanguage`) 시에도 즉시 폭과 좌표를 재동기화.
+     - **연구 논문 64편 모달(`#research-modal`) 4개 파트 탭:** `.research-tabs-container` 하단에 `3px` 버건디 밑줄(`.bklit-rtab-spring-line`)을 마운트하여 하단 탭 클릭 및 상단 `RingChart` 도넛/범례 클릭 시 양방향으로 스프링 슬라이딩 연동. 아울러 `script.js` 레거시 `.rtab-btn` 리스너에 `data-rtab` 널 세이프티 가드를 추가하여 런타임 예외를 원천 차단.
+  2. **갤러리 카테고리 & 12개 부서 픽토그램 필터 시차 정돈 (`anime.js`):**
+     - `filterGallery` 및 `filterDeptPhotos` 실행 시 노출되는 `.gallery-card-item` 카드들이 `22ms` 시차(최대 14번째 카드까지 시차 부여 후 합류)와 `outQuart` 감속(`translateY: 10px -> 0`, `scale: 0.985 -> 1`)으로 정돈되며, 완료 즉시 `.bklit-gallery-animating` 및 인라인 스타일을 모두 제거하여 카드 `:hover` 효과를 100% 보존.
+  3. **5대 주요 모달 팝업 스프링 스케일 오픈 (`Motion.spring()`):**
+     - `openProfModal`(`#prof-modal`), `openAlumniModal`(`#alumni-modal`), `openResearchModal`(`#research-modal`), `openPillarModal`(`#pillar-detail-modal`), `openSportModal`(`#department-modal`) 호출 시 모달 컨테이너가 `translate3d(0, 12px, 0) scale(0.96) ➔ scale(1)` 스프링 감속으로 열리고 완료 즉시 클린업(`alumni-modal`은 닫기 트랜지션 호환을 위해 `scale(1)` 유지).
+- **검증 및 Git 동기화:**
+  - Playwright 자동화 검증(`pill_t2 == 583px`, `line_t3 == 473px`, `animating_left: 0`, `springing_left: 0`, `page_errors: []`) 통과 및 캐시 버스팅(`?v=20261105_step3`) 반영 후 원격 저장소(`origin main`) 커밋·푸시 완료.
