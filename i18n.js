@@ -493,10 +493,10 @@
         let t = text.replace(/&amp;/g, '&').trim();
 
         const exactBulletMap = {
-            '학위명: 체육과학 박사(Physical Medicine & Rehabilitation 전공)': 'Degree: Ph.D. in Physical Medicine & Rehab',
-            '최종학력: Brigham Young University': 'Alma Mater: Brigham Young University',
-            '담당과목: 운동손상, 재활모달리티, 저항운동과컨디셔닝': 'Courses: Athletic Injuries, Modalities, S&C',
-            '연구실: 체422호 (031-201-2721)': 'Office: College of PE #422 (031-201-2721)',
+            '학위명: 체육과학 박사(Physical Medicine & Rehabilitation 전공)': 'Education: PhD in Exercise Sciences (Physical Medicine & Rehabilitation),<br>Brigham Young University, Utah, USA',
+            '최종학력: Brigham Young University': 'Courses: Athletic Training, Therapeutic Modalities, Strength & Conditioning Techniques',
+            '담당과목: 운동손상, 재활모달리티, 저항운동과컨디셔닝': 'Office: College of Physical Education #422 (031-201-2721)',
+            '연구실: 체422호 (031-201-2721)': 'Laboratory: Sunseungwan (031-201-2786)',
             '학위명: 스포츠심리학-운동제어 박사(Motor Control 전공)': 'Degree: Ph.D. in Motor Control & Sport Psych',
             '최종학력: 성균관대학교': 'Alma Mater: Sungkyunkwan University',
             '담당과목: 운동손상평가': 'Courses: Evaluation of Athletic Injuries',
@@ -614,7 +614,8 @@
             .replace(/2024 운동학 학술대회/g, '2024 Korean Academy of Kinesiology Conference')
             .replace(/조선대학교 체육학과 졸업/g, 'B.S. in Physical Education, Chosun Univ.')
             .replace(/성결대학교 체육교육과 졸업/g, 'B.S. in Physical Education, Sungkyul Univ.')
-            .replace(/체육과학 박사\(Physical Medicine & Rehabilitation 전공\)/g, 'Ph.D. in Physical Medicine & Rehabilitation')
+            .replace(/체육과학 박사\(Physical Medicine & Rehabilitation 전공\)/g, 'PhD in Exercise Sciences (Physical Medicine & Rehabilitation)')
+            .replace(/^Brigham Young University$/g, 'Brigham Young University, Utah, USA')
             .replace(/스포츠심리학-운동제어 박사\(Motor Control 전공\)/g, 'Ph.D. in Sport Psychology & Motor Control')
             .replace(/체육학 석사 \(Athletic Training 전공\)/g, 'M.S. in Physical Education (Athletic Training)')
             .replace(/체육학 석사 \(Sports Medicine and Science 전공\)/g, 'M.S. in Physical Education (Sports Medicine & Science)')
@@ -669,11 +670,12 @@
             .replace(/석사 (\d+)기/g, 'M.S. Cohort $1')
             .replace(/\((\d+)기\)/g, '(Cohort $1)')
             .replace(/\(석사학위논문\)/g, '(Master\'s Thesis)')
-            .replace(/운동손상, 재활모달리티, 저항운동과컨디셔닝/g, 'Athletic Injuries, Therapeutic Modalities, Strength & Conditioning')
+            .replace(/운동손상, 재활모달리티, 저항운동과컨디셔닝/g, 'Athletic Training, Therapeutic Modalities, Strength & Conditioning Techniques')
             .replace(/운동손상평가/g, 'Evaluation of Athletic Injuries')
             .replace(/재활운동실습, 스포츠테이핑실습/g, 'Rehabilitation Exercise Lab, Sports Taping Lab')
             .replace(/저항운동과컨디셔닝, 운동손상관리, 저항운동실습/g, 'S&C, Athletic Injury Management, Resistance Exercise Lab')
-            .replace(/체422호/g, 'College of PE #422')
+            .replace(/체422호 \(031-201-2721\)/g, 'College of Physical Education #422 (031-201-2721) / Laboratory: Sunseungwan (031-201-2786)')
+            .replace(/체422호/g, 'College of Physical Education #422')
             .replace(/KATA 공인 AT \(선수트레이너\)/g, 'KATA Certified Athletic Trainer (AT)')
             .replace(/운동처방사/g, 'Exercise Prescription Specialist')
             .replace(/건강운동관리사/g, 'Health & Exercise Specialist')
@@ -877,7 +879,7 @@
             card.querySelectorAll('.modern-profile-exp li').forEach(li => {
                 if (li.dataset.koOrig === undefined) return;
                 if (lang === 'en') {
-                    li.textContent = translateMemberBulletLine(li.dataset.koOrig);
+                    li.innerHTML = translateMemberBulletLine(li.dataset.koOrig);
                 } else {
                     li.innerHTML = li.dataset.koOrig;
                 }
@@ -1112,6 +1114,26 @@
                             valEl.textContent = translateProfModalText(valEl.textContent);
                         }
                     });
+                    // 박지홍 교수님 영문 프로필 모달 5줄 항목 동기화
+                    const modalNameEl = document.getElementById('prof-modal-name');
+                    if (modalNameEl && modalNameEl.textContent.includes('박지홍')) {
+                        const degLbl = document.getElementById('prof-modal-degree-label');
+                        const eduLbl = document.getElementById('prof-modal-edu-label');
+                        const subLbl = document.getElementById('prof-modal-subject-label');
+                        const labLbl = document.getElementById('prof-modal-lab-label');
+                        const degVal = document.getElementById('prof-modal-degree');
+                        const eduVal = document.getElementById('prof-modal-edu');
+                        const subVal = document.getElementById('prof-modal-subject');
+                        const labVal = document.getElementById('prof-modal-lab');
+                        if (degLbl) degLbl.textContent = 'Education';
+                        if (degVal) degVal.textContent = 'PhD in Exercise Sciences (Physical Medicine & Rehabilitation), Brigham Young University, Utah, USA';
+                        if (eduLbl) eduLbl.textContent = 'Courses';
+                        if (eduVal) eduVal.textContent = 'Athletic Training, Therapeutic Modalities, Strength & Conditioning Techniques';
+                        if (subLbl) subLbl.textContent = 'Office';
+                        if (subVal) subVal.textContent = 'College of Physical Education #422 (031-201-2721)';
+                        if (labLbl) labLbl.textContent = 'Laboratory';
+                        if (labVal) labVal.textContent = 'Sunseungwan (031-201-2786)';
+                    }
                     document.querySelectorAll('#prof-modal-career li, #prof-modal-research li').forEach(li => {
                         li.textContent = translateProfModalText(li.textContent);
                     });

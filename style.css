@@ -9291,11 +9291,19 @@ html[lang="en"] .modern-profile-name {
 
 html[lang="en"] .modern-profile-exp li,
 html[lang="en"] .modern-profile-exp li.degree-line {
+    display: block !important;
     font-size: 0.81rem !important;
     letter-spacing: -0.1px !important;
     word-spacing: 0.5px !important;
     white-space: nowrap !important;
-    line-height: 1.45;
+    line-height: 1.55 !important;
+}
+
+@media (max-width: 768px) {
+    html[lang="en"] .modern-profile-exp li,
+    html[lang="en"] .modern-profile-exp li.degree-line {
+        white-space: normal !important;
+    }
 }
 
 /* 06 AT 센터 보조 카드 헤더(부서명 + 인원수) 줄바꿈 방지 */
