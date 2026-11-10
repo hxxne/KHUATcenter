@@ -341,7 +341,7 @@
             selector: '#members .modern-group-title',
             items: [
                 '<span class="seq">00</span> Advisory Committee',
-                '<span class="seq">01</span> Faculty',
+                '<span class="seq">01</span> Faculty members',
                 '<span class="seq">02</span> Leaders',
                 '<span class="seq">03</span> Graduate Students',
                 '<span class="seq">04</span> AT Club Executives',
@@ -488,6 +488,35 @@
         '핸드볼': 'Handball'
     };
 
+    // 01 Faculty members & 02 Leaders 영문 통일 프로필 카드 (Education / Courses / Office / Laboratory / Email)
+    const FACULTY_LEADER_EN_BULLETS = {
+        '박지홍 교수':
+            '<li class="degree-line">Education: PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation),<br>Brigham Young University, Utah, USA</li>' +
+            '<li>Courses: Athletic Training, Therapeutic Modalities,<br>Strength &amp; Conditioning Techniques</li>' +
+            '<li>Office: College of Physical Education #422 (031-201-2721)</li>' +
+            '<li>Laboratory: Seonseung-gwan (031-201-2786)</li>' +
+            '<li>jihong.park@khu.ac.kr</li>',
+        '오성민 교수':
+            '<li class="degree-line">Education: Ph.D. in Motor Control &amp; Sport Psych,<br>Sungkyunkwan University</li>' +
+            '<li>Courses: Evaluation of Athletic Injuries</li>' +
+            '<li>Laboratory: Seonseung-gwan AT Center (031-201-2786)</li>' +
+            '<li>sungminoh@khu.ac.kr</li>',
+        '김준영 실장':
+            '<li class="degree-line">Education: M.S. in Physical Education (Athletic Training),<br>Kyung Hee University</li>' +
+            '<li>Courses: Rehab Exercise &amp; Sports Taping Lab</li>' +
+            '<li>Laboratory: Seonseung-gwan AT Center (031-201-2786)</li>' +
+            '<li>junyoung0366@khu.ac.kr</li>',
+        '최현곤 재활팀장':
+            '<li class="degree-line">Education: M.S in Sports medicine &amp; science (Athletic Training),<br>Kyung Hee University</li>' +
+            '<li>Laboratory: Seonseung-gwan AT Center (031-201-2786)</li>' +
+            '<li>gusrhs24@khu.ac.kr</li>',
+        '이재욱 연구팀장':
+            '<li class="degree-line">Education: M.S. in Physical Education (Athletic Training),<br>Kyung Hee University</li>' +
+            '<li>Courses: S&amp;C, Athletic Injury Management,<br>Resistance Exercise Lab</li>' +
+            '<li>Laboratory: Seonseung-gwan AT Center (031-201-2786)</li>' +
+            '<li>jwlee0102@khu.ac.kr</li>'
+    };
+
     // 구성원 카드 내 세부 항목 줄 단위 영문 변환 함수 (350px 카드 내 1줄 유지 보장)
     function translateMemberBulletLine(text) {
         let t = text.replace(/&amp;/g, '&').trim();
@@ -496,7 +525,7 @@
             '학위명: 체육과학 박사(Physical Medicine & Rehabilitation 전공)': 'Education: PhD in Exercise Sciences (Physical Medicine & Rehabilitation),<br>Brigham Young University, Utah, USA',
             '최종학력: Brigham Young University': 'Courses: Athletic Training, Therapeutic Modalities,<br>Strength & Conditioning Techniques',
             '담당과목: 운동손상, 재활모달리티, 저항운동과컨디셔닝': 'Office: College of Physical Education #422 (031-201-2721)',
-            '연구실: 체422호 (031-201-2721)': 'Laboratory: Sunseungwan (031-201-2786)',
+            '연구실: 체422호 (031-201-2721)': 'Laboratory: Seonseung-gwan (031-201-2786)',
             '학위명: 스포츠심리학-운동제어 박사(Motor Control 전공)': 'Degree: Ph.D. in Motor Control & Sport Psych',
             '최종학력: 성균관대학교': 'Alma Mater: Sungkyunkwan University',
             '담당과목: 운동손상평가': 'Courses: Evaluation of Athletic Injuries',
@@ -674,7 +703,7 @@
             .replace(/운동손상평가/g, 'Evaluation of Athletic Injuries')
             .replace(/재활운동실습, 스포츠테이핑실습/g, 'Rehabilitation Exercise Lab, Sports Taping Lab')
             .replace(/저항운동과컨디셔닝, 운동손상관리, 저항운동실습/g, 'S&C, Athletic Injury Management, Resistance Exercise Lab')
-            .replace(/체422호 \(031-201-2721\)/g, 'College of Physical Education #422 (031-201-2721) / Laboratory: Sunseungwan (031-201-2786)')
+            .replace(/체422호 \(031-201-2721\)/g, 'College of Physical Education #422 (031-201-2721) / Laboratory: Seonseung-gwan (031-201-2786)')
             .replace(/체422호/g, 'College of Physical Education #422')
             .replace(/KATA 공인 AT \(선수트레이너\)/g, 'KATA Certified Athletic Trainer (AT)')
             .replace(/운동처방사/g, 'Exercise Prescription Specialist')
@@ -752,6 +781,10 @@
                 if (nameEl.dataset.koOrig === undefined) {
                     nameEl.dataset.koOrig = nameEl.innerHTML;
                 }
+            }
+            const ulEl = card.querySelector('.modern-profile-exp');
+            if (ulEl && ulEl.dataset.koOrig === undefined) {
+                ulEl.dataset.koOrig = ulEl.innerHTML;
             }
             card.querySelectorAll('.modern-profile-exp li').forEach(li => {
                 if (li.dataset.koOrig === undefined) {
@@ -876,14 +909,24 @@
                     nameEl.innerHTML = nameEl.dataset.koOrig;
                 }
             }
-            card.querySelectorAll('.modern-profile-exp li').forEach(li => {
-                if (li.dataset.koOrig === undefined) return;
+            const ulEl = card.querySelector('.modern-profile-exp');
+            const koCardName = card.dataset.koName || '';
+            if (ulEl && FACULTY_LEADER_EN_BULLETS[koCardName]) {
                 if (lang === 'en') {
-                    li.innerHTML = translateMemberBulletLine(li.dataset.koOrig);
-                } else {
-                    li.innerHTML = li.dataset.koOrig;
+                    ulEl.innerHTML = FACULTY_LEADER_EN_BULLETS[koCardName];
+                } else if (ulEl.dataset.koOrig !== undefined) {
+                    ulEl.innerHTML = ulEl.dataset.koOrig;
                 }
-            });
+            } else {
+                card.querySelectorAll('.modern-profile-exp li').forEach(li => {
+                    if (li.dataset.koOrig === undefined) return;
+                    if (lang === 'en') {
+                        li.innerHTML = translateMemberBulletLine(li.dataset.koOrig);
+                    } else {
+                        li.innerHTML = li.dataset.koOrig;
+                    }
+                });
+            }
         });
 
         // 5) 06 AT 센터 보조(.assistant-dept-card) 부서명 및 인원수 전환 (4열 카드 헤더 내 줄바꿈 방지)
@@ -1098,6 +1141,12 @@
                     '직책': 'Position'
                 };
 
+                // 이전 모달에서 숨겼던 라벨·값 칸 표시 상태 초기화
+                ['prof-modal-degree-label', 'prof-modal-degree', 'prof-modal-edu-label', 'prof-modal-edu', 'prof-modal-subject-label', 'prof-modal-subject', 'prof-modal-lab-label', 'prof-modal-lab'].forEach(id => {
+                    const elem = document.getElementById(id);
+                    if (elem) elem.style.display = '';
+                });
+
                 ['prof-modal-degree-label', 'prof-modal-edu-label', 'prof-modal-subject-label', 'prof-modal-lab-label'].forEach(id => {
                     const lbl = document.getElementById(id);
                     if (lbl && currentLang === 'en') {
@@ -1114,26 +1163,77 @@
                             valEl.textContent = translateProfModalText(valEl.textContent);
                         }
                     });
-                    // 박지홍 교수님 영문 프로필 모달 5줄 항목 동기화
+
+                    // 01 Faculty members & 02 Leaders 영문 상세 모달 통일 매핑
                     const modalNameEl = document.getElementById('prof-modal-name');
-                    if (modalNameEl && modalNameEl.textContent.includes('박지홍')) {
-                        const degLbl = document.getElementById('prof-modal-degree-label');
-                        const eduLbl = document.getElementById('prof-modal-edu-label');
-                        const subLbl = document.getElementById('prof-modal-subject-label');
-                        const labLbl = document.getElementById('prof-modal-lab-label');
-                        const degVal = document.getElementById('prof-modal-degree');
-                        const eduVal = document.getElementById('prof-modal-edu');
-                        const subVal = document.getElementById('prof-modal-subject');
-                        const labVal = document.getElementById('prof-modal-lab');
-                        if (degLbl) degLbl.textContent = 'Education';
-                        if (degVal) degVal.textContent = 'PhD in Exercise Sciences (Physical Medicine & Rehabilitation), Brigham Young University, Utah, USA';
-                        if (eduLbl) eduLbl.textContent = 'Courses';
-                        if (eduVal) eduVal.textContent = 'Athletic Training, Therapeutic Modalities, Strength & Conditioning Techniques';
-                        if (subLbl) subLbl.textContent = 'Office';
-                        if (subVal) subVal.textContent = 'College of Physical Education #422 (031-201-2721)';
-                        if (labLbl) labLbl.textContent = 'Laboratory';
-                        if (labVal) labVal.textContent = 'Sunseungwan (031-201-2786)';
+                    const mName = modalNameEl ? modalNameEl.textContent.trim() : '';
+                    const degLbl = document.getElementById('prof-modal-degree-label');
+                    const eduLbl = document.getElementById('prof-modal-edu-label');
+                    const subLbl = document.getElementById('prof-modal-subject-label');
+                    const labLbl = document.getElementById('prof-modal-lab-label');
+                    const degVal = document.getElementById('prof-modal-degree');
+                    const eduVal = document.getElementById('prof-modal-edu');
+                    const subVal = document.getElementById('prof-modal-subject');
+                    const labVal = document.getElementById('prof-modal-lab');
+
+                    const MODAL_UNIFIED_EN = {
+                        '박지홍': {
+                            edu: 'PhD in Exercise Sciences (Physical Medicine & Rehabilitation), Brigham Young University, Utah, USA',
+                            courses: 'Athletic Training, Therapeutic Modalities, Strength & Conditioning Techniques',
+                            office: 'College of Physical Education #422 (031-201-2721)',
+                            lab: 'Seonseung-gwan (031-201-2786)'
+                        },
+                        '오성민': {
+                            edu: 'Ph.D. in Motor Control & Sport Psych, Sungkyunkwan University',
+                            courses: 'Evaluation of Athletic Injuries',
+                            office: null,
+                            lab: 'Seonseung-gwan AT Center (031-201-2786)'
+                        },
+                        '김준영': {
+                            edu: 'M.S. in Physical Education (Athletic Training), Kyung Hee University',
+                            courses: 'Rehab Exercise & Sports Taping Lab',
+                            office: null,
+                            lab: 'Seonseung-gwan AT Center (031-201-2786)'
+                        },
+                        '최현곤': {
+                            edu: 'M.S in Sports medicine & science (Athletic Training), Kyung Hee University',
+                            courses: null,
+                            office: null,
+                            lab: 'Seonseung-gwan AT Center (031-201-2786)'
+                        },
+                        '이재욱': {
+                            edu: 'M.S. in Physical Education (Athletic Training), Kyung Hee University',
+                            courses: 'S&C, Athletic Injury Management, Resistance Exercise Lab',
+                            office: null,
+                            lab: 'Seonseung-gwan AT Center (031-201-2786)'
+                        }
+                    };
+
+                    const unified = MODAL_UNIFIED_EN[mName];
+                    if (unified) {
+                        const rows = [];
+                        rows.push({ label: 'Education', value: unified.edu });
+                        if (unified.courses) rows.push({ label: 'Courses', value: unified.courses });
+                        if (unified.office) rows.push({ label: 'Office', value: unified.office });
+                        if (unified.lab) rows.push({ label: 'Laboratory', value: unified.lab });
+
+                        const slots = [
+                            [degLbl, degVal],
+                            [eduLbl, eduVal],
+                            [subLbl, subVal],
+                            [labLbl, labVal]
+                        ];
+                        slots.forEach(([lEl, vEl], idx) => {
+                            if (rows[idx]) {
+                                if (lEl) { lEl.textContent = rows[idx].label; lEl.style.display = ''; }
+                                if (vEl) { vEl.textContent = rows[idx].value; vEl.style.display = ''; }
+                            } else {
+                                if (lEl) lEl.style.display = 'none';
+                                if (vEl) vEl.style.display = 'none';
+                            }
+                        });
                     }
+
                     document.querySelectorAll('#prof-modal-career li, #prof-modal-research li').forEach(li => {
                         li.textContent = translateProfModalText(li.textContent);
                     });

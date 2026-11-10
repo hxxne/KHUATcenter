@@ -3090,3 +3090,20 @@ Observation 100시간 실무 과정,
      - `i18n.js?v=20261110_prof_en`으로 최신 버전 즉시 반영 보장.
 - **검증 및 Git 동기화:**
   - Playwright로 데스크톱(`1440×900`) 영문 전환 후 박지홍·오성민 교수진 카드 레이아웃 균형 및 줄바꿈 정상 출력 확인 후 원격 저장소(`origin main`) 커밋 및 푸시 완료.
+
+
+---
+
+## 📋 94. 영문 모드 01 Faculty members & 02 Leaders 프로필 포맷 통일 및 선승관 스펠링 일원화 (2026-11-10)
+- **사용자 요청:**
+  1. 영문 그룹 헤더 `01 Faculty` ➔ **`01 Faculty members`** 로 변경.
+  2. 최현곤 재활팀장 영문 학력을 **`Education: M.S in Sports medicine & science (Athletic Training), Kyung Hee University`** 로 변경.
+  3. 영문 모드 전환 시 교수진(`01 Faculty members`)과 리더(`02 Leaders`) 전원의 카드 및 상세 모달 포맷을 **`Education / Courses (없으면 생략) / Office (개인 연구실 없을 시 생략) / Laboratory / Email`** 규격으로 통일.
+  4. 박지홍 교수님 `Laboratory`의 선승관 영문 표기(`Sunseungwan`)를 사이트 전체 및 하단 구성원 표기와 동일하게 **`Seonseung-gwan`** 으로 통일.
+- **주요 구현 내역 (`i18n.js`, `index.html`):**
+  1. `i18n.js` 내 `LIST_TRANSLATIONS` 그룹 01 타이틀을 `Faculty members`로 변경.
+  2. `FACULTY_LEADER_EN_BULLETS` 통합 매핑을 구축하고 `.modern-profile-exp` 전체 백업(`ul.dataset.koOrig`)과 연동하여, 영문 전환 시 교수진 2인(박지홍·오성민) 및 리더 3인(김준영·최현곤·이재욱)의 카드 포맷을 통일하면서도 한국어 재전환 시 원본 100% 복원 보장.
+  3. 상세 모달(`#prof-modal`)에서도 5인의 `Education / Courses / Office / Laboratory` 항목이 동일하게 노출(없는 항목 행 자동 숨김)되도록 동기화.
+  4. `index.html` 내 `i18n.js?v=20261110_faculty_unified` 캐시 버스팅 반영.
+- **검증 및 Git 동기화:**
+  - Playwright로 영문/한국어 양방향 전환, `01 Faculty members`, `02 Leaders` 카드 레이아웃 및 최현곤 영문 모달 표시(`VERIFY_ERRORS: []`) 검증 완료 후 `origin main` 커밋 및 푸시.
