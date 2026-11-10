@@ -161,7 +161,7 @@
 
         // [구성원 소개 (#members)]
         { selector: '#members .section-title', en: 'Members' },
-        { selector: '#btn-tab-sports', en: 'Varsity AT' },
+        { selector: '#btn-tab-sports', en: 'Team AT' },
         { selector: '#btn-tab-rehab', en: 'Sports Rehab Instructors' },
 
         // [역대 수상자 및 리더 (#awards)]
@@ -178,7 +178,7 @@
         { selector: '#donate .dh-desc', en: 'Your generous contribution is transparently used to improve student research and educational environments, and qualifies for tax benefits.' },
         { selector: '#donate .mb-header', en: 'Official Giving Guide' },
         { selector: '#donate .btn-donate-link', en: '<i class="fa-solid fa-link"></i> Official Donation Page' },
-        { selector: '#donate .donation-instructions h3', en: '✅ How to Participate in Giving' },
+        { selector: '#donate .donation-instructions h3', en: '<i class="fa-solid fa-circle-check" style="color: #A50034; margin-right: 6px;"></i>How to Participate in Giving' },
         { selector: '#donate .donation-instructions > p', en: 'Please visit the official donation page above and enter the details as follows:' },
         {
             selector: '#donate .donation-instructions ol',

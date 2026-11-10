@@ -9488,55 +9488,18 @@ html[lang="en"] #contact .contact-desc {
 
 
 /* ==========================================================================
-   [단일 배경 통일] 전 섹션 프리미엄 실크 오프화이트 (#F8F9FA) 원톤 캔버스 적용
-   - 기존 섹션마다 제각각이던 노란 베이지(#F4F2EB), 아이보리(#FAF9F6), 푸른 회색(#F1F5F9) 제거
-   - 눈부심 없는 중립 실크 화이트(#F8F9FA) 하나로 페이지 처음부터 끝까지 깔끔하게 통일
-   - 순백색(#FFFFFF) 카드들과 경희대 시그니처 버건디(#A50034)가 가장 깨끗하게 돋보이는 최적 명도(98%)
+   [배경 리듬 기본 변수] 섹션별 톤 교차를 위해 강제 단색 오버라이드 해제
    ========================================================================== */
 
 :root {
-    --color-bg-primary: #F8F9FA !important;
-    --color-bg-secondary: #F8F9FA !important;
+    --color-bg-primary: #FAF8F4 !important;
+    --color-bg-secondary: #F4F2ED !important;
 }
 
-html,
-body,
-#about,
-#pillars,
-#pillars.bg-dark-lighter,
-#dashboard,
-#dashboard.editorial-metric-section,
-#members,
-#awards,
-#awards.awards-stream-section,
-#donate,
-#donate.donate-minimal-section,
-#activities,
-#activities.activities-gallery-section,
-#contact,
-.bg-light,
-.bg-dark-lighter {
-    background: #F8F9FA !important;
-    background-color: #F8F9FA !important;
-    background-image: none !important;
-    clip-path: none !important;
-}
-
-/* 섹션 간 인위적인 배경 번짐(Glow) 및 불필요한 마진 단절 제거하여 하나의 캔버스로 연결 */
+/* 섹션 간 자연스러운 여백 연결 */
 #pillars {
     margin: 0 !important;
     padding: 100px 0 !important;
-}
-
-.metric-subtle-glow {
-    display: none !important;
-}
-
-#dashboard.editorial-metric-section,
-#activities.activities-gallery-section,
-#awards.awards-stream-section {
-    border-top: none !important;
-    border-bottom: none !important;
 }
 
 
@@ -10253,4 +10216,314 @@ body,
         white-space: normal !important;
         font-size: 0.8rem !important;
     }
+}
+
+
+/* ==========================================================================
+   KHU AT CENTER — SURFACE ALTERNATION, ATMOSPHERIC DEPTH & VISUAL POLISH (2026)
+   Skills Applied: frontend-design · impeccable (bolder / polish / craft-floor) · taste-skill
+   Preserves original typography, rounded layout & warm academic card aesthetic
+   ========================================================================== */
+
+/* 1. 브라우저 표면 & 텍스트 선택 하이라이트(Selection) */
+::selection {
+    background: rgba(165, 0, 52, 0.14);
+    color: #A50034;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F4F2ED;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(15, 23, 42, 0.22);
+    border-radius: 999px;
+    border: 2px solid #F4F2ED;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(165, 0, 52, 0.45);
+}
+
+/* 2. 상단 헤더: 페이지 최상단(y=0)에서도 배경 영상에 묻히지 않고 100% 선명한 글래스 바 */
+#main-header {
+    background-color: rgba(255, 255, 255, 0.90) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06) !important;
+    box-shadow: 0 2px 14px rgba(15, 23, 42, 0.03) !important;
+    padding: 13px 0 !important;
+}
+
+#main-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.96) !important;
+    box-shadow: 0 6px 24px rgba(15, 23, 42, 0.06) !important;
+}
+
+/* 3. 히어로(#hero): 시네마틱 림 라이트 & "AT 센터" 시인성 강화, 하단 안개 정리 */
+#hero .hero-bg-overlay {
+    background:
+        radial-gradient(circle at 75% 28%, rgba(165, 0, 52, 0.24), transparent 55%),
+        radial-gradient(circle at 20% 80%, rgba(0, 48, 94, 0.22), transparent 50%),
+        linear-gradient(180deg, rgba(10, 15, 28, 0.44) 0%, rgba(10, 15, 28, 0.34) 48%, rgba(10, 15, 28, 0.72) 100%) !important;
+}
+
+#hero::after {
+    height: 68px !important;
+    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.78) 72%, #FFFFFF 100%) !important;
+}
+
+#hero .hero-title .accent-text {
+    color: #FF4D79 !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+    text-shadow: 0 2px 24px rgba(255, 77, 121, 0.35) !important;
+}
+
+#hero .hero-actions .btn-primary {
+    box-shadow: 0 8px 24px rgba(165, 0, 52, 0.38) !important;
+}
+
+#hero .hero-actions .btn-secondary {
+    background: rgba(255, 255, 255, 0.14) !important;
+    backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.55) !important;
+    color: #FFFFFF !important;
+}
+
+#hero .hero-actions .btn-secondary:hover {
+    background: #FFFFFF !important;
+    color: #12141A !important;
+}
+
+/* 4. 섹션 헤더 디바이더: 밋밋한 단일선 → 경희 크림슨·골드 그라데이션 바 */
+.section-header .divider {
+    width: 56px !important;
+    height: 3px !important;
+    border-radius: 99px !important;
+    background: linear-gradient(90deg, #A50034 0%, #C5A059 100%) !important;
+    opacity: 0.9 !important;
+}
+
+/* 5. 섹션별 배경 톤 리듬 & 은은한 공간감(Atmospheric Depth) */
+
+/* 01. 센터 소개 (#about): 크리스프 퓨어 화이트 + 상단 미세 크림슨/골드 글로우 */
+#about {
+    background-color: #FFFFFF !important;
+    background-image:
+        radial-gradient(ellipse 75% 42% at 50% 0%, rgba(165, 0, 52, 0.032), transparent 70%),
+        radial-gradient(circle at 90% 85%, rgba(197, 160, 89, 0.045), transparent 45%) !important;
+}
+
+#about .about-hero-container {
+    background: #FFFFFF !important;
+    box-shadow: 0 18px 50px rgba(15, 23, 42, 0.05) !important;
+    border: 1px solid rgba(15, 23, 42, 0.04) !important;
+}
+
+#about .about-clean-item {
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease !important;
+}
+
+#about .about-clean-item:hover {
+    transform: translateY(-2px) !important;
+    border-color: rgba(165, 0, 52, 0.22) !important;
+    box-shadow: 0 8px 22px rgba(165, 0, 52, 0.06) !important;
+}
+
+/* 02. 핵심 사업 (#pillars): 소프트 웜 스톤 + 양옆 오로라 글로우 (순백 카드 입체감 극대화) */
+#pillars,
+#pillars.bg-dark-lighter {
+    clip-path: none !important;
+    background-color: #F4F2ED !important;
+    background-image:
+        radial-gradient(circle at 12% 20%, rgba(165, 0, 52, 0.045), transparent 45%),
+        radial-gradient(circle at 88% 80%, rgba(0, 48, 94, 0.045), transparent 48%) !important;
+    border-top: 1px solid rgba(15, 23, 42, 0.05) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05) !important;
+}
+
+#pillars .bento-card {
+    background: #FFFFFF !important;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.055), 0 2px 6px rgba(15, 23, 42, 0.025) !important;
+    border: 1px solid rgba(15, 23, 42, 0.04) !important;
+}
+
+#pillars .bento-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 44px rgba(15, 23, 42, 0.1), 0 4px 12px rgba(165, 0, 52, 0.06) !important;
+}
+
+#pillars .bento-action-btn {
+    background: #F8FAFC !important;
+    border: 1px solid rgba(15, 23, 42, 0.08) !important;
+    transition: all 0.22s ease !important;
+}
+
+#pillars .bento-card-edu:hover .bento-action-btn {
+    background: #A50034 !important;
+    border-color: #A50034 !important;
+    color: #FFFFFF !important;
+}
+
+#pillars .bento-card-res:hover .bento-action-btn {
+    background: #00305E !important;
+    border-color: #00305E !important;
+    color: #FFFFFF !important;
+}
+
+#pillars .bento-card-srv:hover .bento-action-btn {
+    background: #9A7426 !important;
+    border-color: #9A7426 !important;
+    color: #FFFFFF !important;
+}
+
+/* 03. AT 센터 누적 기록 (#dashboard): 아카데믹 쿨 펄 + 미세 엔지니어링 도트 매트릭스 */
+#dashboard,
+#dashboard.editorial-metric-section {
+    background-color: #F7FAFC !important;
+    background-image: radial-gradient(rgba(0, 48, 94, 0.068) 1px, transparent 1px) !important;
+    background-size: 24px 24px !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05) !important;
+}
+
+#dashboard .metric-subtle-glow {
+    display: block !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    background:
+        radial-gradient(circle at 20% 15%, rgba(165, 0, 52, 0.045), transparent 50%),
+        radial-gradient(circle at 80% 85%, rgba(0, 48, 94, 0.05), transparent 50%) !important;
+}
+
+#dashboard .editorial-card {
+    background: #FFFFFF !important;
+    box-shadow: 0 12px 34px rgba(0, 34, 68, 0.055), 0 2px 8px rgba(15, 23, 42, 0.025) !important;
+    border: 1px solid rgba(15, 23, 42, 0.04) !important;
+}
+
+#dashboard .editorial-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 20px 46px rgba(0, 34, 68, 0.095) !important;
+}
+
+#dashboard .editorial-action-btn {
+    background: rgba(0, 48, 94, 0.07) !important;
+    border: 1px solid rgba(0, 48, 94, 0.14) !important;
+    color: #00305E !important;
+    font-weight: 700 !important;
+    transition: all 0.22s ease !important;
+}
+
+#dashboard .card-res:hover .editorial-action-btn,
+#dashboard .editorial-action-btn:hover {
+    background: #00305E !important;
+    border-color: #00305E !important;
+    color: #FFFFFF !important;
+}
+
+/* 04. 구성원 (#members): 따뜻한 소프트 아이보리 + 상단 샴페인 글로우 */
+#members {
+    background-color: #FAF8F4 !important;
+    background-image:
+        radial-gradient(circle at 85% 12%, rgba(197, 160, 89, 0.05), transparent 45%),
+        radial-gradient(circle at 12% 65%, rgba(165, 0, 52, 0.03), transparent 50%) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05) !important;
+}
+
+#members .advisory-notice-box {
+    background: #FFFFFF !important;
+    border: 1px dashed rgba(165, 0, 52, 0.22) !important;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.03) !important;
+}
+
+/* 05. 역대 수상자 및 리더 (#awards): 샴페인 스톤 + 아카이브 골드/버건디 코너 글로우 */
+#awards,
+#awards.awards-stream-section {
+    background-color: #F3F0E8 !important;
+    background-image:
+        radial-gradient(circle at 14% 18%, rgba(165, 0, 52, 0.04), transparent 48%),
+        radial-gradient(circle at 86% 82%, rgba(197, 160, 89, 0.065), transparent 52%) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05) !important;
+}
+
+/* 06. 발전기금 (#donate): 깊이감 있는 다크 네이비-버건디 배너 & 아이보리 하단 플로팅 */
+#donate,
+#donate.donate-minimal-section {
+    background-color: #FAF8F4 !important;
+    background-image: none !important;
+}
+
+#donate .donate-hero-banner {
+    background:
+        radial-gradient(circle at 78% 30%, rgba(165, 0, 52, 0.28), transparent 55%),
+        linear-gradient(135deg, #0B182E 0%, #162B4D 58%, #251326 100%) !important;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 44px), 0 100%) !important;
+}
+
+#donate .donate-hero-banner::after {
+    background: linear-gradient(to bottom, transparent 0%, rgba(11, 24, 46, 0.65) 100%) !important;
+}
+
+#donate .minimal-banking-card {
+    box-shadow: 0 24px 64px rgba(11, 24, 46, 0.12), 0 6px 20px rgba(15, 23, 42, 0.04) !important;
+    border: 1px solid rgba(15, 23, 42, 0.05) !important;
+}
+
+/* 07. 활동 사진 (#activities): 갤러리 퓨어 화이트 (컬러 사진이 가장 선명히 빛나는 전시관 톤) */
+#activities,
+#activities.activities-gallery-section {
+    background-color: #FFFFFF !important;
+    background-image:
+        radial-gradient(ellipse 80% 40% at 50% 0%, rgba(15, 23, 42, 0.025), transparent 70%) !important;
+    border-top: 1px solid rgba(15, 23, 42, 0.04) !important;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.05) !important;
+}
+
+#activities .gallery-card-item {
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05), 0 2px 6px rgba(15, 23, 42, 0.02) !important;
+    border: 1px solid rgba(15, 23, 42, 0.04) !important;
+}
+
+#activities .gallery-card-item:hover {
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1), 0 4px 12px rgba(165, 0, 52, 0.06) !important;
+}
+
+/* 08. 상담 및 문의 (#contact): 아카데믹 쿨 슬레이트 + 미세 지도 그리드 & 입체 폼 */
+#contact {
+    background-color: #F1F5F9 !important;
+    background-image:
+        radial-gradient(circle at 18% 82%, rgba(165, 0, 52, 0.04), transparent 48%),
+        radial-gradient(circle at 85% 20%, rgba(0, 48, 94, 0.045), transparent 48%) !important;
+}
+
+#contact .contact-form-container {
+    background: #FFFFFF !important;
+    box-shadow: 0 16px 42px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.02) !important;
+    border: 1px solid rgba(15, 23, 42, 0.04) !important;
+}
+
+#contact .map-stub {
+    background: #FFFFFF !important;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.05) !important;
+    border: 1px solid rgba(15, 23, 42, 0.05) !important;
+}
+
+#contact .map-stub .map-bg {
+    background-color: #F8FAFC !important;
+    background-image:
+        linear-gradient(to right, rgba(0, 48, 94, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 48, 94, 0.04) 1px, transparent 1px) !important;
+    background-size: 22px 22px !important;
+}
+
+#contact #form-submit-btn {
+    box-shadow: 0 8px 22px rgba(165, 0, 52, 0.25) !important;
 }

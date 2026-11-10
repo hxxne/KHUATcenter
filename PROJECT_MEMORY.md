@@ -3121,3 +3121,19 @@ Observation 100시간 실무 과정,
   - 캐시 버스팅: `i18n.js?v=20261110_leaders_spellout`.
 - **검증 및 Git 동기화:**
   - Playwright로 `02 Leaders` 카드 및 `Graduate Alumni` 3열 그리드 줄바꿈 없음 및 정렬 균형 검증 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 🎨 96. 영문 `Team AT` 변경 및 원래 디자인 기반 배경 리듬·디테일 입체화 (2026-11-10)
+- **사용자 요청:**
+  1. `05 Staff` 영문 탭 `Varsity AT` ➔ **`Team AT`** 변경.
+  2. 원래 공식 디자인 골격을 유지하면서 전 섹션 `#F8F9FA` 단색 도배로 인한 밋밋함을 해소하고 뒤 배경 디자인과 세부 디테일 업그레이드 (`frontend-design`, `impeccable`, `taste-skill` 활용).
+- **주요 구현 내역 (`i18n.js`, `index.html`, `style.css`):**
+  1. `i18n.js`: `#btn-tab-sports` 영문 라벨을 `Team AT`로 변경 및 후원 참여 방법 체크 아이콘(`fa-circle-check`) 적용.
+  2. `style.css`:
+     - 기존 전 섹션 `#F8F9FA` 강제 오버라이드 블록을 해제하고 섹션별 배경 톤 리듬 구현 (`#about` 퓨어 화이트 ➔ `#pillars` 웜 스톤+오로라 글로우 ➔ `#dashboard` 쿨 펄+미세 엔지니어링 도트 그리드 ➔ `#members` 소프트 아이보리 ➔ `#awards` 샴페인 스톤 ➔ `#donate` 딥 네이비-버건디 배너+아이보리 플로팅 ➔ `#activities` 갤러리 화이트 ➔ `#contact` 쿨 슬레이트+지도 그리드).
+     - 최상단 헤더(`#main-header`) 반투명 글래스 바 상시 가독성 확보, `#hero` `"AT 센터"` 화사한 크림슨(`#FF4D79`) 시인성 보강, `.divider` 크림슨-골드 그라데이션 바, `.bento-action-btn` 및 `#dashboard .editorial-action-btn` 호버 인터랙션 강화, `::selection`/스크롤바 팔레트 적용.
+  3. `index.html`: `AT 센터 누적 기록` 제목 띄어쓰기 통일 및 캐시 버스팅 (`style.css?v=20261110_surface_depth`, `i18n.js?v=20261110_team_at`).
+- **검증 및 Git 동기화:**
+  - Playwright 데스크톱(`1440×900`) 전 섹션·영문(`Team AT`)·모바일(`390×844`) 캡처(`UPGRADE_ERRORS: []`) 및 `#dashboard` 글로우 영역 보완 재검증 후 `origin main` 커밋·푸시 완료.
