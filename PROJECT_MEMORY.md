@@ -3107,3 +3107,17 @@ Observation 100시간 실무 과정,
   4. `index.html` 내 `i18n.js?v=20261110_faculty_unified` 캐시 버스팅 반영.
 - **검증 및 Git 동기화:**
   - Playwright로 영문/한국어 양방향 전환, `01 Faculty members`, `02 Leaders` 카드 레이아웃 및 최현곤 영문 모달 표시(`VERIFY_ERRORS: []`) 검증 완료 후 `origin main` 커밋 및 푸시.
+
+
+---
+
+## 🏷️ 95. 영문 02 Leaders 직함 변경 & Graduate Alumni 배지 Full Spell-Out (2026-11-10)
+- **사용자 요청:**
+  1. `02 Leaders` 영문 직함 변경: `김준영 General Manager` ➔ **`Athletic Training`**, `최현곤 Rehab Lead` ➔ **`Sports Rehabilitation`**, `이재욱 Research Lead` ➔ **`Research`**.
+  2. 대학원 졸업자(`Graduate Alumni`) 영문 배지 축약어(`Res/Edu`, `Rehab`, `TKD Demo`)를 빈 여백에 맞추어 Full Spell-out(`Research / Education`, `Sports Rehabilitation`, `Taekwondo Demonstration`)으로 확장.
+- **주요 수정 내역 (`i18n.js`, `index.html`):**
+  - `setSiteLanguage()` 내 `02 Leaders` 카드 이름 옆 직함 텍스트 변경.
+  - `GA_BADGE_KO_TO_EN` 및 동문 모달 배지 변환(`Research / Education`, `Sports Rehabilitation`, `Taekwondo Demonstration`) 반영.
+  - 캐시 버스팅: `i18n.js?v=20261110_leaders_spellout`.
+- **검증 및 Git 동기화:**
+  - Playwright로 `02 Leaders` 카드 및 `Graduate Alumni` 3열 그리드 줄바꿈 없음 및 정렬 균형 검증 후 `origin main` 커밋·푸시 완료.

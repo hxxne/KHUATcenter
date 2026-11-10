@@ -473,14 +473,14 @@
     };
 
     const GA_BADGE_KO_TO_EN = {
-        '연구/교육': 'Res/Edu',
-        '스포츠재활': 'Rehab',
+        '연구/교육': 'Research / Education',
+        '스포츠재활': 'Sports Rehabilitation',
         '배구': 'Volleyball',
         '배드민턴': 'Badminton',
         '축구': 'Soccer',
         '야구': 'Baseball',
         '품새': 'Poomsae',
-        '시범단': 'TKD Demo',
+        '시범단': 'Taekwondo Demonstration',
         '럭비': 'Rugby',
         '농구': 'Basketball',
         '골프': 'Golf',
@@ -899,9 +899,9 @@
                     nameEl.innerHTML = nameEl.dataset.koOrig
                         .replace('박지홍 교수', '박지홍 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Prof. / Director</span>')
                         .replace('오성민 교수', '오성민 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research Prof.</span>')
-                        .replace('김준영 실장', '김준영 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">General Manager</span>')
-                        .replace('최현곤 재활팀장', '최현곤 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Rehab Lead</span>')
-                        .replace('이재욱 연구팀장', '이재욱 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research Lead</span>')
+                        .replace('김준영 실장', '김준영 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Athletic Training</span>')
+                        .replace('최현곤 재활팀장', '최현곤 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Sports Rehabilitation</span>')
+                        .replace('이재욱 연구팀장', '이재욱 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research</span>')
                         .replace('(회장)', '(President)')
                         .replace('(부회장)', '(Vice Pres.)')
                         .replace('(총무)', '(Secretary)');
@@ -1266,8 +1266,8 @@
                             .replace('경희대학교 AT Center 동문', 'KHU AT Center Alumni')
                             .replace('공동 수상', 'Co-Winner')
                             .replace('팀장', 'Team Lead')
-                            .replace('연구/교육', 'Research/Edu')
-                            .replace('스포츠재활', 'Sports Rehab');
+                            .replace('연구/교육', 'Research / Education')
+                            .replace('스포츠재활', 'Sports Rehabilitation');
                         Object.keys(GA_BADGE_KO_TO_EN).forEach(function (koKey) {
                             bTxt = bTxt.replace(koKey, GA_BADGE_KO_TO_EN[koKey]);
                         });
