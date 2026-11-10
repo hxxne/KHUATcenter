@@ -3070,3 +3070,23 @@ Observation 100시간 실무 과정,
      - `openProfModal`(`#prof-modal`), `openAlumniModal`(`#alumni-modal`), `openResearchModal`(`#research-modal`), `openPillarModal`(`#pillar-detail-modal`), `openSportModal`(`#department-modal`) 호출 시 모달 컨테이너가 `translate3d(0, 12px, 0) scale(0.96) ➔ scale(1)` 스프링 감속으로 열리고 완료 즉시 클린업(`alumni-modal`은 닫기 트랜지션 호환을 위해 `scale(1)` 유지).
 - **검증 및 Git 동기화:**
   - Playwright 자동화 검증(`pill_t2 == 583px`, `line_t3 == 473px`, `animating_left: 0`, `springing_left: 0`, `page_errors: []`) 통과 및 캐시 버스팅(`?v=20261105_step3`) 반영 후 원격 저장소(`origin main`) 커밋·푸시 완료.
+
+
+
+---
+
+## 👤 93. 박지홍 교수님 영문 프로필 상세 정보 업데이트 및 줄바꿈 정돈 (2026-11-10)
+- **사용자 요청:**
+  - 원래 공식 홈페이지 디자인 유지 + 영문 버전 전환 시 박지홍 교수님 프로필 내용을 영문 학력·강의·연구실(선승관 Laboratory 포함) 규격에 맞추고, 가로로 긴 줄(`Education:`, `Courses:`)이 카드 밖으로 넘치지 않도록 한 줄 아래로 깔끔하게 내려 연동 및 GitHub 배포 요청.
+- **주요 수정 내역 (`i18n.js`, `index.html`, `style.css`):**
+  1. **`i18n.js` 영문 번역 및 줄바꿈 정돈:**
+     - `Education: PhD in Exercise Sciences (Physical Medicine & Rehabilitation),<br>Brigham Young University, Utah, USA`
+     - `Courses: Athletic Training, Therapeutic Modalities,<br>Strength & Conditioning Techniques` (긴 과목명이 옆으로 길어져 카드 영역을 넘지 않도록 `<br>` 줄바꿈 적용)
+     - `Office: College of Physical Education #422 (031-201-2721)`
+     - `Laboratory: Sunseungwan (031-201-2786)`
+     - `jihong.park@khu.ac.kr`
+     - 박지홍 교수님 상세 모달(`#prof-modal`) 5개 항목 라벨 및 값도 동일하게 동기화.
+  2. **`index.html` 캐시 버스팅:**
+     - `i18n.js?v=20261110_prof_en`으로 최신 버전 즉시 반영 보장.
+- **검증 및 Git 동기화:**
+  - Playwright로 데스크톱(`1440×900`) 영문 전환 후 박지홍·오성민 교수진 카드 레이아웃 균형 및 줄바꿈 정상 출력 확인 후 원격 저장소(`origin main`) 커밋 및 푸시 완료.

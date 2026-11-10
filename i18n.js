@@ -494,7 +494,7 @@
 
         const exactBulletMap = {
             '학위명: 체육과학 박사(Physical Medicine & Rehabilitation 전공)': 'Education: PhD in Exercise Sciences (Physical Medicine & Rehabilitation),<br>Brigham Young University, Utah, USA',
-            '최종학력: Brigham Young University': 'Courses: Athletic Training, Therapeutic Modalities, Strength & Conditioning Techniques',
+            '최종학력: Brigham Young University': 'Courses: Athletic Training, Therapeutic Modalities,<br>Strength & Conditioning Techniques',
             '담당과목: 운동손상, 재활모달리티, 저항운동과컨디셔닝': 'Office: College of Physical Education #422 (031-201-2721)',
             '연구실: 체422호 (031-201-2721)': 'Laboratory: Sunseungwan (031-201-2786)',
             '학위명: 스포츠심리학-운동제어 박사(Motor Control 전공)': 'Degree: Ph.D. in Motor Control & Sport Psych',
