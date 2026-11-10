@@ -3193,4 +3193,22 @@ Observation 100시간 실무 과정,
   3. `#awards .awards-archive-tabs-wrap` / `.awards-archive-tabs`: 탭 래퍼가 패널 전체를 감싸던 DOM 구조 특성상 하단 구분선(`border-bottom`)과 여백(`margin-bottom: clamp(40px, 4.5vw, 56px)`)을 `.awards-archive-tabs` 로 직접 이동해 `역대 리더(11) | 대학원 졸업자(38)` 탭 바 ↔ 본문 간 `64px` 여백 확보.
   4. `index.html` 캐시 버스팅 업데이트(`khu-modals.css?v=20261111_pro2`, `khu-pro.css?v=20261111_pro2`).
 - **최종 검증 및 Git 동기화:**
-  - `full_audit.py` & `verify_redesign.py` 재실행 완료 (전 뷰포트 클리핑·모바일 넘침·JS 에러 0건) 후 `origin main` 커밋 및 푸시 완료.
+  - `full_audit.py` & `verify_redesign.py` 재실행 완료 (전 뷰포트 클리핑·모바일 넘침·JS 에러 0건) 후 `origin main` 커밋 및 푸시 완료 (`79f1d67`).
+
+
+---
+
+## 🏆 100. `#awards`(명예의 전당 모놀리스) & `#donate`(옵시디언-크림슨 스플릿) 디자인 전면 개편 (2026-11-11)
+- **사용자 요청:**
+  - `taste-skill` · `impeccable` 원칙을 전면 적용해 `발전기금(#donate)` 및 `역대 수상자 및 리더(#awards)` 디자인 업그레이드 (Implementation Plan 승인 후 구현).
+- **설계 및 `impeccable detect` 기반 안티패턴 제거 (`khu-pro.css`, `index.html`):**
+  1. **안티패턴 완전 해체:** `#donate` `.donation-instructions` 의 `side-tab` (`border-left: 3px`) 제거, `#awards` 카드의 `border-accent-on-rounded` (`border-top: 3px`) 제거, `layout-transition` (`width` / `padding-left` 애니메이션 ➔ `transform` 전환), `#awards` 숫자 아이브로우(`05 / HALL OF HONOR`) 제거.
+  2. **`#awards` Archival Honor Monolith 개편 (`khu-pro.css`):**
+     - 연도 인덱스 바를 둥근 캡슐에서 언더라인 아카이브 탭으로 전환하고, 연도별 슬라이드(`.award-year-stream-block`)를 **좌측 `240px` 거대 연도 축 + 우측 1:2 위계 보드**로 재구성 (`AT STUDENT OF THE YEAR` 최상단 흰 피처드 패널 격상, 2017년 공동 수상 `.award-stream-name-dual` `/` 가로 구분, `INSPIRATION` · `ROOKIE OF THE YEAR` 2열 헤어라인 분할).
+     - `역대 리더 (11)` 를 `grid-template-columns: repeat(2, 1fr)` 스팬 배치(`AT 4인` + `Research 1인` 좌측 / `Sports Rehabilitation 6인` 우측) 로 개편해 기존 3열 우측 여백 불균형 완전 해소.
+  3. **`#donate` Obsidian-Crimson Patronage Split 개편 (`index.html`, `khu-pro.css`):**
+     - [index.html](file:///c:/Users/LG/OneDrive/바탕%20화면/AI/khu-at-center/index.html#L2237-L2254) `#donate` 내부 구버전 인라인 `style="..."` 을 전부 제거(i18n 셀렉터 보존)하고, CSS 버전을 `khu-pro.css?v=20261111_pro3` 로 갱신.
+     - 좌측 Deep Obsidian-Crimson 라디얼 비전 패널(`#1E0B12 -> #12080C`, 샴페인 골드 `#E8C984` 서브 타이틀 + `#FAF8F4` 오프화이트 본문) 과 우측 순백 참여 안내(`100%` 폭 크림슨 CTA 버튼 `후원 링크 바로가기 ↗` + CSS `counter-reset` 기반 `01 / 02 / 03` 번호 스텝 가이드, 한·영 호환) 구축.
+- **검증 및 Git 동기화:**
+  - `impeccable detect --json khu-pro.css`: `#awards` / `#donate` 안티패턴 0건.
+  - `full_audit.py` (8개 뷰포트/탭/EN 매트릭스 `CLIP_X/Y/RIGHT_OVERFLOW: 0`) & `verify_redesign.py` (`DESKTOP/MOBILE ERRORS: []`, `MOBILE OVERFLOW: 390/390`, 5종 모달, EN 전환, `emDashCount: 0`) 및 2017 공동수상·2열 역대 리더·영문 발전기금·모바일 390px 스크린샷 직접 검수 완료 후 `origin main` 커밋·푸시 완료.

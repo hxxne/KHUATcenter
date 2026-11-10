@@ -1493,7 +1493,7 @@ a {
 }
 
 /* ==========================================================================
-   8. Awards, Leaders & Graduate Alumni (#awards) — Zero Nested Boxes & Strict 390px Containment
+   8. Awards, Leaders & Graduate Alumni (#awards) — Archival Honor Monolith
    ========================================================================== */
 #awards.awards-stream-section {
     background-color: var(--bg-subtle);
@@ -1502,20 +1502,22 @@ a {
 }
 
 #awards .section-header {
-    text-align: center;
-    margin-bottom: 42px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: clamp(32px, 4vw, 48px);
 }
 #awards .section-title::before {
-    content: "05 / HALL OF HONOR";
-    display: block;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.16em;
-    color: var(--khu-bronze);
-    margin-bottom: 8px;
+    display: none;
+}
+#awards .section-subtitle {
+    margin: 0;
+    text-align: right;
+    max-width: 440px;
 }
 
-/* Remove all nested outer card frames around Carousel! */
 .award-carousel-container {
     background: transparent !important;
     border: none !important;
@@ -1530,28 +1532,28 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 12px;
     width: 100%;
     max-width: 100%;
     min-width: 0;
-    padding-bottom: 18px;
-    border-bottom: 1px solid var(--line-hairline);
-    margin-bottom: 26px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line-strong);
+    margin-bottom: 0;
 }
 
 .award-carousel-nav-btn {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     border: 1px solid var(--line-strong);
-    background: var(--bg-surface);
+    background: transparent;
     color: var(--ink-primary);
     display: inline-flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     flex-shrink: 0;
-    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 .award-carousel-nav-btn:hover {
     background: var(--khu-crimson);
@@ -1559,42 +1561,53 @@ a {
     color: #FFFFFF;
 }
 
-/* Centered symmetrical year index bar — Zero RIGHT_OVERFLOW */
+/* Editorial Archival Year Index Bar */
 .award-year-pills-bar {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: clamp(6px, 1.4vw, 18px);
+    gap: clamp(6px, 1.5vw, 22px);
     flex: 1 1 0%;
     min-width: 0;
     max-width: 100%;
-    overflow-x: visible;
-    padding: 2px 4px;
-}
-.award-year-pills-bar::-webkit-scrollbar {
-    display: none;
+    padding: 4px;
 }
 
 .award-year-pill {
     flex: 0 0 auto;
     border: none;
     background: transparent;
-    padding: 6px 12px;
-    border-radius: 999px;
-    font-size: 0.88rem;
+    padding: 6px 6px;
+    border-radius: 0;
+    position: relative;
+    font-size: 0.92rem;
     font-weight: 700;
-    color: var(--ink-muted);
+    color: var(--ink-subtle);
     cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.award-year-pill::after {
+    content: "";
+    position: absolute;
+    left: 2px;
+    right: 2px;
+    bottom: -15px;
+    height: 2px;
+    background: var(--khu-crimson);
+    transform: scaleX(0);
+    transition: transform 0.25s var(--ease-expo);
 }
 .award-year-pill:hover {
     color: var(--ink-primary);
-    background: rgba(17, 19, 24, 0.05);
 }
 .award-year-pill.active {
-    background: var(--ink-primary);
-    color: #FFFFFF;
+    background: transparent;
+    color: var(--ink-primary);
+    font-weight: 800;
+}
+.award-year-pill.active::after {
+    transform: scaleX(1);
 }
 
 .award-carousel-viewport {
@@ -1603,59 +1616,150 @@ a {
     overflow: hidden;
 }
 
+/* Split Archival Pedestal: Left Year Monolith (240px) + Right Featured 1:2 Honors Grid */
 .award-year-stream-block {
-    background: var(--bg-surface);
-    border-radius: 18px;
-    padding: clamp(22px, 3vw, 34px);
-    box-shadow: 0 10px 30px -14px rgba(17, 19, 24, 0.08);
+    background: transparent;
+    border-radius: 0;
+    border-bottom: 1px solid var(--line-hairline);
+    padding: clamp(32px, 4.5vw, 52px) 0;
+    box-shadow: none;
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 56px);
+    align-items: start;
 }
 
 .award-year-row-header {
-    margin-bottom: 18px;
+    margin: 0;
+    padding-top: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
 }
 .award-year-badge {
-    font-size: clamp(1.8rem, 2.8vw, 2.3rem);
+    font-size: clamp(3.4rem, 5.2vw, 4.8rem);
     font-weight: 800;
     color: var(--ink-primary);
     letter-spacing: -0.04em;
-    line-height: 1;
+    line-height: 0.95;
+}
+.award-year-row-header::after {
+    content: "ANNUAL HONORS ARCHIVE";
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--khu-bronze);
+    padding-top: 10px;
+    border-top: 2px solid var(--khu-crimson);
 }
 
+/* Hierarchy 1:2 Grid — Top: AT Student of the Year Featured Band, Bottom: Inspiration + Rookie */
 .award-year-cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 0;
 }
 
-/* Open Top-Bordered Honor Column — No box inside box! */
 .award-stream-card {
     background: transparent !important;
     border: none !important;
-    border-top: 3px solid var(--khu-gold) !important;
     border-radius: 0 !important;
     box-shadow: none !important;
-    padding: 18px 4px 6px 4px;
+    padding: 20px 24px 8px 4px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     cursor: pointer;
-    transition: transform 0.25s var(--ease-expo);
+    transition: transform 0.25s var(--ease-expo), background-color 0.25s ease;
     min-width: 0;
 }
+
+/* Top Winner Featured Pedestal (AT Student of the Year) */
+.award-stream-card.card-coty {
+    grid-column: 1 / -1;
+    background: var(--bg-surface) !important;
+    border: 1px solid rgba(17, 19, 24, 0.06) !important;
+    border-radius: 14px !important;
+    padding: clamp(22px, 3vw, 32px) clamp(22px, 3.2vw, 34px);
+    box-shadow: 0 12px 30px -16px rgba(17, 19, 24, 0.10) !important;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+        "pill hint"
+        "name desc";
+    align-items: center;
+    column-gap: 24px;
+    row-gap: 6px;
+}
+.award-stream-card.card-coty:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elevated) !important;
+}
+.award-stream-card.card-coty .award-pill {
+    grid-area: pill;
+    margin: 0;
+    color: var(--khu-bronze);
+}
+.award-stream-card.card-coty .award-stream-name,
+.award-stream-card.card-coty .award-stream-name-dual {
+    grid-area: name;
+    font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+    margin: 2px 0 0 0;
+}
+.award-stream-card.card-coty .award-stream-name-dual {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 10px 22px;
+}
+.award-stream-card.card-coty .dual-name-row {
+    font-size: inherit;
+    font-weight: 800;
+    margin: 0;
+    position: relative;
+}
+.award-stream-card.card-coty .dual-name-row + .dual-name-row::before {
+    content: "/";
+    margin-right: 20px;
+    font-weight: 500;
+    color: var(--ink-subtle);
+}
+.award-stream-card.card-coty .award-stream-desc {
+    grid-area: desc;
+    margin: 0;
+    text-align: right;
+    color: var(--ink-muted);
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+.award-stream-card.card-coty .award-click-hint {
+    grid-area: hint;
+    margin: 0;
+    justify-self: end;
+}
+
+/* Secondary Laureates (Inspiration & Rookie) — Architectural Ledger Split */
+.award-stream-card.card-insp,
+.award-stream-card.card-rookie {
+    padding: 20px 24px 12px 24px;
+    border-top: 1px solid var(--line-hairline) !important;
+}
 .award-stream-card.card-insp {
-    border-top-color: var(--khu-crimson) !important;
+    padding-left: 6px;
 }
 .award-stream-card.card-rookie {
-    border-top-color: var(--khu-navy) !important;
+    border-left: 1px solid var(--line-hairline) !important;
 }
-.award-stream-card:hover {
-    transform: translateY(-3px);
+.award-stream-card.card-insp:hover,
+.award-stream-card.card-rookie:hover {
+    transform: translateY(-2px);
 }
 
 .award-pill {
     font-size: 0.72rem;
     font-weight: 800;
-    letter-spacing: 0.09em;
+    letter-spacing: 0.1em;
     color: var(--khu-bronze);
     background: transparent !important;
     border: none !important;
@@ -1690,35 +1794,40 @@ a {
     color: var(--khu-crimson);
     display: inline-flex;
     align-items: center;
-    gap: 5px;
-    opacity: 0.85;
-    transition: gap 0.2s ease, opacity 0.2s ease;
+    gap: 6px;
+    opacity: 0.88;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .award-stream-card:hover .award-click-hint {
     opacity: 1;
-    gap: 8px;
+}
+.award-stream-card:hover .award-click-hint i {
+    transform: translateX(3px);
+}
+.award-click-hint i {
+    transition: transform 0.25s var(--ease-expo);
 }
 
 .award-carousel-footer {
-    margin-top: 20px;
+    margin-top: 22px;
     display: flex;
     justify-content: center;
 }
 .award-carousel-dots {
     display: flex;
-    gap: 6px;
+    gap: 10px;
 }
 .award-dot {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 4px;
     border-radius: 999px;
     border: none;
-    background: rgba(17, 19, 24, 0.2);
+    background: rgba(17, 19, 24, 0.22);
     cursor: pointer;
-    transition: width 0.25s ease, background-color 0.25s ease;
+    transition: transform 0.25s var(--ease-expo), background-color 0.25s ease;
 }
 .award-dot.active {
-    width: 20px;
+    transform: scaleX(2.4);
     background: var(--khu-crimson);
 }
 
@@ -1729,7 +1838,7 @@ a {
 }
 .awards-archive-tabs {
     display: flex;
-    gap: 32px;
+    gap: 36px;
     justify-content: center;
     border-bottom: 1px solid var(--line-hairline);
     margin-bottom: clamp(40px, 4.5vw, 56px);
@@ -1767,11 +1876,11 @@ a {
     margin-bottom: clamp(36px, 4vw, 48px);
 }
 .stream-sub-title {
-    font-size: 1.45rem;
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--ink-primary);
     margin: 0 0 8px 0;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
 }
 .stream-sub-desc {
     font-size: 0.94rem;
@@ -1779,24 +1888,39 @@ a {
     margin: 0;
 }
 
-/* Past Leaders 3-Col Open Architectural Lists */
+/* Past Leaders — Balanced 2-Column Editorial Span (Left: AT + Research, Right: Rehab) */
 .ed-leaders-split-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(32px, 4.5vw, 64px);
+    row-gap: 40px;
+    align-items: start;
+}
+
+@media (min-width: 961px) {
+    .ed-stream-block.leader-block-at {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .ed-stream-block.leader-block-res {
+        grid-column: 1;
+        grid-row: 2;
+    }
+    .ed-stream-block.leader-block-rehab {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
 }
 
 .ed-stream-block {
     background: transparent !important;
     border: none !important;
-    border-top: 2.5px solid var(--khu-crimson) !important;
+    border-top: 1px solid var(--ink-primary) !important;
     border-radius: 0 !important;
     box-shadow: none !important;
     padding: 18px 0 0 0;
     min-width: 0;
 }
-.ed-stream-block.leader-block-rehab { border-top-color: var(--khu-navy) !important; }
-.ed-stream-block.leader-block-res { border-top-color: var(--khu-bronze) !important; }
 
 .ed-stream-header {
     display: flex;
@@ -1808,13 +1932,13 @@ a {
 .ed-stream-tag {
     font-size: 0.78rem;
     font-weight: 800;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     color: var(--khu-crimson);
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
 }
-.ed-stream-tag.tag-navy { color: var(--khu-navy); }
+.ed-stream-tag.tag-gold { color: var(--khu-navy); }
 .ed-stream-tag.tag-silver { color: var(--khu-bronze); }
 
 .ed-stream-sublabel {
@@ -1833,29 +1957,31 @@ a {
     border: none;
     border-bottom: 1px solid var(--line-hairline);
     background: transparent;
-    padding: 10px 4px;
+    padding: 12px 8px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
     cursor: pointer;
     text-align: left;
-    transition: background-color 0.2s ease, padding-left 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.25s var(--ease-expo);
 }
 .ed-stream-row:hover {
-    background: rgba(255, 255, 255, 0.7);
-    padding-left: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    transform: translateX(4px);
 }
 .ed-term {
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--ink-subtle);
     white-space: nowrap;
 }
 .ed-name {
-    font-size: 0.94rem;
+    font-size: 0.96rem;
     font-weight: 700;
     color: var(--ink-primary);
+    transition: color 0.2s ease;
 }
 .ed-stream-row:hover .ed-name {
     color: var(--khu-crimson);
@@ -1879,18 +2005,20 @@ a {
     border: none;
     border-bottom: 1px solid var(--line-hairline);
     background: transparent;
-    padding: 10px 6px;
+    padding: 11px 8px;
+    border-radius: 6px;
     display: grid;
     grid-template-columns: 62px 1fr auto;
     align-items: center;
     gap: 10px;
     cursor: pointer;
     text-align: left;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s var(--ease-expo);
     min-width: 0;
 }
 .ed-ga-item:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.88);
+    transform: translateY(-1px);
 }
 .ed-ga-item .gt {
     font-size: 0.8rem;
@@ -1919,11 +2047,11 @@ a {
 }
 
 /* ==========================================================================
-   9. Donate Section (#donate) — Clean Asymmetric Crimson / Canvas Split
+   9. Donate Section (#donate) — Dark Obsidian-Crimson Patronage Split
    ========================================================================== */
 #donate.donate-minimal-section {
     background-color: var(--bg-canvas);
-    padding: clamp(72px, 8vw, 108px) 0;
+    padding: clamp(76px, 8.5vw, 114px) 0;
 }
 
 .donate-split-wrapper {
@@ -1931,22 +2059,24 @@ a {
     margin: 0 auto;
     padding: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-radius: 22px;
+    grid-template-columns: 1.05fr 0.95fr;
+    border-radius: 20px;
     overflow: visible;
-    box-shadow: var(--shadow-elevated);
+    box-shadow: 0 24px 56px -18px rgba(17, 19, 24, 0.16), 0 4px 14px -4px rgba(17, 19, 24, 0.06);
     background: var(--bg-surface);
 }
 
 .donate-hero-banner {
     position: relative;
-    background: linear-gradient(145deg, #7A0026 0%, #A50034 62%, #4A0016 100%);
-    color: #FFFFFF;
-    padding: clamp(36px, 5vw, 56px);
+    background:
+        radial-gradient(120% 95% at 88% 12%, rgba(165, 0, 52, 0.56) 0%, rgba(102, 0, 32, 0.22) 48%, transparent 78%),
+        linear-gradient(155deg, #1E0B12 0%, #12080C 100%);
+    color: #FAF8F4;
+    padding: clamp(40px, 5.5vw, 64px);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 22px 0 0 22px;
+    border-radius: 20px 0 0 20px;
 }
 .donate-hero-overlay {
     display: none;
@@ -1957,25 +2087,27 @@ a {
 }
 
 .dh-subtitle {
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    color: rgba(255, 255, 255, 0.78);
-    margin: 0 0 12px 0;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #E8C984;
+    margin: 0 0 14px 0;
 }
 .dh-title {
-    font-size: clamp(1.65rem, 2.8vw, 2.3rem);
+    font-size: clamp(1.85rem, 3vw, 2.55rem);
     font-weight: 800;
-    color: #FFFFFF;
+    color: #FAF8F4;
     letter-spacing: -0.03em;
-    line-height: 1.24;
-    margin: 0 0 16px 0;
+    line-height: 1.2;
+    margin: 0 0 20px 0;
 }
 .dh-desc {
-    font-size: 0.96rem;
-    color: rgba(255, 255, 255, 0.86);
-    line-height: 1.7;
+    font-size: 0.98rem;
+    color: rgba(250, 248, 244, 0.84);
+    line-height: 1.78;
     margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(250, 248, 244, 0.16);
 }
 
 .donate-content-container {
@@ -1983,55 +2115,125 @@ a {
     margin: 0 !important;
     max-width: none !important;
     display: flex;
-    align-items: center;
-    border-radius: 0 22px 22px 0;
+    align-items: stretch;
+    border-radius: 0 20px 20px 0;
 }
 
-/* Cleanly override legacy inline styles inside HTML */
 .minimal-banking-card {
     width: 100%;
-    margin-top: 0 !important;
-    padding: clamp(32px, 4.5vw, 52px) !important;
-    background: var(--bg-surface) !important;
-    box-shadow: none !important;
-    border: none !important;
-    border-radius: 0 22px 22px 0 !important;
-    text-align: left !important;
+    padding: clamp(36px, 5vw, 56px);
+    background: var(--bg-surface);
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
 }
 
 .mb-header {
-    text-align: left !important;
-    margin-bottom: 22px !important;
-    font-size: 1.35rem !important;
-    color: var(--ink-primary) !important;
+    text-align: left;
+    margin: 0 0 20px 0;
+    font-size: 1.42rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--ink-primary);
 }
 
-.minimal-banking-card > div:nth-of-type(1) {
-    text-align: left !important;
-    margin-bottom: 28px !important;
+.donate-cta-wrap {
+    margin-bottom: 28px;
 }
 
 .btn-donate-link {
-    background: var(--ink-primary) !important;
-    color: #FFFFFF !important;
-    padding: 13px 28px !important;
-    border-radius: 999px !important;
-    font-size: 0.96rem !important;
-    font-weight: 700 !important;
-    box-shadow: none !important;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--khu-crimson);
+    color: #FAF8F4;
+    padding: 16px 26px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    transition: background-color 0.25s ease, transform 0.25s var(--ease-expo), box-shadow 0.25s ease;
+    box-shadow: 0 10px 24px -8px rgba(165, 0, 52, 0.36);
+}
+.btn-donate-link::after {
+    content: "↗";
+    font-size: 1.05rem;
+    margin-left: 2px;
+    transition: transform 0.25s var(--ease-expo);
 }
 .btn-donate-link:hover {
-    background: var(--khu-crimson) !important;
+    background: var(--khu-crimson-hover);
     transform: translateY(-2px);
+    box-shadow: 0 14px 28px -8px rgba(165, 0, 52, 0.44);
+}
+.btn-donate-link:hover::after {
+    transform: translate(2px, -2px);
 }
 
+/* Clean Borderless 01-03 Participation Steps — i18n Compatible */
 .donation-instructions {
-    background: var(--bg-canvas) !important;
-    border: none !important;
-    border-left: 3px solid var(--khu-crimson) !important;
-    border-radius: 0 10px 10px 0 !important;
-    box-shadow: none !important;
-    padding: 18px 22px !important;
+    background: transparent;
+    padding: 24px 0 0 0;
+    border-top: 1px solid var(--line-hairline);
+}
+.donation-instructions h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: var(--ink-primary);
+    margin: 0 0 6px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.donation-instructions h3 i {
+    color: var(--khu-crimson);
+}
+.donation-instructions > p {
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    margin: 0 0 14px 0;
+}
+.donation-instructions ol {
+    counter-reset: donate-step;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+.donation-instructions ol li {
+    counter-increment: donate-step;
+    position: relative;
+    padding: 11px 0 11px 36px;
+    border-bottom: 1px solid var(--line-hairline);
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+}
+.donation-instructions ol li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+.donation-instructions ol li::before {
+    content: "0" counter(donate-step);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: var(--khu-crimson);
+    font-variant-numeric: tabular-nums;
+}
+.donation-instructions ol li strong {
+    color: var(--ink-primary);
+    font-weight: 700;
+}
+.donation-instructions ol li span,
+.donation-instructions .donate-emphasis {
+    color: var(--khu-crimson) !important;
+    font-weight: 700;
 }
 
 /* ==========================================================================
@@ -2562,16 +2764,17 @@ a {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .about-hero-container,
+    .award-year-stream-block,
     .donate-split-wrapper,
     .contact-wrapper {
         grid-template-columns: 1fr;
     }
     .donate-hero-banner {
-        border-radius: 22px 22px 0 0;
+        border-radius: 20px 20px 0 0;
     }
     .donate-content-container,
     .minimal-banking-card {
-        border-radius: 0 0 22px 22px !important;
+        border-radius: 0 0 20px 20px;
     }
 }
 
@@ -2579,7 +2782,6 @@ a {
     .bento-pillars-grid,
     .editorial-metric-grid,
     .ed-leaders-split-grid,
-    .award-year-cards-grid,
     .modern-profile-grid:not(.grid-compact):not(.grid-faculty) {
         grid-template-columns: 1fr;
     }
@@ -2599,8 +2801,37 @@ a {
         padding: calc(var(--header-height) + 48px) 0 64px 0;
     }
     #about .section-header,
-    #pillars .section-header {
+    #pillars .section-header,
+    #awards .section-header {
         display: block;
+    }
+    #pillars .section-subtitle,
+    #awards .section-subtitle {
+        text-align: left;
+        margin-top: 10px;
+    }
+    .award-stream-card.card-coty {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "pill"
+            "name"
+            "desc"
+            "hint";
+        gap: 6px;
+    }
+    .award-stream-card.card-coty .award-stream-desc {
+        text-align: left;
+    }
+    .award-stream-card.card-coty .award-click-hint {
+        justify-self: start;
+        margin-top: 6px;
+    }
+    .award-stream-card.card-rookie {
+        border-left: none !important;
+    }
+    .award-stream-card.card-insp,
+    .award-stream-card.card-rookie {
+        padding: 18px 6px 12px 6px;
     }
     .about-text-block {
         grid-template-columns: 1fr;
@@ -2611,10 +2842,6 @@ a {
         border-left: none;
         padding-top: 18px;
         border-top: 1px solid var(--line-hairline);
-    }
-    #pillars .section-subtitle {
-        text-align: left;
-        margin-top: 10px;
     }
     .bento-pillars-grid,
     .editorial-metric-grid,
