@@ -79,7 +79,7 @@
 - **04 AT 동아리 임원진 (3줄 규격 표준화):**
   - 형식: `~과 00학번` / `직책` / `이메일`
   - 회장: **조연지** (`스포츠의학과 24학번` / `AT 동아리 회장` / `khuatcenter@khu.ac.kr`)
-  - 부회장: **이도형** (`경희대학교 체육대학` / `AT 동아리 부회장` / `khuatcenter@khu.ac.kr`)
+  - 부회장: **이도형** (`경희대학교 체육대학` / `AT 동아리 부회장` / `lee616dh@khu.ac.kr`)
   - 총무: **홍진후** (`스포츠의학과 25학번` / `AT 동아리 총무` / `jinu4321@khu.ac.kr`)
 - **05 스태프 (서브탭 연동 유지 & 3줄 규격 가나다순 배치):**
   - 서브탭 1: `체육부 AT` (12인 전담 AT 전원 실제 학번/학력 100% 반영: 강석 21, 권남준 21, 기윤서 석사졸업, 문수연 22, 문채연 22, 박세민 22, 유승아 21, 유영민 19, 유주승 20, 유지민 21, 이상준 22, 한혜서 21)
@@ -3137,3 +3137,60 @@ Observation 100시간 실무 과정,
   3. `index.html`: `AT 센터 누적 기록` 제목 띄어쓰기 통일 및 캐시 버스팅 (`style.css?v=20261110_surface_depth`, `i18n.js?v=20261110_team_at`).
 - **검증 및 Git 동기화:**
   - Playwright 데스크톱(`1440×900`) 전 섹션·영문(`Team AT`)·모바일(`390×844`) 캡처(`UPGRADE_ERRORS: []`) 및 `#dashboard` 글로우 영역 보완 재검증 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 🏛️ 97. 효율 중심 전면 리디자인 & 이도형 부회장 이메일 반영 (로컬 검증 완료 / GitHub 미연동, 2026-11-10)
+- **사용자 요청:**
+  1. 기존 레이아웃·폰트·카드 스타일에 얽매이지 말고 `frontend-design`, `impeccable`, `design-taste-frontend(taste-skill)` 스킬을 활용해 가장 효율적인 구조·디자인으로 전면 개편 (단, **GitHub 연동은 아직 진행하지 말 것**).
+  2. 이도형(AT 동아리 부회장) 이메일 `lee616dh@khu.ac.kr` 반영.
+- **주요 구현 내역 (`khu-redesign.css`, `index.html`, `style.css`, `i18n.js`, `ui-motion-bklit.js`):**
+  1. **디자인 시스템 통합 (`khu-redesign.css` 신규 + `style.css` 충돌 tail 제거):**
+     - 전 본문 라이트 에디토리얼 캔버스(`#FAF9F6` · `#FFFFFF` · `#F3F0EA`) + 딥 잉크 푸터(`#14171F`) 톤 락 적용, 단일 크림슨(`#A50034`) 포인트 체계, 불필요한 네모 박스 테두리/사선 `clip-path`/em-dash(`—`) 제거.
+     - 영문 디스플레이 및 수치에 `Plus Jakarta Sans` + `tabular-nums`, 한국어 본문에 `Pretendard` 최적 자간(`-0.006em` / `-0.022em`) 및 `keep-all` 적용.
+  2. **섹션별 레이아웃 다양화 및 스크롤 효율 극대화:**
+     - `#hero` 좌측 정렬 풀블리드 히어로 ➔ `#about` 5:7 비대칭 스플릿 (01~05 하이라이트 리스트 제거 후 노천극장 사진 + 크림슨 좌측 바 2문단 소개 수직 중앙 정렬) ➔ `#pillars` 프레임리스 미디어 트리오 ➔ `#dashboard` **아키텍처 쿨 펄 그리드 배경(`#F3F6FA` + 라디얼 대기광 + 36px 헤어라인 그리드) 위 통합 글래스 스탯 보드** ➔ `#donate` 2단 스플릿(`.dh-desc` `white-space: normal` 및 `.minimal-banking-card` `margin-top: 0` 교정) ➔ `#contact` 5:7 문의 스플릿.
+     - **`#members` 4-탭 통합 디렉토리 (`switchMemberTab`):** `00 자문위` · `01 교수진` · `02 리더` 는 상시 노출하고, `03 대학원생(7)` · `04 AT 동아리 임원진(3)` · `05 스태프 & Team AT(27, 기본 활성)` · `06 AT 센터 보조(12팀)` 를 단일 탭 바로 전환 가능하게 압축.
+     - **`#awards` 2-탭 아카이브 (`switchAwardsArchiveTab`):** 연도별 캐러셀 하단에 `역대 리더(11)` (3열 동등 정렬, 3번째 Research 블록 하단 이탈 교정) · `대학원 졸업자(38)` (연도 알약 제거 + 한/영 배지 패딩 통일된 3열 헤어라인 인명록) 적용.
+     - **`#activities` 이미지 위 뱃지 제거 & 더보기 토글 (`toggleActivityGalleryExpand`):** `.gallery-badge` 를 사진 아래 정보 영역으로 이동시키고, 전체 부서 보기 시 초기 9장만 노출 후 `+N장 더보기` 버튼 제공.
+  3. **이도형 부회장 이메일 동기화:** `#members` 임원진 카드 및 `PROF_PROFILES["이도형"]` 이메일을 `lee616dh@khu.ac.kr` 로 반영.
+  4. **다국어/모션 호환성 동기화 (`i18n.js`, `ui-motion-bklit.js`):** 새 디렉토리·아카이브 탭 및 더보기 라벨 KO/EN 전환 연동, 비활성 탭 패널 스크롤 리빌 투명 고정 방지.
+- **검증 결과 (로컬 `http://localhost:8080/index.html`):**
+  - Playwright 데스크톱(`1440×900`) & 모바일(`390×844`) 가로 오버플로우 `0px`, JS 콘솔/페이지 에러 `0건`, 5종 모달(`#prof-modal`, `#research-modal`, `#pillar-detail-modal`, `#alumni-modal`, `#activity-lightbox-modal`) 열기/닫기 정상, 다국어 전환(`01 Faculty members`, `02 Leaders`, `Team AT`, `Seonseung-gwan`) 및 `emDashCount: 0` 검증 완료. *(사용자 확인 후 GitHub 연동 예정)*
+
+
+---
+
+## 🧱 98. 레거시 CSS 충돌 해체(`khu-modals.css` + `khu-pro.css`) 및 전 뷰포트 잘림·네모칸 박멸 (로컬 검증 완료 / GitHub 미연동, 2026-11-11)
+- **사용자 요청:**
+  1. 화면 내 과도한 네모칸과 잘리는 부분 확인 및 수정.
+  2. `taste-skill`, `impeccable` 원칙을 전면 반영한 완성도 높은 디자인 개편 (`GitHub 연동 보류`).
+- **원인 진단 (`full_audit.py`):**
+  - 기존 9,489줄 `style.css` 위에 `khu-redesign.css` 를 덧씌우는 구조에서 사선 `clip-path`, 3중 중첩 박스(`borderedBoxes: 75~150`), `#hero` `CLIP_X`, `.bento-media-slider` / `.editorial-metric-grid` `CLIP_Y`, 모바일 390px `.award-year-pill` / `.dept-picto-btn` `RIGHT_OVERFLOW`, `.modern-members-wrapper` `.container` 누락(`left: 0`) 등이 발생함.
+- **주요 구현 내역:**
+  1. **`khu-modals.css` (2,125줄) 신규 분리:** `style.css` 에서 6종 모달(`#prof-modal`, `#research-modal`, `#pillar-detail-modal`, `#department-modal`, `#new-sport-modal`, `#alumni-modal`), 라이트박스(`#activity-lightbox-modal`), 모바일 드로어, 폼 성공 오버레이, `back-to-top` 전용 스타일만 중괄호 무결성(`depth=0, min_depth=0`) 검증 하에 독립 추출.
+  2. **`khu-pro.css` 신규 단독 디자인 시스템 구축 (`index.html` 연결 교체):**
+     - `style.css` · `khu-redesign.css` 동시 로드를 제거하고 `khu-modals.css` + `khu-pro.css` + `ui-motion-bklit.css` 만 로드해 레거시 간섭 원천 차단.
+     - **네모칸 박멸:** `#members` 프레임리스 포트레이트(`01~06`) & 오픈 헤더 12부서 칼럼(`06`), `#dashboard` 통합 3-칼럼 건축 리포트 패널(`Cool Pearl Blueprint Grid` 배경), `#pillars` 알약 태그 제거 및 도트 메타 라인 전환, `#awards` 3중 중첩 박스 제거 및 상단 라인형 아너 롤·보더리스 동문록 구현.
+     - **섹션별 헤더 다양화 & 정렬/잘림 교정:** `#hero` 시네마틱 좌측 오버레이(`CLIP_X: 0`), `#about` 좌측 정렬 매거진 헤더 + 2단 스프레드, `#donate` 50:50 크림슨/화이트 분할(`overflow: visible` + 개별 모서리 라운드로 `CLIP_Y: 0`), `.modern-members-wrapper` `.container` 동일 폭/패딩 부여 및 `.modern-profile-exp` 커스텀 불릿 정렬, 모바일 390px 연도 바·갤러리 카테고리(2x2)·12부서 칩 줄바꿈 및 교수진 `96×114` 컴팩트 썸네일 적용.
+- **최종 검증 결과 (수정 후 재실행):**
+  - `full_audit.py`: **KO 1280×800 / 1440×900 / 390×844 / 구성원 4탭 / 동문록 / EN 1280×800 전 8개 구성**에서 `CLIP_X: 0`, `CLIP_Y: 0`, `RIGHT_OVERFLOW: 0`, `brokenImgs: []` 확인 (`borderedBoxes: 42~65`로 대폭 감축).
+  - `verify_redesign.py`: `DESKTOP ERRORS: []`, `MOBILE ERRORS: []`, `MOBILE OVERFLOW CHECK: {'docW': 390, 'winW': 390}`, 5종 모달 열기/닫기(`PROF: lee616dh@khu.ac.kr`, `RESEARCH`, `PILLAR`, `ALUMNI`, `LIGHTBOX`), 영문 전환(`01 Faculty members`, `Team AT`, `Seonseung-gwan`) 및 `emDashCount: 0` 통과 확인.
+
+
+---
+
+## 🚀 99. `#about` 대형 사진+하단 글 개편, 연도 중앙 정렬, 아카이브 여백 보정 및 GitHub 푸시 (2026-11-11)
+- **사용자 요청:**
+  1. `#about` 센터 소개에서 사진을 크게 노출하고 그 아래에 소개 글을 배치.
+  2. `#awards` 역대 수상자 및 리더 연도 바 정렬.
+  3. `#awards` 하단 `역대 리더` · `대학원 졸업자` 탭 배너와 본문 내용 간 간격 여유 확보.
+  4. GitHub(`origin main`) 푸시 진행.
+- **주요 수정 내역 (`khu-pro.css`, `index.html`):**
+  1. `#about .about-hero-container`: 좌우 분할에서 수직 스택으로 전환해 단체 사진(`.about-hero-img`)을 무크롭(`1148×762`) 대형 가로 폭으로 노출하고, 바로 아래 `.about-text-block`을 데스크톱 2칼럼(`.about-lead` + 크림슨 세로 보더 `.about-detail`), 모바일 1칼럼으로 구성.
+  2. `#awards .award-year-pills-bar`: `justify-content: center; flex-wrap: wrap;` 으로 2025~2015 연도를 좌우 화살표 사이 정중앙 대칭 정렬.
+  3. `#awards .awards-archive-tabs-wrap` / `.awards-archive-tabs`: 탭 래퍼가 패널 전체를 감싸던 DOM 구조 특성상 하단 구분선(`border-bottom`)과 여백(`margin-bottom: clamp(40px, 4.5vw, 56px)`)을 `.awards-archive-tabs` 로 직접 이동해 `역대 리더(11) | 대학원 졸업자(38)` 탭 바 ↔ 본문 간 `64px` 여백 확보.
+  4. `index.html` 캐시 버스팅 업데이트(`khu-modals.css?v=20261111_pro2`, `khu-pro.css?v=20261111_pro2`).
+- **최종 검증 및 Git 동기화:**
+  - `full_audit.py` & `verify_redesign.py` 재실행 완료 (전 뷰포트 클리핑·모바일 넘침·JS 에러 0건) 후 `origin main` 커밋 및 푸시 완료.

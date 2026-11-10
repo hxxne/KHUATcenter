@@ -241,17 +241,6 @@
                 'Academic Research'
             ]
         },
-        // 센터 소개 5대 하이라이트 (#about)
-        {
-            selector: '#about .about-clean-item .about-clean-txt',
-            items: [
-                'Training Field Experts in Sports Medicine',
-                'Clinical &amp; Data-Driven Performance Research',
-                'Dedicated Care for Elite Student-Athletes',
-                'Sports Rehabilitation for Faculty &amp; Staff',
-                'On-Site Medical Care for Sports Events'
-            ]
-        },
         // 핵심 사업 슬라이드 캡션 - 교육 (#pillars)
         {
             selector: '.bento-card-edu .bento-slide-caption',
@@ -401,7 +390,7 @@
             items: [
                 'New Cohort 10-Week Study &amp; Practical Training',
                 '2026 27th Cohort Official Orientation',
-                'The Brain Awards for Lab — Excellence Prize',
+                'The Brain Awards for Lab - Excellence Prize',
                 '63rd KSSO Spring Congress Research Presentation',
                 '37th KHU President\'s Cup High School Taekwondo',
                 '1st Lion Match (KHU vs. Hanyang) Medical Support',
@@ -417,12 +406,12 @@
             selector: '#activities .gallery-card-item:not(.dept-gallery-card) .gallery-card-meta',
             items: [
                 '<i class="fa-solid fa-chalkboard-user"></i> Foundational theory &amp; skills linked to 10-week Observation',
-                '<i class="fa-solid fa-users"></i> Seonseung-gwan B1 Lecture Hall — Center system &amp; guide',
+                '<i class="fa-solid fa-users"></i> Seonseung-gwan B1 Lecture Hall - Center system &amp; guide',
                 '<i class="fa-solid fa-award"></i> Selected as an Outstanding Lab by KHU Graduate School',
-                '<i class="fa-solid fa-book-open"></i> Grand Walkerhill Seoul — Cartilage &amp; rehabilitation research',
-                '<i class="fa-solid fa-truck-medical"></i> Hongcheon, Gangwon — 10-day dedicated care by 16 AT staff',
+                '<i class="fa-solid fa-book-open"></i> Grand Walkerhill Seoul - Cartilage &amp; rehabilitation research',
+                '<i class="fa-solid fa-truck-medical"></i> Hongcheon, Gangwon - 10-day dedicated care by 16 AT staff',
                 '<i class="fa-solid fa-truck-medical"></i> Acute injury care &amp; taping at soccer and basketball venues',
-                '<i class="fa-solid fa-person-running"></i> Yeouido Park — Sports massage &amp; physical recovery support',
+                '<i class="fa-solid fa-person-running"></i> Yeouido Park - Sports massage &amp; physical recovery support',
                 '<i class="fa-solid fa-trophy"></i> Presentation of AT Student of the Year, Inspiration &amp; Rookie',
                 '<i class="fa-solid fa-award"></i> 2025 AT of the Year Seung-A Yoo · Inspiration Se-Min Park',
                 '<i class="fa-solid fa-graduation-cap"></i> Theory presentations, taping practice &amp; foot volleyball',
@@ -886,7 +875,7 @@
             const advisoryBox = groupHeaders[0].nextElementSibling;
             if (advisoryBox && advisoryBox.dataset.koOrig !== undefined) {
                 advisoryBox.innerHTML = (lang === 'en')
-                    ? '<i class="fa-solid fa-users-gear" style="color: var(--color-primary); font-size: 1.4rem; margin-bottom: 8px; display: block;"></i>The Kyung Hee University AT Center Advisory Committee is currently being formed.'
+                    ? '<i class="fa-solid fa-users-gear"></i><span>The Kyung Hee University AT Center Advisory Committee is currently being formed.</span>'
                     : advisoryBox.dataset.koOrig;
             }
         }
@@ -1053,6 +1042,21 @@
             const val = opt.getAttribute('value') || '';
             opt.textContent = (lang === 'en') ? (inquiryTypeOptionMap[val] || opt.dataset.koOrig) : opt.dataset.koOrig;
         });
+
+        // 10) 통합 멤버 디렉토리 & 역대 기록 아카이브 탭 라벨 / 활동사진 더보기 동기화
+        document.querySelectorAll('.member-dir-tab-btn [data-ko][data-en], .awards-archive-tab-btn [data-ko][data-en]').forEach(el => {
+            el.innerHTML = (lang === 'en') ? el.getAttribute('data-en') : el.getAttribute('data-ko');
+        });
+        const expandLabel = document.getElementById('gallery-expand-label');
+        if (expandLabel) {
+            const totalDeptCards = document.querySelectorAll('#activities .gallery-card-item[data-category="dept"]').length;
+            const remain = Math.max(0, totalDeptCards - 9);
+            if (window.__activitiesExpanded) {
+                expandLabel.textContent = (lang === 'en') ? 'Show Fewer Photos' : '활동사진 접기';
+            } else {
+                expandLabel.textContent = (lang === 'en') ? `View All Activity Photos (+${remain})` : `활동사진 더보기 (+${remain}장)`;
+            }
+        }
 
         // 브라우저 localStorage에 선택 언어 저장
         try {
@@ -1271,7 +1275,7 @@
                         Object.keys(GA_BADGE_KO_TO_EN).forEach(function (koKey) {
                             bTxt = bTxt.replace(koKey, GA_BADGE_KO_TO_EN[koKey]);
                         });
-                        badgeEl.textContent = bTxt;
+                        badgeEl.textContent = bTxt.replace(/\s*—\s*/g, ' - ');
                     }
                     if (jobEl) {
                         jobEl.innerHTML = jobEl.innerHTML

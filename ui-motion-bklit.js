@@ -749,6 +749,9 @@
 
         const registerRevealGroup = (triggerEl, targetEls, staggerMs, amount) => {
             if (!triggerEl || !targetEls || !targetEls.length) return;
+            if (triggerEl.closest('.member-dir-panel:not(.active), .archive-tab-panel:not(.active)')) {
+                return;
+            }
 
             // 새로고침 시 이미 화면 위쪽이나 현재 뷰포트 안에 보이는 요소는 깜빡임 방지를 위해 즉시 노출 유지
             const rect = triggerEl.getBoundingClientRect();

@@ -18,13 +18,14 @@
     <link rel="stylesheet" as="style" crossorigin="" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Inter:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261110_surface_depth">
-    <link rel="stylesheet" href="ui-motion-bklit.css?v=20261105_step3">
+    <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
+    <link rel="stylesheet" href="khu-pro.css?v=20261111_pro2">
+    <link rel="stylesheet" href="ui-motion-bklit.css?v=20261110_redesign">
 </head>
 <body>
 
@@ -159,30 +160,6 @@
                             체육부 운동선수, 교직원, 그리고 일반 학생 모두를 대상으로 전문화된 트레이닝과 재활 서비스를 제공하고 있으며,<br class="pc-br">
                             <span class="highlight-word">교육(Education)</span>, <span class="highlight-word">연구(Research)</span>, <span class="highlight-word">서비스(Service)</span> 세 부문의 유기적인 시너지를 통해 스포츠의학적 역량을 전파하고 있습니다.
                         </p>
-                    </div>
-                    
-                    <!-- 5 Clean Highlights List (No Micro Cards) -->
-                    <div class="about-clean-highlights">
-                        <div class="about-clean-item">
-                            <span class="about-clean-num">01</span>
-                            <span class="about-clean-txt">스포츠의학 현장 전문가 양성 교육</span>
-                        </div>
-                        <div class="about-clean-item">
-                            <span class="about-clean-num">02</span>
-                            <span class="about-clean-txt">임상 및 데이터 기반 경기력 향상 연구</span>
-                        </div>
-                        <div class="about-clean-item">
-                            <span class="about-clean-num">03</span>
-                            <span class="about-clean-txt">엘리트 운동선수 밀착 케어</span>
-                        </div>
-                        <div class="about-clean-item">
-                            <span class="about-clean-num">04</span>
-                            <span class="about-clean-txt">교직원 스포츠재활 프로그램</span>
-                        </div>
-                        <div class="about-clean-item about-clean-wide">
-                            <span class="about-clean-num">05</span>
-                            <span class="about-clean-txt">단기 스포츠 이벤트 스포츠의학 현장 파견 서비스</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -483,9 +460,9 @@
                 <h3 class="modern-group-title"><span class="seq">00</span> 자문위원회</h3>
                 <div class="modern-group-line"></div>
             </div>
-            <div style="background: #ffffff; border: 1px dashed #cbd5e1; border-radius: 14px; padding: 22px 24px; margin-bottom: 35px; text-align: center; color: #64748b; font-size: 0.95rem; font-weight: 600; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
-                <i class="fa-solid fa-users-gear" style="color: var(--color-primary); font-size: 1.4rem; margin-bottom: 8px; display: block;"></i>
-                경희대학교 AT 센터 자문위원회 위원 위촉 및 구성 준비 중입니다.
+            <div class="advisory-notice-strip">
+                <i class="fa-solid fa-users-gear"></i>
+                <span>경희대학교 AT 센터 자문위원회 위원 위촉 및 구성 준비 중입니다.</span>
             </div>
 
             <!-- Group 1: Faculty -->
@@ -494,21 +471,23 @@
                 <div class="modern-group-line"></div>
             </div>
             
-            <div class="modern-profile-grid">
+            <div class="modern-profile-grid grid-faculty">
                 <!-- 박지홍 -->
                 <div class="modern-profile-card" onclick="openProfModal(this)">
                     <div class="modern-avatar-container">
                         <div class="modern-avatar-blob"></div>
                         <img src="assets/profile_박지홍.jpg?v=20260930_user" alt="박지홍" class="modern-avatar-img-fallback" onerror="this.src='assets/profile_default.png'">
                     </div>
-                    <div class="modern-profile-name">박지홍 교수</div>
-                    <ul class="modern-profile-exp">
-                        <li class="degree-line">학위명: 체육과학 박사(Physical Medicine &amp; Rehabilitation 전공)</li>
-                        <li>최종학력: Brigham Young University</li>
-                        <li>담당과목: 운동손상, 재활모달리티, 저항운동과컨디셔닝</li>
-                        <li>연구실: 체422호 (031-201-2721)</li>
-                        <li>jihong.park@khu.ac.kr</li>
-                    </ul>
+                    <div class="modern-profile-info-col">
+                        <div class="modern-profile-name">박지홍 교수</div>
+                        <ul class="modern-profile-exp">
+                            <li class="degree-line">학위명: 체육과학 박사(Physical Medicine &amp; Rehabilitation 전공)</li>
+                            <li>최종학력: Brigham Young University</li>
+                            <li>담당과목: 운동손상, 재활모달리티, 저항운동과컨디셔닝</li>
+                            <li>연구실: 체422호 (031-201-2721)</li>
+                            <li>jihong.park@khu.ac.kr</li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- 오성민 -->
                 <div class="modern-profile-card" onclick="openProfModal(this)">
@@ -516,14 +495,16 @@
                         <div class="modern-avatar-blob"></div>
                         <img src="assets/profile_오성민.jpg?v=20260930_user" alt="오성민" class="modern-avatar-img-fallback" onerror="this.src='assets/profile_default.png'">
                     </div>
-                    <div class="modern-profile-name">오성민 교수</div>
-                    <ul class="modern-profile-exp">
-                        <li class="degree-line">학위명: 스포츠심리학-운동제어 박사(Motor Control 전공)</li>
-                        <li>최종학력: 성균관대학교</li>
-                        <li>담당과목: 운동손상평가</li>
-                        <li>연구실: 경희대학교 선승관 AT Center</li>
-                        <li>sungminoh@khu.ac.kr</li>
-                    </ul>
+                    <div class="modern-profile-info-col">
+                        <div class="modern-profile-name">오성민 교수</div>
+                        <ul class="modern-profile-exp">
+                            <li class="degree-line">학위명: 스포츠심리학-운동제어 박사(Motor Control 전공)</li>
+                            <li>최종학력: 성균관대학교</li>
+                            <li>담당과목: 운동손상평가</li>
+                            <li>연구실: 경희대학교 선승관 AT Center</li>
+                            <li>sungminoh@khu.ac.kr</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -582,13 +563,38 @@
                 </div>
             </div>
             
+            <!-- Practical Members 4-Tab Unified Directory (03~06) -->
+            <div class="member-directory-shell" id="member-directory-shell">
+                <div class="member-directory-bar">
+                    <div class="member-dir-tabs" role="tablist" aria-label="구성원 디렉토리 탭">
+                        <button type="button" class="member-dir-tab-btn" role="tab" aria-selected="false" data-member-tab="grad" onclick="switchMemberTab('grad', this)">
+                            <span class="dir-label" data-ko="대학원생" data-en="Graduate Students">대학원생</span>
+                            <span class="dir-count">7</span>
+                        </button>
+                        <button type="button" class="member-dir-tab-btn" role="tab" aria-selected="false" data-member-tab="exec" onclick="switchMemberTab('exec', this)">
+                            <span class="dir-label" data-ko="AT 동아리 임원진" data-en="Club Executives">AT 동아리 임원진</span>
+                            <span class="dir-count">3</span>
+                        </button>
+                        <button type="button" class="member-dir-tab-btn active" role="tab" aria-selected="true" data-member-tab="staff" onclick="switchMemberTab('staff', this)">
+                            <span class="dir-label" data-ko="스태프 · Team AT" data-en="Staff &amp; Team AT">스태프 · Team AT</span>
+                            <span class="dir-count">27</span>
+                        </button>
+                        <button type="button" class="member-dir-tab-btn" role="tab" aria-selected="false" data-member-tab="assistant" onclick="switchMemberTab('assistant', this)">
+                            <span class="dir-label" data-ko="AT 센터 보조" data-en="Center Assistants">AT 센터 보조</span>
+                            <span class="dir-count" data-ko="12팀" data-en="12 Teams">12팀</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Panel 1: 03 대학원생 -->
+                <div id="member-panel-grad" class="member-dir-panel" role="tabpanel">
             <!-- Group 3: Graduate Students -->
             <div class="modern-group-header">
                 <h3 class="modern-group-title"><span class="seq">03</span> 대학원생</h3>
                 <div class="modern-group-line"></div>
             </div>
 
-            <div class="modern-profile-grid">
+            <div class="modern-profile-grid grid-compact">
                 <!-- 우지윤 (대학원 4기) -->
                 <div class="modern-profile-card" onclick="openProfModal(this)">
                     <div class="modern-avatar-container">
@@ -695,6 +701,10 @@
                 </div>
             </div>
         
+                </div>
+
+                <!-- Panel 2: 04 AT 동아리 임원진 -->
+                <div id="member-panel-exec" class="member-dir-panel" role="tabpanel">
             <!-- Group 4: AT Club Executives (04 AT 동아리 임원진) -->
             <div class="modern-group-header">
                 <h3 class="modern-group-title"><span class="seq">04</span> AT 동아리 임원진</h3>
@@ -726,7 +736,7 @@
                     <ul class="modern-profile-exp">
                         <li>경희대학교 체육대학</li>
                         <li>AT 동아리 부회장</li>
-                        <li>khuatcenter@khu.ac.kr</li>
+                        <li>lee616dh@khu.ac.kr</li>
                     </ul>
                 </div>
 
@@ -745,6 +755,10 @@
                 </div>
             </div>
 
+                </div>
+
+                <!-- Panel 3: 05 스태프 -->
+                <div id="member-panel-staff" class="member-dir-panel active" role="tabpanel">
             <!-- Group 5: Staff (05 스태프: 체육부 AT & 스포츠재활 강사) -->
             <div class="modern-group-header">
                 <h3 class="modern-group-title"><span class="seq">05</span> 스태프</h3>
@@ -759,7 +773,7 @@
 
             <!-- Tab Content: Sports AT (체육부 전담 AT 12인 가나다순 프로필 카드) -->
             <div id="sub-tab-sports" class="sub-tab-pane active">
-                <div class="modern-profile-grid">
+                <div class="modern-profile-grid grid-compact">
                     <!-- 강석 (축구부) -->
                     <div class="modern-profile-card" onclick="openProfModal(this)">
                         <div class="modern-avatar-container">
@@ -964,7 +978,7 @@
                     </div>
                 </div>
 
-                <div class="modern-profile-grid">
+                <div class="modern-profile-grid grid-compact">
                     
                     
                     
@@ -1192,6 +1206,10 @@
                 </div>
             </div>
 
+                </div>
+
+                <!-- Panel 4: 06 AT 센터 보조 -->
+                <div id="member-panel-assistant" class="member-dir-panel" role="tabpanel">
             <!-- Group 6: AT Center Assistants (06 AT 센터 보조) -->
             <div class="modern-group-header">
                 <h3 class="modern-group-title"><span class="seq">06</span> AT 센터 보조</h3>
@@ -1650,6 +1668,8 @@
                     </div>
                 </div>
             </div>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -2078,10 +2098,18 @@
 
             </div>
 
-            <!-- =================================================================
-                 연달아 배치 1: 선승관 AT 센터 역대 팀장 리더십 (총 11건, 좌우 1:1 밸런스 연표)
-                 ================================================================= -->
-            <div class="award-sub-section-stream" id="stream-past-leaders">
+            <!-- 역대 리더 & 대학원 졸업자 2-탭 아카이브 -->
+            <div class="awards-archive-tabs-wrap">
+                <div class="awards-archive-tabs" role="tablist" aria-label="역대 기록 아카이브 탭">
+                    <button type="button" class="awards-archive-tab-btn active" role="tab" aria-selected="true" data-archive-tab="leaders" onclick="switchAwardsArchiveTab('leaders', this)">
+                        <span data-ko="역대 리더 (11)" data-en="Past Leaders (11)">역대 리더 (11)</span>
+                    </button>
+                    <button type="button" class="awards-archive-tab-btn" role="tab" aria-selected="false" data-archive-tab="alumni" onclick="switchAwardsArchiveTab('alumni', this)">
+                        <span data-ko="대학원 졸업자 (38)" data-en="Graduate Alumni (38)">대학원 졸업자 (38)</span>
+                    </button>
+                </div>
+
+            <div class="award-sub-section-stream archive-tab-panel active" id="stream-past-leaders" role="tabpanel">
                 <div class="stream-sub-header">
                     <h3 class="stream-sub-title">역대 리더</h3>
                     <p class="stream-sub-desc">각 분과를 이끌며 센터의 학술 연구와 임상 현장 실무를 총괄해 온 역대 리더십 명단입니다.</p>
@@ -2095,10 +2123,10 @@
                             <span class="ed-stream-sublabel">선수트레이닝</span>
                         </div>
                         <div class="ed-stream-list">
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('김대호', 'Athletic Training 팀장 (2014.07 — 2020.02)')"><span class="ed-term">2014.07 — 2020.02</span><span class="ed-name">김대호</span></button>
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('윤정섭', 'Athletic Training 팀장 (2020.05 — 2022.02)')"><span class="ed-term">2020.05 — 2022.02</span><span class="ed-name">윤정섭</span></button>
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('임준형', 'Athletic Training 팀장 (2022.03 — 2024.02)')"><span class="ed-term">2022.03 — 2024.02</span><span class="ed-name">임준형</span></button>
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('이재욱', 'Athletic Training 팀장 (2024.03 — 2026.02)')"><span class="ed-term">2024.03 — 2026.02</span><span class="ed-name">이재욱</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('김대호', 'Athletic Training 팀장 (2014.07 — 2020.02)')"><span class="ed-term">2014.07 - 2020.02</span><span class="ed-name">김대호</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('윤정섭', 'Athletic Training 팀장 (2020.05 — 2022.02)')"><span class="ed-term">2020.05 - 2022.02</span><span class="ed-name">윤정섭</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('임준형', 'Athletic Training 팀장 (2022.03 — 2024.02)')"><span class="ed-term">2022.03 - 2024.02</span><span class="ed-name">임준형</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('이재욱', 'Athletic Training 팀장 (2024.03 — 2026.02)')"><span class="ed-term">2024.03 - 2026.02</span><span class="ed-name">이재욱</span></button>
                         </div>
                     </div>
 
@@ -2109,12 +2137,12 @@
                             <span class="ed-stream-sublabel">스포츠재활</span>
                         </div>
                         <div class="ed-stream-list">
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('강성훈', 'Sports Rehabilitation 팀장 (2015.07 — 2017.07)')"><span class="ed-term">2015.07 — 2017.07</span><span class="ed-name">강성훈</span></button>
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('민경은', 'Sports Rehabilitation 팀장 (2017.08 — 2020.08)')"><span class="ed-term">2017.08 — 2020.08</span><span class="ed-name">민경은</span></button>
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('노윤서', 'Sports Rehabilitation 팀장 (2021.03 — 2022.02)')"><span class="ed-term">2021.03 — 2022.02</span><span class="ed-name">노윤서</span></button>
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('박상협', 'Sports Rehabilitation 팀장 (2022.03 — 2024.02)')"><span class="ed-term">2022.03 — 2024.02</span><span class="ed-name">박상협</span></button>
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('김지원', 'Sports Rehabilitation 팀장 (2024.03 — 2025.02)')"><span class="ed-term">2024.03 — 2025.02</span><span class="ed-name">김지원</span></button>
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('이준혁', 'Sports Rehabilitation 팀장 (2025.03 — 2025.08)')"><span class="ed-term">2025.03 — 2025.08</span><span class="ed-name">이준혁</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('강성훈', 'Sports Rehabilitation 팀장 (2015.07 — 2017.07)')"><span class="ed-term">2015.07 - 2017.07</span><span class="ed-name">강성훈</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('민경은', 'Sports Rehabilitation 팀장 (2017.08 — 2020.08)')"><span class="ed-term">2017.08 - 2020.08</span><span class="ed-name">민경은</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('노윤서', 'Sports Rehabilitation 팀장 (2021.03 — 2022.02)')"><span class="ed-term">2021.03 - 2022.02</span><span class="ed-name">노윤서</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('박상협', 'Sports Rehabilitation 팀장 (2022.03 — 2024.02)')"><span class="ed-term">2022.03 - 2024.02</span><span class="ed-name">박상협</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('김지원', 'Sports Rehabilitation 팀장 (2024.03 — 2025.02)')"><span class="ed-term">2024.03 - 2025.02</span><span class="ed-name">김지원</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('이준혁', 'Sports Rehabilitation 팀장 (2025.03 — 2025.08)')"><span class="ed-term">2025.03 - 2025.08</span><span class="ed-name">이준혁</span></button>
                         </div>
                     </div>
 
@@ -2125,7 +2153,7 @@
                             <span class="ed-stream-sublabel">학술연구</span>
                         </div>
                         <div class="ed-stream-list">
-                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('임준형', 'Research 팀장 (2024.03 — 2025.12)')"><span class="ed-term">2024.03 — 2025.12</span><span class="ed-name">임준형</span></button>
+                            <button type="button" class="ed-stream-row" onclick="openAlumniModal('임준형', 'Research 팀장 (2024.03 — 2025.12)')"><span class="ed-term">2024.03 - 2025.12</span><span class="ed-name">임준형</span></button>
                         </div>
                     </div>
                 </div>
@@ -2134,7 +2162,7 @@
             <!-- =================================================================
                  연달아 배치 2: 선승관 AT 센터 대학원 졸업 동문록 (38인, 3열 학술 디렉토리)
                  ================================================================= -->
-            <div class="award-sub-section-stream" id="stream-graduate-assistants">
+            <div class="award-sub-section-stream archive-tab-panel" id="stream-graduate-assistants" role="tabpanel">
                 <div class="stream-sub-header">
                     <h3 class="stream-sub-title">대학원 졸업자</h3>
                     <p class="stream-sub-desc">선승관 AT 센터에서 학술 연구와 임상 현장 수련을 완수한 대학원 졸업 동문 명단입니다.</p>
@@ -2183,6 +2211,7 @@
                     </div>
                 </div>
             </div>
+            </div>
 
         </div>
     </section>
@@ -2192,7 +2221,8 @@
 
     <!-- Donate Section -->
     <section id="donate" class="donate-minimal-section">
-    <!-- Full width photo banner -->
+    <div class="donate-split-wrapper">
+    <!-- Left Intro Content -->
     <div class="donate-hero-banner">
         <div class="donate-hero-overlay"></div>
         <div class="container donate-hero-content">
@@ -2223,6 +2253,7 @@
                 </ol>
             </div>
             </div>
+    </div>
     </div>
 </section>
 
@@ -2320,10 +2351,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="soccer" data-en-badge="Soccer Team" data-en-title="Soccer Team Rehab Training" data-en-meta='<i class="fa-solid fa-dumbbell"></i> Core &amp; Lower-Limb Balance Conditioning' onclick="openPhotoLightbox('assets/축구1.jpg', '경희대학교 축구부 선수 코어 및 하지 기능성 재활 트레이닝 지도')">
                     <div class="gallery-img-wrap">
                         <img src="assets/축구1.jpg" alt="경희대학교 축구부 선수 코어 및 하지 기능성 재활 트레이닝 지도" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">축구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">축구부</span>
                         <h4 class="gallery-card-title">축구부 선수 재활 트레이닝</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-dumbbell"></i> 코어 및 하지 근력·밸런스 강화 운동 지도</span>
                     </div>
@@ -2331,10 +2362,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="soccer" data-en-badge="Soccer Team" data-en-title="Soccer Match Field Support" data-en-meta='<i class="fa-solid fa-futbol"></i> Sideline Condition Check &amp; Medical Standby' onclick="openPhotoLightbox('assets/축구 2.jpg', '축구부 공식 경기 사이드라인 선수 컨디션 점검 및 현장 의무지원')">
                     <div class="gallery-img-wrap">
                         <img src="assets/축구 2.jpg" alt="축구부 공식 경기 사이드라인 선수 컨디션 점검 및 현장 의무지원" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">축구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">축구부</span>
                         <h4 class="gallery-card-title">축구부 경기 현장 의무지원</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-futbol"></i> 사이드라인 선수 컨디션 점검 및 부상 대기</span>
                     </div>
@@ -2342,10 +2373,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="soccer" data-en-badge="Soccer Team" data-en-title="Sideline Sports Taping Care" data-en-meta='<i class="fa-solid fa-kit-medical"></i> On-Field Protective Taping During Match' onclick="openPhotoLightbox('assets/축구 3.jpg', '축구부 경기장 사이드라인 선수 부상 예방 및 보호 테이핑 처치')">
                     <div class="gallery-img-wrap">
                         <img src="assets/축구 3.jpg" alt="축구부 경기장 사이드라인 선수 부상 예방 및 보호 테이핑 처치" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">축구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">축구부</span>
                         <h4 class="gallery-card-title">축구부 경기장 스포츠 테이핑</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-kit-medical"></i> 시합 전·중 선수 부상 예방 및 보호 테이핑</span>
                     </div>
@@ -2353,10 +2384,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="soccer" data-en-badge="Soccer Team" data-en-title="KHU Soccer Team &amp; AT Staff" data-en-meta='<i class="fa-solid fa-users"></i> Varsity Soccer Squad &amp; Dedicated AT Team' onclick="openPhotoLightbox('assets/축구 4.jpg', '경희대학교 축구부 선수단 및 전담·보조 AT 스태프 단체 기념 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/축구 4.jpg" alt="경희대학교 축구부 선수단 및 전담·보조 AT 스태프 단체 기념 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">축구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">축구부</span>
                         <h4 class="gallery-card-title">축구부 선수단 &amp; AT 단체 사진</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-users"></i> 경희대학교 축구부 선수단 및 AT 스태프</span>
                     </div>
@@ -2364,10 +2395,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="soccer" data-en-badge="Soccer Team" data-en-title="Soccer AT Team Regular Study" data-en-meta='<i class="fa-solid fa-book-open-reader"></i> Academic Study &amp; Meeting of Soccer ATs' onclick="openPhotoLightbox('assets/축구 5.jpg', '경희대학교 축구부 전담·보조 AT 정기 학술 스터디 및 주간 회의')">
                     <div class="gallery-img-wrap">
                         <img src="assets/축구 5.jpg" alt="경희대학교 축구부 전담·보조 AT 정기 학술 스터디 및 주간 회의" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">축구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">축구부</span>
                         <h4 class="gallery-card-title">축구부 정기 스터디</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-book-open-reader"></i> 축구부 전담·보조 AT 학술 스터디 및 회의</span>
                     </div>
@@ -2375,10 +2406,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="baseball" data-en-badge="Baseball Team" data-en-title="Baseball Ankle Taping Care" data-en-meta='<i class="fa-solid fa-bandage"></i> Pre-Game Ankle Joint Stabilization Taping' onclick="openPhotoLightbox('assets/야구 1.jpg', '야구장 더그아웃 벤치에서 선수의 발목 보호 및 부상 예방 테이핑을 시행하는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/야구 1.jpg" alt="야구장 더그아웃 벤치에서 선수의 발목 보호 및 부상 예방 테이핑을 시행하는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">야구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">야구부</span>
                         <h4 class="gallery-card-title">야구부 경기장 발목 테이핑</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-bandage"></i> 시합 전 선수 발목 관절 보호 및 고정 테이핑</span>
                     </div>
@@ -2386,10 +2417,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="basketball" data-en-badge="Basketball Team" data-en-title="Basketball Core Training" data-en-meta='<i class="fa-solid fa-dumbbell"></i> Band-Assisted Core Group Exercise' onclick="openPhotoLightbox('assets/농구 1.jpg', '농구부 밴드를 활용한 코어 그룹 운동')">
                     <div class="gallery-img-wrap">
                         <img src="assets/농구 1.jpg" alt="농구부 밴드를 활용한 코어 그룹 운동" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">농구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">농구부</span>
                         <h4 class="gallery-card-title">농구부 코어 트레이닝</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-dumbbell"></i> 밴드를 활용한 코어 그룹 운동</span>
                     </div>
@@ -2397,10 +2428,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="basketball" data-en-badge="Basketball Team" data-en-title="KHU Basketball Team &amp; AT Staff" data-en-meta='<i class="fa-solid fa-basketball"></i> Collegiate Tournament Squad &amp; AT Support' onclick="openPhotoLightbox('assets/농구 2.jpg', '대학농구 대회 현장 경희대학교 농구부 선수단 및 AT 스태프 기념 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/농구 2.jpg" alt="대학농구 대회 현장 경희대학교 농구부 선수단 및 AT 스태프 기념 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">농구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">농구부</span>
                         <h4 class="gallery-card-title">농구부 선수단 &amp; AT 단체 사진</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-basketball"></i> 대학농구 대회 출전 선수단 및 AT 스태프</span>
                     </div>
@@ -2408,10 +2439,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="basketball" data-en-badge="Basketball Team" data-en-title="Courtside Manual Therapy Care" data-en-meta='<i class="fa-solid fa-hand-holding-medical"></i> Pre/Post-Game Muscle Recovery on Court' onclick="openPhotoLightbox('assets/농구 3.jpg', '농구부 코트 사이드 이동식 베드 하지 수기 마사지 및 피로 회복 케어')">
                     <div class="gallery-img-wrap">
                         <img src="assets/농구 3.jpg" alt="농구부 코트 사이드 이동식 베드 하지 수기 마사지 및 피로 회복 케어" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">농구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">농구부</span>
                         <h4 class="gallery-card-title">농구부 경기장 수기 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-hand-holding-medical"></i> 시합 전·후 코트 사이드 근육 피로 회복</span>
                     </div>
@@ -2419,10 +2450,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="basketball" data-en-badge="Basketball Team" data-en-title="Courtside Muscle Recovery Care" data-en-meta='<i class="fa-solid fa-heart-pulse"></i> Rapid Lower-Body Muscle Tension Relief' onclick="openPhotoLightbox('assets/농구 4.jpg', '농구부 경기장 코트 사이드 마사지건을 활용한 하지 근육 이완 케어')">
                     <div class="gallery-img-wrap">
                         <img src="assets/농구 4.jpg" alt="농구부 경기장 코트 사이드 마사지건을 활용한 하지 근육 이완 케어" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">농구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">농구부</span>
                         <h4 class="gallery-card-title">농구부 코트 사이드 리커버리</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-heart-pulse"></i> 경기 전·후 선수 하지 근육 이완 케어</span>
                     </div>
@@ -2430,10 +2461,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="basketball" data-en-badge="Basketball Team" data-en-title="In-Game Bench Condition Check" data-en-meta='<i class="fa-solid fa-user-doctor"></i> Real-Time Player Monitoring During Match' onclick="openPhotoLightbox('assets/농구 5.jpg', '대학농구 시합 중 벤치에서 선수 컨디션과 부상 여부를 점검하는 전담 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/농구 5.jpg" alt="대학농구 시합 중 벤치에서 선수 컨디션과 부상 여부를 점검하는 전담 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">농구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">농구부</span>
                         <h4 class="gallery-card-title">농구부 시합 중 컨디션 체크</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-user-doctor"></i> 경기 중 벤치 선수 상태 및 통증 실시간 점검</span>
                     </div>
@@ -2441,10 +2472,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="basketball" data-en-badge="Basketball Team" data-en-title="Bench-Side Match Standby" data-en-meta='<i class="fa-solid fa-shield-heart"></i> Court Observation &amp; Emergency Readiness' onclick="openPhotoLightbox('assets/농구 6.jpg', '농구부 경기 벤치 후방에서 코트 위 선수 움직임을 모니터링하는 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/농구 6.jpg" alt="농구부 경기 벤치 후방에서 코트 위 선수 움직임을 모니터링하는 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">농구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">농구부</span>
                         <h4 class="gallery-card-title">농구부 경기 현장 의무 대기</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-shield-heart"></i> 벤치 사이드 코트 모니터링 및 응급 대기</span>
                     </div>
@@ -2452,10 +2483,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="basketball" data-en-badge="Basketball Team" data-en-title="U-League Home Game Support" data-en-meta='<i class="fa-solid fa-basketball"></i> Timeout Hydration &amp; Recovery at Seonseung-gwan' onclick="openPhotoLightbox('assets/농구 7.jpg', '경희대학교 선승관 홈경기 작전타임 중 선수단 케어 및 필드 서포트')">
                     <div class="gallery-img-wrap">
                         <img src="assets/농구 7.jpg" alt="경희대학교 선승관 홈경기 작전타임 중 선수단 케어 및 필드 서포트" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">농구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">농구부</span>
                         <h4 class="gallery-card-title">대학농구 U-리그 홈경기 서포트</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-basketball"></i> 선승관 홈경기 작전타임 선수 컨디션 케어</span>
                     </div>
@@ -2463,10 +2494,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="volleyball" data-en-badge="Volleyball Team" data-en-title="Pre-Match Ankle Taping Care" data-en-meta='<i class="fa-solid fa-bandage"></i> Courtside Ankle Joint Stabilization Taping' onclick="openPhotoLightbox('assets/배구 1.jpg', '배구부 시합 전 코트 사이드에서 선수의 발목 보호 테이핑을 시행하는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/배구 1.jpg" alt="배구부 시합 전 코트 사이드에서 선수의 발목 보호 테이핑을 시행하는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">배구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">배구부</span>
                         <h4 class="gallery-card-title">배구부 경기 전 발목 테이핑</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-bandage"></i> 시합 전 코트 사이드 발목 관절 보호 테이핑</span>
                     </div>
@@ -2474,10 +2505,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="volleyball" data-en-badge="Volleyball Team" data-en-title="2026 Volleyball Welcome Event" data-en-meta='<i class="fa-solid fa-users"></i> KHU Volleyball Squad &amp; AT Staff Gathering' onclick="openPhotoLightbox('assets/배구 2.jpg', '2026 경희대학교 배구부 신입생 환영회 선수단 및 AT 스태프 단체 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/배구 2.jpg" alt="2026 경희대학교 배구부 신입생 환영회 선수단 및 AT 스태프 단체 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">배구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">배구부</span>
                         <h4 class="gallery-card-title">2026 배구부 신입생 환영회</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-users"></i> 경희대학교 배구부 선수단 및 AT 단체 촬영</span>
                     </div>
@@ -2485,10 +2516,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="volleyball" data-en-badge="Volleyball Team" data-en-title="Pre-Practice Ankle Taping" data-en-meta='<i class="fa-solid fa-kit-medical"></i> 1:1 Customized Ankle Injury Prevention Care' onclick="openPhotoLightbox('assets/배구 3.jpg', '배구부 체육관 훈련 전 선수 1:1 맞춤형 발목 보호 테이핑 케어')">
                     <div class="gallery-img-wrap">
                         <img src="assets/배구 3.jpg" alt="배구부 체육관 훈련 전 선수 1:1 맞춤형 발목 보호 테이핑 케어" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">배구부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">배구부</span>
                         <h4 class="gallery-card-title">배구부 훈련 전 스포츠 테이핑</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-kit-medical"></i> 선수별 맞춤형 발목 고정 및 부상 예방 케어</span>
                     </div>
@@ -2496,10 +2527,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="rugby" data-en-badge="Rugby Team" data-en-title="Rugby On-Field Match Support" data-en-meta='<i class="fa-solid fa-kit-medical"></i> In-Game Hydration &amp; Player Condition Check' onclick="openPhotoLightbox('assets/럭비 1.JPG', '럭비 대회 시합 중 필드 내에서 선수단 수분 보충 및 컨디션을 점검하는 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/럭비 1.JPG" alt="럭비 대회 시합 중 필드 내에서 선수단 수분 보충 및 컨디션을 점검하는 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">럭비부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">럭비부</span>
                         <h4 class="gallery-card-title">럭비부 시합 중 필드 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-kit-medical"></i> 경기 중 선수 수분 보충 및 컨디션 점검</span>
                     </div>
@@ -2507,10 +2538,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="rugby" data-en-badge="Rugby Team" data-en-title="Rugby Tournament AT Staff Photo" data-en-meta='<i class="fa-solid fa-users"></i> Dedicated &amp; Assistant ATs at Rugby Stadium' onclick="openPhotoLightbox('assets/럭비 2.jpg', '럭비 대회 경기장 현장 의무지원 파견 전담·보조 AT 기념 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/럭비 2.jpg" alt="럭비 대회 경기장 현장 의무지원 파견 전담·보조 AT 기념 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">럭비부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">럭비부</span>
                         <h4 class="gallery-card-title">럭비부 대회 파견 AT 기념 촬영</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-users"></i> 럭비 대회 현장 의무지원 전담·보조 AT</span>
                     </div>
@@ -2518,10 +2549,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="rugby" data-en-badge="Rugby Team" data-en-title="Rugby Touchline Medical Standby" data-en-meta='<i class="fa-solid fa-shield-heart"></i> Real-Time Injury Monitoring by Touchline' onclick="openPhotoLightbox('assets/럭비 3.jpg', '럭비 경기장 터치라인에서 선수 부상 발생에 대비해 실시간 의무 대기 중인 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/럭비 3.jpg" alt="럭비 경기장 터치라인에서 선수 부상 발생에 대비해 실시간 의무 대기 중인 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">럭비부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">럭비부</span>
                         <h4 class="gallery-card-title">럭비부 사이드라인 의무 대기</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-shield-heart"></i> 터치라인 선수 부상 모니터링 및 응급 대기</span>
                     </div>
@@ -2529,10 +2560,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="golf" data-en-badge="Golf Team" data-en-title="Golf Team 1:1 Warm-Up Coaching" data-en-meta='<i class="fa-solid fa-person-running"></i> Treadmill Warm-Up &amp; Endurance Conditioning' onclick="openPhotoLightbox('assets/골프 1.jpg', '골프부 선수 트레드밀 워밍업 및 1:1 기초 체력 트레이닝 지도')">
                     <div class="gallery-img-wrap">
                         <img src="assets/골프 1.jpg" alt="골프부 선수 트레드밀 워밍업 및 1:1 기초 체력 트레이닝 지도" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">골프부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">골프부</span>
                         <h4 class="gallery-card-title">골프부 1:1 유산소 &amp; 워밍업</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-person-running"></i> 트레드밀 워밍업 및 기초 체력 트레이닝 지도</span>
                     </div>
@@ -2540,10 +2571,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="golf" data-en-badge="Golf Team" data-en-title="Golf Team Group Conditioning" data-en-meta='<i class="fa-solid fa-heart-pulse"></i> Cardiorespiratory &amp; Physical Training Session' onclick="openPhotoLightbox('assets/골프 2.jpg', '골프부 선수단 그룹 유산소 컨디셔닝 및 피지컬 트레이닝 지도')">
                     <div class="gallery-img-wrap">
                         <img src="assets/골프 2.jpg" alt="골프부 선수단 그룹 유산소 컨디셔닝 및 피지컬 트레이닝 지도" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">골프부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">골프부</span>
                         <h4 class="gallery-card-title">골프부 그룹 컨디셔닝 훈련</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-heart-pulse"></i> 골프부 선수단 심폐지구력 및 피지컬 훈련</span>
                     </div>
@@ -2551,10 +2582,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="badminton" data-en-badge="Badminton Team" data-en-title="Tournament Knee Taping Care" data-en-meta='<i class="fa-solid fa-bandage"></i> On-Site Knee &amp; Lower-Limb Protective Taping' onclick="openPhotoLightbox('assets/배드민턴 1.jpg', '배드민턴 대회 현장에서 선수 무릎 및 하지 보호 테이핑을 시행하는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/배드민턴 1.jpg" alt="배드민턴 대회 현장에서 선수 무릎 및 하지 보호 테이핑을 시행하는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <h4 class="gallery-card-title">배드민턴부 대회 현장 테이핑</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-bandage"></i> 경기 출전 전 무릎 및 하지 보호 테이핑</span>
                     </div>
@@ -2562,10 +2593,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="badminton" data-en-badge="Badminton Team" data-en-title="Lower-Back Manual Recovery" data-en-meta='<i class="fa-solid fa-hand-holding-medical"></i> Pre/Post-Match Lumbar &amp; Core Muscle Care' onclick="openPhotoLightbox('assets/배드민턴 2.jpg', '배드민턴 대회 대기 구역에서 선수의 허리 및 둔부 근육을 케어하는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/배드민턴 2.jpg" alt="배드민턴 대회 대기 구역에서 선수의 허리 및 둔부 근육을 케어하는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <h4 class="gallery-card-title">배드민턴부 시합 전·후 수기 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-hand-holding-medical"></i> 대회 현장 허리 및 코어 근육 이완 마사지</span>
                     </div>
@@ -2573,10 +2604,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="badminton" data-en-badge="Badminton Team" data-en-title="Shoulder Rehab &amp; Stabilization" data-en-meta='<i class="fa-solid fa-dumbbell"></i> 1:1 Upper-Limb &amp; Shoulder Rehab Exercise' onclick="openPhotoLightbox('assets/배드민턴 3.jpg', '배드민턴부 선수 상지 및 어깨 관절 안정화 1:1 재활 트레이닝 지도')">
                     <div class="gallery-img-wrap">
                         <img src="assets/배드민턴 3.jpg" alt="배드민턴부 선수 상지 및 어깨 관절 안정화 1:1 재활 트레이닝 지도" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <h4 class="gallery-card-title">배드민턴부 어깨 재활 트레이닝</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-dumbbell"></i> 상지 및 어깨 관절 안정화 재활 운동 지도</span>
                     </div>
@@ -2584,10 +2615,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="badminton" data-en-badge="Badminton Team" data-en-title="Lumbar Protective Taping Care" data-en-meta='<i class="fa-solid fa-kit-medical"></i> Kinesio Taping for Lower-Back Pain Relief' onclick="openPhotoLightbox('assets/배드민턴 4.jpg', '배드민턴부 선수 허리 통증 완화 및 보호를 위한 스포츠 테이핑 처치')">
                     <div class="gallery-img-wrap">
                         <img src="assets/배드민턴 4.jpg" alt="배드민턴부 선수 허리 통증 완화 및 보호를 위한 스포츠 테이핑 처치" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <h4 class="gallery-card-title">배드민턴부 허리 보호 테이핑</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-kit-medical"></i> 요부 통증 관리 및 코어 안정성 테이핑 케어</span>
                     </div>
@@ -2595,10 +2626,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="badminton" data-en-badge="Badminton Team" data-en-title="Badminton Tournament Medalist Photo" data-en-meta='<i class="fa-solid fa-trophy"></i> National Tournament Winners &amp; Dedicated AT' onclick="openPhotoLightbox('assets/배드민턴 5.jpg', '배드민턴 전국대회 금메달 입상 선수들과 전담 AT의 기념 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/배드민턴 5.jpg" alt="배드민턴 전국대회 금메달 입상 선수들과 전담 AT의 기념 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <h4 class="gallery-card-title">배드민턴부 대회 입상 기념 촬영</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-trophy"></i> 전국대회 메달 수상 선수단 및 전담 AT</span>
                     </div>
@@ -2606,10 +2637,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="badminton" data-en-badge="Badminton Team" data-en-title="On-Site Lower-Limb Recovery" data-en-meta='<i class="fa-solid fa-hands-holding-circle"></i> Hamstring &amp; Calf Recovery Between Matches' onclick="openPhotoLightbox('assets/배드민턴 6.jpg', '배드민턴 대회 경기장 내 이동식 베드에서 하지 근육 수기 케어를 시행하는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/배드민턴 6.jpg" alt="배드민턴 대회 경기장 내 이동식 베드에서 하지 근육 수기 케어를 시행하는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <h4 class="gallery-card-title">배드민턴부 경기장 리커버리 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-hands-holding-circle"></i> 연속 경기 일정 속 하지 근육 피로 회복 마사지</span>
                     </div>
@@ -2617,10 +2648,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="badminton" data-en-badge="Badminton Team" data-en-title="National Tournament Group Photo" data-en-meta='<i class="fa-solid fa-medal"></i> Full-Schedule Medical Support &amp; Award Photo' onclick="openPhotoLightbox('assets/배드민턴 7.png', '전국배드민턴대회 입상 상장·메달 수여 후 선수단 및 AT 기념 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/배드민턴 7.png" alt="전국배드민턴대회 입상 상장·메달 수여 후 선수단 및 AT 기념 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">배드민턴부</span>
                         <h4 class="gallery-card-title">배드민턴부 전국대회 단체 사진</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-medal"></i> 대회 전 일정 의무지원 및 입상 축하 촬영</span>
                     </div>
@@ -2628,10 +2659,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="handball" data-en-badge="Handball Team" data-en-title="On-Court Emergency First Aid" data-en-meta='<i class="fa-solid fa-truck-medical"></i> Immediate Court Entry for Acute Injury Care' onclick="openPhotoLightbox('assets/핸드볼 1.jpg', '핸드볼 공식 경기 중 부상 선수 발생 즉시 코트에 투입되어 처치하는 전담 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/핸드볼 1.jpg" alt="핸드볼 공식 경기 중 부상 선수 발생 즉시 코트에 투입되어 처치하는 전담 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">핸드볼부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">핸드볼부</span>
                         <h4 class="gallery-card-title">핸드볼부 경기 중 응급 처치</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-truck-medical"></i> 시합 중 부상 선수 발생 즉시 코트 투입 케어</span>
                     </div>
@@ -2639,10 +2670,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="handball" data-en-badge="Handball Team" data-en-title="Sideline Medical Standby" data-en-meta='<i class="fa-solid fa-eye"></i> Real-Time Player Safety Monitoring by Court' onclick="openPhotoLightbox('assets/핸드볼 2.jpg', '핸드볼 경기 사이드라인에서 코트 위 선수들의 안전을 모니터링하는 전담 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/핸드볼 2.jpg" alt="핸드볼 경기 사이드라인에서 코트 위 선수들의 안전을 모니터링하는 전담 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">핸드볼부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">핸드볼부</span>
                         <h4 class="gallery-card-title">핸드볼부 사이드라인 의무 대기</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-eye"></i> 경기장 코트 옆 선수 안전 실시간 모니터링</span>
                     </div>
@@ -2650,10 +2681,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="handball" data-en-badge="Handball Team" data-en-title="Safe Escort of Injured Player" data-en-meta='<i class="fa-solid fa-hand-holding-medical"></i> Assisted Off-Court Transfer &amp; Sideline Care' onclick="openPhotoLightbox('assets/핸드볼 3.jpg', '핸드볼 시합 중 부상 선수를 안전하게 부축하여 사이드라인으로 이동시키는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/핸드볼 3.jpg" alt="핸드볼 시합 중 부상 선수를 안전하게 부축하여 사이드라인으로 이동시키는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">핸드볼부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">핸드볼부</span>
                         <h4 class="gallery-card-title">핸드볼부 부상 선수 보호 및 이송</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-hand-holding-medical"></i> 경기 중 부상 선수 안전 부축 및 현장 처치</span>
                     </div>
@@ -2661,10 +2692,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="handball" data-en-badge="Handball Team" data-en-title="Team Bench Support &amp; Care" data-en-meta='<i class="fa-solid fa-users-gear"></i> In-Game Condition Check at Team Bench' onclick="openPhotoLightbox('assets/핸드볼 4.jpg', '핸드볼 경기 벤치에서 선수단과 함께 호흡하며 컨디션을 케어하는 전담 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/핸드볼 4.jpg" alt="핸드볼 경기 벤치에서 선수단과 함께 호흡하며 컨디션을 케어하는 전담 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">핸드볼부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">핸드볼부</span>
                         <h4 class="gallery-card-title">핸드볼부 벤치 동행 &amp; 선수 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-users-gear"></i> 시합 중 벤치에서 선수 컨디션 실시간 점검</span>
                     </div>
@@ -2672,10 +2703,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="demoteam" data-en-badge="TKD Demo Team" data-en-title="TKD Demo Team Regular Study" data-en-meta='<i class="fa-solid fa-book-open-reader"></i> Academic Study &amp; Care Meeting of Demo ATs' onclick="openPhotoLightbox('assets/시범단 1.jpg', '태권도 시범단 전담·보조 AT 팀 정기 학술 스터디 및 선수 케어 회의')">
                     <div class="gallery-img-wrap">
                         <img src="assets/시범단 1.jpg" alt="태권도 시범단 전담·보조 AT 팀 정기 학술 스터디 및 선수 케어 회의" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <h4 class="gallery-card-title">태권도 시범단 정기 스터디</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-book-open-reader"></i> 시범단 전담·보조 AT 학술 스터디 및 회의</span>
                     </div>
@@ -2683,10 +2714,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="demoteam" data-en-badge="TKD Demo Team" data-en-title="AT Center Ankle Taping Session" data-en-meta='<i class="fa-solid fa-bandage"></i> Pre-Training Ankle Taping at AT Center' onclick="openPhotoLightbox('assets/시범단 2.jpg', '선승관 AT 센터 치료실에서 태권도 시범단 선수들에게 발목 테이핑을 시행하는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/시범단 2.jpg" alt="선승관 AT 센터 치료실에서 태권도 시범단 선수들에게 발목 테이핑을 시행하는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <h4 class="gallery-card-title">태권도 시범단 센터 테이핑 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-bandage"></i> 선승관 AT 센터 훈련 전 발목 보호 테이핑</span>
                     </div>
@@ -2694,10 +2725,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="demoteam" data-en-badge="TKD Demo Team" data-en-title="Training Condition Monitoring" data-en-meta='<i class="fa-solid fa-clipboard-check"></i> On-Site Athlete Condition Check &amp; Logging' onclick="openPhotoLightbox('assets/시범단 3.jpg', '태권도 시범단 훈련 현장에서 선수들의 컨디션과 동작을 점검하는 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/시범단 3.jpg" alt="태권도 시범단 훈련 현장에서 선수들의 컨디션과 동작을 점검하는 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <h4 class="gallery-card-title">태권도 시범단 훈련 현장 모니터링</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-clipboard-check"></i> 시범단 훈련 중 선수 컨디션 점검 및 기록</span>
                     </div>
@@ -2705,10 +2736,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="demoteam" data-en-badge="TKD Demo Team" data-en-title="On-Site Stage Ankle Taping" data-en-meta='<i class="fa-solid fa-kit-medical"></i> Elastic Ankle Stabilization Before Stage' onclick="openPhotoLightbox('assets/시범단 4.jpg', '태권도 시범단 대회 및 시범 현장에서 출전 선수의 발목 테이핑을 시행하는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/시범단 4.jpg" alt="태권도 시범단 대회 및 시범 현장에서 출전 선수의 발목 테이핑을 시행하는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <h4 class="gallery-card-title">태권도 시범단 현장 발목 테이핑</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-kit-medical"></i> 시범 무대 및 대회 전 발목 고정 테이핑</span>
                     </div>
@@ -2716,10 +2747,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="demoteam" data-en-badge="TKD Demo Team" data-en-title="Outdoor Stage Knee Care" data-en-meta='<i class="fa-solid fa-stethoscope"></i> On-Site Knee Joint Check &amp; 1:1 Care' onclick="openPhotoLightbox('assets/시범단 5.jpg', '태권도 시범단 야외 현장에서 선수의 무릎 관절 상태를 점검하고 케어하는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/시범단 5.jpg" alt="태권도 시범단 야외 현장에서 선수의 무릎 관절 상태를 점검하고 케어하는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <h4 class="gallery-card-title">태권도 시범단 야외 현장 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-stethoscope"></i> 시범 공연 현장 무릎 상태 점검 및 1:1 케어</span>
                     </div>
@@ -2727,10 +2758,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="demoteam" data-en-badge="TKD Demo Team" data-en-title="TKD Demo Competition Photo" data-en-meta='<i class="fa-solid fa-medal"></i> KTA Dynamic Taekwondo Squad &amp; AT Staff' onclick="openPhotoLightbox('assets/시범단 6.jpg', 'KTA 다이나믹 태권도 대회 무대에서 경희대학교 태권도 시범단 및 AT 스태프 기념 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/시범단 6.jpg" alt="KTA 다이나믹 태권도 대회 무대에서 경희대학교 태권도 시범단 및 AT 스태프 기념 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <h4 class="gallery-card-title">태권도 시범단 대회 기념 촬영</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-medal"></i> 다이나믹 태권도 대회 시범단 및 AT 스태프</span>
                     </div>
@@ -2738,10 +2769,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="demoteam" data-en-badge="TKD Demo Team" data-en-title="KHU TKD Demo Team &amp; ATs" data-en-meta='<i class="fa-solid fa-users"></i> Full Squad &amp; AT Team at Training Hall' onclick="openPhotoLightbox('assets/시범단 7.jpg', '경희대학교 태권도장 훈련장에서 시범단 선수단과 AT 스태프 전체 기념 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/시범단 7.jpg" alt="경희대학교 태권도장 훈련장에서 시범단 선수단과 AT 스태프 전체 기념 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 시범단</span>
                         <h4 class="gallery-card-title">태권도 시범단 훈련장 단체 사진</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-users"></i> 경희대학교 태권도 시범단 선수단 및 AT 팀</span>
                     </div>
@@ -2749,10 +2780,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="Kyorugi Lower-Limb Rehab" data-en-meta='<i class="fa-solid fa-dumbbell"></i> Step-Box Balance &amp; Functional Rehab Training' onclick="openPhotoLightbox('assets/겨루기 2.jpg', '태권도 겨루기부 훈련장에서 스텝박스를 활용한 하지 기능성 재활 운동 지도')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 2.jpg" alt="태권도 겨루기부 훈련장에서 스텝박스를 활용한 하지 기능성 재활 운동 지도" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">태권도 겨루기부 재활 트레이닝</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-dumbbell"></i> 스텝박스를 활용한 하지 밸런스 재활 운동</span>
                     </div>
@@ -2760,10 +2791,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="Weight Room Strength Coaching" data-en-meta='<i class="fa-solid fa-dumbbell"></i> Strength &amp; Power Training for Kyorugi Athletes' onclick="openPhotoLightbox('assets/겨루기 3.jpg', '태권도 겨루기부 웨이트 트레이닝 룸 스트렝스 훈련 지도 및 보조')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 3.jpg" alt="태권도 겨루기부 웨이트 트레이닝 룸 스트렝스 훈련 지도 및 보조" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">태권도 겨루기부 웨이트 트레이닝</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-dumbbell"></i> 체급별 근력·파워 강화를 위한 스트렝스 지도</span>
                     </div>
@@ -2771,10 +2802,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="Tournament Courtside Care" data-en-meta='<i class="fa-solid fa-bolt"></i> Between-Round Recovery &amp; Conditioning Care' onclick="openPhotoLightbox('assets/겨루기 4.jpg', '태권도 전국대회 경기 코트 세컨드석에서 라운드 간 출전 선수를 케어하는 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 4.jpg" alt="태권도 전국대회 경기 코트 세컨드석에서 라운드 간 출전 선수를 케어하는 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">태권도 겨루기부 대회 코트 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-bolt"></i> 전국대회 라운드 간 휴식 시간 선수 컨디션 관리</span>
                     </div>
@@ -2782,10 +2813,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="National Championship Victory" data-en-meta='<i class="fa-solid fa-trophy"></i> 52nd Collegiate Taekwondo Champions &amp; ATs' onclick="openPhotoLightbox('assets/겨루기 5.jpg', '제52회 전국대학태권도개인선수권대회 우승 트로피 수여 후 선수단 및 AT 단체 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 5.jpg" alt="제52회 전국대학태권도개인선수권대회 우승 트로피 수여 후 선수단 및 AT 단체 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">태권도 겨루기부 대회 우승 촬영</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-trophy"></i> 전국대학태권도대회 우승 선수단 및 AT 스태프</span>
                     </div>
@@ -2793,10 +2824,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="TKD Kyorugi AT Regular Study" data-en-meta='<i class="fa-solid fa-book-open-reader"></i> Regular Study &amp; Teamwork at AT Center' onclick="openPhotoLightbox('assets/겨루기 6.jpg', '선승관 AT 센터에서 정기 스터디 및 회의를 진행하는 태권도 겨루기부 AT 팀')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 6.jpg" alt="선승관 AT 센터에서 정기 스터디 및 회의를 진행하는 태권도 겨루기부 AT 팀" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">태권도 겨루기부 정기 스터디</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-book-open-reader"></i> 선승관 AT 센터 겨루기부 전담·보조 AT 팀</span>
                     </div>
@@ -2804,10 +2835,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="Hands-On Sports Taping Lab" data-en-meta='<i class="fa-solid fa-scissors"></i> Practical Taping Training at AT Center' onclick="openPhotoLightbox('assets/겨루기 7.jpg', '선승관 AT 센터 실습실에서 스포츠 테이핑 실기 연습을 진행하는 겨루기부 AT 팀')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 7.jpg" alt="선승관 AT 센터 실습실에서 스포츠 테이핑 실기 연습을 진행하는 겨루기부 AT 팀" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">태권도 겨루기부 테이핑 실습</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-scissors"></i> 선승관 AT 센터 부서 내 스포츠 테이핑 실습</span>
                     </div>
@@ -2815,10 +2846,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="Tournament Match Medical Support" data-en-meta='<i class="fa-solid fa-kit-medical"></i> Courtside Breathing &amp; Recovery Support' onclick="openPhotoLightbox('assets/겨루기 8.jpg', '태권도 대회 코트 세컨드석에서 지도자와 함께 출전 선수를 케어하는 전담 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 8.jpg" alt="태권도 대회 코트 세컨드석에서 지도자와 함께 출전 선수를 케어하는 전담 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">태권도 겨루기부 대회 현장 의무지원</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-kit-medical"></i> 시합 코트 세컨드석 선수 호흡 및 회복 케어</span>
                     </div>
@@ -2826,10 +2857,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="Between-Round Icing &amp; Recovery" data-en-meta='<i class="fa-solid fa-snowflake"></i> Rapid Cooling &amp; Lower-Limb Fatigue Relief' onclick="openPhotoLightbox('assets/겨루기 9.jpg', '태권도 대회 경기 중 세컨드석에서 선수 아이싱 및 하지 회복 케어를 시행하는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 9.jpg" alt="태권도 대회 경기 중 세컨드석에서 선수 아이싱 및 하지 회복 케어를 시행하는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">태권도 겨루기부 경기 중 아이싱 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-snowflake"></i> 시합 라운드 간 아이싱 및 하지 피로 회복</span>
                     </div>
@@ -2837,10 +2868,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="Seconds-Seat Athlete Care" data-en-meta='<i class="fa-solid fa-hand-holding-medical"></i> Lower-Limb Stretching &amp; Condition Support' onclick="openPhotoLightbox('assets/겨루기 10.jpg', '태권도 대회 코트 세컨드석에서 출전 선수의 하지 스트레칭 및 회복을 돕는 전담 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 10.jpg" alt="태권도 대회 코트 세컨드석에서 출전 선수의 하지 스트레칭 및 회복을 돕는 전담 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">태권도 겨루기부 세컨드석 현장 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-hand-holding-medical"></i> 경기 중 선수 하지 스트레칭 및 컨디션 지원</span>
                     </div>
@@ -2848,10 +2879,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="Asian President's Cup Ankle Taping" data-en-meta='<i class="fa-solid fa-bandage"></i> International Tournament Pre-Match Ankle Stabilization Taping' onclick="openPhotoLightbox('assets/겨루기 11.jpg', '아시아 프레지던트컵 대회 웜업존에서 출전 선수의 발목 관절 보호 테이핑을 처치하는 전담 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 11.jpg" alt="아시아 프레지던트컵 대회 웜업존에서 출전 선수의 발목 관절 보호 테이핑을 처치하는 전담 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">아시아 프레지던트컵 발목 테이핑</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-bandage"></i> 국제대회 시합 전 발목 관절 안정화 및 부상 예방</span>
                     </div>
@@ -2859,10 +2890,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="gyeorugi" data-en-badge="TKD Kyorugi Team" data-en-title="Warm-up Zone Muscle Stimulation Care" data-en-meta='<i class="fa-solid fa-bolt"></i> Portable EMS Quadriceps &amp; Leg Conditioning Care' onclick="openPhotoLightbox('assets/겨루기 12.jpg', '태권도 대회 웜업 구역에서 휴대용 전기자극기를 활용해 선수 대퇴사두근 및 하지 근육을 활성화하는 모습')">
                     <div class="gallery-img-wrap">
                         <img src="assets/겨루기 12.jpg" alt="태권도 대회 웜업 구역에서 휴대용 전기자극기를 활용해 선수 대퇴사두근 및 하지 근육을 활성화하는 모습" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 겨루기부</span>
                         <h4 class="gallery-card-title">태권도 겨루기부 전기자극 케어</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-bolt"></i> 시합 전 대퇴사두근 근신경 활성화 및 컨디셔닝</span>
                     </div>
@@ -2873,10 +2904,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="poomsae" data-en-badge="TKD Poomsae Team" data-en-title="Lower-Limb Manual Stretch Care" data-en-meta='<i class="fa-solid fa-hand-holding-medical"></i> Tournament Bed Manual Therapy &amp; Hamstring Stretch' onclick="openPhotoLightbox('assets/품새 1.jpg', '태권도 대회 현장 베드에서 선수의 하지 햄스트링 수기 스트레칭 및 근육 이완을 돕는 전담 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/품새 1.jpg" alt="태권도 대회 현장 베드에서 선수의 하지 햄스트링 수기 스트레칭 및 근육 이완을 돕는 전담 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <h4 class="gallery-card-title">태권도 품새부 하지 수기 스트레칭</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-hand-holding-medical"></i> 대회 현장 햄스트링 수기 이완 및 유연성 케어</span>
                     </div>
@@ -2884,10 +2915,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="poomsae" data-en-badge="TKD Poomsae Team" data-en-title="Poomsae Athletes &amp; Dedicated AT" data-en-meta='<i class="fa-solid fa-camera"></i> Match Day Warm Support &amp; Teamwork Snap' onclick="openPhotoLightbox('assets/품새 2.jpg', '대회 현장에서 태권도 품새부 선수단과 전담 AT가 함께 촬영한 친근한 단체 스냅')">
                     <div class="gallery-img-wrap">
                         <img src="assets/품새 2.jpg" alt="대회 현장에서 태권도 품새부 선수단과 전담 AT가 함께 촬영한 친근한 단체 스냅" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <h4 class="gallery-card-title">태권도 품새부 선수단 &amp; 전담 AT</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-camera"></i> 대회 현장 선수단과 전담 AT의 따뜻한 팀워크</span>
                     </div>
@@ -2895,10 +2926,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="poomsae" data-en-badge="TKD Poomsae Team" data-en-title="World University TKD Festival Photo" data-en-meta='<i class="fa-solid fa-trophy"></i> World Univ Festival Full Squad &amp; AT Commemorative Photo' onclick="openPhotoLightbox('assets/품새 3.jpg', '대구 2024 세계대학태권도페스티벌 현장 경희대학교 품새부 선수단, 지도자 및 전담 AT 공식 단체 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/품새 3.jpg" alt="대구 2024 세계대학태권도페스티벌 현장 경희대학교 품새부 선수단, 지도자 및 전담 AT 공식 단체 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <h4 class="gallery-card-title">세계대학태권도페스티벌 기념 촬영</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-trophy"></i> 세계대학페스티벌 선수단·지도자·AT 공식 촬영</span>
                     </div>
@@ -2906,10 +2937,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="poomsae" data-en-badge="TKD Poomsae Team" data-en-title="Pre-Match Ankle Taping Care" data-en-meta='<i class="fa-solid fa-bandage"></i> Elastic Bandage Ankle Stabilization Before Stage' onclick="openPhotoLightbox('assets/품새 4.jpg', '품새 시합 출전 직전 경기장 사이드라인에서 선수의 발목을 정교하게 테이핑 처치하는 전담 AT')">
                     <div class="gallery-img-wrap">
                         <img src="assets/품새 4.jpg" alt="품새 시합 출전 직전 경기장 사이드라인에서 선수의 발목을 정교하게 테이핑 처치하는 전담 AT" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <h4 class="gallery-card-title">태권도 품새부 경기 전 발목 테이핑</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-bandage"></i> 시합 직전 발목 관절 안정화 및 부상 예방 테이핑</span>
                     </div>
@@ -2917,10 +2948,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="poomsae" data-en-badge="TKD Poomsae Team" data-en-title="National Selection Championship Photo" data-en-meta='<i class="fa-solid fa-medal"></i> National Team Selection Squad &amp; Dedicated AT' onclick="openPhotoLightbox('assets/품새 5.jpg', '2024 국가대표선수선발 최종대회 품새 경기장에서 경희대학교 선수단 및 전담 AT 단체 기념 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/품새 5.jpg" alt="2024 국가대표선수선발 최종대회 품새 경기장에서 경희대학교 선수단 및 전담 AT 단체 기념 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <h4 class="gallery-card-title">국가대표선발 최종대회 단체 사진</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-medal"></i> 국가대표 최종선발전 선수단 및 전담 AT 기념 촬영</span>
                     </div>
@@ -2928,10 +2959,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="poomsae" data-en-badge="TKD Poomsae Team" data-en-title="Jeju Peace Cup Championship Photo" data-en-meta='<i class="fa-solid fa-users"></i> Jeju Peace Cup Squad &amp; Dedicated AT Group Photo' onclick="openPhotoLightbox('assets/품새 6.jpg', '2024 제19회 제주평화기 전국태권도대회 품새 부문 경희대학교 선수단 및 전담 AT 단체 촬영')">
                     <div class="gallery-img-wrap">
                         <img src="assets/품새 6.jpg" alt="2024 제19회 제주평화기 전국태권도대회 품새 부문 경희대학교 선수단 및 전담 AT 단체 촬영" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">태권도 품새부</span>
                         <h4 class="gallery-card-title">제주평화기 전국대회 단체 사진</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-users"></i> 제19회 제주평화기 품새 선수단 및 전담 AT 단체 촬영</span>
                     </div>
@@ -2941,10 +2972,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="center" data-en-badge="AT Center" data-en-title="Ankle Rehabilitation Exercise" data-en-meta='<i class="fa-solid fa-dumbbell"></i> Targeted Ankle Functional Rehab at AT Center' onclick="openPhotoLightbox('assets/센터 at 1.jpg', '선승관 AT Center에서 선수의 발목 관절 기능 회복 및 안정화를 위한 맞춤형 발목 재활 운동 지도')">
                     <div class="gallery-img-wrap">
                         <img src="assets/센터 at 1.jpg" alt="선승관 AT Center 맞춤형 발목 재활 운동 지도" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-center">AT Center</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-center">AT Center</span>
                         <h4 class="gallery-card-title">발목 재활 운동</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-dumbbell"></i> 선승관 AT Center 맞춤형 발목 기능 재활</span>
                     </div>
@@ -2952,10 +2983,10 @@
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="center" data-en-badge="AT Center" data-en-title="Ankle Mobility Exercise" data-en-meta='<i class="fa-solid fa-person-walking"></i> Joint Range of Motion &amp; Ankle Mobility Exercise' onclick="openPhotoLightbox('assets/센터 at 2.jpg', '선승관 AT Center에서 선수의 발목 관절 가동 범위(ROM) 개선 및 움직임 회복을 위한 발목 가동성 운동')">
                     <div class="gallery-img-wrap">
                         <img src="assets/센터 at 2.jpg" alt="선승관 AT Center 발목 관절 가동성 회복 운동" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-center">AT Center</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-center">AT Center</span>
                         <h4 class="gallery-card-title">발목 가동성 운동</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-person-walking"></i> 발목 관절 가동 범위 확보 및 기능성 가동성 운동</span>
                     </div>
@@ -2968,10 +2999,10 @@
                 <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/activity/신입기수/7M306109.png', '신입기수 10주간 정기 스터디 &amp; 실무 테크닉 교육')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/activity/신입기수/7M306109.png" alt="신입기수 정기 스터디 & 실습 교육" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-center">신입기수 스터디</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-center">신입기수 스터디</span>
                         <h4 class="gallery-card-title">신입기수 정기 스터디 &amp; 실습 교육</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-chalkboard-user"></i> 10주간 Observation 과정 연계 기본 소양 &amp; 테크닉</span>
                     </div>
@@ -2981,10 +3012,10 @@
                 <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_5.jpg', '선승관 B1 계단강의실 2026 신입기수 27기 오리엔테이션')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_5.jpg" alt="신입기수 27기 오리엔테이션" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-center">오리엔테이션</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-center">오리엔테이션</span>
                         <h4 class="gallery-card-title">2026 신입기수 27기 공식 오리엔테이션</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-users"></i> 선승관 B1 계단강의실 센터 시스템 &amp; 활동 가이드 안내</span>
                     </div>
@@ -2994,10 +3025,10 @@
                 <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_29.jpg', 'The Brain Awards for Lab 경희대 대학원 장려상 수상')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_29.jpg" alt="The Brain Awards for Lab 장려상 수상" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-center">The Brain 수상</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-center">The Brain 수상</span>
                         <h4 class="gallery-card-title">The Brain Awards for Lab 장려상 수상</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-award"></i> 경희대학교 대학원 혁신기획팀 주관 우수 연구실 선정</span>
                     </div>
@@ -3007,10 +3038,10 @@
                 <div class="gallery-card-item" data-category="center" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_1.jpg', '제63차 대한비만학회 춘계학술대회 구연/포스터 연구 발표')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_1.jpg" alt="제63차 대한비만학회 춘계학술대회 참가" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-center">학술대회 발표</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-center">학술대회 발표</span>
                         <h4 class="gallery-card-title">제63차 대한비만학회 춘계학술대회 발표</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-book-open"></i> 그랜드 워커힐 서울, 대퇴 연골 두께 및 재활 연구 발표</span>
                     </div>
@@ -3022,10 +3053,10 @@
                 <div class="gallery-card-item" data-category="medical" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_31.jpg', '제37회 경희대학교 총장기 전국 고교 태권도대회 의무지원')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_31.jpg" alt="제37회 경희대학교 총장기 전국 고교 태권도대회 의무지원" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-medical">대회 파견</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-medical">대회 파견</span>
                         <h4 class="gallery-card-title">제37회 경희대 총장기 전국 태권도대회</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-truck-medical"></i> 강원도 홍천 열흘간 16인 스태프 밀착 케어</span>
                     </div>
@@ -3034,10 +3065,10 @@
                 <div class="gallery-card-item" data-category="medical" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_14.jpg', '제1회 라이언매치 경희대x한양대 교류전 필드 의무지원')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_14.jpg" alt="제1회 라이언매치 경희대x한양대 교류전 필드 의무지원" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-medical">교류전 파견</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-medical">교류전 파견</span>
                         <h4 class="gallery-card-title">제1회 라이언매치 교류전 필드 의무지원</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-truck-medical"></i> 축구·농구 경기장 긴급 부상 처치 &amp; 테이핑</span>
                     </div>
@@ -3046,10 +3077,10 @@
                 <div class="gallery-card-item" data-category="medical" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_17.jpg', '2025 Go Free Run 자유민주 마라톤 공식 의무지원')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_17.jpg" alt="2025 Go Free Run 자유민주 마라톤 공식 의무지원" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-medical">마라톤 의무지원</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-medical">마라톤 의무지원</span>
                         <h4 class="gallery-card-title">2025 Go Free Run 마라톤 의무지원</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-person-running"></i> 여의도공원 스포츠마사지 &amp; 피지컬 서포트</span>
                     </div>
@@ -3062,10 +3093,10 @@
                 <div class="gallery-card-item" data-category="seminar" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_12.jpg', '2025 AT Center Student Awards 연말 시상식')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_12.jpg" alt="2025 AT Center Student Awards 연말 시상식" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-seminar">어워즈 시상식</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-seminar">어워즈 시상식</span>
                         <h4 class="gallery-card-title">2025 AT Center Student Awards 시상식</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-trophy"></i> 올해의 학생상·인스피레이션·루키 수여식</span>
                     </div>
@@ -3075,10 +3106,10 @@
                 <div class="gallery-card-item" data-category="seminar" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_8.jpg', 'Athletic Training Student Awards 명예의 전당 보드 헌액')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_8.jpg" alt="AT Student Awards 명예의 전당 헌액" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-seminar">어워즈 명예헌액</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-seminar">어워즈 명예헌액</span>
                         <h4 class="gallery-card-title">AT Student Awards 명예의 전당 헌액</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-award"></i> 2025 AT of the Year 유승아 · Inspiration 박세민</span>
                     </div>
@@ -3088,10 +3119,10 @@
                 <div class="gallery-card-item" data-category="seminar" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_3.jpg', 'AT Center 정기 세미나 (이론·실기 &amp; 체육대회)')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_3.jpg" alt="AT Center 정기 세미나" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-seminar">정기 세미나</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-seminar">정기 세미나</span>
                         <h4 class="gallery-card-title">AT Center 정기 세미나 &amp; 동문 교류회</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-graduation-cap"></i> 선승관 이론 발표, 테이핑 실기, 족구 대회</span>
                     </div>
@@ -3101,15 +3132,22 @@
                 <div class="gallery-card-item" data-category="seminar" style="display: none;" onclick="openPhotoLightbox('assets/images/insta/post_23.jpg', '경희대학교 AT Center 추계 정기 세미나 &amp; 홈커밍데이')">
                     <div class="gallery-img-wrap">
                         <img src="assets/images/insta/post_23.jpg" alt="경희대학교 AT Center 추계 정기 세미나" class="gallery-img" loading="lazy">
-                        <span class="gallery-badge badge-seminar">정기 세미나</span>
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
+                        <span class="gallery-badge badge-seminar">정기 세미나</span>
                         <h4 class="gallery-card-title">추계 정기 세미나 &amp; 스포츠의학 워크숍</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-user-graduate"></i> 동아리원·대학원생·동문 선후배 정기 학술 교류회</span>
                     </div>
                 </div>
 
+            </div>
+
+            <div class="gallery-expand-wrap" id="gallery-expand-wrap" style="display: none;">
+                <button type="button" class="gallery-expand-btn" id="gallery-expand-btn" onclick="toggleActivityGalleryExpand()">
+                    <span id="gallery-expand-label">전체 활동사진 더보기</span>
+                    <i class="fa-solid fa-chevron-down" id="gallery-expand-icon"></i>
+                </button>
             </div>
             
             <div class="gallery-bottom-cta">
@@ -3936,7 +3974,7 @@
                 edu: "경희대학교 체육대학",
                 subject: "AT 동아리 운영 및 스포츠의학 현장 실무 지원",
                 lab: "선승관 AT center (031-201-2787)",
-                email: "khuatcenter@khu.ac.kr",
+                email: "lee616dh@khu.ac.kr",
                 career: [
                     "현) 경희대학교 AT 동아리 부회장",
                     "현) 경희대학교 럭비부 보조 AT"
@@ -5941,7 +5979,7 @@
                 jobEl.innerHTML = '<span style="color: #0f172a; font-weight: 800; font-size: 1.2rem;">' + jobInfo + '</span>';
             }
         }
-        if (badgeEl) badgeEl.textContent = badgeText || "경희대학교 AT Center 동문";
+        if (badgeEl) badgeEl.textContent = (badgeText || "경희대학교 AT Center 동문").replace(/\s*—\s*/g, " - ");
 
         // SNS 및 블로그 링크 처리 (원하시는 분만 선택적으로 노출)
         const social = alumniSocialLinks[nameClean] || {};
@@ -6244,23 +6282,57 @@
             // =========================================================
             // 2. 활동 사진 4대 카테고리 탭 필터링 & 부서 픽토그램 연동
             // =========================================================
+            window.__activitiesExpanded = false;
+            window.__currentActivityFilter = { category: 'dept', dept: 'all' };
+            const ACTIVITY_PREVIEW_LIMIT = 9;
+
+            function syncGalleryExpandButton(totalCount, shouldOfferToggle) {
+                const wrap = document.getElementById('gallery-expand-wrap');
+                const label = document.getElementById('gallery-expand-label');
+                const icon = document.getElementById('gallery-expand-icon');
+                if (!wrap || !label) return;
+                if (!shouldOfferToggle || totalCount <= ACTIVITY_PREVIEW_LIMIT) {
+                    wrap.style.display = 'none';
+                    return;
+                }
+                wrap.style.display = 'flex';
+                const isEn = (document.documentElement.getAttribute('lang') === 'en');
+                const remain = totalCount - ACTIVITY_PREVIEW_LIMIT;
+                if (window.__activitiesExpanded) {
+                    label.textContent = isEn ? 'Show Fewer Photos' : '활동사진 접기';
+                    if (icon) icon.className = 'fa-solid fa-chevron-up';
+                } else {
+                    label.textContent = isEn ? `View All Activity Photos (+${remain})` : `활동사진 더보기 (+${remain}장)`;
+                    if (icon) icon.className = 'fa-solid fa-chevron-down';
+                }
+            }
+
+            window.toggleActivityGalleryExpand = function() {
+                window.__activitiesExpanded = !window.__activitiesExpanded;
+                if (window.__currentActivityFilter.category === 'dept') {
+                    const activePicto = document.querySelector('.dept-picto-btn.active');
+                    window.filterDeptPhotos(window.__currentActivityFilter.dept || 'all', activePicto);
+                }
+            };
+
             window.filterGallery = function(category, btn) {
                 document.querySelectorAll('.gallery-filter-btn').forEach(function(b) { b.classList.remove('active'); });
                 if (btn) btn.classList.add('active');
 
+                window.__currentActivityFilter = { category: category, dept: 'all' };
                 const pictoFilter = document.getElementById('dept-pictogram-filter-wrapper');
                 const emptyPlaceholder = document.getElementById('dept-empty-placeholder');
                 const items = document.querySelectorAll('.gallery-card-item');
 
                 if (category === 'dept') {
-                    // 부서별 활동사진: 상단 12개 부서 픽토그램 필터 바 표시 및 전체 부서 사진 노출
+                    window.__activitiesExpanded = false;
                     if (pictoFilter) pictoFilter.style.display = 'block';
                     const allBtn = document.querySelector('.dept-picto-btn');
                     window.filterDeptPhotos('all', allBtn);
                 } else {
-                    // 센터 활동, 의무지원, 세미나/어워즈: 부서 필터 바 및 안내 숨기고 해당 카테고리 사진 표시
                     if (pictoFilter) pictoFilter.style.display = 'none';
                     if (emptyPlaceholder) emptyPlaceholder.style.display = 'none';
+                    syncGalleryExpandButton(0, false);
 
                     items.forEach(function(item) {
                         if (item.getAttribute('data-category') === category) {
@@ -6276,6 +6348,11 @@
             window.filterDeptPhotos = function(deptCode, btn) {
                 document.querySelectorAll('.dept-picto-btn').forEach(b => b.classList.remove('active'));
                 if (btn) btn.classList.add('active');
+
+                window.__currentActivityFilter = { category: 'dept', dept: deptCode };
+                if (deptCode !== 'all') {
+                    window.__activitiesExpanded = true;
+                }
 
                 const deptNames = {
                     'all': '전체 부서',
@@ -6294,14 +6371,21 @@
                 };
 
                 const items = document.querySelectorAll('.gallery-card-item');
-                let visibleCount = 0;
+                let matchedCount = 0;
 
                 items.forEach(function(item) {
                     if (item.getAttribute('data-category') === 'dept') {
                         const itemDept = item.getAttribute('data-dept');
                         if (deptCode === 'all' || itemDept === deptCode) {
-                            item.style.display = '';
-                            visibleCount++;
+                            matchedCount++;
+                            if (deptCode === 'all' && !window.__activitiesExpanded && matchedCount > ACTIVITY_PREVIEW_LIMIT) {
+                                item.style.display = 'none';
+                            } else {
+                                item.style.display = '';
+                                item.classList.remove('bklit-reveal-pending');
+                                item.style.opacity = '';
+                                item.style.transform = '';
+                            }
                         } else {
                             item.style.display = 'none';
                         }
@@ -6310,13 +6394,15 @@
                     }
                 });
 
+                syncGalleryExpandButton(matchedCount, deptCode === 'all');
+
                 const emptyPlaceholder = document.getElementById('dept-empty-placeholder');
                 const emptyTitle = document.getElementById('dept-empty-title');
                 const emptyDesc = document.getElementById('dept-empty-desc');
                 const targetName = deptNames[deptCode] || '해당 부서';
 
                 if (emptyPlaceholder) {
-                    emptyPlaceholder.style.display = (visibleCount === 0) ? 'flex' : 'none';
+                    emptyPlaceholder.style.display = (matchedCount === 0) ? 'flex' : 'none';
                 }
                 if (emptyTitle) {
                     emptyTitle.textContent = deptCode === 'all' 
@@ -6350,6 +6436,53 @@
 
          
 
+
+<!-- Unified Member & Awards Archive Tab Controllers -->
+<script>
+window.switchMemberTab = function(tabKey, btn) {
+    document.querySelectorAll('.member-dir-tab-btn').forEach(function(b) {
+        const isActive = (b === btn) || (b.getAttribute('data-member-tab') === tabKey);
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    document.querySelectorAll('.member-dir-panel').forEach(function(panel) {
+        const isTarget = panel.id === ('member-panel-' + tabKey);
+        panel.classList.toggle('active', isTarget);
+        if (isTarget) {
+            panel.querySelectorAll('.bklit-reveal-pending').forEach(function(el) {
+                el.classList.remove('bklit-reveal-pending');
+                el.style.opacity = '';
+                el.style.transform = '';
+            });
+        }
+    });
+};
+
+window.switchAwardsArchiveTab = function(tabKey, btn) {
+    document.querySelectorAll('.awards-archive-tab-btn').forEach(function(b) {
+        const isActive = (b === btn) || (b.getAttribute('data-archive-tab') === tabKey);
+        b.classList.toggle('active', isActive);
+        b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    const mapId = {
+        leaders: 'stream-past-leaders',
+        alumni: 'stream-graduate-assistants'
+    };
+    Object.keys(mapId).forEach(function(key) {
+        const el = document.getElementById(mapId[key]);
+        if (!el) return;
+        const isTarget = (key === tabKey);
+        el.classList.toggle('active', isTarget);
+        if (isTarget) {
+            el.querySelectorAll('.bklit-reveal-pending').forEach(function(child) {
+                child.classList.remove('bklit-reveal-pending');
+                child.style.opacity = '';
+                child.style.transform = '';
+            });
+        }
+    });
+};
+</script>
 
 <!-- Editorial Awards Interactive Navigation Helper -->
 <script>
@@ -6387,9 +6520,9 @@ window.showEditorialYear = function(year, btn) {
 </script>
 
 <!-- 다국어 전환 엔진 (한국어 | English) -->
-<script src="i18n.js?v=20261110_team_at"></script>
+<script src="i18n.js?v=20261111_v5"></script>
 <!-- 오픈소스 모션 & 데이터 시각화 엔진 (anime.js v4.5 · Motion v14.9 · Bklit UI) -->
 <script src="assets/vendor/anime.umd.min.js"></script>
 <script src="assets/vendor/motion.min.js"></script>
-<script src="ui-motion-bklit.js?v=20261105_step3"></script>
+<script src="ui-motion-bklit.js?v=20261110_redesign"></script>
 </body></html>
