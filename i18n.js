@@ -23,23 +23,21 @@
     // ------------------------------------------------------------------------
     const SINGLE_ELEMENT_TRANSLATIONS = [
         // [PC 상단 네비게이션 메뉴]
-        { selector: '#main-header .nav-menu a[href="#about"]', en: 'About' },
-        { selector: '#main-header .nav-menu a[href="#pillars"]', en: 'Core Pillars' },
-        { selector: '#main-header .nav-menu a[href="#dashboard"]', en: 'Milestones' },
-        { selector: '#main-header .nav-menu a[href="#members"]', en: 'Members' },
-        { selector: '#main-header .nav-menu a[href="#awards"]', en: 'Hall of Fame' },
-        { selector: '#main-header .nav-menu a[href="#donate"]', en: 'Giving' },
-        { selector: '#main-header .nav-menu a[href="#activities"]', en: 'Gallery' },
+        { selector: '#main-header .nav-menu a[href="#about"]', en: 'Who We Are' },
+        { selector: '#main-header .nav-menu a[href="#pillars"]', en: 'What We Do' },
+        { selector: '#main-header .nav-menu a[href="#dashboard"]', en: 'Achievements' },
+        { selector: '#main-header .nav-menu a[href="#awards"]', en: 'Our Journey' },
+        { selector: '#main-header .nav-menu a[href="#activities"]', en: 'Photo &amp; Video' },
+        { selector: '#main-header .nav-menu a[href="#donate"]', en: 'Sponsorship' },
         { selector: '#main-header .nav-menu a[href="#contact"]', en: 'Contact' },
 
         // [모바일 전체화면 드로어 메뉴]
-        { selector: '#mobile-nav-drawer .mobile-menu a[href="#about"]', en: '<i class="fa-regular fa-building"></i> About the Center' },
-        { selector: '#mobile-nav-drawer .mobile-menu a[href="#pillars"]', en: '<i class="fa-solid fa-layer-group"></i> Core Pillars' },
-        { selector: '#mobile-nav-drawer .mobile-menu a[href="#dashboard"]', en: '<i class="fa-solid fa-chart-line"></i> AT Center Milestones' },
-        { selector: '#mobile-nav-drawer .mobile-menu a[href="#members"]', en: '<i class="fa-solid fa-users"></i> Members' },
-        { selector: '#mobile-nav-drawer .mobile-menu a[href="#awards"]', en: '<i class="fa-solid fa-award"></i> Hall of Fame &amp; Leaders' },
-        { selector: '#mobile-nav-drawer .mobile-menu a[href="#donate"]', en: '<i class="fa-solid fa-hand-holding-heart"></i> Development Fund' },
-        { selector: '#mobile-nav-drawer .mobile-menu a[href="#activities"]', en: '<i class="fa-solid fa-camera"></i> Activity Gallery' },
+        { selector: '#mobile-nav-drawer .mobile-menu a[href="#about"]', en: '<i class="fa-regular fa-building"></i> Who We Are' },
+        { selector: '#mobile-nav-drawer .mobile-menu a[href="#pillars"]', en: '<i class="fa-solid fa-layer-group"></i> What We Do' },
+        { selector: '#mobile-nav-drawer .mobile-menu a[href="#dashboard"]', en: '<i class="fa-solid fa-chart-line"></i> Achievements' },
+        { selector: '#mobile-nav-drawer .mobile-menu a[href="#awards"]', en: '<i class="fa-solid fa-award"></i> Our Journey' },
+        { selector: '#mobile-nav-drawer .mobile-menu a[href="#activities"]', en: '<i class="fa-solid fa-camera"></i> Photo &amp; Video' },
+        { selector: '#mobile-nav-drawer .mobile-menu a[href="#donate"]', en: '<i class="fa-solid fa-hand-holding-heart"></i> Sponsorship' },
         { selector: '#mobile-nav-drawer .mobile-menu a[href="#contact"]', en: '<i class="fa-regular fa-paper-plane"></i> Consultation &amp; Inquiry' },
         { selector: '#mobile-nav-drawer .mobile-menu a.insta-link', en: '<i class="fa-brands fa-instagram" style="color: #E1306C;"></i> Official Instagram (@khuatcenter)' },
         { selector: '#mobile-nav-drawer .mobile-drawer-footer p:first-child', en: 'AT Center (B1), Seonseung-gwan, KHU Global Campus' },
@@ -51,29 +49,24 @@
         },
         {
             selector: '#hero .hero-description',
-            en: 'Located at Kyung Hee University Global Campus, the Athletic Training Center<br>integrates sports medicine education, clinical care, and scientific research.'
+            en: 'Bringing specialized Athletic Training services to every sports field!<br>Driving digital transformation and intelligence in sports medicine through standardized physical activity data!<br>Cultivating field-ready professionals where learning turns into expertise and expertise serves the field!'
         },
-        { selector: '#hero .hero-actions a[href="#pillars"]', en: 'Explore Core Pillars' },
+        { selector: '#hero .hero-actions a[href="#pillars"]', en: 'What We Do' },
         { selector: '#hero .hero-actions a[href="#contact"]', en: 'Book a Consultation' },
 
-        // [센터 소개 섹션 (#about)]
-        { selector: '#about .section-title', en: 'About the Center' },
-        { selector: '#about .section-subtitle', en: 'A Practical Sports Medicine Hub for Athletic Performance &amp; Campus Wellness' },
+        // [소개 섹션 (#about, 구성원 통합)]
+        { selector: '#about .section-title', en: 'Who We Are' },
         {
             selector: '#about .about-hero-caption',
             en: '<i class="fa-solid fa-location-dot" style="color: #f87171; margin-right: 4px;"></i> Kyung Hee University Global Campus Open-Air Theater'
         },
         {
             selector: '#about .about-lead',
-            en: 'Located in Seonseung-gwan, the <strong>Athletic Training Center (AT Center)</strong> is a practical sports medicine space<br class="pc-br"> operated by graduate researchers and undergraduate staff of the College of Physical Education.'
-        },
-        {
-            selector: '#about .about-detail',
-            en: 'We provide specialized conditioning and rehabilitation for varsity student-athletes, faculty, and students,<br class="pc-br"> advancing sports medicine through the synergy of <span class="highlight-word">Education</span>, <span class="highlight-word">Research</span>, and <span class="highlight-word">Service</span>.'
+            en: 'Located in Seonseung-gwan at Kyung Hee University Global Campus, the <strong>Athletic Training Center</strong> conducts sports medicine research with AT Club undergraduates and AT Lab graduate researchers, delivers hands-on field-oriented professional education, and provides diverse services for varsity athletes, faculty, and staff.'
         },
 
-        // [핵심 사업 섹션 (#pillars)]
-        { selector: '#pillars .section-title', en: 'Core Pillars' },
+        // [활동 섹션 (#pillars)]
+        { selector: '#pillars .section-title', en: 'What We Do' },
         { selector: '#pillars .section-subtitle', en: 'Education · Research · Service' },
 
         // Pillar 1: Education
@@ -120,24 +113,23 @@
         },
         { selector: '#pmodal-panel-srv .quote-author', en: 'KHU AT Center Service Vision' },
 
-        // [AT 센터 누적 기록 대시보드 (#dashboard)]
-        { selector: '#dashboard .section-title', en: 'AT Center Milestones' },
+        // [누적기록 대시보드 (#dashboard)]
+        { selector: '#dashboard .section-title', en: 'Achievements' },
         { selector: '#dashboard .section-subtitle', en: 'Key achievements in Education, Research, and Clinical Service built by KHU AT Center.' },
         // 01 교육 지표
         { selector: '#dashboard .card-edu .stat-unit', en: 'Trainees' },
         { selector: '#dashboard .card-edu .editorial-card-title', en: 'Completed Basic AT Training' },
-        { selector: '#dashboard .card-edu .editorial-card-desc', en: '100-hour clinical observation course &amp;<br>full academic seminar curriculum completed' },
-        { selector: '#dashboard .card-edu .editorial-spec-tag span', en: 'Includes Modality Training' },
+        { selector: '#dashboard .card-edu .editorial-card-desc', en: '100 hours of AT Center observation experience, first aid &amp; CPR certification, harassment &amp; violence prevention education, modality training, and full academic seminars completed' },
         // 02 연구 지표
         { selector: '#dashboard .card-res .stat-unit', en: 'Papers' },
         { selector: '#dashboard .card-res .editorial-card-title', en: 'Published Research Papers' },
-        { selector: '#dashboard .card-res .editorial-card-desc', en: 'Published in top international (SCI/SCIE)<br>&amp; KCI sports medicine journals' },
+        { selector: '#dashboard .card-res .editorial-card-desc', en: 'Published in domestic and international sports science &amp; clinical journals and presented at academic conferences' },
         { selector: '#dashboard .card-res .editorial-action-btn span', en: 'View All 64 Publications' },
         // 03 서비스 지표
         { selector: '#dashboard .card-srv .stat-unit', en: 'Cases' },
         { selector: '#dashboard .card-srv .editorial-card-title', en: 'Injury &amp; Conditioning Care' },
         { selector: '#dashboard .card-srv .editorial-card-desc', en: 'Acute &amp; chronic rehab, conditioning,<br>resistance training, and sports taping' },
-        { selector: '#dashboard .card-srv .editorial-spec-tag span', en: 'Dedicated Support for 12 Varsity Teams' },
+        { selector: '#dashboard .card-srv .editorial-spec-tag span', en: 'Dedicated support for 12 KHU varsity teams' },
 
         // [연구 논문 모달 (#research-modal)]
         { selector: '#research-modal .research-modal-header h2', en: 'Research &amp; Academic Publications' },
@@ -159,20 +151,20 @@
             en: 'Part 4. Injury Epidemiology <span style="background: rgba(0,0,0,0.06); color: #64748b; padding: 2px 8px; border-radius: 12px; font-size: 0.78rem; font-weight: 700; margin-left: 4px;">6</span>'
         },
 
-        // [구성원 소개 (#members)]
-        { selector: '#members .section-title', en: 'Members' },
+        // [소개 내 구성원 탭 (#members)]
         { selector: '#btn-tab-sports', en: 'Team AT' },
         { selector: '#btn-tab-rehab', en: 'Sports Rehab Instructors' },
 
-        // [역대 수상자 및 리더 (#awards)]
-        { selector: '#awards .section-title', en: 'Hall of Fame &amp; Leadership' },
+        // [역사 (#awards)]
+        { selector: '#awards .section-title', en: 'Our Journey' },
         { selector: '#awards .section-subtitle', en: 'Official archive of student award recipients and leadership at Seonseung-gwan AT Center (2015–2025).' },
         { selector: '#stream-past-leaders .stream-sub-title', en: 'Past Leaders' },
         { selector: '#stream-past-leaders .stream-sub-desc', en: 'Former team leaders who directed academic research and clinical field practice across each division.' },
         { selector: '#stream-graduate-assistants .stream-sub-title', en: 'Graduate Alumni' },
         { selector: '#stream-graduate-assistants .stream-sub-desc', en: 'Graduate alumni who completed academic research and clinical field training at Seonseung-gwan AT Center.' },
 
-        // [발전기금 (#donate)]
+        // [후원 (#donate)]
+        { selector: '#donate .donate-section-title', en: 'Sponsorship' },
         { selector: '#donate .dh-subtitle', en: 'KHU AT Center Development Fund' },
         { selector: '#donate .dh-title', en: 'Nurturing Future Sports Medicine Leaders' },
         { selector: '#donate .dh-desc', en: 'Your generous contribution is transparently used to improve student research and educational environments, and qualifies for tax benefits.' },
@@ -187,8 +179,8 @@
                 '<li><strong>Purpose of Donation (기부 사유)</strong>: AT 센터 운영 (AT Center Operations)</li>'
         },
 
-        // [활동 사진 (#activities)]
-        { selector: '#activities .section-title', en: 'Activity Gallery' },
+        // [갤러리 (#activities)]
+        { selector: '#activities .section-title', en: 'Photo &amp; Video' },
         { selector: '#activities .section-subtitle', en: 'An archive capturing vivid moments of athlete care and center activities.' },
         { selector: '#activities .gallery-bottom-cta strong', en: 'Follow our official Instagram for more live updates!' },
         { selector: '#activities .gallery-bottom-cta p', en: 'We share weekly stories of tournament medical support, training fields, and education.' },

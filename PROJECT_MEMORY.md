@@ -3291,4 +3291,16 @@ Observation 100시간 실무 과정,
   - [index.html](file:///c:/Users/LG/OneDrive/바탕%20화면/AI/khu-at-center/index.html) 에서 `#activities` 제목 블록과 `.gallery-filter-container` 를 `.activities-top-bar` 로 감싸고 캐시 버전 `khu-pro.css?v=20261111_pro10` 갱신.
   - 데스크톱(`1161px` 이상): `.activities-top-bar` 좌측 제목 + 우측 4대 카테고리 탭 균형 배치 + 하단 `1px` 구분선 적용(수직 높이 절약), 그 아래 `.dept-pictogram-filter-scroll` 를 `max-width: 980px; margin: 0 auto; justify-content: center;` 로 7+6 중앙 대칭 정렬.
   - 태블릿(`<=1160px`)은 중앙 대칭 2단 스택, 모바일(`<=768px`)은 좌측 정렬 + 4대 탭 `2x2` 전폭 그리드 + 부서 배너 랩핑(`overflow: visible`, 가로 넘침 0)으로 반응형 정돈.
-- **검증 및 Git 동기화:** `impeccable detect` (`#activities` 0건), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`, 가로 오버플로우 0), KO/EN `1280px` (`gap: 32px`, `pillWidthDiff: 0`, `[7, 6]` 정렬)·태블릿(`1024px`)·모바일(`390px`) 스크린샷 검수 완료 후 `origin main` 커밋·푸시.
+- **검증 및 Git 동기화:** `impeccable detect` (`#activities` 0건), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`, 가로 오버플로우 0), KO/EN `1280px` (`gap: 32px`, `pillWidthDiff: 0`, `[7, 6]` 정렬)·태블릿(`1024px`)·모바일(`390px`) 스크린샷 검수 완료 후 `origin main` 커밋·푸시 (`30350d0`).
+
+
+---
+
+## 🧭 108. 전면 IA 개편 — 히어로·소개(구성원 통합)·6대 헤딩·후원 마지막 배치·누적기록 문구 정정 (2026-11-11)
+- **사용자 요청:** Hero 3줄 문구 교체, 센터 소개 기존 제목/부제목 삭제 및 본문 1문단 변경, 구성원 섹션을 소개 안으로 통합, 6대 헤딩(`소개 / Who We Are`, `활동 / What We Do`, `누적기록 / Achievements`, `역사 / Our Journey`, `갤러리 / Photo & Video`, `후원 / Sponsorship`) 체계 및 후원 섹션 마지막 배치, 누적기록 4건 문구·태그 정리 ([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`, `i18n.js`):**
+  - **네비게이션 & 순서:** PC/모바일 메뉴를 `소개 → 활동 → 누적기록 → 역사 → 갤러리 → 후원` (+ `상담 및 문의`) 6대 체계로 정리하고, `#donate` 를 `#activities` 뒤 마지막 콘텐츠 섹션으로 이동(`hero -> about -> pillars -> dashboard -> awards -> activities -> donate -> contact`).
+  - **소개 + 구성원 통합 (`#about`):** `"센터 소개 / 선수의 경기력 향상..."` 제거 후 `01 / WHO WE ARE · 소개` 적용, 새 1문단 본문 반영, `<section id="members">` 를 `<div id="members" class="about-members-subsection">` 로 변환해 `#about` 하단에 통합(scroll-spy · 탭 · i18n 100% 호환).
+  - **누적기록 (`#dashboard`):** 교육/연구/서비스 문구 4건 반영 및 `"Modality 교육 포함"` 푸터 삭제 후, `.editorial-card` 4행 그리드 + `.card-edu::after` 투명 스페이서(`@media (max-width: 960px)` 에서 숨김)로 3열 스파크라인 Y좌표 0px 수평 정렬.
+  - **캐시 버전:** [index.html](file:///c:/Users/LG/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/AI/khu-at-center/index.html) 에 `khu-pro.css?v=20261111_pro11`, `i18n.js?v=20261111_v6` 적용 및 [i18n.js](file:///c:/Users/LG/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/AI/khu-at-center/i18n.js) 영문 전면 동기화.
+- **검증 및 Git 동기화:** `node --check i18n.js`, `impeccable detect` (`0` 신규 경고), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, `emDashCount: 0`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`, 가로 오버플로우 0), KO/EN 스파크라인 `0px` 수평 일치 및 KO/EN/모바일 전체 스크린샷 검수 후 `origin main` 커밋·푸시 완료.
