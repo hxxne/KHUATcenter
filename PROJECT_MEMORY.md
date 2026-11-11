@@ -3269,4 +3269,15 @@ Observation 100시간 실무 과정,
 - **주요 수정 내역 (`khu-pro.css`, `index.html`):**
   - `.donate-split-wrapper` 를 `flex-direction: column` (`max-width: 1020px`) 수직 구조로 변경해 상단 중앙(비전 + 본문 + `후원 링크 바로가기` 캡슐 CTA) ➔ `1px` 구분선 ➔ 하단(공식 후원 참여 안내 + 상자 없는 `01`/`02`/`03` 3열 오픈 스텝 트랙, `768px` 이하 모바일 1열 스택) 으로 구성.
   - `index.html` 캐시 버전 `khu-pro.css?v=20261111_pro8` 갱신.
-- **검증 및 Git 동기화:** `impeccable detect` (0건), `full_audit.py` (8개 매트릭스 `CLIP: 0`), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, `emDashCount: 0`) 및 KO/EN/모바일 스크린샷 검수 후 `origin main` 커밋·푸시 완료.
+- **검증 및 Git 동기화:** `impeccable detect` (0건), `full_audit.py` (8개 매트릭스 `CLIP: 0`), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, `emDashCount: 0`) 및 KO/EN/모바일 스크린샷 검수 후 `origin main` 커밋·푸시 완료 (`7ac38e9`).
+
+
+---
+
+## 🧭 106. 역대 수상자(`AT Student of the Year`) Open Gold Ledger 개편 (2026-11-11)
+- **사용자 요청:** `#awards` 섹션에서 `AT Student of the Year` 만 흰색 박스(둥근 카드·그림자)가 있어 어색한 문제를 디자인 유지 상태로 해결(구상안 1번 선택).
+- **주요 수정 내역 (`khu-pro.css`, `index.html`):**
+  - `.award-stream-card.card-coty` 의 순백 배경(`var(--bg-surface)`), 둥근 모서리, 그림자를 제거(`background: transparent`, `border-radius: 0`, `box-shadow: none`)하여 섹션 웜 아이보리 캔버스(`#FAF9F6`) 및 하단 `Inspiration`/`Rookie` 와 재질 통일.
+  - 상단 `2px solid var(--khu-gold)` 강조 룰(호버 시 `var(--khu-crimson)` 전환), `padding-left: 6px` 좌측 수직 기준선 일치(`.card-insp` 와 정렬), 이름 스케일 격상(`clamp(1.95rem, 2.95vw, 2.45rem)`) 으로 1:2 위계 유지.
+  - 모바일(`<=768px`)에서도 좌측 `6px` 기준선 및 상하 여백(`18px`) 정돈, `index.html` 캐시 버전 `khu-pro.css?v=20261111_pro9` 갱신.
+- **검증 및 Git 동기화:** `impeccable detect` (`#awards` 0건), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, `emDashCount: 0`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`, 가로 오버플로우 0) 및 KO(단일/공동수상)·EN·모바일 스크린샷 검수 후 `origin main` 커밋·푸시 완료.

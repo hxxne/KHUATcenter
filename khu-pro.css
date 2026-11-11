@@ -1659,11 +1659,11 @@ html[lang="en"] .about-detail .pc-br {
     border-top: 2px solid var(--khu-crimson);
 }
 
-/* Hierarchy 1:2 Grid — Top: AT Student of the Year Featured Band, Bottom: Inspiration + Rookie */
+/* Hierarchy 1:2 Grid — Open Gold Ledger (No White Box) + Inspiration & Rookie Split */
 .award-year-cards-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px 0;
+    gap: 2px 0;
 }
 
 .award-stream-card {
@@ -1676,41 +1676,51 @@ html[lang="en"] .about-detail .pc-br {
     flex-direction: column;
     align-items: flex-start;
     cursor: pointer;
-    transition: transform 0.25s var(--ease-expo), background-color 0.25s ease;
+    transition: transform 0.25s var(--ease-expo), background-color 0.25s ease, border-color 0.25s ease;
     min-width: 0;
 }
 
-/* Top Winner Featured Pedestal (AT Student of the Year) */
+/* Top Winner Featured Honor (AT Student of the Year — Borderless Gold Ledger) */
 .award-stream-card.card-coty {
     grid-column: 1 / -1;
-    background: var(--bg-surface) !important;
-    border: 1px solid rgba(17, 19, 24, 0.06) !important;
-    border-radius: 14px !important;
-    padding: clamp(22px, 3vw, 32px) clamp(22px, 3.2vw, 34px);
-    box-shadow: 0 12px 30px -16px rgba(17, 19, 24, 0.10) !important;
+    background: transparent !important;
+    border: none !important;
+    border-top: 2px solid var(--khu-gold) !important;
+    border-radius: 0 !important;
+    padding: clamp(20px, 2.5vw, 26px) 10px clamp(20px, 2.6vw, 26px) 6px;
+    box-shadow: none !important;
     display: grid;
     grid-template-columns: 1fr auto;
     grid-template-areas:
         "pill hint"
         "name desc";
-    align-items: center;
+    align-items: end;
     column-gap: 24px;
-    row-gap: 6px;
+    row-gap: 8px;
 }
 .award-stream-card.card-coty:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-elevated) !important;
+    transform: translateY(-2px);
+    background: transparent !important;
+    border-top-color: var(--khu-crimson) !important;
+    box-shadow: none !important;
 }
 .award-stream-card.card-coty .award-pill {
     grid-area: pill;
     margin: 0;
+    letter-spacing: 0.11em;
     color: var(--khu-bronze);
 }
 .award-stream-card.card-coty .award-stream-name,
 .award-stream-card.card-coty .award-stream-name-dual {
     grid-area: name;
-    font-size: clamp(1.75rem, 2.6vw, 2.25rem);
+    font-size: clamp(1.95rem, 2.95vw, 2.45rem);
+    line-height: 1.15;
     margin: 2px 0 0 0;
+    transition: color 0.2s ease;
+}
+.award-stream-card.card-coty:hover .award-stream-name,
+.award-stream-card.card-coty:hover .dual-name-row {
+    color: var(--khu-crimson);
 }
 .award-stream-card.card-coty .award-stream-name-dual {
     flex-direction: row;
@@ -1723,6 +1733,7 @@ html[lang="en"] .about-detail .pc-br {
     font-weight: 800;
     margin: 0;
     position: relative;
+    transition: color 0.2s ease;
 }
 .award-stream-card.card-coty .dual-name-row + .dual-name-row::before {
     content: "/";
@@ -1733,6 +1744,7 @@ html[lang="en"] .about-detail .pc-br {
 .award-stream-card.card-coty .award-stream-desc {
     grid-area: desc;
     margin: 0;
+    padding-bottom: 3px;
     text-align: right;
     color: var(--ink-muted);
     font-size: 0.92rem;
@@ -1742,6 +1754,7 @@ html[lang="en"] .about-detail .pc-br {
     grid-area: hint;
     margin: 0;
     justify-self: end;
+    align-self: center;
 }
 
 /* Secondary Laureates (Inspiration & Rookie) — Architectural Ledger Split */
@@ -2835,10 +2848,13 @@ html[lang="en"] .about-detail .pc-br {
             "name"
             "desc"
             "hint";
+        align-items: start;
+        padding: 18px 6px 18px 6px;
         gap: 6px;
     }
     .award-stream-card.card-coty .award-stream-desc {
         text-align: left;
+        padding-bottom: 0;
     }
     .award-stream-card.card-coty .award-click-hint {
         justify-self: start;
