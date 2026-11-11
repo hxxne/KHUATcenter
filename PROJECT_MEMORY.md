@@ -3303,4 +3303,17 @@ Observation 100시간 실무 과정,
   - **소개 + 구성원 통합 (`#about`):** `"센터 소개 / 선수의 경기력 향상..."` 제거 후 `01 / WHO WE ARE · 소개` 적용, 새 1문단 본문 반영, `<section id="members">` 를 `<div id="members" class="about-members-subsection">` 로 변환해 `#about` 하단에 통합(scroll-spy · 탭 · i18n 100% 호환).
   - **누적기록 (`#dashboard`):** 교육/연구/서비스 문구 4건 반영 및 `"Modality 교육 포함"` 푸터 삭제 후, `.editorial-card` 4행 그리드 + `.card-edu::after` 투명 스페이서(`@media (max-width: 960px)` 에서 숨김)로 3열 스파크라인 Y좌표 0px 수평 정렬.
   - **캐시 버전:** [index.html](file:///c:/Users/LG/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/AI/khu-at-center/index.html) 에 `khu-pro.css?v=20261111_pro11`, `i18n.js?v=20261111_v6` 적용 및 [i18n.js](file:///c:/Users/LG/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/AI/khu-at-center/i18n.js) 영문 전면 동기화.
-- **검증 및 Git 동기화:** `node --check i18n.js`, `impeccable detect` (`0` 신규 경고), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, `emDashCount: 0`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`, 가로 오버플로우 0), KO/EN 스파크라인 `0px` 수평 일치 및 KO/EN/모바일 전체 스크린샷 검수 후 `origin main` 커밋·푸시 완료.
+- **검증 및 Git 동기화:** `node --check i18n.js`, `impeccable detect` (`0` 신규 경고), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, `emDashCount: 0`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`, 가로 오버플로우 0), KO/EN 스파크라인 `0px` 수평 일치 및 KO/EN/모바일 전체 스크린샷 검수 후 `origin main` 커밋·푸시 완료 (`97f8076`).
+
+
+---
+
+## 🧭 109. 타이포그래피 줄바꿈 균형 · 교수 학위명 1줄 복구 · 후원/프로필 간격 정돈 (2026-11-11)
+- **사용자 요청:** 누적기록 상단 `2015-2026` 제거, 중간중간 짤리거나 애매하게 남는 줄바꿈 정리, `후원` ↔ `발전기금` 간격 확대, 구성원 이름 ↔ 정보 간격 확대.
+- **주요 수정 내역 (`khu-pro.css`, `index.html`):**
+  - `#dashboard .section-title::before` 를 `03 / ACHIEVEMENTS` 로 간결화 (`2015–2026` 제거).
+  - `.modern-profile-exp li.degree-line` 선택자 오타(`.modern-profile-exp.degree-line` ➔ `li.degree-line`) 교정 및 `min-width: 1180px` 에서 `white-space: nowrap; font-size: 0.78rem;` 적용으로 박지홍 교수 학위명 1줄 복구(`degH: 19`, `scrollW == clientW == 383`).
+  - `.about-text-block` (`max-width: 820px` / EN `860px`), `.about-lead`, `.editorial-card-desc`, `.modern-profile-exp li`, `.dh-desc`, `.donation-instructions ol li`, 모바일 `.hero-description` · `.section-subtitle` 에 `text-wrap: balance;` 를 적용해 외톨이 줄 현상 해소(`PC_WIDOWS_AFTER: []`, `GRAD_WIDOWS_AFTER: []`).
+  - `.donate-section-title` 하단 여백 확대(`14px` ➔ `28px`) 및 구성원 카드 `.modern-profile-name` 하단 여백(`0`/`4px` ➔ `11px`/`12px`) + `.modern-profile-exp` 리스트 간격(`3px` ➔ `6px`) 확보.
+  - [index.html](file:///c:/Users/LG/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/AI/khu-at-center/index.html) 캐시 버전 `khu-pro.css?v=20261111_pro12` 갱신.
+- **검증 및 Git 동기화:** `impeccable detect` (신규 0건), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`) 및 수정 전·후 스크린샷 육안 확인 후 `origin main` 커밋·푸시 완료.
