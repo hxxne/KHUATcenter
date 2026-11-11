@@ -3226,4 +3226,17 @@ Observation 100시간 실무 과정,
      - 우측: `공식 후원 참여 안내` 하단 `1px` 잉크 선 아래로 상자 테두리 없는 `01 / 02 / 03` 번호 스텝 리스트만 정돈.
   3. **캐시 버스팅:** `index.html` 에 `khu-pro.css?v=20261111_pro4` 적용.
 - **검증 및 Git 동기화:**
-  - `impeccable detect` (0건), `full_audit.py` (8개 구성 `CLIP_X/Y/RIGHT_OVERFLOW: 0`), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, EN 전환, `emDashCount: 0`) 및 한·영·모바일 `#donate` 스크린샷 검수 후 `origin main` 커밋·푸시 완료.
+  - `impeccable detect` (0건), `full_audit.py` (8개 구성 `CLIP_X/Y/RIGHT_OVERFLOW: 0`), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, EN 전환, `emDashCount: 0`) 및 한·영·모바일 `#donate` 스크린샷 검수 후 `origin main` 커밋·푸시 완료 (`5956e1a`).
+
+
+---
+
+## 🎨 102. 전체 본문 섹션 배경 `#FAF9F6` 단일 캔버스 통일 (2026-11-11)
+- **사용자 요청:**
+  - 홈페이지 전체 일관성을 위해 섹션마다 다르던 뒷배경을 하나로 통일 (Plan 승인 후 구현).
+- **주요 수정 내역 (`khu-pro.css`, `index.html`):**
+  1. `#about`, `#pillars`, `#dashboard`, `#members`, `#awards`, `#donate`, `#activities`, `#contact` 등 8개 본문 섹션의 배경을 모두 **`--bg-canvas` (`#FAF9F6`, Warm Ivory) 단일 단색**으로 통일 (`#dashboard` 격자·글로우 및 `#donate` 라디얼 워시 제거).
+  2. `#about` / `#awards` 의 중복 `border-bottom` 을 제거하고 `#pillars` ~ `#contact` 상단에만 `1px solid var(--line-hairline)` 경계선을 균일하게 배치해 이중 선 없이 정갈한 섹션 분리 유지.
+  3. `index.html` 스타일시트 캐시 버전을 `khu-pro.css?v=20261111_pro5` 로 갱신.
+- **검증 및 Git 동기화:**
+  - `impeccable detect` 에서 `codex-grid-background` 경고 해소 확인, Playwright 로 8개 전 섹션 계산된 배경값(`rgb(250, 249, 246)`, `backgroundImage: none`) 일치 확인, `full_audit.py` & `verify_redesign.py` 통과 및 스크린샷 5종 검수 후 `origin main` 커밋·푸시 완료.

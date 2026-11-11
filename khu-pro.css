@@ -514,7 +514,6 @@ a {
    ========================================================================== */
 #about {
     background-color: var(--bg-canvas);
-    border-bottom: 1px solid var(--line-hairline);
 }
 
 #about .section-header {
@@ -633,7 +632,8 @@ a {
    5. Core Pillars (#pillars) — Horizontal Split Intro + Zero-Pill Architectural Cards
    ========================================================================== */
 #pillars.bg-dark-lighter {
-    background-color: var(--bg-subtle);
+    background-color: var(--bg-canvas);
+    border-top: 1px solid var(--line-hairline);
     clip-path: none !important;
 }
 
@@ -871,23 +871,14 @@ a {
 #dashboard.editorial-metric-section {
     position: relative;
     padding: clamp(80px, 8.5vw, 118px) 0;
-    background-color: var(--bg-blueprint);
-    background-image:
-        linear-gradient(to right, rgba(0, 48, 94, 0.045) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(0, 48, 94, 0.045) 1px, transparent 1px);
-    background-size: 48px 48px;
-    border-top: 1px solid rgba(0, 48, 94, 0.06);
-    border-bottom: 1px solid rgba(0, 48, 94, 0.06);
+    background-color: var(--bg-canvas);
+    background-image: none;
+    border-top: 1px solid var(--line-hairline);
     overflow: hidden;
 }
 
 .metric-subtle-glow {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background:
-        radial-gradient(620px 360px at 14% 25%, rgba(165, 0, 52, 0.065), transparent 70%),
-        radial-gradient(620px 360px at 88% 75%, rgba(0, 48, 94, 0.075), transparent 70%);
+    display: none;
 }
 
 #dashboard .section-header {
@@ -1070,6 +1061,7 @@ a {
    ========================================================================== */
 #members {
     background-color: var(--bg-canvas);
+    border-top: 1px solid var(--line-hairline);
 }
 
 #members .section-header {
@@ -1496,9 +1488,8 @@ a {
    8. Awards, Leaders & Graduate Alumni (#awards) — Archival Honor Monolith
    ========================================================================== */
 #awards.awards-stream-section {
-    background-color: var(--bg-subtle);
+    background-color: var(--bg-canvas);
     border-top: 1px solid var(--line-hairline);
-    border-bottom: 1px solid var(--line-hairline);
 }
 
 #awards .section-header {
@@ -2051,10 +2042,9 @@ a {
    ========================================================================== */
 #donate.donate-minimal-section {
     position: relative;
-    background-color: var(--bg-surface);
-    background-image:
-        radial-gradient(58% 85% at 92% 16%, rgba(165, 0, 52, 0.045) 0%, transparent 72%),
-        radial-gradient(48% 72% at 6% 88%, rgba(197, 160, 89, 0.06) 0%, transparent 72%);
+    background-color: var(--bg-canvas);
+    background-image: none;
+    border-top: 1px solid var(--line-hairline);
     padding: clamp(88px, 9.5vw, 132px) 0;
 }
 
@@ -2571,7 +2561,7 @@ a {
    11. Contact (#contact) & Footer (#main-footer)
    ========================================================================== */
 #contact {
-    background: var(--bg-subtle);
+    background-color: var(--bg-canvas);
     border-top: 1px solid var(--line-hairline);
 }
 
