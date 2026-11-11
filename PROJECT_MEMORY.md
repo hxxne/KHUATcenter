@@ -3317,3 +3317,17 @@ Observation 100시간 실무 과정,
   - `.donate-section-title` 하단 여백 확대(`14px` ➔ `28px`) 및 구성원 카드 `.modern-profile-name` 하단 여백(`0`/`4px` ➔ `11px`/`12px`) + `.modern-profile-exp` 리스트 간격(`3px` ➔ `6px`) 확보.
   - [index.html](file:///c:/Users/LG/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/AI/khu-at-center/index.html) 캐시 버전 `khu-pro.css?v=20261111_pro12` 갱신.
 - **검증 및 Git 동기화:** `impeccable detect` (신규 0건), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`) 및 수정 전·후 스크린샷 육안 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 🧭 110. 구성원 디렉토리 4대 탭 자동 순환(Auto-play) 및 인터랙션 구현 (2026-11-11)
+- **사용자 요청:** 대학원생부터 AT 동아리 임원진, 스태프, 센터 보조 순으로 수상자 슬라이더처럼 자동으로 넘어가게 구현 ([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`):**
+  - **초기 활성 상태 변경:** 초기 로드 시 활성화되어 있던 `staff` 탭 대신 사용자 요청에 맞춰 **대학원생(`grad`)** 탭 버튼 및 패널(`#member-panel-grad.active`)부터 시작하도록 변경.
+  - **자동 순환 컨트롤러:** `const MEMBER_TABS = ['grad', 'exec', 'staff', 'assistant'];`, `MEMBER_AUTOPLAY_INTERVAL = 4500;` (4.5초)로 역대 수상자 슬라이더와 동일한 주기로 무한 순환 구현.
+  - **안전 인터랙션 (Pause on hover / touch):** 마우스 호버(`mouseenter`) 또는 모바일 터치(`touchstart`) 시 즉시 일시 정지(Pause)되어 멤버 프로필과 정보를 충분히 읽을 수 있도록 보호하고, 마우스가 벗어나면(`mouseleave`/`touchend`) 부드럽게 재개(Resume).
+  - **수동 조작 우선:** 사용자가 임의의 탭을 직접 클릭하면 즉시 해당 탭으로 전환되며 4.5초 타이머가 리셋되어 읽는 흐름이 끊기지 않음.
+  - **반응형 스크롤 동기화:** 모바일 등 좁은 화면에서 탭 바가 가로로 넘칠 때, 활성 탭이 화면 중앙으로 오도록 부드러운 가로 스크롤 정렬 지원.
+  - **캐시 버전:** [index.html](file:///c:/Users/LG/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/AI/khu-at-center/index.html) 캐시 버전 `khu-pro.css?v=20261111_pro13` 갱신.
+- **검증 및 Git 동기화:** Playwright 22초 타임라인 추적(`0s grad -> 4.5s exec -> 9.0s staff -> 13.5s assistant -> 18.0s grad`), 호버 일시정지, 수동 클릭 및 영문(EN) 탭 라벨(`Graduate Students`) 연동 100% 정상 작동 확인, 4개 탭 스냅샷 저장 후 `origin main` 커밋·푸시 완료.

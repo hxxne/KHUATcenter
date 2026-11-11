@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261111_pro12">
+    <link rel="stylesheet" href="khu-pro.css?v=20261111_pro13">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261110_redesign">
 </head>
 <body>
@@ -272,7 +272,7 @@
             <div class="member-directory-shell" id="member-directory-shell">
                 <div class="member-directory-bar">
                     <div class="member-dir-tabs" role="tablist" aria-label="구성원 디렉토리 탭">
-                        <button type="button" class="member-dir-tab-btn" role="tab" aria-selected="false" data-member-tab="grad" onclick="switchMemberTab('grad', this)">
+                        <button type="button" class="member-dir-tab-btn active" role="tab" aria-selected="true" data-member-tab="grad" onclick="switchMemberTab('grad', this)">
                             <span class="dir-label" data-ko="대학원생" data-en="Graduate Students">대학원생</span>
                             <span class="dir-count">7</span>
                         </button>
@@ -280,7 +280,7 @@
                             <span class="dir-label" data-ko="AT 동아리 임원진" data-en="Club Executives">AT 동아리 임원진</span>
                             <span class="dir-count">3</span>
                         </button>
-                        <button type="button" class="member-dir-tab-btn active" role="tab" aria-selected="true" data-member-tab="staff" onclick="switchMemberTab('staff', this)">
+                        <button type="button" class="member-dir-tab-btn" role="tab" aria-selected="false" data-member-tab="staff" onclick="switchMemberTab('staff', this)">
                             <span class="dir-label" data-ko="스태프 · Team AT" data-en="Staff &amp; Team AT">스태프 · Team AT</span>
                             <span class="dir-count">27</span>
                         </button>
@@ -292,7 +292,7 @@
                 </div>
 
                 <!-- Panel 1: 03 대학원생 -->
-                <div id="member-panel-grad" class="member-dir-panel" role="tabpanel">
+                <div id="member-panel-grad" class="member-dir-panel active" role="tabpanel">
             <!-- Group 3: Graduate Students -->
             <div class="modern-group-header">
                 <h3 class="modern-group-title"><span class="seq">03</span> 대학원생</h3>
@@ -463,7 +463,7 @@
                 </div>
 
                 <!-- Panel 3: 05 스태프 -->
-                <div id="member-panel-staff" class="member-dir-panel active" role="tabpanel">
+                <div id="member-panel-staff" class="member-dir-panel" role="tabpanel">
             <!-- Group 5: Staff (05 스태프: 체육부 AT & 스포츠재활 강사) -->
             <div class="modern-group-header">
                 <h3 class="modern-group-title"><span class="seq">05</span> 스태프</h3>
@@ -6419,12 +6419,43 @@
 
 <!-- Unified Member & Awards Archive Tab Controllers -->
 <script>
-window.switchMemberTab = function(tabKey, btn) {
+// ============================================================
+// 👥 구성원 4대 디렉토리 자동 순환 컨트롤러 (대학원생 -> 임원진 -> 스태프 -> 센터 보조)
+// ============================================================
+const MEMBER_TABS = ['grad', 'exec', 'staff', 'assistant'];
+let currentMemberTabIndex = 0; // 0: grad (대학원생부터 시작)
+let memberAutoplayTimer = null;
+const MEMBER_AUTOPLAY_INTERVAL = 4500; // 4.5초 간격으로 자동 회전 (역대 수상자와 동일 주기)
+let isMemberDirectoryHovered = false;
+
+window.switchMemberTab = function(tabKey, btn, resetAutoplay = true) {
+    const targetIdx = MEMBER_TABS.indexOf(tabKey);
+    if (targetIdx !== -1) {
+        currentMemberTabIndex = targetIdx;
+    }
+
+    // 1. 탭 버튼 활성화 및 접근성(aria-selected) 갱신
+    let activeBtn = null;
     document.querySelectorAll('.member-dir-tab-btn').forEach(function(b) {
         const isActive = (b === btn) || (b.getAttribute('data-member-tab') === tabKey);
         b.classList.toggle('active', isActive);
         b.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        if (isActive) activeBtn = b;
     });
+
+    // 2. 가로 스크롤 동기화 (모바일 등 작은 화면에서 탭 바가 넘칠 때 활성 탭 중앙 정렬)
+    const tabsContainer = document.querySelector('.member-dir-tabs');
+    if (activeBtn && tabsContainer && tabsContainer.scrollWidth > tabsContainer.clientWidth) {
+        const btnLeft = activeBtn.offsetLeft;
+        const btnWidth = activeBtn.offsetWidth;
+        const barWidth = tabsContainer.clientWidth;
+        tabsContainer.scrollTo({
+            left: btnLeft - (barWidth / 2) + (btnWidth / 2),
+            behavior: 'smooth'
+        });
+    }
+
+    // 3. 패널 표시 및 리빌(Reveal) 클래스 초기화
     document.querySelectorAll('.member-dir-panel').forEach(function(panel) {
         const isTarget = panel.id === ('member-panel-' + tabKey);
         panel.classList.toggle('active', isTarget);
@@ -6436,7 +6467,66 @@ window.switchMemberTab = function(tabKey, btn) {
             });
         }
     });
+
+    // 4. 수동 클릭 또는 조작 시 자동 회전 타이머 리셋
+    if (resetAutoplay) {
+        startMemberAutoplay();
+    }
 };
+
+window.nextMemberTab = function(resetAutoplay = false) {
+    const nextIdx = (currentMemberTabIndex + 1) % MEMBER_TABS.length;
+    window.switchMemberTab(MEMBER_TABS[nextIdx], null, resetAutoplay);
+};
+
+function startMemberAutoplay() {
+    stopMemberAutoplay();
+    if (isMemberDirectoryHovered) return;
+    memberAutoplayTimer = setInterval(function() {
+        window.nextMemberTab(false);
+    }, MEMBER_AUTOPLAY_INTERVAL);
+}
+
+function stopMemberAutoplay() {
+    if (memberAutoplayTimer) {
+        clearInterval(memberAutoplayTimer);
+        memberAutoplayTimer = null;
+    }
+}
+
+// 이벤트 바인딩: 호버 일시정지 및 모바일 터치 보호
+function initMemberDirectoryAutoplay() {
+    const dirShell = document.getElementById('member-directory-shell');
+    if (dirShell) {
+        // 마우스 호버 시 일시 정지 (사용자가 프로필/내용 열람 중 뺏기지 않도록 보호)
+        dirShell.addEventListener('mouseenter', function() {
+            isMemberDirectoryHovered = true;
+            stopMemberAutoplay();
+        });
+        dirShell.addEventListener('mouseleave', function() {
+            isMemberDirectoryHovered = false;
+            startMemberAutoplay();
+        });
+
+        // 모바일 터치 시 일시 정지
+        dirShell.addEventListener('touchstart', function() {
+            isMemberDirectoryHovered = true;
+            stopMemberAutoplay();
+        }, { passive: true });
+        dirShell.addEventListener('touchend', function() {
+            isMemberDirectoryHovered = false;
+            startMemberAutoplay();
+        }, { passive: true });
+    }
+
+    startMemberAutoplay();
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMemberDirectoryAutoplay);
+} else {
+    initMemberDirectoryAutoplay();
+}
 
 window.switchAwardsArchiveTab = function(tabKey, btn) {
     document.querySelectorAll('.awards-archive-tab-btn').forEach(function(b) {
