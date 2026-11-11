@@ -589,21 +589,24 @@ a {
 
 .about-hero-content {
     width: 100%;
-    padding-top: 8px;
+    padding-top: 6px;
 }
 
 .about-text-block {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: clamp(24px, 4.5vw, 56px);
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+    max-width: 920px;
+    margin: 0 auto;
 }
 
 .about-lead {
-    font-size: clamp(1.15rem, 1.7vw, 1.38rem);
+    font-size: clamp(1.12rem, 1.65vw, 1.34rem);
     font-weight: 700;
     color: var(--ink-primary);
-    line-height: 1.64;
+    line-height: 1.68;
     letter-spacing: -0.025em;
     margin: 0;
 }
@@ -612,18 +615,25 @@ a {
     font-weight: 800;
 }
 .about-lead .pc-br {
-    display: none;
+    display: inline;
 }
 
 .about-detail {
-    font-size: 0.98rem;
+    font-size: clamp(0.96rem, 1.25vw, 1.04rem);
     color: var(--ink-muted);
     line-height: 1.82;
     margin: 0;
-    padding-left: clamp(18px, 2.2vw, 28px);
-    border-left: 2px solid var(--khu-crimson);
+    padding-left: 0;
+    border-left: none;
 }
 .about-detail .pc-br {
+    display: inline;
+}
+html[lang="en"] .about-text-block {
+    max-width: 980px;
+}
+html[lang="en"] .about-lead .pc-br,
+html[lang="en"] .about-detail .pc-br {
     display: none;
 }
 
@@ -2831,13 +2841,16 @@ a {
         padding: 18px 6px 12px 6px;
     }
     .about-text-block {
-        grid-template-columns: 1fr;
-        gap: 18px;
+        align-items: flex-start;
+        text-align: left;
+        gap: 16px;
+    }
+    .about-lead .pc-br,
+    .about-detail .pc-br {
+        display: none;
     }
     .about-detail {
-        padding-left: 0;
-        border-left: none;
-        padding-top: 18px;
+        padding-top: 16px;
         border-top: 1px solid var(--line-hairline);
     }
     .bento-pillars-grid,

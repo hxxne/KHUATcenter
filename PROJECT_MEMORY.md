@@ -3249,4 +3249,14 @@ Observation 100시간 실무 과정,
 - **주요 수정 내역 (`khu-pro.css`, `index.html`):**
   - `.about-lead strong { color: var(--khu-crimson); font-weight: 800; }` 를 추가해 한국어(`Athletic Training Center (AT센터)`) 와 영문(`Athletic Training Center (AT Center)`) 모두 `#A50034` 버건디 컬러로 통일 강조.
   - `index.html` 캐시 버전 `khu-pro.css?v=20261111_pro6` 갱신.
-- **검증 및 Git 동기화:** Playwright KO/EN 색상(`rgb(165, 0, 52)`), 스크린샷 검수, `verify_redesign.py` 통과 후 `origin main` 커밋·푸시 완료.
+- **검증 및 Git 동기화:** Playwright KO/EN 색상(`rgb(165, 0, 52)`), 스크린샷 검수, `verify_redesign.py` 통과 후 `origin main` 커밋·푸시 완료 (`fdbc154`).
+
+
+---
+
+## 📐 104. 센터 소개(`#about`) 본문 2문단 수직(위아래) 정렬 전환 (2026-11-11)
+- **사용자 요청:** `#about` 내 `.about-lead` 와 `.about-detail` 두 문단을 좌우 나열 대신 위아래로 깔끔하게 정렬.
+- **주요 수정 내역 (`khu-pro.css`, `index.html`):**
+  - `.about-text-block` 을 `flex-direction: column; align-items: center; text-align: center; max-width: 920px; margin: 0 auto;` 로 전환하고 `.about-detail` 좌측 강조선을 제거해 위아래 2단 화보 캡션 구도 구현 (`max-width: 980px` & `pc-br` 해제로 영문 줄바꿈 균형 보정, `768px` 이하 좌측 정렬 스택).
+  - `index.html` 캐시 버스팅 버전 `khu-pro.css?v=20261111_pro7` 갱신.
+- **검증 및 Git 동기화:** KO/EN/모바일 스크린샷 검수 및 `verify_redesign.py` 통과 후 `origin main` 커밋·푸시 완료.
