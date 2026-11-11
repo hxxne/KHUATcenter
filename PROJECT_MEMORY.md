@@ -3211,4 +3211,19 @@ Observation 100시간 실무 과정,
      - 좌측 Deep Obsidian-Crimson 라디얼 비전 패널(`#1E0B12 -> #12080C`, 샴페인 골드 `#E8C984` 서브 타이틀 + `#FAF8F4` 오프화이트 본문) 과 우측 순백 참여 안내(`100%` 폭 크림슨 CTA 버튼 `후원 링크 바로가기 ↗` + CSS `counter-reset` 기반 `01 / 02 / 03` 번호 스텝 가이드, 한·영 호환) 구축.
 - **검증 및 Git 동기화:**
   - `impeccable detect --json khu-pro.css`: `#awards` / `#donate` 안티패턴 0건.
-  - `full_audit.py` (8개 뷰포트/탭/EN 매트릭스 `CLIP_X/Y/RIGHT_OVERFLOW: 0`) & `verify_redesign.py` (`DESKTOP/MOBILE ERRORS: []`, `MOBILE OVERFLOW: 390/390`, 5종 모달, EN 전환, `emDashCount: 0`) 및 2017 공동수상·2열 역대 리더·영문 발전기금·모바일 390px 스크린샷 직접 검수 완료 후 `origin main` 커밋·푸시 완료.
+  - `full_audit.py` (8개 뷰포트/탭/EN 매트릭스 `CLIP_X/Y/RIGHT_OVERFLOW: 0`) & `verify_redesign.py` (`DESKTOP/MOBILE ERRORS: []`, `MOBILE OVERFLOW: 390/390`, 5종 모달, EN 전환, `emDashCount: 0`) 및 2017 공동수상·2열 역대 리더·영문 발전기금·모바일 390px 스크린샷 직접 검수 완료 후 `origin main` 커밋·푸시 완료 (`b0b3815`).
+
+
+---
+
+## 🕊️ 101. `#donate`(발전기금) 네모칸 해체 & Zero-Box Open Editorial 개편 (2026-11-11)
+- **사용자 요청:**
+  - 기존 `#donate` 가 둥근 직사각형 카드 박스 및 좌·우 반반 분할 네모칸 디자인처럼 보이는 점을 개선 (`taste-skill` · `impeccable` 적용, Plan 승인 후 구현).
+- **주요 구현 내역 (`index.html`, `khu-pro.css`):**
+  1. **네모칸·분할 박스·그림자 전면 제거 (`khu-pro.css`):** `.donate-split-wrapper`, `.donate-hero-banner`, `.donate-content-container`, `.minimal-banking-card` 의 카드 배경색·그림자·라운드·박스 분할을 제거하고, `#donate` 섹션 전체를 `#FFFFFF` 오픈 캔버스 + 옅은 경희 버건디/골드 앰비언트 워시로 전환해 `#awards`(`#F3F1EB`) ↔ `#donate`(`#FFFFFF`) ↔ `#activities`(`#FAF9F6`) 톤 리듬 완성.
+  2. **`Persuade (좌) ➔ Guide (우)` 동선 재배치 (`index.html`, `khu-pro.css`):**
+     - 좌측: 발전기금 명분 타이포(`2.15~3.05rem`) 바로 아래로 `.donate-cta-wrap` > `.btn-donate-link` 를 이동하고, 네모 바 대신 캡슐형(`border-radius: 999px; width: fit-content;`) 크림슨 CTA 버튼 적용 (`i18n.js` 및 `ui-motion-bklit.js` 셀렉터 100% 보존).
+     - 우측: `공식 후원 참여 안내` 하단 `1px` 잉크 선 아래로 상자 테두리 없는 `01 / 02 / 03` 번호 스텝 리스트만 정돈.
+  3. **캐시 버스팅:** `index.html` 에 `khu-pro.css?v=20261111_pro4` 적용.
+- **검증 및 Git 동기화:**
+  - `impeccable detect` (0건), `full_audit.py` (8개 구성 `CLIP_X/Y/RIGHT_OVERFLOW: 0`), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, EN 전환, `emDashCount: 0`) 및 한·영·모바일 `#donate` 스크린샷 검수 후 `origin main` 커밋·푸시 완료.
