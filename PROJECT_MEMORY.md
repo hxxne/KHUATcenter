@@ -3259,4 +3259,14 @@ Observation 100시간 실무 과정,
 - **주요 수정 내역 (`khu-pro.css`, `index.html`):**
   - `.about-text-block` 을 `flex-direction: column; align-items: center; text-align: center; max-width: 920px; margin: 0 auto;` 로 전환하고 `.about-detail` 좌측 강조선을 제거해 위아래 2단 화보 캡션 구도 구현 (`max-width: 980px` & `pc-br` 해제로 영문 줄바꿈 균형 보정, `768px` 이하 좌측 정렬 스택).
   - `index.html` 캐시 버스팅 버전 `khu-pro.css?v=20261111_pro7` 갱신.
-- **검증 및 Git 동기화:** KO/EN/모바일 스크린샷 검수 및 `verify_redesign.py` 통과 후 `origin main` 커밋·푸시 완료.
+- **검증 및 Git 동기화:** KO/EN/모바일 스크린샷 검수 및 `verify_redesign.py` 통과 후 `origin main` 커밋·푸시 완료 (`eceada7`).
+
+
+---
+
+## 🧭 105. 발전기금(`#donate`) 수직 에디토리얼 정렬 & 3-Step 프로세스 개편 (2026-11-11)
+- **사용자 요청:** `#donate` 섹션의 좌·우 분할 배치를 없애고 위아래 수직 구조로 전환하며 `taste-skill` · `impeccable` 원칙으로 정리 (Plan 승인 후 구현).
+- **주요 수정 내역 (`khu-pro.css`, `index.html`):**
+  - `.donate-split-wrapper` 를 `flex-direction: column` (`max-width: 1020px`) 수직 구조로 변경해 상단 중앙(비전 + 본문 + `후원 링크 바로가기` 캡슐 CTA) ➔ `1px` 구분선 ➔ 하단(공식 후원 참여 안내 + 상자 없는 `01`/`02`/`03` 3열 오픈 스텝 트랙, `768px` 이하 모바일 1열 스택) 으로 구성.
+  - `index.html` 캐시 버전 `khu-pro.css?v=20261111_pro8` 갱신.
+- **검증 및 Git 동기화:** `impeccable detect` (0건), `full_audit.py` (8개 매트릭스 `CLIP: 0`), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, `emDashCount: 0`) 및 KO/EN/모바일 스크린샷 검수 후 `origin main` 커밋·푸시 완료.

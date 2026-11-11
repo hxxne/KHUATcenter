@@ -2052,25 +2052,25 @@ html[lang="en"] .about-detail .pc-br {
 }
 
 /* ==========================================================================
-   9. Donate Section (#donate) — Zero-Box Open Editorial Spread
+   9. Donate Section (#donate) — Vertical Open Editorial & 3-Step Track
    ========================================================================== */
 #donate.donate-minimal-section {
     position: relative;
     background-color: var(--bg-canvas);
     background-image: none;
     border-top: 1px solid var(--line-hairline);
-    padding: clamp(88px, 9.5vw, 132px) 0;
+    padding: clamp(84px, 9vw, 124px) 0;
 }
 
 .donate-split-wrapper {
     width: 100%;
-    max-width: var(--container-max);
+    max-width: 1020px;
     margin: 0 auto;
     padding: 0 clamp(20px, 4vw, 36px);
-    display: grid;
-    grid-template-columns: 1.08fr 0.92fr;
-    gap: clamp(44px, 6.5vw, 92px);
-    align-items: start;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: clamp(44px, 5vw, 60px);
     background: transparent;
     border: none;
     border-radius: 0;
@@ -2085,14 +2085,19 @@ html[lang="en"] .about-detail .pc-br {
     border-radius: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
 }
 .donate-hero-overlay {
     display: none;
 }
 .donate-hero-content {
     padding: 0 !important;
-    max-width: none !important;
+    max-width: 760px !important;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dh-subtitle {
@@ -2100,7 +2105,7 @@ html[lang="en"] .about-detail .pc-br {
     font-weight: 800;
     letter-spacing: 0.06em;
     color: var(--khu-crimson);
-    margin: 0 0 14px 0;
+    margin: 0 0 12px 0;
 }
 .dh-title {
     font-size: clamp(2.15rem, 3.6vw, 3.05rem);
@@ -2108,14 +2113,14 @@ html[lang="en"] .about-detail .pc-br {
     color: var(--ink-primary);
     letter-spacing: -0.035em;
     line-height: 1.18;
-    margin: 0 0 22px 0;
+    margin: 0 0 18px 0;
 }
 .dh-desc {
-    max-width: 52ch;
+    max-width: 62ch;
     font-size: 1.02rem;
     color: var(--ink-muted);
     line-height: 1.78;
-    margin: 0 0 32px 0;
+    margin: 0 0 30px 0;
     padding: 0;
     border-top: none;
 }
@@ -2132,7 +2137,7 @@ html[lang="en"] .about-detail .pc-br {
     gap: 9px;
     background: var(--khu-crimson);
     color: #FAF8F4;
-    padding: 15px 32px;
+    padding: 15px 34px;
     border-radius: 999px;
     font-size: 0.98rem;
     font-weight: 700;
@@ -2156,11 +2161,12 @@ html[lang="en"] .about-detail .pc-br {
 }
 
 .donate-content-container {
-    padding: 4px 0 0 0 !important;
+    padding: clamp(36px, 4vw, 48px) 0 0 0 !important;
     margin: 0 !important;
     max-width: none !important;
     display: block;
     background: transparent;
+    border-top: 1px solid var(--line-hairline);
     border-radius: 0;
 }
 
@@ -2173,69 +2179,74 @@ html[lang="en"] .about-detail .pc-br {
     box-shadow: none;
     display: flex;
     flex-direction: column;
-    text-align: left;
+    align-items: center;
+    text-align: center;
 }
 
 .mb-header {
-    text-align: left;
-    margin: 0 0 22px 0;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--ink-primary);
-    font-size: 1.32rem;
+    text-align: center;
+    margin: 0 0 10px 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    font-size: 1.38rem;
     font-weight: 800;
     letter-spacing: -0.025em;
     color: var(--ink-primary);
 }
 
-/* Open Borderless 01-03 Participation Steps — i18n Compatible */
+/* Open Borderless Horizontal 3-Step Participation Track — i18n Compatible */
 .donation-instructions {
+    width: 100%;
     background: transparent;
     padding: 0;
     border: none;
 }
 .donation-instructions h3 {
-    font-size: 1rem;
-    font-weight: 800;
+    font-size: 0.96rem;
+    font-weight: 700;
     color: var(--ink-primary);
-    margin: 0 0 6px 0;
-    display: flex;
+    margin: 0 0 4px 0;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 7px;
 }
 .donation-instructions h3 i {
     color: var(--khu-crimson);
 }
 .donation-instructions > p {
-    font-size: 0.9rem;
+    font-size: 0.92rem;
     color: var(--ink-muted);
-    margin: 0 0 16px 0;
+    margin: 0 0 28px 0;
 }
 .donation-instructions ol {
     counter-reset: donate-step;
     list-style: none;
     padding-left: 0;
     margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(20px, 3vw, 36px);
+    text-align: left;
 }
 .donation-instructions ol li {
     counter-increment: donate-step;
     position: relative;
-    padding: 13px 0 13px 38px;
-    border-bottom: 1px solid var(--line-hairline);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--ink-secondary);
-}
-.donation-instructions ol li:last-child {
+    padding: 18px 4px 4px 0;
+    border-top: 1px solid var(--line-strong);
     border-bottom: none;
-    padding-bottom: 0;
+    font-size: 0.96rem;
+    line-height: 1.65;
+    color: var(--ink-secondary);
 }
 .donation-instructions ol li::before {
     content: "0" counter(donate-step);
-    position: absolute;
-    left: 0;
-    top: 14px;
-    font-size: 0.8rem;
+    display: block;
+    position: static;
+    margin-bottom: 10px;
+    font-size: 0.82rem;
     font-weight: 800;
+    letter-spacing: 0.06em;
     color: var(--khu-crimson);
     font-variant-numeric: tabular-nums;
 }
@@ -2852,6 +2863,34 @@ html[lang="en"] .about-detail .pc-br {
     .about-detail {
         padding-top: 16px;
         border-top: 1px solid var(--line-hairline);
+    }
+    .donate-hero-banner,
+    .donate-hero-content,
+    .minimal-banking-card {
+        align-items: flex-start;
+        text-align: left;
+    }
+    .mb-header {
+        text-align: left;
+    }
+    .donation-instructions ol {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .donation-instructions ol li {
+        border-top: none;
+        border-bottom: 1px solid var(--line-hairline);
+        padding: 14px 0 14px 36px;
+    }
+    .donation-instructions ol li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .donation-instructions ol li::before {
+        position: absolute;
+        left: 0;
+        top: 15px;
+        margin-bottom: 0;
     }
     .bento-pillars-grid,
     .editorial-metric-grid,
