@@ -3280,4 +3280,15 @@ Observation 100시간 실무 과정,
   - `.award-stream-card.card-coty` 의 순백 배경(`var(--bg-surface)`), 둥근 모서리, 그림자를 제거(`background: transparent`, `border-radius: 0`, `box-shadow: none`)하여 섹션 웜 아이보리 캔버스(`#FAF9F6`) 및 하단 `Inspiration`/`Rookie` 와 재질 통일.
   - 상단 `2px solid var(--khu-gold)` 강조 룰(호버 시 `var(--khu-crimson)` 전환), `padding-left: 6px` 좌측 수직 기준선 일치(`.card-insp` 와 정렬), 이름 스케일 격상(`clamp(1.95rem, 2.95vw, 2.45rem)`) 으로 1:2 위계 유지.
   - 모바일(`<=768px`)에서도 좌측 `6px` 기준선 및 상하 여백(`18px`) 정돈, `index.html` 캐시 버전 `khu-pro.css?v=20261111_pro9` 갱신.
-- **검증 및 Git 동기화:** `impeccable detect` (`#awards` 0건), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, `emDashCount: 0`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`, 가로 오버플로우 0) 및 KO(단일/공동수상)·EN·모바일 스크린샷 검수 후 `origin main` 커밋·푸시 완료.
+- **검증 및 Git 동기화:** `impeccable detect` (`#awards` 0건), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`, `emDashCount: 0`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`, 가로 오버플로우 0) 및 KO(단일/공동수상)·EN·모바일 스크린샷 검수 후 `origin main` 커밋·푸시 완료 (`e33d255`).
+
+
+---
+
+## 🧭 107. 활동 사진(`#activities`) 상단 헤더-카테고리 Split & 부서 배너 중앙 정렬 개편 (2026-11-11)
+- **사용자 요청:** 활동 사진 제목 밑의 4대 카테고리 탭과 13개 부서 픽토그램 배너들이 좌측에 치우쳐 있는 문제를 공간·동선 효율이 높은 위치로 재배치([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 1안 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`):**
+  - [index.html](file:///c:/Users/LG/OneDrive/바탕%20화면/AI/khu-at-center/index.html) 에서 `#activities` 제목 블록과 `.gallery-filter-container` 를 `.activities-top-bar` 로 감싸고 캐시 버전 `khu-pro.css?v=20261111_pro10` 갱신.
+  - 데스크톱(`1161px` 이상): `.activities-top-bar` 좌측 제목 + 우측 4대 카테고리 탭 균형 배치 + 하단 `1px` 구분선 적용(수직 높이 절약), 그 아래 `.dept-pictogram-filter-scroll` 를 `max-width: 980px; margin: 0 auto; justify-content: center;` 로 7+6 중앙 대칭 정렬.
+  - 태블릿(`<=1160px`)은 중앙 대칭 2단 스택, 모바일(`<=768px`)은 좌측 정렬 + 4대 탭 `2x2` 전폭 그리드 + 부서 배너 랩핑(`overflow: visible`, 가로 넘침 0)으로 반응형 정돈.
+- **검증 및 Git 동기화:** `impeccable detect` (`#activities` 0건), `verify_redesign.py` (`ERRORS: []`, `MOBILE OVERFLOW: 390/390`), `full_audit.py` (8개 매트릭스 `brokenImgs: []`, 가로 오버플로우 0), KO/EN `1280px` (`gap: 32px`, `pillWidthDiff: 0`, `[7, 6]` 정렬)·태블릿(`1024px`)·모바일(`390px`) 스크린샷 검수 완료 후 `origin main` 커밋·푸시.

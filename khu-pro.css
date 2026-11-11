@@ -2274,16 +2274,28 @@ html[lang="en"] .about-detail .pc-br {
 }
 
 /* ==========================================================================
-   10. Activities Gallery (#activities) — Controlled Swipe Strip + Frameless Photo Feed
+   10. Activities Gallery (#activities) — Split Header Bar + Centered 12-Dept Track
    ========================================================================== */
 #activities.activities-gallery-section {
     background-color: var(--bg-canvas);
     border-top: 1px solid var(--line-hairline);
 }
 
+.activities-top-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line-hairline);
+    margin-bottom: 26px;
+}
+
 #activities .section-header {
     text-align: left;
-    margin-bottom: 30px;
+    margin: 0;
+    flex: 1 1 300px;
+    min-width: 0;
 }
 #activities .section-title::before {
     content: "06 / ACTIVITIES & GALLERY";
@@ -2296,9 +2308,11 @@ html[lang="en"] .about-detail .pc-br {
 }
 #activities .section-subtitle {
     margin-left: 0;
+    margin-right: 0;
+    max-width: 480px;
 }
 
-/* Main Filter Container — Compatible with ui-motion-bklit.js Spring Pill */
+/* Main Filter Container — Right-Aligned in Header, Compatible with ui-motion-bklit.js Spring Pill */
 .gallery-filter-container {
     display: inline-flex;
     flex-wrap: wrap;
@@ -2307,7 +2321,9 @@ html[lang="en"] .about-detail .pc-br {
     padding: 6px;
     border-radius: 999px;
     background: var(--bg-subtle);
-    margin-bottom: 24px;
+    margin: 0 0 0 auto;
+    flex: 0 0 auto;
+    width: fit-content;
     max-width: 100%;
     position: relative;
 }
@@ -2335,21 +2351,24 @@ html[lang="en"] .about-detail .pc-br {
     color: #FFFFFF;
 }
 
-/* 12-Department Pictogram Filter Bar — Zero overflow on desktop or 390px mobile */
+/* 12-Department Pictogram Filter Bar — Centered 7+6 Balance on Desktop, Zero Overflow on 390px Mobile */
 .dept-pictogram-filter-wrapper {
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
-    margin-bottom: 30px;
+    overflow-x: clip;
+    padding: 4px 0;
+    margin-bottom: 28px;
 }
 
 .dept-pictogram-filter-scroll {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
     width: 100%;
-    max-width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
 }
 
 .dept-picto-row-break {
@@ -2791,6 +2810,28 @@ html[lang="en"] .about-detail .pc-br {
 /* ==========================================================================
    12. Responsive Breakpoints (Tablet & Mobile 390px)
    ========================================================================== */
+@media (max-width: 1160px) {
+    .activities-top-bar {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 22px;
+    }
+    #activities .section-header {
+        flex: none;
+        width: 100%;
+        text-align: center;
+    }
+    #activities .section-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 620px;
+    }
+    .activities-top-bar .gallery-filter-container {
+        margin: 0 auto;
+    }
+}
+
 @media (max-width: 1024px) {
     .assistant-group-grid,
     .ed-ga-grid,
@@ -2952,10 +2993,25 @@ html[lang="en"] .about-detail .pc-br {
         padding: 5px 9px;
         font-size: 0.8rem;
     }
+    .activities-top-bar {
+        align-items: flex-start;
+        text-align: left;
+        gap: 18px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    #activities .section-header {
+        text-align: left;
+    }
+    #activities .section-subtitle {
+        margin-left: 0;
+        margin-right: 0;
+    }
     .gallery-filter-container {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
         width: 100%;
+        margin: 0;
         border-radius: 16px;
         gap: 6px;
         overflow: visible;
@@ -2964,6 +3020,9 @@ html[lang="en"] .about-detail .pc-br {
         justify-content: center;
         padding: 9px 10px;
         font-size: 0.83rem;
+    }
+    .dept-pictogram-filter-wrapper {
+        margin-bottom: 22px;
     }
     .dept-picto-row-break {
         display: none !important;

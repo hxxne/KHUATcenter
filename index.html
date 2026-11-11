@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261111_pro9">
+    <link rel="stylesheet" href="khu-pro.css?v=20261111_pro10">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261110_redesign">
 </head>
 <body>
@@ -2258,18 +2258,20 @@
     <!-- Activities Gallery Section (부서별 & 센터 활동 사진 아카이브) -->
     <section id="activities" class="section-padding bg-light activities-gallery-section">
         <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">활동 사진</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">선수 케어 현장과 센터의 생생한 순간들을 담은 아카이브입니다.</p>
-            </div>
+            <div class="activities-top-bar">
+                <div class="section-header text-center">
+                    <h2 class="section-title">활동 사진</h2>
+                    <div class="divider"></div>
+                    <p class="section-subtitle">선수 케어 현장과 센터의 생생한 순간들을 담은 아카이브입니다.</p>
+                </div>
 
-            <!-- 메인 카테고리 필터 탭 (부서별 활동사진 / 센터 활동 / 의무지원 / 세미나/어워즈) -->
-            <div class="gallery-filter-container">
-                <button type="button" class="gallery-filter-btn active" onclick="filterGallery('dept', this)"><i class="fa-solid fa-folder-open"></i> 부서별 활동사진</button>
-                <button type="button" class="gallery-filter-btn" onclick="filterGallery('center', this)"><i class="fa-solid fa-kit-medical"></i> 센터 활동</button>
-                <button type="button" class="gallery-filter-btn" onclick="filterGallery('medical', this)"><i class="fa-solid fa-truck-medical"></i> 의무지원</button>
-                <button type="button" class="gallery-filter-btn" onclick="filterGallery('seminar', this)"><i class="fa-solid fa-graduation-cap"></i> 세미나 / 어워즈</button>
+                <!-- 메인 카테고리 필터 탭 (부서별 활동사진 / 센터 활동 / 의무지원 / 세미나/어워즈) -->
+                <div class="gallery-filter-container">
+                    <button type="button" class="gallery-filter-btn active" onclick="filterGallery('dept', this)"><i class="fa-solid fa-folder-open"></i> 부서별 활동사진</button>
+                    <button type="button" class="gallery-filter-btn" onclick="filterGallery('center', this)"><i class="fa-solid fa-kit-medical"></i> 센터 활동</button>
+                    <button type="button" class="gallery-filter-btn" onclick="filterGallery('medical', this)"><i class="fa-solid fa-truck-medical"></i> 의무지원</button>
+                    <button type="button" class="gallery-filter-btn" onclick="filterGallery('seminar', this)"><i class="fa-solid fa-graduation-cap"></i> 세미나 / 어워즈</button>
+                </div>
             </div>
 
             <!-- [부서별 활동사진 전용] 상단 12개 부서 공식 픽토그램 필터 바 -->
