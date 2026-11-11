@@ -3239,4 +3239,14 @@ Observation 100시간 실무 과정,
   2. `#about` / `#awards` 의 중복 `border-bottom` 을 제거하고 `#pillars` ~ `#contact` 상단에만 `1px solid var(--line-hairline)` 경계선을 균일하게 배치해 이중 선 없이 정갈한 섹션 분리 유지.
   3. `index.html` 스타일시트 캐시 버전을 `khu-pro.css?v=20261111_pro5` 로 갱신.
 - **검증 및 Git 동기화:**
-  - `impeccable detect` 에서 `codex-grid-background` 경고 해소 확인, Playwright 로 8개 전 섹션 계산된 배경값(`rgb(250, 249, 246)`, `backgroundImage: none`) 일치 확인, `full_audit.py` & `verify_redesign.py` 통과 및 스크린샷 5종 검수 후 `origin main` 커밋·푸시 완료.
+  - `impeccable detect` 에서 `codex-grid-background` 경고 해소 확인, Playwright 로 8개 전 섹션 계산된 배경값(`rgb(250, 249, 246)`, `backgroundImage: none`) 일치 확인, `full_audit.py` & `verify_redesign.py` 통과 및 스크린샷 5종 검수 후 `origin main` 커밋·푸시 완료 (`c6799b3`).
+
+
+---
+
+## 🍒 103. 센터 소개(`#about`) `Athletic Training Center` 버건디 컬러 강조 (2026-11-11)
+- **사용자 요청:** 센터 소개 본문 내 `Athletic Training Center` 문구를 경희 버건디 색으로 변경.
+- **주요 수정 내역 (`khu-pro.css`, `index.html`):**
+  - `.about-lead strong { color: var(--khu-crimson); font-weight: 800; }` 를 추가해 한국어(`Athletic Training Center (AT센터)`) 와 영문(`Athletic Training Center (AT Center)`) 모두 `#A50034` 버건디 컬러로 통일 강조.
+  - `index.html` 캐시 버전 `khu-pro.css?v=20261111_pro6` 갱신.
+- **검증 및 Git 동기화:** Playwright KO/EN 색상(`rgb(165, 0, 52)`), 스크린샷 검수, `verify_redesign.py` 통과 후 `origin main` 커밋·푸시 완료.
