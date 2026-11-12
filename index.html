@@ -181,7 +181,7 @@
                 <div class="modern-profile-card" onclick="openProfModal(this)">
                     <div class="modern-avatar-container">
                         <div class="modern-avatar-blob"></div>
-                        <img src="assets/profile_박지홍.jpg?v=20260930_user" alt="박지홍" class="modern-avatar-img-fallback" onerror="this.src='assets/profile_default.png'">
+                        <img src="assets/profile_박지홍.jpg?v=20261112_retouch" alt="박지홍" class="modern-avatar-img-fallback" onerror="this.src='assets/profile_default.png'">
                     </div>
                     <div class="modern-profile-info-col">
                         <div class="modern-profile-name">박지홍 교수</div>
@@ -449,7 +449,7 @@
                 <div class="modern-profile-card" onclick="openProfModal(this)">
                     <div class="modern-avatar-container">
                         <div class="modern-avatar-blob"></div>
-                        <img src="assets/profile_default.png" alt="홍진후" class="modern-avatar-img-fallback" onerror="this.src='assets/profile_default.png'">
+                        <img src="assets/profile_홍진후.jpg?v=20261112" alt="홍진후" class="modern-avatar-img-fallback" onerror="this.src='assets/profile_default.png'">
                     </div>
                     <div class="modern-profile-name">홍진후 <span style="font-size: 0.85rem; color: var(--color-primary); font-weight: 700;">(총무)</span></div>
                     <ul class="modern-profile-exp">
@@ -940,14 +940,14 @@
                             <span class="assistant-person-name">조현준</span>
                         </div>
                         <div class="assistant-person-item" onclick="openProfModal(this)" title="상세 프로필 보기">
-                            <div class="assistant-avatar-box fallback">
-                                <span class="avatar-initial">예종</span>
+                            <div class="assistant-avatar-box">
+                                <img src="assets/profile_김예종.jpg?v=20261112" alt="김예종" class="assistant-avatar-img">
                             </div>
                             <span class="assistant-person-name">김예종</span>
                         </div>
                         <div class="assistant-person-item" onclick="openProfModal(this)" title="상세 프로필 보기">
-                            <div class="assistant-avatar-box fallback">
-                                <span class="avatar-initial">승진</span>
+                            <div class="assistant-avatar-box">
+                                <img src="assets/profile_오승진.jpg?v=20261112" alt="오승진" class="assistant-avatar-img">
                             </div>
                             <span class="assistant-person-name">오승진</span>
                         </div>
@@ -989,8 +989,8 @@
                             <span class="assistant-person-name">채상우</span>
                         </div>
                         <div class="assistant-person-item" onclick="openProfModal(this)" title="상세 프로필 보기">
-                            <div class="assistant-avatar-box fallback">
-                                <span class="avatar-initial">진후</span>
+                            <div class="assistant-avatar-box">
+                                <img src="assets/profile_홍진후.jpg?v=20261112" alt="홍진후" class="assistant-avatar-img">
                             </div>
                             <span class="assistant-person-name">홍진후</span>
                         </div>
@@ -2323,17 +2323,6 @@
                         <span class="gallery-card-meta"><i class="fa-solid fa-kit-medical"></i> 시합 전·중 선수 부상 예방 및 보호 테이핑</span>
                     </div>
                 </div>
-                <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="soccer" data-en-badge="Soccer Team" data-en-title="KHU Soccer Team &amp; AT Staff" data-en-meta='<i class="fa-solid fa-users"></i> Varsity Soccer Squad &amp; Dedicated AT Team' onclick="openPhotoLightbox('assets/축구 4.jpg', '경희대학교 축구부 선수단 및 전담·보조 AT 스태프 단체 기념 촬영')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/축구 4.jpg" alt="경희대학교 축구부 선수단 및 전담·보조 AT 스태프 단체 기념 촬영" class="gallery-img" loading="lazy">
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <span class="gallery-badge badge-sports">축구부</span>
-                        <h4 class="gallery-card-title">축구부 선수단 &amp; AT 단체 사진</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-users"></i> 경희대학교 축구부 선수단 및 AT 스태프</span>
-                    </div>
-                </div>
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="soccer" data-en-badge="Soccer Team" data-en-title="Soccer AT Team Regular Study" data-en-meta='<i class="fa-solid fa-book-open-reader"></i> Academic Study &amp; Meeting of Soccer ATs' onclick="openPhotoLightbox('assets/축구 5.jpg', '경희대학교 축구부 전담·보조 AT 정기 학술 스터디 및 주간 회의')">
                     <div class="gallery-img-wrap">
                         <img src="assets/축구 5.jpg" alt="경희대학교 축구부 전담·보조 AT 정기 학술 스터디 및 주간 회의" class="gallery-img" loading="lazy">
@@ -2356,15 +2345,26 @@
                         <span class="gallery-card-meta"><i class="fa-solid fa-bandage"></i> 시합 전 선수 발목 관절 보호 및 고정 테이핑</span>
                     </div>
                 </div>
-                <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="basketball" data-en-badge="Basketball Team" data-en-title="Basketball Core Training" data-en-meta='<i class="fa-solid fa-dumbbell"></i> Band-Assisted Core Group Exercise' onclick="openPhotoLightbox('assets/농구 1.jpg', '농구부 밴드를 활용한 코어 그룹 운동')">
+                <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="baseball" data-en-badge="Baseball Team" data-en-title="Baseball AT Regular Seminar" data-en-meta='<i class="fa-solid fa-book-open-reader"></i> Academic Study &amp; Weekly Meeting of Baseball ATs' onclick="openPhotoLightbox('assets/야구 2.jpg', '선승관 AT 센터에서 정기 학술 세미나 및 주간 회의를 진행하는 야구부 AT 스태프 팀')">
                     <div class="gallery-img-wrap">
-                        <img src="assets/농구 1.jpg" alt="농구부 밴드를 활용한 코어 그룹 운동" class="gallery-img" loading="lazy">
+                        <img src="assets/야구 2.jpg" alt="선승관 AT 센터에서 정기 학술 세미나 및 주간 회의를 진행하는 야구부 AT 스태프 팀" class="gallery-img" loading="lazy">
                         <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                     </div>
                     <div class="gallery-card-info">
-                        <span class="gallery-badge badge-sports">농구부</span>
-                        <h4 class="gallery-card-title">농구부 코어 트레이닝</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-dumbbell"></i> 밴드를 활용한 코어 그룹 운동</span>
+                        <span class="gallery-badge badge-sports">야구부</span>
+                        <h4 class="gallery-card-title">야구부 정기 학술 스터디</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-book-open-reader"></i> 야구부 AT 스태프 주간 학술 세미나</span>
+                    </div>
+                </div>
+                <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="baseball" data-en-badge="Baseball Team" data-en-title="Baseball Ground Pre-Game Check" data-en-meta='<i class="fa-solid fa-shield-halved"></i> Field Medical Readiness &amp; Player Condition Inspection' onclick="openPhotoLightbox('assets/야구 4.jpg', '야구장 필드 라인에서 선수단 부상 방지 및 경기 전 그라운드 컨디션 점검')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/야구 4.jpg" alt="야구장 필드 라인에서 선수단 부상 방지 및 경기 전 그라운드 컨디션 점검" class="gallery-img" loading="lazy">
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="gallery-badge badge-sports">야구부</span>
+                        <h4 class="gallery-card-title">야구부 필드 컨디션 점검</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-shield-halved"></i> 시합 전 선수 그라운드 의무 점검 및 부상 방지</span>
                     </div>
                 </div>
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="basketball" data-en-badge="Basketball Team" data-en-title="KHU Basketball Team &amp; AT Staff" data-en-meta='<i class="fa-solid fa-basketball"></i> Collegiate Tournament Squad &amp; AT Support' onclick="openPhotoLightbox('assets/농구 2.jpg', '대학농구 대회 현장 경희대학교 농구부 선수단 및 AT 스태프 기념 촬영')">
@@ -2442,17 +2442,6 @@
                         <span class="gallery-badge badge-sports">배구부</span>
                         <h4 class="gallery-card-title">배구부 경기 전 발목 테이핑</h4>
                         <span class="gallery-card-meta"><i class="fa-solid fa-bandage"></i> 시합 전 코트 사이드 발목 관절 보호 테이핑</span>
-                    </div>
-                </div>
-                <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="volleyball" data-en-badge="Volleyball Team" data-en-title="2026 Volleyball Welcome Event" data-en-meta='<i class="fa-solid fa-users"></i> KHU Volleyball Squad &amp; AT Staff Gathering' onclick="openPhotoLightbox('assets/배구 2.jpg', '2026 경희대학교 배구부 신입생 환영회 선수단 및 AT 스태프 단체 촬영')">
-                    <div class="gallery-img-wrap">
-                        <img src="assets/배구 2.jpg" alt="2026 경희대학교 배구부 신입생 환영회 선수단 및 AT 스태프 단체 촬영" class="gallery-img" loading="lazy">
-                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                    </div>
-                    <div class="gallery-card-info">
-                        <span class="gallery-badge badge-sports">배구부</span>
-                        <h4 class="gallery-card-title">2026 배구부 신입생 환영회</h4>
-                        <span class="gallery-card-meta"><i class="fa-solid fa-users"></i> 경희대학교 배구부 선수단 및 AT 단체 촬영</span>
                     </div>
                 </div>
                 <div class="gallery-card-item dept-gallery-card" data-category="dept" data-dept="volleyball" data-en-badge="Volleyball Team" data-en-title="Pre-Practice Ankle Taping" data-en-meta='<i class="fa-solid fa-kit-medical"></i> 1:1 Customized Ankle Injury Prevention Care' onclick="openPhotoLightbox('assets/배구 3.jpg', '배구부 체육관 훈련 전 선수 1:1 맞춤형 발목 보호 테이핑 케어')">
@@ -3427,7 +3416,7 @@
         const professorsData = {
             "박지홍": {
                 role: "센터장 / 교수",
-                photo: "assets/profile_박지홍.jpg?v=20260930_user",
+                photo: "assets/profile_박지홍.jpg?v=20261112_retouch",
                 degree: "체육과학 박사(Physical Medicine & Rehabilitation 전공)",
                 edu: "Brigham Young University",
                 subject: "운동손상, 재활모달리티, 저항운동과컨디셔닝",
@@ -3961,9 +3950,41 @@
                 ],
                 research: []
             },
+                        "김예종": {
+                role: "농구부 학부 보조 AT",
+                photo: "assets/profile_김예종.jpg?v=20261112",
+                degree: "스포츠의학과 학부과정",
+                dept: "스포츠의학과",
+                grade: "학부 재학",
+                edu: "경희대학교 스포츠의학과",
+                subject: "농구부 선수 의무지원 및 기능 회복 보조",
+                lab: "선승관 AT center (031-201-2787)",
+                email: "khuatcenter@khu.ac.kr",
+                career: [
+                    "현) 경희대학교 농구부 학부 보조 AT",
+                    "현) 경희대학교 AT Center 보조 연구원"
+                ],
+                research: []
+            },
+            "오승진": {
+                role: "농구부 학부 보조 AT",
+                photo: "assets/profile_오승진.jpg?v=20261112",
+                degree: "스포츠의학과 학부과정",
+                dept: "스포츠의학과",
+                grade: "학부 재학",
+                edu: "경희대학교 스포츠의학과",
+                subject: "농구부 선수 의무지원 및 기능 회복 보조",
+                lab: "선승관 AT center (031-201-2787)",
+                email: "khuatcenter@khu.ac.kr",
+                career: [
+                    "현) 경희대학교 농구부 학부 보조 AT",
+                    "현) 경희대학교 AT Center 보조 연구원"
+                ],
+                research: []
+            },
             "홍진후": {
                 role: "AT 동아리 총무 / 야구부 보조 AT",
-                photo: "assets/profile_default.png",
+                photo: "assets/profile_홍진후.jpg?v=20261112",
                 degree: "스포츠의학과 25학번",
                 dept: "스포츠의학과",
                 grade: "25학번",
@@ -3990,7 +4011,6 @@
                     { src: "assets/축구1.jpg", alt: "경희대학교 축구부 선수 코어 및 하지 기능성 재활 트레이닝 지도", title: "축구부 선수 재활 트레이닝" },
                     { src: "assets/축구 2.jpg", alt: "축구부 공식 경기 사이드라인 선수 컨디션 점검 및 현장 의무지원", title: "축구부 경기 현장 의무지원" },
                     { src: "assets/축구 3.jpg", alt: "축구부 경기장 사이드라인 선수 부상 예방 및 보호 테이핑 처치", title: "축구부 경기장 스포츠 테이핑" },
-                    { src: "assets/축구 4.jpg", alt: "경희대학교 축구부 선수단 및 전담·보조 AT 스태프 단체 기념 촬영", title: "축구부 선수단 & AT 단체 사진" },
                     { src: "assets/축구 5.jpg", alt: "경희대학교 축구부 전담·보조 AT 정기 학술 스터디 및 주간 회의", title: "축구부 정기 스터디" }
                 ] 
             },
@@ -3998,14 +4018,18 @@
                 head: "유주승", 
                 sub: ["김채은", "이태현", "채상우", "홍진후"],
                 photos: [
-                    { src: "assets/야구 1.jpg", alt: "야구장 더그아웃 벤치에서 선수의 발목 보호 및 부상 예방 테이핑을 시행하는 모습", title: "야구부 경기장 발목 테이핑" }
+                    { src: "assets/야구 1.jpg", alt: "야구장 더그아웃 벤치에서 선수의 발목 보호 및 부상 예방 테이핑을 시행하는 모습", title: "야구부 경기장 발목 테이핑" },
+                    { src: "assets/야구 2.jpg", alt: "선승관 AT 센터에서 정기 학술 세미나 및 주간 회의를 진행하는 야구부 AT 스태프 팀", title: "야구부 정기 학술 스터디" },
+                    { src: "assets/야구 3.jpg", alt: "야구 경기장 더그아웃에서 출전 선수의 컨디셔닝 및 필드 의무지원 케어", title: "야구부 더그아웃 컨디셔닝 케어" },
+                    { src: "assets/야구 4.jpg", alt: "야구장 필드 라인에서 선수단 부상 방지 및 경기 전 그라운드 컨디션 점검", title: "야구부 그라운드 컨디션 점검" },
+                    { src: "assets/야구 5.jpg", alt: "야구부 공식 경기 중 사이드라인 선수 상태 모니터링 및 실시간 현장 의무지원", title: "야구부 경기 현장 의무지원" },
+                    { src: "assets/야구 6.jpg", alt: "야구장 불펜 및 더그아웃에서 투수·야수 관절 보호 및 맞춤형 테이핑 지원", title: "야구부 맞춤형 테이핑 지원" }
                 ] 
             },
             "농구": { 
                 head: "이상준", 
                 sub: ["김민주", "이진호", "김동언", "황이삭", "김성준"],
                 photos: [
-                    { src: "assets/농구 1.jpg", alt: "농구부 밴드를 활용한 코어 그룹 운동", title: "농구부 코어 트레이닝" },
                     { src: "assets/농구 2.jpg", alt: "대학농구 대회 현장 경희대학교 농구부 선수단 및 AT 스태프 기념 촬영", title: "농구부 선수단 & AT 단체 사진" },
                     { src: "assets/농구 3.jpg", alt: "농구부 코트 사이드 이동식 베드 하지 수기 마사지 및 피로 회복 케어", title: "농구부 경기장 수기 케어" },
                     { src: "assets/농구 4.jpg", alt: "농구부 경기장 코트 사이드 마사지건을 활용한 하지 근육 이완 케어", title: "농구부 코트 사이드 리커버리" },
@@ -4019,7 +4043,6 @@
                 sub: ["문민서", "장서현", "이다현", "황성윤", "박인서", "박유빈"],
                 photos: [
                     { src: "assets/배구 1.jpg", alt: "배구부 시합 전 코트 사이드에서 선수의 발목 보호 테이핑을 시행하는 모습", title: "배구부 경기 전 발목 테이핑" },
-                    { src: "assets/배구 2.jpg", alt: "2026 경희대학교 배구부 신입생 환영회 선수단 및 AT 스태프 단체 촬영", title: "2026 배구부 신입생 환영회" },
                     { src: "assets/배구 3.jpg", alt: "배구부 체육관 훈련 전 선수 1:1 맞춤형 발목 보호 테이핑 케어", title: "배구부 훈련 전 스포츠 테이핑" }
                 ]
             },

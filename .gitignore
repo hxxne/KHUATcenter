@@ -15,3 +15,5 @@ scratch*
 *.exe
 **/bin/
 
+
+assets/raw_backup/
