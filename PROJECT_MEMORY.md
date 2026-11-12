@@ -3331,3 +3331,14 @@ Observation 100시간 실무 과정,
   - **반응형 스크롤 동기화:** 모바일 등 좁은 화면에서 탭 바가 가로로 넘칠 때, 활성 탭이 화면 중앙으로 오도록 부드러운 가로 스크롤 정렬 지원.
   - **캐시 버전:** [index.html](file:///c:/Users/LG/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/AI/khu-at-center/index.html) 캐시 버전 `khu-pro.css?v=20261111_pro13` 갱신.
 - **검증 및 Git 동기화:** Playwright 22초 타임라인 추적(`0s grad -> 4.5s exec -> 9.0s staff -> 13.5s assistant -> 18.0s grad`), 호버 일시정지, 수동 클릭 및 영문(EN) 탭 라벨(`Graduate Students`) 연동 100% 정상 작동 확인, 4개 탭 스냅샷 저장 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 🧭 111. 체육부 AT 유승아 학력 표기 정정 (2026-11-12)
+- **사용자 요청:** 유승아 체육부 AT에서 `스포츠의학과 21학번` 대신 `경희대학교 스포츠의학과 졸업`으로 표기 변경.
+- **주요 수정 내역 (`index.html`):**
+  - [index.html](file:///c:/Users/LG/OneDrive/%EB%B0%94%ED%83%95%20%ED%99%94%EB%A9%B4/AI/khu-at-center/index.html) 의 스태프(`05 스태프`) > 체육부 AT(`sub-tab-sports`) 내 유승아(태권도 품새부 전담 AT) 카드 첫 번째 줄 항목을 `스포츠의학과 21학번`에서 `경희대학교 스포츠의학과 졸업`으로 수정.
+  - `professorsData["유승아"].grade` 값을 `21학번 (석사 3기)`에서 `석사 3기 (학사 졸업)`으로 일관성 있게 보정.
+  - 영문(EN) 모드 시 `i18n.js` 매핑을 통해 `B.S. in Sports Medicine, Kyung Hee Univ.`로 정상 번역 연동 확인.
+- **검증 및 Git 동기화:** Playwright 브라우저 E2E 검증(카드 라인: `['경희대학교 스포츠의학과 졸업', '태권도 품새부 전담 AT', 'yusa1025@khu.ac.kr']`, 모달 데이터 및 영문 모드 `100%` 정상) 확인 후 `origin main` 커밋·푸시 완료.
