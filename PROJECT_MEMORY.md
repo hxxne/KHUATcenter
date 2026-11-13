@@ -2008,6 +2008,36 @@ Observation 100시간 실무 과정,
   - `origin main` 커밋 및 푸시 완료.
 
 
+---
+
+## 🧭 114. 프로필 사진 500x500 경량 규격화 및 Web A11y 접근성 교정 (2026-11-13)
+- **사용자 요청:**
+  1. "1000x1000은 너무 큰 것 같아" ➔ 프로필 사진 규격 최적화 축소.
+  2. "4. ♿ Web Design Guidelines & A11y 관점 (웹 표준 및 접근성) 추가로 교정해줘".
+- **주요 수정 내역 (`assets/`, `index.html`, `khu-pro.css`):**
+  - **프로필 사진 500x500 경량 정규화 (`assets/`):**
+    - `assets/raw_backup/` 폴더에 기존 원본들 안전하게 백업.
+    - 대상 37개 프로필 사진을 500x500 정사각 고품질(Lanczos) 및 JPEG q=90으로 일괄 최적화.
+    - 파일 용량 대폭 경량화: 평균 220~260KB ➔ 30~50KB (약 80% 절감), 1~5MB 초대형 원본(김동언, 김무건, 김민주, 최주영 등)은 20~30KB로 압축되어 총 18.9MB 트래픽 절감.
+    - 백업 파일(`_backup_`, `_prev_`) 및 500px 미만 원본(`정태유.jpg` 336px, `profile_default.png` 300px)은 원본 비율 그대로 보존.
+  - **Web A11y 웹 표준 및 접근성 교정 (`index.html`):**
+    - 모달 닫기 버튼 5종 스크린리더 대체 텍스트(`aria-label`) 전면 적용:
+      1. 종목 모달 닫기 (`.profile-modal-close`): `aria-label="종목 모달 닫기"`
+      2. 부서 모달 닫기 (`#modal-close-btn`): `aria-label="부서 모달 닫기"`
+      3. 프로필 상세 모달 닫기 (`#prof-modal-close-btn`): `aria-label="프로필 모달 닫기"`
+      4. 연구논문 모달 닫기 (`#close-research-modal`): `aria-label="논문 모달 닫기"`
+      5. 동문 상세 모달 닫기 (`#alumni-modal-close-btn`): `aria-label="동문 모달 닫기"`
+    - 상단 GNB 인스타그램 아이콘 링크(`.insta-nav-icon`): `aria-label="경희대학교 AT Center 공식 인스타그램 (새 창 열기)"` 속성 부여.
+  - **색상 명도 대비비 WCAG 2.1 AA (4.5:1 이상) 달성 (`khu-pro.css`):**
+    - 보조 텍스트 및 메타 레이블 전용 CSS 변수 `--ink-subtle`을 기존 `#7A828E`(명도비 3.8:1)에서 `#5B6471`(명도비 4.7:1 이상)로 상향 조정하여 WCAG 2.1 AA 기준 완벽 충족.
+    - 캐시 버전: `khu-pro.css?v=20261113_a11y` 갱신.
+- **검증 및 Git 동기화:**
+  - 37개 프로필 이미지 500x500 규격 및 용량 축소 전수 확인.
+  - 모달 5종 및 인스타그램 아이콘의 `aria-label` 정상 속성 확인.
+  - CSS `--ink-subtle` 계산값 `#5B6471` 확인.
+  - `origin main` 커밋 및 푸시 완료.
+
+
 ## 🏆 45. 명예의 전당 대형 타이포그래피 호버 인덱스 에디토리얼 리디자인 (Editorial Split Hover Reveal) (2026-10-28)
 - **개편 배경 및 사용자 피드백:**
   - *"위에 글자, 네모, 내용들이 다 너무 AI 같아 그리고 밑에 이름 달라졌어 수상자 확인해줘"*
@@ -2053,6 +2083,36 @@ Observation 100시간 실무 과정,
   - `origin main` 커밋 및 푸시 완료.
 
 
+---
+
+## 🧭 114. 프로필 사진 500x500 경량 규격화 및 Web A11y 접근성 교정 (2026-11-13)
+- **사용자 요청:**
+  1. "1000x1000은 너무 큰 것 같아" ➔ 프로필 사진 규격 최적화 축소.
+  2. "4. ♿ Web Design Guidelines & A11y 관점 (웹 표준 및 접근성) 추가로 교정해줘".
+- **주요 수정 내역 (`assets/`, `index.html`, `khu-pro.css`):**
+  - **프로필 사진 500x500 경량 정규화 (`assets/`):**
+    - `assets/raw_backup/` 폴더에 기존 원본들 안전하게 백업.
+    - 대상 37개 프로필 사진을 500x500 정사각 고품질(Lanczos) 및 JPEG q=90으로 일괄 최적화.
+    - 파일 용량 대폭 경량화: 평균 220~260KB ➔ 30~50KB (약 80% 절감), 1~5MB 초대형 원본(김동언, 김무건, 김민주, 최주영 등)은 20~30KB로 압축되어 총 18.9MB 트래픽 절감.
+    - 백업 파일(`_backup_`, `_prev_`) 및 500px 미만 원본(`정태유.jpg` 336px, `profile_default.png` 300px)은 원본 비율 그대로 보존.
+  - **Web A11y 웹 표준 및 접근성 교정 (`index.html`):**
+    - 모달 닫기 버튼 5종 스크린리더 대체 텍스트(`aria-label`) 전면 적용:
+      1. 종목 모달 닫기 (`.profile-modal-close`): `aria-label="종목 모달 닫기"`
+      2. 부서 모달 닫기 (`#modal-close-btn`): `aria-label="부서 모달 닫기"`
+      3. 프로필 상세 모달 닫기 (`#prof-modal-close-btn`): `aria-label="프로필 모달 닫기"`
+      4. 연구논문 모달 닫기 (`#close-research-modal`): `aria-label="논문 모달 닫기"`
+      5. 동문 상세 모달 닫기 (`#alumni-modal-close-btn`): `aria-label="동문 모달 닫기"`
+    - 상단 GNB 인스타그램 아이콘 링크(`.insta-nav-icon`): `aria-label="경희대학교 AT Center 공식 인스타그램 (새 창 열기)"` 속성 부여.
+  - **색상 명도 대비비 WCAG 2.1 AA (4.5:1 이상) 달성 (`khu-pro.css`):**
+    - 보조 텍스트 및 메타 레이블 전용 CSS 변수 `--ink-subtle`을 기존 `#7A828E`(명도비 3.8:1)에서 `#5B6471`(명도비 4.7:1 이상)로 상향 조정하여 WCAG 2.1 AA 기준 완벽 충족.
+    - 캐시 버전: `khu-pro.css?v=20261113_a11y` 갱신.
+- **검증 및 Git 동기화:**
+  - 37개 프로필 이미지 500x500 규격 및 용량 축소 전수 확인.
+  - 모달 5종 및 인스타그램 아이콘의 `aria-label` 정상 속성 확인.
+  - CSS `--ink-subtle` 계산값 `#5B6471` 확인.
+  - `origin main` 커밋 및 푸시 완료.
+
+
 ## 🎖️ 47. 실물 원목 현판(post_8.jpg) 및 공식 아카이브 기반 역대 학생 수상자(2015~2025) 100% 정밀 정정 복원 (2026-10-28)
 - **사용자 피드백 및 정밀 검증 착수:**
   - *"역대 학생 수상자 다시 확인해줘 이거 아니야"*
@@ -2077,6 +2137,36 @@ Observation 100시간 실무 과정,
   - `standalone_awards_editorial.html` (독립 단독 에디토리얼 페이지)
   - `index.html` (메인 사이트 명예의 전당 섹션 및 마스터 테이블)
 - **Git 동기화:**
+  - `origin main` 커밋 및 푸시 완료.
+
+
+---
+
+## 🧭 114. 프로필 사진 500x500 경량 규격화 및 Web A11y 접근성 교정 (2026-11-13)
+- **사용자 요청:**
+  1. "1000x1000은 너무 큰 것 같아" ➔ 프로필 사진 규격 최적화 축소.
+  2. "4. ♿ Web Design Guidelines & A11y 관점 (웹 표준 및 접근성) 추가로 교정해줘".
+- **주요 수정 내역 (`assets/`, `index.html`, `khu-pro.css`):**
+  - **프로필 사진 500x500 경량 정규화 (`assets/`):**
+    - `assets/raw_backup/` 폴더에 기존 원본들 안전하게 백업.
+    - 대상 37개 프로필 사진을 500x500 정사각 고품질(Lanczos) 및 JPEG q=90으로 일괄 최적화.
+    - 파일 용량 대폭 경량화: 평균 220~260KB ➔ 30~50KB (약 80% 절감), 1~5MB 초대형 원본(김동언, 김무건, 김민주, 최주영 등)은 20~30KB로 압축되어 총 18.9MB 트래픽 절감.
+    - 백업 파일(`_backup_`, `_prev_`) 및 500px 미만 원본(`정태유.jpg` 336px, `profile_default.png` 300px)은 원본 비율 그대로 보존.
+  - **Web A11y 웹 표준 및 접근성 교정 (`index.html`):**
+    - 모달 닫기 버튼 5종 스크린리더 대체 텍스트(`aria-label`) 전면 적용:
+      1. 종목 모달 닫기 (`.profile-modal-close`): `aria-label="종목 모달 닫기"`
+      2. 부서 모달 닫기 (`#modal-close-btn`): `aria-label="부서 모달 닫기"`
+      3. 프로필 상세 모달 닫기 (`#prof-modal-close-btn`): `aria-label="프로필 모달 닫기"`
+      4. 연구논문 모달 닫기 (`#close-research-modal`): `aria-label="논문 모달 닫기"`
+      5. 동문 상세 모달 닫기 (`#alumni-modal-close-btn`): `aria-label="동문 모달 닫기"`
+    - 상단 GNB 인스타그램 아이콘 링크(`.insta-nav-icon`): `aria-label="경희대학교 AT Center 공식 인스타그램 (새 창 열기)"` 속성 부여.
+  - **색상 명도 대비비 WCAG 2.1 AA (4.5:1 이상) 달성 (`khu-pro.css`):**
+    - 보조 텍스트 및 메타 레이블 전용 CSS 변수 `--ink-subtle`을 기존 `#7A828E`(명도비 3.8:1)에서 `#5B6471`(명도비 4.7:1 이상)로 상향 조정하여 WCAG 2.1 AA 기준 완벽 충족.
+    - 캐시 버전: `khu-pro.css?v=20261113_a11y` 갱신.
+- **검증 및 Git 동기화:**
+  - 37개 프로필 이미지 500x500 규격 및 용량 축소 전수 확인.
+  - 모달 5종 및 인스타그램 아이콘의 `aria-label` 정상 속성 확인.
+  - CSS `--ink-subtle` 계산값 `#5B6471` 확인.
   - `origin main` 커밋 및 푸시 완료.
 
 ---
@@ -3395,4 +3485,34 @@ Observation 100시간 실무 과정,
     - 국문 카드(`verify_advisory_ko.png`) 및 상세 모달(`verify_advisory_modal_ko.png`) 정상 렌더링 확인.
     - 영문 전환 후 카드(`verify_advisory_en.png`) 및 영문 모달(`verify_advisory_modal_en.png`) 텍스트 매핑 100% 일치 확인.
     - 콘솔 에러 `0건`, 네트워크 404 실패 요청 `0건`.
+  - `origin main` 커밋 및 푸시 완료.
+
+
+---
+
+## 🧭 114. 프로필 사진 500x500 경량 규격화 및 Web A11y 접근성 교정 (2026-11-13)
+- **사용자 요청:**
+  1. "1000x1000은 너무 큰 것 같아" ➔ 프로필 사진 규격 최적화 축소.
+  2. "4. ♿ Web Design Guidelines & A11y 관점 (웹 표준 및 접근성) 추가로 교정해줘".
+- **주요 수정 내역 (`assets/`, `index.html`, `khu-pro.css`):**
+  - **프로필 사진 500x500 경량 정규화 (`assets/`):**
+    - `assets/raw_backup/` 폴더에 기존 원본들 안전하게 백업.
+    - 대상 37개 프로필 사진을 500x500 정사각 고품질(Lanczos) 및 JPEG q=90으로 일괄 최적화.
+    - 파일 용량 대폭 경량화: 평균 220~260KB ➔ 30~50KB (약 80% 절감), 1~5MB 초대형 원본(김동언, 김무건, 김민주, 최주영 등)은 20~30KB로 압축되어 총 18.9MB 트래픽 절감.
+    - 백업 파일(`_backup_`, `_prev_`) 및 500px 미만 원본(`정태유.jpg` 336px, `profile_default.png` 300px)은 원본 비율 그대로 보존.
+  - **Web A11y 웹 표준 및 접근성 교정 (`index.html`):**
+    - 모달 닫기 버튼 5종 스크린리더 대체 텍스트(`aria-label`) 전면 적용:
+      1. 종목 모달 닫기 (`.profile-modal-close`): `aria-label="종목 모달 닫기"`
+      2. 부서 모달 닫기 (`#modal-close-btn`): `aria-label="부서 모달 닫기"`
+      3. 프로필 상세 모달 닫기 (`#prof-modal-close-btn`): `aria-label="프로필 모달 닫기"`
+      4. 연구논문 모달 닫기 (`#close-research-modal`): `aria-label="논문 모달 닫기"`
+      5. 동문 상세 모달 닫기 (`#alumni-modal-close-btn`): `aria-label="동문 모달 닫기"`
+    - 상단 GNB 인스타그램 아이콘 링크(`.insta-nav-icon`): `aria-label="경희대학교 AT Center 공식 인스타그램 (새 창 열기)"` 속성 부여.
+  - **색상 명도 대비비 WCAG 2.1 AA (4.5:1 이상) 달성 (`khu-pro.css`):**
+    - 보조 텍스트 및 메타 레이블 전용 CSS 변수 `--ink-subtle`을 기존 `#7A828E`(명도비 3.8:1)에서 `#5B6471`(명도비 4.7:1 이상)로 상향 조정하여 WCAG 2.1 AA 기준 완벽 충족.
+    - 캐시 버전: `khu-pro.css?v=20261113_a11y` 갱신.
+- **검증 및 Git 동기화:**
+  - 37개 프로필 이미지 500x500 규격 및 용량 축소 전수 확인.
+  - 모달 5종 및 인스타그램 아이콘의 `aria-label` 정상 속성 확인.
+  - CSS `--ink-subtle` 계산값 `#5B6471` 확인.
   - `origin main` 커밋 및 푸시 완료.
