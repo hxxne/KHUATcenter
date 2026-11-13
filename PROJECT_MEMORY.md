@@ -2025,6 +2025,24 @@ Observation 100시간 실무 과정,
 
 ---
 
+## 🧭 116. 5대 디자인 스킬 기반 활동(#pillars) & 누적기록(#dashboard) 고도화 (2026-11-13)
+- **사용자 요청:** `frontend-design`, `ui-ux promax`, `hallmark audit`, `emil-design-eng`, `web-design-guidelines` 5대 스킬을 활용하여 **활동(`#pillars`)**과 **누적기록(`#dashboard`)** 섹션 디자인 수정 ([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`, `i18n.js`):**
+  - **활동(`#pillars`) 아카데믹 에디토리얼 개편:**
+    - **그라데이션 스크림 캡션:** 사진 위 둥둥 떠있는 어두운 알약 배지를 제거하고, 각 슬라이드 하단(`::after`)에 부드러운 다크 그라데이션 스크림과 선명한 흰색 타이포그래피 캡션 적용.
+    - **SNS식 해시태그(`#`) 제거:** `#전공연계` 등 `#` 접두사를 제거하고 학술적 미들 도트(`·`) 키워드 라인(`전공연계 · 실무역량 · 현장실습` 등)으로 품격 상승.
+    - **3색 고유 컬러 호버 & 모션:** 교육(크림슨), 연구(로열 네이비), 서비스(브론즈 골드) 각 카드 고유의 호버 컬러·아이콘·화살표 반응 및 이미지 미세 줌(`scale(1.04)`), 슬라이드 도트 터치 히트영역 확장(`::after`), `prefers-reduced-motion` 대응 적용.
+    - **웹 접근성(A11y):** 카드 및 슬라이드 도트에 `role="button"`, `tabindex="0"`, Enter/Space 키보드 조작, `:focus-visible` 포커스 링 추가.
+  - **누적기록(`#dashboard`) 수평 정렬 & 프레임 완성도 교정:**
+    - **3열 완벽한 수평 정렬:** 기존에 푸터가 비어 있어 차트와 하단선이 어긋나던 `01. EDUCATION` 카드에 정식 푸터(`교육 과정 세부내용 보기 ->`, 클릭 시 교육 모달 연동)를 신설하여 3열 카드의 차트 위치(`top: 639, bottom: 755`)와 푸터 구분선(`top: 773, bottom: 817`)을 `0px` 오차로 완벽 일치.
+    - **프레임 모서리 밀착:** `.editorial-metric-grid`에 `overflow: hidden` 적용 및 `.card-edge-highlight`를 `left: 0; right: 0; height: 4px;`로 밀착시켜 둥근 모서리와 깔끔하게 일체화.
+    - **수치 안정성 & 접근성:** `.stat-number`에 `font-variant-numeric: tabular-nums;` 적용, SVG 스파크라인 컨테이너에 `aria-hidden="true"` 추가, 클릭 카드 키보드 탐색 지원.
+  - **다국어(`i18n.js`) & 캐시 버전:** `#pillars` 영문 키워드 `#` 제거 및 `#dashboard .card-edu` 영문 푸터(`Explore Education Curriculum`) 매핑, `v=20261113_design2` 갱신.
+- **검증 및 Git 동기화:** Playwright E2E 검증(데스크톱·모바일 오버플로우 `False`, 3열 차트/푸터 정렬 오차 `0px`, 교육 모달 팝업, 콘솔 에러/실패 요청 `0건`) 및 스크린샷 육안 확인 완료 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
 ## 🧭 114. 프로필 사진 500x500 경량 규격화 및 Web A11y 접근성 교정 (2026-11-13)
 - **사용자 요청:**
   1. "1000x1000은 너무 큰 것 같아" ➔ 프로필 사진 규격 최적화 축소.
@@ -2066,6 +2084,24 @@ Observation 100시간 실무 과정,
     - `06 AT 센터 보조` > **농구부**(`김민주`, `김동언`) 및 **골프부**(`유승원`, `최주영`, `김무건`) 이니셜 플레이스홀더(`fallback`)를 `has-photo` 아바타 이미지(`?v=20261113`)로 교체.
     - `professorsData`에 5인 전원 상세 프로필 및 고화질 사진 경로 등록.
 - **검증 및 Git 동기화:** Playwright 브라우저 E2E 검증(농구부/골프부 카드 스크린샷 육안 대조, 5건 이미지 `naturalWidth=500` 정상 로딩, 모달 팝업, 콘솔 에러/실패 요청 `0건`) 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 🧭 116. 5대 디자인 스킬 기반 활동(#pillars) & 누적기록(#dashboard) 고도화 (2026-11-13)
+- **사용자 요청:** `frontend-design`, `ui-ux promax`, `hallmark audit`, `emil-design-eng`, `web-design-guidelines` 5대 스킬을 활용하여 **활동(`#pillars`)**과 **누적기록(`#dashboard`)** 섹션 디자인 수정 ([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`, `i18n.js`):**
+  - **활동(`#pillars`) 아카데믹 에디토리얼 개편:**
+    - **그라데이션 스크림 캡션:** 사진 위 둥둥 떠있는 어두운 알약 배지를 제거하고, 각 슬라이드 하단(`::after`)에 부드러운 다크 그라데이션 스크림과 선명한 흰색 타이포그래피 캡션 적용.
+    - **SNS식 해시태그(`#`) 제거:** `#전공연계` 등 `#` 접두사를 제거하고 학술적 미들 도트(`·`) 키워드 라인(`전공연계 · 실무역량 · 현장실습` 등)으로 품격 상승.
+    - **3색 고유 컬러 호버 & 모션:** 교육(크림슨), 연구(로열 네이비), 서비스(브론즈 골드) 각 카드 고유의 호버 컬러·아이콘·화살표 반응 및 이미지 미세 줌(`scale(1.04)`), 슬라이드 도트 터치 히트영역 확장(`::after`), `prefers-reduced-motion` 대응 적용.
+    - **웹 접근성(A11y):** 카드 및 슬라이드 도트에 `role="button"`, `tabindex="0"`, Enter/Space 키보드 조작, `:focus-visible` 포커스 링 추가.
+  - **누적기록(`#dashboard`) 수평 정렬 & 프레임 완성도 교정:**
+    - **3열 완벽한 수평 정렬:** 기존에 푸터가 비어 있어 차트와 하단선이 어긋나던 `01. EDUCATION` 카드에 정식 푸터(`교육 과정 세부내용 보기 ->`, 클릭 시 교육 모달 연동)를 신설하여 3열 카드의 차트 위치(`top: 639, bottom: 755`)와 푸터 구분선(`top: 773, bottom: 817`)을 `0px` 오차로 완벽 일치.
+    - **프레임 모서리 밀착:** `.editorial-metric-grid`에 `overflow: hidden` 적용 및 `.card-edge-highlight`를 `left: 0; right: 0; height: 4px;`로 밀착시켜 둥근 모서리와 깔끔하게 일체화.
+    - **수치 안정성 & 접근성:** `.stat-number`에 `font-variant-numeric: tabular-nums;` 적용, SVG 스파크라인 컨테이너에 `aria-hidden="true"` 추가, 클릭 카드 키보드 탐색 지원.
+  - **다국어(`i18n.js`) & 캐시 버전:** `#pillars` 영문 키워드 `#` 제거 및 `#dashboard .card-edu` 영문 푸터(`Explore Education Curriculum`) 매핑, `v=20261113_design2` 갱신.
+- **검증 및 Git 동기화:** Playwright E2E 검증(데스크톱·모바일 오버플로우 `False`, 3열 차트/푸터 정렬 오차 `0px`, 교육 모달 팝업, 콘솔 에러/실패 요청 `0건`) 및 스크린샷 육안 확인 완료 후 `origin main` 커밋·푸시 완료.
 
 
 ## 🏆 45. 명예의 전당 대형 타이포그래피 호버 인덱스 에디토리얼 리디자인 (Editorial Split Hover Reveal) (2026-10-28)
@@ -2130,6 +2166,24 @@ Observation 100시간 실무 과정,
 
 ---
 
+## 🧭 116. 5대 디자인 스킬 기반 활동(#pillars) & 누적기록(#dashboard) 고도화 (2026-11-13)
+- **사용자 요청:** `frontend-design`, `ui-ux promax`, `hallmark audit`, `emil-design-eng`, `web-design-guidelines` 5대 스킬을 활용하여 **활동(`#pillars`)**과 **누적기록(`#dashboard`)** 섹션 디자인 수정 ([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`, `i18n.js`):**
+  - **활동(`#pillars`) 아카데믹 에디토리얼 개편:**
+    - **그라데이션 스크림 캡션:** 사진 위 둥둥 떠있는 어두운 알약 배지를 제거하고, 각 슬라이드 하단(`::after`)에 부드러운 다크 그라데이션 스크림과 선명한 흰색 타이포그래피 캡션 적용.
+    - **SNS식 해시태그(`#`) 제거:** `#전공연계` 등 `#` 접두사를 제거하고 학술적 미들 도트(`·`) 키워드 라인(`전공연계 · 실무역량 · 현장실습` 등)으로 품격 상승.
+    - **3색 고유 컬러 호버 & 모션:** 교육(크림슨), 연구(로열 네이비), 서비스(브론즈 골드) 각 카드 고유의 호버 컬러·아이콘·화살표 반응 및 이미지 미세 줌(`scale(1.04)`), 슬라이드 도트 터치 히트영역 확장(`::after`), `prefers-reduced-motion` 대응 적용.
+    - **웹 접근성(A11y):** 카드 및 슬라이드 도트에 `role="button"`, `tabindex="0"`, Enter/Space 키보드 조작, `:focus-visible` 포커스 링 추가.
+  - **누적기록(`#dashboard`) 수평 정렬 & 프레임 완성도 교정:**
+    - **3열 완벽한 수평 정렬:** 기존에 푸터가 비어 있어 차트와 하단선이 어긋나던 `01. EDUCATION` 카드에 정식 푸터(`교육 과정 세부내용 보기 ->`, 클릭 시 교육 모달 연동)를 신설하여 3열 카드의 차트 위치(`top: 639, bottom: 755`)와 푸터 구분선(`top: 773, bottom: 817`)을 `0px` 오차로 완벽 일치.
+    - **프레임 모서리 밀착:** `.editorial-metric-grid`에 `overflow: hidden` 적용 및 `.card-edge-highlight`를 `left: 0; right: 0; height: 4px;`로 밀착시켜 둥근 모서리와 깔끔하게 일체화.
+    - **수치 안정성 & 접근성:** `.stat-number`에 `font-variant-numeric: tabular-nums;` 적용, SVG 스파크라인 컨테이너에 `aria-hidden="true"` 추가, 클릭 카드 키보드 탐색 지원.
+  - **다국어(`i18n.js`) & 캐시 버전:** `#pillars` 영문 키워드 `#` 제거 및 `#dashboard .card-edu` 영문 푸터(`Explore Education Curriculum`) 매핑, `v=20261113_design2` 갱신.
+- **검증 및 Git 동기화:** Playwright E2E 검증(데스크톱·모바일 오버플로우 `False`, 3열 차트/푸터 정렬 오차 `0px`, 교육 모달 팝업, 콘솔 에러/실패 요청 `0건`) 및 스크린샷 육안 확인 완료 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
 ## 🧭 114. 프로필 사진 500x500 경량 규격화 및 Web A11y 접근성 교정 (2026-11-13)
 - **사용자 요청:**
   1. "1000x1000은 너무 큰 것 같아" ➔ 프로필 사진 규격 최적화 축소.
@@ -2171,6 +2225,24 @@ Observation 100시간 실무 과정,
     - `06 AT 센터 보조` > **농구부**(`김민주`, `김동언`) 및 **골프부**(`유승원`, `최주영`, `김무건`) 이니셜 플레이스홀더(`fallback`)를 `has-photo` 아바타 이미지(`?v=20261113`)로 교체.
     - `professorsData`에 5인 전원 상세 프로필 및 고화질 사진 경로 등록.
 - **검증 및 Git 동기화:** Playwright 브라우저 E2E 검증(농구부/골프부 카드 스크린샷 육안 대조, 5건 이미지 `naturalWidth=500` 정상 로딩, 모달 팝업, 콘솔 에러/실패 요청 `0건`) 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 🧭 116. 5대 디자인 스킬 기반 활동(#pillars) & 누적기록(#dashboard) 고도화 (2026-11-13)
+- **사용자 요청:** `frontend-design`, `ui-ux promax`, `hallmark audit`, `emil-design-eng`, `web-design-guidelines` 5대 스킬을 활용하여 **활동(`#pillars`)**과 **누적기록(`#dashboard`)** 섹션 디자인 수정 ([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`, `i18n.js`):**
+  - **활동(`#pillars`) 아카데믹 에디토리얼 개편:**
+    - **그라데이션 스크림 캡션:** 사진 위 둥둥 떠있는 어두운 알약 배지를 제거하고, 각 슬라이드 하단(`::after`)에 부드러운 다크 그라데이션 스크림과 선명한 흰색 타이포그래피 캡션 적용.
+    - **SNS식 해시태그(`#`) 제거:** `#전공연계` 등 `#` 접두사를 제거하고 학술적 미들 도트(`·`) 키워드 라인(`전공연계 · 실무역량 · 현장실습` 등)으로 품격 상승.
+    - **3색 고유 컬러 호버 & 모션:** 교육(크림슨), 연구(로열 네이비), 서비스(브론즈 골드) 각 카드 고유의 호버 컬러·아이콘·화살표 반응 및 이미지 미세 줌(`scale(1.04)`), 슬라이드 도트 터치 히트영역 확장(`::after`), `prefers-reduced-motion` 대응 적용.
+    - **웹 접근성(A11y):** 카드 및 슬라이드 도트에 `role="button"`, `tabindex="0"`, Enter/Space 키보드 조작, `:focus-visible` 포커스 링 추가.
+  - **누적기록(`#dashboard`) 수평 정렬 & 프레임 완성도 교정:**
+    - **3열 완벽한 수평 정렬:** 기존에 푸터가 비어 있어 차트와 하단선이 어긋나던 `01. EDUCATION` 카드에 정식 푸터(`교육 과정 세부내용 보기 ->`, 클릭 시 교육 모달 연동)를 신설하여 3열 카드의 차트 위치(`top: 639, bottom: 755`)와 푸터 구분선(`top: 773, bottom: 817`)을 `0px` 오차로 완벽 일치.
+    - **프레임 모서리 밀착:** `.editorial-metric-grid`에 `overflow: hidden` 적용 및 `.card-edge-highlight`를 `left: 0; right: 0; height: 4px;`로 밀착시켜 둥근 모서리와 깔끔하게 일체화.
+    - **수치 안정성 & 접근성:** `.stat-number`에 `font-variant-numeric: tabular-nums;` 적용, SVG 스파크라인 컨테이너에 `aria-hidden="true"` 추가, 클릭 카드 키보드 탐색 지원.
+  - **다국어(`i18n.js`) & 캐시 버전:** `#pillars` 영문 키워드 `#` 제거 및 `#dashboard .card-edu` 영문 푸터(`Explore Education Curriculum`) 매핑, `v=20261113_design2` 갱신.
+- **검증 및 Git 동기화:** Playwright E2E 검증(데스크톱·모바일 오버플로우 `False`, 3열 차트/푸터 정렬 오차 `0px`, 교육 모달 팝업, 콘솔 에러/실패 요청 `0건`) 및 스크린샷 육안 확인 완료 후 `origin main` 커밋·푸시 완료.
 
 
 ## 🎖️ 47. 실물 원목 현판(post_8.jpg) 및 공식 아카이브 기반 역대 학생 수상자(2015~2025) 100% 정밀 정정 복원 (2026-10-28)
@@ -2217,6 +2289,24 @@ Observation 100시간 실무 과정,
 
 ---
 
+## 🧭 116. 5대 디자인 스킬 기반 활동(#pillars) & 누적기록(#dashboard) 고도화 (2026-11-13)
+- **사용자 요청:** `frontend-design`, `ui-ux promax`, `hallmark audit`, `emil-design-eng`, `web-design-guidelines` 5대 스킬을 활용하여 **활동(`#pillars`)**과 **누적기록(`#dashboard`)** 섹션 디자인 수정 ([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`, `i18n.js`):**
+  - **활동(`#pillars`) 아카데믹 에디토리얼 개편:**
+    - **그라데이션 스크림 캡션:** 사진 위 둥둥 떠있는 어두운 알약 배지를 제거하고, 각 슬라이드 하단(`::after`)에 부드러운 다크 그라데이션 스크림과 선명한 흰색 타이포그래피 캡션 적용.
+    - **SNS식 해시태그(`#`) 제거:** `#전공연계` 등 `#` 접두사를 제거하고 학술적 미들 도트(`·`) 키워드 라인(`전공연계 · 실무역량 · 현장실습` 등)으로 품격 상승.
+    - **3색 고유 컬러 호버 & 모션:** 교육(크림슨), 연구(로열 네이비), 서비스(브론즈 골드) 각 카드 고유의 호버 컬러·아이콘·화살표 반응 및 이미지 미세 줌(`scale(1.04)`), 슬라이드 도트 터치 히트영역 확장(`::after`), `prefers-reduced-motion` 대응 적용.
+    - **웹 접근성(A11y):** 카드 및 슬라이드 도트에 `role="button"`, `tabindex="0"`, Enter/Space 키보드 조작, `:focus-visible` 포커스 링 추가.
+  - **누적기록(`#dashboard`) 수평 정렬 & 프레임 완성도 교정:**
+    - **3열 완벽한 수평 정렬:** 기존에 푸터가 비어 있어 차트와 하단선이 어긋나던 `01. EDUCATION` 카드에 정식 푸터(`교육 과정 세부내용 보기 ->`, 클릭 시 교육 모달 연동)를 신설하여 3열 카드의 차트 위치(`top: 639, bottom: 755`)와 푸터 구분선(`top: 773, bottom: 817`)을 `0px` 오차로 완벽 일치.
+    - **프레임 모서리 밀착:** `.editorial-metric-grid`에 `overflow: hidden` 적용 및 `.card-edge-highlight`를 `left: 0; right: 0; height: 4px;`로 밀착시켜 둥근 모서리와 깔끔하게 일체화.
+    - **수치 안정성 & 접근성:** `.stat-number`에 `font-variant-numeric: tabular-nums;` 적용, SVG 스파크라인 컨테이너에 `aria-hidden="true"` 추가, 클릭 카드 키보드 탐색 지원.
+  - **다국어(`i18n.js`) & 캐시 버전:** `#pillars` 영문 키워드 `#` 제거 및 `#dashboard .card-edu` 영문 푸터(`Explore Education Curriculum`) 매핑, `v=20261113_design2` 갱신.
+- **검증 및 Git 동기화:** Playwright E2E 검증(데스크톱·모바일 오버플로우 `False`, 3열 차트/푸터 정렬 오차 `0px`, 교육 모달 팝업, 콘솔 에러/실패 요청 `0건`) 및 스크린샷 육안 확인 완료 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
 ## 🧭 114. 프로필 사진 500x500 경량 규격화 및 Web A11y 접근성 교정 (2026-11-13)
 - **사용자 요청:**
   1. "1000x1000은 너무 큰 것 같아" ➔ 프로필 사진 규격 최적화 축소.
@@ -2258,6 +2348,24 @@ Observation 100시간 실무 과정,
     - `06 AT 센터 보조` > **농구부**(`김민주`, `김동언`) 및 **골프부**(`유승원`, `최주영`, `김무건`) 이니셜 플레이스홀더(`fallback`)를 `has-photo` 아바타 이미지(`?v=20261113`)로 교체.
     - `professorsData`에 5인 전원 상세 프로필 및 고화질 사진 경로 등록.
 - **검증 및 Git 동기화:** Playwright 브라우저 E2E 검증(농구부/골프부 카드 스크린샷 육안 대조, 5건 이미지 `naturalWidth=500` 정상 로딩, 모달 팝업, 콘솔 에러/실패 요청 `0건`) 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 🧭 116. 5대 디자인 스킬 기반 활동(#pillars) & 누적기록(#dashboard) 고도화 (2026-11-13)
+- **사용자 요청:** `frontend-design`, `ui-ux promax`, `hallmark audit`, `emil-design-eng`, `web-design-guidelines` 5대 스킬을 활용하여 **활동(`#pillars`)**과 **누적기록(`#dashboard`)** 섹션 디자인 수정 ([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`, `i18n.js`):**
+  - **활동(`#pillars`) 아카데믹 에디토리얼 개편:**
+    - **그라데이션 스크림 캡션:** 사진 위 둥둥 떠있는 어두운 알약 배지를 제거하고, 각 슬라이드 하단(`::after`)에 부드러운 다크 그라데이션 스크림과 선명한 흰색 타이포그래피 캡션 적용.
+    - **SNS식 해시태그(`#`) 제거:** `#전공연계` 등 `#` 접두사를 제거하고 학술적 미들 도트(`·`) 키워드 라인(`전공연계 · 실무역량 · 현장실습` 등)으로 품격 상승.
+    - **3색 고유 컬러 호버 & 모션:** 교육(크림슨), 연구(로열 네이비), 서비스(브론즈 골드) 각 카드 고유의 호버 컬러·아이콘·화살표 반응 및 이미지 미세 줌(`scale(1.04)`), 슬라이드 도트 터치 히트영역 확장(`::after`), `prefers-reduced-motion` 대응 적용.
+    - **웹 접근성(A11y):** 카드 및 슬라이드 도트에 `role="button"`, `tabindex="0"`, Enter/Space 키보드 조작, `:focus-visible` 포커스 링 추가.
+  - **누적기록(`#dashboard`) 수평 정렬 & 프레임 완성도 교정:**
+    - **3열 완벽한 수평 정렬:** 기존에 푸터가 비어 있어 차트와 하단선이 어긋나던 `01. EDUCATION` 카드에 정식 푸터(`교육 과정 세부내용 보기 ->`, 클릭 시 교육 모달 연동)를 신설하여 3열 카드의 차트 위치(`top: 639, bottom: 755`)와 푸터 구분선(`top: 773, bottom: 817`)을 `0px` 오차로 완벽 일치.
+    - **프레임 모서리 밀착:** `.editorial-metric-grid`에 `overflow: hidden` 적용 및 `.card-edge-highlight`를 `left: 0; right: 0; height: 4px;`로 밀착시켜 둥근 모서리와 깔끔하게 일체화.
+    - **수치 안정성 & 접근성:** `.stat-number`에 `font-variant-numeric: tabular-nums;` 적용, SVG 스파크라인 컨테이너에 `aria-hidden="true"` 추가, 클릭 카드 키보드 탐색 지원.
+  - **다국어(`i18n.js`) & 캐시 버전:** `#pillars` 영문 키워드 `#` 제거 및 `#dashboard .card-edu` 영문 푸터(`Explore Education Curriculum`) 매핑, `v=20261113_design2` 갱신.
+- **검증 및 Git 동기화:** Playwright E2E 검증(데스크톱·모바일 오버플로우 `False`, 3열 차트/푸터 정렬 오차 `0px`, 교육 모달 팝업, 콘솔 에러/실패 요청 `0건`) 및 스크린샷 육안 확인 완료 후 `origin main` 커밋·푸시 완료.
 
 ---
 
@@ -3595,6 +3703,24 @@ Observation 100시간 실무 과정,
 
 ---
 
+## 🧭 116. 5대 디자인 스킬 기반 활동(#pillars) & 누적기록(#dashboard) 고도화 (2026-11-13)
+- **사용자 요청:** `frontend-design`, `ui-ux promax`, `hallmark audit`, `emil-design-eng`, `web-design-guidelines` 5대 스킬을 활용하여 **활동(`#pillars`)**과 **누적기록(`#dashboard`)** 섹션 디자인 수정 ([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`, `i18n.js`):**
+  - **활동(`#pillars`) 아카데믹 에디토리얼 개편:**
+    - **그라데이션 스크림 캡션:** 사진 위 둥둥 떠있는 어두운 알약 배지를 제거하고, 각 슬라이드 하단(`::after`)에 부드러운 다크 그라데이션 스크림과 선명한 흰색 타이포그래피 캡션 적용.
+    - **SNS식 해시태그(`#`) 제거:** `#전공연계` 등 `#` 접두사를 제거하고 학술적 미들 도트(`·`) 키워드 라인(`전공연계 · 실무역량 · 현장실습` 등)으로 품격 상승.
+    - **3색 고유 컬러 호버 & 모션:** 교육(크림슨), 연구(로열 네이비), 서비스(브론즈 골드) 각 카드 고유의 호버 컬러·아이콘·화살표 반응 및 이미지 미세 줌(`scale(1.04)`), 슬라이드 도트 터치 히트영역 확장(`::after`), `prefers-reduced-motion` 대응 적용.
+    - **웹 접근성(A11y):** 카드 및 슬라이드 도트에 `role="button"`, `tabindex="0"`, Enter/Space 키보드 조작, `:focus-visible` 포커스 링 추가.
+  - **누적기록(`#dashboard`) 수평 정렬 & 프레임 완성도 교정:**
+    - **3열 완벽한 수평 정렬:** 기존에 푸터가 비어 있어 차트와 하단선이 어긋나던 `01. EDUCATION` 카드에 정식 푸터(`교육 과정 세부내용 보기 ->`, 클릭 시 교육 모달 연동)를 신설하여 3열 카드의 차트 위치(`top: 639, bottom: 755`)와 푸터 구분선(`top: 773, bottom: 817`)을 `0px` 오차로 완벽 일치.
+    - **프레임 모서리 밀착:** `.editorial-metric-grid`에 `overflow: hidden` 적용 및 `.card-edge-highlight`를 `left: 0; right: 0; height: 4px;`로 밀착시켜 둥근 모서리와 깔끔하게 일체화.
+    - **수치 안정성 & 접근성:** `.stat-number`에 `font-variant-numeric: tabular-nums;` 적용, SVG 스파크라인 컨테이너에 `aria-hidden="true"` 추가, 클릭 카드 키보드 탐색 지원.
+  - **다국어(`i18n.js`) & 캐시 버전:** `#pillars` 영문 키워드 `#` 제거 및 `#dashboard .card-edu` 영문 푸터(`Explore Education Curriculum`) 매핑, `v=20261113_design2` 갱신.
+- **검증 및 Git 동기화:** Playwright E2E 검증(데스크톱·모바일 오버플로우 `False`, 3열 차트/푸터 정렬 오차 `0px`, 교육 모달 팝업, 콘솔 에러/실패 요청 `0건`) 및 스크린샷 육안 확인 완료 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
 ## 🧭 114. 프로필 사진 500x500 경량 규격화 및 Web A11y 접근성 교정 (2026-11-13)
 - **사용자 요청:**
   1. "1000x1000은 너무 큰 것 같아" ➔ 프로필 사진 규격 최적화 축소.
@@ -3636,3 +3762,21 @@ Observation 100시간 실무 과정,
     - `06 AT 센터 보조` > **농구부**(`김민주`, `김동언`) 및 **골프부**(`유승원`, `최주영`, `김무건`) 이니셜 플레이스홀더(`fallback`)를 `has-photo` 아바타 이미지(`?v=20261113`)로 교체.
     - `professorsData`에 5인 전원 상세 프로필 및 고화질 사진 경로 등록.
 - **검증 및 Git 동기화:** Playwright 브라우저 E2E 검증(농구부/골프부 카드 스크린샷 육안 대조, 5건 이미지 `naturalWidth=500` 정상 로딩, 모달 팝업, 콘솔 에러/실패 요청 `0건`) 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 🧭 116. 5대 디자인 스킬 기반 활동(#pillars) & 누적기록(#dashboard) 고도화 (2026-11-13)
+- **사용자 요청:** `frontend-design`, `ui-ux promax`, `hallmark audit`, `emil-design-eng`, `web-design-guidelines` 5대 스킬을 활용하여 **활동(`#pillars`)**과 **누적기록(`#dashboard`)** 섹션 디자인 수정 ([implementation_plan.md](file:///C:/Users/LG/.gemini/antigravity/brain/ccf1f6cf-0abf-4a8a-bd6c-02b5640850be/implementation_plan.md) 승인).
+- **주요 수정 내역 (`index.html`, `khu-pro.css`, `i18n.js`):**
+  - **활동(`#pillars`) 아카데믹 에디토리얼 개편:**
+    - **그라데이션 스크림 캡션:** 사진 위 둥둥 떠있는 어두운 알약 배지를 제거하고, 각 슬라이드 하단(`::after`)에 부드러운 다크 그라데이션 스크림과 선명한 흰색 타이포그래피 캡션 적용.
+    - **SNS식 해시태그(`#`) 제거:** `#전공연계` 등 `#` 접두사를 제거하고 학술적 미들 도트(`·`) 키워드 라인(`전공연계 · 실무역량 · 현장실습` 등)으로 품격 상승.
+    - **3색 고유 컬러 호버 & 모션:** 교육(크림슨), 연구(로열 네이비), 서비스(브론즈 골드) 각 카드 고유의 호버 컬러·아이콘·화살표 반응 및 이미지 미세 줌(`scale(1.04)`), 슬라이드 도트 터치 히트영역 확장(`::after`), `prefers-reduced-motion` 대응 적용.
+    - **웹 접근성(A11y):** 카드 및 슬라이드 도트에 `role="button"`, `tabindex="0"`, Enter/Space 키보드 조작, `:focus-visible` 포커스 링 추가.
+  - **누적기록(`#dashboard`) 수평 정렬 & 프레임 완성도 교정:**
+    - **3열 완벽한 수평 정렬:** 기존에 푸터가 비어 있어 차트와 하단선이 어긋나던 `01. EDUCATION` 카드에 정식 푸터(`교육 과정 세부내용 보기 ->`, 클릭 시 교육 모달 연동)를 신설하여 3열 카드의 차트 위치(`top: 639, bottom: 755`)와 푸터 구분선(`top: 773, bottom: 817`)을 `0px` 오차로 완벽 일치.
+    - **프레임 모서리 밀착:** `.editorial-metric-grid`에 `overflow: hidden` 적용 및 `.card-edge-highlight`를 `left: 0; right: 0; height: 4px;`로 밀착시켜 둥근 모서리와 깔끔하게 일체화.
+    - **수치 안정성 & 접근성:** `.stat-number`에 `font-variant-numeric: tabular-nums;` 적용, SVG 스파크라인 컨테이너에 `aria-hidden="true"` 추가, 클릭 카드 키보드 탐색 지원.
+  - **다국어(`i18n.js`) & 캐시 버전:** `#pillars` 영문 키워드 `#` 제거 및 `#dashboard .card-edu` 영문 푸터(`Explore Education Curriculum`) 매핑, `v=20261113_design2` 갱신.
+- **검증 및 Git 동기화:** Playwright E2E 검증(데스크톱·모바일 오버플로우 `False`, 3열 차트/푸터 정렬 오차 `0px`, 교육 모달 팝업, 콘솔 에러/실패 요청 `0건`) 및 스크린샷 육안 확인 완료 후 `origin main` 커밋·푸시 완료.

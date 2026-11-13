@@ -72,19 +72,19 @@
         // Pillar 1: Education
         { selector: '.bento-card-edu .bento-title', en: 'Education' },
         { selector: '.bento-card-edu .bento-subtitle', en: 'Nurturing Sports Medicine Specialists' },
-        { selector: '.bento-card-edu .bento-tags', en: '<span>#Curriculum</span><span>#ClinicalSkills</span><span>#Practicum</span>' },
+        { selector: '.bento-card-edu .bento-tags', en: '<span>Curriculum</span><span>Clinical Skills</span><span>Practicum</span>' },
         { selector: '.bento-card-edu .bento-action-btn span', en: 'View Details' },
 
         // Pillar 2: Research
         { selector: '.bento-card-res .bento-title', en: 'Research' },
         { selector: '.bento-card-res .bento-subtitle', en: 'Evidence-Based Sports Medicine (EBM)' },
-        { selector: '.bento-card-res .bento-tags', en: '<span>#Biomechanics</span><span>#ClinicalData</span><span>#Papers</span>' },
+        { selector: '.bento-card-res .bento-tags', en: '<span>Biomechanics</span><span>Clinical Data</span><span>Publications</span>' },
         { selector: '.bento-card-res .bento-action-btn span', en: 'View Details' },
 
         // Pillar 3: Service
         { selector: '.bento-card-srv .bento-title', en: 'Service' },
         { selector: '.bento-card-srv .bento-subtitle', en: 'Sports Care &amp; On-Field Medical Support' },
-        { selector: '.bento-card-srv .bento-tags', en: '<span>#Conditioning</span><span>#MedicalSupport</span><span>#Rehab</span>' },
+        { selector: '.bento-card-srv .bento-tags', en: '<span>Conditioning</span><span>Medical Support</span><span>Rehab</span>' },
         { selector: '.bento-card-srv .bento-action-btn span', en: 'View Details' },
 
         // [핵심 사업 상세 모달 (#pillar-detail-modal)]
@@ -120,6 +120,7 @@
         { selector: '#dashboard .card-edu .stat-unit', en: 'Trainees' },
         { selector: '#dashboard .card-edu .editorial-card-title', en: 'Completed Basic AT Training' },
         { selector: '#dashboard .card-edu .editorial-card-desc', en: '100 hours of AT Center observation experience, first aid &amp; CPR certification, harassment &amp; violence prevention education, modality training, and full academic seminars completed' },
+        { selector: '#dashboard .card-edu .editorial-action-btn span', en: 'Explore Education Curriculum' },
         // 02 연구 지표
         { selector: '#dashboard .card-res .stat-unit', en: 'Papers' },
         { selector: '#dashboard .card-res .editorial-card-title', en: 'Published Research Papers' },
