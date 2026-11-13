@@ -3359,3 +3359,40 @@ Observation 100시간 실무 과정,
     - `야구 2.jpg` ~ `야구 6.jpg`의 MPO 다중 프레임 형식을 웹 표준 RGB JPEG(2000px 고화질 최적화)로 변환.
     - 야구부 모달(`sportsDepartmentData["야구"].photos`)에 6개 활동 사진 전건 등록 및 활동 갤러리에 `야구 2.jpg`, `야구 4.jpg` 카드 확장 반영.
 - **검증 및 Git 동기화:** Playwright 브라우저 E2E 검증(박지홍 교수, 홍진후 총무, 축구부/야구부 보조 AT 아바타 정상 렌더링, 야구부 모달 6장 고화질 렌더링, 404 실패 요청 0건) 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 🧭 113. 00 자문위원회 정태유 교수님 프로필 신설 및 한/영 다국어 연동 (2026-11-13)
+- **사용자 요청:** `assets` 폴더에 업로드된 정태유 교수님 사진을 프로필 규격에 맞추어 `00 자문위원회` 신상(프로필 카드)에 등록하고, 사용자가 제공한 국문/영문 정보를 100% 반영.
+  - **국문 정보:**
+    - 이름: `정태유, PhD, ATC, CAPE`
+    - 항목 1: `교수, Department of Kinesiology, California State University, Northridge`
+    - 항목 2: `센터장, The Center of Achievement through Adapted Physical Activity`
+    - 항목 3: `교육: 체육학박사 (Sports Medicine and Adapted Physical Activity), University of Virginia`
+  - **영문 정보:**
+    - 이름: `Taeyou Jung, PhD, ATC, CAPE`
+    - 항목 1: `Professor, Department of Kinesiology, California State University, Northridge`
+    - 항목 2: `Executive Director, The Center of Achievement through Adapted Physical Activity`
+    - 항목 3: `Education: PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia`
+- **주요 수정 내역 (`assets/`, `index.html`, `khu-pro.css`, `i18n.js`):**
+  - **프로필 사진 규격화 (`assets/profile_정태유.jpg`):**
+    - 원본 사진(336x343)을 `assets/raw_backup/profile_정태유.jpg`에 안전하게 영구 보존.
+    - 웹 표준 RGB JPEG 및 1:1 정사각 구도로 정밀 크롭하여 고화질 프로필 이미지 생성.
+  - **자문위원회 카드 마크업 및 상세 모달 데이터 (`index.html`):**
+    - 기존 임시 텍스트 스트립을 제거하고 교수진과 동일한 품격의 frameless editorial 카드(`.modern-profile-grid.grid-faculty.grid-advisory`)로 정태유 교수님 카드 신설 (`data-ko-name="정태유"`, `onclick="openProfModal(this)"`).
+    - `professorsData["정태유"]` 객체 등록: 직책, 학위명, 소속, 주요 경력 5개 항목(CSUN 교수, Center of Achievement 센터장, AT Center 자문위원, ATC, CAPE) 및 전문 연구분야 연동.
+    - 캐시 버전: `khu-pro.css?v=20261113_adv1`, `i18n.js?v=20261113_adv1` 갱신.
+  - **레이아웃 스타일 최적화 (`khu-pro.css`):**
+    - `.modern-profile-grid.grid-advisory`에 `grid-template-columns: minmax(0, 680px); gap: 0;`를 적용하여 단일 카드 상태에서도 우측이 허전하게 남지 않고 시각적으로 안정적인 프레임을 유지하도록 정돈.
+  - **완벽한 한/영 다국어 전환 엔진 (`i18n.js`):**
+    - `SINGLE_ELEMENT_TRANSLATIONS`: `#adv-header-title`('Advisory Board'), `#adv-name-jung`, `#adv-jung-line1~3` 영문 매핑 등록.
+    - `FACULTY_LEADER_EN_BULLETS` 및 `nameEl.replace`: 영문 전환 시 `Taeyou Jung, PhD, ATC, CAPE` 및 3개 영문 불릿 항목 정확한 노출 보장.
+    - `MODAL_UNIFIED_EN`: 영문 모드에서 정태유 교수님 상세 프로필 모달 호출 시 학력(Education), 소속(Courses), 센터(Office), 자문위원(Laboratory) 4대 항목 영문 통일 렌더링.
+    - 레거시 텍스트 덮어쓰기 로직(`advisoryBox.innerHTML = ...`) 제거로 카드 소실 문제 원천 방지.
+- **검증 및 Git 동기화:**
+  - Playwright 브라우저 E2E 무결성 검증:
+    - 국문 카드(`verify_advisory_ko.png`) 및 상세 모달(`verify_advisory_modal_ko.png`) 정상 렌더링 확인.
+    - 영문 전환 후 카드(`verify_advisory_en.png`) 및 영문 모달(`verify_advisory_modal_en.png`) 텍스트 매핑 100% 일치 확인.
+    - 콘솔 에러 `0건`, 네트워크 404 실패 요청 `0건`.
+  - `origin main` 커밋 및 푸시 완료.

@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261111_pro13">
+    <link rel="stylesheet" href="khu-pro.css?v=20261113_adv1">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261110_redesign">
 </head>
 <body>
@@ -162,12 +162,26 @@
             
             <!-- Group 0: Advisory Committee -->
             <div class="modern-group-header">
-                <h3 class="modern-group-title"><span class="seq">00</span> 자문위원회</h3>
+                <h3 class="modern-group-title"><span class="seq">00</span> <span id="adv-header-title">자문위원회</span></h3>
                 <div class="modern-group-line"></div>
             </div>
-            <div class="advisory-notice-strip">
-                <i class="fa-solid fa-users-gear"></i>
-                <span>경희대학교 AT 센터 자문위원회 위원 위촉 및 구성 준비 중입니다.</span>
+            
+            <div class="modern-profile-grid grid-faculty grid-advisory">
+                <!-- 정태유 자문위원 -->
+                <div class="modern-profile-card" data-ko-name="정태유" onclick="openProfModal(this)" style="cursor: pointer;" title="정태유 교수 상세 프로필 보기">
+                    <div class="modern-avatar-container">
+                        <div class="modern-avatar-blob"></div>
+                        <img src="assets/profile_정태유.jpg?v=20261113" alt="정태유" class="modern-avatar-img-fallback" onerror="this.src='assets/profile_default.png'">
+                    </div>
+                    <div class="modern-profile-info-col">
+                        <div class="modern-profile-name" id="adv-name-jung">정태유, PhD, ATC, CAPE</div>
+                        <ul class="modern-profile-exp">
+                            <li id="adv-jung-line1">교수, Department of Kinesiology, California State University, Northridge</li>
+                            <li id="adv-jung-line2">센터장, The Center of Achievement through Adapted Physical Activity</li>
+                            <li id="adv-jung-line3">교육: 체육학박사 (Sports Medicine and Adapted Physical Activity), University of Virginia</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <!-- Group 1: Faculty -->
@@ -3414,6 +3428,30 @@
     <script>
         // Comprehensive Professor & Staff Data Dictionary
         const professorsData = {
+            "정태유": {
+                role: "자문위원 · Professor, CSUN",
+                photo: "assets/profile_정태유.jpg?v=20261113",
+                degree: "체육학박사 (Sports Medicine and Adapted Physical Activity)",
+                dept: "California State University, Northridge",
+                grade: "교수 / 센터장 (PhD, ATC, CAPE)",
+                edu: "University of Virginia 체육학박사",
+                subject: "교수, Department of Kinesiology / The Center of Achievement 센터장",
+                lab: "University of Virginia",
+                cert: "ATC (미국 공인 선수트레이너) / CAPE (특수체육 공인전문가)",
+                email: "khuatcenter@khu.ac.kr",
+                career: [
+                    "현) Professor, Department of Kinesiology, California State University, Northridge",
+                    "현) Executive Director, The Center of Achievement through Adapted Physical Activity",
+                    "현) 경희대학교 Athletic Training Center 자문위원",
+                    "미국 공인 선수트레이너 (ATC, Certified Athletic Trainer)",
+                    "특수체육 공인전문가 (CAPE, Certified Adapted Physical Educator)"
+                ],
+                research: [
+                    "Sports Medicine and Adapted Physical Activity",
+                    "Aquatic Therapy and Motor Function for Individuals with Disabilities",
+                    "Neuromuscular Rehabilitation and Clinical Exercise Physiology"
+                ]
+            },
             "박지홍": {
                 role: "센터장 / 교수",
                 photo: "assets/profile_박지홍.jpg?v=20261112_retouch",
@@ -6613,7 +6651,7 @@ window.showEditorialYear = function(year, btn) {
 </script>
 
 <!-- 다국어 전환 엔진 (한국어 | English) -->
-<script src="i18n.js?v=20261111_v6"></script>
+<script src="i18n.js?v=20261113_adv1"></script>
 <!-- 오픈소스 모션 & 데이터 시각화 엔진 (anime.js v4.5 · Motion v14.9 · Bklit UI) -->
 <script src="assets/vendor/anime.umd.min.js"></script>
 <script src="assets/vendor/motion.min.js"></script>

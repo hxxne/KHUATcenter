@@ -1172,6 +1172,10 @@ html[lang="en"] .about-detail .pc-br {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(24px, 3vw, 44px);
 }
+.modern-profile-grid.grid-advisory {
+    grid-template-columns: minmax(0, 680px);
+    gap: 0;
+}
 .modern-profile-grid.grid-compact {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;

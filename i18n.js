@@ -152,6 +152,11 @@
         },
 
         // [소개 내 구성원 탭 (#members)]
+        { selector: '#adv-header-title', en: 'Advisory Board' },
+        { selector: '#adv-name-jung', en: 'Taeyou Jung, PhD, ATC, CAPE' },
+        { selector: '#adv-jung-line1', en: 'Professor, Department of Kinesiology, California State University, Northridge' },
+        { selector: '#adv-jung-line2', en: 'Executive Director, The Center of Achievement through Adapted Physical Activity' },
+        { selector: '#adv-jung-line3', en: 'Education: PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia' },
         { selector: '#btn-tab-sports', en: 'Team AT' },
         { selector: '#btn-tab-rehab', en: 'Sports Rehab Instructors' },
 
@@ -321,7 +326,7 @@
         {
             selector: '#members .modern-group-title',
             items: [
-                '<span class="seq">00</span> Advisory Committee',
+                '<span class="seq">00</span> Advisory Board',
                 '<span class="seq">01</span> Faculty members',
                 '<span class="seq">02</span> Leaders',
                 '<span class="seq">03</span> Graduate Students',
@@ -471,6 +476,10 @@
 
     // 01 Faculty members & 02 Leaders 영문 통일 프로필 카드 (Education / Courses / Office / Laboratory / Email)
     const FACULTY_LEADER_EN_BULLETS = {
+        '정태유':
+            '<li id="adv-jung-line1">Professor, Department of Kinesiology, California State University, Northridge</li>' +
+            '<li id="adv-jung-line2">Executive Director, The Center of Achievement through Adapted Physical Activity</li>' +
+            '<li id="adv-jung-line3">Education: PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia</li>',
         '박지홍 교수':
             '<li class="degree-line">Education: PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation),<br>Brigham Young University, Utah, USA</li>' +
             '<li>Courses: Athletic Training, Therapeutic Modalities,<br>Strength &amp; Conditioning Techniques</li>' +
@@ -743,16 +752,7 @@
             });
         });
 
-        // 3) 자문위원회 안내 박스 백업
-        const groupHeaders = document.querySelectorAll('#members .modern-group-header');
-        if (groupHeaders.length > 0) {
-            const advisoryBox = groupHeaders[0].nextElementSibling;
-            if (advisoryBox && advisoryBox.dataset.koOrig === undefined) {
-                advisoryBox.dataset.koOrig = advisoryBox.innerHTML;
-            }
-        }
-
-        // 4) 구성원 프로필 카드(.modern-profile-card) 원본 이름 및 리스트 백업
+        // 3) 구성원 프로필 카드(.modern-profile-card) 원본 이름 및 리스트 백업
         document.querySelectorAll('.modern-profile-card').forEach(card => {
             const nameEl = card.querySelector('.modern-profile-name');
             if (nameEl) {
@@ -861,23 +861,13 @@
             });
         });
 
-        // 3) 자문위원회 안내 박스 전환
-        const groupHeaders = document.querySelectorAll('#members .modern-group-header');
-        if (groupHeaders.length > 0) {
-            const advisoryBox = groupHeaders[0].nextElementSibling;
-            if (advisoryBox && advisoryBox.dataset.koOrig !== undefined) {
-                advisoryBox.innerHTML = (lang === 'en')
-                    ? '<i class="fa-solid fa-users-gear"></i><span>The Kyung Hee University AT Center Advisory Committee is currently being formed.</span>'
-                    : advisoryBox.dataset.koOrig;
-            }
-        }
-
-        // 4) 구성원 프로필 카드(.modern-profile-card) 직책 및 약력 전환
+        // 3) 구성원 프로필 카드(.modern-profile-card) 직책 및 약력 전환
         document.querySelectorAll('.modern-profile-card').forEach(card => {
             const nameEl = card.querySelector('.modern-profile-name');
             if (nameEl && nameEl.dataset.koOrig !== undefined) {
                 if (lang === 'en') {
                     nameEl.innerHTML = nameEl.dataset.koOrig
+                        .replace('정태유, PhD, ATC, CAPE', 'Taeyou Jung, PhD, ATC, CAPE')
                         .replace('박지홍 교수', '박지홍 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Prof. / Director</span>')
                         .replace('오성민 교수', '오성민 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research Prof.</span>')
                         .replace('김준영 실장', '김준영 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Athletic Training</span>')
@@ -1173,6 +1163,12 @@
                     const labVal = document.getElementById('prof-modal-lab');
 
                     const MODAL_UNIFIED_EN = {
+                        '정태유': {
+                            edu: 'PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia',
+                            courses: 'Professor, Department of Kinesiology, California State University, Northridge',
+                            office: 'Executive Director, The Center of Achievement through Adapted Physical Activity',
+                            lab: 'Advisory Board Member, Kyung Hee University AT Center'
+                        },
                         '박지홍': {
                             edu: 'PhD in Exercise Sciences (Physical Medicine & Rehabilitation), Brigham Young University, Utah, USA',
                             courses: 'Athletic Training, Therapeutic Modalities, Strength & Conditioning Techniques',
