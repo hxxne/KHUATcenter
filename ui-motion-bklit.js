@@ -66,7 +66,7 @@
             badgeKo: '+45명 / 년 평균',
             badgeEn: '+45 / yr avg',
             series: [
-                { year: '2016', val: 91 },
+                { year: '2013', val: 91 },
                 { year: '2018', val: 182 },
                 { year: '2020', val: 274 },
                 { year: '2022', val: 365 },
@@ -85,7 +85,7 @@
             badgeEn: '+32 in 5 yrs',
             // 실제 등록된 64편 논문의 연도별 누적 건수 (100% 실측 데이터)
             series: [
-                { year: '2016', val: 13 },
+                { year: '2013', val: 13 },
                 { year: '2018', val: 18 },
                 { year: '2020', val: 23 },
                 { year: '2022', val: 41 },
@@ -98,12 +98,12 @@
             color: '#A67C1E',
             unitKo: '건',
             unitEn: 'Cases',
-            labelKo: '누적 임상·현장 케어 추이',
-            labelEn: 'Cumulative Clinical Care',
+            labelKo: '부상 예방 및 컨디셔닝 서비스 (건)',
+            labelEn: 'Injury Prevention & Conditioning Service (Cases)',
             badgeKo: '연평균 1.5만+ 건',
             badgeEn: '15k+ / yr',
             series: [
-                { year: '2016', val: 24500 },
+                { year: '2013', val: 24500 },
                 { year: '2018', val: 52800 },
                 { year: '2020', val: 81400 },
                 { year: '2022', val: 114200 },

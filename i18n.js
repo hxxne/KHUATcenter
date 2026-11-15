@@ -115,7 +115,6 @@
 
         // [누적기록 대시보드 (#dashboard)]
         { selector: '#dashboard .section-title', en: 'Achievements' },
-        { selector: '#dashboard .section-subtitle', en: 'Key achievements in Education, Research, and Clinical Service built by KHU AT Center.' },
         // 01 교육 지표
         { selector: '#dashboard .card-edu .stat-unit', en: 'Trainees' },
         { selector: '#dashboard .card-edu .editorial-card-title', en: 'Completed Basic AT Training' },
@@ -130,7 +129,6 @@
         { selector: '#dashboard .card-srv .stat-unit', en: 'Cases' },
         { selector: '#dashboard .card-srv .editorial-card-title', en: 'Injury &amp; Conditioning Care' },
         { selector: '#dashboard .card-srv .editorial-card-desc', en: 'Acute &amp; chronic rehab, conditioning,<br>resistance training, and sports taping' },
-        { selector: '#dashboard .card-srv .editorial-spec-tag span', en: 'Dedicated support for 12 KHU varsity teams' },
 
         // [연구 논문 모달 (#research-modal)]
         { selector: '#research-modal .research-modal-header h2', en: 'Research &amp; Academic Publications' },
@@ -157,7 +155,7 @@
         { selector: '#adv-name-jung', en: 'Taeyou Jung, PhD, ATC, CAPE' },
         { selector: '#adv-jung-line1', en: 'Professor, Department of Kinesiology, California State University, Northridge' },
         { selector: '#adv-jung-line2', en: 'Executive Director, The Center of Achievement through Adapted Physical Activity' },
-        { selector: '#adv-jung-line3', en: 'Education: PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia' },
+        { selector: '#adv-jung-line3', en: 'PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia' },
         { selector: '#adv-name-parkwook', en: 'Wook Park, PhD' },
         { selector: '#adv-parkwook-line1', en: 'Professor, Dept. of Electronic Engineering, College of Electronics & Information, Kyung Hee University' },
         { selector: '#adv-parkwook-line2', en: 'Vice Director, KHU Industry-Academic Cooperation Foundation & Director, KHU Technology Holdings' },
@@ -175,7 +173,6 @@
 
         // [역사 (#awards)]
         { selector: '#awards .section-title', en: 'Our Journey' },
-        { selector: '#awards .section-subtitle', en: 'Official archive of student award recipients and leadership at Seonseung-gwan AT Center (2015–2025).' },
         { selector: '#stream-past-leaders .stream-sub-title', en: 'Past Leaders' },
         { selector: '#stream-past-leaders .stream-sub-desc', en: 'Former team leaders who directed academic research and clinical field practice across each division.' },
         { selector: '#stream-graduate-assistants .stream-sub-title', en: 'Graduate Alumni' },
@@ -492,7 +489,7 @@
         '정태유':
             '<li id="adv-jung-line1">Professor, Department of Kinesiology, California State University, Northridge</li>' +
             '<li id="adv-jung-line2">Executive Director, The Center of Achievement through Adapted Physical Activity</li>' +
-            '<li id="adv-jung-line3">Education: PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia</li>',
+            '<li id="adv-jung-line3">PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia</li>',
         '박욱':
             '<li id="adv-parkwook-line1">Professor, Dept. of Electronic Engineering, College of Electronics &amp; Information, Kyung Hee University</li>' +
             '<li id="adv-parkwook-line2">Vice Director, KHU Industry-Academic Cooperation Foundation &amp; Director, KHU Technology Holdings</li>' +
@@ -505,16 +502,15 @@
             '<li id="adv-bang-line3">FIFA Diploma in Football Medicine · IOC Diploma in Sports Medicine</li>' +
             '<li id="adv-bang-line4">Team Physician, South Korea National Short Track Speed Skating Team (KSU)</li>' +
             '<li id="adv-bang-line5">Sub-Internship: Asan Medical Center &amp; Samsung Medical Center · Orthopedic Residency Rotation: Seoul National University Hospital</li>',
-        '박지홍 교수':
-            '<li class="degree-line">Education: PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation),<br>Brigham Young University, Utah, USA</li>' +
-            '<li>Courses: Athletic Training, Therapeutic Modalities,<br>Strength &amp; Conditioning Techniques</li>' +
+        '박지홍, PhD, AT, CSCS':
+            '<li>Professor, Dept. of Sports Medicine, Kyung Hee University</li>' +
+            '<li class="degree-line">PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation), Brigham Young University</li>' +
             '<li>Office: College of Physical Education #422 (031-201-2721)</li>' +
-            '<li>Laboratory: Seonseung-gwan (031-201-2786)</li>' +
             '<li>jihong.park@khu.ac.kr</li>',
-        '오성민 교수':
-            '<li class="degree-line">Education: Ph.D. in Motor Control &amp; Sport Psych,<br>Sungkyunkwan University</li>' +
-            '<li>Courses: Evaluation of Athletic Injuries</li>' +
-            '<li>Laboratory: Seonseung-gwan AT Center (031-201-2786)</li>' +
+        '오성민, PhD':
+            '<li>Research Professor, Dept. of Sports Medicine, Kyung Hee University</li>' +
+            '<li class="degree-line">Ph.D. in Motor Control &amp; Sport Psych, Sungkyunkwan University</li>' +
+            '<li>Laboratory: Seonseung-gwan AT Center</li>' +
             '<li>sungminoh@khu.ac.kr</li>',
         '김준영 실장':
             '<li class="degree-line">Education: M.S. in Physical Education (Athletic Training),<br>Kyung Hee University</li>' +
@@ -895,8 +891,8 @@
                         .replace('정태유, PhD, ATC, CAPE', 'Taeyou Jung, PhD, ATC, CAPE')
                         .replace('박욱 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">교수</span>', 'Wook Park <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Prof.</span>')
                         .replace('방형식, MD, PhD', 'Hyeongsig Bang, MD, PhD')
-                        .replace('박지홍 교수', '박지홍 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Prof. / Director</span>')
-                        .replace('오성민 교수', '오성민 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research Prof.</span>')
+                        .replace('박지홍, PhD, AT, CSCS', 'Jihong Park, PhD, AT, CSCS')
+                        .replace('오성민, PhD', 'Sungmin Oh, PhD')
                         .replace('김준영 실장', '김준영 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Athletic Training</span>')
                         .replace('최현곤 재활팀장', '최현곤 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Sports Rehabilitation</span>')
                         .replace('이재욱 연구팀장', '이재욱 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research</span>')
