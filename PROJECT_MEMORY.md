@@ -3780,3 +3780,23 @@ Observation 100시간 실무 과정,
     - **수치 안정성 & 접근성:** `.stat-number`에 `font-variant-numeric: tabular-nums;` 적용, SVG 스파크라인 컨테이너에 `aria-hidden="true"` 추가, 클릭 카드 키보드 탐색 지원.
   - **다국어(`i18n.js`) & 캐시 버전:** `#pillars` 영문 키워드 `#` 제거 및 `#dashboard .card-edu` 영문 푸터(`Explore Education Curriculum`) 매핑, `v=20261113_design2` 갱신.
 - **검증 및 Git 동기화:** Playwright E2E 검증(데스크톱·모바일 오버플로우 `False`, 3열 차트/푸터 정렬 오차 `0px`, 교육 모달 팝업, 콘솔 에러/실패 요청 `0건`) 및 스크린샷 육안 확인 완료 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 📌 117. 자문위원 박욱 교수 추가 및 4인 프로필 규격 표준화 (2026-11-15)
+- **사용자 요청:**
+  1. **박욱 교수**를 **`00 자문위원회`** 자문위원단에 추가하고 교수·보직·경력·기술거래사·연구원·주요 연구/수상 실적 6가지 항목을 모두 반영.
+  2. 새로 업로드된 프로필 사진 4건(`profile_박욱.jpg`, `profile_이도형.jpg`, `profile_최성찬.jpg`, `profile_송서옥.jpg`)을 기존 공식 프로필 규격에 맞춰 표준화 및 웹사이트 반영.
+- **주요 수정 내역:**
+  - **프로필 이미지 표준화 (`assets/`, 원본 `assets/raw_backup/` 백업):**
+    - 4건 원본을 `assets/raw_backup/`에 보존하고, `ImageOps.exif_transpose`로 EXIF 회전 보정 (`profile_최성찬.jpg`, `profile_송서옥.jpg`).
+    - 기존 공식 프로필(`profile_조연지.jpg` 등)과 동일한 상반신 정중앙 1:1 구도 및 머리 위 여백 비율로 정밀 크롭 후 `500x500` RGB JPEG (q=90, 36~45KB)로 최적화.
+  - **자문위원회 2열 배치 및 박욱 교수 등록 (`index.html`, `khu-pro.css`, `i18n.js`):**
+    - `00 자문위원회` 섹션에 `박욱` 자문위원 카드 추가 및 `professorsData["박욱"]` 상세 프로필/연구실적 등록.
+    - `khu-pro.css`에서 기존 1인 전용 `.grid-advisory` 1열 강제 규칙을 제거하여 `.grid-faculty` 2열 대칭 레이아웃으로 복원(정태유·박욱 2열 배치).
+    - `i18n.js`에 박욱 교수 영문 카드·모달 번역 매핑 추가.
+  - **동아리 임원진 및 센터 보조 프로필 연동 (`index.html`):**
+    - `04 AT 동아리 임원진 > 이도형 (부회장)` 및 `professorsData["이도형"]`의 `profile_default.png`를 `assets/profile_이도형.jpg?v=20261115`로 교체.
+    - `06 AT 센터 보조` > **럭비부**(`이도형`, `최성찬`) 및 **배드민턴부**(`송서옥`) 이니셜 플레이스홀더를 `has-photo` 아바타 이미지(`?v=20261115`)로 교체하고 `professorsData`에 `최성찬`, `송서옥` 상세 데이터 신규 등록.
+- **검증 및 Git 동기화:** Playwright E2E 검증(국/영문 자문위원회 2열 배치, 박욱 상세 모달, 이도형 부회장, 럭비부/배드민턴부 아바타 스크린샷 육안 확인, 콘솔 에러 및 실패 요청 `0건`) 완료 후 `origin main` 커밋·푸시 완료.

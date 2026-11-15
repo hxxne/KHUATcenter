@@ -158,6 +158,12 @@
         { selector: '#adv-jung-line1', en: 'Professor, Department of Kinesiology, California State University, Northridge' },
         { selector: '#adv-jung-line2', en: 'Executive Director, The Center of Achievement through Adapted Physical Activity' },
         { selector: '#adv-jung-line3', en: 'Education: PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia' },
+        { selector: '#adv-name-parkwook', en: 'Wook Park, PhD' },
+        { selector: '#adv-parkwook-line1', en: 'Professor, Dept. of Electronic Engineering, College of Electronics & Information, Kyung Hee University' },
+        { selector: '#adv-parkwook-line2', en: 'Vice Director, KHU Industry-Academic Cooperation Foundation & Director, KHU Technology Holdings' },
+        { selector: '#adv-parkwook-line3', en: 'Former Chair, Graduate Dept. of Electronic Engineering, KHU · Registered Technology Trader (MOTIE)' },
+        { selector: '#adv-parkwook-line4', en: 'Researcher, Elesign Inc. (2002.02 – 2006.03, VoIP/IP Phone Development)' },
+        { selector: '#adv-parkwook-line5', en: 'Selected Honors & Publications: Cover articles in Nature Materials & Advanced Materials, Nature Photonics, Nature Communications; Young Researcher Award, Korean BioChip Society (2017.10)' },
         { selector: '#btn-tab-sports', en: 'Team AT' },
         { selector: '#btn-tab-rehab', en: 'Sports Rehab Instructors' },
 
@@ -481,6 +487,12 @@
             '<li id="adv-jung-line1">Professor, Department of Kinesiology, California State University, Northridge</li>' +
             '<li id="adv-jung-line2">Executive Director, The Center of Achievement through Adapted Physical Activity</li>' +
             '<li id="adv-jung-line3">Education: PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia</li>',
+        '박욱':
+            '<li id="adv-parkwook-line1">Professor, Dept. of Electronic Engineering, College of Electronics &amp; Information, Kyung Hee University</li>' +
+            '<li id="adv-parkwook-line2">Vice Director, KHU Industry-Academic Cooperation Foundation &amp; Director, KHU Technology Holdings</li>' +
+            '<li id="adv-parkwook-line3">Former Chair, Graduate Dept. of Electronic Engineering, KHU · Registered Technology Trader (MOTIE)</li>' +
+            '<li id="adv-parkwook-line4">Researcher, Elesign Inc. (2002.02 – 2006.03, VoIP/IP Phone Development)</li>' +
+            '<li id="adv-parkwook-line5">Selected Honors &amp; Publications: Cover articles in Nature Materials &amp; Advanced Materials, Nature Photonics, Nature Communications; Young Researcher Award, Korean BioChip Society (2017.10)</li>',
         '박지홍 교수':
             '<li class="degree-line">Education: PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation),<br>Brigham Young University, Utah, USA</li>' +
             '<li>Courses: Athletic Training, Therapeutic Modalities,<br>Strength &amp; Conditioning Techniques</li>' +
@@ -869,6 +881,7 @@
                 if (lang === 'en') {
                     nameEl.innerHTML = nameEl.dataset.koOrig
                         .replace('정태유, PhD, ATC, CAPE', 'Taeyou Jung, PhD, ATC, CAPE')
+                        .replace('박욱 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">교수</span>', 'Wook Park <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Prof.</span>')
                         .replace('박지홍 교수', '박지홍 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Prof. / Director</span>')
                         .replace('오성민 교수', '오성민 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research Prof.</span>')
                         .replace('김준영 실장', '김준영 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Athletic Training</span>')
@@ -1168,6 +1181,12 @@
                             edu: 'PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia',
                             courses: 'Professor, Department of Kinesiology, California State University, Northridge',
                             office: 'Executive Director, The Center of Achievement through Adapted Physical Activity',
+                            lab: 'Advisory Board Member, Kyung Hee University AT Center'
+                        },
+                        '박욱': {
+                            edu: 'PhD · Professor, Dept. of Electronic Engineering, Kyung Hee University',
+                            courses: 'Biochips, Microfluidics, Advanced Sensors & Industry-Academic Tech Commercialization',
+                            office: 'Vice Director, KHU Industry-Academic Cooperation Foundation & Director, KHU Technology Holdings',
                             lab: 'Advisory Board Member, Kyung Hee University AT Center'
                         },
                         '박지홍': {
