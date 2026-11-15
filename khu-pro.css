@@ -1255,6 +1255,10 @@ html[lang="en"] .about-detail .pc-br {
     grid-template-columns: 1fr;
     gap: 24px;
 }
+.modern-profile-grid.grid-row-list.grid-two-col {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(24px, 3vw, 44px);
+}
 
 /* FRAMELESS EDITORIAL PORTRAIT CARD — No rectangular border boxes! */
 .modern-profile-card {
@@ -3125,6 +3129,7 @@ html[lang="en"] .about-detail .pc-br {
     .modern-profile-grid,
     .modern-profile-grid.grid-faculty,
     .modern-profile-grid.grid-compact,
+    .modern-profile-grid.grid-row-list.grid-two-col,
     .assistant-group-grid,
     .award-year-cards-grid,
     .ed-leaders-split-grid,

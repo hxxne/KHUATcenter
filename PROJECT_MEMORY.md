@@ -3837,3 +3837,13 @@ Observation 100시간 실무 과정,
   - `00 자문위원회` 섹션에 `방형식, MD, PhD` 카드 추가(프로필 사진 미등록 상태로 `assets/profile_default.png` 적용) 및 `professorsData["방형식"]` 상세 프로필/주요경력 등록.
   - `i18n.js`에 `Hyeongsig Bang, MD, PhD` 영문 카드(`#adv-name-bang`, `#adv-bang-line1~5`) 및 모달 번역 매핑 추가, 스크립트 캐시 버전(`?v=20261115_bang`) 갱신.
 - **검증 및 Git 동기화:** Playwright로 국문/영문 자문위원회 카드 및 상세 모달 스크린샷 육안 확인, 콘솔 에러/실패 요청 `0건` 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 📌 121. 대학원생·스태프(전담 AT · 스포츠재활 강사) 2열 가로형 그리드 배치 (2026-11-15)
+- **사용자 요청:** `03 대학원생` 및 `05 스태프(체육부 AT · 스포츠재활 강사)` 섹션을 한 줄에 2명씩(2열) 배치하도록 개선 (`02 리더`, `04 AT 동아리 임원진`은 기존 1열 유지).
+- **주요 수정 내역 (`khu-pro.css`, `index.html`):**
+  - `khu-pro.css`에 `.modern-profile-grid.grid-row-list.grid-two-col` (`grid-template-columns: repeat(2, minmax(0, 1fr))`) 추가 및 모바일(`640px` 이하) 1열 반응형 규칙 포함.
+  - `index.html`: `03 대학원생`, `05 스태프 > 체육부 AT`, `05 스태프 > 스포츠재활 강사` 3개 그리드에 `grid-two-col` 클래스 적용 및 `khu-pro.css?v=20261115_twocol` 캐시 버전 갱신.
+- **검증 및 Git 동기화:** Playwright 데스크톱(`1440×900`) 2열 배치 스크린샷 육안 확인, 모바일(`390×844`) 가로 오버플로우 `False`, 콘솔 에러/실패 요청 `0건` 확인 후 `origin main` 커밋·푸시 완료.
