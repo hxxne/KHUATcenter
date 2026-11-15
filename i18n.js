@@ -164,6 +164,12 @@
         { selector: '#adv-parkwook-line3', en: 'Former Chair, Graduate Dept. of Electronic Engineering, KHU · Registered Technology Trader (MOTIE)' },
         { selector: '#adv-parkwook-line4', en: 'Researcher, Elesign Inc. (2002.02 – 2006.03, VoIP/IP Phone Development)' },
         { selector: '#adv-parkwook-line5', en: 'Selected Honors & Publications: Cover articles in Nature Materials & Advanced Materials, Nature Photonics, Nature Communications; Young Researcher Award, Korean BioChip Society (2017.10)' },
+        { selector: '#adv-name-bang', en: 'Hyeongsig Bang, MD, PhD' },
+        { selector: '#adv-bang-line1', en: 'Director of Orthopedics, GODOIL Hospital' },
+        { selector: '#adv-bang-line2', en: 'Ph.D. in Medicine (Sports Medicine), CHA University · Board-Certified Orthopedic Surgeon / Subspecialist in Sports Medicine' },
+        { selector: '#adv-bang-line3', en: 'FIFA Diploma in Football Medicine · IOC Diploma in Sports Medicine' },
+        { selector: '#adv-bang-line4', en: 'Team Physician, South Korea National Short Track Speed Skating Team (KSU)' },
+        { selector: '#adv-bang-line5', en: 'Sub-Internship: Asan Medical Center & Samsung Medical Center · Orthopedic Residency Rotation: Seoul National University Hospital' },
         { selector: '#btn-tab-sports', en: 'Team AT' },
         { selector: '#btn-tab-rehab', en: 'Sports Rehab Instructors' },
 
@@ -493,6 +499,12 @@
             '<li id="adv-parkwook-line3">Former Chair, Graduate Dept. of Electronic Engineering, KHU · Registered Technology Trader (MOTIE)</li>' +
             '<li id="adv-parkwook-line4">Researcher, Elesign Inc. (2002.02 – 2006.03, VoIP/IP Phone Development)</li>' +
             '<li id="adv-parkwook-line5">Selected Honors &amp; Publications: Cover articles in Nature Materials &amp; Advanced Materials, Nature Photonics, Nature Communications; Young Researcher Award, Korean BioChip Society (2017.10)</li>',
+        '방형식':
+            '<li id="adv-bang-line1">Director of Orthopedics, GODOIL Hospital</li>' +
+            '<li id="adv-bang-line2">Ph.D. in Medicine (Sports Medicine), CHA University · Board-Certified Orthopedic Surgeon / Subspecialist in Sports Medicine</li>' +
+            '<li id="adv-bang-line3">FIFA Diploma in Football Medicine · IOC Diploma in Sports Medicine</li>' +
+            '<li id="adv-bang-line4">Team Physician, South Korea National Short Track Speed Skating Team (KSU)</li>' +
+            '<li id="adv-bang-line5">Sub-Internship: Asan Medical Center &amp; Samsung Medical Center · Orthopedic Residency Rotation: Seoul National University Hospital</li>',
         '박지홍 교수':
             '<li class="degree-line">Education: PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation),<br>Brigham Young University, Utah, USA</li>' +
             '<li>Courses: Athletic Training, Therapeutic Modalities,<br>Strength &amp; Conditioning Techniques</li>' +
@@ -882,6 +894,7 @@
                     nameEl.innerHTML = nameEl.dataset.koOrig
                         .replace('정태유, PhD, ATC, CAPE', 'Taeyou Jung, PhD, ATC, CAPE')
                         .replace('박욱 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">교수</span>', 'Wook Park <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Prof.</span>')
+                        .replace('방형식, MD, PhD', 'Hyeongsig Bang, MD, PhD')
                         .replace('박지홍 교수', '박지홍 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Prof. / Director</span>')
                         .replace('오성민 교수', '오성민 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research Prof.</span>')
                         .replace('김준영 실장', '김준영 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Athletic Training</span>')
@@ -1187,6 +1200,12 @@
                             edu: 'PhD · Professor, Dept. of Electronic Engineering, Kyung Hee University',
                             courses: 'Biochips, Microfluidics, Advanced Sensors & Industry-Academic Tech Commercialization',
                             office: 'Vice Director, KHU Industry-Academic Cooperation Foundation & Director, KHU Technology Holdings',
+                            lab: 'Advisory Board Member, Kyung Hee University AT Center'
+                        },
+                        '방형식': {
+                            edu: 'Ph.D. in Medicine (Sports Medicine), CHA University',
+                            courses: 'Board-Certified Orthopedic Surgeon / Subspecialist in Sports Medicine',
+                            office: 'Director of Orthopedics, GODOIL Hospital',
                             lab: 'Advisory Board Member, Kyung Hee University AT Center'
                         },
                         '박지홍': {
