@@ -1251,6 +1251,10 @@ html[lang="en"] .about-detail .pc-br {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
 }
+.modern-profile-grid.grid-row-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
 
 /* FRAMELESS EDITORIAL PORTRAIT CARD — No rectangular border boxes! */
 .modern-profile-card {
@@ -1275,6 +1279,16 @@ html[lang="en"] .about-detail .pc-br {
     padding-bottom: 24px;
     border-bottom: 1px solid var(--line-hairline) !important;
 }
+.modern-profile-grid.grid-row-list .modern-profile-card {
+    display: grid;
+    grid-template-columns: 148px minmax(0, 1fr);
+    grid-template-rows: 1fr auto;
+    column-gap: 24px;
+    row-gap: 4px;
+    align-items: center;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line-hairline) !important;
+}
 
 .modern-avatar-container {
     width: 100%;
@@ -1293,6 +1307,16 @@ html[lang="en"] .about-detail .pc-br {
     aspect-ratio: auto;
     margin-bottom: 0;
     border-radius: 14px;
+}
+.modern-profile-grid.grid-row-list .modern-avatar-container {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 148px;
+    height: 172px;
+    aspect-ratio: auto;
+    margin-bottom: 0;
+    border-radius: 14px;
+    align-self: center;
 }
 
 .modern-avatar-blob {
@@ -1339,6 +1363,18 @@ html[lang="en"] .about-detail .pc-br {
 .modern-profile-grid.grid-faculty .modern-profile-name {
     font-size: 1.24rem;
     margin-bottom: 12px;
+}
+.modern-profile-grid.grid-row-list .modern-profile-name {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    font-size: 1.24rem;
+    margin-bottom: 6px;
+}
+.modern-profile-grid.grid-row-list .modern-profile-exp {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
 }
 .modern-profile-card:hover .modern-profile-name {
     color: var(--khu-crimson);
@@ -3107,6 +3143,21 @@ html[lang="en"] .about-detail .pc-br {
         height: 114px;
         aspect-ratio: auto;
         border-radius: 12px;
+    }
+    .modern-profile-grid.grid-row-list .modern-profile-card {
+        grid-template-columns: 96px minmax(0, 1fr);
+        column-gap: 16px;
+        align-items: start;
+    }
+    .modern-profile-grid.grid-row-list .modern-avatar-container {
+        width: 96px;
+        height: 114px;
+        border-radius: 12px;
+        align-self: start;
+    }
+    .modern-profile-grid.grid-row-list .modern-profile-name {
+        font-size: 1.08rem;
+        margin-bottom: 4px;
     }
     .editorial-card + .editorial-card {
         border-left: none;
