@@ -527,7 +527,7 @@ a {
     position: relative;
 }
 #about .section-title::before {
-    content: "01 / WHO WE ARE";
+    content: "WHO WE ARE";
     display: block;
     font-size: 0.72rem;
     font-weight: 800;
@@ -657,7 +657,7 @@ html[lang="en"] .about-detail .pc-br {
     margin-bottom: 44px;
 }
 #pillars .section-title::before {
-    content: "02 / WHAT WE DO";
+    content: "WHAT WE DO";
     display: block;
     font-size: 0.72rem;
     font-weight: 800;
@@ -942,7 +942,7 @@ html[lang="en"] .about-detail .pc-br {
     margin-bottom: 48px;
 }
 #dashboard .section-title::before {
-    content: "03 / ACHIEVEMENTS";
+    content: "ACHIEVEMENTS";
     display: block;
     font-size: 0.72rem;
     font-weight: 800;
@@ -1176,7 +1176,7 @@ html[lang="en"] .about-detail .pc-br {
     margin-bottom: 48px;
 }
 #members .section-title::before {
-    content: "04 / MEMBERS & DIRECTORY";
+    content: "MEMBERS & DIRECTORY";
     display: block;
     font-size: 0.72rem;
     font-weight: 800;
@@ -1655,7 +1655,7 @@ html[lang="en"] .about-detail .pc-br {
     margin-bottom: clamp(32px, 4vw, 48px);
 }
 #awards .section-title::before {
-    content: "04 / OUR JOURNEY";
+    content: "OUR JOURNEY";
     display: block;
     font-size: 0.72rem;
     font-weight: 800;
@@ -2263,7 +2263,7 @@ html[lang="en"] .about-detail .pc-br {
     margin: 0 0 28px 0;
 }
 .donate-section-title::before {
-    content: "06 / SPONSORSHIP";
+    content: "SPONSORSHIP";
     display: block;
     font-size: 0.72rem;
     font-weight: 800;
@@ -2458,7 +2458,7 @@ html[lang="en"] .about-detail .pc-br {
     min-width: 0;
 }
 #activities .section-title::before {
-    content: "05 / PHOTO & VIDEO";
+    content: "PHOTO & VIDEO";
     display: block;
     font-size: 0.72rem;
     font-weight: 800;
@@ -2787,7 +2787,7 @@ html[lang="en"] .about-detail .pc-br {
     margin-bottom: 40px;
 }
 #contact .section-title::before {
-    content: "07 / CONTACT & CONSULTATION";
+    content: "CONTACT & CONSULTATION";
     display: block;
     font-size: 0.72rem;
     font-weight: 800;

@@ -3847,3 +3847,15 @@ Observation 100시간 실무 과정,
   - `khu-pro.css`에 `.modern-profile-grid.grid-row-list.grid-two-col` (`grid-template-columns: repeat(2, minmax(0, 1fr))`) 추가 및 모바일(`640px` 이하) 1열 반응형 규칙 포함.
   - `index.html`: `03 대학원생`, `05 스태프 > 체육부 AT`, `05 스태프 > 스포츠재활 강사` 3개 그리드에 `grid-two-col` 클래스 적용 및 `khu-pro.css?v=20261115_twocol` 캐시 버전 갱신.
 - **검증 및 Git 동기화:** Playwright 데스크톱(`1440×900`) 2열 배치 스크린샷 육안 확인, 모바일(`390×844`) 가로 오버플로우 `False`, 콘솔 에러/실패 요청 `0건` 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 📌 122. 섹션 대제목·구성원 그룹 헤더·활동/누적기록 제목 앞 번호 일괄 제거 (2026-11-15)
+- **사용자 요청:** 제목 앞에 붙은 번호가 서로 겹치거나 순서가 다른 부분이 있어 제목 앞 숫자를 모두 제거.
+- **주요 수정 내역 (`khu-pro.css`, `index.html`, `i18n.js`):**
+  - `khu-pro.css`: 섹션 상단 Eyebrow(`::before`)의 `01 / WHO WE ARE` ~ `07 / CONTACT & CONSULTATION` 번호 접두사 제거 (`WHO WE ARE`, `WHAT WE DO`, `ACHIEVEMENTS`, `MEMBERS & DIRECTORY`, `OUR JOURNEY`, `PHOTO & VIDEO`, `SPONSORSHIP`, `CONTACT & CONSULTATION`).
+  - `index.html` & `i18n.js`:
+    - 구성원 그룹 타이틀(`<span class="seq">00</span>` ~ `06`) 및 영문 매핑 번호 제거 (`자문위원회`, `교수진`, `리더`, `대학원생`, `AT 동아리 임원진`, `스태프`, `AT 센터 보조`).
+    - `#pillars`, `#dashboard`, 활동 모달 탭의 `01.`, `02.`, `03.` 번호 접두사 제거 및 `v=20261115_clean` 캐시 버전 갱신.
+- **검증 및 Git 동기화:** Playwright로 국/영문 타이틀 및 활동·누적기록·구성원 화면 스크린샷 육안 확인, 콘솔 에러/실패 요청 `0건` 확인 후 `origin main` 커밋·푸시 완료.

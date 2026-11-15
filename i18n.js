@@ -90,9 +90,9 @@
         // [핵심 사업 상세 모달 (#pillar-detail-modal)]
         { selector: '#pmodal-main-title', en: 'Core Pillars Overview' },
         { selector: '#pillar-detail-modal .pmodal-desc', en: 'Detailed initiatives and vision of KHU AT Center\'s three core pillars: Education, Research, and Service.' },
-        { selector: '#ptab-btn-edu .ptab-text', en: '01. Education' },
-        { selector: '#ptab-btn-res .ptab-text', en: '02. Research' },
-        { selector: '#ptab-btn-srv .ptab-text', en: '03. Service' },
+        { selector: '#ptab-btn-edu .ptab-text', en: 'Education' },
+        { selector: '#ptab-btn-res .ptab-text', en: 'Research' },
+        { selector: '#ptab-btn-srv .ptab-text', en: 'Service' },
         {
             selector: '#pmodal-panel-edu .quote-text',
             en: '"By combining systematic academic theory with rich on-field clinical practice, we cultivate the next generation of elite sports medicine and athletic training professionals."'
@@ -335,17 +335,17 @@
                 '<h4>Injury Management &amp; Return-to-Play</h4><p>Monitored, step-by-step safe Return-to-Play (RTP) guidance based on injury history</p><div class="pmodal-feat-tags"><span>#ReturnToPlay(RTP)</span><span>#InjuryMonitoring</span></div>'
             ]
         },
-        // 구성원 섹션 그룹 타이틀 (00 ~ 06)
+        // 구성원 섹션 그룹 타이틀
         {
             selector: '#members .modern-group-title',
             items: [
-                '<span class="seq">00</span> Advisory Board',
-                '<span class="seq">01</span> Faculty members',
-                '<span class="seq">02</span> Leaders',
-                '<span class="seq">03</span> Graduate Students',
-                '<span class="seq">04</span> AT Club Executives',
-                '<span class="seq">05</span> Staff',
-                '<span class="seq">06</span> AT Center Assistants'
+                'Advisory Board',
+                'Faculty members',
+                'Leaders',
+                'Graduate Students',
+                'AT Club Executives',
+                'Staff',
+                'AT Center Assistants'
             ]
         },
         // 활동 사진 메인 카테고리 탭 4개
