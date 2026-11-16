@@ -157,7 +157,7 @@
                     <defs>
                         <!-- Bklit UI AreaGradientDefs 수직 그라데이션 -->
                         <linearGradient id="${gradId}" x1="0%" y1="0%" x2="0%" y2="100%">
-                            <stop offset="0%" stop-color="${cfg.color}" stop-opacity="0.24" />
+                            <stop offset="0%" stop-color="${cfg.color}" stop-opacity="0.11" />
                             <stop offset="100%" stop-color="${cfg.color}" stop-opacity="0.0" />
                         </linearGradient>
                         <!-- 좌우 가장자리 소프트 페이드 마스크 -->

@@ -640,7 +640,7 @@ html[lang="en"] .about-detail .pc-br {
 }
 
 /* ==========================================================================
-   5. Core Pillars (#pillars) — Horizontal Split Intro + Zero-Pill Architectural Cards
+   5. Core Pillars (#pillars) — Frameless Swiss Editorial Chapters (MIT / ETH Style)
    ========================================================================== */
 #pillars.bg-dark-lighter {
     background-color: var(--bg-canvas);
@@ -654,7 +654,7 @@ html[lang="en"] .about-detail .pc-br {
     justify-content: space-between;
     align-items: flex-end;
     gap: 24px;
-    margin-bottom: 44px;
+    margin-bottom: 36px;
 }
 #pillars .section-title::before {
     content: "WHAT WE DO";
@@ -671,48 +671,58 @@ html[lang="en"] .about-detail .pc-br {
     max-width: 440px;
 }
 
+/* Frameless Horizontal Chapter Stack — No White Cards, Hairline Dividers Only */
 .bento-pillars-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(18px, 2.2vw, 28px);
+    display: flex;
+    flex-direction: column;
+    border-top: 1.5px solid var(--ink-primary);
 }
 
 .bento-card {
     position: relative;
-    background: var(--bg-surface);
-    border-radius: 18px;
-    border: 1px solid rgba(17, 19, 24, 0.07);
-    padding: 0 0 26px 0;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--line-hairline);
+    padding: clamp(34px, 4vw, 50px) 0;
+    display: grid;
+    grid-template-columns: minmax(0, 4.8fr) minmax(0, 7.2fr);
+    gap: clamp(28px, 4.5vw, 60px);
+    align-items: stretch;
     cursor: pointer;
-    box-shadow: 0 10px 30px -14px rgba(17, 19, 24, 0.08);
-    transition: transform 0.35s var(--ease-expo), box-shadow 0.35s var(--ease-expo), border-color 0.25s ease;
+    box-shadow: none;
+    transition: border-color 0.25s ease;
     min-width: 0;
 }
 
 .bento-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-elevated);
+    transform: none;
+    box-shadow: none;
 }
-.bento-card-edu:hover { border-color: rgba(165, 0, 52, 0.26); }
-.bento-card-res:hover { border-color: rgba(0, 48, 94, 0.28); }
-.bento-card-srv:hover { border-color: rgba(142, 104, 26, 0.32); }
 
 .bento-card:focus-visible {
     outline: 2px solid var(--khu-crimson);
-    outline-offset: 4px;
+    outline-offset: 6px;
 }
 
-/* Media Slider inside Pillar Card — Fixed 16:10, Editorial Scrim Overlay */
+.bento-editorial-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 4px 0;
+}
+
+/* Wide Media Frame inside Pillar Chapter — 16:10 Editorial Frame */
 .bento-media-slider {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 16 / 9.6;
     height: auto;
+    border-radius: 10px;
     overflow: hidden;
     background: #14171F;
+    border: 1px solid rgba(17, 19, 24, 0.09);
     flex-shrink: 0;
 }
 
@@ -735,8 +745,8 @@ html[lang="en"] .about-detail .pc-br {
 .bento-slide::after {
     content: "";
     position: absolute;
-    inset: 40% 0 0 0;
-    background: linear-gradient(to top, rgba(13, 16, 23, 0.88) 0%, rgba(13, 16, 23, 0.42) 55%, transparent 100%);
+    inset: 48% 0 0 0;
+    background: linear-gradient(to top, rgba(13, 16, 23, 0.84) 0%, rgba(13, 16, 23, 0.36) 55%, transparent 100%);
     z-index: 1;
     pointer-events: none;
 }
@@ -752,16 +762,16 @@ html[lang="en"] .about-detail .pc-br {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.65s var(--ease-expo);
+    transition: transform 0.7s var(--ease-expo);
 }
 .bento-card:hover .bento-slide.active .bento-slide-img {
-    transform: scale(1.04);
+    transform: scale(1.025);
 }
 
 .bento-slide-caption {
     position: absolute;
-    left: 16px;
-    bottom: 13px;
+    left: 18px;
+    bottom: 14px;
     z-index: 3;
     padding: 0;
     border-radius: 0;
@@ -769,10 +779,10 @@ html[lang="en"] .about-detail .pc-br {
     backdrop-filter: none;
     color: rgba(255, 255, 255, 0.96);
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: -0.01em;
-    max-width: calc(100% - 82px);
+    max-width: calc(100% - 90px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -780,8 +790,8 @@ html[lang="en"] .about-detail .pc-br {
 
 .slider-dots {
     position: absolute;
-    right: 14px;
-    bottom: 15px;
+    right: 16px;
+    bottom: 16px;
     z-index: 4;
     display: flex;
     gap: 6px;
@@ -812,29 +822,37 @@ html[lang="en"] .about-detail .pc-br {
 }
 
 .bento-card-header {
-    padding: 22px 24px 0 24px;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    flex: 1;
 }
 
 .bento-badge-row {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
-/* Remove pill box — use crisp typographic label instead */
+/* Swiss Editorial Rubric Label */
 .bento-badge {
-    font-size: 0.72rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.76rem;
     font-weight: 800;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.16em;
     color: var(--khu-crimson);
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
     border-radius: 0 !important;
+}
+.bento-badge::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 1.5px;
+    background: currentColor;
 }
 .bento-badge.badge-res {
     color: var(--khu-navy);
@@ -843,30 +861,24 @@ html[lang="en"] .about-detail .pc-br {
     color: var(--khu-bronze);
 }
 
-.bento-cat-icon {
-    font-size: 1rem;
-    color: var(--ink-subtle);
-    opacity: 0.75;
-    transition: color 0.25s ease, opacity 0.25s ease;
-}
-.bento-card-edu:hover .bento-cat-icon { color: var(--khu-crimson); opacity: 1; }
-.bento-card-res:hover .bento-cat-icon { color: var(--khu-navy); opacity: 1; }
-.bento-card-srv:hover .bento-cat-icon { color: var(--khu-bronze); opacity: 1; }
-
 .bento-title {
-    font-size: 1.32rem;
+    font-size: clamp(1.65rem, 2.35vw, 2.15rem);
     font-weight: 800;
     color: var(--ink-primary);
-    letter-spacing: -0.025em;
-    line-height: 1.3;
-    margin: 0 0 8px 0;
+    letter-spacing: -0.03em;
+    line-height: 1.22;
+    margin: 0 0 10px 0;
+    transition: color 0.2s ease;
 }
+.bento-card-edu:hover .bento-title { color: var(--khu-crimson); }
+.bento-card-res:hover .bento-title { color: var(--khu-navy); }
+.bento-card-srv:hover .bento-title { color: var(--khu-bronze); }
 
 .bento-subtitle {
-    font-size: 0.92rem;
-    color: var(--ink-muted);
-    line-height: 1.58;
-    margin: 0 0 18px 0;
+    font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+    color: var(--ink-secondary);
+    line-height: 1.62;
+    margin: 0 0 22px 0;
 }
 
 /* Academic Keyword Line — Zero SNS hashtags or mini boxes */
@@ -874,15 +886,15 @@ html[lang="en"] .about-detail .pc-br {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 6px 10px;
-    margin-top: auto;
-    padding-top: 14px;
+    gap: 6px 12px;
+    margin-top: 0;
+    padding-top: 16px;
     border-top: 1px solid var(--line-hairline);
 }
 .bento-tags span {
-    font-size: 0.79rem;
+    font-size: 0.84rem;
     font-weight: 600;
-    color: var(--ink-subtle);
+    color: var(--ink-muted);
     background: transparent !important;
     border: none !important;
     padding: 0 !important;
@@ -891,38 +903,44 @@ html[lang="en"] .about-detail .pc-br {
 }
 .bento-tags span + span::before {
     content: "·";
-    margin-right: 10px;
+    margin-right: 12px;
     color: rgba(17, 19, 24, 0.28);
 }
 
 .bento-card-footer {
-    padding: 16px 24px 0 24px;
+    padding: 26px 0 0 0;
+    margin-top: auto;
 }
 
 .bento-action-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.86rem;
-    font-weight: 700;
+    font-size: 0.88rem;
+    font-weight: 800;
     color: var(--ink-primary);
-    transition: color 0.2s ease, gap 0.25s var(--ease-expo);
+    padding-bottom: 4px;
+    border-bottom: 1.5px solid rgba(17, 19, 24, 0.22);
+    transition: color 0.2s ease, border-color 0.2s ease, gap 0.25s var(--ease-expo);
 }
 .bento-card-edu:hover .bento-action-btn {
     color: var(--khu-crimson);
+    border-bottom-color: var(--khu-crimson);
     gap: 12px;
 }
 .bento-card-res:hover .bento-action-btn {
     color: var(--khu-navy);
+    border-bottom-color: var(--khu-navy);
     gap: 12px;
 }
 .bento-card-srv:hover .bento-action-btn {
     color: var(--khu-bronze);
+    border-bottom-color: var(--khu-bronze);
     gap: 12px;
 }
 
 /* ==========================================================================
-   6. Cumulative Dashboard (#dashboard) — Cool Pearl Blueprint Grid + Unified 3-Col Architectural Panel
+   6. Cumulative Dashboard (#dashboard) — Frameless Swiss Typographic Ledger
    ========================================================================== */
 #dashboard.editorial-metric-section {
     position: relative;
@@ -938,8 +956,8 @@ html[lang="en"] .about-detail .pc-br {
 }
 
 #dashboard .section-header {
-    text-align: center;
-    margin-bottom: 48px;
+    text-align: left;
+    margin-bottom: 36px;
 }
 #dashboard .section-title::before {
     content: "ACHIEVEMENTS";
@@ -948,24 +966,26 @@ html[lang="en"] .about-detail .pc-br {
     font-weight: 800;
     letter-spacing: 0.16em;
     color: var(--khu-navy);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
-/* Unified Architectural Report Strip — Perfect 3-Col Baseline Alignment */
+/* Frameless Open Ledger — Zero White Box, Zero Shadow, Pure Hairline Grid */
 .editorial-metric-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(12px);
-    border-radius: 22px;
-    box-shadow: var(--shadow-elevated);
-    overflow: hidden;
-    border: 1px solid rgba(0, 48, 94, 0.09);
+    background: transparent;
+    backdrop-filter: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
+    border: none;
+    border-top: 1.5px solid var(--ink-primary);
+    border-bottom: 1px solid var(--line-hairline);
 }
 
 .editorial-card {
     position: relative;
-    padding: clamp(30px, 3vw, 40px) clamp(22px, 2.5vw, 32px);
+    padding: clamp(32px, 3.5vw, 46px) clamp(24px, 2.8vw, 38px);
     display: grid;
     grid-template-rows: auto 1fr auto auto;
     align-content: stretch;
@@ -973,7 +993,14 @@ html[lang="en"] .about-detail .pc-br {
     background: transparent;
     border: none;
     min-width: 0;
-    transition: background-color 0.25s ease;
+}
+
+.editorial-card:first-child {
+    padding-left: 0;
+}
+
+.editorial-card:last-child {
+    padding-right: 0;
 }
 
 .editorial-card + .editorial-card {
@@ -981,7 +1008,7 @@ html[lang="en"] .about-detail .pc-br {
 }
 
 .editorial-card:hover {
-    background: rgba(250, 249, 246, 0.78);
+    background: transparent;
 }
 
 .clickable-stat-card {
@@ -989,31 +1016,14 @@ html[lang="en"] .about-detail .pc-br {
 }
 .clickable-stat-card:focus-visible {
     outline: 2px solid var(--khu-crimson);
-    outline-offset: -4px;
+    outline-offset: 4px;
 }
-
-.card-edge-highlight {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    border-radius: 0;
-    opacity: 0.9;
-    transition: height 0.25s ease, opacity 0.25s ease;
-}
-.editorial-card:hover .card-edge-highlight {
-    opacity: 1;
-}
-.card-edu .card-edge-highlight { background: var(--khu-crimson); }
-.card-res .card-edge-highlight { background: var(--khu-navy); }
-.card-srv .card-edge-highlight { background: var(--khu-gold); }
 
 .editorial-card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
 }
 
 .index-pill {
@@ -1021,113 +1031,85 @@ html[lang="en"] .about-detail .pc-br {
     align-items: center;
     gap: 8px;
 }
-.index-digit {
-    font-size: 0.78rem;
+.index-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
     font-weight: 800;
-    color: var(--ink-subtle);
-    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.15em;
+    color: var(--ink-primary);
 }
-.index-bar {
+.index-label::before {
+    content: "";
+    display: inline-block;
     width: 14px;
     height: 1.5px;
-    background: var(--line-strong);
-}
-.index-label {
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-    color: var(--ink-primary);
+    background: currentColor;
 }
 .card-edu .index-label { color: var(--khu-crimson); }
 .card-res .index-label { color: var(--khu-navy); }
 .card-srv .index-label { color: var(--khu-bronze); }
 
-.card-icon-ghost {
-    font-size: 1.35rem;
-    color: rgba(17, 19, 24, 0.14);
-    transition: color 0.25s ease;
-}
-.card-edu:hover .card-icon-ghost { color: rgba(165, 0, 52, 0.28); }
-.card-res:hover .card-icon-ghost { color: rgba(0, 48, 94, 0.28); }
-.card-srv:hover .card-icon-ghost { color: rgba(142, 104, 26, 0.30); }
-
 .editorial-stat-block {
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
 .stat-value-row {
     display: flex;
     align-items: baseline;
     gap: 6px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 .stat-number {
-    font-size: clamp(2.35rem, 3.6vw, 3.2rem);
+    font-size: clamp(2.85rem, 4.3vw, 3.85rem);
     font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.04em;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
     color: var(--ink-primary);
     font-variant-numeric: tabular-nums;
 }
 .stat-unit {
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--ink-muted);
 }
 
 .editorial-card-title {
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     font-weight: 800;
     color: var(--ink-primary);
     letter-spacing: -0.02em;
-    margin: 0 0 6px 0;
+    margin: 0 0 8px 0;
 }
 
 .editorial-card-desc {
-    font-size: 0.87rem;
+    font-size: 0.88rem;
     color: var(--ink-muted);
-    line-height: 1.58;
+    line-height: 1.62;
     text-wrap: balance;
     margin: 0;
 }
 
 .bklit-spark-container {
     width: 100%;
-    min-height: 92px;
-    margin: 14px 0 18px 0;
+    min-height: 86px;
+    margin: 16px 0 18px 0;
 }
 
 .editorial-card-footer {
     padding-top: 16px;
     border-top: 1px solid var(--line-hairline);
-    min-height: 44px;
+    min-height: 40px;
     display: flex;
     align-items: center;
-}
-
-.editorial-spec-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: var(--ink-muted);
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-}
-.editorial-spec-tag i {
-    color: var(--khu-crimson);
-}
-.card-srv .editorial-spec-tag i {
-    color: var(--khu-bronze);
 }
 
 .editorial-action-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 0.85rem;
+    font-size: 0.86rem;
     font-weight: 800;
     color: var(--khu-navy);
     transition: color 0.2s ease, gap 0.25s var(--ease-expo);
@@ -3005,7 +2987,11 @@ html[lang="en"] .about-detail .pc-br {
 }
 
 @media (max-width: 960px) {
-    .bento-pillars-grid,
+    .bento-card {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 28px 0;
+    }
     .editorial-metric-grid,
     .ed-leaders-split-grid,
     .modern-profile-grid:not(.grid-compact):not(.grid-faculty) {
@@ -3014,6 +3000,7 @@ html[lang="en"] .about-detail .pc-br {
     .editorial-card {
         display: flex;
         flex-direction: column;
+        padding: 28px 0;
     }
     .editorial-card.card-edu::after {
         display: none;
@@ -3021,6 +3008,9 @@ html[lang="en"] .about-detail .pc-br {
     .editorial-card + .editorial-card {
         border-left: none;
         border-top: 1px solid var(--line-hairline);
+    }
+    .card-srv .editorial-card-footer {
+        display: none;
     }
 }
 

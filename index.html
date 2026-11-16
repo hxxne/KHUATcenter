@@ -24,8 +24,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261116_ui">
-    <link rel="stylesheet" href="ui-motion-bklit.css?v=20261110_redesign">
+    <link rel="stylesheet" href="khu-pro.css?v=20261116_editorial">
+    <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
 
@@ -1439,7 +1439,7 @@
         </div>
     </section>
 
-        <!-- Core Pillars Section (Apple-style 3-Column Bento Grid with Media Sliders) -->
+        <!-- Core Pillars Section (Frameless Swiss Editorial Chapters with Wide Media Frames) -->
     <section id="pillars" class="section-padding bg-dark-lighter">
         <div class="container">
             <div class="section-header text-center">
@@ -1448,12 +1448,35 @@
                 <p class="section-subtitle">교육 (Education) · 연구 (Research) · 서비스 (Service)</p>
             </div>
 
-            <!-- Bento 3-Column Grid -->
+            <!-- Frameless Asymmetric Editorial Chapters (Left 5 Cols Typography / Right 7 Cols Wide Media) -->
             <div class="bento-pillars-grid">
                 
                 <!-- Pillar 1: Education (교육) -->
-                <div class="bento-card bento-card-edu" role="button" tabindex="0" onclick="openPillarModal('edu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('edu');}" title="클릭하여 교육 사업 세부내용 확인" aria-label="01. 교육(Education) - 미래 스포츠의학 전문가 양성 세부내용 보기">
-                    <!-- Top Media Slider -->
+                <div class="bento-card bento-card-edu" role="button" tabindex="0" onclick="openPillarModal('edu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('edu');}" title="클릭하여 교육 사업 세부내용 확인" aria-label="교육(Education) - 미래 스포츠의학 전문가 양성 세부내용 보기">
+                    <div class="bento-editorial-col">
+                        <div class="bento-card-header">
+                            <div class="bento-badge-row">
+                                <span class="bento-badge badge-edu">EDUCATION</span>
+                            </div>
+                            <h3 class="bento-title">교육</h3>
+                            <p class="bento-subtitle">미래 스포츠의학 전문가 양성</p>
+                            <div class="bento-tags">
+                                <span>전공연계</span>
+                                <span>실무역량</span>
+                                <span>현장실습</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 인터랙티브 액션 풋터 -->
+                        <div class="bento-card-footer">
+                            <div class="bento-action-btn">
+                                <span>사업 세부내용 보기</span>
+                                <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wide Media Frame -->
                     <div class="bento-media-slider" data-slider="edu">
                         <div class="bento-slide-track">
                             <div class="bento-slide active">
@@ -1475,33 +1498,34 @@
                             <span class="slider-dot" role="button" tabindex="0" aria-label="교육 슬라이드 3" onclick="event.stopPropagation(); setSliderSlide('edu', 2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('edu', 2);}"></span>
                         </div>
                     </div>
-
-                    <div class="bento-card-header">
-                        <div class="bento-badge-row">
-                            <span class="bento-badge badge-edu">EDUCATION</span>
-                            <span class="bento-cat-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
-                        </div>
-                        <h3 class="bento-title">교육</h3>
-                        <p class="bento-subtitle">미래 스포츠의학 전문가 양성</p>
-                        <div class="bento-tags">
-                            <span>전공연계</span>
-                            <span>실무역량</span>
-                            <span>현장실습</span>
-                        </div>
-                    </div>
-                    
-                    <!-- 인터랙티브 액션 풋터 -->
-                    <div class="bento-card-footer">
-                        <div class="bento-action-btn">
-                            <span>사업 세부내용 보기</span>
-                            <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Pillar 2: Research (연구) -->
-                <div class="bento-card bento-card-res" role="button" tabindex="0" onclick="openPillarModal('res')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('res');}" title="클릭하여 연구 사업 세부내용 확인" aria-label="02. 연구(Research) - 근거 중심 스포츠의학(EBM) 구현 세부내용 보기">
-                    <!-- Top Media Slider -->
+                <div class="bento-card bento-card-res" role="button" tabindex="0" onclick="openPillarModal('res')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('res');}" title="클릭하여 연구 사업 세부내용 확인" aria-label="연구(Research) - 근거 중심 스포츠의학(EBM) 구현 세부내용 보기">
+                    <div class="bento-editorial-col">
+                        <div class="bento-card-header">
+                            <div class="bento-badge-row">
+                                <span class="bento-badge badge-res">RESEARCH</span>
+                            </div>
+                            <h3 class="bento-title">연구</h3>
+                            <p class="bento-subtitle">근거 중심 스포츠의학(EBM) 구현</p>
+                            <div class="bento-tags">
+                                <span>생체역학</span>
+                                <span>임상데이터</span>
+                                <span>학술논문</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 인터랙티브 액션 풋터 -->
+                        <div class="bento-card-footer">
+                            <div class="bento-action-btn">
+                                <span>사업 세부내용 보기</span>
+                                <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wide Media Frame -->
                     <div class="bento-media-slider" data-slider="res">
                         <div class="bento-slide-track">
                             <div class="bento-slide active">
@@ -1523,33 +1547,34 @@
                             <span class="slider-dot" role="button" tabindex="0" aria-label="연구 슬라이드 3" onclick="event.stopPropagation(); setSliderSlide('res', 2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('res', 2);}"></span>
                         </div>
                     </div>
-
-                    <div class="bento-card-header">
-                        <div class="bento-badge-row">
-                            <span class="bento-badge badge-res">RESEARCH</span>
-                            <span class="bento-cat-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></span>
-                        </div>
-                        <h3 class="bento-title">연구</h3>
-                        <p class="bento-subtitle">근거 중심 스포츠의학(EBM) 구현</p>
-                        <div class="bento-tags">
-                            <span>생체역학</span>
-                            <span>임상데이터</span>
-                            <span>학술논문</span>
-                        </div>
-                    </div>
-                    
-                    <!-- 인터랙티브 액션 풋터 -->
-                    <div class="bento-card-footer">
-                        <div class="bento-action-btn">
-                            <span>사업 세부내용 보기</span>
-                            <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Pillar 3: Service (서비스) -->
-                <div class="bento-card bento-card-srv" role="button" tabindex="0" onclick="openPillarModal('srv')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('srv');}" title="클릭하여 서비스 사업 세부내용 확인" aria-label="03. 서비스(Service) - 실천적 스포츠 케어 및 현장 지원 세부내용 보기">
-                    <!-- Top Media Slider -->
+                <div class="bento-card bento-card-srv" role="button" tabindex="0" onclick="openPillarModal('srv')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('srv');}" title="클릭하여 서비스 사업 세부내용 확인" aria-label="서비스(Service) - 실천적 스포츠 케어 및 현장 지원 세부내용 보기">
+                    <div class="bento-editorial-col">
+                        <div class="bento-card-header">
+                            <div class="bento-badge-row">
+                                <span class="bento-badge badge-srv">SERVICE</span>
+                            </div>
+                            <h3 class="bento-title">서비스</h3>
+                            <p class="bento-subtitle">실천적 스포츠 케어 및 현장 지원</p>
+                            <div class="bento-tags">
+                                <span>선수컨디셔닝</span>
+                                <span>현장의무지원</span>
+                                <span>선수재활</span>
+                            </div>
+                        </div>
+                        
+                        <!-- 인터랙티브 액션 풋터 -->
+                        <div class="bento-card-footer">
+                            <div class="bento-action-btn">
+                                <span>사업 세부내용 보기</span>
+                                <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wide Media Frame -->
                     <div class="bento-media-slider" data-slider="srv">
                         <div class="bento-slide-track">
                             <div class="bento-slide active">
@@ -1571,28 +1596,6 @@
                             <span class="slider-dot" role="button" tabindex="0" aria-label="서비스 슬라이드 3" onclick="event.stopPropagation(); setSliderSlide('srv', 2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('srv', 2);}"></span>
                         </div>
                     </div>
-
-                    <div class="bento-card-header">
-                        <div class="bento-badge-row">
-                            <span class="bento-badge badge-srv">SERVICE</span>
-                            <span class="bento-cat-icon" aria-hidden="true"><i class="fa-solid fa-hand-holding-medical"></i></span>
-                        </div>
-                        <h3 class="bento-title">서비스</h3>
-                        <p class="bento-subtitle">실천적 스포츠 케어 및 현장 지원</p>
-                        <div class="bento-tags">
-                            <span>선수컨디셔닝</span>
-                            <span>현장의무지원</span>
-                            <span>선수재활</span>
-                        </div>
-                    </div>
-                    
-                    <!-- 인터랙티브 액션 풋터 -->
-                    <div class="bento-card-footer">
-                        <div class="bento-action-btn">
-                            <span>사업 세부내용 보기</span>
-                            <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -1600,28 +1603,23 @@
             </section>
 
     <!-- ======================================================= -->
-    <!-- 07. AT 센터 누적 기록: 프리미엄 에디토리얼 메트릭 (Editorial Metrics) -->
+    <!-- AT 센터 누적 기록: Frameless Swiss Typographic Ledger -->
     <!-- ======================================================= -->
     <section id="dashboard" class="editorial-metric-section">
-        <div class="metric-subtle-glow"></div>
         <div class="container relative-z">
-            <div class="section-header text-center">
+            <div class="section-header">
                 <h2 class="section-title">누적기록</h2>
                 <div class="divider"></div>
             </div>
 
-            <!-- 3대 핵심 지표 에디토리얼 그리드 (교육 -> 연구 -> 서비스 순서) -->
+            <!-- 3대 핵심 지표 오픈 레저 (교육 -> 연구 -> 서비스 순서, 외곽 박스 없음) -->
             <div class="editorial-metric-grid">
                 
-                <!-- 01. 교육 부문 (경희대 시그니처 딥 크림슨 - 클릭 시 교육 모달) -->
+                <!-- 교육 부문 (클릭 시 교육 모달) -->
                 <div class="editorial-card card-edu clickable-stat-card" id="btn-edu-modal" role="button" tabindex="0" onclick="openPillarModal('edu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('edu');}" title="클릭하여 교육 과정 세부내용 확인" aria-label="AT 센터 기본 교육 이수 547명 - 교육 과정 세부내용 보기">
-                    <div class="card-edge-highlight"></div>
                     <div class="editorial-card-header">
                         <div class="index-pill">
                             <span class="index-label">EDUCATION</span>
-                        </div>
-                        <div class="card-icon-ghost" aria-hidden="true">
-                            <i class="fa-solid fa-graduation-cap"></i>
                         </div>
                     </div>
 
@@ -1644,15 +1642,11 @@
                     </div>
                 </div>
 
-                <!-- 02. 연구 부문 (경희대 아카데믹 로열 다크 네이비 - 클릭 시 논문 모달) -->
+                <!-- 연구 부문 (클릭 시 논문 모달) -->
                 <div class="editorial-card card-res clickable-stat-card" id="btn-research-modal" role="button" tabindex="0" onclick="openResearchModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openResearchModal();}" title="클릭하여 연구 논문 목록 확인" aria-label="연구 논문 64편 - 논문 64편 목록 보기">
-                    <div class="card-edge-highlight"></div>
                     <div class="editorial-card-header">
                         <div class="index-pill">
                             <span class="index-label">RESEARCH</span>
-                        </div>
-                        <div class="card-icon-ghost" aria-hidden="true">
-                            <i class="fa-solid fa-book-bookmark"></i>
                         </div>
                     </div>
 
@@ -1675,15 +1669,11 @@
                     </div>
                 </div>
 
-                <!-- 03. 서비스 부문 (경희대 샴페인 웜 골드) -->
+                <!-- 서비스 부문 -->
                 <div class="editorial-card card-srv">
-                    <div class="card-edge-highlight"></div>
                     <div class="editorial-card-header">
                         <div class="index-pill">
                             <span class="index-label">SERVICE</span>
-                        </div>
-                        <div class="card-icon-ghost" aria-hidden="true">
-                            <i class="fa-solid fa-heart-pulse"></i>
                         </div>
                     </div>
 
@@ -1692,7 +1682,7 @@
                             <span class="stat-number metric-num" data-target="173316">173,316</span>
                             <span class="stat-unit">건</span>
                         </div>
-                        <h3 class="editorial-card-title">선수 부상 및 컨디셔닝 케어(건)</h3>
+                        <h3 class="editorial-card-title">부상 예방 및 컨디셔닝 서비스 (건)</h3>
                         <p class="editorial-card-desc">급성 · 만성 손상 재활, 컨디셔닝, 퍼포먼스 향상,<br>저항 운동, 스포츠 테이핑</p>
                     </div>
 

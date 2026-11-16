@@ -14,37 +14,29 @@
 .bklit-spark-container {
     position: relative;
     width: 100%;
-    margin: 14px 0 18px 0;
-    padding: 10px 12px 8px 12px;
-    border-radius: 12px;
-    background: #F8FAFC;
-    border: 1px solid #EEF2F6;
-    transition: border-color 0.25s ease, background-color 0.25s ease;
+    margin: 16px 0 18px 0;
+    padding: 12px 0 4px 0;
+    border-radius: 0;
+    background: transparent;
+    border: none;
+    border-top: 1px dashed rgba(17, 19, 24, 0.12);
 }
 
-.card-edu:hover .bklit-spark-container {
-    background: rgba(165, 0, 52, 0.025);
-    border-color: rgba(165, 0, 52, 0.16);
-}
-
-.card-res:hover .bklit-spark-container {
-    background: rgba(0, 34, 68, 0.025);
-    border-color: rgba(0, 34, 68, 0.16);
-}
-
+.card-edu:hover .bklit-spark-container,
+.card-res:hover .bklit-spark-container,
 .card-srv:hover .bklit-spark-container {
-    background: rgba(166, 124, 30, 0.03);
-    border-color: rgba(166, 124, 30, 0.2);
+    background: transparent;
+    border-color: rgba(17, 19, 24, 0.18);
 }
 
 .bklit-spark-meta {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
     font-size: 0.74rem;
     font-weight: 700;
-    color: #64748B;
+    color: #5C626E;
     font-variant-numeric: tabular-nums;
 }
 
@@ -71,10 +63,10 @@
 .bklit-spark-axis {
     display: flex;
     justify-content: space-between;
-    margin-top: 3px;
-    font-size: 0.68rem;
+    margin-top: 4px;
+    font-size: 0.69rem;
     font-weight: 600;
-    color: #94A3B8;
+    color: #7D8492;
     font-variant-numeric: tabular-nums;
 }
 
