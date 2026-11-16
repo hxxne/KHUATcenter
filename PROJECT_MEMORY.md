@@ -3971,3 +3971,13 @@ Observation 100시간 실무 과정,
     - `06 AT 센터 보조` > **농구부**(`이진호`, `황이삭`, `김성준`) 및 **배구부**(`박인서`, `박유빈`) 이니셜 플레이스홀더를 `has-photo` 아바타(`?v=20261116`)로 교체.
     - `professorsData`에 5인 상세 프로필 데이터 신규 등록.
 - **검증 및 Git 동기화:** Playwright로 농구부·배구부 아바타 카드 육안 확인 및 콘솔 에러·실패 요청 `0건` 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 📌 132. 문의 유형에 '스포츠의학 현장 지원 서비스' 옵션 추가 (2026-11-16)
+- **사용자 요청:** 홈페이지 하단 문의 유형 선택 목록에 `"스포츠의학 현장 지원 서비스"` 추가.
+- **주요 수정 내역 (`index.html`, `i18n.js`):**
+  - `index.html`: `#form-type` `<select>` 마지막 항목으로 `<option value="스포츠의학 현장 지원 서비스">스포츠의학 현장 지원 서비스</option>` 추가.
+  - `i18n.js`: `inquiryTypeOptionMap`에 영문 번역 `'Sports Medicine Field Support Service'` 추가 및 `i18n.js?v=20261116_form` 캐시 버전 갱신.
+- **검증 및 Git 동기화:** Playwright로 국문/영문 문의 유형 옵션 목록 정상 노출 확인 후 `origin main` 커밋·푸시 완료.

@@ -1036,7 +1036,8 @@
             '': 'Select inquiry type',
             '스포츠 부상 상담 & 재활': 'Sports Injury Consultation & Rehab',
             '프로그램/컨디셔닝 자문': 'Conditioning / Program Advisory',
-            '교육 / 자문': 'Education / Collaboration'
+            '교육 / 자문': 'Education / Collaboration',
+            '스포츠의학 현장 지원 서비스': 'Sports Medicine Field Support Service'
         };
         document.querySelectorAll('#form-type option').forEach(opt => {
             const val = opt.getAttribute('value') || '';
