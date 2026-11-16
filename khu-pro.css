@@ -1815,7 +1815,7 @@ html[lang="en"] .about-detail .pc-br {
     grid-template-columns: 1fr auto;
     grid-template-areas:
         "pill hint"
-        "name desc";
+        "name name";
     align-items: end;
     column-gap: 24px;
     row-gap: 8px;
@@ -1915,7 +1915,7 @@ html[lang="en"] .about-detail .pc-br {
     font-weight: 800;
     color: var(--ink-primary);
     letter-spacing: -0.025em;
-    margin: 0 0 6px 0;
+    margin: 0 0 12px 0;
     display: flex;
     flex-direction: column;
     gap: 2px;
