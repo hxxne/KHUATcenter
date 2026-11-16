@@ -153,21 +153,25 @@
         // [소개 내 구성원 탭 (#members)]
         { selector: '#adv-header-title', en: 'Advisory Board' },
         { selector: '#adv-name-jung', en: 'Taeyou Jung, PhD, ATC, CAPE' },
-        { selector: '#adv-jung-line1', en: 'Professor, Department of Kinesiology, California State University, Northridge' },
-        { selector: '#adv-jung-line2', en: 'Executive Director, The Center of Achievement through Adapted Physical Activity' },
-        { selector: '#adv-jung-line3', en: 'PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia' },
+        { selector: '#adv-jung-line1', en: 'Affiliation: Professor, Dept. of Kinesiology, California State University, Northridge' },
+        { selector: '#adv-jung-line2', en: 'Position: Executive Director, The Center of Achievement through Adapted Physical Activity' },
+        { selector: '#adv-jung-line3', en: 'Degree &amp; Cert: PhD (University of Virginia) · ATC · CAPE' },
+        { selector: '#adv-jung-line4', en: 'Specialty: Sports Medicine · Adapted Physical Activity · Aquatic &amp; Neuromuscular Rehab' },
         { selector: '#adv-name-parkwook', en: 'Wook Park, PhD' },
-        { selector: '#adv-parkwook-line1', en: 'Professor, Dept. of Electronic Engineering, College of Electronics & Information, Kyung Hee University' },
-        { selector: '#adv-parkwook-line2', en: 'Vice Director, KHU Industry-Academic Cooperation Foundation & Director, KHU Technology Holdings' },
-        { selector: '#adv-parkwook-line3', en: 'Former Chair, Graduate Dept. of Electronic Engineering, KHU · Registered Technology Trader (MOTIE)' },
-        { selector: '#adv-parkwook-line4', en: 'Researcher, Elesign Inc. (2002.02 – 2006.03, VoIP/IP Phone Development)' },
-        { selector: '#adv-parkwook-line5', en: 'Selected Honors & Publications: Cover articles in Nature Materials & Advanced Materials, Nature Photonics, Nature Communications; Young Researcher Award, Korean BioChip Society (2017.10)' },
+        { selector: '#adv-parkwook-line1', en: 'Affiliation: Professor, Dept. of Electronic Engineering, Kyung Hee University' },
+        { selector: '#adv-parkwook-line2', en: 'Position: Vice Director, KHU Industry-Academic Cooperation Foundation · Director, KHU Tech Holdings' },
+        { selector: '#adv-parkwook-line3', en: 'Degree &amp; Cert: PhD · Registered Tech Trader (MOTIE) · Former Chair, Graduate Dept. of EE' },
+        { selector: '#adv-parkwook-line4', en: 'Highlights: Cover papers in Nature Materials &amp; Nature Photonics · BioChip Young Researcher Award' },
         { selector: '#adv-name-bang', en: 'Hyeongsig Bang, MD, PhD' },
-        { selector: '#adv-bang-line1', en: 'Director of Orthopedics, GODOIL Hospital' },
-        { selector: '#adv-bang-line2', en: 'Ph.D. in Medicine (Sports Medicine), CHA University · Board-Certified Orthopedic Surgeon / Subspecialist in Sports Medicine' },
-        { selector: '#adv-bang-line3', en: 'FIFA Diploma in Football Medicine · IOC Diploma in Sports Medicine' },
-        { selector: '#adv-bang-line4', en: 'Team Physician, South Korea National Short Track Speed Skating Team (KSU)' },
-        { selector: '#adv-bang-line5', en: 'Sub-Internship: Asan Medical Center & Samsung Medical Center · Orthopedic Residency Rotation: Seoul National University Hospital' },
+        { selector: '#adv-bang-line1', en: 'Affiliation: Director of Orthopedics, GODOIL Hospital' },
+        { selector: '#adv-bang-line2', en: 'Position: Team Physician, Korea National Short Track Speed Skating Team (KSU)' },
+        { selector: '#adv-bang-line3', en: 'Degree &amp; Cert: MD, PhD (CHA Univ.) · Board-Certified Orthopedic Surgeon · FIFA / IOC Diploma' },
+        { selector: '#adv-bang-line4', en: 'Training: Sub-Internship at Asan &amp; Samsung Medical Center · Residency Rotation at SNUH' },
+        { selector: '#adv-name-son', en: 'Jin-won Son, KICPA' },
+        { selector: '#adv-son-line1', en: 'Affiliation: Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES' },
+        { selector: '#adv-son-line2', en: 'Position: Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town' },
+        { selector: '#adv-son-line3', en: 'Degree &amp; Cert: Certified Public Accountant (KICPA) · Former CPA, Deloitte Anjin LLC' },
+        { selector: '#adv-son-line4', en: 'Highlights: Samsung Biologics IPO &amp; M&amp;A · National Assembly Commendation · National Shooting Reserve' },
         { selector: '#btn-tab-sports', en: 'Team AT' },
         { selector: '#btn-tab-rehab', en: 'Sports Rehab Instructors' },
 
@@ -485,21 +489,25 @@
     // 01 Faculty members & 02 Leaders 영문 통일 프로필 카드 (Education / Courses / Office / Laboratory / Email)
     const FACULTY_LEADER_EN_BULLETS = {
         '정태유':
-            '<li id="adv-jung-line1">Professor, Department of Kinesiology, California State University, Northridge</li>' +
-            '<li id="adv-jung-line2">Executive Director, The Center of Achievement through Adapted Physical Activity</li>' +
-            '<li id="adv-jung-line3">PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia</li>',
+            '<li id="adv-jung-line1">Affiliation: Professor, Dept. of Kinesiology, California State University, Northridge</li>' +
+            '<li id="adv-jung-line2">Position: Executive Director, The Center of Achievement through Adapted Physical Activity</li>' +
+            '<li id="adv-jung-line3">Degree &amp; Cert: PhD (University of Virginia) · ATC · CAPE</li>' +
+            '<li id="adv-jung-line4">Specialty: Sports Medicine · Adapted Physical Activity · Aquatic &amp; Neuromuscular Rehab</li>',
         '박욱':
-            '<li id="adv-parkwook-line1">Professor, Dept. of Electronic Engineering, College of Electronics &amp; Information, Kyung Hee University</li>' +
-            '<li id="adv-parkwook-line2">Vice Director, KHU Industry-Academic Cooperation Foundation &amp; Director, KHU Technology Holdings</li>' +
-            '<li id="adv-parkwook-line3">Former Chair, Graduate Dept. of Electronic Engineering, KHU · Registered Technology Trader (MOTIE)</li>' +
-            '<li id="adv-parkwook-line4">Researcher, Elesign Inc. (2002.02 – 2006.03, VoIP/IP Phone Development)</li>' +
-            '<li id="adv-parkwook-line5">Selected Honors &amp; Publications: Cover articles in Nature Materials &amp; Advanced Materials, Nature Photonics, Nature Communications; Young Researcher Award, Korean BioChip Society (2017.10)</li>',
+            '<li id="adv-parkwook-line1">Affiliation: Professor, Dept. of Electronic Engineering, Kyung Hee University</li>' +
+            '<li id="adv-parkwook-line2">Position: Vice Director, KHU Industry-Academic Cooperation Foundation · Director, KHU Tech Holdings</li>' +
+            '<li id="adv-parkwook-line3">Degree &amp; Cert: PhD · Registered Tech Trader (MOTIE) · Former Chair, Graduate Dept. of EE</li>' +
+            '<li id="adv-parkwook-line4">Highlights: Cover papers in Nature Materials &amp; Nature Photonics · BioChip Young Researcher Award</li>',
         '방형식':
-            '<li id="adv-bang-line1">Director of Orthopedics, GODOIL Hospital</li>' +
-            '<li id="adv-bang-line2">Ph.D. in Medicine (Sports Medicine), CHA University · Board-Certified Orthopedic Surgeon / Subspecialist in Sports Medicine</li>' +
-            '<li id="adv-bang-line3">FIFA Diploma in Football Medicine · IOC Diploma in Sports Medicine</li>' +
-            '<li id="adv-bang-line4">Team Physician, South Korea National Short Track Speed Skating Team (KSU)</li>' +
-            '<li id="adv-bang-line5">Sub-Internship: Asan Medical Center &amp; Samsung Medical Center · Orthopedic Residency Rotation: Seoul National University Hospital</li>',
+            '<li id="adv-bang-line1">Affiliation: Director of Orthopedics, GODOIL Hospital</li>' +
+            '<li id="adv-bang-line2">Position: Team Physician, Korea National Short Track Speed Skating Team (KSU)</li>' +
+            '<li id="adv-bang-line3">Degree &amp; Cert: MD, PhD (CHA Univ.) · Board-Certified Orthopedic Surgeon · FIFA / IOC Diploma</li>' +
+            '<li id="adv-bang-line4">Training: Sub-Internship at Asan &amp; Samsung Medical Center · Residency Rotation at SNUH</li>',
+        '손진원':
+            '<li id="adv-son-line1">Affiliation: Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES</li>' +
+            '<li id="adv-son-line2">Position: Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town</li>' +
+            '<li id="adv-son-line3">Degree &amp; Cert: Certified Public Accountant (KICPA) · Former CPA, Deloitte Anjin LLC</li>' +
+            '<li id="adv-son-line4">Highlights: Samsung Biologics IPO &amp; M&amp;A · National Assembly Commendation · National Shooting Reserve</li>',
         '박지홍, PhD, AT, CSCS':
             '<li>Professor, Dept. of Sports Medicine, Kyung Hee University</li>' +
             '<li>PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation), Brigham Young University</li>' +
@@ -884,8 +892,9 @@
                 if (lang === 'en') {
                     nameEl.innerHTML = nameEl.dataset.koOrig
                         .replace('정태유, PhD, ATC, CAPE', 'Taeyou Jung, PhD, ATC, CAPE')
-                        .replace('박욱 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">교수</span>', 'Wook Park <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Prof.</span>')
+                        .replace('박욱, PhD', 'Wook Park, PhD')
                         .replace('방형식, MD, PhD', 'Hyeongsig Bang, MD, PhD')
+                        .replace('손진원, KICPA', 'Jin-won Son, KICPA')
                         .replace('박지홍, PhD, AT, CSCS', 'Jihong Park, PhD, AT, CSCS')
                         .replace('오성민, PhD', 'Sungmin Oh, PhD')
                         .replace('김준영 실장', '김준영 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Athletic Training</span>')
@@ -1198,6 +1207,12 @@
                             edu: 'Ph.D. in Medicine (Sports Medicine), CHA University',
                             courses: 'Board-Certified Orthopedic Surgeon / Subspecialist in Sports Medicine',
                             office: 'Director of Orthopedics, GODOIL Hospital',
+                            lab: 'Advisory Board Member, Kyung Hee University AT Center'
+                        },
+                        '손진원': {
+                            edu: 'Certified Public Accountant (KICPA)',
+                            courses: 'Startups & VC, Clinics & MSO, Sports & Fitness Centers, Corporate Valuation & M&A',
+                            office: 'Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES',
                             lab: 'Advisory Board Member, Kyung Hee University AT Center'
                         },
                         '박지홍': {
