@@ -502,12 +502,12 @@
             '<li id="adv-bang-line5">Sub-Internship: Asan Medical Center &amp; Samsung Medical Center · Orthopedic Residency Rotation: Seoul National University Hospital</li>',
         '박지홍, PhD, AT, CSCS':
             '<li>Professor, Dept. of Sports Medicine, Kyung Hee University</li>' +
-            '<li class="degree-line">PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation), Brigham Young University</li>' +
+            '<li>PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation), Brigham Young University</li>' +
             '<li>Office: College of Physical Education #422 (031-201-2721)</li>' +
             '<li>jihong.park@khu.ac.kr</li>',
         '오성민, PhD':
             '<li>Research Professor, Dept. of Sports Medicine, Kyung Hee University</li>' +
-            '<li class="degree-line">Ph.D. in Motor Control &amp; Sport Psych, Sungkyunkwan University</li>' +
+            '<li>Ph.D. in Motor Control &amp; Sport Psych, Sungkyunkwan University</li>' +
             '<li>Laboratory: Seonseung-gwan AT Center</li>' +
             '<li>sungminoh@khu.ac.kr</li>',
         '김준영 실장':
