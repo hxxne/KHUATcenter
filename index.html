@@ -6369,65 +6369,9 @@
             window.goToAwardSlide(nextIndex, resetAutoplay);
         };
 
-        let isAwardCarouselHovered = false;
-
-        // 자동 슬라이드쇼 비활성화 (연도 클릭 시에만 전환되도록 유지)
-        function startAwardAutoplay() {
-            stopAwardAutoplay();
-        }
-
-        // 자동 슬라이드쇼 일시정지 함수
-        function stopAwardAutoplay() {
-            if (awardAutoplayTimer) {
-                clearInterval(awardAutoplayTimer);
-                awardAutoplayTimer = null;
-            }
-        }
-
-        // 이벤트 리스너 등록: 자동 슬라이드쇼 실행, 마우스 호버 시 일시정지/재개 및 터치 스와이프
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. 자동 슬라이드쇼 재생 개시
-            startAwardAutoplay();
-
-            // 2. 마우스 호버 시 일시정지 (사용자가 연도 버튼을 누르거나 카드를 읽는 동안 절대 슬라이드가 혼자 넘어가지 않도록 보호)
-            const carouselContainer = document.querySelector('.award-carousel-container');
-            if (carouselContainer) {
-                carouselContainer.addEventListener('mouseenter', () => {
-                    isAwardCarouselHovered = true;
-                    stopAwardAutoplay();
-                });
-                carouselContainer.addEventListener('mouseleave', () => {
-                    isAwardCarouselHovered = false;
-                    startAwardAutoplay();
-                });
-            }
-
-            // 3. 모바일 터치 스와이프 리스너 등록
-            const viewport = document.getElementById('awardCarouselViewport');
-            if (viewport) {
-                let startX = 0;
-                let endX = 0;
-
-                viewport.addEventListener('touchstart', (e) => {
-                    stopAwardAutoplay();
-                    startX = e.touches[0].clientX;
-                }, { passive: true });
-
-                viewport.addEventListener('touchend', (e) => {
-                    endX = e.changedTouches[0].clientX;
-                    const diffX = startX - endX;
-                    if (Math.abs(diffX) > 45) {
-                        if (diffX > 0) {
-                            window.moveAwardSlide(1); // 다음 연도
-                        } else {
-                            window.moveAwardSlide(-1); // 이전 연도
-                        }
-                    } else {
-                        startAwardAutoplay();
-                    }
-                }, { passive: true });
-            }
-        });
+        // 역사 연도별 기록은 사용자가 연도 버튼을 클릭할 때만 전환되도록 자동 슬라이드·스와이프 비활성화
+        function startAwardAutoplay() {}
+        function stopAwardAutoplay() {}
 
         // ============================================================
         // 🛡️ 사진 모형 잔상 및 클릭 씹힘 원천 방지 (이미지 드래그 차단)
@@ -6709,15 +6653,12 @@
 <!-- Unified Member & Awards Archive Tab Controllers -->
 <script>
 // ============================================================
-// 👥 구성원 4대 디렉토리 자동 순환 컨트롤러 (대학원생 -> 임원진 -> 스태프 -> 센터 보조)
+// 👥 구성원 4대 디렉토리 수동 탭 컨트롤러 (대학원생 / 임원진 / 스태프 / 센터 보조 — 자동 전환 없음)
 // ============================================================
 const MEMBER_TABS = ['grad', 'exec', 'staff', 'assistant'];
 let currentMemberTabIndex = 0; // 0: grad (대학원생부터 시작)
-let memberAutoplayTimer = null;
-const MEMBER_AUTOPLAY_INTERVAL = 4500; // 4.5초 간격으로 자동 회전 (역대 수상자와 동일 주기)
-let isMemberDirectoryHovered = false;
 
-window.switchMemberTab = function(tabKey, btn, resetAutoplay = true) {
+window.switchMemberTab = function(tabKey, btn) {
     const targetIdx = MEMBER_TABS.indexOf(tabKey);
     if (targetIdx !== -1) {
         currentMemberTabIndex = targetIdx;
@@ -6756,66 +6697,7 @@ window.switchMemberTab = function(tabKey, btn, resetAutoplay = true) {
             });
         }
     });
-
-    // 4. 수동 클릭 또는 조작 시 자동 회전 타이머 리셋
-    if (resetAutoplay) {
-        startMemberAutoplay();
-    }
 };
-
-window.nextMemberTab = function(resetAutoplay = false) {
-    const nextIdx = (currentMemberTabIndex + 1) % MEMBER_TABS.length;
-    window.switchMemberTab(MEMBER_TABS[nextIdx], null, resetAutoplay);
-};
-
-function startMemberAutoplay() {
-    stopMemberAutoplay();
-    if (isMemberDirectoryHovered) return;
-    memberAutoplayTimer = setInterval(function() {
-        window.nextMemberTab(false);
-    }, MEMBER_AUTOPLAY_INTERVAL);
-}
-
-function stopMemberAutoplay() {
-    if (memberAutoplayTimer) {
-        clearInterval(memberAutoplayTimer);
-        memberAutoplayTimer = null;
-    }
-}
-
-// 이벤트 바인딩: 호버 일시정지 및 모바일 터치 보호
-function initMemberDirectoryAutoplay() {
-    const dirShell = document.getElementById('member-directory-shell');
-    if (dirShell) {
-        // 마우스 호버 시 일시 정지 (사용자가 프로필/내용 열람 중 뺏기지 않도록 보호)
-        dirShell.addEventListener('mouseenter', function() {
-            isMemberDirectoryHovered = true;
-            stopMemberAutoplay();
-        });
-        dirShell.addEventListener('mouseleave', function() {
-            isMemberDirectoryHovered = false;
-            startMemberAutoplay();
-        });
-
-        // 모바일 터치 시 일시 정지
-        dirShell.addEventListener('touchstart', function() {
-            isMemberDirectoryHovered = true;
-            stopMemberAutoplay();
-        }, { passive: true });
-        dirShell.addEventListener('touchend', function() {
-            isMemberDirectoryHovered = false;
-            startMemberAutoplay();
-        }, { passive: true });
-    }
-
-    startMemberAutoplay();
-}
-
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMemberDirectoryAutoplay);
-} else {
-    initMemberDirectoryAutoplay();
-}
 
 window.switchAwardsArchiveTab = function(tabKey, btn) {
     document.querySelectorAll('.awards-archive-tab-btn').forEach(function(b) {

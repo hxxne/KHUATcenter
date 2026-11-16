@@ -3889,3 +3889,13 @@ Observation 100시간 실무 과정,
   - `professorsData["김준영"]`, `["최현곤"]`, `["이재욱"]`의 `lab` 값을 `null`로 변경하고, `openProfModal` 일반 분기에서 `pData.lab === null`일 때 연구실 라벨/값 행을 숨김 처리.
   - `i18n.js`: 3인 영문 카드의 `Laboratory` 줄 제거, `MODAL_UNIFIED_EN`의 `lab: null` 반영, 모달 표시 초기화 타이밍을 `origOpenProfModal` 실행 전으로 조정하여 숨김 상태가 유지되도록 수정.
 - **검증 및 Git 동기화:** Playwright로 국문 카드(`HAS_LAB_KO: False`), 상세 모달(`HAS_LAB_MODAL: False`), 영문 카드(`HAS_LAB_EN: False`), 콘솔 에러 `0건` 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 📌 125. 구성원 4대 디렉토리 및 역사 연도별 기록 자동 전환(오토플레이) 완전 제거 (2026-11-16)
+- **사용자 요청:** `대학원생 · AT 동아리 임원진 · 스태프 · AT 센터 보조` 탭 및 `역사` 연도별 기록이 일정 시간마다 자동으로 넘어가는 기능 완전 제거.
+- **주요 수정 내역 (`index.html`):**
+  - 구성원 4대 디렉토리(`#member-directory-shell`): `memberAutoplayTimer`, `startMemberAutoplay`, `stopMemberAutoplay`, `initMemberDirectoryAutoplay` 및 `mouseleave`/`touchend` 자동 재개 리스너를 모두 제거해 수동 탭 클릭으로만 전환되도록 변경.
+  - 역사(`#awards`): 잔여 `awardAutoplayTimer` 이벤트 리스너(호버 이탈 시 자동 재개 및 터치 스와이프)를 모두 제거해 상단 연도 버튼 클릭 시에만 전환되도록 정리.
+- **검증 및 Git 동기화:** Playwright로 5.5초 대기 후에도 활성 탭(`grad`)·연도(`2025`)가 고정 유지되고, 수동 클릭(`staff`, `2019`) 정상 동작 및 콘솔 에러 `0건` 확인 후 `origin main` 커밋·푸시 완료.
