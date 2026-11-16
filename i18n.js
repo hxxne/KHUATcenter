@@ -511,14 +511,14 @@
             '<li>Laboratory: Seonseung-gwan AT Center</li>' +
             '<li>sungminoh@khu.ac.kr</li>',
         '김준영 실장':
-            '<li class="degree-line">Education: M.S. in Physical Education (Athletic Training),<br>Kyung Hee University</li>' +
+            '<li>Education: M.S. in Physical Education (Athletic Training),<br>Kyung Hee University</li>' +
             '<li>Courses: Rehab Exercise &amp; Sports Taping Lab</li>' +
             '<li>junyoung0366@khu.ac.kr</li>',
         '최현곤 재활팀장':
-            '<li class="degree-line">Education: M.S in Sports medicine &amp; science (Athletic Training),<br>Kyung Hee University</li>' +
+            '<li>Education: M.S in Sports medicine &amp; science (Athletic Training),<br>Kyung Hee University</li>' +
             '<li>gusrhs24@khu.ac.kr</li>',
         '이재욱 연구팀장':
-            '<li class="degree-line">Education: M.S. in Physical Education (Athletic Training),<br>Kyung Hee University</li>' +
+            '<li>Education: M.S. in Physical Education (Athletic Training),<br>Kyung Hee University</li>' +
             '<li>Courses: S&amp;C, Athletic Injury Management,<br>Resistance Exercise Lab</li>' +
             '<li>jwlee0102@khu.ac.kr</li>'
     };
