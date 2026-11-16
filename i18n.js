@@ -515,16 +515,13 @@
         '김준영 실장':
             '<li class="degree-line">Education: M.S. in Physical Education (Athletic Training),<br>Kyung Hee University</li>' +
             '<li>Courses: Rehab Exercise &amp; Sports Taping Lab</li>' +
-            '<li>Laboratory: Seonseung-gwan AT Center (031-201-2786)</li>' +
             '<li>junyoung0366@khu.ac.kr</li>',
         '최현곤 재활팀장':
             '<li class="degree-line">Education: M.S in Sports medicine &amp; science (Athletic Training),<br>Kyung Hee University</li>' +
-            '<li>Laboratory: Seonseung-gwan AT Center (031-201-2786)</li>' +
             '<li>gusrhs24@khu.ac.kr</li>',
         '이재욱 연구팀장':
             '<li class="degree-line">Education: M.S. in Physical Education (Athletic Training),<br>Kyung Hee University</li>' +
             '<li>Courses: S&amp;C, Athletic Injury Management,<br>Resistance Exercise Lab</li>' +
-            '<li>Laboratory: Seonseung-gwan AT Center (031-201-2786)</li>' +
             '<li>jwlee0102@khu.ac.kr</li>'
     };
 
@@ -1119,6 +1116,12 @@
         if (typeof origOpenProfModal === 'function') {
             window.openProfModal = function (cardOrName) {
                 // 영문 상태에서 카드를 클릭했을 때도 원본 한국어 키(data-ko-name)로 정확히 조회하도록 보장
+                // 이전 모달에서 숨겼던 라벨·값 칸 표시 상태 초기화 (origOpenProfModal 실행 전)
+                ['prof-modal-degree-label', 'prof-modal-degree', 'prof-modal-edu-label', 'prof-modal-edu', 'prof-modal-subject-label', 'prof-modal-subject', 'prof-modal-lab-label', 'prof-modal-lab'].forEach(id => {
+                    const elem = document.getElementById(id);
+                    if (elem) elem.style.display = '';
+                });
+
                 if (cardOrName && cardOrName.nodeType && cardOrName.dataset && cardOrName.dataset.koName) {
                     const nameEl = cardOrName.querySelector('.modern-profile-name');
                     const currentHtml = nameEl ? nameEl.innerHTML : null;
@@ -1149,12 +1152,6 @@
                     '위치/연락처': 'Location / Tel',
                     '직책': 'Position'
                 };
-
-                // 이전 모달에서 숨겼던 라벨·값 칸 표시 상태 초기화
-                ['prof-modal-degree-label', 'prof-modal-degree', 'prof-modal-edu-label', 'prof-modal-edu', 'prof-modal-subject-label', 'prof-modal-subject', 'prof-modal-lab-label', 'prof-modal-lab'].forEach(id => {
-                    const elem = document.getElementById(id);
-                    if (elem) elem.style.display = '';
-                });
 
                 ['prof-modal-degree-label', 'prof-modal-edu-label', 'prof-modal-subject-label', 'prof-modal-lab-label'].forEach(id => {
                     const lbl = document.getElementById(id);
@@ -1220,19 +1217,19 @@
                             edu: 'M.S. in Physical Education (Athletic Training), Kyung Hee University',
                             courses: 'Rehab Exercise & Sports Taping Lab',
                             office: null,
-                            lab: 'Seonseung-gwan AT Center (031-201-2786)'
+                            lab: null
                         },
                         '최현곤': {
                             edu: 'M.S in Sports medicine & science (Athletic Training), Kyung Hee University',
                             courses: null,
                             office: null,
-                            lab: 'Seonseung-gwan AT Center (031-201-2786)'
+                            lab: null
                         },
                         '이재욱': {
                             edu: 'M.S. in Physical Education (Athletic Training), Kyung Hee University',
                             courses: 'S&C, Athletic Injury Management, Resistance Exercise Lab',
                             office: null,
-                            lab: 'Seonseung-gwan AT Center (031-201-2786)'
+                            lab: null
                         }
                     };
 

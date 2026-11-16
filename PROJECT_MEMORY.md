@@ -3878,3 +3878,14 @@ Observation 100시간 실무 과정,
      - 섹션 부제목(`2015년부터 2025년까지...`) 제거.
      - 좌우 넘김 버튼(`.btn-prev`, `.btn-next`), 하단 도트 인디케이터, 자동 슬라이드쇼(`startAwardAutoplay`)를 모두 제거하여 상단 **연도 버튼(`2025`~`2015`) 클릭 시에만** 해당 연도 기록이 표시되도록 전환.
 - **검증 및 Git 동기화:** Playwright로 4개 섹션 스크린샷 육안 확인(3열 차트 0px 수평 정렬, 영문 전환, 콘솔 에러/실패 요청 `0건`) 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 📌 124. 리더(김준영·최현곤·이재욱) 연구실 항목 일괄 제거 (2026-11-16)
+- **사용자 요청:** `김준영`, `최현곤`, `이재욱` 리더 카드 및 상세 모달에서 연구실 내용 제거.
+- **주요 수정 내역 (`index.html`, `i18n.js`):**
+  - `index.html` 리더 섹션 3인 카드에서 `<li>연구실: 경희대학교 선승관 AT Center</li>` 제거.
+  - `professorsData["김준영"]`, `["최현곤"]`, `["이재욱"]`의 `lab` 값을 `null`로 변경하고, `openProfModal` 일반 분기에서 `pData.lab === null`일 때 연구실 라벨/값 행을 숨김 처리.
+  - `i18n.js`: 3인 영문 카드의 `Laboratory` 줄 제거, `MODAL_UNIFIED_EN`의 `lab: null` 반영, 모달 표시 초기화 타이밍을 `origOpenProfModal` 실행 전으로 조정하여 숨김 상태가 유지되도록 수정.
+- **검증 및 Git 동기화:** Playwright로 국문 카드(`HAS_LAB_KO: False`), 상세 모달(`HAS_LAB_MODAL: False`), 영문 카드(`HAS_LAB_EN: False`), 콘솔 에러 `0건` 확인 후 `origin main` 커밋·푸시 완료.
