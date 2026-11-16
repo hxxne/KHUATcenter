@@ -174,7 +174,6 @@
         // [역사 (#awards)]
         { selector: '#awards .section-title', en: 'Our Journey' },
         { selector: '#stream-past-leaders .stream-sub-title', en: 'Past Leaders' },
-        { selector: '#stream-past-leaders .stream-sub-desc', en: 'Former team leaders who directed academic research and clinical field practice across each division.' },
         { selector: '#stream-graduate-assistants .stream-sub-title', en: 'Graduate Alumni' },
         { selector: '#stream-graduate-assistants .stream-sub-desc', en: 'Graduate alumni who completed academic research and clinical field training at Seonseung-gwan AT Center.' },
 
@@ -196,7 +195,6 @@
 
         // [갤러리 (#activities)]
         { selector: '#activities .section-title', en: 'Photo &amp; Video' },
-        { selector: '#activities .section-subtitle', en: 'An archive capturing vivid moments of athlete care and center activities.' },
         { selector: '#activities .gallery-bottom-cta strong', en: 'Follow our official Instagram for more live updates!' },
         { selector: '#activities .gallery-bottom-cta p', en: 'We share weekly stories of tournament medical support, training fields, and education.' },
         { selector: '#activities .btn-insta-visit', en: 'Visit @khuatcenter <i class="fa-solid fa-arrow-up-right-from-square"></i>' },
@@ -204,14 +202,14 @@
         // [상담 및 문의 (#contact)]
         { selector: '#contact .section-title', en: 'Support &amp; Inquiry' },
         { selector: '#contact .section-subtitle', en: 'Rehabilitation Consultation &amp; Education/Research Collaboration' },
-        { selector: '#contact .contact-info h3', en: 'KHU College of Physical Education AT Center' },
+        { selector: '#contact .contact-info h3', en: 'Athletic Training Laboratory &amp; Center' },
         {
             selector: '#contact .contact-desc',
             en: 'Inquiries regarding varsity athlete injury management &amp; rehabilitation, general student sports injuries, educational staff participation, and research collaborations are always welcome.'
         },
         {
             selector: '#contact .contact-details li:first-child span',
-            en: 'AT Center (B1), Seonseung-gwan, KHU Global Campus, 1732 Deogyeong-daero, Giheung-gu, Yongin-si, Gyeonggi-do'
+            en: 'AT Lab &amp; Center (B1), Seonseung-gwan, KHU Global Campus, 1732 Deogyeong-daero, Giheung-gu, Yongin-si, Gyeonggi-do'
         },
         { selector: '#contact .map-overlay span', en: 'Seonseung-gwan B1, KHU Global Campus' },
         { selector: '#contact .map-overlay a', en: 'Directions &amp; Map' },
@@ -227,10 +225,10 @@
         { selector: '#success-close-btn', en: 'Back' },
 
         // [푸터 (#main-footer)]
-        { selector: '#main-footer .footer-info h4', en: 'Kyung Hee University Seonseung-gwan AT Center' },
+        { selector: '#main-footer .footer-info h4', en: 'AT Lab &amp; Center' },
         {
             selector: '#main-footer .footer-address',
-            en: '(17104) AT Center (B1), Seonseung-gwan, Kyung Hee University Global Campus, 1732 Deogyeong-daero, Giheung-gu, Yongin-si, Gyeonggi-do, Republic of Korea'
+            en: '(17104) AT Lab &amp; Center (B1), Seonseung-gwan, Kyung Hee University Global Campus, 1732 Deogyeong-daero, Giheung-gu, Yongin-si, Gyeonggi-do, Republic of Korea'
         },
         { selector: '#main-footer .privacy-policy', en: 'Privacy Policy' }
     ];
@@ -351,8 +349,8 @@
             items: [
                 '<i class="fa-solid fa-folder-open"></i> By Team',
                 '<i class="fa-solid fa-kit-medical"></i> Center Activities',
-                '<i class="fa-solid fa-truck-medical"></i> Medical Support',
-                '<i class="fa-solid fa-graduation-cap"></i> Seminars &amp; Awards'
+                '<i class="fa-solid fa-truck-medical"></i> Field Support',
+                '<i class="fa-solid fa-graduation-cap"></i> Events'
             ]
         },
         // 활동 사진 부서별 픽토그램 버튼 이름 13개

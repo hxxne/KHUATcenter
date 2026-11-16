@@ -529,7 +529,7 @@ a {
 #about .section-title::before {
     content: "WHO WE ARE";
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.96rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     color: var(--khu-crimson);
@@ -659,7 +659,7 @@ html[lang="en"] .about-detail .pc-br {
 #pillars .section-title::before {
     content: "WHAT WE DO";
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.96rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     color: var(--khu-crimson);
@@ -944,7 +944,7 @@ html[lang="en"] .about-detail .pc-br {
 #dashboard .section-title::before {
     content: "ACHIEVEMENTS";
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.96rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     color: var(--khu-navy);
@@ -1178,7 +1178,7 @@ html[lang="en"] .about-detail .pc-br {
 #members .section-title::before {
     content: "MEMBERS & DIRECTORY";
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.96rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     color: var(--khu-crimson);
@@ -1657,7 +1657,7 @@ html[lang="en"] .about-detail .pc-br {
 #awards .section-title::before {
     content: "OUR JOURNEY";
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.96rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     color: var(--khu-crimson);
@@ -1796,13 +1796,7 @@ html[lang="en"] .about-detail .pc-br {
     line-height: 0.95;
 }
 .award-year-row-header::after {
-    content: "ANNUAL HONORS ARCHIVE";
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-    color: var(--khu-bronze);
-    padding-top: 10px;
-    border-top: 2px solid var(--khu-crimson);
+    display: none;
 }
 
 /* Hierarchy 1:2 Grid — Open Gold Ledger (No White Box) + Inspiration & Rookie Split */
@@ -2265,7 +2259,7 @@ html[lang="en"] .about-detail .pc-br {
 .donate-section-title::before {
     content: "SPONSORSHIP";
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.96rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     color: var(--khu-crimson);
@@ -2460,7 +2454,7 @@ html[lang="en"] .about-detail .pc-br {
 #activities .section-title::before {
     content: "PHOTO & VIDEO";
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.96rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     color: var(--khu-crimson);
@@ -2789,7 +2783,7 @@ html[lang="en"] .about-detail .pc-br {
 #contact .section-title::before {
     content: "CONTACT & CONSULTATION";
     display: block;
-    font-size: 0.72rem;
+    font-size: 0.96rem;
     font-weight: 800;
     letter-spacing: 0.16em;
     color: var(--khu-crimson);
