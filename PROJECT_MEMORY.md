@@ -4025,3 +4025,13 @@ Observation 100시간 실무 과정,
   - 자문위원단 4인(`정태유, PhD, ATC, CAPE`, `박욱, PhD`, `방형식, MD, PhD`, `손진원, KICPA`)의 카드 구조를 국문(`소속`, `보직`, `학위·자격`, `주요 분야/실적/경력`) 및 영문(`Affiliation`, `Position`, `Degree & Cert`, `Specialty/Highlights/Training`) **동일 4줄 포맷**으로 통일해 2×2 대칭 레이아웃 완성.
   - `i18n.js?v=20261116_adv4` 캐시 버전 갱신 및 `node --check i18n.js` 문법 검증 완료.
 - **검증 및 Git 동기화:** Playwright로 국/영문 자문위원단 2×2 배치 및 손진원 상세 모달 스크린샷 육안 확인, 콘솔 에러·실패 요청 `0건` 확인 후 `origin main` 커밋·푸시 완료.
+
+
+---
+
+## 📌 134. 자문위원 손진원(KICPA) 프로필 규격 표준화·연동 및 보조 AT 3인 중앙 정렬 미세 보정 (2026-11-16)
+- **사용자 요청:** `assets/`에 새로 업로드된 `profile_손진원.jpg` 규격화·연동 및 일부 미조정 프로필 정중앙 정렬 보완.
+- **주요 수정 내역 (`assets/`, `index.html`):**
+  - `assets/profile_손진원.jpg` 고해상도 원본(`4380×6570`)을 `assets/raw_backup/`에 백업 후 상반신·얼굴 정중앙(`vis_cx=0.500`) `500×500` JPEG로 규격화 및 `index.html` 자문위원 카드·`professorsData["손진원"]` 연동(`?v=20261116`).
+  - `profile_김성준.jpg`, `profile_황이삭.jpg`, `profile_박인서.jpg` 가로 크롭 좌표를 미세 보정해 시각적 정중앙 균형 개선.
+- **검증 및 Git 동기화:** Playwright 자문위원단 스크린샷 육안 확인 및 이미지 수치 검증 완료 후 `origin main` 커밋·푸시 완료.
