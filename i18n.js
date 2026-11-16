@@ -177,6 +177,7 @@
 
         // [역사 (#awards)]
         { selector: '#awards .section-title', en: 'Our Journey' },
+        { selector: '#stream-awards-title', en: 'Athletic Training Student Awards' },
         { selector: '#stream-past-leaders .stream-sub-title', en: 'Past Leaders' },
         { selector: '#stream-graduate-assistants .stream-sub-title', en: 'Graduate Alumni' },
         { selector: '#stream-graduate-assistants .stream-sub-desc', en: 'Graduate alumni who completed academic research and clinical field training at Seonseung-gwan AT Center.' },

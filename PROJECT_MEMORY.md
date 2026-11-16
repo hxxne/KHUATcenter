@@ -29,8 +29,9 @@
 - **핵심 사업(Pillars) 하단 인스타그램 링크 제거:** 활동 사진 하단에 공식 인스타그램 연동 피드 및 링크가 위치하므로, 핵심 사업 섹션 하단에 중복 배치되어 있던 인스타그램 CTA 배너는 깔끔하게 삭제 완료.
 - **역대 수상자 및 리더 (클래식 웜 오트밀 & 샴페인 브론즈 골드 럭셔리 보드판 - 3대 보드 일체화 개편):**
   - **디자인 톤앤매너:** 너무 차가운 올화이트나 튀는 원색 충돌 없이, 따뜻하고 포근한 웜 오트밀 & 샌드스톤 베이스(`background: #FDFBF7 ~ #FAF7F2`, 보더 `#E6DCCD`, 소프트 앰비언트 섀도우)와 은은한 샴페인 브론즈 골드 림(`border: 1.5px solid #C8A468`), 딥 로스티드 에스프레소 브라운 명판 헤더를 조화시킨 하이엔드 아카데믹 럭셔리 스타일 완성.
-  - **ATHLETIC TRAINING STUDENT AWARDS (10개년 명예의 전당 보드판):**
-    - 2025~2015 10개년 3대 상(`AT Student of the Year`, `Inspiration`, `Rookie of the Year`) 3열 컬럼 구조 유지.
+  - **ATHLETIC TRAINING STUDENT AWARDS (11개년 명예의 전당 아카이브 — 상단 서브타이틀 `역대 수상자` / 영문 `Athletic Training Student Awards` 표시):**
+    - 상단에 `역대 리더`와 동일한 `.stream-sub-title` 규격으로 한글 `역대 수상자`, 영문 전환 시 `Athletic Training Student Awards` 표시.
+    - 2025~2015 11개년 3대 상(`AT Student of the Year`, `Inspiration`, `Rookie of the Year`) 구성 유지.
     - 정교한 브론즈 골드 피니시 메탈 칩(`.metal-plate`) 및 은은한 골드 호버 피드백 적용.
   - **PAST LEADERS (역대 리더 보드판):**
     - 현재 재임 중인 `김준영 (2026.03 — 재임중)` 명판 완전 제외 처리 (최윤관 2026.02 팀장으로 마감).
