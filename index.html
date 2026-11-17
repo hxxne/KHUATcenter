@@ -24,8 +24,8 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261118_redesign">
-    <link rel="stylesheet" href="ui-motion-bklit.css?v=20261118_redesign">
+    <link rel="stylesheet" href="khu-pro.css?v=20261116_editorial">
+    <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
 
@@ -1439,7 +1439,7 @@
         </div>
     </section>
 
-        <!-- Core Pillars Section (next-ai-draw-io Cycle Architecture + Interactive Stage) -->
+        <!-- Core Pillars Section (Frameless Swiss Editorial Chapters with Wide Media Frames) -->
     <section id="pillars" class="section-padding bg-dark-lighter">
         <div class="container">
             <div class="section-header text-center">
@@ -1448,32 +1448,11 @@
                 <p class="section-subtitle">교육 (Education) · 연구 (Research) · 서비스 (Service)</p>
             </div>
 
-            <!-- next-ai-draw-io Style Cycle Flow Switcher -->
-            <div class="pillar-flow-switcher" role="tablist" aria-label="핵심 활동 영역 선택">
-                <button type="button" class="pillar-flow-node active" role="tab" aria-selected="true" data-pillar="edu" onclick="switchPillarStage('edu', this)">
-                    <span class="pfn-step">01 · EDUCATION</span>
-                    <span class="pfn-title">교육</span>
-                    <span class="pfn-meta">이론 · 실무역량 양성</span>
-                </button>
-                <span class="pillar-flow-connector" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></span>
-                <button type="button" class="pillar-flow-node" role="tab" aria-selected="false" data-pillar="res" onclick="switchPillarStage('res', this)">
-                    <span class="pfn-step">02 · RESEARCH</span>
-                    <span class="pfn-title">연구</span>
-                    <span class="pfn-meta">근거 중심 스포츠의학</span>
-                </button>
-                <span class="pillar-flow-connector" aria-hidden="true"><i class="fa-solid fa-arrow-right-long"></i></span>
-                <button type="button" class="pillar-flow-node" role="tab" aria-selected="false" data-pillar="srv" onclick="switchPillarStage('srv', this)">
-                    <span class="pfn-step">03 · SERVICE</span>
-                    <span class="pfn-title">서비스</span>
-                    <span class="pfn-meta">임상 케어 · 현장 의무지원</span>
-                </button>
-            </div>
-
-            <!-- Interactive Active Stage (Selected Pillar Only — Eliminates Vertical Repetition) -->
+            <!-- Frameless Asymmetric Editorial Chapters (Left 5 Cols Typography / Right 7 Cols Wide Media) -->
             <div class="bento-pillars-grid">
                 
                 <!-- Pillar 1: Education (교육) -->
-                <div class="bento-card bento-card-edu is-stage-active" data-pillar-panel="edu" role="button" tabindex="0" onclick="openPillarModal('edu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('edu');}" title="클릭하여 교육 사업 세부내용 확인" aria-label="교육(Education) - 미래 스포츠의학 전문가 양성 세부내용 보기">
+                <div class="bento-card bento-card-edu" role="button" tabindex="0" onclick="openPillarModal('edu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('edu');}" title="클릭하여 교육 사업 세부내용 확인" aria-label="교육(Education) - 미래 스포츠의학 전문가 양성 세부내용 보기">
                     <div class="bento-editorial-col">
                         <div class="bento-card-header">
                             <div class="bento-badge-row">
@@ -1522,7 +1501,7 @@
                 </div>
 
                 <!-- Pillar 2: Research (연구) -->
-                <div class="bento-card bento-card-res" data-pillar-panel="res" role="button" tabindex="0" onclick="openPillarModal('res')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('res');}" title="클릭하여 연구 사업 세부내용 확인" aria-label="연구(Research) - 근거 중심 스포츠의학(EBM) 구현 세부내용 보기">
+                <div class="bento-card bento-card-res" role="button" tabindex="0" onclick="openPillarModal('res')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('res');}" title="클릭하여 연구 사업 세부내용 확인" aria-label="연구(Research) - 근거 중심 스포츠의학(EBM) 구현 세부내용 보기">
                     <div class="bento-editorial-col">
                         <div class="bento-card-header">
                             <div class="bento-badge-row">
@@ -1571,7 +1550,7 @@
                 </div>
 
                 <!-- Pillar 3: Service (서비스) -->
-                <div class="bento-card bento-card-srv" data-pillar-panel="srv" role="button" tabindex="0" onclick="openPillarModal('srv')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('srv');}" title="클릭하여 서비스 사업 세부내용 확인" aria-label="서비스(Service) - 실천적 스포츠 케어 및 현장 지원 세부내용 보기">
+                <div class="bento-card bento-card-srv" role="button" tabindex="0" onclick="openPillarModal('srv')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('srv');}" title="클릭하여 서비스 사업 세부내용 확인" aria-label="서비스(Service) - 실천적 스포츠 케어 및 현장 지원 세부내용 보기">
                     <div class="bento-editorial-col">
                         <div class="bento-card-header">
                             <div class="bento-badge-row">
@@ -1624,19 +1603,13 @@
             </section>
 
     <!-- ======================================================= -->
-    <!-- AT 센터 누적 기록: Archify Evidence Console (Dark Telemetry) -->
+    <!-- AT 센터 누적 기록: Frameless Swiss Typographic Ledger -->
     <!-- ======================================================= -->
-    <section id="dashboard" class="editorial-metric-section archify-dark-console">
+    <section id="dashboard" class="editorial-metric-section">
         <div class="container relative-z">
-            <div class="section-header archify-console-header">
-                <div>
-                    <h2 class="section-title">누적기록</h2>
-                    <div class="divider"></div>
-                </div>
-                <div class="archify-console-badge">
-                    <span class="archify-dot" aria-hidden="true"></span>
-                    <span>VERIFIED ARCHIVE · 2013–2026</span>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">누적기록</h2>
+                <div class="divider"></div>
             </div>
 
             <!-- 3대 핵심 지표 오픈 레저 (교육 -> 연구 -> 서비스 순서, 외곽 박스 없음) -->
@@ -6899,23 +6872,12 @@ window.showEditorialYear = function(year, btn) {
         target.classList.add('active');
     }
 };
-window.switchPillarStage = function(pillarKey, btn) {
-    document.querySelectorAll('.pillar-flow-node').forEach(function(n) {
-        var isTarget = n.getAttribute('data-pillar') === pillarKey;
-        n.classList.toggle('active', isTarget);
-        n.setAttribute('aria-selected', isTarget ? 'true' : 'false');
-    });
-    document.querySelectorAll('.bento-pillars-grid .bento-card').forEach(function(card) {
-        var isTarget = card.getAttribute('data-pillar-panel') === pillarKey;
-        card.classList.toggle('is-stage-active', isTarget);
-    });
-};
 </script>
 
 <!-- 다국어 전환 엔진 (한국어 | English) -->
-<script src="i18n.js?v=20261118_redesign"></script>
+<script src="i18n.js?v=20261118_names2"></script>
 <!-- 오픈소스 모션 & 데이터 시각화 엔진 (anime.js v4.5 · Motion v14.9 · Bklit UI) -->
 <script src="assets/vendor/anime.umd.min.js"></script>
 <script src="assets/vendor/motion.min.js"></script>
-<script src="ui-motion-bklit.js?v=20261118_redesign"></script>
+<script src="ui-motion-bklit.js?v=20261115_rev2"></script>
 </body></html>

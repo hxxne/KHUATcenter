@@ -68,12 +68,6 @@
         // [활동 섹션 (#pillars)]
         { selector: '#pillars .section-title', en: 'What We Do' },
         { selector: '#pillars .section-subtitle', en: 'Education · Research · Service' },
-        { selector: '.pillar-flow-node[data-pillar="edu"] .pfn-title', en: 'Education' },
-        { selector: '.pillar-flow-node[data-pillar="edu"] .pfn-meta', en: 'Theory &amp; Clinical Competency' },
-        { selector: '.pillar-flow-node[data-pillar="res"] .pfn-title', en: 'Research' },
-        { selector: '.pillar-flow-node[data-pillar="res"] .pfn-meta', en: 'Evidence-Based Sports Medicine' },
-        { selector: '.pillar-flow-node[data-pillar="srv"] .pfn-title', en: 'Service' },
-        { selector: '.pillar-flow-node[data-pillar="srv"] .pfn-meta', en: 'Clinical Care &amp; Field Support' },
 
         // Pillar 1: Education
         { selector: '.bento-card-edu .bento-title', en: 'Education' },

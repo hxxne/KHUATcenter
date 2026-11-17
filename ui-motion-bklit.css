@@ -14,19 +14,19 @@
 .bklit-spark-container {
     position: relative;
     width: 100%;
-    margin: 14px 0 14px 0;
-    padding: 12px 0 2px 0;
+    margin: 16px 0 18px 0;
+    padding: 12px 0 4px 0;
     border-radius: 0;
     background: transparent;
     border: none;
-    border-top: 1px dashed rgba(255, 255, 255, 0.14);
+    border-top: 1px dashed rgba(17, 19, 24, 0.12);
 }
 
 .card-edu:hover .bklit-spark-container,
 .card-res:hover .bklit-spark-container,
 .card-srv:hover .bklit-spark-container {
     background: transparent;
-    border-color: rgba(255, 255, 255, 0.24);
+    border-color: rgba(17, 19, 24, 0.18);
 }
 
 .bklit-spark-meta {
@@ -36,7 +36,7 @@
     margin-bottom: 6px;
     font-size: 0.74rem;
     font-weight: 700;
-    color: #94A3B8;
+    color: #5C626E;
     font-variant-numeric: tabular-nums;
 }
 
@@ -48,9 +48,9 @@
     font-size: 0.73rem;
 }
 
-.card-edu .bklit-spark-trend { color: #FF6B8E; }
-.card-res .bklit-spark-trend { color: #60A5FA; }
-.card-srv .bklit-spark-trend { color: #FACC15; }
+.card-edu .bklit-spark-trend { color: #A50034; }
+.card-res .bklit-spark-trend { color: #002244; }
+.card-srv .bklit-spark-trend { color: #926B14; }
 
 .bklit-spark-svg {
     display: block;
@@ -66,7 +66,7 @@
     margin-top: 4px;
     font-size: 0.69rem;
     font-weight: 600;
-    color: #64748B;
+    color: #7D8492;
     font-variant-numeric: tabular-nums;
 }
 
