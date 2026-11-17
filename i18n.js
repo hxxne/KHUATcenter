@@ -445,7 +445,8 @@
         '태권도 시범단': 'TKD Demo Team',
         '태권도 겨루기부': 'TKD Kyorugi Team',
         '태권도 품새부': 'TKD Poomsae Team',
-        'AT Center (센터 AT)': 'AT Center'
+        'AT Center (센터 AT)': 'AT Center',
+        'AT Center (센터)': 'AT Center'
     };
 
     // 06 AT 센터 보조 카드 헤더용 간결한 부서명
@@ -461,7 +462,8 @@
         '태권도 시범단': 'TKD Demo',
         '태권도 겨루기부': 'TKD Kyorugi',
         '태권도 품새부': 'TKD Poomsae',
-        'AT Center (센터 AT)': 'AT Center'
+        'AT Center (센터 AT)': 'AT Center',
+        'AT Center (센터)': 'AT Center'
     };
 
     const AWARD_DESC_KO_TO_EN = {
@@ -486,6 +488,177 @@
         '태권도': 'Taekwondo',
         '핸드볼': 'Handball'
     };
+
+    // 전체 구성원 · 보조 AT · 역대 수상자 · 역대 리더 · 대학원 졸업자 성명 영문 표기 사전 (132인 전수 매핑)
+    const PERSON_NAME_KO_TO_EN = {
+        '강석': 'Seok Kang',
+        '강성훈': 'Sunghoon Kang',
+        '고준영': 'Junyoung Ko',
+        '권남준': 'Namjun Kwon',
+        '권인혜': 'Inhye Kwon',
+        '권준홍': 'Junhong Kwon',
+        '권준휘': 'Junhwi Kwon',
+        '기윤서': 'Yunseo Ki',
+        '김다감': 'Dagam Kim',
+        '김다영': 'Dayoung Kim',
+        '김다은': 'Daeun Kim',
+        '김대호': 'Daeho Kim',
+        '김동언': 'Dongeon Kim',
+        '김동현': 'Donghyeon Kim',
+        '김무건': 'Mugeon Kim',
+        '김무성': 'Moo Sung Kim',
+        '김민주': 'Minju Kim',
+        '김민준': 'Minjune Kim',
+        '김민지': 'Minji Kim',
+        '김성완': 'Sungwan Kim',
+        '김성준': 'Seongjun Kim',
+        '김승연': 'Seungyeon Kim',
+        '김예종': 'Yejong Kim',
+        '김재원': 'Jaewon Kim',
+        '김주완': 'Juwan Kim',
+        '김준영': 'Junyoung Kim',
+        '김지원': 'Jiwon Kim',
+        '김채은': 'Chaeeun Kim',
+        '김태진': 'Taejin Kim',
+        '김한결': 'Hangyeol Kim',
+        '김형우': 'Hyeongwoo Kim',
+        '남가민': 'Gamin Nam',
+        '남수현': 'Suhyeon Nam',
+        '남아공': 'Agong Nam',
+        '노유연': 'Yuyeon Roh',
+        '노윤서': 'Yunseo Roh',
+        '두현지': 'Hyunji Doo',
+        '문민서': 'Minseo Moon',
+        '문수연': 'Suyeon Moon',
+        '문정은': 'Jeongeun Moon',
+        '문채연': 'Chaeyeon Moon',
+        '민경은': 'Kyeong Eun Min',
+        '박다은': 'Daeun Park',
+        '박상협': 'Sanghyup Park',
+        '박서현': 'Seohyeon Park',
+        '박세민': 'Semin Park',
+        '박욱': 'Wook Park',
+        '박유빈': 'Yubin Park',
+        '박은지': 'Eunji Park',
+        '박인서': 'Inseo Park',
+        '박지현': 'Jihyeon Park',
+        '박지홍': 'Jihong Park',
+        '박효진': 'Hyojin Park',
+        '방수일': 'Sooil Bang',
+        '방형식': 'Hyeongsig Bang',
+        '서동균': 'Dongkyun Seo',
+        '성락훈': 'Rakhoon Sung',
+        '손진원': 'Jin-won Son',
+        '송서옥': 'Seook Song',
+        '송찬': 'Chan Song',
+        '신재윤': 'Jaeyoon Shin',
+        '안은지': 'Eunji Ahn',
+        '안효은': 'Hyoeun Ahn',
+        '양창욱': 'Changwook Yang',
+        '오민섭': 'Minsub Oh',
+        '오성민': 'Sungmin Oh',
+        '오승진': 'Seungjin Oh',
+        '우민서': 'Minseo Woo',
+        '우지윤': 'Jiyun Woo',
+        '우태희': 'Taehee Woo',
+        '유승아': 'Seunga Yu',
+        '유승원': 'Seungwon Yu',
+        '유영민': 'Youngmin Yu',
+        '유영수': 'Youngsoo Yu',
+        '유주승': 'Juseung Yu',
+        '유지민': 'Jimin Yu',
+        '윤서연': 'Seoyeon Yun',
+        '윤정섭': 'Jungseob Yoon',
+        '이강훈': 'Kanghun Lee',
+        '이남송': 'Namsong Lee',
+        '이다현': 'Dahyeon Lee',
+        '이도형': 'Dohyeong Lee',
+        '이복음': 'Bokeum Lee',
+        '이상준': 'Sangjun Lee',
+        '이서영': 'Seo Young Lee',
+        '이선화': 'Seonhwa Lee',
+        '이송현': 'Songhyeon Lee',
+        '이승민': 'Seungmin Lee',
+        '이승훈': 'Seunghun Lee',
+        '이승희': 'Seunghee Lee',
+        '이예인': 'Yein Lee',
+        '이은채': 'Eunchae Lee',
+        '이재욱': 'Jaewook Lee',
+        '이정재': 'Jeongjae Lee',
+        '이주희': 'Joohee Lee',
+        '이준혁': 'Junhyeok Lee',
+        '이진우': 'Jinwoo Lee',
+        '이진주': 'Jinju Lee',
+        '이진호': 'Jinho Lee',
+        '이채원': 'Chaewon Lee',
+        '이천이': 'Cheoni Lee',
+        '이태현': 'Taehyeon Lee',
+        '이현욱': 'Hyunwook Lee',
+        '임선주': 'Sunjoo Lim',
+        '임준형': 'Junhyeong Lim',
+        '장서현': 'Seohyeon Jang',
+        '장영훈': 'Yeong-Hun Jang',
+        '장휘수': 'Hwi-Su Jang',
+        '전성규': 'Seonggyu Jeon',
+        '정도엽': 'Doyeop Jeong',
+        '정준영': 'Junyoung Jeong',
+        '정태유': 'Taeyou Jung',
+        '조연지': 'Yeonji Cho',
+        '조유진': 'Yujin Cho',
+        '조재희': 'Jaehee Cho',
+        '조현준': 'Hyunjoon Cho',
+        '진승희': 'Sung Hee Jin',
+        '차정수': 'Jeongsoo Cha',
+        '채상우': 'Sangwoo Chae',
+        '천지훈': 'Jihoon Cheon',
+        '최성찬': 'Seongchan Choi',
+        '최유빈': 'Yubin Choi',
+        '최윤관': 'Yungwan Choi',
+        '최주영': 'Juyoung Choi',
+        '최지현': 'Jihyeon Choi',
+        '최현곤': 'Hyungon Choi',
+        '한승욱': 'Seunguk Han',
+        '한현구': 'Hyeongu Han',
+        '한혜서': 'Hyeseo Han',
+        '홍진후': 'Jinhoo Hong',
+        '황성윤': 'Seongyun Hwang',
+        '황이삭': 'Isak Hwang'
+    };
+
+    // 사진 미등록 보조 AT 원형 아바타 이니셜 영문 매핑
+    const AVATAR_INITIAL_KO_TO_EN = {
+        '복음': 'BE',
+        '채은': 'CE',
+        '태현': 'TH',
+        '상우': 'SW',
+        '민서': 'MS',
+        '다현': 'DH',
+        '한결': 'HG',
+        '다은': 'DE',
+        '인혜': 'IH',
+        '다감': 'DG',
+        '수현': 'SH',
+        '은지': 'EJ',
+        '도엽': 'DY',
+        '준휘': 'JH',
+        '형우': 'HW',
+        '은채': 'EC',
+        '천이': 'CI'
+    };
+
+    function translatePersonNameToEn(koNameStr) {
+        if (!koNameStr) return koNameStr;
+        const trimmed = koNameStr.trim();
+        if (PERSON_NAME_KO_TO_EN[trimmed]) return PERSON_NAME_KO_TO_EN[trimmed];
+        // 쉼표로 구분된 공동 수상자(예: '조재희, 양창욱') 처리
+        if (trimmed.includes(',')) {
+            return trimmed.split(',').map(part => {
+                const p = part.trim();
+                return PERSON_NAME_KO_TO_EN[p] || p;
+            }).join(', ');
+        }
+        return trimmed;
+    }
 
     // 01 Faculty members & 02 Leaders 영문 통일 프로필 카드 (Education / Courses / Office / Laboratory / Email)
     const FACULTY_LEADER_EN_BULLETS = {
@@ -799,16 +972,31 @@
             });
         });
 
-        // 5) 06 AT 센터 보조(.assistant-dept-card) 부서명 및 인원수 백업
+        // 5) 06 AT 센터 보조(.assistant-dept-card) 부서명, 인원수, 보조 AT 이름 및 이니셜 백업
         document.querySelectorAll('.assistant-dept-card').forEach(card => {
             const titleEl = card.querySelector('.assistant-dept-title');
             const countEl = card.querySelector('.assistant-dept-count');
             if (titleEl && titleEl.dataset.koOrig === undefined) titleEl.dataset.koOrig = titleEl.innerHTML;
             if (countEl && countEl.dataset.koOrig === undefined) countEl.dataset.koOrig = countEl.innerHTML;
         });
+        document.querySelectorAll('.assistant-person-item').forEach(item => {
+            const pNameEl = item.querySelector('.assistant-person-name');
+            if (pNameEl) {
+                if (item.dataset.koName === undefined) {
+                    item.dataset.koName = pNameEl.textContent.trim();
+                }
+                if (pNameEl.dataset.koOrig === undefined) {
+                    pNameEl.dataset.koOrig = pNameEl.innerHTML;
+                }
+            }
+            const initEl = item.querySelector('.avatar-initial');
+            if (initEl && initEl.dataset.koOrig === undefined) {
+                initEl.dataset.koOrig = initEl.innerHTML;
+            }
+        });
 
-        // 6) 역대 수상자 카드 설명, 힌트, 배지, 대학원 졸업자 종목 태그 백업
-        document.querySelectorAll('#awards .award-stream-desc, #awards .award-click-hint, #awards .award-pill, #awards .ed-ga-item .gb').forEach(el => {
+        // 6) 역대 수상자 카드 성명, 설명, 힌트, 배지, 역대 리더 성명, 대학원 졸업자 성명 및 종목 태그 백업
+        document.querySelectorAll('#awards .award-stream-name, #awards .dual-name-row, #awards .ed-name, #awards .ed-ga-item .gn, #awards .award-stream-desc, #awards .award-click-hint, #awards .award-pill, #awards .ed-ga-item .gb').forEach(el => {
             if (el.dataset.koOrig === undefined) {
                 el.dataset.koOrig = el.innerHTML;
             }
@@ -886,24 +1074,29 @@
             });
         });
 
-        // 3) 구성원 프로필 카드(.modern-profile-card) 직책 및 약력 전환
+        // 3) 구성원 프로필 카드(.modern-profile-card) 성명, 직책 및 약력 전환
         document.querySelectorAll('.modern-profile-card').forEach(card => {
             const nameEl = card.querySelector('.modern-profile-name');
             if (nameEl && nameEl.dataset.koOrig !== undefined) {
                 if (lang === 'en') {
-                    nameEl.innerHTML = nameEl.dataset.koOrig
+                    let translatedName = nameEl.dataset.koOrig
                         .replace('정태유, PhD, ATC, CAPE', 'Taeyou Jung, PhD, ATC, CAPE')
                         .replace('박욱, PhD', 'Wook Park, PhD')
                         .replace('방형식, MD, PhD', 'Hyeongsig Bang, MD, PhD')
                         .replace('손진원, KICPA', 'Jin-won Son, KICPA')
                         .replace('박지홍, PhD, AT, CSCS', 'Jihong Park, PhD, AT, CSCS')
                         .replace('오성민, PhD', 'Sungmin Oh, PhD')
-                        .replace('김준영 실장', '김준영 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Athletic Training</span>')
-                        .replace('최현곤 재활팀장', '최현곤 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Sports Rehabilitation</span>')
-                        .replace('이재욱 연구팀장', '이재욱 <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research</span>')
+                        .replace('김준영 실장', 'Junyoung Kim <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Athletic Training</span>')
+                        .replace('최현곤 재활팀장', 'Hyungon Choi <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Sports Rehabilitation</span>')
+                        .replace('이재욱 연구팀장', 'Jaewook Lee <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Research</span>')
                         .replace('(회장)', '(President)')
                         .replace('(부회장)', '(Vice Pres.)')
                         .replace('(총무)', '(Secretary)');
+                    // 일반 구성원 성명(예: '조연지 (President)' 또는 '우지윤' 등) 영문 치환
+                    translatedName = translatedName.replace(/^([가-힣]{2,4})(\s|<|$)/, function (match, koName, suffix) {
+                        return (PERSON_NAME_KO_TO_EN[koName] || koName) + suffix;
+                    });
+                    nameEl.innerHTML = translatedName;
                 } else {
                     nameEl.innerHTML = nameEl.dataset.koOrig;
                 }
@@ -928,7 +1121,7 @@
             }
         });
 
-        // 5) 06 AT 센터 보조(.assistant-dept-card) 부서명 및 인원수 전환 (4열 카드 헤더 내 줄바꿈 방지)
+        // 5) 06 AT 센터 보조(.assistant-dept-card) 부서명, 인원수, 보조 AT 성명 및 이니셜 전환
         document.querySelectorAll('.assistant-dept-card').forEach(card => {
             const titleEl = card.querySelector('.assistant-dept-title');
             const countEl = card.querySelector('.assistant-dept-count');
@@ -945,8 +1138,32 @@
                     : countEl.dataset.koOrig;
             }
         });
+        document.querySelectorAll('.assistant-person-item').forEach(item => {
+            const pNameEl = item.querySelector('.assistant-person-name');
+            if (pNameEl && pNameEl.dataset.koOrig !== undefined) {
+                const koName = pNameEl.dataset.koOrig.trim();
+                pNameEl.innerHTML = (lang === 'en')
+                    ? (PERSON_NAME_KO_TO_EN[koName] || koName)
+                    : pNameEl.dataset.koOrig;
+            }
+            const initEl = item.querySelector('.avatar-initial');
+            if (initEl && initEl.dataset.koOrig !== undefined) {
+                const koInit = initEl.dataset.koOrig.trim();
+                initEl.innerHTML = (lang === 'en')
+                    ? (AVATAR_INITIAL_KO_TO_EN[koInit] || koInit)
+                    : initEl.dataset.koOrig;
+            }
+        });
 
-        // 6) 역대 수상자 카드 설명, 클릭 힌트, 공동 수상 배지, 대학원 졸업자 종목 전환
+        // 6) 역대 수상자 성명, 역대 리더 성명, 대학원 졸업자 성명 및 설명·배지 전환
+        document.querySelectorAll('#awards .award-stream-name, #awards .dual-name-row, #awards .ed-name, #awards .ed-ga-item .gn').forEach(el => {
+            if (el.dataset.koOrig === undefined) return;
+            const koName = el.dataset.koOrig.trim();
+            el.innerHTML = (lang === 'en')
+                ? (PERSON_NAME_KO_TO_EN[koName] || koName)
+                : el.dataset.koOrig;
+        });
+
         document.querySelectorAll('#awards .award-stream-desc').forEach(el => {
             if (el.dataset.koOrig === undefined) return;
             const koTxt = el.dataset.koOrig.trim();
@@ -1273,6 +1490,11 @@
                         });
                     }
 
+                    // 모달 상단 인물 성명도 영문 이름으로 변환
+                    if (modalNameEl && mName) {
+                        modalNameEl.textContent = translatePersonNameToEn(mName);
+                    }
+
                     document.querySelectorAll('#prof-modal-career li, #prof-modal-research li').forEach(li => {
                         li.textContent = translateProfModalText(li.textContent);
                     });
@@ -1297,8 +1519,13 @@
             window.openAlumniModal = function (name, badgeText) {
                 origOpenAlumniModal(name, badgeText);
                 if (currentLang === 'en') {
+                    const nameEl = document.getElementById('alumni-modal-name');
                     const badgeEl = document.getElementById('alumni-modal-badge');
                     const jobEl = document.getElementById('alumni-modal-job');
+
+                    if (nameEl) {
+                        nameEl.textContent = translatePersonNameToEn(nameEl.textContent);
+                    }
 
                     if (badgeEl) {
                         let bTxt = badgeEl.textContent
@@ -1313,11 +1540,17 @@
                         badgeEl.textContent = bTxt.replace(/\s*—\s*/g, ' - ');
                     }
                     if (jobEl) {
-                        jobEl.innerHTML = jobEl.innerHTML
+                        let jHtml = jobEl.innerHTML
                             .replace(/미공개/g, 'Undisclosed')
                             .replace(/휴직/g, 'On Leave')
                             .replace(/공동 수상/g, 'Co-Winner')
                             .replace(/현\)\s*/g, 'Current: ');
+                        Object.keys(PERSON_NAME_KO_TO_EN).forEach(function (koName) {
+                            if (jHtml.includes(koName)) {
+                                jHtml = jHtml.split(koName).join(PERSON_NAME_KO_TO_EN[koName]);
+                            }
+                        });
+                        jobEl.innerHTML = jHtml;
                     }
                 }
             };
