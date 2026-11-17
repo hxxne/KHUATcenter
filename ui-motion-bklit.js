@@ -58,7 +58,7 @@
     const SPARK_CONFIGS = [
         {
             id: 'spark-edu',
-            color: '#A50034',
+            color: '#FF4D79',
             unitKo: '명',
             unitEn: 'Trainees',
             labelKo: '연도별 누적 이수 추이',
@@ -76,7 +76,7 @@
         },
         {
             id: 'spark-res',
-            color: '#002244',
+            color: '#60A5FA',
             unitKo: '편',
             unitEn: 'Papers',
             labelKo: '누적 논문 게재 추이 (실측)',
@@ -95,7 +95,7 @@
         },
         {
             id: 'spark-srv',
-            color: '#A67C1E',
+            color: '#EAB308',
             unitKo: '건',
             unitEn: 'Cases',
             labelKo: '부상 예방 및 컨디셔닝 서비스 (건)',
@@ -177,12 +177,12 @@
                     </defs>
 
                     <!-- 수평 기준 점선 -->
-                    <line x1="${padX}" y1="${(H / 2).toFixed(1)}" x2="${W - padX}" y2="${(H / 2).toFixed(1)}" stroke="#E2E8F0" stroke-width="1" stroke-dasharray="3 3" />
+                    <line x1="${padX}" y1="${(H / 2).toFixed(1)}" x2="${W - padX}" y2="${(H / 2).toFixed(1)}" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="3 3" />
 
                     <g clip-path="url(#${clipId})">
                         <path d="${areaD}" fill="url(#${gradId})" mask="url(#${edgeMaskId})" />
-                        <path d="${lineD}" fill="none" stroke="${cfg.color}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
-                        <circle cx="${lastPt.x.toFixed(2)}" cy="${lastPt.y.toFixed(2)}" r="3.4" fill="#FFFFFF" stroke="${cfg.color}" stroke-width="2.2" />
+                        <path d="${lineD}" fill="none" stroke="${cfg.color}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="${lastPt.x.toFixed(2)}" cy="${lastPt.y.toFixed(2)}" r="3.6" fill="#0D1219" stroke="${cfg.color}" stroke-width="2.4" />
                     </g>
 
                     <!-- 인터랙티브 스냅 가이드라인 & 활성 포인터 도트 -->
