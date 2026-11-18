@@ -24,10 +24,12 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261118_hero_clean">
+    <link rel="stylesheet" href="khu-pro.css?v=20261118_safety1">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
+    <!-- 키보드 접근성: 본문 바로가기 (Skip Navigation) -->
+    <a href="#about" class="skip-to-content" id="skip-to-content" data-ko="본문 바로가기" data-en="Skip to main content">본문 바로가기</a>
 
     <!-- Header / Navigation -->
     <header id="main-header">
@@ -3164,7 +3166,7 @@
                         <div class="map-bg"></div>
                         <div class="map-overlay">
                             <span>경희대 국제캠퍼스 선승관 B1</span>
-                            <a href="http://sports.khu.ac.kr/01/07_01.php" target="_blank" class="btn btn-secondary btn-sm">찾아오시는 길 안내</a>
+                            <a href="http://sports.khu.ac.kr/01/07_01.php" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">찾아오시는 길 안내</a>
                         </div>
                     </div>
                 </div>
@@ -3214,6 +3216,7 @@
                         <div class="form-checkbox">
                             <input type="checkbox" id="form-privacy" name="개인정보동의" required="">
                             <label for="form-privacy">개인정보 수집 및 이용(문의 응대 목적)에 동의합니다. *</label>
+                            <button type="button" class="privacy-detail-link" id="btn-open-privacy-modal" onclick="openPrivacyNoticeModal()" data-ko="[수집·이용 및 삭제 요청 안내 보기]" data-en="[View Privacy &amp; Deletion Notice]">[수집·이용 및 삭제 요청 안내 보기]</button>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">
@@ -3252,7 +3255,7 @@
             </div>
             <div class="footer-bottom">
                 <!-- Footer Official Symbol mark image -->
-                <p class="copyright">Copyright © Kyung Hee University. All Rights Reserved. | <a href="https://www.khu.ac.kr/kor/user/contents/view.do?menuNo=200231" target="_blank" class="privacy-policy">개인정보처리방침</a></p>
+                <p class="copyright">Copyright © Kyung Hee University. All Rights Reserved. | <a href="https://www.khu.ac.kr/kor/user/contents/view.do?menuNo=200231" target="_blank" rel="noopener noreferrer" class="privacy-policy">개인정보처리방침</a> | <button type="button" class="footer-privacy-notice-btn" id="footer-privacy-notice-btn" onclick="openPrivacyNoticeModal()" data-ko="문의 개인정보·쿠키 안내" data-en="Inquiry Privacy &amp; Cookie Notice">문의 개인정보·쿠키 안내</button></p>
                 <div class="back-to-top">
                     <a href="#" aria-label="맨 위로 가기">
                         <svg viewBox="0 0 24 24" width="24" height="24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" fill="currentColor"></path></svg>
@@ -6858,8 +6861,137 @@ window.showEditorialYear = function(year, btn) {
 };
 </script>
 
+<!-- 개인정보 수집·이용 · 삭제 요청 · 쿠키 안내 모달 -->
+<div id="privacy-notice-modal" class="modal-overlay privacy-notice-overlay" role="dialog" aria-modal="true" aria-labelledby="privacy-notice-title" aria-hidden="true" onclick="closePrivacyNoticeModal()">
+    <div class="privacy-notice-dialog" onclick="event.stopPropagation()">
+        <div class="privacy-notice-header">
+            <h3 id="privacy-notice-title" data-ko="온라인 상담·문의 개인정보 처리 및 쿠키 안내" data-en="Online Inquiry Privacy &amp; Cookie Notice">온라인 상담·문의 개인정보 처리 및 쿠키 안내</h3>
+            <button type="button" class="privacy-notice-close" onclick="closePrivacyNoticeModal()" aria-label="안내창 닫기">&times;</button>
+        </div>
+        <div class="privacy-notice-body">
+            <div class="privacy-notice-item">
+                <h4 data-ko="1. 수집하는 개인정보 항목 및 이용 목적" data-en="1. Collected Personal Data &amp; Purpose">1. 수집하는 개인정보 항목 및 이용 목적</h4>
+                <p data-ko="• 필수 수집 항목: 이름(또는 단체명), 연락처, 소속 구분, 문의 유형, 상세 문의 내용" data-en="• Required Items: Name (or Organization), Contact Number, Affiliation, Inquiry Type, Inquiry Details">• 필수 수집 항목: 이름(또는 단체명), 연락처, 소속 구분, 문의 유형, 상세 문의 내용</p>
+                <p data-ko="• 이용 목적: 스포츠 부상 상담·재활, 컨디셔닝·교육 자문, 현장 지원 등 온라인 문의 접수 및 회신 응대 전용 (마케팅·광고 목적으로 절대 이용하지 않습니다.)" data-en="• Purpose: Responding to online inquiries regarding sports injury rehab, conditioning/education advisory, and field support (Never used for marketing or advertising).">• 이용 목적: 스포츠 부상 상담·재활, 컨디셔닝·교육 자문, 현장 지원 등 온라인 문의 접수 및 회신 응대 전용 (마케팅·광고 목적으로 절대 이용하지 않습니다.)</p>
+            </div>
+            <div class="privacy-notice-item">
+                <h4 data-ko="2. 보유 및 이용 기간 (파기 기준)" data-en="2. Retention Period &amp; Destruction">2. 보유 및 이용 기간 (파기 기준)</h4>
+                <p data-ko="• 문의 응대 및 상담 완료 후 지체 없이 파기합니다. 단, 원활한 후속 상담 이력 확인을 위해 접수일로부터 최대 1년 이내 보관 후 복구 불가능한 방법으로 영구 삭제합니다." data-en="• Destroyed promptly after inquiry resolution, or retained for up to 1 year from submission for follow-up consultation records and then permanently deleted.">• 문의 응대 및 상담 완료 후 지체 없이 파기합니다. 단, 원활한 후속 상담 이력 확인을 위해 접수일로부터 최대 1년 이내 보관 후 복구 불가능한 방법으로 영구 삭제합니다.</p>
+            </div>
+            <div class="privacy-notice-item">
+                <h4 data-ko="3. 외부 전송 도구 안내 (이메일 중계)" data-en="3. External Transmission Relay">3. 외부 전송 도구 안내 (이메일 중계)</h4>
+                <p data-ko="• 본 웹사이트는 별도 회원 DB에 개인정보를 저장하지 않으며, 온라인 문의 양식 전송 중계 서비스(FormSubmit, formsubmit.co)를 통해 센터 공식 이메일(khuatcenter@khu.ac.kr)로만 문의 내용을 전달합니다." data-en="• This website does not store personal data in a separate member database; inquiries are relayed solely to our official email (khuatcenter@khu.ac.kr) via FormSubmit (formsubmit.co).">• 본 웹사이트는 별도 회원 DB에 개인정보를 저장하지 않으며, 온라인 문의 양식 전송 중계 서비스(FormSubmit, formsubmit.co)를 통해 센터 공식 이메일(khuatcenter@khu.ac.kr)로만 문의 내용을 전달합니다.</p>
+            </div>
+            <div class="privacy-notice-item">
+                <h4 data-ko="4. 개인정보 열람·정정·삭제 요청 방법" data-en="4. How to Request Access, Correction, or Deletion">4. 개인정보 열람·정정·삭제 요청 방법</h4>
+                <p data-ko="• 접수하신 문의 내역의 열람, 정정 또는 즉시 삭제(동의 철회)를 원하시는 경우 아래 담당 창구로 연락해 주시면 본인 확인 후 지체 없이 삭제 처리해 드립니다." data-en="• To request access, correction, or immediate deletion of your submitted inquiry, please contact us below and we will process it promptly upon verification.">• 접수하신 문의 내역의 열람, 정정 또는 즉시 삭제(동의 철회)를 원하시는 경우 아래 담당 창구로 연락해 주시면 본인 확인 후 지체 없이 삭제 처리해 드립니다.</p>
+                <p data-ko="• 담당 창구: 경희대학교 AT Lab &amp; Center (이메일: khuatcenter@khu.ac.kr / 전화: 031-201-2787)" data-en="• Contact: KHU AT Lab &amp; Center (Email: khuatcenter@khu.ac.kr / Tel: 031-201-2787)">• 담당 창구: 경희대학교 AT Lab &amp; Center (이메일: khuatcenter@khu.ac.kr / 전화: 031-201-2787)</p>
+            </div>
+            <div class="privacy-notice-item">
+                <h4 data-ko="5. 쿠키(Cookie) 및 브라우저 저장소 안내" data-en="5. Cookies &amp; Browser Storage">5. 쿠키(Cookie) 및 브라우저 저장소 안내</h4>
+                <p data-ko="• 본 웹사이트는 광고·행태분석·추적용 쿠키나 외부 분석 SDK를 사용하지 않습니다. 다만 이용자가 선택한 표시 언어(한국어/English)를 유지하기 위해 브라우저 로컬 저장소(localStorage)만 최소한으로 사용합니다." data-en="• This website does not use advertising, behavioral tracking cookies, or third-party analytics SDKs. Only browser localStorage is minimally used to remember your selected language (Korean/English).">• 본 웹사이트는 광고·행태분석·추적용 쿠키나 외부 분석 SDK를 사용하지 않습니다. 다만 이용자가 선택한 표시 언어(한국어/English)를 유지하기 위해 브라우저 로컬 저장소(localStorage)만 최소한으로 사용합니다.</p>
+            </div>
+            <div class="privacy-notice-item">
+                <h4 data-ko="6. 동의 거부 권리 및 불이익 안내" data-en="6. Right to Refuse Consent">6. 동의 거부 권리 및 불이익 안내</h4>
+                <p data-ko="• 귀하는 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 다만 동의 거부 시 온라인 문의 양식 접수가 제한되며, 대표 전화(031-201-2787) 또는 이메일(khuatcenter@khu.ac.kr)로 직접 문의하실 수 있습니다." data-en="• You have the right to refuse consent. However, refusing consent restricts online form submission; you may still contact us directly via phone (031-201-2787) or email (khuatcenter@khu.ac.kr).">• 귀하는 개인정보 수집·이용에 대한 동의를 거부할 권리가 있습니다. 다만 동의 거부 시 온라인 문의 양식 접수가 제한되며, 대표 전화(031-201-2787) 또는 이메일(khuatcenter@khu.ac.kr)로 직접 문의하실 수 있습니다.</p>
+            </div>
+        </div>
+        <div class="privacy-notice-footer">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="closePrivacyNoticeModal()" data-ko="닫기" data-en="Close">닫기</button>
+            <button type="button" class="btn btn-primary btn-sm" onclick="agreeAndClosePrivacyModal()" data-ko="동의 체크 및 닫기" data-en="Agree &amp; Close">동의 체크 및 닫기</button>
+        </div>
+    </div>
+</div>
+
+<!-- 출시 안전 & 전역 키보드 접근성(A11y) 보강 스크립트 -->
+<script>
+(function() {
+    let lastFocusedBeforePrivacy = null;
+
+    window.openPrivacyNoticeModal = function() {
+        const modal = document.getElementById('privacy-notice-modal');
+        if (!modal) return;
+        lastFocusedBeforePrivacy = document.activeElement;
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+        const closeBtn = modal.querySelector('.privacy-notice-close');
+        if (closeBtn) setTimeout(() => closeBtn.focus(), 50);
+    };
+
+    window.closePrivacyNoticeModal = function() {
+        const modal = document.getElementById('privacy-notice-modal');
+        if (!modal) return;
+        modal.classList.remove('show');
+        modal.setAttribute('aria-hidden', 'true');
+        if (lastFocusedBeforePrivacy && typeof lastFocusedBeforePrivacy.focus === 'function') {
+            lastFocusedBeforePrivacy.focus();
+        }
+    };
+
+    window.agreeAndClosePrivacyModal = function() {
+        const chk = document.getElementById('form-privacy');
+        if (chk) chk.checked = true;
+        window.closePrivacyNoticeModal();
+    };
+
+    function enhanceKeyboardAccessibility() {
+        // 비-버튼/비-링크 클릭 가능 카드 및 요소에 키보드 포커스 및 Enter/Space 동작 부여
+        const clickableEls = document.querySelectorAll('[onclick]:not(button):not(a):not(input):not(select):not(textarea)');
+        clickableEls.forEach(el => {
+            // 모달 배경 오버레이나 내부 전파 방지용 래퍼는 탭 포커스에서 제외
+            const onclickCode = (el.getAttribute('onclick') || '').trim();
+            if (el.classList.contains('modal-overlay') || onclickCode === 'event.stopPropagation()') return;
+            if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+            if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
+            if (!el.dataset.kbdBound) {
+                el.dataset.kbdBound = '1';
+                el.addEventListener('keydown', function(e) {
+                    if (e.target !== el) return;
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        el.click();
+                    }
+                });
+            }
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', enhanceKeyboardAccessibility);
+    } else {
+        enhanceKeyboardAccessibility();
+    }
+
+    // 모든 모달 Escape 키 통합 닫기 지원
+    document.addEventListener('keydown', function(e) {
+        if (e.key !== 'Escape') return;
+        const privModal = document.getElementById('privacy-notice-modal');
+        if (privModal && privModal.classList.contains('show')) {
+            window.closePrivacyNoticeModal();
+            return;
+        }
+        const alumniModal = document.getElementById('alumni-modal');
+        if (alumniModal && (alumniModal.classList.contains('show') || alumniModal.style.display === 'flex')) {
+            if (typeof window.closeAlumniModal === 'function') window.closeAlumniModal();
+            else alumniModal.style.display = 'none';
+            return;
+        }
+        const deptModal = document.getElementById('department-modal');
+        if (deptModal && (deptModal.classList.contains('active') || deptModal.style.display === 'flex')) {
+            if (typeof window.closeDepartmentModal === 'function') window.closeDepartmentModal();
+            return;
+        }
+        const profModal = document.getElementById('prof-modal');
+        if (profModal && (profModal.classList.contains('active') || profModal.style.display === 'flex')) {
+            if (typeof window.closeProfModal === 'function') window.closeProfModal();
+            return;
+        }
+    });
+})();
+</script>
+
 <!-- 다국어 전환 엔진 (한국어 | English) -->
-<script src="i18n.js?v=20261118_honor1"></script>
+<script src="i18n.js?v=20261118_safety1"></script>
 <!-- 오픈소스 모션 & 데이터 시각화 엔진 (anime.js v4.5 · Motion v14.9 · Bklit UI) -->
 <script src="assets/vendor/anime.umd.min.js"></script>
 <script src="assets/vendor/motion.min.js"></script>

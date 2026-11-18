@@ -1272,7 +1272,7 @@
         });
 
         // 10) 통합 멤버 디렉토리 & 역대 기록 아카이브 탭 라벨 / 활동사진 더보기 동기화
-        document.querySelectorAll('.member-dir-tab-btn [data-ko][data-en], .awards-archive-tab-btn [data-ko][data-en], .honor-filter-btn [data-ko][data-en], .honor-col-head[data-ko][data-en]').forEach(el => {
+        document.querySelectorAll('.member-dir-tab-btn [data-ko][data-en], .awards-archive-tab-btn [data-ko][data-en], .honor-filter-btn [data-ko][data-en], .honor-col-head[data-ko][data-en], #skip-to-content[data-ko][data-en], #btn-open-privacy-modal[data-ko][data-en], #footer-privacy-notice-btn[data-ko][data-en], #privacy-notice-modal [data-ko][data-en]').forEach(el => {
             el.innerHTML = (lang === 'en') ? el.getAttribute('data-en') : el.getAttribute('data-ko');
         });
         const expandLabel = document.getElementById('gallery-expand-label');

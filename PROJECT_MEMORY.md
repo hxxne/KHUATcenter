@@ -4077,3 +4077,19 @@ Observation 100시간 실무 과정,
   3. **반응형 및 다국어(`i18n.js`, `v=20261118_honor1`):**
      - 모바일(`<= 768px`)에서는 연도별 세로 명부 카드로 자동 전환되며, 영문 전환 시 필터·컬럼 헤더·수상자 성명이 100% 영문으로 동기화됨.
 - **검증:** Playwright로 데스크톱(KO/EN), 부문 필터, 모달 오픈(2025 유승아, 2017 조재희), 모바일(390×844) 모두 콘솔/페이지 에러 0건으로 검증 완료.
+
+---
+
+## ⚡ 최근 업데이트: 출시 전 안전·접근성 20대 항목 전수 점검 및 보강 (2026-11-18)
+- **요청 사항:** `minai.co.kr/resources/app-launch-safety` (앱·웹사이트 출시 전 점검표 20가지) 기준 전수 진단 및 웹사이트 반영.
+- **구현 내용:**
+  1. **온라인 상담·문의 개인정보 처리 및 쿠키 안내 모달 (`#privacy-notice-modal` in `index.html`, `khu-pro.css`, `i18n.js`):**
+     - 문의 양식(`#inquiry-form`) 동의 체크박스 옆 `[수집·이용 및 삭제 요청 안내 보기]` 버튼과 Footer `문의 개인정보·쿠키 안내` 버튼 추가.
+     - ① 수집 항목·이용 목적(상담 응대 전용·마케팅 미사용), ② 보유 및 파기 기간(상담 완료 후 파기, 최대 1년 이내), ③ 외부 메일 전송 중계(`FormSubmit`, `formsubmit.co`) 고지, ④ 열람·정정·삭제 요청 창구(`khuatcenter@khu.ac.kr` / `031-201-2787`), ⑤ 쿠키·저장소 안내(광고·추적 쿠키 미사용, 언어 설정용 `localStorage`만 사용), ⑥ 동의 거부 권리 안내를 한국어/영문 1:1 대응으로 완비.
+     - 모달 하단 `동의 체크 및 닫기` 클릭 시 `#form-privacy` 자동 체크 연동.
+  2. **전역 키보드 접근성(A11y) & 보안 속성 강화:**
+     - 상단 `본문 바로가기 (Skip to main content)` 링크(`#skip-to-content`) 추가.
+     - 페이지 내 비-버튼 클릭 요소 191개에 자동으로 `tabindex="0"`, `role="button"` 및 `Enter`/`Space` 키 실행 바인딩(`enhanceKeyboardAccessibility`).
+     - 모든 모달(`#privacy-notice-modal`, `#alumni-modal`, `#department-modal`, `#prof-modal`) `Escape` 키 통합 닫기 및 포커스 복원 지원.
+     - 외부 새 창 링크(`target="_blank"`) 전수 `rel="noopener noreferrer"` 적용 완료.
+- **검증:** Playwright로 191개 키보드 바인딩, `Enter` 키 모달 오픈, `Escape` 키 모달 닫기, 개인정보 안내 모달(KO/EN) 및 동의 체크박스 연동, 콘솔/페이지 에러 0건 확인 완료.
