@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261118_en_dedup">
+    <link rel="stylesheet" href="khu-pro.css?v=20261118_bento_stats">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
@@ -1617,15 +1617,16 @@
                 <div class="divider"></div>
             </div>
 
-            <!-- 3대 핵심 지표 오픈 레저 (교육 -> 연구 -> 서비스 순서, 외곽 박스 없음) -->
+            <!-- 3대 핵심 지표 모던 벤토 카드 데크 (교육 -> 연구 -> 서비스 순서) -->
             <div class="editorial-metric-grid">
                 
-                <!-- 교육 부문 (클릭 시 교육 모달) -->
+                <!-- 1. 교육 부문 (클릭 시 교육 모달) -->
                 <div class="editorial-card card-edu clickable-stat-card" id="btn-edu-modal" role="button" tabindex="0" onclick="openPillarModal('edu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('edu');}" title="클릭하여 교육 과정 세부내용 확인" aria-label="AT 센터 기본 교육 이수 547명 - 교육 과정 세부내용 보기">
                     <div class="editorial-card-header">
                         <div class="index-pill">
                             <span class="index-label">EDUCATION</span>
                         </div>
+                        <span class="metric-corner-icon" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
                     </div>
 
                     <div class="editorial-stat-block">
@@ -1637,7 +1638,18 @@
                         <p class="editorial-card-desc">AT Center 100 시간 관찰 경험, 응급처치/심폐소생술 자격, 성희롱/폭력 예방교육, Modality 교육, 학술 세미나 전 과정 이수</p>
                     </div>
 
-                    <div class="bklit-spark-container" id="spark-edu" aria-hidden="true"></div>
+                    <div class="metric-breakdown-box">
+                        <div class="metric-box-head">
+                            <span class="metric-box-label" data-ko="필수 수료 4대 과정" data-en="4 Required Modules">필수 수료 4대 과정</span>
+                            <span class="metric-box-badge badge-crimson" data-ko="전 과정 이수" data-en="100% Required">전 과정 이수</span>
+                        </div>
+                        <div class="metric-spec-grid">
+                            <div class="metric-spec-chip"><i class="fa-solid fa-check" aria-hidden="true"></i><span data-ko="100h 현장 관찰" data-en="100h Observation">100h 현장 관찰</span></div>
+                            <div class="metric-spec-chip"><i class="fa-solid fa-check" aria-hidden="true"></i><span data-ko="응급처치 · CPR" data-en="First Aid &amp; CPR">응급처치 · CPR</span></div>
+                            <div class="metric-spec-chip"><i class="fa-solid fa-check" aria-hidden="true"></i><span data-ko="Modality 교육" data-en="Modality Lab">Modality 교육</span></div>
+                            <div class="metric-spec-chip"><i class="fa-solid fa-check" aria-hidden="true"></i><span data-ko="정기 학술 세미나" data-en="Academic Seminar">정기 학술 세미나</span></div>
+                        </div>
+                    </div>
 
                     <div class="editorial-card-footer">
                         <div class="editorial-action-btn edu-action-btn">
@@ -1647,12 +1659,13 @@
                     </div>
                 </div>
 
-                <!-- 연구 부문 (클릭 시 논문 모달) -->
+                <!-- 2. 연구 부문 (클릭 시 논문 모달) -->
                 <div class="editorial-card card-res clickable-stat-card" id="btn-research-modal" role="button" tabindex="0" onclick="openResearchModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openResearchModal();}" title="클릭하여 연구 논문 목록 확인" aria-label="연구 논문 64편 - 논문 64편 목록 보기">
                     <div class="editorial-card-header">
                         <div class="index-pill">
                             <span class="index-label">RESEARCH</span>
                         </div>
+                        <span class="metric-corner-icon" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
                     </div>
 
                     <div class="editorial-stat-block">
@@ -1664,7 +1677,24 @@
                         <p class="editorial-card-desc">국내외 스포츠과학 및 임상 저널 출판 및 학술대회 발표</p>
                     </div>
 
-                    <div class="bklit-spark-container" id="spark-res" aria-hidden="true"></div>
+                    <div class="metric-breakdown-box">
+                        <div class="metric-box-head">
+                            <span class="metric-box-label" data-ko="4대 분야별 게재 비중" data-en="4 Research Domains">4대 분야별 게재 비중</span>
+                            <span class="metric-box-badge badge-navy" data-ko="SCIE · KCI 등재" data-en="SCIE &amp; KCI">SCIE · KCI 등재</span>
+                        </div>
+                        <div class="metric-seg-bar" aria-hidden="true">
+                            <span class="seg-item seg-rehab" style="width: 48.4%"></span>
+                            <span class="seg-item seg-perf" style="width: 28.1%"></span>
+                            <span class="seg-item seg-rec" style="width: 14.1%"></span>
+                            <span class="seg-item seg-epi" style="width: 9.4%"></span>
+                        </div>
+                        <div class="metric-legend-grid">
+                            <div class="metric-legend-item"><span class="legend-dot dot-rehab"></span><span class="legend-name" data-ko="스포츠 재활" data-en="Rehabilitation">스포츠 재활</span><strong>31</strong></div>
+                            <div class="metric-legend-item"><span class="legend-dot dot-perf"></span><span class="legend-name" data-ko="퍼포먼스 향상" data-en="Performance">퍼포먼스 향상</span><strong>18</strong></div>
+                            <div class="metric-legend-item"><span class="legend-dot dot-rec"></span><span class="legend-name" data-ko="피로 회복" data-en="Recovery">피로 회복</span><strong>9</strong></div>
+                            <div class="metric-legend-item"><span class="legend-dot dot-epi"></span><span class="legend-name" data-ko="부상 역학" data-en="Epidemiology">부상 역학</span><strong>6</strong></div>
+                        </div>
+                    </div>
 
                     <div class="editorial-card-footer">
                         <div class="editorial-action-btn">
@@ -1674,12 +1704,13 @@
                     </div>
                 </div>
 
-                <!-- 서비스 부문 -->
+                <!-- 3. 서비스 부문 -->
                 <div class="editorial-card card-srv">
                     <div class="editorial-card-header">
                         <div class="index-pill">
                             <span class="index-label">SERVICE</span>
                         </div>
+                        <span class="metric-corner-tag" data-ko="2013–2026 누적" data-en="SINCE 2013">2013–2026 누적</span>
                     </div>
 
                     <div class="editorial-stat-block">
@@ -1691,10 +1722,24 @@
                         <p class="editorial-card-desc">급성 · 만성 손상 재활, 컨디셔닝, 퍼포먼스 향상,<br>저항 운동, 스포츠 테이핑</p>
                     </div>
 
-                    <div class="bklit-spark-container" id="spark-srv" aria-hidden="true"></div>
+                    <div class="metric-breakdown-box">
+                        <div class="metric-box-head">
+                            <span class="metric-box-label" data-ko="핵심 현장 케어 영역" data-en="On-Field Care Scope">핵심 현장 케어 영역</span>
+                            <span class="metric-box-badge badge-bronze" data-ko="12개 체육부 지원" data-en="12 Varsity Teams">12개 체육부 지원</span>
+                        </div>
+                        <div class="metric-spec-grid">
+                            <div class="metric-spec-chip"><i class="fa-solid fa-kit-medical" aria-hidden="true"></i><span data-ko="급·만성 손상 재활" data-en="Injury Rehab">급·만성 손상 재활</span></div>
+                            <div class="metric-spec-chip"><i class="fa-solid fa-bolt" aria-hidden="true"></i><span data-ko="선수 컨디셔닝" data-en="Conditioning">선수 컨디셔닝</span></div>
+                            <div class="metric-spec-chip"><i class="fa-solid fa-dumbbell" aria-hidden="true"></i><span data-ko="퍼포먼스 운동" data-en="Performance S&amp;C">퍼포먼스 운동</span></div>
+                            <div class="metric-spec-chip"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i><span data-ko="스포츠 테이핑" data-en="Sports Taping">스포츠 테이핑</span></div>
+                        </div>
+                    </div>
 
-                    <div class="editorial-card-footer" aria-hidden="true" style="border-top-color: transparent; visibility: hidden; pointer-events: none;">
-                        <div class="editorial-action-btn"><span>&nbsp;</span></div>
+                    <div class="editorial-card-footer">
+                        <div class="editorial-status-line">
+                            <span class="status-live-dot" aria-hidden="true"></span>
+                            <span data-ko="선승관 AT Center · 12개 운동부 상시 케어" data-en="Active Care at Seonseung-gwan &amp; 12 Teams">선승관 AT Center · 12개 운동부 상시 케어</span>
+                        </div>
                     </div>
                 </div>
 
@@ -7059,7 +7104,7 @@ window.showEditorialYear = function(year, btn) {
 </script>
 
 <!-- 다국어 전환 엔진 (한국어 | English) -->
-<script src="i18n.js?v=20261118_clean1"></script>
+<script src="i18n.js?v=20261118_bento_stats"></script>
 <!-- 오픈소스 모션 & 데이터 시각화 엔진 (anime.js v4.5 · Motion v14.9 · Bklit UI) -->
 <script src="assets/vendor/anime.umd.min.js"></script>
 <script src="assets/vendor/motion.min.js"></script>

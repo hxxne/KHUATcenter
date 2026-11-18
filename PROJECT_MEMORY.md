@@ -4130,3 +4130,16 @@ Observation 100시간 실무 과정,
 - **구현 내용 (`khu-pro.css`, `index.html` 캐시버스트 `v=20261118_en_dedup`):**
   - `html[lang="en"]` 상태에서 `#about`, `#pillars`, `#dashboard`, `#members`, `#awards`, `#donate`, `#activities`, `#contact`의 `.section-title::before`(및 `.donate-section-title::before`) 상단 영문 키커와 `#pillars .bento-badge-row`(`EDUCATION`, `RESEARCH`, `SERVICE` 상단 중복 배지)를 `display: none !important` 처리하여 영문 제목이 한 번만 깔끔하게 노출되도록 개선.
 - **검증:** Playwright로 영문 모드 전환 후 7개 섹션 `::before` 모두 `display: none` 및 시각적 렌더링·콘솔 에러 0건 확인 완료.
+
+---
+
+## ⚡ 최근 업데이트: 누적기록(`#dashboard`) 3열 모던 벤토 카드 데크 & 실측 세부 데이터 개편 (2026-11-18)
+- **요청 사항:** 최신 웹사이트 트렌드(Godly / Awwwards 레퍼런스)를 참고하여 누적기록(`#dashboard`) 섹션을 3열 균형형 모던 벤토 카드 데크로 개편하고 장식용 가짜 스파크라인 차트 제거.
+- **구현 내용 (`index.html`, `khu-pro.css`, `i18n.js`):**
+  1. **3-Column Tactile Bento Deck (`.editorial-metric-grid` / `.editorial-card`):**
+     - `gap: 24px`의 독립된 3개 모던 카드(상단 시그니처 컬러 탑 바 + 우상단 원형 화살표/아카이브 태그 + 내장 세부 데이터 모듈 + 하단 풋터 정렬)로 개편.
+  2. **가짜 스파크라인 제거 & 실제 세부 데이터 모듈(`.metric-breakdown-box`) 탑재:**
+     - **교육(`547명`):** 필수 수료 4대 과정(`100시간 현장 관찰`, `응급처치 · CPR 자격`, `Modality 실기 교육`, `정기 학술 세미나`) 2×2 체크 그리드.
+     - **연구(`64편`):** 4대 연구 분야 실측 게재 비중 멀티 세그먼트 바(`.metric-seg-bar`) 및 범례(`스포츠 재활 31`, `퍼포먼스 향상 18`, `피로 회복 9`, `부상 역학 6`).
+     - **서비스(`173,316건`):** 핵심 현장 케어 4대 영역(`급성·만성 손상 재활`, `선수 컨디셔닝 관리`, `저항·퍼포먼스 운동`, `스포츠 테이핑·파견`) 2×2 스펙 그리드 및 하단 상시 운영 상태 표시줄(`선승관 AT Center · 12개 운동부 상시 케어`)로 3개 카드 하단 정렬 100% 일치.
+- **검증:** Playwright로 데스크톱(KO/EN), 모바일(`390×844`), 교육/연구 모달 오픈, 콘솔 에러 0건 확인 완료.
