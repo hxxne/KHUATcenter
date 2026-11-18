@@ -3390,3 +3390,16 @@ html[lang="en"] .assistant-person-name {
     border-top: 1px solid var(--line-hairline);
     background: var(--surface-paper, #FAF8F6);
 }
+
+/* 영문 모드(lang="en")에서 본 제목과 중복되는 상단 영문 키커(::before) 및 배지 숨김 */
+html[lang="en"] #about .section-title::before,
+html[lang="en"] #pillars .section-title::before,
+html[lang="en"] #dashboard .section-title::before,
+html[lang="en"] #members .section-title::before,
+html[lang="en"] #awards .section-title::before,
+html[lang="en"] .donate-section-title::before,
+html[lang="en"] #activities .section-title::before,
+html[lang="en"] #contact .section-title::before,
+html[lang="en"] #pillars .bento-badge-row {
+    display: none !important;
+}

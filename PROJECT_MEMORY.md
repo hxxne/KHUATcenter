@@ -4122,3 +4122,11 @@ Observation 100시간 실무 과정,
      - **04 AT 동아리 임원진 & 05 스태프(체육부 전담 AT · 스포츠재활 강사):** 앞면 카드에 기입된 3개 항목(`소속`, `담당 역할`, `E-mail`)만 표시 (미기입 학년·전화번호·연구실 및 하단 경력/논문 숨김).
      - **06 AT 센터 보조:** 실제 확정된 `담당부서`(`○○부 보조 AT`) 1개 항목만 표시 (미기입 학과·이메일·연락처·경력 전면 숨김).
 - **검증:** Playwright로 히어로 색상(`rgb(165, 0, 52)`), 자문위원 모달 이메일 미노출, 교수진 모달 정상 노출, 대학원생·스태프·보조 AT 클린 모달 및 콘솔 에러 0건 확인 완료.
+
+---
+
+## ⚡ 최근 업데이트: 영문 모드(`lang="en"`) 중복 영문 섹션 라벨 제거 (2026-11-18)
+- **요청 사항:** 영어로 전환했을 때 `Who We Are`, `What We Do` 등 본 제목 위에 동일한 영문 라벨이 두 번 중복해서 나오는 부분 제거.
+- **구현 내용 (`khu-pro.css`, `index.html` 캐시버스트 `v=20261118_en_dedup`):**
+  - `html[lang="en"]` 상태에서 `#about`, `#pillars`, `#dashboard`, `#members`, `#awards`, `#donate`, `#activities`, `#contact`의 `.section-title::before`(및 `.donate-section-title::before`) 상단 영문 키커와 `#pillars .bento-badge-row`(`EDUCATION`, `RESEARCH`, `SERVICE` 상단 중복 배지)를 `display: none !important` 처리하여 영문 제목이 한 번만 깔끔하게 노출되도록 개선.
+- **검증:** Playwright로 영문 모드 전환 후 7개 섹션 `::before` 모두 `display: none` 및 시각적 렌더링·콘솔 에러 0건 확인 완료.
