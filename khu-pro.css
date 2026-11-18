@@ -960,82 +960,61 @@ html[lang="en"] .about-detail .pc-br {
     margin-bottom: 8px;
 }
 
-/* 3-Column Tactile Bento Deck (Modern Stats & Real Data Breakdown) */
+/* Frameless Open Ledger — Zero White Box, Zero Shadow, Pure Hairline Grid */
 .editorial-metric-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
     background: transparent;
+    backdrop-filter: none;
+    border-radius: 0;
+    box-shadow: none;
+    overflow: visible;
     border: none;
-    padding: 4px 0;
+    border-top: 1.5px solid var(--ink-primary);
+    border-bottom: 1px solid var(--line-hairline);
 }
 
 .editorial-card {
     position: relative;
-    padding: clamp(28px, 3vw, 36px) clamp(24px, 2.5vw, 32px);
+    padding: clamp(32px, 3.5vw, 46px) clamp(24px, 2.8vw, 38px);
     display: grid;
-    grid-template-rows: auto 1fr auto auto;
+    grid-template-rows: auto 1fr auto;
     align-content: stretch;
     height: 100%;
-    background: #FFFFFF;
-    border: 1px solid rgba(17, 19, 24, 0.11);
-    border-radius: 16px;
+    background: transparent;
+    border: none;
     min-width: 0;
-    transition: transform 0.28s var(--ease-expo), border-color 0.25s ease;
-    overflow: hidden;
 }
 
-.editorial-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--line-strong);
-    transition: height 0.22s ease;
+.editorial-card:first-child {
+    padding-left: 0;
 }
 
-.editorial-card.card-edu::before { background: var(--khu-crimson); }
-.editorial-card.card-res::before { background: var(--khu-navy); }
-.editorial-card.card-srv::before { background: var(--khu-bronze); }
-
-.editorial-card:first-child,
 .editorial-card:last-child {
-    padding-left: clamp(24px, 2.5vw, 32px);
-    padding-right: clamp(24px, 2.5vw, 32px);
+    padding-right: 0;
 }
 
 .editorial-card + .editorial-card {
-    border-left: 1px solid rgba(17, 19, 24, 0.11);
+    border-left: 1px solid var(--line-hairline);
+}
+
+.editorial-card:hover {
+    background: transparent;
 }
 
 .clickable-stat-card {
     cursor: pointer;
 }
-
-.clickable-stat-card:hover {
-    transform: translateY(-4px);
-}
-
-.card-edu.clickable-stat-card:hover {
-    border-color: rgba(165, 0, 52, 0.42);
-}
-
-.card-res.clickable-stat-card:hover {
-    border-color: rgba(0, 48, 94, 0.42);
-}
-
 .clickable-stat-card:focus-visible {
     outline: 2px solid var(--khu-crimson);
-    outline-offset: 3px;
+    outline-offset: 4px;
 }
 
 .editorial-card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .index-pill {
@@ -1049,62 +1028,22 @@ html[lang="en"] .about-detail .pc-br {
     gap: 8px;
     font-size: 0.75rem;
     font-weight: 800;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.15em;
     color: var(--ink-primary);
 }
 .index-label::before {
     content: "";
     display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
+    width: 14px;
+    height: 1.5px;
     background: currentColor;
 }
 .card-edu .index-label { color: var(--khu-crimson); }
 .card-res .index-label { color: var(--khu-navy); }
 .card-srv .index-label { color: var(--khu-bronze); }
 
-.metric-corner-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1px solid var(--line-hairline);
-    background: var(--surface-paper, #FAF8F6);
-    color: var(--ink-secondary);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.76rem;
-    transform: rotate(-45deg);
-    transition: background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease, transform 0.25s var(--ease-expo);
-}
-
-.card-edu.clickable-stat-card:hover .metric-corner-icon {
-    background: var(--khu-crimson);
-    border-color: var(--khu-crimson);
-    color: #FFFFFF;
-    transform: rotate(-45deg) translate(2px, -2px);
-}
-
-.card-res.clickable-stat-card:hover .metric-corner-icon {
-    background: var(--khu-navy);
-    border-color: var(--khu-navy);
-    color: #FFFFFF;
-    transform: rotate(-45deg) translate(2px, -2px);
-}
-
-.metric-corner-tag {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    color: var(--khu-bronze);
-    background: rgba(142, 104, 26, 0.09);
-    padding: 4px 10px;
-    border-radius: 999px;
-}
-
 .editorial-stat-block {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .stat-value-row {
@@ -1114,10 +1053,10 @@ html[lang="en"] .about-detail .pc-br {
     margin-bottom: 12px;
 }
 .stat-number {
-    font-size: clamp(2.85rem, 4.1vw, 3.75rem);
+    font-size: clamp(2.85rem, 4.3vw, 3.85rem);
     font-weight: 800;
     line-height: 0.98;
-    letter-spacing: -0.04em;
+    letter-spacing: -0.045em;
     color: var(--ink-primary);
     font-variant-numeric: tabular-nums;
 }
@@ -1136,205 +1075,17 @@ html[lang="en"] .about-detail .pc-br {
 }
 
 .editorial-card-desc {
-    font-size: 0.87rem;
+    font-size: 0.88rem;
     color: var(--ink-muted);
-    line-height: 1.6;
+    line-height: 1.62;
     text-wrap: balance;
     margin: 0;
 }
 
-/* 실제 세부 데이터 브레이크다운 모듈 (가짜 스파크라인 대체) */
-.metric-breakdown-box {
-    background: var(--surface-paper, #FAF8F6);
-    border: 1px solid rgba(17, 19, 24, 0.07);
-    border-radius: 12px;
-    padding: 14px 16px;
-    margin: 4px 0 20px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-}
-
-.metric-box-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-}
-
-.metric-box-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--ink-secondary);
-    letter-spacing: -0.01em;
-}
-
-.metric-box-badge {
-    font-size: 0.7rem;
-    font-weight: 800;
-    padding: 2px 8px;
-    border-radius: 4px;
-    letter-spacing: 0.02em;
-}
-.metric-box-badge.badge-crimson {
-    color: var(--khu-crimson);
-    background: rgba(165, 0, 52, 0.08);
-}
-.metric-box-badge.badge-navy {
-    color: var(--khu-navy);
-    background: rgba(0, 48, 94, 0.08);
-}
-.metric-box-badge.badge-bronze {
-    color: var(--khu-bronze);
-    background: rgba(142, 104, 26, 0.1);
-}
-
-.metric-spec-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px 8px;
-}
-
-.metric-spec-chip {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--ink-primary);
-    background: #FFFFFF;
-    border: 1px solid rgba(17, 19, 24, 0.06);
-    border-radius: 7px;
-    padding: 6px 8px;
-    min-width: 0;
-}
-
-.metric-spec-chip span {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.card-edu .metric-spec-chip i {
-    color: var(--khu-crimson);
-    font-size: 0.72rem;
-    flex-shrink: 0;
-}
-
-.card-srv .metric-spec-chip i {
-    color: var(--khu-bronze);
-    font-size: 0.74rem;
-    flex-shrink: 0;
-}
-
-/* 연구 논문 4대 분야 실측 비율 바 & 범례 */
-.metric-seg-bar {
-    display: flex;
+.bklit-spark-container {
     width: 100%;
-    height: 7px;
-    border-radius: 999px;
-    overflow: hidden;
-    gap: 2px;
-    background: rgba(17, 19, 24, 0.06);
-}
-
-.metric-seg-bar .seg-item {
-    display: block;
-    height: 100%;
-    border-radius: 2px;
-}
-.seg-rehab { background: var(--khu-crimson); }
-.seg-perf { background: var(--khu-navy); }
-.seg-rec { background: var(--khu-gold); }
-.seg-epi { background: #64748B; }
-
-.metric-legend-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px 12px;
-}
-
-.metric-legend-item {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.78rem;
-    color: var(--ink-secondary);
-    min-width: 0;
-}
-
-.legend-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 2px;
-    flex-shrink: 0;
-}
-.dot-rehab { background: var(--khu-crimson); }
-.dot-perf { background: var(--khu-navy); }
-.dot-rec { background: var(--khu-gold); }
-.dot-epi { background: #64748B; }
-
-.legend-name {
-    flex: 1 1 auto;
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.metric-legend-item strong {
-    font-weight: 800;
-    color: var(--ink-primary);
-    font-variant-numeric: tabular-nums;
-}
-
-.editorial-card-footer {
-    padding-top: 16px;
-    border-top: 1px solid var(--line-hairline);
-    min-height: 40px;
-    display: flex;
-    align-items: center;
-}
-
-.editorial-action-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.86rem;
-    font-weight: 800;
-    color: var(--khu-navy);
-    transition: color 0.2s ease, gap 0.25s var(--ease-expo);
-}
-.edu-action-btn {
-    color: var(--khu-crimson);
-}
-.clickable-stat-card:hover .editorial-action-btn {
-    gap: 12px;
-}
-.card-res.clickable-stat-card:hover .editorial-action-btn {
-    color: var(--khu-navy);
-}
-.card-edu.clickable-stat-card:hover .editorial-action-btn {
-    color: var(--khu-crimson);
-}
-
-.editorial-status-line {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.83rem;
-    font-weight: 700;
-    color: var(--ink-secondary);
-}
-
-.status-live-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: #10B981;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.16);
-    flex-shrink: 0;
+    min-height: 86px;
+    margin: 16px 0 0 0;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3216,19 +2967,19 @@ html[lang="en"] .assistant-person-name {
     .editorial-card {
         display: flex;
         flex-direction: column;
-        padding: 26px 22px;
+        padding: 28px 0;
     }
     .editorial-card:first-child,
     .editorial-card:last-child {
-        padding-left: 22px;
-        padding-right: 22px;
+        padding-left: 0;
+        padding-right: 0;
     }
     .editorial-card.card-edu::after {
         display: none;
     }
     .editorial-card + .editorial-card {
-        border-left: 1px solid rgba(17, 19, 24, 0.11);
-        border-top: 1px solid rgba(17, 19, 24, 0.11);
+        border-left: none;
+        border-top: 1px solid var(--line-hairline);
     }
 }
 
@@ -3367,8 +3118,8 @@ html[lang="en"] .assistant-person-name {
         margin-bottom: 4px;
     }
     .editorial-card + .editorial-card {
-        border-left: 1px solid rgba(17, 19, 24, 0.11);
-        border-top: 1px solid rgba(17, 19, 24, 0.11);
+        border-left: none;
+        border-top: 1px solid var(--line-hairline);
     }
     /* Strict Horizontal Containment & Zero RIGHT_OVERFLOW on 390px Mobile */
     .award-carousel-nav-btn {
