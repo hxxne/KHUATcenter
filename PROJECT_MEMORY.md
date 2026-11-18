@@ -4093,3 +4093,15 @@ Observation 100시간 실무 과정,
      - 모든 모달(`#privacy-notice-modal`, `#alumni-modal`, `#department-modal`, `#prof-modal`) `Escape` 키 통합 닫기 및 포커스 복원 지원.
      - 외부 새 창 링크(`target="_blank"`) 전수 `rel="noopener noreferrer"` 적용 완료.
 - **검증:** Playwright로 191개 키보드 바인딩, `Enter` 키 모달 오픈, `Escape` 키 모달 닫기, 개인정보 안내 모달(KO/EN) 및 동의 체크박스 연동, 콘솔/페이지 에러 0건 확인 완료.
+
+---
+
+## ⚡ 최근 업데이트: 역대 수상자 캐러셀 원복 및 이복음(축구부 보조 AT) 프로필 사진 규격화·연동 (2026-11-18)
+- **요청 사항:** 역대 수상자 디자인을 원래의 연도별 클릭 캐러셀로 되돌리고, `assets/`에 추가 업로드된 프로필 사진(`profile_이볶음.jpg` → `이복음`)을 기존 보조 AT 규격에 맞춰 업로드 및 연동.
+- **구현 내용:**
+  1. **역대 수상자 섹션 원복 (`index.html`, `khu-pro.css`, `i18n.js`):**
+     - `2025–2015` 연도 탭 클릭 선택형 캐러셀(`.award-carousel-container` + `goToAwardSlide`) 디자인으로 100% 복원.
+  2. **이복음(축구부 학부 보조 AT) 프로필 사진 규격 가공 및 연동 (`assets/profile_이복음.jpg`, `index.html`):**
+     - 업로드된 고해상도 원본(`3024×4032`)을 `assets/raw_backup/profile_이복음_raw.jpg`에 백업하고, 기존 축구부 보조 AT(`김예종`, `오승진`)와 동일한 상반신·팔짱 구도의 `500×500` 정방형(Lanczos 리샘플링 + 언샤프 마스크)으로 정밀 가공하여 `assets/profile_이복음.jpg` 및 `assets/profile_이볶음.jpg`에 저장.
+     - `06 AT 센터 보조`의 `1. 축구부` 아바타 그리드에 `이복음` 실물 사진(`has-photo`) 연동 및 `professorsData["이복음"]` 등록 (`김예종`, `오승진`의 부서 표기도 `축구부 학부 보조 AT`로 함께 정정).
+- **검증:** Playwright로 역대 수상자 캐러셀 동작, 축구부 보조 AT 4인(`조현준`, `김예종`, `오승진`, `이복음`) 실물 사진 노출, `이복음` 상세 프로필 모달 오픈 및 에러 0건 확인 완료.
