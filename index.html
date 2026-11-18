@@ -658,7 +658,7 @@
                     <div class="modern-profile-card" onclick="openProfModal(this)">
                         <div class="modern-avatar-container">
                             <div class="modern-avatar-blob"></div>
-                            <img src="assets/profile_유주승.jpg?v=20261116_c3" alt="유주승" class="modern-avatar-img-fallback" onerror="this.src='assets/profile_default.png?v=20261116_c3'">
+                            <img src="assets/profile_유주승.jpg?v=20261118_p3" alt="유주승" class="modern-avatar-img-fallback" onerror="this.src='assets/profile_default.png?v=20261116_c3'">
                         </div>
                         <div class="modern-profile-name">유주승</div>
                         <ul class="modern-profile-exp">
@@ -1033,9 +1033,9 @@
                         </div>
                     </div>
                     <div class="assistant-avatar-grid">
-                        <div class="assistant-person-item" onclick="openProfModal(this)" title="상세 프로필 보기">
-                            <div class="assistant-avatar-box fallback">
-                                <span class="avatar-initial">채은</span>
+                        <div class="assistant-person-item has-photo" onclick="openProfModal(this)" title="상세 프로필 보기">
+                            <div class="assistant-avatar-box">
+                                <img src="assets/profile_김채은.jpg?v=20261118_p3" alt="김채은" class="assistant-avatar-img">
                             </div>
                             <span class="assistant-person-name">김채은</span>
                         </div>
@@ -1045,13 +1045,13 @@
                             </div>
                             <span class="assistant-person-name">이태현</span>
                         </div>
-                        <div class="assistant-person-item" onclick="openProfModal(this)" title="상세 프로필 보기">
-                            <div class="assistant-avatar-box fallback">
-                                <span class="avatar-initial">상우</span>
+                        <div class="assistant-person-item has-photo" onclick="openProfModal(this)" title="상세 프로필 보기">
+                            <div class="assistant-avatar-box">
+                                <img src="assets/profile_채상우.jpg?v=20261118_p3" alt="채상우" class="assistant-avatar-img">
                             </div>
                             <span class="assistant-person-name">채상우</span>
                         </div>
-                        <div class="assistant-person-item" onclick="openProfModal(this)" title="상세 프로필 보기">
+                        <div class="assistant-person-item has-photo" onclick="openProfModal(this)" title="상세 프로필 보기">
                             <div class="assistant-avatar-box">
                                 <img src="assets/profile_홍진후.jpg?v=20261116_c3" alt="홍진후" class="assistant-avatar-img">
                             </div>
@@ -3661,7 +3661,7 @@
             },
             "유주승": {
                 role: "야구부 전담 AT",
-                photo: "assets/profile_유주승.jpg?v=20261116_c3",
+                photo: "assets/profile_유주승.jpg?v=20261118_p3",
                 degree: "경희대학교 스포츠의학과 졸업",
                 dept: "스포츠의학과",
                 grade: "학사 졸업",
@@ -4608,7 +4608,7 @@
 
                         const headImgSrc = (professorsData[headName] && professorsData[headName].photo) 
                             ? professorsData[headName].photo 
-                            : (headName === '유주승' ? 'assets/profile_default.png?v=20261116_c3' : `assets/profile_${headName}.jpg?v=20261116_c3`);
+                            : `assets/profile_${headName}.jpg?v=20261118_p3`;
 
                         profileDiv.innerHTML = `
                             <div class="head-at-avatar" title="클릭하여 고화질 확대" onclick="event.stopPropagation(); if (typeof openPhotoLightbox === 'function') openPhotoLightbox('${headImgSrc}', '${headName} (${sportName === '센터' ? 'AT Center' : sportName + '부'} 전담 AT)');">
