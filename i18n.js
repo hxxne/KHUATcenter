@@ -1343,7 +1343,7 @@
             window.openProfModal = function (cardOrName) {
                 // 영문 상태에서 카드를 클릭했을 때도 원본 한국어 키(data-ko-name)로 정확히 조회하도록 보장
                 // 이전 모달에서 숨겼던 라벨·값 칸 표시 상태 초기화 (origOpenProfModal 실행 전)
-                ['prof-modal-degree-label', 'prof-modal-degree', 'prof-modal-edu-label', 'prof-modal-edu', 'prof-modal-subject-label', 'prof-modal-subject', 'prof-modal-lab-label', 'prof-modal-lab'].forEach(id => {
+                ['prof-modal-degree-label', 'prof-modal-degree', 'prof-modal-edu-label', 'prof-modal-edu', 'prof-modal-subject-label', 'prof-modal-subject', 'prof-modal-lab-label', 'prof-modal-lab', 'prof-modal-email-label', 'prof-modal-email'].forEach(id => {
                     const elem = document.getElementById(id);
                     if (elem) elem.style.display = '';
                 });
@@ -1373,6 +1373,8 @@
                     '연구주제': 'Research Topic',
                     '보유자격': 'Certifications',
                     '소속': 'Affiliation',
+                    '담당 역할': 'Role',
+                    '기수': 'Cohort',
                     '보직': 'Position',
                     '학위·자격': 'Degree & Cert',
                     '전문 분야': 'Focus Area',

@@ -463,7 +463,7 @@ a {
     color: #FFFFFF;
 }
 .hero-title .accent-text {
-    color: #FF4D79;
+    color: var(--khu-crimson);
 }
 
 .hero-description {

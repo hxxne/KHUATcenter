@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261118_safety1">
+    <link rel="stylesheet" href="khu-pro.css?v=20261118_clean1">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
@@ -4809,7 +4809,11 @@
                     rawName = cardOrName.dataset.koName.trim();
                 } else {
                     const nameEl = cardOrName.querySelector('.modern-profile-name, .assistant-person-name');
-                    if (nameEl) rawName = nameEl.textContent.trim();
+                    if (nameEl) {
+                        const tmpDiv = document.createElement('div');
+                        tmpDiv.innerHTML = (nameEl.dataset && nameEl.dataset.koOrig) ? nameEl.dataset.koOrig : nameEl.textContent;
+                        rawName = (tmpDiv.textContent || '').trim();
+                    }
                 }
                 const imgEl = cardOrName.querySelector('img');
                 if (imgEl && imgEl.src) cardImgSrc = imgEl.src;
@@ -4817,9 +4821,10 @@
 
             if (!rawName) return;
 
-            // 직함, 괄호(회장/부회장/총무/영문 직책 등), 공백을 깔끔하게 제거하여 순수 성명(Key) 추출
+            // 직함, 쉼표 뒤 학위/자격(, PhD, AT, CSCS 등), 괄호(회장/부회장/총무/영문 직책 등), 공백을 깔끔하게 제거하여 순수 성명(Key) 추출
             const cleanName = rawName
                 .replace(/\(.*?\)/g, '')
+                .replace(/,.*$/g, '')
                 .replace(/(연구교수|교수|재활팀장|연구팀장|팀장|실장|Prof\.|Director|Research|General Manager|Rehab Lead|Lead|\/)/gi, '')
                 .replace(/\s+/g, '')
                 .trim();
@@ -4840,176 +4845,128 @@
             const deptModal = document.getElementById('department-modal');
             const isFromDeptModal = deptModal && (deptModal.classList.contains('show') || deptModal.style.display === 'flex');
 
-            // 03 대학원생 섹션에서 직접 클릭했는지 판별 (한혜서·유승아·유영민 등 겸직 대학원생의 연구주제/학력 표기 지원)
+            // 클릭 위치 판별
+            const isClickedInAssistantGrid = Boolean(cardOrName && cardOrName.nodeType && cardOrName.closest('.assistant-group-grid'));
+
+            // 03 대학원생 섹션에서 직접 클릭했는지 판별
             const allGradList = ["우지윤", "유승아", "유영민", "이승민", "한혜서", "권준홍", "조현준"];
             const isClickedInGradSection = Boolean(
                 cardOrName && cardOrName.nodeType &&
                 !cardOrName.closest('#sub-tab-sports') &&
                 !cardOrName.closest('#sub-tab-rehab') &&
-                !cardOrName.closest('.assistant-group-grid') &&
+                !isClickedInAssistantGrid &&
                 !isFromDeptModal &&
                 allGradList.includes(cleanName)
             );
 
-            // 전담 AT 명단 판별 (03 대학원생 섹션 클릭이 아닐 때만 전담 AT 5대 라벨 적용)
+            // 전담 AT 명단 판별
             const headATList = ["강석", "유주승", "이상준", "박세민", "문수연", "권남준", "기윤서", "문채연", "유지민", "한혜서", "유승아", "유영민"];
-            const isHeadAT = !isClickedInGradSection && (headATList.includes(cleanName) || (pData && pData.role && pData.role.includes("전담 AT")));
+            const isHeadAT = !isClickedInGradSection && !isClickedInAssistantGrid && (headATList.includes(cleanName) || (pData && pData.role && pData.role.includes("전담 AT")));
 
-            // 대학원생 명단 판별
-            const gradList = ["조현준", "권준홍", "이승민", "우지윤"];
-            const isGrad = isClickedInGradSection || (!isHeadAT && gradList.includes(cleanName));
-
-            // 자문위원회 명단 판별
+            // 자문위원회 및 교수진·리더 명단 판별
             const advisoryList = ["정태유", "박욱", "방형식", "손진원"];
-            const isAdvisory = !isClickedInGradSection && advisoryList.includes(cleanName);
+            const isAdvisory = advisoryList.includes(cleanName);
+            const facultyLeaderList = ["박지홍", "오성민", "김준영", "최현곤", "이재욱"];
+            const isFacultyOrLeader = facultyLeaderList.includes(cleanName);
+
+            // 보조 AT 클릭 여부 (06 AT 센터 보조 그리드 클릭 또는 부서 모달 내 보조 AT 배지 클릭)
+            const isAssistantClick = !isAdvisory && !isFacultyOrLeader && (isClickedInAssistantGrid || (isFromDeptModal && !isHeadAT && Boolean(assistantDeptName)));
 
             // 모달 항목 라벨 및 값 엘리먼트
             const degreeLabel = document.getElementById('prof-modal-degree-label');
+            const degreeVal = document.getElementById('prof-modal-degree');
             const eduLabel = document.getElementById('prof-modal-edu-label');
+            const eduVal = document.getElementById('prof-modal-edu');
             const subjectLabel = document.getElementById('prof-modal-subject-label');
+            const subjectVal = document.getElementById('prof-modal-subject');
             const labLabel = document.getElementById('prof-modal-lab-label');
+            const labVal = document.getElementById('prof-modal-lab');
             const emailLabel = document.getElementById('prof-modal-email-label');
             const emailVal = document.getElementById('prof-modal-email');
 
-            if (isHeadAT) {
-                // 전담 AT 맞춤형 5대 라벨 전환 (학위명, 학과, 학년, 전화번호, E-mail)
-                if (degreeLabel) degreeLabel.textContent = "학위명";
-                if (eduLabel) eduLabel.textContent = "학과";
-                if (subjectLabel) subjectLabel.textContent = "학년";
-                if (labLabel) labLabel.textContent = "전화번호";
-                if (emailLabel) {
-                    emailLabel.textContent = "E-mail";
-                    emailLabel.style.display = '';
+            // 모든 슬롯 기본 표시 상태 초기화
+            [degreeLabel, degreeVal, eduLabel, eduVal, subjectLabel, subjectVal, labLabel, labVal, emailLabel, emailVal].forEach(el => {
+                if (el) el.style.display = '';
+            });
+
+            // 앞면 카드(.modern-profile-card)에 실제 기입된 줄(li) 추출 헬퍼
+            function extractCardLines() {
+                let targetCard = (cardOrName && cardOrName.nodeType && cardOrName.classList && cardOrName.classList.contains('modern-profile-card'))
+                    ? cardOrName
+                    : null;
+                if (!targetCard) {
+                    const scopeSel = isClickedInGradSection ? '#member-panel-grad' : (isHeadAT ? '#sub-tab-sports' : '#members');
+                    const cards = document.querySelectorAll(`${scopeSel} .modern-profile-card`);
+                    for (const c of cards) {
+                        const img = c.querySelector('img');
+                        const nm = c.querySelector('.modern-profile-name');
+                        const cName = (c.dataset && c.dataset.koName) || (img && img.getAttribute('alt')) || (nm ? nm.textContent.replace(/\(.*?\)/g, '').trim() : '');
+                        if (cName === cleanName) {
+                            targetCard = c;
+                            break;
+                        }
+                    }
                 }
-                if (emailVal) emailVal.style.display = '';
-            } else if (isGrad) {
-                // 대학원생 맞춤형 라벨 전환 (학위과정, 출신학력, 연구주제, 보유자격, E-mail)
-                if (degreeLabel) degreeLabel.textContent = "학위과정";
-                if (eduLabel) eduLabel.textContent = "출신학력";
-                if (subjectLabel) subjectLabel.textContent = "연구주제";
-                if (labLabel) labLabel.textContent = "보유자격";
-                if (emailLabel) {
-                    emailLabel.textContent = "E-mail";
-                    emailLabel.style.display = '';
+                if (!targetCard) return [];
+                return Array.from(targetCard.querySelectorAll('.modern-profile-exp li')).map(li => (li.dataset.koOrig || li.textContent || '').trim()).filter(Boolean);
+            }
+
+            // 프로필 사진 렌더링 공통 헬퍼
+            function renderModalPhoto(roleTitle) {
+                const photoEl = document.getElementById('prof-modal-photo');
+                if (!photoEl) return;
+                let imgSrc = cardImgSrc || (pData && pData.photo) || '';
+                if (!imgSrc) {
+                    const foundImg = document.querySelector(`#members img[alt="${cleanName}"]`);
+                    if (foundImg && foundImg.src) imgSrc = foundImg.src;
                 }
-                if (emailVal) emailVal.style.display = '';
-            } else if (isAdvisory) {
-                // 자문위원회 맞춤형 라벨 전환 (소속, 보직, 학위·자격, 전문 분야, E-mail)
+                if (imgSrc && !imgSrc.includes('profile_default.png')) {
+                    photoEl.innerHTML = `
+                        <img src="${imgSrc}" alt="${cleanName}" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div class="prof-modal-photo-zoom-hint" title="클릭하여 고화질 확대"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    `;
+                    photoEl.style.cursor = 'zoom-in';
+                    photoEl.title = '클릭하여 고화질 확대';
+                    photoEl.onclick = (e) => {
+                        e.stopPropagation();
+                        if (typeof openPhotoLightbox === 'function') {
+                            openPhotoLightbox(imgSrc, `${cleanName} (${roleTitle})`);
+                        }
+                    };
+                } else if (imgSrc) {
+                    photoEl.innerHTML = `<img src="${imgSrc}" alt="${cleanName}" style="width: 100%; height: 100%; object-fit: cover;">`;
+                    photoEl.style.cursor = 'default';
+                    photoEl.title = '';
+                    photoEl.onclick = null;
+                } else {
+                    photoEl.innerHTML = '<i class="fa-solid fa-user-shield"></i>';
+                    photoEl.style.cursor = 'default';
+                    photoEl.title = '';
+                    photoEl.onclick = null;
+                }
+            }
+
+            const careerList = document.getElementById('prof-modal-career');
+            const researchList = document.getElementById('prof-modal-research');
+
+            if (isAdvisory && pData) {
+                // 1) 자문위원회: 소속 / 보직 / 학위·자격 / 전문 분야 (E-mail 숨김)
+                document.getElementById('prof-modal-name').textContent = cleanName || rawName;
+                document.getElementById('prof-modal-role').textContent = pData.role || "경희대학교 AT Center 자문위원";
+                renderModalPhoto(pData.role || "자문위원");
+
                 if (degreeLabel) degreeLabel.textContent = "소속";
                 if (eduLabel) eduLabel.textContent = "보직";
                 if (subjectLabel) subjectLabel.textContent = "학위·자격";
-                if (labLabel) {
-                    labLabel.textContent = "전문 분야";
-                    labLabel.style.display = '';
-                }
-                if (emailLabel) {
-                    emailLabel.textContent = "E-mail";
-                    emailLabel.style.display = '';
-                }
-                if (emailVal) emailVal.style.display = '';
-            } else if (!pData && assistantDeptName) {
-                // 06 AT 센터 보조 (학부 보조 AT) 맞춤형 라벨 전환
-                if (degreeLabel) degreeLabel.textContent = "소속과정";
-                if (eduLabel) eduLabel.textContent = "소속학과";
-                if (subjectLabel) subjectLabel.textContent = "담당부서";
-                if (labLabel) labLabel.textContent = "위치/연락처";
-                if (emailLabel) {
-                    emailLabel.textContent = "E-mail";
-                    emailLabel.style.display = '';
-                }
-                if (emailVal) emailVal.style.display = '';
-            } else {
-                // 일반 교수/스태프 기존 라벨 및 5대 항목 복구
-                if (degreeLabel) degreeLabel.textContent = "학위명";
-                if (eduLabel) eduLabel.textContent = "최종학력";
-                if (subjectLabel) subjectLabel.textContent = (cleanName === "최현곤") ? "담당부서" : "담당과목";
-                if (labLabel) labLabel.textContent = "연구실";
-                if (emailLabel) {
-                    emailLabel.textContent = "E-mail";
-                    emailLabel.style.display = '';
-                }
-                if (emailVal) emailVal.style.display = '';
-            }
+                if (labLabel) labLabel.textContent = "전문 분야";
+                if (degreeVal) degreeVal.textContent = pData.dept || "-";
+                if (eduVal) eduVal.textContent = pData.grade || pData.edu || "-";
+                if (subjectVal) subjectVal.textContent = pData.degree || "-";
+                if (labVal) labVal.textContent = pData.subject || "-";
 
-            if (pData) {
-                document.getElementById('prof-modal-name').textContent = cleanName || rawName;
-                document.getElementById('prof-modal-role').textContent = pData.role || "경희대학교 AT Center";
+                if (emailLabel) emailLabel.style.display = 'none';
+                if (emailVal) emailVal.style.display = 'none';
 
-                const photoEl = document.getElementById('prof-modal-photo');
-                if (photoEl) {
-                    const imgSrc = pData.photo || cardImgSrc;
-                    if (imgSrc && !imgSrc.includes('profile_default.png')) {
-                        photoEl.innerHTML = `
-                            <img src="${imgSrc}" alt="${cleanName}" style="width: 100%; height: 100%; object-fit: cover;">
-                            <div class="prof-modal-photo-zoom-hint" title="클릭하여 고화질 확대"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                        `;
-                        photoEl.style.cursor = 'zoom-in';
-                        photoEl.title = '클릭하여 고화질 확대';
-                        photoEl.onclick = (e) => {
-                            e.stopPropagation();
-                            if (typeof openPhotoLightbox === 'function') {
-                                openPhotoLightbox(imgSrc, `${cleanName} (${pData.role || '경희대학교 AT Center'})`);
-                            }
-                        };
-                    } else if (imgSrc) {
-                        photoEl.innerHTML = `<img src="${imgSrc}" alt="${cleanName}" style="width: 100%; height: 100%; object-fit: cover;">`;
-                        photoEl.style.cursor = 'default';
-                        photoEl.title = '';
-                        photoEl.onclick = null;
-                    } else {
-                        photoEl.innerHTML = '<i class="fa-solid fa-user-tie"></i>';
-                        photoEl.style.cursor = 'default';
-                        photoEl.title = '';
-                        photoEl.onclick = null;
-                    }
-                }
-
-                if (isHeadAT) {
-                    // 전담 AT 전용 5대 항목 데이터 바인딩 (학위명, 학과, 학년, 전화번호, E-mail)
-                    document.getElementById('prof-modal-degree').textContent = (pData.degree && pData.degree.trim()) ? pData.degree : "스포츠의학 이학사 / 석사과정";
-                    document.getElementById('prof-modal-edu').textContent = (pData.dept && pData.dept.trim()) ? pData.dept : (pData.edu || "스포츠의학과");
-                    document.getElementById('prof-modal-subject').textContent = (pData.grade && pData.grade.trim()) ? pData.grade : "전담 AT";
-                    document.getElementById('prof-modal-lab').textContent = (pData.phone && pData.phone.trim()) ? pData.phone : (pData.lab || "031-201-2787");
-                    document.getElementById('prof-modal-email').textContent = (pData.email && pData.email.trim()) ? pData.email : "khuatcenter@khu.ac.kr";
-                } else if (isGrad) {
-                    // 대학원생 전용 항목 데이터 바인딩 (학위과정, 출신학력, 연구주제, 보유자격, E-mail)
-                    document.getElementById('prof-modal-degree').textContent = pData.degree || "경희대학교 일반대학원 석사과정";
-                    document.getElementById('prof-modal-edu').textContent = pData.edu || pData.assignedRole || pData.role || "경희대학교 AT Center";
-                    document.getElementById('prof-modal-subject').textContent = pData.subject || "-";
-                    document.getElementById('prof-modal-lab').textContent = pData.cert || "KATA 공인 AT (선수트레이너)";
-                    document.getElementById('prof-modal-email').textContent = pData.email || "khuatcenter@khu.ac.kr";
-                } else if (isAdvisory) {
-                    // 자문위원회 전용 5대 항목 데이터 바인딩 (소속 / 보직 / 학위·자격 / 전문 분야 / E-mail)
-                    document.getElementById('prof-modal-degree').textContent = pData.dept || "-";
-                    document.getElementById('prof-modal-edu').textContent = pData.grade || pData.edu || "-";
-                    document.getElementById('prof-modal-subject').textContent = pData.degree || "-";
-                    const labEl = document.getElementById('prof-modal-lab');
-                    if (labLabel) labLabel.style.display = '';
-                    if (labEl) {
-                        labEl.style.display = '';
-                        labEl.textContent = pData.subject || "-";
-                    }
-                    document.getElementById('prof-modal-email').textContent = pData.email || "khuatcenter@khu.ac.kr";
-                } else {
-                    // 일반 교수/스태프 전용 5대 항목 데이터 바인딩
-                    document.getElementById('prof-modal-degree').textContent = pData.degree || "-";
-                    document.getElementById('prof-modal-edu').textContent = pData.edu || "경희대학교";
-                    document.getElementById('prof-modal-subject').textContent = pData.subject || "-";
-                    const labEl = document.getElementById('prof-modal-lab');
-                    if (pData.lab === null) {
-                        if (labLabel) labLabel.style.display = 'none';
-                        if (labEl) labEl.style.display = 'none';
-                    } else {
-                        if (labLabel) labLabel.style.display = '';
-                        if (labEl) {
-                            labEl.style.display = '';
-                            labEl.textContent = pData.lab || "선승관 AT center (031-201-2787)";
-                        }
-                    }
-                    document.getElementById('prof-modal-email').textContent = pData.email || "khuatcenter@khu.ac.kr";
-                }
-
-                const careerList = document.getElementById('prof-modal-career');
                 if (careerList) {
                     careerList.innerHTML = '';
                     if (pData.career && pData.career.length > 0) {
@@ -5023,8 +4980,6 @@
                         careerList.parentElement.style.display = 'none';
                     }
                 }
-
-                const researchList = document.getElementById('prof-modal-research');
                 if (researchList) {
                     researchList.innerHTML = '';
                     if (pData.research && pData.research.length > 0) {
@@ -5038,82 +4993,135 @@
                         researchList.parentElement.style.display = 'none';
                     }
                 }
-            } else if (assistantDeptName) {
-                // 06 AT 센터 보조 명단(49명) 중 개별 상세 데이터가 없는 학부 보조 AT를 위한 맞춤형 스마트 프로필
+            } else if (isFacultyOrLeader && pData) {
+                // 2) 교수진(박지홍, 오성민) 및 리더(김준영, 최현곤, 이재욱): 기존 상세 프로필 유지
                 document.getElementById('prof-modal-name').textContent = cleanName || rawName;
-                document.getElementById('prof-modal-role').textContent = `경희대학교 ${assistantDeptName} 보조 AT`;
+                document.getElementById('prof-modal-role').textContent = pData.role || "경희대학교 AT Center";
+                renderModalPhoto(pData.role || "경희대학교 AT Center");
 
-                const photoEl = document.getElementById('prof-modal-photo');
-                if (photoEl) {
-                    if (cardImgSrc) {
-                        photoEl.innerHTML = `
-                            <img src="${cardImgSrc}" alt="${cleanName}" style="width: 100%; height: 100%; object-fit: cover;">
-                            <div class="prof-modal-photo-zoom-hint" title="클릭하여 고화질 확대"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-                        `;
-                        photoEl.style.cursor = 'zoom-in';
-                        photoEl.title = '클릭하여 고화질 확대';
-                        photoEl.onclick = (e) => {
-                            e.stopPropagation();
-                            if (typeof openPhotoLightbox === 'function') {
-                                openPhotoLightbox(cardImgSrc, `${cleanName} (${assistantDeptName} 보조 AT)`);
-                            }
-                        };
+                if (degreeLabel) degreeLabel.textContent = "학위명";
+                if (eduLabel) eduLabel.textContent = "최종학력";
+                if (subjectLabel) subjectLabel.textContent = (cleanName === "최현곤") ? "담당부서" : "담당과목";
+                if (labLabel) labLabel.textContent = "연구실";
+                if (emailLabel) emailLabel.textContent = "E-mail";
+
+                if (degreeVal) degreeVal.textContent = pData.degree || "-";
+                if (eduVal) eduVal.textContent = pData.edu || "경희대학교";
+                if (subjectVal) subjectVal.textContent = pData.subject || "-";
+                if (pData.lab === null) {
+                    if (labLabel) labLabel.style.display = 'none';
+                    if (labVal) labVal.style.display = 'none';
+                } else if (labVal) {
+                    labVal.textContent = pData.lab || "선승관 AT center (031-201-2787)";
+                }
+                if (emailVal) emailVal.textContent = pData.email || "khuatcenter@khu.ac.kr";
+
+                if (careerList) {
+                    careerList.innerHTML = '';
+                    if (pData.career && pData.career.length > 0) {
+                        careerList.parentElement.style.display = 'block';
+                        pData.career.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = item;
+                            careerList.appendChild(li);
+                        });
                     } else {
-                        photoEl.innerHTML = '<i class="fa-solid fa-user-Check"></i><i class="fa-solid fa-user-shield"></i>'.replace('<i class="fa-solid fa-user-Check"></i>', '');
-                        photoEl.style.cursor = 'default';
-                        photoEl.title = '';
-                        photoEl.onclick = null;
+                        careerList.parentElement.style.display = 'none';
                     }
                 }
-
-                document.getElementById('prof-modal-degree').textContent = "학부 연구생 / 보조 AT";
-                document.getElementById('prof-modal-edu').textContent = "경희대학교 체육대학 스포츠의학과";
-                document.getElementById('prof-modal-subject').textContent = `${assistantDeptName} 선수 케어 및 필드 의무지원`;
-                document.getElementById('prof-modal-lab').textContent = "선승관 AT center (031-201-2787)";
-                document.getElementById('prof-modal-email').textContent = "khuatcenter@khu.ac.kr";
-
-                const careerList = document.getElementById('prof-modal-career');
-                if (careerList) {
-                    careerList.parentElement.style.display = 'block';
-                    careerList.innerHTML = `<li>현) 경희대학교 AT Center ${assistantDeptName} 보조 AT</li>`;
-                }
-
-                const researchList = document.getElementById('prof-modal-research');
                 if (researchList) {
-                    researchList.parentElement.style.display = 'none';
+                    researchList.innerHTML = '';
+                    if (pData.research && pData.research.length > 0) {
+                        researchList.parentElement.style.display = 'block';
+                        pData.research.forEach(item => {
+                            const li = document.createElement('li');
+                            li.textContent = item;
+                            researchList.appendChild(li);
+                        });
+                    } else {
+                        researchList.parentElement.style.display = 'none';
+                    }
                 }
             } else {
-                // Fallback for general members
-                document.getElementById('prof-modal-name').textContent = cleanName || rawName;
-                document.getElementById('prof-modal-role').textContent = "경희대학교 스포츠재활 강사";
-
-                const photoEl = document.getElementById('prof-modal-photo');
-                if (photoEl) {
-                    if (cardImgSrc) {
-                        photoEl.innerHTML = `<img src="${cardImgSrc}" alt="${cleanName}" style="width: 100%; height: 100%; object-fit: cover;">`;
-                    } else {
-                        photoEl.innerHTML = '<i class="fa-solid fa-user-check"></i>';
-                    }
-                    photoEl.style.cursor = 'default';
-                    photoEl.title = '';
-                    photoEl.onclick = null;
-                }
-
-                document.getElementById('prof-modal-degree').textContent = "스포츠재활 강사";
-                document.getElementById('prof-modal-edu').textContent = "경희대학교";
-                document.getElementById('prof-modal-subject').textContent = "스포츠 부상 재활 & 1:1 케어";
-                document.getElementById('prof-modal-lab').textContent = "선승관 AT center (031-201-2787)";
-                document.getElementById('prof-modal-email').textContent = "khuatcenter@khu.ac.kr";
-
-                const careerList = document.getElementById('prof-modal-career');
+                // 3) 대학원생 / AT 동아리 임원진 / 체육부 전담 AT / 스포츠재활 강사 / AT 센터 보조
+                // -> 아직 기입하지 않은 임의 경력·자격·학력·연구실·전화번호는 모두 숨기고, 앞면 카드에 실제 기입된 정보만 표시
                 if (careerList) {
-                    careerList.parentElement.style.display = 'block';
-                    careerList.innerHTML = '<li>현) 경희대학교 AT Center 스포츠재활 강사</li>';
+                    careerList.innerHTML = '';
+                    careerList.parentElement.style.display = 'none';
+                }
+                if (researchList) {
+                    researchList.innerHTML = '';
+                    researchList.parentElement.style.display = 'none';
                 }
 
-                const researchList = document.getElementById('prof-modal-research');
-                if (researchList) {
-                    researchList.parentElement.style.display = 'none';
+                if (isAssistantClick) {
+                    // 06 AT 센터 보조: 이름과 담당부서만 실제 기입되어 있으므로 미기입 항목 전면 숨김
+                    const deptLabel = assistantDeptName || "AT Center";
+                    const roleStr = `경희대학교 ${deptLabel} 보조 AT`;
+                    document.getElementById('prof-modal-name').textContent = cleanName || rawName;
+                    document.getElementById('prof-modal-role').textContent = roleStr;
+                    renderModalPhoto(roleStr);
+
+                    if (degreeLabel) degreeLabel.textContent = "담당부서";
+                    if (degreeVal) degreeVal.textContent = `${deptLabel} 보조 AT`;
+                    [eduLabel, eduVal, subjectLabel, subjectVal, labLabel, labVal, emailLabel, emailVal].forEach(el => {
+                        if (el) el.style.display = 'none';
+                    });
+                } else if (isClickedInGradSection) {
+                    // 03 대학원생: 앞면 카드에 기입된 4개 항목(학위과정, 출신학력, 연구주제, E-mail)만 표시 (보유자격 등 미기입 항목 숨김)
+                    const lines = extractCardLines();
+                    const cohortStr = lines[0] || (pData && pData.degree) || "일반대학원 석사과정";
+                    const almaStr = lines[1] || (pData && pData.edu) || "-";
+                    const topicStr = lines[2] ? lines[2].replace(/^연구주제\s*:\s*/i, '').trim() : ((pData && pData.subject) || "-");
+                    const mailStr = lines[3] || (pData && pData.email) || "";
+
+                    document.getElementById('prof-modal-name').textContent = cleanName || rawName;
+                    document.getElementById('prof-modal-role').textContent = `경희대학교 AT Lab 대학원생 (${cohortStr})`;
+                    renderModalPhoto(`대학원생 (${cohortStr})`);
+
+                    if (degreeLabel) degreeLabel.textContent = "학위과정";
+                    if (degreeVal) degreeVal.textContent = cohortStr;
+                    if (eduLabel) eduLabel.textContent = "출신학력";
+                    if (eduVal) eduVal.textContent = almaStr;
+                    if (subjectLabel) subjectLabel.textContent = "연구주제";
+                    if (subjectVal) subjectVal.textContent = topicStr;
+                    if (labLabel) labLabel.style.display = 'none';
+                    if (labVal) labVal.style.display = 'none';
+
+                    if (mailStr) {
+                        if (emailLabel) emailLabel.textContent = "E-mail";
+                        if (emailVal) emailVal.textContent = mailStr;
+                    } else {
+                        if (emailLabel) emailLabel.style.display = 'none';
+                        if (emailVal) emailVal.style.display = 'none';
+                    }
+                } else {
+                    // 04 AT 동아리 임원진 / 05 체육부 전담 AT / 스포츠재활 강사: 앞면 카드에 기입된 3개 항목(소속, 담당 역할, E-mail)만 표시
+                    const lines = extractCardLines();
+                    const affilStr = lines[0] || (pData && (pData.dept || pData.degree)) || "경희대학교 체육대학";
+                    const roleStr = lines[1] || (pData && pData.role) || "경희대학교 AT Center";
+                    const mailStr = lines[2] || (pData && pData.email) || "";
+
+                    document.getElementById('prof-modal-name').textContent = cleanName || rawName;
+                    document.getElementById('prof-modal-role').textContent = `경희대학교 AT Center · ${roleStr}`;
+                    renderModalPhoto(roleStr);
+
+                    if (degreeLabel) degreeLabel.textContent = "소속";
+                    if (degreeVal) degreeVal.textContent = affilStr;
+                    if (eduLabel) eduLabel.textContent = "담당 역할";
+                    if (eduVal) eduVal.textContent = roleStr;
+
+                    [subjectLabel, subjectVal, labLabel, labVal].forEach(el => {
+                        if (el) el.style.display = 'none';
+                    });
+
+                    if (mailStr) {
+                        if (emailLabel) emailLabel.textContent = "E-mail";
+                        if (emailVal) emailVal.textContent = mailStr;
+                    } else {
+                        if (emailLabel) emailLabel.style.display = 'none';
+                        if (emailVal) emailVal.style.display = 'none';
+                    }
                 }
             }
 
@@ -7051,7 +7059,7 @@ window.showEditorialYear = function(year, btn) {
 </script>
 
 <!-- 다국어 전환 엔진 (한국어 | English) -->
-<script src="i18n.js?v=20261118_safety1"></script>
+<script src="i18n.js?v=20261118_clean1"></script>
 <!-- 오픈소스 모션 & 데이터 시각화 엔진 (anime.js v4.5 · Motion v14.9 · Bklit UI) -->
 <script src="assets/vendor/anime.umd.min.js"></script>
 <script src="assets/vendor/motion.min.js"></script>
