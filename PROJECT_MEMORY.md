@@ -4062,3 +4062,18 @@ Observation 100시간 실무 과정,
      - `SINGLE_ELEMENT_TRANSLATIONS`, `FACULTY_LEADER_EN_BULLETS` 영문 카드 라인 업데이트.
      - `MODAL_UNIFIED_EN`에 자문위원회 4인의 `role`, `customRows`(`Affiliation`, `Position`, `Degree & Cert`, `Focus Area`), `career`, `research` 영문 데이터 추가 및 모달 반영.
 - **검증:** Playwright로 한국어/영문 자문위원회 그리드 및 4인 상세 모달 모두 콘솔/페이지 에러 0건으로 1:1 일치 동작 확인 완료.
+
+---
+
+## ⚡ 최근 업데이트: 역대 수상자 섹션「명예 원장(Honor Ledger)」디자인 개편 (2026-11-18)
+- **요청 사항:** `taste-skill` / `impeccable` 디자인 원칙을 적용해 AI 템플릿 느낌이 나지 않는 새로운 역대 수상자 디자인으로 개편.
+- **구현 내용:**
+  1. **연도별 명예 원장 (`index.html`, `khu-pro.css`):**
+     - 한 번에 1년치만 보이던 기존 캐러셀을 **2025–2015년 11개년 전체 계보가 한눈에 조망되는 횡형 명판 그리드(`.honor-ledger-board`)**로 교체.
+     - 그라데이션·글래스모피즘·과한 그림자 등을 배제하고 1px 헤어라인, `tabular-nums` 연도 표기, 경희대 고유 컬러(Crimson/Navy/Gold 점 마커)만으로 정통 대학 체육부 아카이브 품격을 구현.
+  2. **수상 부문 필터 & 공동 수상자 인터랙션:**
+     - 상단 `.honor-filter-bar`(`전체 보기 / AT Student of the Year / Inspiration / Rookie of the Year`)로 전체 조망과 부문별 11년 계보 집중 탐색을 모두 지원(`filterAwardCategory`).
+     - 모든 수상자 셀 및 2017년 공동 수상자(`조재희`, `양창욱`) 개별 버튼 클릭 시 `openAlumniModal` 정상 호출.
+  3. **반응형 및 다국어(`i18n.js`, `v=20261118_honor1`):**
+     - 모바일(`<= 768px`)에서는 연도별 세로 명부 카드로 자동 전환되며, 영문 전환 시 필터·컬럼 헤더·수상자 성명이 100% 영문으로 동기화됨.
+- **검증:** Playwright로 데스크톱(KO/EN), 부문 필터, 모달 오픈(2025 유승아, 2017 조재희), 모바일(390×844) 모두 콘솔/페이지 에러 0건으로 검증 완료.

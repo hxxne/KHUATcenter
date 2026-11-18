@@ -3227,3 +3227,326 @@ html[lang="en"] .assistant-person-name {
         scroll-behavior: auto !important;
     }
 }
+
+/* ============================================================
+   역대 수상자 명예 원장 (Chronological Honor Ledger)
+   ============================================================ */
+.honor-ledger-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 48px;
+}
+
+.honor-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 24px;
+}
+
+.honor-filter-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 16px;
+    border: 1px solid var(--line-strong);
+    border-radius: 4px;
+    background: transparent;
+    color: var(--ink-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.honor-filter-btn:hover {
+    border-color: var(--ink-primary);
+    color: var(--ink-primary);
+}
+
+.honor-filter-btn.active {
+    background: var(--ink-primary);
+    border-color: var(--ink-primary);
+    color: #FFFFFF;
+}
+
+.honor-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.honor-dot.dot-gold { background: #B08D57; }
+.honor-dot.dot-crimson { background: var(--khu-crimson); }
+.honor-dot.dot-navy { background: var(--khu-navy); }
+.honor-filter-btn.active .honor-dot.dot-crimson { background: #F59E9E; }
+.honor-filter-btn.active .honor-dot.dot-navy { background: #93C5FD; }
+
+.honor-ledger-board {
+    border-top: 2px solid var(--ink-primary);
+    border-bottom: 1px solid var(--line-strong);
+    background: #FFFFFF;
+}
+
+.honor-ledger-head {
+    display: grid;
+    grid-template-columns: 104px repeat(3, minmax(0, 1fr));
+    align-items: center;
+    border-bottom: 1px solid var(--line-strong);
+    background: var(--surface-paper, #FAF8F6);
+}
+
+.honor-col-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 18px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-subtle);
+}
+
+.honor-col-head.col-year {
+    justify-content: center;
+    border-right: 1px solid var(--line-hairline);
+}
+
+.honor-col-head + .honor-col-head:not(.col-year) {
+    border-left: 1px solid var(--line-hairline);
+}
+
+.honor-ledger-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.honor-ledger-row {
+    display: grid;
+    grid-template-columns: 104px repeat(3, minmax(0, 1fr));
+    border-bottom: 1px solid var(--line-hairline);
+    transition: background-color 0.18s ease;
+}
+
+.honor-ledger-row:last-child {
+    border-bottom: none;
+}
+
+.honor-ledger-row.is-latest {
+    background: rgba(139, 21, 38, 0.025);
+}
+
+.honor-year-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 12px;
+    border-right: 1px solid var(--line-hairline);
+}
+
+.honor-year-num {
+    font-size: 1.05rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+    color: var(--ink-primary);
+}
+
+.honor-ledger-row.is-latest .honor-year-num {
+    color: var(--khu-crimson);
+}
+
+.honor-recipient-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 4px;
+    padding: 15px 18px;
+    border: none;
+    border-left: 1px solid var(--line-hairline);
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.18s ease;
+}
+
+.honor-recipient-cell:first-of-type {
+    border-left: none;
+}
+
+button.honor-recipient-cell:hover {
+    background: rgba(13, 36, 70, 0.03);
+}
+
+button.honor-recipient-cell:focus-visible,
+.honor-dual-btn:focus-visible,
+.honor-filter-btn:focus-visible {
+    outline: 2px solid var(--khu-crimson);
+    outline-offset: -2px;
+}
+
+.honor-mobile-cat {
+    display: none;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+}
+
+.honor-name-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+}
+
+.honor-name {
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    letter-spacing: -0.015em;
+    line-height: 1.3;
+}
+
+.honor-recipient-cell.cat-coty .honor-name,
+.honor-recipient-cell.cat-coty .dual-name-row {
+    font-weight: 800;
+}
+
+.honor-arrow {
+    font-size: 0.72rem;
+    color: var(--ink-subtle);
+    opacity: 0.45;
+    transform: rotate(-45deg);
+    transition: opacity 0.18s ease, transform 0.2s var(--ease-expo), color 0.18s ease;
+    flex-shrink: 0;
+}
+
+button.honor-recipient-cell:hover .honor-arrow,
+.honor-dual-btn:hover .honor-arrow {
+    opacity: 1;
+    color: var(--khu-crimson);
+    transform: rotate(-45deg) translate(2px, -2px);
+}
+
+button.honor-recipient-cell:hover .honor-name,
+.honor-dual-btn:hover .dual-name-row {
+    color: var(--khu-crimson);
+}
+
+/* 2017 공동 수상자 (조재희, 양창욱) */
+.honor-recipient-cell.is-dual {
+    cursor: default;
+    padding: 10px 12px;
+}
+
+.honor-dual-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    width: 100%;
+}
+
+.honor-dual-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    padding: 4px 6px;
+    border: none;
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    transition: background-color 0.15s ease;
+}
+
+.honor-dual-btn:hover {
+    background: rgba(139, 21, 38, 0.05);
+}
+
+.honor-dual-btn .dual-name-row {
+    font-size: 0.96rem;
+    font-weight: 800;
+    color: var(--ink-primary);
+    letter-spacing: -0.015em;
+}
+
+/* 부문별 필터링 상태 */
+.honor-ledger-board[data-filter="coty"] .honor-ledger-head,
+.honor-ledger-board[data-filter="coty"] .honor-ledger-row,
+.honor-ledger-board[data-filter="insp"] .honor-ledger-head,
+.honor-ledger-board[data-filter="insp"] .honor-ledger-row,
+.honor-ledger-board[data-filter="rookie"] .honor-ledger-head,
+.honor-ledger-board[data-filter="rookie"] .honor-ledger-row {
+    grid-template-columns: 104px minmax(0, 1fr);
+}
+
+.honor-ledger-board[data-filter="coty"] [data-cat]:not([data-cat="coty"]),
+.honor-ledger-board[data-filter="insp"] [data-cat]:not([data-cat="insp"]),
+.honor-ledger-board[data-filter="rookie"] [data-cat]:not([data-cat="rookie"]) {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .honor-filter-bar {
+        justify-content: flex-start;
+        gap: 6px;
+        margin-bottom: 18px;
+    }
+    .honor-filter-btn {
+        padding: 7px 12px;
+        font-size: 0.8rem;
+    }
+    .honor-ledger-head {
+        display: none;
+    }
+    .honor-ledger-row,
+    .honor-ledger-board[data-filter="coty"] .honor-ledger-row,
+    .honor-ledger-board[data-filter="insp"] .honor-ledger-row,
+    .honor-ledger-board[data-filter="rookie"] .honor-ledger-row {
+        grid-template-columns: 1fr;
+    }
+    .honor-year-cell {
+        justify-content: flex-start;
+        padding: 12px 16px 8px;
+        border-right: none;
+        background: var(--surface-paper, #FAF8F6);
+        border-bottom: 1px solid var(--line-hairline);
+    }
+    .honor-ledger-row.is-latest .honor-year-cell {
+        background: rgba(139, 21, 38, 0.05);
+    }
+    .honor-recipient-cell {
+        border-left: none;
+        border-bottom: 1px solid var(--line-hairline);
+        padding: 12px 16px;
+    }
+    .honor-recipient-cell:last-child {
+        border-bottom: none;
+    }
+    .honor-recipient-cell.is-dual {
+        padding: 12px 16px;
+    }
+    .honor-dual-btn {
+        padding: 4px 0;
+    }
+    .honor-mobile-cat {
+        display: inline-block;
+        margin-bottom: 2px;
+    }
+}
