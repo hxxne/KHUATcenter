@@ -4045,3 +4045,20 @@ Observation 100시간 실무 과정,
   - `assets/profile_손진원.jpg` 고해상도 원본(`4380×6570`)을 `assets/raw_backup/`에 백업 후 상반신·얼굴 정중앙(`vis_cx=0.500`) `500×500` JPEG로 규격화 및 `index.html` 자문위원 카드·`professorsData["손진원"]` 연동(`?v=20261116`).
   - `profile_김성준.jpg`, `profile_황이삭.jpg`, `profile_박인서.jpg` 가로 크롭 좌표를 미세 보정해 시각적 정중앙 균형 개선.
 - **검증 및 Git 동기화:** Playwright 자문위원단 스크린샷 육안 확인 및 이미지 수치 검증 완료 후 `origin main` 커밋·푸시 완료.
+
+---
+
+## ⚡ 최근 업데이트: 자문위원회 대표 주요 경력 개편 및 카드·모달 1:1 동기화 (2026-11-18)
+- **요청 사항:** 자문위원회(`정태유`, `박욱`, `방형식`, `손진원`) 카드 앞면의 `주요 경력`을 각 위원의 대표적인 핵심 경력으로 개선하고, 카드 클릭 시 열리는 상세 모달의 항목·내용이 앞면 카드와 정확히 일치하도록 개편(한국어/영문 동시 동기화).
+- **구현 내용:**
+  1. **앞면 4줄 카드(`index.html`) 대표 주요 경력 정비:**
+     - `정태유`: 미국 CSUN 종신교수 · 특수체육·수중운동재활·신경근재활 연구·임상 센터 총괄
+     - `박욱`: 전) 경희대 전자공학과 대학원 학과장 · Nature Materials 표지논문 · 젊은연구자 학술상
+     - `방형식`: 국가대표 쇼트트랙 팀닥터 · 서울아산·삼성서울병원 서브인턴 · 서울대병원 정형외과 순환연수
+     - `손진원`: 전) Deloitte 안진회계법인 감사본부 · 서울시/창업진흥원 평가위원 · 삼성바이오로직스 IPO 자문
+  2. **상세 모달(`openProfModal` in `index.html`) 자문위원회 전용 분기 추가:**
+     - `isAdvisory` 판별 추가 및 모달 라벨을 `소속 / 보직 / 학위·자격 / 전문 분야 / E-mail`로 전환하고, `professorsData`의 `dept`, `grade`, `degree`, `subject`, `career`, `research`를 앞면 카드와 1:1 일치하도록 매핑.
+  3. **영문 동기화(`i18n.js`, 캐시버스트 `v=20261118_adv2`):**
+     - `SINGLE_ELEMENT_TRANSLATIONS`, `FACULTY_LEADER_EN_BULLETS` 영문 카드 라인 업데이트.
+     - `MODAL_UNIFIED_EN`에 자문위원회 4인의 `role`, `customRows`(`Affiliation`, `Position`, `Degree & Cert`, `Focus Area`), `career`, `research` 영문 데이터 추가 및 모달 반영.
+- **검증:** Playwright로 한국어/영문 자문위원회 그리드 및 4인 상세 모달 모두 콘솔/페이지 에러 0건으로 1:1 일치 동작 확인 완료.

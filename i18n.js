@@ -156,22 +156,22 @@
         { selector: '#adv-jung-line1', en: 'Affiliation: Professor, Dept. of Kinesiology, California State University, Northridge' },
         { selector: '#adv-jung-line2', en: 'Position: Executive Director, The Center of Achievement through Adapted Physical Activity' },
         { selector: '#adv-jung-line3', en: 'Degree &amp; Cert: PhD (University of Virginia) · ATC · CAPE' },
-        { selector: '#adv-jung-line4', en: 'Career: Clinical Education &amp; Research Lead in Sports Medicine, Aquatic &amp; Neuromuscular Rehab' },
+        { selector: '#adv-jung-line4', en: 'Career: Tenured Professor at CSUN · Lead in Adapted PE, Aquatic Rehab &amp; Neuromuscular Research' },
         { selector: '#adv-name-parkwook', en: 'Wook Park, PhD' },
         { selector: '#adv-parkwook-line1', en: 'Affiliation: Professor, Dept. of Electronic Engineering, Kyung Hee University' },
         { selector: '#adv-parkwook-line2', en: 'Position: Vice Director, KHU Industry-Academic Cooperation Foundation · Director, KHU Tech Holdings' },
         { selector: '#adv-parkwook-line3', en: 'Degree &amp; Cert: PhD · Registered Technology Trader (MOTIE)' },
-        { selector: '#adv-parkwook-line4', en: 'Career: Former Chair, Graduate Dept. of EE · Nature Materials Cover Author · Young Researcher Award' },
+        { selector: '#adv-parkwook-line4', en: 'Career: Former Chair, Graduate Dept. of EE · Nature Materials Cover · Young Researcher Award' },
         { selector: '#adv-name-bang', en: 'Hyeongsig Bang, MD, PhD' },
         { selector: '#adv-bang-line1', en: 'Affiliation: Director of Orthopedics, GODOIL Hospital' },
         { selector: '#adv-bang-line2', en: 'Position: Team Physician, Korea National Short Track Speed Skating Team (KSU)' },
-        { selector: '#adv-bang-line3', en: 'Degree &amp; Cert: MD, PhD (CHA Univ.) · Board-Certified Orthopedic Surgeon · FIFA / IOC Diploma' },
-        { selector: '#adv-bang-line4', en: 'Career: Sub-Internship at Asan &amp; Samsung Medical Center · Residency Rotation at SNUH' },
+        { selector: '#adv-bang-line3', en: 'Degree &amp; Cert: MD, PhD (CHA Univ.) · Orthopedic Surgeon · FIFA / IOC Diploma' },
+        { selector: '#adv-bang-line4', en: 'Career: National Short Track Team Physician · Asan/Samsung Sub-Intern · SNUH Ortho Rotation' },
         { selector: '#adv-name-son', en: 'Jin-won Son, KICPA' },
         { selector: '#adv-son-line1', en: 'Affiliation: Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES' },
         { selector: '#adv-son-line2', en: 'Position: Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town' },
         { selector: '#adv-son-line3', en: 'Degree &amp; Cert: Certified Public Accountant (KICPA)' },
-        { selector: '#adv-son-line4', en: 'Career: Former CPA, Deloitte Anjin LLC · Samsung Biologics IPO &amp; M&amp;A · National Shooting Reserve' },
+        { selector: '#adv-son-line4', en: 'Career: Former CPA, Deloitte Anjin · Seoul/KISED Evaluator · Samsung Biologics IPO Advisor' },
         { selector: '#btn-tab-sports', en: 'Team AT' },
         { selector: '#btn-tab-rehab', en: 'Sports Rehab Instructors' },
 
@@ -666,22 +666,22 @@
             '<li id="adv-jung-line1">Affiliation: Professor, Dept. of Kinesiology, California State University, Northridge</li>' +
             '<li id="adv-jung-line2">Position: Executive Director, The Center of Achievement through Adapted Physical Activity</li>' +
             '<li id="adv-jung-line3">Degree &amp; Cert: PhD (University of Virginia) · ATC · CAPE</li>' +
-            '<li id="adv-jung-line4">Career: Clinical Education &amp; Research Lead in Sports Medicine, Aquatic &amp; Neuromuscular Rehab</li>',
+            '<li id="adv-jung-line4">Career: Tenured Professor at CSUN · Lead in Adapted PE, Aquatic Rehab &amp; Neuromuscular Research</li>',
         '박욱':
             '<li id="adv-parkwook-line1">Affiliation: Professor, Dept. of Electronic Engineering, Kyung Hee University</li>' +
             '<li id="adv-parkwook-line2">Position: Vice Director, KHU Industry-Academic Cooperation Foundation · Director, KHU Tech Holdings</li>' +
             '<li id="adv-parkwook-line3">Degree &amp; Cert: PhD · Registered Technology Trader (MOTIE)</li>' +
-            '<li id="adv-parkwook-line4">Career: Former Chair, Graduate Dept. of EE · Nature Materials Cover Author · Young Researcher Award</li>',
+            '<li id="adv-parkwook-line4">Career: Former Chair, Graduate Dept. of EE · Nature Materials Cover · Young Researcher Award</li>',
         '방형식':
             '<li id="adv-bang-line1">Affiliation: Director of Orthopedics, GODOIL Hospital</li>' +
             '<li id="adv-bang-line2">Position: Team Physician, Korea National Short Track Speed Skating Team (KSU)</li>' +
-            '<li id="adv-bang-line3">Degree &amp; Cert: MD, PhD (CHA Univ.) · Board-Certified Orthopedic Surgeon · FIFA / IOC Diploma</li>' +
-            '<li id="adv-bang-line4">Career: Sub-Internship at Asan &amp; Samsung Medical Center · Residency Rotation at SNUH</li>',
+            '<li id="adv-bang-line3">Degree &amp; Cert: MD, PhD (CHA Univ.) · Orthopedic Surgeon · FIFA / IOC Diploma</li>' +
+            '<li id="adv-bang-line4">Career: National Short Track Team Physician · Asan/Samsung Sub-Intern · SNUH Ortho Rotation</li>',
         '손진원':
             '<li id="adv-son-line1">Affiliation: Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES</li>' +
             '<li id="adv-son-line2">Position: Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town</li>' +
             '<li id="adv-son-line3">Degree &amp; Cert: Certified Public Accountant (KICPA)</li>' +
-            '<li id="adv-son-line4">Career: Former CPA, Deloitte Anjin LLC · Samsung Biologics IPO &amp; M&amp;A · National Shooting Reserve</li>',
+            '<li id="adv-son-line4">Career: Former CPA, Deloitte Anjin · Seoul/KISED Evaluator · Samsung Biologics IPO Advisor</li>',
         '박지홍, PhD, AT, CSCS':
             '<li>Professor, Dept. of Sports Medicine, Kyung Hee University</li>' +
             '<li>PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation), Brigham Young University</li>' +
@@ -1373,6 +1373,9 @@
                     '연구주제': 'Research Topic',
                     '보유자격': 'Certifications',
                     '소속': 'Affiliation',
+                    '보직': 'Position',
+                    '학위·자격': 'Degree & Cert',
+                    '전문 분야': 'Focus Area',
                     '소속과정': 'Program / Role',
                     '소속학과': 'Department',
                     '위치/연락처': 'Location / Tel',
@@ -1410,28 +1413,86 @@
 
                     const MODAL_UNIFIED_EN = {
                         '정태유': {
-                            edu: 'PhD in Kinesiology (Sports Medicine and Adapted Physical Activity), University of Virginia',
-                            courses: 'Professor, Department of Kinesiology, California State University, Northridge',
-                            office: 'Executive Director, The Center of Achievement through Adapted Physical Activity',
-                            lab: 'Advisory Board Member, Kyung Hee University AT Center'
+                            role: 'Advisory Board Member · Professor, CSUN',
+                            customRows: [
+                                { label: 'Affiliation', value: 'Professor, Dept. of Kinesiology, California State University, Northridge' },
+                                { label: 'Position', value: 'Executive Director, The Center of Achievement through Adapted Physical Activity' },
+                                { label: 'Degree & Cert', value: 'PhD (University of Virginia) · ATC · CAPE' },
+                                { label: 'Focus Area', value: 'Sports Medicine · Adapted Physical Activity · Aquatic & Neuromuscular Rehab' }
+                            ],
+                            career: [
+                                'Professor (Tenured), Dept. of Kinesiology, California State University, Northridge',
+                                'Executive Director, The Center of Achievement through Adapted Physical Activity',
+                                'Advisory Board Member, Kyung Hee University Athletic Training Center',
+                                'Certified Athletic Trainer (ATC)',
+                                'Certified Adapted Physical Educator (CAPE)'
+                            ],
+                            research: [
+                                'Sports Medicine and Adapted Physical Activity',
+                                'Aquatic Therapy and Motor Function for Individuals with Disabilities',
+                                'Neuromuscular Rehabilitation and Clinical Exercise Physiology'
+                            ]
                         },
                         '박욱': {
-                            edu: 'PhD · Professor, Dept. of Electronic Engineering, Kyung Hee University',
-                            courses: 'Biochips, Microfluidics, Advanced Sensors & Industry-Academic Tech Commercialization',
-                            office: 'Vice Director, KHU Industry-Academic Cooperation Foundation & Director, KHU Technology Holdings',
-                            lab: 'Advisory Board Member, Kyung Hee University AT Center'
+                            role: 'Advisory Board Member · Professor, Dept. of Electronic Engineering, KHU',
+                            customRows: [
+                                { label: 'Affiliation', value: 'Professor, Dept. of Electronic Engineering, Kyung Hee University' },
+                                { label: 'Position', value: 'Vice Director, KHU Industry-Academic Cooperation Foundation · Director, KHU Tech Holdings' },
+                                { label: 'Degree & Cert', value: 'PhD in Engineering · Registered Technology Trader (MOTIE)' },
+                                { label: 'Focus Area', value: 'Biochips · Microfluidics · Advanced Sensors & Tech Commercialization' }
+                            ],
+                            career: [
+                                'Professor, Dept. of Electronic Engineering, Kyung Hee University',
+                                'Vice Director, KHU Industry-Academic Cooperation Foundation · Director, KHU Technology Holdings',
+                                'Advisory Board Member, Kyung Hee University Athletic Training Center',
+                                'Former Chair, Graduate Dept. of Electronic Engineering, Kyung Hee University',
+                                'Young Researcher Academic Award, Korean Biochip Society (2017)',
+                                'Researcher, Elesign Inc. (2002–2006, VoIP/IP Phone Development)'
+                            ],
+                            research: [
+                                'Published in Nature Materials (Cover), Nature Photonics, Nature Communications & Advanced Materials (Multiple Covers)',
+                                'Biochips, Microfluidics, Advanced Sensors & Industry-Academic Tech Commercialization'
+                            ]
                         },
                         '방형식': {
-                            edu: 'Ph.D. in Medicine (Sports Medicine), CHA University',
-                            courses: 'Board-Certified Orthopedic Surgeon / Subspecialist in Sports Medicine',
-                            office: 'Director of Orthopedics, GODOIL Hospital',
-                            lab: 'Advisory Board Member, Kyung Hee University AT Center'
+                            role: 'Advisory Board Member · Director of Orthopedics, GODOIL Hospital',
+                            customRows: [
+                                { label: 'Affiliation', value: 'Director of Orthopedics, GODOIL Hospital' },
+                                { label: 'Position', value: 'Team Physician, Korea National Short Track Speed Skating Team (KSU)' },
+                                { label: 'Degree & Cert', value: 'MD, PhD (CHA Univ.) · Board-Certified Orthopedic Surgeon · FIFA / IOC Diploma' },
+                                { label: 'Focus Area', value: 'Orthopedic Conditions & Elite National Athlete Sports Injury Care' }
+                            ],
+                            career: [
+                                'Director of Orthopedics, GODOIL Hospital',
+                                'Team Physician, Korea National Short Track Speed Skating Team (KSU)',
+                                'Advisory Board Member, Kyung Hee University Athletic Training Center',
+                                'FIFA & IOC Certified Sports Medicine Physician',
+                                'Sub-Internship at Asan Medical Center & Samsung Medical Center',
+                                'Orthopedic Surgery Residency Rotation at Seoul National University Hospital (SNUH)'
+                            ],
+                            research: []
                         },
                         '손진원': {
-                            edu: 'Certified Public Accountant (KICPA)',
-                            courses: 'Startups & VC, Clinics & MSO, Sports & Fitness Centers, Corporate Valuation & M&A',
-                            office: 'Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES',
-                            lab: 'Advisory Board Member, Kyung Hee University AT Center'
+                            role: 'Advisory Board Member · VP, CLUST YEIN ACC. / CEO, CLUST VENTURES',
+                            customRows: [
+                                { label: 'Affiliation', value: 'Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES' },
+                                { label: 'Position', value: 'Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town' },
+                                { label: 'Degree & Cert', value: 'Certified Public Accountant (KICPA)' },
+                                { label: 'Focus Area', value: 'Startups & VC · Clinics & MSO · Sports & Fitness · Corporate Finance' }
+                            ],
+                            career: [
+                                'Vice President / Partner, CLUST YEIN Accounting Corp.',
+                                'CEO, CLUST VENTURES',
+                                'Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town',
+                                'Evaluator, Seoul Metropolitan Government PPP & KISED',
+                                'Former CPA, Audit Division, Deloitte Anjin LLC',
+                                'Key Advisory: Samsung Biologics IPO · Ulsan U-STAR · SsangYong / Hyundai M&A',
+                                'National Assembly Commendation · Former National Shooting Reserve Athlete'
+                            ],
+                            research: [
+                                'Lectures on Startup & Sports Industry Tax/Accounting (Ajou Univ., Sejong Univ., Eulji Univ. FMP, SPOEX)',
+                                'Accelerator & Venture Fund Financial Strategy Lectures (MYSC, Genexis, KAIA, CNT Tech)'
+                            ]
                         },
                         '박지홍': {
                             edu: 'PhD in Exercise Sciences (Physical Medicine & Rehabilitation), Brigham Young University, Utah, USA',
@@ -1467,11 +1528,17 @@
 
                     const unified = MODAL_UNIFIED_EN[mName];
                     if (unified) {
-                        const rows = [];
-                        rows.push({ label: 'Education', value: unified.edu });
-                        if (unified.courses) rows.push({ label: 'Courses', value: unified.courses });
-                        if (unified.office) rows.push({ label: 'Office', value: unified.office });
-                        if (unified.lab) rows.push({ label: 'Laboratory', value: unified.lab });
+                        if (unified.role) {
+                            const roleEl = document.getElementById('prof-modal-role');
+                            if (roleEl) roleEl.textContent = unified.role;
+                        }
+                        const rows = unified.customRows ? unified.customRows.slice() : [];
+                        if (!unified.customRows) {
+                            rows.push({ label: 'Education', value: unified.edu });
+                            if (unified.courses) rows.push({ label: 'Courses', value: unified.courses });
+                            if (unified.office) rows.push({ label: 'Office', value: unified.office });
+                            if (unified.lab) rows.push({ label: 'Laboratory', value: unified.lab });
+                        }
 
                         const slots = [
                             [degLbl, degVal],
@@ -1488,6 +1555,26 @@
                                 if (vEl) vEl.style.display = 'none';
                             }
                         });
+
+                        if (unified.career) {
+                            const careerList = document.getElementById('prof-modal-career');
+                            if (careerList) {
+                                careerList.innerHTML = unified.career.map(item => `<li>${item}</li>`).join('');
+                            }
+                        }
+                        if (unified.research) {
+                            const researchList = document.getElementById('prof-modal-research');
+                            const researchSec = document.getElementById('prof-modal-research-sec');
+                            if (researchList) {
+                                if (unified.research.length > 0) {
+                                    researchList.innerHTML = unified.research.map(item => `<li>${item}</li>`).join('');
+                                    if (researchSec) researchSec.style.display = 'block';
+                                } else {
+                                    researchList.innerHTML = '';
+                                    if (researchSec) researchSec.style.display = 'none';
+                                }
+                            }
+                        }
                     }
 
                     // 모달 상단 인물 성명도 영문 이름으로 변환
