@@ -4204,3 +4204,12 @@ Observation 100시간 실무 과정,
   - `.donation-instructions ol li`에 좌측 패딩(`padding: 18px 8px 4px 36px; text-wrap: pretty;`)을 적용하고 `::before` 번호(`01`, `02`, `03`)를 좌측 상단(`position: absolute; left: 0; top: 21px;`)에 배치하여 번호 오른쪽에 내용이 자연스럽게 정렬되도록 개선.
 - **검증:** Playwright로 데스크톱(KO/EN) 및 모바일(`390×844`) 레이아웃과 콘솔 에러 0건 확인 완료.
 
+---
+
+## ⚡ 최근 업데이트: 박지홍·이재욱 프로필 모달 연구실적(2026) 추가 (2026-11-19)
+- **요청 사항:** `Selective neuromuscular activity by task intensity in anterior cruciate ligament reconstructed and healthy individuals (2026)` 논문을 박지홍 교수 및 이재욱 연구팀장 연구실적에 추가하고, 전체 연구실적 목록 포함 여부 확인.
+- **구현 내용 (`index.html`):**
+  - 전체 연구실적 모달(`#research-modal`)의 `Part 1. 스포츠재활 #1`에는 이미 해당 논문이 분류·수록되어 있음을 확인(중복 추가 없음, 총 64편 유지).
+  - `professorsData["박지홍"].research` 및 `professorsData["이재욱"].research` 최상단에 `Selective neuromuscular activity by task intensity in anterior cruciate ligament reconstructed and healthy individuals (2026)` 항목을 추가.
+- **검증:** Playwright로 `박지홍`, `이재욱` 상세 모달 오픈 시 해당 논문이 연구실적 첫 번째 항목으로 표시됨과 콘솔 에러 0건을 확인 완료.
+
