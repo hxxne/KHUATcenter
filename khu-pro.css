@@ -2294,12 +2294,12 @@ html[lang="en"] .assistant-person-name {
     box-shadow: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: flex-start;
+    text-align: left;
 }
 
 .mb-header {
-    text-align: center;
+    text-align: left;
     margin: 0 0 10px 0;
     padding-bottom: 0;
     border-bottom: none;
@@ -2323,7 +2323,7 @@ html[lang="en"] .assistant-person-name {
     margin: 0 0 4px 0;
     display: inline-flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 7px;
 }
 .donation-instructions h3 i {
@@ -2347,22 +2347,25 @@ html[lang="en"] .assistant-person-name {
 .donation-instructions ol li {
     counter-increment: donate-step;
     position: relative;
-    padding: 18px 4px 4px 0;
+    padding: 18px 8px 4px 36px;
     border-top: 1px solid var(--line-strong);
     border-bottom: none;
     font-size: 0.96rem;
     line-height: 1.65;
-    text-wrap: balance;
+    text-wrap: pretty;
     color: var(--ink-secondary);
 }
 .donation-instructions ol li::before {
     content: "0" counter(donate-step);
     display: block;
-    position: static;
-    margin-bottom: 10px;
+    position: absolute;
+    left: 0;
+    top: 21px;
+    margin-bottom: 0;
     font-size: 0.82rem;
     font-weight: 800;
     letter-spacing: 0.06em;
+    line-height: 1.4;
     color: var(--khu-crimson);
     font-variant-numeric: tabular-nums;
 }

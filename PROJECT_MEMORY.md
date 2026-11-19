@@ -4195,3 +4195,12 @@ Observation 100시간 실무 과정,
      - `i18n.js`의 영문 번역 매핑(`exactBulletMap`, `translateProfModalText`)도 접두어 없는 형식 및 신규 연구주제에 맞춰 업데이트.
 - **검증:** Playwright로 자문위원(한/영), 리더 2줄 배치, 대학원생 연구주제(한/영) 및 콘솔 에러 0건 확인 완료.
 
+---
+
+## ⚡ 최근 업데이트: 공식 후원 참여 안내(`#donate`) 좌측 정렬 및 번호 우측 배치 (2026-11-19)
+- **요청 사항:** `공식 후원 참여 안내` 및 그 하단 내용의 불필요한 가운데 정렬을 제거하고, `01`, `02`, `03` 번호의 오른쪽에 안내 문구를 배치.
+- **구현 내용 (`khu-pro.css`, `index.html` 캐시버스트 `v=20261119_donate_left`):**
+  - `.minimal-banking-card`, `.mb-header`, `.donation-instructions h3`를 좌측 정렬(`align-items: flex-start`, `text-align: left`, `justify-content: flex-start`)로 변경.
+  - `.donation-instructions ol li`에 좌측 패딩(`padding: 18px 8px 4px 36px; text-wrap: pretty;`)을 적용하고 `::before` 번호(`01`, `02`, `03`)를 좌측 상단(`position: absolute; left: 0; top: 21px;`)에 배치하여 번호 오른쪽에 내용이 자연스럽게 정렬되도록 개선.
+- **검증:** Playwright로 데스크톱(KO/EN) 및 모바일(`390×844`) 레이아웃과 콘솔 에러 0건 확인 완료.
+
