@@ -153,25 +153,25 @@
         // [소개 내 구성원 탭 (#members)]
         { selector: '#adv-header-title', en: 'Advisory Board' },
         { selector: '#adv-name-jung', en: 'Taeyou Jung, PhD, ATC, CAPE' },
-        { selector: '#adv-jung-line1', en: 'Affiliation: Professor, Dept. of Kinesiology, California State University, Northridge' },
-        { selector: '#adv-jung-line2', en: 'Position: Executive Director, The Center of Achievement through Adapted Physical Activity' },
-        { selector: '#adv-jung-line3', en: 'Degree &amp; Cert: PhD (University of Virginia) · ATC · CAPE' },
-        { selector: '#adv-jung-line4', en: 'Career: Tenured Professor at CSUN · Lead in Adapted PE, Aquatic Rehab &amp; Neuromuscular Research' },
+        { selector: '#adv-jung-line1', en: 'Professor, Dept. of Kinesiology, California State University, Northridge' },
+        { selector: '#adv-jung-line2', en: 'Executive Director, The Center of Achievement through Adapted Physical Activity' },
+        { selector: '#adv-jung-line3', en: 'PhD (University of Virginia) · ATC · CAPE' },
+        { selector: '#adv-jung-line4', en: 'Tenured Professor at CSUN · Lead in Adapted PE, Aquatic Rehab &amp; Neuromuscular Research' },
         { selector: '#adv-name-parkwook', en: 'Wook Park, PhD' },
-        { selector: '#adv-parkwook-line1', en: 'Affiliation: Professor, Dept. of Electronic Engineering, Kyung Hee University' },
-        { selector: '#adv-parkwook-line2', en: 'Position: Vice Director, KHU Industry-Academic Cooperation Foundation · Director, KHU Tech Holdings' },
-        { selector: '#adv-parkwook-line3', en: 'Degree &amp; Cert: PhD · Registered Technology Trader (MOTIE)' },
-        { selector: '#adv-parkwook-line4', en: 'Career: Former Chair, Graduate Dept. of EE · Nature Materials Cover · Young Researcher Award' },
+        { selector: '#adv-parkwook-line1', en: 'Professor, Dept. of Electronic Engineering, Kyung Hee University' },
+        { selector: '#adv-parkwook-line2', en: 'Vice Director, KHU Industry-Academic Cooperation Foundation · Director, KHU Tech Holdings' },
+        { selector: '#adv-parkwook-line3', en: 'PhD · Registered Technology Trader (MOTIE)' },
+        { selector: '#adv-parkwook-line4', en: 'Former Chair, Graduate Dept. of EE · Nature Materials Cover · Young Researcher Award' },
         { selector: '#adv-name-bang', en: 'Hyeongsig Bang, MD, PhD' },
-        { selector: '#adv-bang-line1', en: 'Affiliation: Director of Orthopedics, GODOIL Hospital' },
-        { selector: '#adv-bang-line2', en: 'Position: Team Physician, Korea National Short Track Speed Skating Team (KSU)' },
-        { selector: '#adv-bang-line3', en: 'Degree &amp; Cert: MD, PhD (CHA Univ.) · Orthopedic Surgeon · FIFA / IOC Diploma' },
-        { selector: '#adv-bang-line4', en: 'Career: National Short Track Team Physician · Asan/Samsung Sub-Intern · SNUH Ortho Rotation' },
+        { selector: '#adv-bang-line1', en: 'Director of Orthopedics, GODOIL Hospital' },
+        { selector: '#adv-bang-line2', en: 'Team Physician, Korea National Short Track Speed Skating Team (KSU)' },
+        { selector: '#adv-bang-line3', en: 'MD, PhD (CHA Univ.) · Orthopedic Surgeon · FIFA / IOC Diploma' },
+        { selector: '#adv-bang-line4', en: 'National Short Track Team Physician · Asan/Samsung Sub-Intern · SNUH Ortho Rotation' },
         { selector: '#adv-name-son', en: 'Jin-won Son, KICPA' },
-        { selector: '#adv-son-line1', en: 'Affiliation: Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES' },
-        { selector: '#adv-son-line2', en: 'Position: Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town' },
-        { selector: '#adv-son-line3', en: 'Degree &amp; Cert: Certified Public Accountant (KICPA)' },
-        { selector: '#adv-son-line4', en: 'Career: Former CPA, Deloitte Anjin · Seoul/KISED Evaluator · Samsung Biologics IPO Advisor' },
+        { selector: '#adv-son-line1', en: 'Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES' },
+        { selector: '#adv-son-line2', en: 'Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town' },
+        { selector: '#adv-son-line3', en: 'Certified Public Accountant (KICPA)' },
+        { selector: '#adv-son-line4', en: 'Former CPA, Deloitte Anjin · Seoul/KISED Evaluator · Samsung Biologics IPO Advisor' },
         { selector: '#btn-tab-sports', en: 'Team AT' },
         { selector: '#btn-tab-rehab', en: 'Sports Rehab Instructors' },
 
@@ -663,25 +663,25 @@
     // 01 Faculty members & 02 Leaders 영문 통일 프로필 카드 (Education / Courses / Office / Laboratory / Email)
     const FACULTY_LEADER_EN_BULLETS = {
         '정태유':
-            '<li id="adv-jung-line1">Affiliation: Professor, Dept. of Kinesiology, California State University, Northridge</li>' +
-            '<li id="adv-jung-line2">Position: Executive Director, The Center of Achievement through Adapted Physical Activity</li>' +
-            '<li id="adv-jung-line3">Degree &amp; Cert: PhD (University of Virginia) · ATC · CAPE</li>' +
-            '<li id="adv-jung-line4">Career: Tenured Professor at CSUN · Lead in Adapted PE, Aquatic Rehab &amp; Neuromuscular Research</li>',
+            '<li id="adv-jung-line1">Professor, Dept. of Kinesiology, California State University, Northridge</li>' +
+            '<li id="adv-jung-line2">Executive Director, The Center of Achievement through Adapted Physical Activity</li>' +
+            '<li id="adv-jung-line3">PhD (University of Virginia) · ATC · CAPE</li>' +
+            '<li id="adv-jung-line4">Tenured Professor at CSUN · Lead in Adapted PE, Aquatic Rehab &amp; Neuromuscular Research</li>',
         '박욱':
-            '<li id="adv-parkwook-line1">Affiliation: Professor, Dept. of Electronic Engineering, Kyung Hee University</li>' +
-            '<li id="adv-parkwook-line2">Position: Vice Director, KHU Industry-Academic Cooperation Foundation · Director, KHU Tech Holdings</li>' +
-            '<li id="adv-parkwook-line3">Degree &amp; Cert: PhD · Registered Technology Trader (MOTIE)</li>' +
-            '<li id="adv-parkwook-line4">Career: Former Chair, Graduate Dept. of EE · Nature Materials Cover · Young Researcher Award</li>',
+            '<li id="adv-parkwook-line1">Professor, Dept. of Electronic Engineering, Kyung Hee University</li>' +
+            '<li id="adv-parkwook-line2">Vice Director, KHU Industry-Academic Cooperation Foundation · Director, KHU Tech Holdings</li>' +
+            '<li id="adv-parkwook-line3">PhD · Registered Technology Trader (MOTIE)</li>' +
+            '<li id="adv-parkwook-line4">Former Chair, Graduate Dept. of EE · Nature Materials Cover · Young Researcher Award</li>',
         '방형식':
-            '<li id="adv-bang-line1">Affiliation: Director of Orthopedics, GODOIL Hospital</li>' +
-            '<li id="adv-bang-line2">Position: Team Physician, Korea National Short Track Speed Skating Team (KSU)</li>' +
-            '<li id="adv-bang-line3">Degree &amp; Cert: MD, PhD (CHA Univ.) · Orthopedic Surgeon · FIFA / IOC Diploma</li>' +
-            '<li id="adv-bang-line4">Career: National Short Track Team Physician · Asan/Samsung Sub-Intern · SNUH Ortho Rotation</li>',
+            '<li id="adv-bang-line1">Director of Orthopedics, GODOIL Hospital</li>' +
+            '<li id="adv-bang-line2">Team Physician, Korea National Short Track Speed Skating Team (KSU)</li>' +
+            '<li id="adv-bang-line3">MD, PhD (CHA Univ.) · Orthopedic Surgeon · FIFA / IOC Diploma</li>' +
+            '<li id="adv-bang-line4">National Short Track Team Physician · Asan/Samsung Sub-Intern · SNUH Ortho Rotation</li>',
         '손진원':
-            '<li id="adv-son-line1">Affiliation: Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES</li>' +
-            '<li id="adv-son-line2">Position: Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town</li>' +
-            '<li id="adv-son-line3">Degree &amp; Cert: Certified Public Accountant (KICPA)</li>' +
-            '<li id="adv-son-line4">Career: Former CPA, Deloitte Anjin · Seoul/KISED Evaluator · Samsung Biologics IPO Advisor</li>',
+            '<li id="adv-son-line1">Vice President / Partner, CLUST YEIN ACC. · CEO, CLUST VENTURES</li>' +
+            '<li id="adv-son-line2">Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town</li>' +
+            '<li id="adv-son-line3">Certified Public Accountant (KICPA)</li>' +
+            '<li id="adv-son-line4">Former CPA, Deloitte Anjin · Seoul/KISED Evaluator · Samsung Biologics IPO Advisor</li>',
         '박지홍, PhD, AT, CSCS':
             '<li>Professor, Dept. of Sports Medicine, Kyung Hee University</li>' +
             '<li>PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation), Brigham Young University</li>' +
@@ -742,7 +742,12 @@
             '스포츠재활 강사': 'Sports Rehabilitation Instructor',
             'AT Center 센터 AT': 'Center Athletic Trainer (AT Center)',
             '센터 AT': 'Center Athletic Trainer',
-            '연구주제: 미정': 'Research: TBD'
+            '연구주제: 미정': 'TBD',
+            '여성 성인 체형별 혈액지표·신체구성 및 신체기능 비교': 'Blood Biomarkers, Body Comp. & Function in Women',
+            '품새 선수의 고관절 충돌 관련 통증 유무에 따른 움직임 전략': 'Movement Strategies in Poomsae Athletes by Hip Impingement Pain',
+            '무릎 및 발목 골관절염 및 신체활동 설문조사': 'Knee & Ankle OA & Physical Activity Survey',
+            '운동 동호인들의 무릎, 발목 골관절염 실태조사': 'Knee & Ankle OA Survey in Active Adults',
+            '대학 핸드볼 선수 훈련부하 비율 및 부상 역학 (2026)': 'Injury & ACWR in Collegiate Handball (2026)'
         };
 
         if (exactBulletMap[t]) return exactBulletMap[t];
@@ -826,6 +831,8 @@
             .replace(/무용학부 한국무용/g, 'School of Dance (Korean Dance)')
             .replace(/무용학부/g, 'School of Dance')
             .replace(/저체중, 마른비만, 정상체중 여성 성인의 혈액지표, 신체구성, 신체기능 및 자가보고 설문 비교/g, 'Comparison of Blood Biomarkers, Body Composition, Physical Function, and Self-Reported Questionnaires in Underweight, Normal-Weight Obese, and Normal-Weight Adult Women')
+            .replace(/여성 성인 체형별 혈액지표·신체구성 및 신체기능 비교/g, 'Blood Biomarkers, Body Composition & Physical Function in Adult Women')
+            .replace(/품새 선수의 고관절 충돌 관련 통증 유무에 따른 움직임 전략/g, 'Movement Strategies in Poomsae Athletes with and without Hip Impingement-Related Pain')
             .replace(/운동 동호인들의 무릎, 발목 골관절염 실태조사/g, 'Knee & Ankle Osteoarthritis Survey in Active Adults')
             .replace(/무릎 및 발목 골관절염 및 신체활동 설문조사/g, 'Knee and Ankle Osteoarthritis and Physical Activity Survey')
             .replace(/2024 운동학 학술대회/g, '2024 Korean Academy of Kinesiology Conference')
