@@ -1221,10 +1221,13 @@ html[lang="en"] .about-detail .pc-br {
 
 .modern-profile-grid.grid-faculty .modern-profile-card {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     gap: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid var(--line-hairline) !important;
+}
+.modern-profile-grid.grid-faculty .modern-profile-info-col {
+    padding-top: 2px;
 }
 .modern-profile-grid.grid-row-list .modern-profile-card {
     display: grid;

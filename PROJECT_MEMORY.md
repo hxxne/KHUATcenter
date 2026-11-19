@@ -4213,3 +4213,11 @@ Observation 100시간 실무 과정,
   - `professorsData["박지홍"].research` 및 `professorsData["이재욱"].research` 최상단에 `Selective neuromuscular activity by task intensity in anterior cruciate ligament reconstructed and healthy individuals (2026)` 항목을 추가.
 - **검증:** Playwright로 `박지홍`, `이재욱` 상세 모달 오픈 시 해당 논문이 연구실적 첫 번째 항목으로 표시됨과 콘솔 에러 0건을 확인 완료.
 
+---
+
+## ⚡ 최근 업데이트: 자문위원회 4인 카드 교수진과 동일한 상단 수직 정렬 통일 (2026-11-19)
+- **요청 사항:** 자문위원 4인(`정태유`, `박욱`, `방형식`, `손진원`) 카드의 사진 및 이름·내용 정렬을 교수진 카드처럼 일관되게 맞춤.
+- **구현 내용 (`khu-pro.css`, `index.html` 캐시버스트 `v=20261119_advisory_align`):**
+  - `.modern-profile-grid.grid-faculty .modern-profile-card`의 `align-items: center`를 `align-items: flex-start`로 변경하고 `.modern-profile-info-col`에 `padding-top: 2px`를 적용하여, 각 카드의 텍스트 줄 수 차이와 무관하게 자문위원 4인과 교수진 2인 모두 사진 상단과 이름 상단이 일직선으로 정렬되도록 개선.
+- **검증:** Playwright로 자문위원 4인(한/영) 및 교수진 정렬 일치와 콘솔 에러 0건 확인 완료.
+
