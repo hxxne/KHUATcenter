@@ -4236,3 +4236,19 @@ Observation 100시간 실무 과정,
   - `index.html`의 `window.ENABLE_INTRO_PROFILE_MODAL = false;`를 `true`로 변경하면 소개 섹션의 모든 사람 카드 클릭 모달, 커서, 키보드 접근성이 즉시 복구됨.
 - **검증:** Playwright로 `#about` 내 자문위원·교수진·리더·대학원생·AT 센터 보조 카드 클릭 시 모달 미오픈(한/영), `cursor: default`, 직접 호출(`openProfModal('이상준')`) 보존 및 콘솔 에러 0건 확인 완료.
 
+---
+
+## ⚡ 최근 업데이트: 인스타그램(@khuatcenter) In-service 및 세미나 게시물 갤러리 연동 (2026-11-20)
+- **요청 사항:** 공식 인스타그램(`https://www.instagram.com/khuatcenter/`)에서 **In-service** 게시물은 갤러리 `센터 활동`에, **세미나** 게시물은 갤러리 `행사`에 사진 캡처 느낌으로 추가.
+- **구현 내용 (`assets/images/insta/`, `index.html`, `khu-pro.css` / 캐시버스트 `v=20261120_insta_gallery`):**
+  1. **인스타그램 게시물 이미지 로컬 보존 (`assets/images/insta/`):**
+     - `inservice_2026_2_1.jpg` ~ `inservice_2026_2_6.jpg` (2026-2학기 1~6회차 In-service 카드뉴스 커버 6종)
+     - `seminar_2026_09_1.jpg`, `seminar_2026_09_2.jpg` (2026년 9월 정기 세미나 커버 및 야외 필드 세션 현장 사진), `seminar_2025_09_1.jpg`
+  2. **센터 활동(`data-category="center"`)에 In-service 6건 추가 (`index.html`):**
+     - 2026-2학기 6회차(11/9), 5회차(10/26), 4회차(10/12), 3회차 동문 특강(9/29), 2회차(9/14), 1회차(8/31) In-service 카드 추가 (한/영 `data-en-*` 속성 및 클릭 시 고화질 라이트박스 확대 연동).
+  3. **행사(`data-category="seminar"`)에 2026년 9월 정기 세미나 2건 추가 (`index.html`):**
+     - `2026년 9월 정기 세미나 & 필드 세션`, `2026년 9월 정기 세미나` 카드 추가 및 기존 `2026년 3월`·`2025년 9월` 세미나 카드 연월 표기 명확화.
+  4. **세로형 카드뉴스 잘림 방지 (`khu-pro.css`):**
+     - `.gallery-img.gallery-img-contain` 클래스를 추가하여 인스타 게시물 커버 이미지가 4:3 갤러리 프레임에서 잘리지 않고 여백과 함께 온전히 표시되도록 개선.
+- **검증:** Playwright로 `센터 활동`(10장) 및 `행사`(6장) 모든 이미지 정상 로드(`naturalWidth > 0`)와 콘솔 에러 0건 확인 완료.
+

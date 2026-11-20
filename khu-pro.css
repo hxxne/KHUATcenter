@@ -2564,6 +2564,10 @@ html[lang="en"] .assistant-person-name {
     object-fit: cover;
     transition: transform 0.55s var(--ease-expo);
 }
+.gallery-img.gallery-img-contain {
+    object-fit: contain;
+    background: #F5F2EB;
+}
 .gallery-card-item:hover .gallery-img {
     transform: scale(1.04);
 }
