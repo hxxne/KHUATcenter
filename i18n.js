@@ -1348,6 +1348,9 @@
         const origOpenProfModal = window.openProfModal;
         if (typeof origOpenProfModal === 'function') {
             window.openProfModal = function (cardOrName) {
+                if (!window.ENABLE_INTRO_PROFILE_MODAL && cardOrName && typeof cardOrName === 'object' && cardOrName.closest && cardOrName.closest('#about')) {
+                    return;
+                }
                 // 영문 상태에서 카드를 클릭했을 때도 원본 한국어 키(data-ko-name)로 정확히 조회하도록 보장
                 // 이전 모달에서 숨겼던 라벨·값 칸 표시 상태 초기화 (origOpenProfModal 실행 전)
                 ['prof-modal-degree-label', 'prof-modal-degree', 'prof-modal-edu-label', 'prof-modal-edu', 'prof-modal-subject-label', 'prof-modal-subject', 'prof-modal-lab-label', 'prof-modal-lab', 'prof-modal-email-label', 'prof-modal-email'].forEach(id => {

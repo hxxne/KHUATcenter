@@ -3381,3 +3381,15 @@ html[lang="en"] #contact .section-title::before,
 html[lang="en"] #pillars .bento-badge-row {
     display: none !important;
 }
+
+/* 소개 섹션(#about) 사람 카드 모달 일시 비활성화 시 클릭 유도 스타일 제거 */
+body.intro-modal-disabled #about .modern-profile-card,
+body.intro-modal-disabled #about .assistant-person-item {
+    cursor: default !important;
+}
+body.intro-modal-disabled #about .modern-profile-card:hover .modern-profile-name {
+    color: var(--ink-primary);
+}
+body.intro-modal-disabled #about .assistant-person-item:hover {
+    transform: none;
+}

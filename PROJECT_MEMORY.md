@@ -4221,3 +4221,18 @@ Observation 100시간 실무 과정,
   - `.modern-profile-grid.grid-faculty .modern-profile-card`의 `align-items: center`를 `align-items: flex-start`로 변경하고 `.modern-profile-info-col`에 `padding-top: 2px`를 적용하여, 각 카드의 텍스트 줄 수 차이와 무관하게 자문위원 4인과 교수진 2인 모두 사진 상단과 이름 상단이 일직선으로 정렬되도록 개선.
 - **검증:** Playwright로 자문위원 4인(한/영) 및 교수진 정렬 일치와 콘솔 에러 0건 확인 완료.
 
+---
+
+## ⚡ 최근 업데이트: 소개 섹션(`#about`) 구성원 클릭 시 파란 프로필 모달(`#prof-modal`) 일시 비활성화 및 보존 기록 (2026-11-20)
+- **요청 사항:** 소개 부분(`#about`)에서 사람 카드를 눌렀을 때 뜨는 파란 상세 프로필 모달(`#prof-modal`)을 일단 보이지 않도록 비활성화하되, 데이터와 모달 기능을 완전히 삭제하지 않고 기록으로 남김.
+- **구현 내용 (`index.html`, `i18n.js`, `khu-pro.css` / 캐시버스트 `v=20261120_intro_modal_off`):**
+  1. **전역 토글 플래그 도입 (`index.html`):**
+     - `window.ENABLE_INTRO_PROFILE_MODAL = false;`를 선언하고, `window.openProfModal` 및 `i18n.js`의 `openProfModal` 다국어 래퍼 최상단에서 `!window.ENABLE_INTRO_PROFILE_MODAL && cardOrName.closest('#about')` 조건일 때 즉시 `return`하도록 가드 처리.
+  2. **데이터·모달 구조 100% 보존:**
+     - `professorsData`, `#prof-modal` 마크업, `openProfModal` 구현체, 각 카드의 `onclick="openProfModal(this)"` 속성, 체육부 부서 모달 내 `상세보기` 연동은 삭제하지 않고 그대로 유지.
+  3. **클릭 유도 UI/접근성 정리 (`index.html`, `khu-pro.css`):**
+     - `body.intro-modal-disabled` 클래스를 통해 `#about` 내 `.modern-profile-card`, `.assistant-person-item`의 `cursor`를 `default`로 변경, `title` 속성은 `data-orig-title`에 백업 후 제거, `enhanceKeyboardAccessibility()`에서 해당 카드의 `tabindex="0"` / `role="button"` 부여 제외.
+- **향후 재활성화 방법:**
+  - `index.html`의 `window.ENABLE_INTRO_PROFILE_MODAL = false;`를 `true`로 변경하면 소개 섹션의 모든 사람 카드 클릭 모달, 커서, 키보드 접근성이 즉시 복구됨.
+- **검증:** Playwright로 `#about` 내 자문위원·교수진·리더·대학원생·AT 센터 보조 카드 클릭 시 모달 미오픈(한/영), `cursor: default`, 직접 호출(`openProfModal('이상준')`) 보존 및 콘솔 에러 0건 확인 완료.
+
