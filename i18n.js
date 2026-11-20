@@ -374,7 +374,8 @@
                 'TKD Demo',
                 'TKD Kyorugi',
                 'TKD Poomsae',
-                'AT Center'
+                'AT Center',
+                'Sports Rehab'
             ]
         },
         // 활동 사진 갤러리 카드 11개 배지 (센터/의무지원/세미나)

@@ -4284,3 +4284,16 @@ Observation 100시간 실무 과정,
      - **1회차(8/31):** `2026-2 In-service schedule` 전체 커리큘럼 표 (`slide_02.jpg`)
 - **검증:** Playwright로 `센터 활동` 탭 10개 카드 이미지 정상 로드 및 라이트박스 슬라이드 전환(`1 / 10 -> 6 / 10`)과 콘솔 에러 0건 확인 완료.
 
+---
+
+## ⚡ 최근 업데이트: 부서별 활동 갤러리에 스포츠재활 폴더 추가 및 7+7 2줄 정렬 (2026-11-20)
+- **요청 사항:** 갤러리 `부서별 활동` 필터에 `스포츠재활` 폴더를 추가하고 폴더 배치를 깔끔하게 정렬.
+- **구현 내용 (`index.html`, `khu-pro.css`, `i18n.js` / 캐시버스트 `v=20261120_rehab_folder`):**
+  1. **스포츠재활 폴더 버튼 추가 (`index.html`, `i18n.js`):**
+     - `AT Center` 옆에 `스포츠재활`(`filterDeptPhotos('rehab', this)`) 버튼을 추가하고, `i18n.js` 영문 목록에 `'Sports Rehab'` 추가.
+  2. **스포츠재활 활동 사진 2장 연동 (`index.html`):**
+     - `assets/images/activity/스재/7M306005.jpg`, `7M306015.jpg`를 `data-category="dept" data-dept="rehab"` 갤러리 카드로 추가하여 `스포츠재활` 폴더 선택 시 즉시 필터링·라이트박스 확대 가능.
+  3. **7+7 2줄 균형 정렬 (`khu-pro.css`):**
+     - `.dept-pictogram-filter-scroll`의 `max-width`를 `1080px`로 확장하여 데스크톱에서 1행 7개(`전체 부서`~`골프부`), 2행 7개(`배드민턴부`~`스포츠재활`)로 균형 잡힌 2줄 정렬 유지.
+- **검증:** Playwright로 `스포츠재활` 폴더 필터링(2장 정상 로드), 7+7 2줄 시각적 정렬, 영문 전환(`Sports Rehab`), 콘솔 에러 0건 확인 완료.
+
