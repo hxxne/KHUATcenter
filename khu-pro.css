@@ -2568,6 +2568,23 @@ html[lang="en"] .assistant-person-name {
     object-fit: contain;
     background: #F5F2EB;
 }
+.gallery-slide-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: rgba(15, 23, 42, 0.72);
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    backdrop-filter: blur(6px);
+    pointer-events: none;
+}
 .gallery-card-item:hover .gallery-img {
     transform: scale(1.04);
 }
@@ -3396,4 +3413,63 @@ body.intro-modal-disabled #about .modern-profile-card:hover .modern-profile-name
 }
 body.intro-modal-disabled #about .assistant-person-item:hover {
     transform: none;
+}
+
+/* 활동 사진 라이트박스 멀티 슬라이드 네비게이션 */
+.activity-lightbox-content {
+    position: relative;
+}
+.activity-lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(15, 23, 42, 0.72);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    cursor: pointer;
+    z-index: 5;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    backdrop-filter: blur(8px);
+}
+.activity-lightbox-nav:hover {
+    background: var(--khu-crimson);
+    transform: translateY(-50%) scale(1.06);
+}
+.activity-lightbox-prev {
+    left: 14px;
+}
+.activity-lightbox-next {
+    right: 14px;
+}
+.activity-lightbox-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 12px;
+}
+.activity-lightbox-footer .activity-lightbox-caption {
+    margin-top: 0;
+    flex: 1;
+    text-align: left;
+}
+.activity-lightbox-counter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 11px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
 }
