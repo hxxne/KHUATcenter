@@ -4315,3 +4315,13 @@ Observation 100시간 실무 과정,
 - **구현 내용 (`index.html`):** `#sub-tab-rehab` 상단의 `.rehab-activity-banner` 마크업 제거.
 - **검증:** Playwright로 배너 미노출(`BANNER COUNT: 0`), 강사진 프로필 카드 정상 렌더링 및 콘솔 에러 0건 확인 완료.
 
+---
+
+## ⚡ 최근 업데이트: 구성원 디렉토리 영문 탭·그룹명 변경 (2026-11-22)
+- **요청 사항:** 영문 모드 전환 시 구성원 탭 4종의 영문 표기를 `Graduate Assistance`, `AT Student Society`, `AT Staff`, `Undergraduate Assistance`로 변경.
+- **구현 내용 (`index.html`, `i18n.js` / 캐시버스트 `v=20261122_member_en`):**
+  - `Graduate Students` ➔ `Graduate Assistance`
+  - `Club Executives` / `AT Club Executives` ➔ `AT Student Society`
+  - `Staff & Team AT` / `Staff` ➔ `AT Staff`
+  - `Center Assistants` / `AT Center Assistants` ➔ `Undergraduate Assistance`
+- **검증:** Playwright로 영문 모드 전환 시 4개 탭 라벨 정확한 반영 및 콘솔 에러 0건 확인 완료.
