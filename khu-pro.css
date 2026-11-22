@@ -4570,3 +4570,300 @@ body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
         padding-right: 20px;
     }
 }
+
+
+/* ============================================================
+   🏆 역대 수상자 — 연도별 1:2 에디토리얼 헌액 무대 (Stage V2)
+   ============================================================ */
+.award-stage-v2 {
+    margin-bottom: 52px;
+}
+
+.award-stage-yearbar {
+    border-top: 2px solid var(--ink-primary);
+    border-bottom: 1px solid var(--line-strong);
+    padding: 8px 0;
+}
+
+.award-stage-v2 .award-year-pill::after {
+    bottom: -9px;
+}
+
+.award-stage-block {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 52px);
+    padding: clamp(28px, 3.8vw, 44px) 0 12px 0;
+    align-items: stretch;
+}
+
+/* 좌측 대형 연도 + 미니 내비게이션 */
+.award-stage-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+
+.award-stage-year {
+    display: block;
+    font-size: clamp(3.6rem, 5.2vw, 4.9rem);
+    font-weight: 800;
+    color: var(--ink-primary);
+    letter-spacing: -0.045em;
+    line-height: 0.92;
+    font-variant-numeric: tabular-nums;
+}
+
+.award-stage-rule {
+    display: block;
+    width: 34px;
+    height: 2.5px;
+    background: var(--khu-crimson);
+    margin: 18px 0 auto 2px;
+}
+
+.award-stage-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.award-stage-nav-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--line-strong);
+    background: transparent;
+    color: var(--ink-primary);
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.award-stage-nav-btn:hover,
+.award-stage-nav-btn:focus-visible {
+    background: var(--khu-crimson);
+    border-color: var(--khu-crimson);
+    color: #FFFFFF;
+}
+
+/* 우측 1:2 건축적 헌액 프레임 */
+.award-stage-frame {
+    background: #FFFFFF;
+    border: 1px solid rgba(17, 19, 24, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(17, 19, 24, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.award-stage-cell {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.award-stage-cell.is-primary {
+    background: #FFFFFF;
+    border-top: 3px solid var(--khu-crimson);
+    padding: clamp(26px, 3.2vw, 36px) clamp(26px, 3.4vw, 40px);
+}
+
+.award-stage-cell.is-primary:hover {
+    background: rgba(155, 17, 30, 0.024);
+}
+
+.award-stage-cell.is-dual-cell {
+    cursor: default;
+}
+
+.award-stage-cell.is-dual-cell:hover {
+    background: #FFFFFF;
+}
+
+.award-stage-subrow {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid rgba(17, 19, 24, 0.09);
+    background: #FAF9F6;
+}
+
+.award-stage-cell.is-sub {
+    background: transparent;
+    padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3.2vw, 36px);
+}
+
+.award-stage-cell.is-sub + .award-stage-cell.is-sub {
+    border-left: 1px solid rgba(17, 19, 24, 0.09);
+}
+
+.award-stage-cell.is-sub:hover {
+    background: #FFFFFF;
+}
+
+.award-stage-label {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+.award-stage-cell.is-primary .award-stage-label {
+    color: var(--khu-crimson);
+}
+
+.award-stage-co {
+    letter-spacing: 0.02em;
+    text-transform: none;
+    font-weight: 700;
+}
+
+.award-stage-name {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: clamp(1.42rem, 2.1vw, 1.72rem);
+    font-weight: 800;
+    color: var(--ink-primary);
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    transition: color 0.18s ease;
+}
+
+.award-stage-cell.is-primary .award-stage-name {
+    font-size: clamp(2.1rem, 3.1vw, 2.7rem);
+}
+
+.award-stage-arrow {
+    font-size: 0.62em;
+    font-weight: 700;
+    color: var(--khu-crimson);
+    opacity: 0.38;
+    transform: translate(-1px, 1px);
+    transition: opacity 0.18s ease, transform 0.2s var(--ease-expo);
+}
+
+.award-stage-cell:hover .award-stage-name,
+.award-stage-cell:focus-visible .award-stage-name {
+    color: var(--khu-crimson);
+}
+
+.award-stage-cell:hover .award-stage-arrow,
+.award-stage-cell:focus-visible .award-stage-arrow {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+.award-stage-cell:focus-visible {
+    outline: 2px solid var(--khu-crimson);
+    outline-offset: -2px;
+}
+
+/* 2017 공동 수상 */
+.award-stage-dual-names {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+}
+
+.award-stage-dual-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-weight: 800;
+    color: var(--ink-primary);
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+    cursor: pointer;
+    transition: color 0.18s ease;
+}
+
+.award-stage-dual-btn:hover,
+.award-stage-dual-btn:focus-visible {
+    color: var(--khu-crimson);
+}
+
+.award-stage-dual-btn:hover .award-stage-arrow,
+.award-stage-dual-btn:focus-visible .award-stage-arrow {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+.award-stage-dual-sep {
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: var(--ink-subtle);
+}
+
+/* 태블릿 & 모바일 반응형 */
+@media (max-width: 860px) {
+    .award-stage-block {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 22px 0 8px 0;
+    }
+
+    .award-stage-aside {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .award-stage-rule {
+        display: none;
+    }
+
+    .award-stage-nav {
+        margin-top: 0;
+    }
+
+    .award-stage-year {
+        font-size: 2.6rem;
+    }
+}
+
+@media (max-width: 560px) {
+    .award-stage-cell.is-primary {
+        padding: 22px 20px;
+    }
+
+    .award-stage-cell.is-sub {
+        padding: 18px 16px;
+    }
+
+    .award-stage-cell.is-primary .award-stage-name,
+    .award-stage-dual-btn {
+        font-size: 1.85rem;
+    }
+
+    .award-stage-name {
+        font-size: 1.25rem;
+    }
+}

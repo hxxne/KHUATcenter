@@ -4408,3 +4408,10 @@ Observation 100시간 실무 과정,
   - `index.html`: `#awards`를 3개 부문별 헌액 동판(`.award-plaque-wrap`, `.award-plaque-grid`)으로 재구성 — `AT Student of the Year` | `Inspiration` | `Rookie of the Year` 3개 기둥 내부에 각각 `2025`→`2015` 11개년(총 34명, 2017년 공동 수상 `조재희 / 양창욱` 포함) 배치 및 `openAlumniModal(...)` 100% 보존.
   - `khu-pro.css`: 1번 명판(`AT Student of the Year`)은 딥 경희 버건디(`#8C111C`) 헤더 + 골드 헤어라인 밑줄, 2·3번 명판(`Inspiration`, `Rookie of the Year`)은 딥 차콜(`#1C1F26`) 헤더로 통일. `2025` 최상단 행 강조, 2017년 공동 수상 인라인 한 줄 정렬로 한/영 모두 3개 명판 높이 완벽 대칭. 모바일(`<=960px`)은 1열 스택 전환.
 - **검증:** Playwright 데스크톱(KO/EN)·모바일(`390×844`) 캡처, 2025년 `유승아` 및 2017년 공동 수상 `조재희` 모달 오픈, 영문 전환(`Seunga Yu` 등) 및 3개 명판 대칭, 콘솔 에러 `0`건 확인 완료.
+
+### 2026-11-22: 역대 수상자(`#awards`) — 기존 1:2 연도 선택형 구도 기반 에디토리얼 헌액 무대(Stage V2)로 정제
+- **배경:** 기존의 상단 연도 탭 + 좌측 대형 연도 + 우측 1:2 구도(위 `AT Student of the Year`, 아래 `Inspiration · Rookie of the Year`)를 유지하되, AI 템플릿 느낌을 주던 3색 분산과 반복 `프로필 보기 →` 문구를 제거해 고급스럽게 다듬음.
+- **개편 내용:**
+  - `index.html`: `.award-stage-v2` 구조로 `2025`~`2015` 11개 연도 슬라이드(`goToAwardSlide`, `moveAwardSlide` 100% 연동) 및 34인명 `openAlumniModal(...)` 보존.
+  - `khu-pro.css`: 상단 `2px` 먹선 연도 바, 좌측 대형 연도 + 버건디 단선 + `← / →` 연도 전환 버튼, 우측 1:2 건축적 헌액 프레임(상단 `AT Student of the Year`는 `3px` 버건디 상단 선 + 화이트 표면, 하단 `Inspiration | Rookie of the Year`는 웜 스톤 2열 분할 + 먹색 통일 라벨). 모든 이름 옆 미세 화살표(`↗`) 인터랙션으로 반복 문구 제거.
+- **검증:** Playwright 데스크톱(KO `2025`/`2017`, EN `2025`) 및 모바일(`390×844`) 캡처, `유승아`·`양창욱` 모달 오픈, 영문 전환(`Seunga Yu`), 콘솔 에러 `0`건 확인 완료.
