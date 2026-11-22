@@ -4424,3 +4424,7 @@ Observation 100시간 실무 과정,
 - `index.html`: `populateAwardStageCareers()` 즉시 실행 함수를 추가해 `alumniCareerData`에 공개된 수상자 현재 소속·진로(`미공개`/`정보 준비중` 제외)를 각 수상자 이름 아래에 자동 표시(2017년 공동 수상 `양창욱` 개별 표시 포함).
 - `khu-pro.css`: `.award-stage-career` 및 `.award-stage-dual-head` 스타일 추가.
 - `i18n.js`: `#awards .award-stage-career` 영문 접두어(`현) ` → `Current: `, `휴직` → `On Leave`) 변환 연동.
+
+### 2026-11-22: 갤러리 `부서별 활동 > 스포츠재활` 신규 현장 사진 11장 추가 (총 13장)
+- `assets/스포츠재활1.jpg`~`11.jpg` 원본(총 약 37MB)을 EXIF 회전 보정 및 최대 1600px 웹 최적화(`quality=86`, 총 약 3.2MB)하여 `assets/images/activity/스재/rehab_01.jpg`~`rehab_11.jpg`로 저장.
+- `index.html`: 갤러리 `data-dept="rehab"` 영역에 11장 카드(한/영 메타데이터, `openPhotoLightbox` 고화질 확대 연동) 추가. Playwright 검증 결과 13/13장 정상 로딩 확인.
