@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261122_honor_roll">
+    <link rel="stylesheet" href="khu-pro.css?v=20261122_award_timeline">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
@@ -1725,251 +1725,350 @@
                 <div class="divider"></div>
             </div>
 
-            <!-- 2. 11개년 학생 수상자 에디토리얼 명예의 전당 명단표 (Honor Roll Archive Matrix, 2025 -> 2015) -->
-            <div class="honor-roll-container">
+            <!-- 2. 11개년 학생 수상자 세로 연대기 타임라인 (Vertical Milestone Timeline, 2025 -> 2015) -->
+            <div class="award-timeline-wrap">
                 <div class="honor-roll-topbar" id="stream-awards-header">
                     <h3 class="stream-sub-title" id="stream-awards-title">역대 수상자</h3>
                     <p class="honor-roll-caption" data-ko="2015–2025 · 이름을 클릭하면 프로필을 확인할 수 있습니다" data-en="2015–2025 · Select a laureate to view profile">2015–2025 · 이름을 클릭하면 프로필을 확인할 수 있습니다</p>
                 </div>
 
-                <div class="honor-roll-table" role="table" aria-label="2015년부터 2025년까지 역대 수상자 명단">
-                    <!-- 헤더 행 (데스크톱 4열) -->
-                    <div class="honor-roll-head" role="row">
-                        <div class="honor-col honor-col-year" role="columnheader" data-ko="연도" data-en="Year">연도</div>
-                        <div class="honor-col honor-col-coty" role="columnheader">AT Student of the Year</div>
-                        <div class="honor-col honor-col-insp" role="columnheader">Inspiration</div>
-                        <div class="honor-col honor-col-rookie" role="columnheader">Rookie of the Year</div>
-                    </div>
-
-                    <!-- 2025 (최신 연도 강조 행) -->
-                    <div class="honor-roll-row honor-row-latest" id="award-year-2025" role="row">
-                        <div class="honor-cell honor-year" role="cell">
-                            <span class="honor-year-num">2025</span>
+                <ol class="award-timeline" aria-label="2015년부터 2025년까지 역대 수상자 연대기">
+                    <!-- 2025 (최신 연도 시그니처 헌액) -->
+                    <li class="award-tl-item award-tl-latest" id="award-year-2025">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2025</span>
                         </div>
-                        <div class="honor-cell honor-cell-coty" role="cell" data-award-label="AT Student of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('유승아', '2025 AT Student of the Year')">
-                                <span class="honor-name-text">유승아</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year</span>
+                                <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('유승아', '2025 AT Student of the Year')">
+                                    <span class="honor-name-text">유승아</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                </button>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('유주승', '2025 Inspiration')">
+                                        <span class="honor-name-text">유주승</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('조연지', '2025 Rookie of the Year')">
+                                        <span class="honor-name-text">조연지</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('유주승', '2025 Inspiration')">
-                                <span class="honor-name-text">유주승</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('조연지', '2025 Rookie of the Year')">
-                                <span class="honor-name-text">조연지</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
+                    </li>
 
                     <!-- 2024 -->
-                    <div class="honor-roll-row" id="award-year-2024" role="row">
-                        <div class="honor-cell honor-year" role="cell"><span class="honor-year-num">2024</span></div>
-                        <div class="honor-cell honor-cell-coty" role="cell" data-award-label="AT Student of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('한혜서', '2024 AT Student of the Year')">
-                                <span class="honor-name-text">한혜서</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                    <li class="award-tl-item" id="award-year-2024">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2024</span>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('한혜서', '2024 Inspiration')">
-                                <span class="honor-name-text">한혜서</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year</span>
+                                <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('한혜서', '2024 AT Student of the Year')">
+                                    <span class="honor-name-text">한혜서</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                </button>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('한혜서', '2024 Inspiration')">
+                                        <span class="honor-name-text">한혜서</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('이정재', '2024 Rookie of the Year')">
+                                        <span class="honor-name-text">이정재</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('이정재', '2024 Rookie of the Year')">
-                                <span class="honor-name-text">이정재</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
+                    </li>
 
                     <!-- 2023 -->
-                    <div class="honor-roll-row" id="award-year-2023" role="row">
-                        <div class="honor-cell honor-year" role="cell"><span class="honor-year-num">2023</span></div>
-                        <div class="honor-cell honor-cell-coty" role="cell" data-award-label="AT Student of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('차정수', '2023 AT Student of the Year')">
-                                <span class="honor-name-text">차정수</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                    <li class="award-tl-item" id="award-year-2023">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2023</span>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('문채연', '2023 Inspiration')">
-                                <span class="honor-name-text">문채연</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year</span>
+                                <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('차정수', '2023 AT Student of the Year')">
+                                    <span class="honor-name-text">차정수</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                </button>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('문채연', '2023 Inspiration')">
+                                        <span class="honor-name-text">문채연</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('한현구', '2023 Rookie of the Year')">
+                                        <span class="honor-name-text">한현구</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('한현구', '2023 Rookie of the Year')">
-                                <span class="honor-name-text">한현구</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
+                    </li>
 
                     <!-- 2022 -->
-                    <div class="honor-roll-row" id="award-year-2022" role="row">
-                        <div class="honor-cell honor-year" role="cell"><span class="honor-year-num">2022</span></div>
-                        <div class="honor-cell honor-cell-coty" role="cell" data-award-label="AT Student of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('박효진', '2022 AT Student of the Year')">
-                                <span class="honor-name-text">박효진</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                    <li class="award-tl-item" id="award-year-2022">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2022</span>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('이남송', '2022 Inspiration')">
-                                <span class="honor-name-text">이남송</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year</span>
+                                <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('박효진', '2022 AT Student of the Year')">
+                                    <span class="honor-name-text">박효진</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                </button>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('이남송', '2022 Inspiration')">
+                                        <span class="honor-name-text">이남송</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('유영수', '2022 Rookie of the Year')">
+                                        <span class="honor-name-text">유영수</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('유영수', '2022 Rookie of the Year')">
-                                <span class="honor-name-text">유영수</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
+                    </li>
 
                     <!-- 2021 -->
-                    <div class="honor-roll-row" id="award-year-2021" role="row">
-                        <div class="honor-cell honor-year" role="cell"><span class="honor-year-num">2021</span></div>
-                        <div class="honor-cell honor-cell-coty" role="cell" data-award-label="AT Student of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('김재원', '2021 AT Student of the Year')">
-                                <span class="honor-name-text">김재원</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                    <li class="award-tl-item" id="award-year-2021">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2021</span>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('김태진', '2021 Inspiration')">
-                                <span class="honor-name-text">김태진</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year</span>
+                                <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('김재원', '2021 AT Student of the Year')">
+                                    <span class="honor-name-text">김재원</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                </button>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('김태진', '2021 Inspiration')">
+                                        <span class="honor-name-text">김태진</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('최유빈', '2021 Rookie of the Year')">
+                                        <span class="honor-name-text">최유빈</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('최유빈', '2021 Rookie of the Year')">
-                                <span class="honor-name-text">최유빈</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
+                    </li>
 
                     <!-- 2020 -->
-                    <div class="honor-roll-row" id="award-year-2020" role="row">
-                        <div class="honor-cell honor-year" role="cell"><span class="honor-year-num">2020</span></div>
-                        <div class="honor-cell honor-cell-coty" role="cell" data-award-label="AT Student of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('임선주', '2020 AT Student of the Year')">
-                                <span class="honor-name-text">임선주</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                    <li class="award-tl-item" id="award-year-2020">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2020</span>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('김승연', '2020 Inspiration')">
-                                <span class="honor-name-text">김승연</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year</span>
+                                <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('임선주', '2020 AT Student of the Year')">
+                                    <span class="honor-name-text">임선주</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                </button>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('김승연', '2020 Inspiration')">
+                                        <span class="honor-name-text">김승연</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('김승연', '2020 Rookie of the Year')">
+                                        <span class="honor-name-text">김승연</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('김승연', '2020 Rookie of the Year')">
-                                <span class="honor-name-text">김승연</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
+                    </li>
 
                     <!-- 2019 -->
-                    <div class="honor-roll-row" id="award-year-2019" role="row">
-                        <div class="honor-cell honor-year" role="cell"><span class="honor-year-num">2019</span></div>
-                        <div class="honor-cell honor-cell-coty" role="cell" data-award-label="AT Student of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('김동현', '2019 AT Student of the Year')">
-                                <span class="honor-name-text">김동현</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                    <li class="award-tl-item" id="award-year-2019">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2019</span>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('성락훈', '2019 Inspiration')">
-                                <span class="honor-name-text">성락훈</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year</span>
+                                <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('김동현', '2019 AT Student of the Year')">
+                                    <span class="honor-name-text">김동현</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                </button>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('성락훈', '2019 Inspiration')">
+                                        <span class="honor-name-text">성락훈</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('임선주', '2019 Rookie of the Year')">
+                                        <span class="honor-name-text">임선주</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('임선주', '2019 Rookie of the Year')">
-                                <span class="honor-name-text">임선주</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
+                    </li>
 
                     <!-- 2018 -->
-                    <div class="honor-roll-row" id="award-year-2018" role="row">
-                        <div class="honor-cell honor-year" role="cell"><span class="honor-year-num">2018</span></div>
-                        <div class="honor-cell honor-cell-coty" role="cell" data-award-label="AT Student of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('오민섭', '2018 AT Student of the Year')">
-                                <span class="honor-name-text">오민섭</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                    <li class="award-tl-item" id="award-year-2018">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2018</span>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('김동현', '2018 Inspiration')">
-                                <span class="honor-name-text">김동현</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year</span>
+                                <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('오민섭', '2018 AT Student of the Year')">
+                                    <span class="honor-name-text">오민섭</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                </button>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('김동현', '2018 Inspiration')">
+                                        <span class="honor-name-text">김동현</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('우태희', '2018 Rookie of the Year')">
+                                        <span class="honor-name-text">우태희</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('우태희', '2018 Rookie of the Year')">
-                                <span class="honor-name-text">우태희</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
+                    </li>
 
                     <!-- 2017 (공동 수상 포함) -->
-                    <div class="honor-roll-row" id="award-year-2017" role="row">
-                        <div class="honor-cell honor-year" role="cell"><span class="honor-year-num">2017</span></div>
-                        <div class="honor-cell honor-cell-coty honor-cell-dual" role="cell" data-award-label="AT Student of the Year">
-                            <span class="honor-dual-group">
-                                <button type="button" class="honor-name-btn" onclick="openAlumniModal('조재희', '2017 AT Student of the Year (공동 수상)')">
-                                    <span class="honor-name-text">조재희</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                                </button>
-                                <span class="honor-dual-sep" aria-hidden="true">/</span>
-                                <button type="button" class="honor-name-btn" onclick="openAlumniModal('양창욱', '2017 AT Student of the Year (공동 수상)')">
-                                    <span class="honor-name-text">양창욱</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                                </button>
-                                <span class="honor-co-note" data-ko="공동" data-en="Co-winners">공동</span>
-                            </span>
+                    <li class="award-tl-item" id="award-year-2017">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2017</span>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('조유진', '2017 Inspiration')">
-                                <span class="honor-name-text">조유진</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year <span class="award-tl-co-note" data-ko="· 공동 수상" data-en="· Co-winners">· 공동 수상</span></span>
+                                <div class="award-tl-dual">
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('조재희', '2017 AT Student of the Year (공동 수상)')">
+                                        <span class="honor-name-text">조재희</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                    <span class="award-tl-dual-sep" aria-hidden="true">/</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('양창욱', '2017 AT Student of the Year (공동 수상)')">
+                                        <span class="honor-name-text">양창욱</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('조유진', '2017 Inspiration')">
+                                        <span class="honor-name-text">조유진</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('오민섭', '2017 Rookie of the Year')">
+                                        <span class="honor-name-text">오민섭</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('오민섭', '2017 Rookie of the Year')">
-                                <span class="honor-name-text">오민섭</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
+                    </li>
 
                     <!-- 2016 -->
-                    <div class="honor-roll-row" id="award-year-2016" role="row">
-                        <div class="honor-cell honor-year" role="cell"><span class="honor-year-num">2016</span></div>
-                        <div class="honor-cell honor-cell-coty" role="cell" data-award-label="AT Student of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('이선화', '2016 AT Student of the Year')">
-                                <span class="honor-name-text">이선화</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                    <li class="award-tl-item" id="award-year-2016">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2016</span>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('안효은', '2016 Inspiration')">
-                                <span class="honor-name-text">안효은</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year</span>
+                                <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('이선화', '2016 AT Student of the Year')">
+                                    <span class="honor-name-text">이선화</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                </button>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('안효은', '2016 Inspiration')">
+                                        <span class="honor-name-text">안효은</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('이서영', '2016 Rookie of the Year')">
+                                        <span class="honor-name-text">이서영</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('이서영', '2016 Rookie of the Year')">
-                                <span class="honor-name-text">이서영</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
+                    </li>
 
                     <!-- 2015 -->
-                    <div class="honor-roll-row" id="award-year-2015" role="row">
-                        <div class="honor-cell honor-year" role="cell"><span class="honor-year-num">2015</span></div>
-                        <div class="honor-cell honor-cell-coty" role="cell" data-award-label="AT Student of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('이현욱', '2015 AT Student of the Year')">
-                                <span class="honor-name-text">이현욱</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                    <li class="award-tl-item" id="award-year-2015">
+                        <div class="award-tl-axis">
+                            <span class="award-tl-node" aria-hidden="true"></span>
+                            <span class="award-tl-year">2015</span>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Inspiration">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('신재윤', '2015 Inspiration')">
-                                <span class="honor-name-text">신재윤</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
+                        <div class="award-tl-band">
+                            <div class="award-tl-primary">
+                                <span class="award-tl-label">AT Student of the Year</span>
+                                <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('이현욱', '2015 AT Student of the Year')">
+                                    <span class="honor-name-text">이현욱</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                </button>
+                            </div>
+                            <div class="award-tl-secondary">
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Inspiration</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('신재윤', '2015 Inspiration')">
+                                        <span class="honor-name-text">신재윤</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                                <div class="award-tl-sub">
+                                    <span class="award-tl-label">Rookie of the Year</span>
+                                    <button type="button" class="award-tl-name-btn" onclick="openAlumniModal('김다영', '2015 Rookie of the Year')">
+                                        <span class="honor-name-text">김다영</span><span class="award-tl-arrow" aria-hidden="true">↗</span>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
-                        <div class="honor-cell" role="cell" data-award-label="Rookie of the Year">
-                            <button type="button" class="honor-name-btn" onclick="openAlumniModal('김다영', '2015 Rookie of the Year')">
-                                <span class="honor-name-text">김다영</span><span class="honor-name-arrow" aria-hidden="true">↗</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                </ol>
             </div>
 
             <!-- 역대 리더 & 대학원 졸업자 2-탭 아카이브 -->
