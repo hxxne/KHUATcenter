@@ -4415,3 +4415,6 @@ Observation 100시간 실무 과정,
   - `index.html`: `.award-stage-v2` 구조로 `2025`~`2015` 11개 연도 슬라이드(`goToAwardSlide`, `moveAwardSlide` 100% 연동) 및 34인명 `openAlumniModal(...)` 보존.
   - `khu-pro.css`: 상단 `2px` 먹선 연도 바, 좌측 대형 연도 + 버건디 단선 + `← / →` 연도 전환 버튼, 우측 1:2 건축적 헌액 프레임(상단 `AT Student of the Year`는 `3px` 버건디 상단 선 + 화이트 표면, 하단 `Inspiration | Rookie of the Year`는 웜 스톤 2열 분할 + 먹색 통일 라벨). 모든 이름 옆 미세 화살표(`↗`) 인터랙션으로 반복 문구 제거.
 - **검증:** Playwright 데스크톱(KO `2025`/`2017`, EN `2025`) 및 모바일(`390×844`) 캡처, `유승아`·`양창욱` 모달 오픈, 영문 전환(`Seunga Yu`), 콘솔 에러 `0`건 확인 완료.
+
+### 2026-11-22: 역대 수상자(`#awards`) 네모 박스 제거 → 보더리스 오픈 1:2 에디토리얼 마감
+- `.award-stage-frame` 및 하위 셀의 흰 박스 배경·테두리·그림자를 제거하고 `transparent` 보더리스 오픈 구조(상단 `2px` 버건디 선 + 얇은 헤어라인 구분선)로 마감하여 미색 바탕 및 누적기록(`#dashboard`)과 디자인 통일성 완성.

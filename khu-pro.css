@@ -4653,13 +4653,13 @@ body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
     color: #FFFFFF;
 }
 
-/* 우측 1:2 건축적 헌액 프레임 */
+/* 우측 1:2 보더리스 오픈 에디토리얼 구도 (네모 박스 없이 선으로만 정갈하게 분할) */
 .award-stage-frame {
-    background: #FFFFFF;
-    border: 1px solid rgba(17, 19, 24, 0.1);
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(17, 19, 24, 0.04);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
     display: flex;
     flex-direction: column;
 }
@@ -4676,17 +4676,17 @@ body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
     align-items: flex-start;
     gap: 10px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: transform 0.2s var(--ease-expo);
 }
 
 .award-stage-cell.is-primary {
-    background: #FFFFFF;
-    border-top: 3px solid var(--khu-crimson);
-    padding: clamp(26px, 3.2vw, 36px) clamp(26px, 3.4vw, 40px);
+    background: transparent;
+    border-top: 2px solid var(--khu-crimson);
+    padding: clamp(22px, 2.8vw, 30px) 8px clamp(24px, 3vw, 32px) 0;
 }
 
 .award-stage-cell.is-primary:hover {
-    background: rgba(155, 17, 30, 0.024);
+    background: transparent;
 }
 
 .award-stage-cell.is-dual-cell {
@@ -4694,27 +4694,29 @@ body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
 }
 
 .award-stage-cell.is-dual-cell:hover {
-    background: #FFFFFF;
+    background: transparent;
 }
 
 .award-stage-subrow {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    border-top: 1px solid rgba(17, 19, 24, 0.09);
-    background: #FAF9F6;
+    border-top: 1px solid var(--line-hairline);
+    background: transparent;
 }
 
 .award-stage-cell.is-sub {
     background: transparent;
-    padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3.2vw, 36px);
+    padding: clamp(20px, 2.4vw, 26px) 24px 12px 0;
 }
 
 .award-stage-cell.is-sub + .award-stage-cell.is-sub {
-    border-left: 1px solid rgba(17, 19, 24, 0.09);
+    padding-left: clamp(20px, 2.8vw, 32px);
+    padding-right: 0;
+    border-left: 1px solid var(--line-hairline);
 }
 
 .award-stage-cell.is-sub:hover {
-    background: #FFFFFF;
+    background: transparent;
 }
 
 .award-stage-label {
@@ -4851,11 +4853,16 @@ body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
 
 @media (max-width: 560px) {
     .award-stage-cell.is-primary {
-        padding: 22px 20px;
+        padding: 20px 0 22px 0;
     }
 
     .award-stage-cell.is-sub {
-        padding: 18px 16px;
+        padding: 18px 12px 10px 0;
+    }
+
+    .award-stage-cell.is-sub + .award-stage-cell.is-sub {
+        padding-left: 16px;
+        padding-right: 0;
     }
 
     .award-stage-cell.is-primary .award-stage-name,
