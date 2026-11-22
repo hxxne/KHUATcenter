@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261122_asymmetric_ledger">
+    <link rel="stylesheet" href="khu-pro.css?v=20261122_ledger_visuals">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
@@ -1602,9 +1602,26 @@
                         <span class="stat-number metric-num" data-target="173316">173,316</span>
                         <span class="stat-unit">건</span>
                     </div>
+
+                    <!-- 13년 아카이브 타임라인 눈금 바 -->
+                    <div class="ledger-timeline-strip" aria-hidden="true">
+                        <div class="lt-track">
+                            <span class="lt-node"><i class="lt-dot"></i><em>2013</em></span>
+                            <span class="lt-node"><i class="lt-dot"></i><em>2017</em></span>
+                            <span class="lt-node"><i class="lt-dot"></i><em>2021</em></span>
+                            <span class="lt-node lt-node-now"><i class="lt-dot"></i><em>2026</em></span>
+                        </div>
+                    </div>
+
                     <div class="ledger-hero-bottom">
                         <h3 class="ledger-title">부상 예방 및 컨디셔닝</h3>
                         <p class="ledger-desc">급성 · 만성 손상 재활, 컨디셔닝, 퍼포먼스 향상, 저항 운동, 스포츠 테이핑</p>
+                        <div class="ledger-service-tags">
+                            <span data-ko="급성 · 만성 재활" data-en="Injury Rehab"><i class="fa-solid fa-kit-medical"></i> 급성 · 만성 재활</span>
+                            <span data-ko="컨디셔닝" data-en="Conditioning"><i class="fa-solid fa-heart-pulse"></i> 컨디셔닝</span>
+                            <span data-ko="저항 · 퍼포먼스" data-en="Strength &amp; Perf."><i class="fa-solid fa-dumbbell"></i> 저항 · 퍼포먼스</span>
+                            <span data-ko="스포츠 테이핑" data-en="Sports Taping"><i class="fa-solid fa-bandage"></i> 스포츠 테이핑</span>
+                        </div>
                     </div>
                 </div>
 
@@ -1639,6 +1656,31 @@
                         <h3 class="ledger-title">국내외 학술 연구 논문</h3>
                         <span class="ledger-period" data-ko="2013–2026 · SCIE · KCI 등재 및 학술대회 발표" data-en="2013–2026 · SCIE · KCI journals &amp; conferences">2013–2026 · SCIE · KCI 등재 및 학술대회 발표</span>
                         <p class="ledger-desc">국내외 스포츠과학 및 임상 저널 출판 및 학술대회 발표</p>
+                        <!-- 실제 수록 저널 논문 연도별 분포 막대 (2012~2026) -->
+                        <div class="ledger-real-bars" aria-label="연도별 저널 논문 발표 분포 (2012~2026)">
+                            <div class="lbar-list">
+                                <span class="lbar" style="--h:33%" title="2012: 3편"></span>
+                                <span class="lbar" style="--h:22%" title="2013: 2편"></span>
+                                <span class="lbar" style="--h:11%" title="2014: 1편"></span>
+                                <span class="lbar" style="--h:11%" title="2015: 1편"></span>
+                                <span class="lbar" style="--h:11%" title="2016: 1편"></span>
+                                <span class="lbar" style="--h:44%" title="2017: 4편"></span>
+                                <span class="lbar" style="--h:11%" title="2018: 1편"></span>
+                                <span class="lbar" style="--h:11%" title="2019: 1편"></span>
+                                <span class="lbar" style="--h:44%" title="2020: 4편"></span>
+                                <span class="lbar lbar-peak" style="--h:100%" title="2021: 9편"></span>
+                                <span class="lbar lbar-peak" style="--h:89%" title="2022: 8편"></span>
+                                <span class="lbar" style="--h:33%" title="2023: 3편"></span>
+                                <span class="lbar lbar-peak" style="--h:78%" title="2024: 7편"></span>
+                                <span class="lbar" style="--h:33%" title="2025: 3편"></span>
+                                <span class="lbar lbar-peak" style="--h:67%" title="2026: 6편"></span>
+                            </div>
+                            <div class="lbar-axis">
+                                <span>2012</span>
+                                <span data-ko="연도별 저널 논문 추이 (최대 2021 · 9편)" data-en="Annual Journal Output (Peak 2021 · 9)">연도별 저널 논문 추이 (최대 2021 · 9편)</span>
+                                <span>2026</span>
+                            </div>
+                        </div>
                     </div>
 
                 </div>

@@ -1127,6 +1127,122 @@ html[lang="en"] .about-detail .pc-br {
     transition: transform 0.2s ease, color 0.2s ease;
 }
 
+/* 좌측 히어로 타임라인 눈금 바 & 4대 케어 영역 태그 */
+.ledger-timeline-strip {
+    margin: 2px 0 4px 0;
+    padding: 10px 0 4px 0;
+}
+.lt-track {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.lt-track::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    top: 4px;
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--line-strong) 0%, var(--khu-crimson) 100%);
+    z-index: 0;
+}
+.lt-node {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.lt-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--bg-canvas);
+    border: 2px solid var(--ink-muted);
+    display: block;
+}
+.lt-node-now .lt-dot {
+    background: var(--khu-crimson);
+    border-color: var(--khu-crimson);
+    box-shadow: 0 0 0 3px rgba(165, 0, 52, 0.14);
+}
+.lt-node em {
+    font-style: normal;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+}
+.lt-node-now em {
+    color: var(--khu-crimson);
+    font-weight: 800;
+}
+
+.ledger-service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+}
+.ledger-service-tags span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--line-strong);
+    background: rgba(255, 255, 255, 0.65);
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink-secondary);
+}
+.ledger-service-tags span i {
+    color: var(--khu-crimson);
+    font-size: 0.74rem;
+}
+
+/* 우측 연구 행 실제 연도별 논문 막대그래프 */
+.ledger-real-bars {
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--line-hairline);
+}
+.lbar-list {
+    display: grid;
+    grid-template-columns: repeat(15, minmax(0, 1fr));
+    align-items: end;
+    gap: 5px;
+    height: 36px;
+}
+.lbar {
+    display: block;
+    width: 100%;
+    height: var(--h, 20%);
+    min-height: 4px;
+    border-radius: 2px 2px 0 0;
+    background: rgba(17, 19, 24, 0.18);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.lbar.lbar-peak {
+    background: rgba(165, 0, 52, 0.78);
+}
+.ledger-stack-item:hover .lbar:not(.lbar-peak) {
+    background: rgba(17, 19, 24, 0.28);
+}
+.lbar-axis {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+}
+
 .editorial-card-desc {
     font-size: 0.88rem;
     color: var(--ink-muted);
