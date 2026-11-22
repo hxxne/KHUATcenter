@@ -4579,6 +4579,11 @@ body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
     margin-bottom: 52px;
 }
 
+.award-stage-v2 .honor-roll-topbar {
+    justify-content: center;
+    text-align: center;
+}
+
 .award-stage-yearbar {
     border-top: 2px solid var(--ink-primary);
     border-bottom: 1px solid var(--line-strong);
