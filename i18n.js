@@ -342,10 +342,10 @@
                 'Advisory Board',
                 'Faculty members',
                 'Leaders',
-                'Graduate Students',
-                'AT Club Executives',
-                'Staff',
-                'AT Center Assistants'
+                'Graduate Assistance',
+                'AT Student Society',
+                'AT Staff',
+                'Undergraduate Assistance'
             ]
         },
         // 활동 사진 메인 카테고리 탭 4개
