@@ -2375,7 +2375,7 @@ html[lang="en"] .assistant-person-name {
 }
 
 .donate-section-title {
-    margin: 0 0 28px 0;
+    margin: 0 0 clamp(48px, 5.5vw, 68px) 0;
 }
 .donate-section-title::before {
     content: "SPONSORSHIP";
