@@ -4418,3 +4418,9 @@ Observation 100시간 실무 과정,
 
 ### 2026-11-22: 역대 수상자(`#awards`) 네모 박스 제거 → 보더리스 오픈 1:2 에디토리얼 마감
 - `.award-stage-frame` 및 하위 셀의 흰 박스 배경·테두리·그림자를 제거하고 `transparent` 보더리스 오픈 구조(상단 `2px` 버건디 선 + 얇은 헤어라인 구분선)로 마감하여 미색 바탕 및 누적기록(`#dashboard`)과 디자인 통일성 완성.
+
+### 2026-11-22: 역대 수상자(`#awards`) — 제목 가운데 정렬 & 현재 소속·진로 미리보기 자동 연동
+- `역대 수상자` 제목 가운데 정렬 및 상단 안내 문구 제거.
+- `index.html`: `populateAwardStageCareers()` 즉시 실행 함수를 추가해 `alumniCareerData`에 공개된 수상자 현재 소속·진로(`미공개`/`정보 준비중` 제외)를 각 수상자 이름 아래에 자동 표시(2017년 공동 수상 `양창욱` 개별 표시 포함).
+- `khu-pro.css`: `.award-stage-career` 및 `.award-stage-dual-head` 스타일 추가.
+- `i18n.js`: `#awards .award-stage-career` 영문 접두어(`현) ` → `Current: `, `휴직` → `On Leave`) 변환 연동.

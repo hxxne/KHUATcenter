@@ -4828,6 +4828,40 @@ body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
     color: var(--ink-subtle);
 }
 
+/* 수상자 현재 소속·진로 미리보기 */
+.award-stage-career {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    letter-spacing: -0.015em;
+    line-height: 1.45;
+    margin-top: 2px;
+    word-break: keep-all;
+}
+
+.award-stage-cell.is-primary .award-stage-career {
+    font-size: 0.96rem;
+    margin-top: 4px;
+}
+
+.award-stage-dual-btn.has-career {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.award-stage-dual-head {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 7px;
+}
+
+.award-stage-dual-btn.has-career .award-stage-career {
+    font-size: 0.88rem;
+    margin-top: 2px;
+}
+
 /* 태블릿 & 모바일 반응형 */
 @media (max-width: 860px) {
     .award-stage-block {

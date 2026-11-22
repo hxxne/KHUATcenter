@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261122_award_center">
+    <link rel="stylesheet" href="khu-pro.css?v=20261122_award_career">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
@@ -6627,6 +6627,40 @@
         // }
     };
 
+    // 역대 수상자 무대(.award-stage-v2)에 공개된 현재 소속·진로 미리보기 자동 연동
+    (function populateAwardStageCareers() {
+        const hiddenValues = new Set(["", "미공개", "정보 준비중"]);
+        document.querySelectorAll('.award-stage-v2 .award-stage-cell:not(.is-dual-cell)').forEach(cell => {
+            const nameEl = cell.querySelector('.honor-name-text');
+            if (!nameEl) return;
+            const koName = nameEl.textContent.trim();
+            const career = alumniCareerData[koName] || alumniCareerData[koName.replace(/\s+/g, '')] || "";
+            if (!career || hiddenValues.has(career.trim())) return;
+            const span = document.createElement('span');
+            span.className = 'award-stage-career';
+            span.textContent = career.trim();
+            cell.appendChild(span);
+        });
+        document.querySelectorAll('.award-stage-v2 .award-stage-dual-btn').forEach(btn => {
+            const nameEl = btn.querySelector('.honor-name-text');
+            if (!nameEl) return;
+            const koName = nameEl.textContent.trim();
+            const career = alumniCareerData[koName] || alumniCareerData[koName.replace(/\s+/g, '')] || "";
+            if (!career || hiddenValues.has(career.trim())) return;
+            const headWrap = document.createElement('span');
+            headWrap.className = 'award-stage-dual-head';
+            while (btn.firstChild) {
+                headWrap.appendChild(btn.firstChild);
+            }
+            btn.appendChild(headWrap);
+            const span = document.createElement('span');
+            span.className = 'award-stage-career';
+            span.textContent = career.trim();
+            btn.classList.add('has-career');
+            btn.appendChild(span);
+        });
+    })();
+
     // 모달 닫기 애니메이션 타이머 (빠른 연속 클릭 시 모달이 즉시 닫혀버리는 현상 방지)
     let alumniModalTimer = null;
 
@@ -7320,7 +7354,7 @@ window.showEditorialYear = function(year, btn) {
 </script>
 
 <!-- 다국어 전환 엔진 (한국어 | English) -->
-<script src="i18n.js?v=20261122_honor_roll"></script>
+<script src="i18n.js?v=20261122_award_career"></script>
 <!-- 오픈소스 모션 & 데이터 시각화 엔진 (anime.js v4.5 · Motion v14.9 · Bklit UI) -->
 <script src="assets/vendor/anime.umd.min.js"></script>
 <script src="assets/vendor/motion.min.js"></script>

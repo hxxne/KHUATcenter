@@ -1001,8 +1001,8 @@
             }
         });
 
-        // 6) 역대 수상자 카드/명단표 성명, 설명, 힌트, 배지, 역대 리더 성명, 대학원 졸업자 성명 및 종목 태그 백업
-        document.querySelectorAll('#awards .honor-name-text, #awards .award-stream-name, #awards .dual-name-row, #awards .ed-name, #awards .ed-ga-item .gn, #awards .award-stream-desc, #awards .award-click-hint, #awards .award-pill, #awards .ed-ga-item .gb').forEach(el => {
+        // 6) 역대 수상자 카드/명단표 성명, 설명, 힌트, 배지, 현재 소속, 역대 리더 성명, 대학원 졸업자 성명 및 종목 태그 백업
+        document.querySelectorAll('#awards .honor-name-text, #awards .award-stage-career, #awards .award-stream-name, #awards .dual-name-row, #awards .ed-name, #awards .ed-ga-item .gn, #awards .award-stream-desc, #awards .award-click-hint, #awards .award-pill, #awards .ed-ga-item .gb').forEach(el => {
             if (el.dataset.koOrig === undefined) {
                 el.dataset.koOrig = el.innerHTML;
             }
@@ -1167,6 +1167,13 @@
             const koName = el.dataset.koOrig.trim();
             el.innerHTML = (lang === 'en')
                 ? (PERSON_NAME_KO_TO_EN[koName] || koName)
+                : el.dataset.koOrig;
+        });
+
+        document.querySelectorAll('#awards .award-stage-career').forEach(el => {
+            if (el.dataset.koOrig === undefined) return;
+            el.innerHTML = (lang === 'en')
+                ? el.dataset.koOrig.replace(/현\)\s*/g, 'Current: ').replace(/휴직/g, 'On Leave')
                 : el.dataset.koOrig;
         });
 
