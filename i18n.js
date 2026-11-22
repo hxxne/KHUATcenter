@@ -1350,6 +1350,9 @@
         if (typeof origOpenProfModal === 'function') {
             window.openProfModal = function (cardOrName) {
                 if (!window.ENABLE_INTRO_PROFILE_MODAL && cardOrName && typeof cardOrName === 'object' && cardOrName.closest && cardOrName.closest('#about')) {
+                    if (cardOrName.classList && cardOrName.classList.contains('assistant-person-item') && cardOrName.classList.contains('has-photo')) {
+                        return origOpenProfModal(cardOrName);
+                    }
                     return;
                 }
                 // 영문 상태에서 카드를 클릭했을 때도 원본 한국어 키(data-ko-name)로 정확히 조회하도록 보장

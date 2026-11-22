@@ -4325,3 +4325,15 @@ Observation 100시간 실무 과정,
   - `Staff & Team AT` / `Staff` ➔ `AT Staff`
   - `Center Assistants` / `AT Center Assistants` ➔ `Undergraduate Assistance`
 - **검증:** Playwright로 영문 모드 전환 시 4개 탭 라벨 정확한 반영 및 콘솔 에러 0건 확인 완료.
+
+---
+
+## ⚡ 최근 업데이트: 시범단 4인 프로필 구도 재규격화 및 보조 AT 사진 확대(라이트박스) 연동 (2026-11-22)
+- **요청 사항:** `김한결`, `우민서`, `김다은`, `권인혜` 프로필 사진의 인물 크기·헤드룸 구도를 기존 보조 AT(`권준휘`, `김채은`, `이복음` 등)와 동일하게 재조정하고, 보조 AT 클릭 시 사진이 크게 확대되어 보이도록 개선.
+- **구현 내용 (`assets/profile_*.jpg`, `index.html`, `i18n.js`, `khu-pro.css` / 캐시버스트 `v=20261122_assist_zoom`):**
+  1. **4인 프로필 정밀 재크롭 (`500×500`):**
+     - `assets/raw_backup/profile_{이름}_raw.jpg` 원본에서 상단 여백 ~10~12%, 상반신·팔짱이 꽉 차는 표준 스튜디오 구도로 정밀 재크롭 및 캐시버스트(`?v=20261122_p4`) 반영.
+  2. **보조 AT 사진 클릭 확대 보기 연동:**
+     - 소개 섹션 파란 모달 비활성화(`ENABLE_INTRO_PROFILE_MODAL = false`) 상태에서도 사진이 있는 보조 AT(`.assistant-person-item.has-photo`) 클릭 시 `openPhotoLightbox`가 열려 고화질로 크게 볼 수 있도록 연결 (`김한결 (태권도 시범단 보조 AT)` 등 부서명 자동 캡션 포함).
+     - `cursor: zoom-in` 및 키보드 포커스(`Enter`/`Space`) 지원, 사진 미등록 `fallback` 원형 아이콘은 클릭 무동작 유지.
+- **검증:** Playwright로 재크롭 구도, 사진 클릭 시 라이트박스 오픈(`LB OPEN: True`, `PROF OPEN: False`), 영문 모드 동작 및 콘솔 에러 0건 확인 완료.

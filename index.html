@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261120_rehab_folder">
+    <link rel="stylesheet" href="khu-pro.css?v=20261122_assist_zoom">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
@@ -1250,25 +1250,25 @@
                     <div class="assistant-avatar-grid">
                         <div class="assistant-person-item has-photo" onclick="openProfModal(this)" title="상세 프로필 보기">
                             <div class="assistant-avatar-box">
-                                <img src="assets/profile_김한결.jpg?v=20261120_p4" alt="김한결" loading="lazy">
+                                <img src="assets/profile_김한결.jpg?v=20261122_p4" alt="김한결" loading="lazy">
                             </div>
                             <span class="assistant-person-name">김한결</span>
                         </div>
                         <div class="assistant-person-item has-photo" onclick="openProfModal(this)" title="상세 프로필 보기">
                             <div class="assistant-avatar-box">
-                                <img src="assets/profile_우민서.jpg?v=20261120_p4" alt="우민서" loading="lazy">
+                                <img src="assets/profile_우민서.jpg?v=20261122_p4" alt="우민서" loading="lazy">
                             </div>
                             <span class="assistant-person-name">우민서</span>
                         </div>
                         <div class="assistant-person-item has-photo" onclick="openProfModal(this)" title="상세 프로필 보기">
                             <div class="assistant-avatar-box">
-                                <img src="assets/profile_김다은.jpg?v=20261120_p4" alt="김다은" loading="lazy">
+                                <img src="assets/profile_김다은.jpg?v=20261122_p4" alt="김다은" loading="lazy">
                             </div>
                             <span class="assistant-person-name">김다은</span>
                         </div>
                         <div class="assistant-person-item has-photo" onclick="openProfModal(this)" title="상세 프로필 보기">
                             <div class="assistant-avatar-box">
-                                <img src="assets/profile_권인혜.jpg?v=20261120_p4" alt="권인혜" loading="lazy">
+                                <img src="assets/profile_권인혜.jpg?v=20261122_p4" alt="권인혜" loading="lazy">
                             </div>
                             <span class="assistant-person-name">권인혜</span>
                         </div>
@@ -4953,6 +4953,18 @@
         // Open Professor / Staff / Assistant Modal
         window.openProfModal = function(cardOrName) {
             if (!window.ENABLE_INTRO_PROFILE_MODAL && cardOrName && typeof cardOrName === 'object' && cardOrName.closest && cardOrName.closest('#about')) {
+                // 사진이 있는 보조 AT는 클릭 시 고화질 라이트박스 확대 보기 지원
+                if (cardOrName.classList && cardOrName.classList.contains('assistant-person-item') && cardOrName.classList.contains('has-photo')) {
+                    const imgEl = cardOrName.querySelector('img');
+                    const nameEl = cardOrName.querySelector('.assistant-person-name');
+                    const deptEl = cardOrName.closest('.assistant-dept-card')?.querySelector('.assistant-dept-title');
+                    const personName = nameEl ? nameEl.textContent.trim() : '';
+                    const deptName = deptEl ? deptEl.textContent.trim() : '';
+                    if (imgEl && imgEl.src && typeof window.openPhotoLightbox === 'function') {
+                        const cap = deptName ? `${personName} (${deptName} 보조 AT)` : `${personName} (AT Center 보조)`;
+                        window.openPhotoLightbox(imgEl.src, cap);
+                    }
+                }
                 return;
             }
             let rawName = "";
@@ -5427,10 +5439,15 @@
             // 2. Professor / Staff cards cursor style (onclick="openProfModal(this)"는 인라인으로 단일 처리하여 이중 호출 방지)
             document.querySelectorAll('.modern-profile-card, .assistant-person-item').forEach(card => {
                 if (!window.ENABLE_INTRO_PROFILE_MODAL && card.closest('#about')) {
-                    card.style.cursor = 'default';
-                    if (card.hasAttribute('title')) {
-                        card.dataset.origTitle = card.getAttribute('title');
-                        card.removeAttribute('title');
+                    if (card.classList.contains('assistant-person-item') && card.classList.contains('has-photo')) {
+                        card.style.cursor = 'zoom-in';
+                        card.setAttribute('title', '클릭하여 사진 크게 보기');
+                    } else {
+                        card.style.cursor = 'default';
+                        if (card.hasAttribute('title')) {
+                            card.dataset.origTitle = card.getAttribute('title');
+                            card.removeAttribute('title');
+                        }
                     }
                 } else {
                     card.style.cursor = 'pointer';
@@ -7176,8 +7193,10 @@ window.showEditorialYear = function(year, btn) {
             // 모달 배경 오버레이나 내부 전파 방지용 래퍼는 탭 포커스에서 제외
             const onclickCode = (el.getAttribute('onclick') || '').trim();
             if (el.classList.contains('modal-overlay') || onclickCode === 'event.stopPropagation()') return;
-            // 소개 섹션 프로필 모달 비활성화 시 해당 카드들은 버튼 역할/포커스에서 제외
-            if (!window.ENABLE_INTRO_PROFILE_MODAL && onclickCode.includes('openProfModal') && el.closest('#about')) return;
+            // 소개 섹션 프로필 모달 비활성화 시 해당 카드들은 버튼 역할/포커스에서 제외 (사진 있는 보조 AT는 확대 보기 지원)
+            if (!window.ENABLE_INTRO_PROFILE_MODAL && onclickCode.includes('openProfModal') && el.closest('#about')) {
+                if (!(el.classList.contains('assistant-person-item') && el.classList.contains('has-photo'))) return;
+            }
             if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
             if (!el.hasAttribute('role')) el.setAttribute('role', 'button');
             if (!el.dataset.kbdBound) {
@@ -7228,7 +7247,7 @@ window.showEditorialYear = function(year, btn) {
 </script>
 
 <!-- 다국어 전환 엔진 (한국어 | English) -->
-<script src="i18n.js?v=20261122_member_en"></script>
+<script src="i18n.js?v=20261122_assist_zoom"></script>
 <!-- 오픈소스 모션 & 데이터 시각화 엔진 (anime.js v4.5 · Motion v14.9 · Bklit UI) -->
 <script src="assets/vendor/anime.umd.min.js"></script>
 <script src="assets/vendor/motion.min.js"></script>

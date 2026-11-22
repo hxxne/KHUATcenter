@@ -3414,6 +3414,12 @@ body.intro-modal-disabled #about .modern-profile-card:hover .modern-profile-name
 body.intro-modal-disabled #about .assistant-person-item:hover {
     transform: none;
 }
+body.intro-modal-disabled #about .assistant-person-item.has-photo {
+    cursor: zoom-in !important;
+}
+body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
+    transform: translateY(-2px);
+}
 
 /* 활동 사진 라이트박스 멀티 슬라이드 네비게이션 */
 .activity-lightbox-content {
