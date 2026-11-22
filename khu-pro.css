@@ -2459,6 +2459,8 @@ html[lang="en"] .assistant-person-name {
 
 .minimal-banking-card {
     width: 100%;
+    max-width: 660px;
+    margin: 0 auto;
     padding: 0;
     background: transparent;
     border: none;
@@ -2472,16 +2474,16 @@ html[lang="en"] .assistant-person-name {
 
 .mb-header {
     text-align: left;
-    margin: 0 0 10px 0;
+    margin: 0 0 8px 0;
     padding-bottom: 0;
     border-bottom: none;
-    font-size: 1.38rem;
+    font-size: 1.32rem;
     font-weight: 800;
     letter-spacing: -0.025em;
     color: var(--ink-primary);
 }
 
-/* Open Borderless Horizontal 3-Step Participation Track — i18n Compatible */
+/* Vertical Scannable 3-Step Participation Guide — i18n Compatible */
 .donation-instructions {
     width: 100%;
     background: transparent;
@@ -2489,57 +2491,72 @@ html[lang="en"] .assistant-person-name {
     border: none;
 }
 .donation-instructions h3 {
-    font-size: 0.96rem;
+    font-size: 0.92rem;
     font-weight: 700;
-    color: var(--ink-primary);
-    margin: 0 0 4px 0;
+    color: var(--khu-crimson);
+    margin: 0 0 6px 0;
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 7px;
+    gap: 6px;
 }
 .donation-instructions h3 i {
     color: var(--khu-crimson);
+    font-size: 0.86rem;
 }
 .donation-instructions > p {
-    font-size: 0.92rem;
+    font-size: 0.94rem;
     color: var(--ink-muted);
-    margin: 0 0 28px 0;
+    margin: 0 0 22px 0;
+    line-height: 1.55;
 }
 .donation-instructions ol {
     counter-reset: donate-step;
     list-style: none;
     padding-left: 0;
     margin: 0;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(20px, 3vw, 36px);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1.5px solid var(--ink-primary);
+    border-bottom: 1px solid var(--line-strong);
     text-align: left;
 }
 .donation-instructions ol li {
     counter-increment: donate-step;
     position: relative;
-    padding: 18px 8px 4px 36px;
-    border-top: 1px solid var(--line-strong);
-    border-bottom: none;
-    font-size: 0.96rem;
-    line-height: 1.65;
+    padding: 18px 8px 18px 46px;
+    border-top: none;
+    border-bottom: 1px solid var(--line-hairline);
+    font-size: 1.02rem;
+    line-height: 1.6;
     text-wrap: pretty;
     color: var(--ink-secondary);
+}
+.donation-instructions ol li:last-child {
+    border-bottom: none;
 }
 .donation-instructions ol li::before {
     content: "0" counter(donate-step);
     display: block;
     position: absolute;
-    left: 0;
-    top: 21px;
+    left: 4px;
+    top: 20px;
     margin-bottom: 0;
-    font-size: 0.82rem;
+    font-size: 0.88rem;
     font-weight: 800;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     line-height: 1.4;
     color: var(--khu-crimson);
     font-variant-numeric: tabular-nums;
+}
+.donation-instructions ol li .donate-emphasis {
+    color: var(--khu-crimson);
+    font-weight: 800;
+    background: rgba(155, 17, 30, 0.065);
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin: 0 1px;
 }
 .donation-instructions ol li strong {
     color: var(--ink-primary);

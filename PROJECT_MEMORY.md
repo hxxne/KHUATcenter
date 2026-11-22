@@ -4428,3 +4428,7 @@ Observation 100시간 실무 과정,
 ### 2026-11-22: 갤러리 `부서별 활동 > 스포츠재활` 신규 현장 사진 11장 추가 (총 13장)
 - `assets/스포츠재활1.jpg`~`11.jpg` 원본(총 약 37MB)을 EXIF 회전 보정 및 최대 1600px 웹 최적화(`quality=86`, 총 약 3.2MB)하여 `assets/images/activity/스재/rehab_01.jpg`~`rehab_11.jpg`로 저장.
 - `index.html`: 갤러리 `data-dept="rehab"` 영역에 11장 카드(한/영 메타데이터, `openPhotoLightbox` 고화질 확대 연동) 추가. Playwright 검증 결과 13/13장 정상 로딩 확인.
+
+### 2026-11-22: 후원 섹션(`#donate`) 여백 확대 및 `공식 후원 참여 안내` 세로 3단계 가이드 개편
+- `khu-pro.css`: `.donate-section-title` 하단 여백을 `clamp(48px, 5.5vw, 68px)`로 확대하여 `후원` 제목과 `경희대학교 AT 센터 발전기금` 간 호흡 확보.
+- `.minimal-banking-card`를 `max-width: 660px` 중앙 배치하고, 기존 가로 3열(`.donation-instructions ol`)을 세로 1열 3단계 스택(`01`, `02`, `03`) + 상단 `1.5px` 먹선 + `'AT 센터'` 버건디 하이라이트(`.donate-emphasis`)로 가독성 개선.
