@@ -4384,3 +4384,13 @@ Observation 100시간 실무 과정,
   - `.ledger-asof`, `.ledger-period`, `.ledger-service-tags` 제거.
   - `.ledger-cat` 폰트 크기를 `0.8rem` ➔ `1.08rem` (`font-weight: 800`)로 확대해 가독성과 존재감 강화.
 - **검증:** Playwright로 데스크톱(KO/EN), 모바일(`390×844`), 모달 오픈 및 콘솔 에러 0건 확인 완료.
+
+
+### 2026-11-22: 역대 수상자(`#awards`) 에디토리얼 명예의 전당 명단표(Honor Roll Archive Matrix) 전면 개편
+- **배경:** 기존 연도 탭 + 3색(골드/버건디/네이비) 3분할 카드 + 33회 반복 `프로필 보기 →` 구조가 AI 템플릿 인상을 주고, 11개년 전체 계보를 한눈에 훑기 어려운 문제를 해결.
+- **개편 내용:**
+  - `index.html`: `#awards`의 `.award-carousel-container`를 **Honor Roll Archive Matrix**(`.honor-roll-container`, `.honor-roll-table`)로 교체. 2025~2015년 11개년 전체를 4열(`연도 | AT Student of the Year | Inspiration | Rookie of the Year`)로 펼쳐 표시.
+  - 34인명(2017년 공동 수상 `조재희`, `양창욱` 포함) 데이터 및 `openAlumniModal(...)` 팝업 연동 100% 보존.
+  - `khu-pro.css`: 바로 위 누적기록(`#dashboard`)과 통일된 에디토리얼 문법(상단 `2px` 먹선, 얇은 헤어라인, 먹색 타이포 + 경희대 버건디 `--khu-crimson` 단일 포인트, `tabular-nums`, `2025` 최신 연도 상단 강조, 호버 시 버건디 밑줄 + `↗` 인터랙션). 모바일(`<=768px`)에서는 연도별 정갈한 1열 기록 블록으로 반응형 전환.
+  - `i18n.js`: `#awards .honor-name-text`를 영문 이름 백업/치환 대상에 추가하여 한/영 전환 100% 호환(`Athletic Training Student Awards`, `Year`, `Co-winners`, 영문 성명).
+- **검증:** Playwright 데스크톱(KO/EN)·모바일(`390×844`) 캡처, 2025년 `유승아` 및 2017년 공동 수상 `조재희` 모달 오픈, 콘솔 에러 `0`건 확인 완료.

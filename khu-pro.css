@@ -3643,3 +3643,299 @@ body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
     font-variant-numeric: tabular-nums;
     flex-shrink: 0;
 }
+
+
+/* ============================================================
+   🏆 역대 수상자 — 에디토리얼 명예의 전당 명단표 (Honor Roll Archive Matrix)
+   ============================================================ */
+.honor-roll-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 56px 0;
+}
+
+.honor-roll-topbar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin-bottom: 18px;
+}
+
+.honor-roll-topbar .stream-sub-title {
+    margin: 0;
+}
+
+.honor-roll-caption {
+    margin: 0;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--ink-muted);
+    letter-spacing: -0.01em;
+    font-variant-numeric: tabular-nums;
+}
+
+.honor-roll-table {
+    width: 100%;
+    border-top: 2px solid var(--ink-primary);
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.honor-roll-head,
+.honor-roll-row {
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1fr);
+    column-gap: 24px;
+    align-items: center;
+}
+
+.honor-roll-head {
+    padding: 15px 16px;
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.honor-col {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+}
+
+.honor-col-coty {
+    color: var(--khu-crimson);
+}
+
+.honor-roll-row {
+    padding: 17px 16px;
+    border-bottom: 1px solid var(--line-hairline);
+    transition: background-color 0.2s ease;
+}
+
+.honor-roll-row:last-child {
+    border-bottom: none;
+}
+
+.honor-roll-row:hover {
+    background-color: rgba(17, 19, 24, 0.026);
+}
+
+/* 2025 최신 연도 상단 강조 행 */
+.honor-roll-row.honor-row-latest {
+    padding: 22px 16px;
+    background-color: rgba(155, 17, 30, 0.035);
+    border-bottom: 1px solid rgba(155, 17, 30, 0.16);
+}
+
+.honor-roll-row.honor-row-latest:hover {
+    background-color: rgba(155, 17, 30, 0.055);
+}
+
+.honor-year-num {
+    display: inline-block;
+    font-size: 1.04rem;
+    font-weight: 700;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+}
+
+.honor-row-latest .honor-year-num {
+    font-size: 1.28rem;
+    font-weight: 800;
+    color: var(--khu-crimson);
+}
+
+.honor-cell {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* 클릭 가능한 수상자 이름 버튼 (반복 '프로필 보기' 제거, 정갈한 에디토리얼 인터랙션) */
+.honor-name-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    padding: 3px 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+    position: relative;
+    text-align: left;
+    transition: color 0.18s ease;
+}
+
+.honor-cell-coty .honor-name-btn {
+    font-weight: 800;
+}
+
+.honor-row-latest .honor-name-btn {
+    font-size: 1.22rem;
+    font-weight: 800;
+}
+
+.honor-name-btn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1.5px;
+    background: var(--khu-crimson);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.22s var(--ease-expo);
+}
+
+.honor-name-arrow {
+    font-size: 0.78em;
+    font-weight: 700;
+    color: var(--khu-crimson);
+    opacity: 0;
+    transform: translate(-3px, 2px);
+    transition: opacity 0.18s ease, transform 0.2s var(--ease-expo);
+}
+
+.honor-name-btn:hover,
+.honor-name-btn:focus-visible {
+    color: var(--khu-crimson);
+}
+
+.honor-name-btn:hover::after,
+.honor-name-btn:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.honor-name-btn:hover .honor-name-arrow,
+.honor-name-btn:focus-visible .honor-name-arrow {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+.honor-name-btn:focus-visible {
+    outline: 2px solid var(--khu-crimson);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* 2017년 공동 수상 인라인 그룹 */
+.honor-dual-group {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+}
+
+.honor-dual-sep {
+    color: var(--ink-subtle);
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+.honor-co-note {
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--khu-crimson);
+    letter-spacing: 0.02em;
+    margin-left: 2px;
+}
+
+/* 태블릿 반응형 */
+@media (max-width: 960px) {
+    .honor-roll-head,
+    .honor-roll-row {
+        grid-template-columns: 84px minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 14px;
+    }
+
+    .honor-roll-head,
+    .honor-roll-row {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* 모바일 반응형: 연도별 정갈한 아카이브 기록 블록으로 전환 */
+@media (max-width: 768px) {
+    .honor-roll-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+
+    .honor-roll-caption {
+        font-size: 0.82rem;
+    }
+
+    .honor-roll-head {
+        display: none;
+    }
+
+    .honor-roll-row {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 18px 12px;
+    }
+
+    .honor-roll-row.honor-row-latest {
+        padding: 20px 12px;
+    }
+
+    .honor-cell.honor-year {
+        padding-bottom: 8px;
+        border-bottom: 1px solid var(--line-hairline);
+    }
+
+    .honor-cell[data-award-label] {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    .honor-cell[data-award-label]::before {
+        content: attr(data-award-label);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+        flex-shrink: 0;
+    }
+
+    .honor-cell.honor-cell-coty::before {
+        color: var(--khu-crimson);
+    }
+
+    .honor-name-btn {
+        font-size: 1.02rem;
+        justify-content: flex-end;
+    }
+
+    .honor-row-latest .honor-name-btn {
+        font-size: 1.12rem;
+    }
+
+    /* 터치 디바이스에서는 클릭 가능 단서로 미세 화살표를 은은하게 상시 노출 */
+    .honor-name-arrow {
+        opacity: 0.55;
+        transform: none;
+    }
+
+    .honor-dual-group {
+        justify-content: flex-end;
+    }
+}
