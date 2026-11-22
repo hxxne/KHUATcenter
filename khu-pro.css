@@ -948,130 +948,135 @@ html[lang="en"] .about-detail .pc-br {
 
 #dashboard .section-header {
     text-align: left;
-    margin-bottom: 36px;
+    margin-bottom: 28px;
 }
 #dashboard .section-title::before {
-    content: "ACHIEVEMENTS";
+    content: "교육 · 연구 · 서비스";
     display: block;
-    font-size: 0.96rem;
+    font-size: 0.9rem;
     font-weight: 800;
-    letter-spacing: 0.16em;
-    color: var(--khu-navy);
+    letter-spacing: 0.06em;
+    color: var(--khu-crimson);
     margin-bottom: 8px;
 }
-
-/* Frameless Open Ledger — Zero White Box, Zero Shadow, Pure Hairline Grid */
-.editorial-metric-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    background: transparent;
-    backdrop-filter: none;
-    border-radius: 0;
-    box-shadow: none;
-    overflow: visible;
-    border: none;
-    border-top: 1.5px solid var(--ink-primary);
-    border-bottom: 1px solid var(--line-hairline);
-}
-
-.editorial-card {
-    position: relative;
-    padding: clamp(32px, 3.5vw, 46px) clamp(24px, 2.8vw, 38px);
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    align-content: stretch;
-    height: 100%;
-    background: transparent;
-    border: none;
-    min-width: 0;
-}
-
-.editorial-card:first-child {
-    padding-left: 0;
-}
-
-.editorial-card:last-child {
-    padding-right: 0;
-}
-
-.editorial-card + .editorial-card {
-    border-left: 1px solid var(--line-hairline);
-}
-
-.editorial-card:hover {
-    background: transparent;
-}
-
-.clickable-stat-card {
-    cursor: pointer;
-}
-.clickable-stat-card:focus-visible {
-    outline: 2px solid var(--khu-crimson);
-    outline-offset: 4px;
-}
-
-.editorial-card-header {
+.ledger-header-row {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
-    margin-bottom: 18px;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+.ledger-asof {
+    margin: 0;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
 }
 
-.index-pill {
-    display: inline-flex;
+/* Horizontal Archive Ledger — 3 Stacked Rows, Monochrome + Single Crimson Accent */
+.ledger-list {
+    border-top: 2px solid var(--ink-primary);
+    border-bottom: 1px solid var(--line-strong);
+}
+.ledger-row {
+    display: grid;
+    grid-template-columns: minmax(210px, 270px) minmax(200px, 270px) minmax(0, 1fr);
     align-items: center;
-    gap: 8px;
+    gap: clamp(18px, 3vw, 44px);
+    padding: clamp(22px, 2.8vw, 32px) 4px;
+    border-top: 1px solid var(--line-hairline);
+    transition: background-color 0.2s ease;
 }
-.index-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.15em;
-    color: var(--ink-primary);
+.ledger-row:first-child {
+    border-top: none;
 }
-.index-label::before {
-    content: "";
-    display: inline-block;
-    width: 14px;
-    height: 1.5px;
-    background: currentColor;
+.ledger-row-primary {
+    padding: clamp(30px, 3.8vw, 44px) 4px;
 }
-.card-edu .index-label { color: var(--khu-crimson); }
-.card-res .index-label { color: var(--khu-navy); }
-.card-srv .index-label { color: var(--khu-bronze); }
-
-.editorial-stat-block {
-    margin-bottom: 16px;
+.ledger-row.clickable-stat-card:hover {
+    background: rgba(165, 0, 52, 0.025);
 }
-
-.stat-value-row {
+.ledger-row.clickable-stat-card:hover .ledger-title {
+    color: var(--khu-crimson);
+}
+.ledger-num-col {
     display: flex;
     align-items: baseline;
     gap: 6px;
-    margin-bottom: 12px;
+    min-width: 0;
 }
-.stat-number {
-    font-size: clamp(2.85rem, 4.3vw, 3.85rem);
+.ledger-row .stat-number {
+    font-size: clamp(2.1rem, 3.1vw, 2.7rem);
     font-weight: 800;
-    line-height: 0.98;
-    letter-spacing: -0.045em;
+    line-height: 1;
+    letter-spacing: -0.04em;
     color: var(--ink-primary);
     font-variant-numeric: tabular-nums;
 }
-.stat-unit {
-    font-size: 1.05rem;
+.ledger-row-primary .stat-number {
+    font-size: clamp(3rem, 4.6vw, 4.15rem);
+    letter-spacing: -0.045em;
+}
+.ledger-row .stat-unit {
+    font-size: 1rem;
     font-weight: 700;
     color: var(--ink-muted);
 }
-
-.editorial-card-title {
-    font-size: 1.08rem;
+.ledger-row-primary .stat-unit {
+    font-size: 1.12rem;
+}
+.ledger-item-col {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+.ledger-cat {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: var(--khu-crimson);
+}
+.ledger-title {
+    margin: 0;
+    font-size: 1.12rem;
     font-weight: 800;
     color: var(--ink-primary);
     letter-spacing: -0.02em;
-    margin: 0 0 8px 0;
+    transition: color 0.2s ease;
+}
+.ledger-row-primary .ledger-title {
+    font-size: 1.24rem;
+}
+.ledger-period {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink-muted);
+    font-variant-numeric: tabular-nums;
+}
+.ledger-desc-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    min-width: 0;
+}
+.ledger-desc {
+    margin: 0;
+    font-size: 0.94rem;
+    line-height: 1.6;
+    color: var(--ink-secondary);
+}
+.ledger-arrow {
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+.ledger-row.clickable-stat-card:hover .ledger-arrow {
+    color: var(--khu-crimson);
+    transform: translateX(3px);
 }
 
 .editorial-card-desc {
@@ -2986,27 +2991,17 @@ html[lang="en"] .assistant-person-name {
         gap: 22px;
         padding: 28px 0;
     }
-    .editorial-metric-grid,
     .ed-leaders-split-grid,
     .modern-profile-grid:not(.grid-compact):not(.grid-faculty) {
         grid-template-columns: 1fr;
     }
-    .editorial-card {
-        display: flex;
-        flex-direction: column;
-        padding: 28px 0;
+    .ledger-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 22px 0;
     }
-    .editorial-card:first-child,
-    .editorial-card:last-child {
-        padding-left: 0;
-        padding-right: 0;
-    }
-    .editorial-card.card-edu::after {
-        display: none;
-    }
-    .editorial-card + .editorial-card {
-        border-left: none;
-        border-top: 1px solid var(--line-hairline);
+    .ledger-row-primary {
+        padding: 26px 0;
     }
 }
 

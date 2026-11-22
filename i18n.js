@@ -113,22 +113,20 @@
         },
         { selector: '#pmodal-panel-srv .quote-author', en: 'KHU AT Center Service Vision' },
 
-        // [누적기록 대시보드 (#dashboard)]
+        // [누적기록 대장 (#dashboard)]
         { selector: '#dashboard .section-title', en: 'Achievements' },
-        // 01 교육 지표
-        { selector: '#dashboard .card-edu .stat-unit', en: 'Trainees' },
-        { selector: '#dashboard .card-edu .editorial-card-title', en: 'Completed Basic AT Training' },
-        { selector: '#dashboard .card-edu .editorial-card-desc', en: '100 hours of AT Center observation experience, first aid &amp; CPR certification, harassment &amp; violence prevention education, modality training, and full academic seminars completed' },
-        { selector: '#dashboard .card-edu .editorial-action-btn span', en: 'Explore Education Curriculum' },
-        // 02 연구 지표
-        { selector: '#dashboard .card-res .stat-unit', en: 'Papers' },
-        { selector: '#dashboard .card-res .editorial-card-title', en: 'Published Research Papers' },
-        { selector: '#dashboard .card-res .editorial-card-desc', en: 'Published in domestic and international sports science &amp; clinical journals and presented at academic conferences' },
-        { selector: '#dashboard .card-res .editorial-action-btn span', en: 'View All 64 Publications' },
-        // 03 서비스 지표
-        { selector: '#dashboard .card-srv .stat-unit', en: 'Cases' },
-        { selector: '#dashboard .card-srv .editorial-card-title', en: 'Injury &amp; Conditioning Care' },
-        { selector: '#dashboard .card-srv .editorial-card-desc', en: 'Acute &amp; chronic rehab, conditioning,<br>resistance training, and sports taping' },
+        { selector: '#dashboard .ledger-row-srv .stat-unit', en: 'Cases' },
+        { selector: '#dashboard .ledger-row-srv .ledger-cat', en: 'Service' },
+        { selector: '#dashboard .ledger-row-srv .ledger-title', en: 'Injury &amp; Conditioning Care' },
+        { selector: '#dashboard .ledger-row-srv .ledger-desc', en: 'Acute &amp; chronic rehab, conditioning, performance enhancement, resistance training, and sports taping' },
+        { selector: '#dashboard .ledger-row-edu .stat-unit', en: 'Trainees' },
+        { selector: '#dashboard .ledger-row-edu .ledger-cat', en: 'Education' },
+        { selector: '#dashboard .ledger-row-edu .ledger-title', en: 'Completed Basic AT Training' },
+        { selector: '#dashboard .ledger-row-edu .ledger-desc', en: '100 hours of AT Center observation experience, first aid &amp; CPR certification, harassment &amp; violence prevention education, modality training, and full academic seminars completed' },
+        { selector: '#dashboard .ledger-row-res .stat-unit', en: 'Papers' },
+        { selector: '#dashboard .ledger-row-res .ledger-cat', en: 'Research' },
+        { selector: '#dashboard .ledger-row-res .ledger-title', en: 'Published Research Papers' },
+        { selector: '#dashboard .ledger-row-res .ledger-desc', en: 'Published in domestic and international sports science &amp; clinical journals and presented at academic conferences' },
 
         // [연구 논문 모달 (#research-modal)]
         { selector: '#research-modal .research-modal-header h2', en: 'Research &amp; Academic Publications' },
