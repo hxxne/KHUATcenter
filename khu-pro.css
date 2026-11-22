@@ -4341,3 +4341,232 @@ body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
         font-size: 1.28rem;
     }
 }
+
+
+/* ============================================================
+   🏆 역대 수상자 — 3개 부문별 헌액 동판 (3-Column Perpetual Plaque)
+   ============================================================ */
+.award-plaque-wrap {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 56px 0;
+}
+
+.award-plaque-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.award-plaque {
+    background: #FFFFFF;
+    border: 1px solid rgba(17, 19, 24, 0.11);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 3px 14px rgba(17, 19, 24, 0.04);
+    transition: transform 0.24s var(--ease-expo), box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.award-plaque:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(17, 19, 24, 0.075);
+}
+
+.award-plaque-primary {
+    border-color: rgba(140, 17, 28, 0.24);
+    box-shadow: 0 6px 22px rgba(140, 17, 28, 0.07);
+}
+
+.award-plaque-head {
+    background: #1C1F26;
+    padding: 20px 22px 18px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+}
+
+.award-plaque-primary .award-plaque-head {
+    background: #8C111C;
+    border-bottom: 2px solid rgba(214, 180, 108, 0.65);
+}
+
+.award-plaque-span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: rgba(255, 255, 255, 0.56);
+    font-variant-numeric: tabular-nums;
+}
+
+.award-plaque-primary .award-plaque-span {
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.award-plaque-title {
+    margin: 0;
+    font-size: 1.14rem;
+    font-weight: 800;
+    letter-spacing: -0.015em;
+    color: #FFFFFF;
+    line-height: 1.25;
+}
+
+.award-plaque-list {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+    flex: 1;
+}
+
+.award-plaque-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 22px;
+    border-bottom: 1px solid rgba(17, 19, 24, 0.07);
+    transition: background-color 0.18s ease;
+}
+
+.award-plaque-row:last-child {
+    border-bottom: none;
+}
+
+.award-plaque-row:hover {
+    background-color: rgba(17, 19, 24, 0.028);
+}
+
+.award-plaque-row.is-latest {
+    padding: 14px 22px;
+    background-color: rgba(140, 17, 28, 0.038);
+    border-bottom: 1px solid rgba(140, 17, 28, 0.14);
+}
+
+.award-plaque-row.is-latest:hover {
+    background-color: rgba(140, 17, 28, 0.06);
+}
+
+.award-plaque-year {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--ink-subtle);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.01em;
+    flex-shrink: 0;
+    transition: color 0.18s ease;
+}
+
+.award-plaque-row:hover .award-plaque-year {
+    color: var(--ink-primary);
+}
+
+.award-plaque-row.is-latest .award-plaque-year {
+    font-size: 0.94rem;
+    font-weight: 800;
+    color: var(--khu-crimson);
+}
+
+.award-plaque-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    padding: 2px 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    letter-spacing: -0.02em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+    text-align: right;
+    transition: color 0.18s ease;
+}
+
+.award-plaque-primary .award-plaque-btn {
+    font-weight: 800;
+}
+
+.award-plaque-row.is-latest .award-plaque-btn {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+.award-plaque-arrow {
+    font-size: 0.74em;
+    font-weight: 700;
+    color: var(--khu-crimson);
+    opacity: 0.35;
+    transform: translate(-1px, 1px);
+    transition: opacity 0.18s ease, transform 0.2s var(--ease-expo);
+}
+
+.award-plaque-btn:hover,
+.award-plaque-btn:focus-visible {
+    color: var(--khu-crimson);
+}
+
+.award-plaque-btn:hover .award-plaque-arrow,
+.award-plaque-btn:focus-visible .award-plaque-arrow {
+    opacity: 1;
+    transform: translate(1px, -1px);
+}
+
+.award-plaque-btn:focus-visible {
+    outline: 2px solid var(--khu-crimson);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+/* 2017년 공동 수상 */
+.award-plaque-dual {
+    display: inline-flex;
+    align-items: baseline;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 2px 5px;
+    white-space: nowrap;
+}
+
+.award-plaque-dual .award-plaque-btn {
+    font-size: 0.94rem;
+}
+
+.award-plaque-sep {
+    color: var(--ink-subtle);
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.award-plaque-co {
+    font-style: normal;
+    font-size: 0.68rem;
+    font-weight: 700;
+    color: var(--khu-crimson);
+    margin-left: 3px;
+}
+
+/* 태블릿 & 모바일 반응형 */
+@media (max-width: 960px) {
+    .award-plaque-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .award-plaque-head {
+        padding: 18px 20px 16px 20px;
+    }
+
+    .award-plaque-row,
+    .award-plaque-row.is-latest {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

@@ -4401,3 +4401,10 @@ Observation 100시간 실무 과정,
   - `index.html`: `#awards`의 명단표를 **세로 연대기 타임라인**(`.award-timeline-wrap`, `ol.award-timeline`)으로 교체. 2025~2015년 11개년 34명 데이터 및 `openAlumniModal(...)` 팝업 연동 100% 보존.
   - `khu-pro.css`: 왼쪽 연속 수직 타임라인 축(상단 버건디 그라데이션) + 원형 연도 노드 + 큼직한 연도 타이포(`tabular-nums`), 우측 가로 헌액 밴드(`AT Student of the Year` 강조 구획 + `Inspiration · Rookie of the Year` 2열 웜스톤 구획). `2025` 최신 연도 최고 수상 구획은 짙은 경희 버건디(`#8F121D`) 시그니처 명판으로 첫인상 포인트 부여. 모바일(`<=768px`)에서도 왼쪽 수직 타임라인 축·노드 유지.
 - **검증:** Playwright 데스크톱(KO/EN)·모바일(`390×844`) 캡처, 2025년 `유승아` 및 2017년 공동 수상 `양창욱` 모달 오픈, 영문 전환(`Seunga Yu`, `· Co-winners`), 콘솔 에러 `0`건 확인 완료.
+
+### 2026-11-22: 역대 수상자(`#awards`) 3개 부문별 헌액 동판(3-Column Perpetual Plaque, A안)으로 개편
+- **배경:** 세로 11줄 타임라인의 과도한 세로 길이를 해결하고, 실제 대학 체육관·명예의 전당 벽면의 부문별 헌액 동판 구조(사용자 A안 선택)로 한 화면에 컴팩트하게 수록.
+- **개편 내용:**
+  - `index.html`: `#awards`를 3개 부문별 헌액 동판(`.award-plaque-wrap`, `.award-plaque-grid`)으로 재구성 — `AT Student of the Year` | `Inspiration` | `Rookie of the Year` 3개 기둥 내부에 각각 `2025`→`2015` 11개년(총 34명, 2017년 공동 수상 `조재희 / 양창욱` 포함) 배치 및 `openAlumniModal(...)` 100% 보존.
+  - `khu-pro.css`: 1번 명판(`AT Student of the Year`)은 딥 경희 버건디(`#8C111C`) 헤더 + 골드 헤어라인 밑줄, 2·3번 명판(`Inspiration`, `Rookie of the Year`)은 딥 차콜(`#1C1F26`) 헤더로 통일. `2025` 최상단 행 강조, 2017년 공동 수상 인라인 한 줄 정렬로 한/영 모두 3개 명판 높이 완벽 대칭. 모바일(`<=960px`)은 1열 스택 전환.
+- **검증:** Playwright 데스크톱(KO/EN)·모바일(`390×844`) 캡처, 2025년 `유승아` 및 2017년 공동 수상 `조재희` 모달 오픈, 영문 전환(`Seunga Yu` 등) 및 3개 명판 대칭, 콘솔 에러 `0`건 확인 완료.
