@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261122_ledger_rows">
+    <link rel="stylesheet" href="khu-pro.css?v=20261122_asymmetric_ledger">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
@@ -1588,57 +1588,59 @@
                 <div class="divider"></div>
             </div>
 
-            <!-- 3대 핵심 지표 기록 대장 (서비스 최상단 강조 -> 교육 -> 연구, 단일 포인트 컬러) -->
-            <div class="ledger-list">
+            <!-- 좌우 비대칭 에디토리얼 스플릿 (좌: 173,316건 히어로 | 우: 547명 교육 · 64편 연구 2단 스택) -->
+            <div class="asymmetric-ledger">
 
-                <!-- 1행: 서비스 부문 (대표 누적 수치 강조) -->
-                <div class="ledger-row ledger-row-primary ledger-row-srv">
-                    <div class="ledger-num-col">
+                <!-- 좌측 히어로 블록: 서비스 대표 수치 -->
+                <div class="ledger-hero-pane ledger-row-srv">
+                    <span class="ledger-watermark" aria-hidden="true">2013–2026</span>
+                    <div class="ledger-hero-top">
+                        <span class="ledger-cat">서비스</span>
+                        <span class="ledger-period" data-ko="2013–2026 · 연평균 약 1.3만 건" data-en="2013–2026 · ~13,000 cases/yr">2013–2026 · 연평균 약 1.3만 건</span>
+                    </div>
+                    <div class="ledger-hero-num-wrap">
                         <span class="stat-number metric-num" data-target="173316">173,316</span>
                         <span class="stat-unit">건</span>
                     </div>
-                    <div class="ledger-item-col">
-                        <span class="ledger-cat">서비스</span>
+                    <div class="ledger-hero-bottom">
                         <h3 class="ledger-title">부상 예방 및 컨디셔닝</h3>
-                        <span class="ledger-period" data-ko="2013–2026 · 연평균 약 1.3만 건" data-en="2013–2026 · ~13,000 cases/yr">2013–2026 · 연평균 약 1.3만 건</span>
-                    </div>
-                    <div class="ledger-desc-col">
                         <p class="ledger-desc">급성 · 만성 손상 재활, 컨디셔닝, 퍼포먼스 향상, 저항 운동, 스포츠 테이핑</p>
                     </div>
                 </div>
 
-                <!-- 2행: 교육 부문 (클릭 시 교육 모달) -->
-                <div class="ledger-row ledger-row-edu clickable-stat-card" id="btn-edu-modal" role="button" tabindex="0" onclick="openPillarModal('edu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('edu');}" title="클릭하여 교육 과정 세부내용 확인" aria-label="AT 센터 기본 교육 이수 547명 - 교육 과정 세부내용 보기">
-                    <div class="ledger-num-col">
-                        <span class="stat-number metric-num" data-target="547">547</span>
-                        <span class="stat-unit">명</span>
-                    </div>
-                    <div class="ledger-item-col">
-                        <span class="ledger-cat">교육</span>
+                <!-- 우측 2단 스택: 교육 · 연구 -->
+                <div class="ledger-stack-pane">
+
+                    <!-- 상단: 교육 부문 (클릭 시 교육 모달) -->
+                    <div class="ledger-stack-item ledger-row-edu clickable-stat-card" id="btn-edu-modal" role="button" tabindex="0" onclick="openPillarModal('edu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('edu');}" title="클릭하여 교육 과정 세부내용 확인" aria-label="AT 센터 기본 교육 이수 547명 - 교육 과정 세부내용 보기">
+                        <div class="ledger-stack-top">
+                            <span class="ledger-cat">교육</span>
+                            <span class="ledger-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                        <div class="ledger-num-col">
+                            <span class="stat-number metric-num" data-target="547">547</span>
+                            <span class="stat-unit">명</span>
+                        </div>
                         <h3 class="ledger-title">AT 센터 기본 교육 이수</h3>
                         <span class="ledger-period" data-ko="2013–2026 · 100시간 관찰 · 전 과정 수료" data-en="2013–2026 · 100-hr observation &amp; full curriculum">2013–2026 · 100시간 관찰 · 전 과정 수료</span>
-                    </div>
-                    <div class="ledger-desc-col">
                         <p class="ledger-desc">AT Center 100시간 관찰 경험, 응급처치/심폐소생술 자격, 성희롱/폭력 예방교육, Modality 교육, 학술 세미나 전 과정 이수</p>
-                        <span class="ledger-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
                     </div>
-                </div>
 
-                <!-- 3행: 연구 부문 (클릭 시 논문 모달) -->
-                <div class="ledger-row ledger-row-res clickable-stat-card" id="btn-research-modal" role="button" tabindex="0" onclick="openResearchModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openResearchModal();}" title="클릭하여 연구 논문 목록 확인" aria-label="국내외 학술 연구 논문 64편 - 논문 64편 목록 보기">
-                    <div class="ledger-num-col">
-                        <span class="stat-number metric-num" data-target="64">64</span>
-                        <span class="stat-unit">편</span>
-                    </div>
-                    <div class="ledger-item-col">
-                        <span class="ledger-cat">연구</span>
+                    <!-- 하단: 연구 부문 (클릭 시 논문 모달) -->
+                    <div class="ledger-stack-item ledger-row-res clickable-stat-card" id="btn-research-modal" role="button" tabindex="0" onclick="openResearchModal()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openResearchModal();}" title="클릭하여 연구 논문 목록 확인" aria-label="국내외 학술 연구 논문 64편 - 논문 64편 목록 보기">
+                        <div class="ledger-stack-top">
+                            <span class="ledger-cat">연구</span>
+                            <span class="ledger-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                        <div class="ledger-num-col">
+                            <span class="stat-number metric-num" data-target="64">64</span>
+                            <span class="stat-unit">편</span>
+                        </div>
                         <h3 class="ledger-title">국내외 학술 연구 논문</h3>
                         <span class="ledger-period" data-ko="2013–2026 · SCIE · KCI 등재 및 학술대회 발표" data-en="2013–2026 · SCIE · KCI journals &amp; conferences">2013–2026 · SCIE · KCI 등재 및 학술대회 발표</span>
-                    </div>
-                    <div class="ledger-desc-col">
                         <p class="ledger-desc">국내외 스포츠과학 및 임상 저널 출판 및 학술대회 발표</p>
-                        <span class="ledger-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
                     </div>
+
                 </div>
 
             </div>
