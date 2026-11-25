@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261125_v2_live">
+    <link rel="stylesheet" href="khu-pro.css?v=20261125_no_gallery_live">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
@@ -47,7 +47,6 @@
                 <a href="#research" class="nav-link" data-ko="연구" data-en="Research">연구</a>
                 <a href="#education" class="nav-link" data-ko="교육" data-en="Education">교육</a>
                 <a href="#journey" class="nav-link" data-ko="걸어온 길" data-en="Our Journey">걸어온 길</a>
-                <a href="#activities" class="nav-link" data-ko="갤러리" data-en="Gallery">갤러리</a>
                 <a href="#donate" class="nav-link" data-ko="후원" data-en="Sponsorship">후원</a>
                 <a href="#contact" class="nav-link btn-header-cta">상담 및 문의</a>
                 <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="nav-link insta-nav-icon" title="경희대학교 AT Center 공식 인스타그램 새 창 열기" aria-label="경희대학교 AT Center 공식 인스타그램 (새 창 열기)"><i class="fa-brands fa-instagram"></i></a>
@@ -97,7 +96,6 @@
             <a href="#research" class="mobile-link"><i class="fa-solid fa-flask"></i> <span data-ko="연구" data-en="Research">연구</span></a>
             <a href="#education" class="mobile-link"><i class="fa-solid fa-graduation-cap"></i> <span data-ko="교육" data-en="Education">교육</span></a>
             <a href="#journey" class="mobile-link"><i class="fa-solid fa-route"></i> <span data-ko="걸어온 길" data-en="Our Journey">걸어온 길</span></a>
-            <a href="#activities" class="mobile-link"><i class="fa-solid fa-camera"></i> <span data-ko="갤러리" data-en="Gallery">갤러리</span></a>
             <a href="#donate" class="mobile-link"><i class="fa-solid fa-hand-holding-heart"></i> <span data-ko="후원" data-en="Sponsorship">후원</span></a>
             <a href="#contact" class="mobile-link mobile-cta"><i class="fa-regular fa-paper-plane"></i> 상담 및 문의 신청</a>
             <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="mobile-link insta-link" style="margin-top: 6px;"><i class="fa-brands fa-instagram" style="color: #E1306C;"></i> 공식 인스타그램 (@khuatcenter)</a>
@@ -1426,7 +1424,11 @@
                     <h2 class="v2-pillar-title" data-ko="현장지원" data-en="Field Support">현장지원</h2>
                 </div>
                 <div class="v2-pillar-actions">
-                    <button type="button" class="v2-action-btn is-crimson" onclick="openPillarModal('srv')">
+                    <button type="button" class="v2-action-btn is-crimson" onclick="openSectionGallery('field')">
+                        <span data-ko="현장지원 갤러리" data-en="Field Support Gallery">현장지원 갤러리</span>
+                        <i class="fa-regular fa-images"></i>
+                    </button>
+                    <button type="button" class="v2-action-btn" onclick="openPillarModal('srv')">
                         <span data-ko="세부내용 보기" data-en="View Details">세부내용 보기</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
@@ -1524,6 +1526,10 @@
                         <span data-ko="연구 논문 64편 보기" data-en="View 64 Publications">연구 논문 64편 보기</span>
                         <i class="fa-solid fa-book-open"></i>
                     </button>
+                    <button type="button" class="v2-action-btn" onclick="openSectionGallery('research')">
+                        <span data-ko="연구 갤러리" data-en="Research Gallery">연구 갤러리</span>
+                        <i class="fa-regular fa-images"></i>
+                    </button>
                     <button type="button" class="v2-action-btn" onclick="openPillarModal('res')">
                         <span data-ko="세부내용 보기" data-en="View Details">세부내용 보기</span>
                         <i class="fa-solid fa-arrow-right"></i>
@@ -1595,7 +1601,11 @@
                     <h2 class="v2-pillar-title" data-ko="교육" data-en="Education">교육</h2>
                 </div>
                 <div class="v2-pillar-actions">
-                    <button type="button" class="v2-action-btn is-crimson" onclick="openPillarModal('edu')">
+                    <button type="button" class="v2-action-btn is-crimson" onclick="openSectionGallery('education')">
+                        <span data-ko="교육 · 세미나 갤러리" data-en="Education &amp; Seminar Gallery">교육 · 세미나 갤러리</span>
+                        <i class="fa-regular fa-images"></i>
+                    </button>
+                    <button type="button" class="v2-action-btn" onclick="openPillarModal('edu')">
                         <span data-ko="세부내용 보기" data-en="View Details">세부내용 보기</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </button>
@@ -2329,7 +2339,20 @@
     
     </section>
 
-    <section id="activities" class="section-padding bg-light activities-gallery-section">
+        <!-- 기존 갤러리 아카이브를 3개 섹션(현장지원·연구·교육)에서 열어보는 전용 모달 -->
+    <div id="v2-gallery-modal" class="v2-gallery-modal" role="dialog" aria-modal="true" aria-labelledby="v2-gallery-modal-title" onclick="if(event.target===this) closeSectionGallery()">
+        <div class="v2-gallery-modal-dialog" onclick="event.stopPropagation()">
+            <div class="v2-gallery-modal-header">
+                <div class="v2-gallery-modal-title-wrap">
+                    <span class="v2-gallery-modal-eyebrow" id="v2-gallery-modal-eyebrow">ARCHIVE GALLERY</span>
+                    <h3 class="v2-gallery-modal-title" id="v2-gallery-modal-title">현장지원 갤러리</h3>
+                </div>
+                <button type="button" class="v2-gallery-modal-close" onclick="closeSectionGallery()" aria-label="갤러리 닫기">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="v2-gallery-modal-body">
+                <section id="activities" class="section-padding bg-light activities-gallery-section">
         <div class="container">
             <div class="activities-top-bar">
                 <div class="section-header text-center">
@@ -3254,6 +3277,28 @@
                         <span class="gallery-card-meta"><i class="fa-solid fa-book-open"></i> 그랜드 워커힐 서울, 대퇴 연골 두께 및 재활 연구 발표</span>
                     </div>
                 </div>
+                <div class="gallery-card-item" data-category="research" style="display: none;" data-en-badge="International Conference" data-en-title="World Congress on Kinesiology" data-en-meta='<i class="fa-solid fa-globe"></i> International Sports Science Conference Presentation' onclick="openPhotoLightbox('assets/images/insta/post_18.jpg', 'World Congress on Kinesiology 국제 학술대회 발표')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_18.jpg" alt="World Congress on Kinesiology 발표" class="gallery-img" loading="lazy">
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="gallery-badge badge-center">국제 학회</span>
+                        <h4 class="gallery-card-title">World Congress on Kinesiology 참가</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-globe"></i> 국제 스포츠과학 학술대회 구두·포스터 발표</span>
+                    </div>
+                </div>
+                <div class="gallery-card-item" data-category="research" style="display: none;" data-en-badge="ECSS" data-en-title="European College of Sport Science (ECSS)" data-en-meta='<i class="fa-solid fa-globe"></i> International Sports Medicine Academic Exchange' onclick="openPhotoLightbox('assets/images/insta/post_30.jpg', 'European College of Sport Science (ECSS) 국제 스포츠의학 교류')">
+                    <div class="gallery-img-wrap">
+                        <img src="assets/images/insta/post_30.jpg" alt="ECSS 국제 스포츠의학 교류" class="gallery-img" loading="lazy">
+                        <div class="gallery-hover-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+                    <div class="gallery-card-info">
+                        <span class="gallery-badge badge-center">ECSS</span>
+                        <h4 class="gallery-card-title">유럽스포츠과학회(ECSS) 국제 교류</h4>
+                        <span class="gallery-card-meta"><i class="fa-solid fa-globe"></i> 국제 스포츠의학 연구 발표 및 글로벌 네트워크 교류</span>
+                    </div>
+                </div>
 
                 <!-- ⑤ In-service: 2026-2학기 6회차 In-service (11/9) -->
                 <div class="gallery-card-item" data-category="center" style="display: none;" data-en-badge="In-service" data-en-title="2026-2 In-service Session #6 (Nov 9)" data-en-meta='<i class="fa-solid fa-chalkboard-user"></i> 28 Attendees · Golf Feedback, Patellar Tendinopathy, Power &amp; Breathing' onclick="openPhotoLightbox(INSERVICE_SLIDES['2026_2_6'], '2026-2학기 6회차 In-service (11/9) — 발표 PPT · 이론·실기 현장')">
@@ -3474,6 +3519,9 @@
 
         </div>
     </section>
+            </div>
+        </div>
+    </div>
 
     <!-- Donate Section -->
     <section id="donate" class="donate-minimal-section">
@@ -7640,6 +7688,94 @@ window.showEditorialYear = function(year, btn) {
                     origSetLang(lang);
                     patchV2En(lang);
                 };
+            }
+        });
+    })();
+    </script>
+    <script>
+    (function () {
+        const MODE_META = {
+            field: {
+                eyebrow: 'FIELD SUPPORT GALLERY',
+                ko: '현장지원 · 부서별 활동 갤러리',
+                en: 'Field Support & Varsity Team Gallery',
+                tabs: ['dept', 'medical'],
+                defaultTab: 'dept'
+            },
+            research: {
+                eyebrow: 'RESEARCH GALLERY',
+                ko: '연구 · 학술대회 갤러리',
+                en: 'Research & Conference Gallery',
+                tabs: ['center'],
+                defaultTab: 'research_only'
+            },
+            education: {
+                eyebrow: 'EDUCATION & SEMINAR GALLERY',
+                ko: '교육 · In-service · 정기 세미나 갤러리',
+                en: 'Education, In-service & Seminar Gallery',
+                tabs: ['center', 'seminar'],
+                defaultTab: 'center'
+            }
+        };
+
+        window.openSectionGallery = function (mode) {
+            const modal = document.getElementById('v2-gallery-modal');
+            if (!modal) return;
+            const cfg = MODE_META[mode] || MODE_META.field;
+            const isEn = (document.documentElement.lang === 'en') || document.querySelector('.lang-btn.active[data-lang="en"]');
+
+            const eb = document.getElementById('v2-gallery-modal-eyebrow');
+            const tt = document.getElementById('v2-gallery-modal-title');
+            if (eb) eb.textContent = cfg.eyebrow;
+            if (tt) tt.textContent = isEn ? cfg.en : cfg.ko;
+
+            // Filter top category tabs inside modal (parse onclick="filterGallery('cat', this)")
+            const tabBtns = modal.querySelectorAll('.gallery-filter-btn');
+            const deptBar = modal.querySelector('#dept-pictogram-filter-wrapper');
+            const filterTabsWrap = modal.querySelector('.activities-top-bar');
+            const cards = modal.querySelectorAll('.gallery-card-item');
+
+            if (mode === 'research') {
+                if (filterTabsWrap) filterTabsWrap.style.display = 'none';
+                if (deptBar) deptBar.style.display = 'none';
+                cards.forEach(card => {
+                    const cat = card.getAttribute('data-category') || '';
+                    const txt = (card.innerText || '') + ' ' + (card.getAttribute('onclick') || '');
+                    const isRes = (cat === 'research') || /비만학회|Kinesiology|ECSS|Brain Awards|학술대회|post_1\.jpg|post_18\.jpg|post_29\.jpg|post_30\.jpg/i.test(txt);
+                    card.style.display = isRes ? '' : 'none';
+                });
+            } else {
+                if (filterTabsWrap) filterTabsWrap.style.display = '';
+                let defaultBtn = null;
+                tabBtns.forEach(btn => {
+                    const oc = btn.getAttribute('onclick') || '';
+                    const m = oc.match(/filterGallery\('([^']+)'/);
+                    const cat = m ? m[1] : '';
+                    const match = cfg.tabs.includes(cat);
+                    btn.style.display = match ? '' : 'none';
+                    if (cat === cfg.defaultTab) defaultBtn = btn;
+                });
+                if (defaultBtn) {
+                    defaultBtn.click();
+                }
+            }
+
+            modal.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        };
+
+        window.closeSectionGallery = function () {
+            const modal = document.getElementById('v2-gallery-modal');
+            if (!modal) return;
+            modal.classList.remove('is-open');
+            document.body.style.overflow = '';
+        };
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                const lb = document.getElementById('activity-lightbox-modal');
+                if (lb && (lb.classList.contains('active') || getComputedStyle(lb).display !== 'none')) return;
+                window.closeSectionGallery();
             }
         });
     })();
