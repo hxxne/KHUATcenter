@@ -4466,3 +4466,15 @@ Observation 100시간 실무 과정,
   3. **한/영 다국어 번역 지원 (`i18n.js`):**
      - `PERSON_NAME_KO_TO_EN`에 `'박성주': 'Sungjoo Park'` 추가
      - 이름 치환(`박성주, PhD` → `Sungjoo Park, PhD`) 및 영문 경력 5줄 매핑 완료
+
+---
+
+## ⚡ 구글 검색 결과 및 브라우저 탭 파비콘(Favicon) 적용 (2026-11-25)
+- **목적:** 구글 검색 결과(`pacemind.co.kr`) 및 브라우저 탭에 기본 지구본 아이콘 대신 경희대 사자 엠블럼 로고 노출
+- **적용 내역:**
+  1. `assets/images/logo_khu_lion_only.png`를 기반으로 구글 파비콘 규격(48의 배수 정사각 + 화이트 배경 + 13% 여백)에 맞춘 아이콘 세트 생성:
+     - `favicon.ico` (16×16, 32×32, 48×48 멀티 해상도)
+     - `favicon-48x48.png`, `favicon-96x96.png`, `favicon-192x192.png`
+     - `apple-touch-icon.png` (180×180)
+     - `site.webmanifest`
+  2. `index.html` `<head>`에 `<link rel="icon">`, `<link rel="apple-touch-icon">`, `<link rel="manifest">`, `theme-color(#8C1D24)` 등록
