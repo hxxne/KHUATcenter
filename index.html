@@ -236,6 +236,24 @@
                         </ul>
                     </div>
                 </div>
+
+                <!-- 박성주 자문위원 -->
+                <div class="modern-profile-card" data-ko-name="박성주" onclick="openProfModal(this)" style="cursor: pointer;" title="박성주 교수 상세 프로필 보기">
+                    <div class="modern-avatar-container">
+                        <div class="modern-avatar-blob"></div>
+                        <img src="assets/profile_박성주.jpg?v=20261125_parksj" alt="박성주" class="modern-avatar-img-fallback" onerror="this.src='assets/profile_default.png?v=20261116_c3'">
+                    </div>
+                    <div class="modern-profile-info-col">
+                        <div class="modern-profile-name" id="adv-name-parksj">박성주, PhD</div>
+                        <ul class="modern-profile-exp">
+                            <li id="adv-parksj-line1">국민대학교 스포츠교육학과 교수</li>
+                            <li id="adv-parksj-line2">체육학박사 (Ohio State University)</li>
+                            <li id="adv-parksj-line3">스포츠산업대학원 웰니스센터 소장</li>
+                            <li id="adv-parksj-line4">교수학습개발센터 소장</li>
+                            <li id="adv-parksj-line5">스포츠윤리연구소장</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
             <!-- Group 1: Faculty -->
@@ -5390,7 +5408,7 @@
             const isHeadAT = !isClickedInGradSection && !isClickedInAssistantGrid && (headATList.includes(cleanName) || (pData && pData.role && pData.role.includes("전담 AT")));
 
             // 자문위원회 및 교수진·리더 명단 판별
-            const advisoryList = ["정태유", "박욱", "방형식", "손진원"];
+            const advisoryList = ["정태유", "박욱", "방형식", "손진원", "박성주"];
             const isAdvisory = advisoryList.includes(cleanName);
             const facultyLeaderList = ["박지홍", "오성민", "김준영", "최현곤", "이재욱"];
             const isFacultyOrLeader = facultyLeaderList.includes(cleanName);
@@ -7639,7 +7657,7 @@ window.showEditorialYear = function(year, btn) {
 </script>
 
 <!-- 다국어 전환 엔진 (한국어 | English) -->
-<script src="i18n.js?v=20261122_award_career"></script>
+<script src="i18n.js?v=20261125_parksj"></script>
 <!-- 오픈소스 모션 & 데이터 시각화 엔진 (anime.js v4.5 · Motion v14.9 · Bklit UI) -->
 <script src="assets/vendor/anime.umd.min.js"></script>
 <script src="assets/vendor/motion.min.js"></script>

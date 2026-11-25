@@ -536,6 +536,7 @@
         '박상협': 'Sanghyup Park',
         '박서현': 'Seohyun Park',
         '박세민': 'Semin Park',
+        '박성주': 'Sungjoo Park',
         '박욱': 'Wook Park',
         '박유빈': 'Yubin Park',
         '박은지': 'Eunji Park',
@@ -681,6 +682,12 @@
             '<li id="adv-son-line2">Director, KSIA · Professor, Eulji Univ. FMP · Mentor, KHU Campus Town</li>' +
             '<li id="adv-son-line3">Certified Public Accountant (KICPA)</li>' +
             '<li id="adv-son-line4">Former CPA, Deloitte Anjin · Seoul/KISED Evaluator · Samsung Biologics IPO Advisor</li>',
+        '박성주':
+            '<li id="adv-parksj-line1">Professor, Dept. of Sport Education, Kookmin University</li>' +
+            '<li id="adv-parksj-line2">PhD in Physical Education (The Ohio State University)</li>' +
+            '<li id="adv-parksj-line3">Director, Wellness Center, Graduate School of Sports Industry</li>' +
+            '<li id="adv-parksj-line4">Director, Center for Teaching &amp; Learning</li>' +
+            '<li id="adv-parksj-line5">Director, Institute of Sport Ethics</li>',
         '박지홍, PhD, AT, CSCS':
             '<li>Professor, Dept. of Sports Medicine, Kyung Hee University</li>' +
             '<li>PhD in Exercise Sciences (Physical Medicine &amp; Rehabilitation), Brigham Young University</li>' +
@@ -1090,6 +1097,7 @@
                         .replace('박욱, PhD', 'Wook Park, PhD')
                         .replace('방형식, MD, PhD', 'Hyeongsig Bang, MD, PhD')
                         .replace('손진원, KICPA', 'Jin-won Son, KICPA')
+                        .replace('박성주, PhD', 'Sungjoo Park, PhD')
                         .replace('박지홍, PhD, AT, CSCS', 'Jihong Park, PhD, AT, CSCS')
                         .replace('오성민, PhD', 'Sungmin Oh, PhD')
                         .replace('김준영 실장', 'Junyoung Kim <span style="font-size:0.84rem; font-weight:700; color:var(--color-primary);">Athletic Training</span>')

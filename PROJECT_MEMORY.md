@@ -4452,3 +4452,17 @@ Observation 100시간 실무 과정,
   - `현장지원 갤러리`: `부서별 활동`(13개 폴더) · `현장지원` 탭
   - `연구 갤러리`: 탭/부서 필터 숨김, 연구·학술대회 사진 4장(`The Brain Awards for Lab`, `대한비만학회`, `World Congress on Kinesiology`, `ECSS`) 전용 표시
   - `교육 · 세미나 갤러리`: `센터 활동`(신입기수·In-service 6회차) · `행사`(정기 세미나 3종·Awards) 탭
+
+---
+
+## ⚡ 자문위원회(Advisory Committee) 박성주, PhD 교수 추가 (2026-11-25)
+- **대상:** `박성주, PhD` (국민대학교 스포츠교육학과 교수)
+- **주요 반영 내용:**
+  1. **프로필 사진 최적화 (`assets/profile_박성주.jpg`):**
+     - 업로드 원본(`395×517`)을 상단 기준 정사각 크롭 후 `500×500` 고해상도 JPEG로 저장
+  2. **자문위원회 카드 추가 (`index.html`):**
+     - `#grid-advisory`에 5번째 자문위원 카드 추가 (`id="adv-name-parksj"`, `adv-parksj-line1`~`line5`)
+     - `advisoryList` 배열에 `"박성주"` 등록 및 `i18n.js` 캐시버스트(`?v=20261125_parksj`) 갱신
+  3. **한/영 다국어 번역 지원 (`i18n.js`):**
+     - `PERSON_NAME_KO_TO_EN`에 `'박성주': 'Sungjoo Park'` 추가
+     - 이름 치환(`박성주, PhD` → `Sungjoo Park, PhD`) 및 영문 경력 5줄 매핑 완료
