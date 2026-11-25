@@ -4478,3 +4478,8 @@ Observation 100시간 실무 과정,
      - `apple-touch-icon.png` (180×180)
      - `site.webmanifest`
   2. `index.html` `<head>`에 `<link rel="icon">`, `<link rel="apple-touch-icon">`, `<link rel="manifest">`, `theme-color(#8C1D24)` 등록
+
+---
+
+## ⚡ Google Search Console 소유권 확인 메타 태그 추가 (2026-11-25)
+- **내용:** `index.html` `<head>`에 Google Search Console HTML 태그 인증용 `<meta name="google-site-verification" ... />` 추가 (구글 색인 생성 요청 및 파비콘 빠른 갱신 목적)
