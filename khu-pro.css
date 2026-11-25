@@ -4930,3 +4930,510 @@ body.intro-modal-disabled #about .assistant-person-item.has-photo:hover {
         font-size: 1.25rem;
     }
 }
+
+/* V2_LIVE_SECTIONS_MERGED */
+/* ============================================================
+   KHU AT Center — 테스트 버전 v2 전용 스타일 (test_v2.html)
+   목차: 소개 · 현장지원 · 연구 · 교육 · 걸어온 길 · 갤러리 · 후원
+   설계 원칙:
+   - 텍스트(01·02·03)와 관련 사진이 분리되지 않고 1:1로 통합 결합
+   - 세 섹션마다 각기 다른 에디토리얼 리듬(가로 페어링 / 좌우 스플릿 / 3열 매거진)
+   ============================================================ */
+
+@media (min-width: 1025px) {
+    .nav-links {
+        gap: clamp(14px, 1.4vw, 24px) !important;
+    }
+}
+
+/* ============================================================
+   공통 섹션 베이스 & 에디토리얼 헤더
+   ============================================================ */
+.v2-pillar-section {
+    padding: clamp(80px, 8.5vw, 118px) 0;
+    background: var(--bg-canvas);
+    border-top: 1px solid var(--line-hairline);
+}
+
+.v2-pillar-section.is-alt-bg {
+    background: #F4F2EC;
+}
+
+.v2-pillar-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px 32px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--ink-primary);
+    margin-bottom: clamp(24px, 3vw, 34px);
+    flex-wrap: wrap;
+}
+
+.v2-pillar-head-left {
+    max-width: 620px;
+}
+
+/* 각 섹션 상단 와이드 슬라이더 히어로 래퍼 */
+.v2-slider-hero {
+    margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.v2-slider-hero .bento-card {
+    margin: 0 !important;
+}
+
+/* 슬라이더 바로 아래 아카이브 영역 구분 */
+.v2-sub-archive-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+}
+
+.v2-sub-archive-bar::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line-hairline);
+}
+
+.v2-pillar-eyebrow {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--khu-crimson);
+    margin-bottom: 8px;
+}
+
+.v2-pillar-title {
+    margin: 0 0 10px 0;
+    font-size: clamp(2rem, 3.2vw, 2.7rem);
+    font-weight: 800;
+    color: var(--ink-primary);
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+}
+
+.v2-pillar-desc {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.68;
+    color: var(--ink-muted);
+    word-break: keep-all;
+}
+
+.v2-pillar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.v2-action-btn {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1.5px solid var(--ink-primary);
+    background: transparent;
+    color: var(--ink-primary);
+    padding: 10px 19px;
+    border-radius: 999px;
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.v2-action-btn:hover {
+    background: var(--ink-primary);
+    color: #FFFFFF;
+    transform: translateY(-1px);
+}
+
+.v2-action-btn.is-crimson {
+    background: var(--khu-crimson);
+    border-color: var(--khu-crimson);
+    color: #FFFFFF;
+}
+
+.v2-action-btn.is-crimson:hover {
+    background: #7A0E18;
+    border-color: #7A0E18;
+}
+
+/* 공통 사진 카드 인터랙션 */
+.v2-photo-card {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    font-family: inherit;
+    width: 100%;
+}
+
+.v2-photo-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #E8E6DF;
+}
+
+.v2-photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.45s var(--ease-expo);
+}
+
+.v2-photo-card:hover .v2-photo-frame img {
+    transform: scale(1.04);
+}
+
+.v2-photo-zoom {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(17, 19, 24, 0.72);
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.74rem;
+    opacity: 0;
+    transform: translateY(4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.v2-photo-card:hover .v2-photo-zoom {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.v2-photo-caption {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--ink-primary);
+    letter-spacing: -0.02em;
+    line-height: 1.38;
+    transition: color 0.18s ease;
+}
+
+.v2-photo-card:hover .v2-photo-caption {
+    color: var(--khu-crimson);
+}
+
+.v2-photo-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--khu-crimson);
+    margin-right: 6px;
+}
+
+/* ============================================================
+   LAYOUT 1: 현장지원 (#field-support) — 가로 3행 페어링 (좌 설명 + 우 사진 2장)
+   ============================================================ */
+.v2-paired-rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.v2-paired-row {
+    display: grid;
+    grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.75fr);
+    gap: clamp(20px, 3vw, 40px);
+    padding: clamp(22px, 2.8vw, 32px) 0;
+    border-bottom: 1px solid var(--line-hairline);
+    align-items: start;
+}
+
+.v2-paired-row:first-child {
+    padding-top: 6px;
+}
+
+.v2-paired-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.v2-paired-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 4px;
+}
+
+.v2-step-kicker {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.11em;
+    color: var(--khu-crimson);
+    font-variant-numeric: tabular-nums;
+}
+
+.v2-step-title {
+    margin: 0;
+    font-size: clamp(1.26rem, 1.8vw, 1.48rem);
+    font-weight: 800;
+    color: var(--ink-primary);
+    letter-spacing: -0.025em;
+    line-height: 1.28;
+}
+
+.v2-step-desc {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.68;
+    color: var(--ink-muted);
+    word-break: keep-all;
+}
+
+.v2-paired-photos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* ============================================================
+   LAYOUT 2: 연구 (#research) — 좌우 비대칭 에디토리얼 스플릿
+   ============================================================ */
+.v2-research-split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.52fr);
+    gap: clamp(28px, 4vw, 52px);
+    align-items: stretch;
+}
+
+.v2-research-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.v2-research-item {
+    padding: 34px 0;
+    border-bottom: 1px solid var(--line-hairline);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.v2-research-item:first-child {
+    padding-top: 8px;
+}
+
+.v2-research-item:last-child {
+    border-bottom: none;
+    padding-bottom: 8px;
+}
+
+.v2-research-wall {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* ============================================================
+   LAYOUT 3: 교육 (#education) — 3열 통합 아티클(사진+설명 일체형) + 하단 실기 스트립
+   ============================================================ */
+.v2-edu-articles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(20px, 2.6vw, 30px);
+    padding-bottom: clamp(30px, 3.6vw, 42px);
+    border-bottom: 1px solid var(--line-hairline);
+}
+
+.v2-edu-article {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.v2-edu-article .v2-photo-frame {
+    aspect-ratio: 16 / 10;
+}
+
+.v2-edu-body {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.v2-edu-strip-wrap {
+    padding-top: clamp(24px, 3vw, 34px);
+}
+
+.v2-edu-strip-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+}
+
+.v2-edu-strip-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--line-hairline);
+}
+
+.v2-edu-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.v2-edu-strip .v2-photo-frame {
+    aspect-ratio: 16 / 10;
+}
+
+/* ============================================================
+   걸어온 길 (#journey) — 누적기록 + 역사 통합 래퍼
+   ============================================================ */
+#journey.v2-journey-section {
+    background: var(--bg-canvas);
+    border-top: 1px solid var(--line-hairline);
+    padding: clamp(84px, 9vw, 124px) 0;
+}
+
+.v2-journey-master-header {
+    text-align: center;
+    margin-bottom: clamp(44px, 5vw, 64px);
+}
+
+.v2-journey-eyebrow {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    color: var(--khu-crimson);
+    margin-bottom: 8px;
+}
+
+.v2-journey-title {
+    margin: 0 0 12px 0;
+    font-size: clamp(2.1rem, 3.4vw, 2.9rem);
+    font-weight: 800;
+    color: var(--ink-primary);
+    letter-spacing: -0.035em;
+}
+
+.v2-journey-sub {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--ink-muted);
+}
+
+#journey #dashboard.editorial-metric-section {
+    padding: 0 0 clamp(56px, 6.5vw, 84px) 0 !important;
+    border-top: none !important;
+    background: transparent !important;
+}
+
+#journey #awards.awards-stream-section {
+    padding: clamp(48px, 5.5vw, 72px) 0 0 0 !important;
+    border-top: 1px solid var(--line-hairline) !important;
+    background: transparent !important;
+}
+
+#journey #dashboard .section-header,
+#journey #awards .editorial-header {
+    display: none;
+}
+
+.v2-journey-part-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.v2-journey-part-label .jp-num {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--khu-crimson);
+    letter-spacing: 0.08em;
+    font-variant-numeric: tabular-nums;
+}
+
+.v2-journey-part-label .jp-name {
+    font-size: 1.32rem;
+    font-weight: 800;
+    color: var(--ink-primary);
+    letter-spacing: -0.025em;
+}
+
+.v2-journey-part-label .jp-line {
+    flex: 1;
+    height: 1px;
+    background: var(--line-hairline);
+}
+
+/* 반응형 */
+@media (max-width: 960px) {
+    .v2-paired-row,
+    .v2-research-split {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .v2-edu-articles,
+    .v2-edu-strip {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .v2-paired-photos,
+    .v2-research-wall {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .v2-pillar-header {
+        align-items: flex-start;
+    }
+}
+
+
+/* 역대 수상자 이름 클릭 모달 비활성화 (소속 미리보기 상시 노출에 따라 정적 표시) */
+.award-stage-v2 .award-stage-cell,
+.award-stage-v2 .award-stage-dual-btn {
+    cursor: default !important;
+}
+
+.award-stage-v2 .award-stage-cell:hover .award-stage-name,
+.award-stage-v2 .award-stage-dual-btn:hover {
+    color: var(--ink-primary) !important;
+}

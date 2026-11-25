@@ -24,7 +24,7 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="khu-modals.css?v=20261111_pro2">
-    <link rel="stylesheet" href="khu-pro.css?v=20261122_donate_guide">
+    <link rel="stylesheet" href="khu-pro.css?v=20261125_v2_live">
     <link rel="stylesheet" href="ui-motion-bklit.css?v=20261116_editorial">
 </head>
 <body>
@@ -42,12 +42,13 @@
                 </div>
             </a>
             <nav class="nav-menu">
-                <a href="#about" class="nav-link">소개</a>
-                <a href="#pillars" class="nav-link">활동</a>
-                <a href="#dashboard" class="nav-link">누적기록</a>
-                <a href="#awards" class="nav-link">역사</a>
-                <a href="#activities" class="nav-link">갤러리</a>
-                <a href="#donate" class="nav-link">후원</a>
+                <a href="#about" class="nav-link" data-ko="소개" data-en="About">소개</a>
+                <a href="#field-support" class="nav-link" data-ko="현장지원" data-en="Field Support">현장지원</a>
+                <a href="#research" class="nav-link" data-ko="연구" data-en="Research">연구</a>
+                <a href="#education" class="nav-link" data-ko="교육" data-en="Education">교육</a>
+                <a href="#journey" class="nav-link" data-ko="걸어온 길" data-en="Our Journey">걸어온 길</a>
+                <a href="#activities" class="nav-link" data-ko="갤러리" data-en="Gallery">갤러리</a>
+                <a href="#donate" class="nav-link" data-ko="후원" data-en="Sponsorship">후원</a>
                 <a href="#contact" class="nav-link btn-header-cta">상담 및 문의</a>
                 <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="nav-link insta-nav-icon" title="경희대학교 AT Center 공식 인스타그램 새 창 열기" aria-label="경희대학교 AT Center 공식 인스타그램 (새 창 열기)"><i class="fa-brands fa-instagram"></i></a>
                 <!-- 다국어 선택 토글 (옵션 1: 한국어 | English) -->
@@ -91,12 +92,13 @@
             </div>
         </div>
         <nav class="mobile-menu">
-            <a href="#about" class="mobile-link"><i class="fa-regular fa-building"></i> 소개</a>
-            <a href="#pillars" class="mobile-link"><i class="fa-solid fa-layer-group"></i> 활동</a>
-            <a href="#dashboard" class="mobile-link"><i class="fa-solid fa-chart-line"></i> 누적기록</a>
-            <a href="#awards" class="mobile-link"><i class="fa-solid fa-award"></i> 역사</a>
-            <a href="#activities" class="mobile-link"><i class="fa-solid fa-camera"></i> 갤러리</a>
-            <a href="#donate" class="mobile-link"><i class="fa-solid fa-hand-holding-heart"></i> 후원</a>
+            <a href="#about" class="mobile-link"><i class="fa-regular fa-building"></i> <span data-ko="소개" data-en="About">소개</span></a>
+            <a href="#field-support" class="mobile-link"><i class="fa-solid fa-kit-medical"></i> <span data-ko="현장지원" data-en="Field Support">현장지원</span></a>
+            <a href="#research" class="mobile-link"><i class="fa-solid fa-flask"></i> <span data-ko="연구" data-en="Research">연구</span></a>
+            <a href="#education" class="mobile-link"><i class="fa-solid fa-graduation-cap"></i> <span data-ko="교육" data-en="Education">교육</span></a>
+            <a href="#journey" class="mobile-link"><i class="fa-solid fa-route"></i> <span data-ko="걸어온 길" data-en="Our Journey">걸어온 길</span></a>
+            <a href="#activities" class="mobile-link"><i class="fa-solid fa-camera"></i> <span data-ko="갤러리" data-en="Gallery">갤러리</span></a>
+            <a href="#donate" class="mobile-link"><i class="fa-solid fa-hand-holding-heart"></i> <span data-ko="후원" data-en="Sponsorship">후원</span></a>
             <a href="#contact" class="mobile-link mobile-cta"><i class="fa-regular fa-paper-plane"></i> 상담 및 문의 신청</a>
             <a href="https://www.instagram.com/khuatcenter/" target="_blank" rel="noopener noreferrer" class="mobile-link insta-link" style="margin-top: 6px;"><i class="fa-brands fa-instagram" style="color: #E1306C;"></i> 공식 인스타그램 (@khuatcenter)</a>
         </nav>
@@ -1413,172 +1415,280 @@
     </section>
 
         <!-- Core Pillars Section (Frameless Swiss Editorial Chapters with Wide Media Frames) -->
-    <section id="pillars" class="section-padding bg-dark-lighter">
+        <!-- ======================================================= -->
+    <!-- 2. 현장지원 (#field-support) — 컴팩트 3행 페어링 아카이브 -->
+    <!-- ======================================================= -->
+    <section id="field-support" class="v2-pillar-section">
         <div class="container">
-            <div class="section-header text-center">
-                <h2 class="section-title">활동</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">교육 (Education) · 연구 (Research) · 서비스 (Service)</p>
+            <div class="v2-pillar-header">
+                <div class="v2-pillar-head-left">
+                    <span class="v2-pillar-eyebrow">FIELD SUPPORT</span>
+                    <h2 class="v2-pillar-title" data-ko="현장지원" data-en="Field Support">현장지원</h2>
+                </div>
+                <div class="v2-pillar-actions">
+                    <button type="button" class="v2-action-btn is-crimson" onclick="openPillarModal('srv')">
+                        <span data-ko="세부내용 보기" data-en="View Details">세부내용 보기</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
 
-            <!-- Frameless Asymmetric Editorial Chapters (Left 5 Cols Typography / Right 7 Cols Wide Media) -->
-            <div class="bento-pillars-grid">
-                
-                <!-- Pillar 1: Education (교육) -->
-                <div class="bento-card bento-card-edu" role="button" tabindex="0" onclick="openPillarModal('edu')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('edu');}" title="클릭하여 교육 사업 세부내용 확인" aria-label="교육(Education) - 미래 스포츠의학 전문가 양성 세부내용 보기">
-                    <div class="bento-editorial-col">
-                        <div class="bento-card-header">
-                            <div class="bento-badge-row">
-                                <span class="bento-badge badge-edu">EDUCATION</span>
-                            </div>
-                            <h3 class="bento-title">교육</h3>
-                            <p class="bento-subtitle">미래 스포츠의학 전문가 양성</p>
-                            <div class="bento-tags">
-                                <span>전공연계</span>
-                                <span>실무역량</span>
-                                <span>현장실습</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 인터랙티브 액션 풋터 -->
-                        <div class="bento-card-footer">
-                            <div class="bento-action-btn">
-                                <span>사업 세부내용 보기</span>
-                                <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                            </div>
-                        </div>
+            <div class="v2-paired-rows">
+                <div class="v2-paired-row">
+                    <div class="v2-paired-text">
+                        <span class="v2-step-kicker">01 · ATHLETIC TRAINING</span>
+                        <h3 class="v2-step-title" data-ko="체육부 AT" data-en="Varsity Team AT">체육부 AT</h3>
+                        <p class="v2-step-desc" data-ko="11개 운동부 훈련 · 경기 전담 케어" data-en="Dedicated care across 11 varsity teams.">11개 운동부 훈련 · 경기 전담 케어</p>
                     </div>
-
-                    <!-- Wide Media Frame -->
-                    <div class="bento-media-slider" data-slider="edu">
-                        <div class="bento-slide-track">
-                            <div class="bento-slide active">
-                                <img src="assets/images/insta/post_3.jpg" alt="정기 학술 세미나 & Taping 실무 교육" class="bento-slide-img">
-                                <div class="bento-slide-caption">정기 학술 세미나 & 실무 교육</div>
+                    <div class="v2-paired-photos">
+                        <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/겨루기 10.jpg', '태권도 대회 코트 세컨드석에서 출전 선수의 하지 스트레칭 및 회복을 돕는 전담 AT')">
+                            <div class="v2-photo-frame">
+                                <img src="assets/겨루기 10.jpg" alt="태권도 겨루기부 세컨드석 현장 케어" style="object-position: center 84%;" loading="lazy">
+                                <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
                             </div>
-                            <div class="bento-slide">
-                                <img src="assets/images/insta/post_6.jpg" alt="In-Service 실기 교육 & 기능 실습" class="bento-slide-img">
-                                <div class="bento-slide-caption">In-Service 실기 & 테크닉 실습</div>
+                            <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="태권도 겨루기부" data-en="TKD Kyorugi">태권도 겨루기부</span><span data-ko="대회 현장 케어" data-en="Tournament on-site care">대회 현장 케어</span></span>
+                        </button>
+                        <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/축구 3.jpg', '축구부 경기장 사이드라인 선수 부상 예방 및 보호 테이핑 처치')">
+                            <div class="v2-photo-frame">
+                                <img src="assets/축구 3.jpg" alt="축구부 경기장 스포츠 테이핑" loading="lazy">
+                                <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
                             </div>
-                            <div class="bento-slide">
-                                <img src="assets/images/insta/post_7.jpg" alt="소도구 트레이닝 & 부상 케이스 스터디 특강" class="bento-slide-img">
-                                <div class="bento-slide-caption">소도구 트레이닝 & 부상 특강</div>
-                            </div>
-                        </div>
-                        <div class="slider-dots">
-                            <span class="slider-dot active" role="button" tabindex="0" aria-label="교육 슬라이드 1" onclick="event.stopPropagation(); setSliderSlide('edu', 0)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('edu', 0);}"></span>
-                            <span class="slider-dot" role="button" tabindex="0" aria-label="교육 슬라이드 2" onclick="event.stopPropagation(); setSliderSlide('edu', 1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('edu', 1);}"></span>
-                            <span class="slider-dot" role="button" tabindex="0" aria-label="교육 슬라이드 3" onclick="event.stopPropagation(); setSliderSlide('edu', 2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('edu', 2);}"></span>
-                        </div>
+                            <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="축구부" data-en="Soccer">축구부</span><span data-ko="경기장 스포츠 테이핑" data-en="Sideline sports taping care">경기장 스포츠 테이핑</span></span>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Pillar 2: Research (연구) -->
-                <div class="bento-card bento-card-res" role="button" tabindex="0" onclick="openPillarModal('res')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('res');}" title="클릭하여 연구 사업 세부내용 확인" aria-label="연구(Research) - 근거 중심 스포츠의학(EBM) 구현 세부내용 보기">
-                    <div class="bento-editorial-col">
-                        <div class="bento-card-header">
-                            <div class="bento-badge-row">
-                                <span class="bento-badge badge-res">RESEARCH</span>
-                            </div>
-                            <h3 class="bento-title">연구</h3>
-                            <p class="bento-subtitle">근거 중심 스포츠의학(EBM) 구현</p>
-                            <div class="bento-tags">
-                                <span>생체역학</span>
-                                <span>임상데이터</span>
-                                <span>학술논문</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 인터랙티브 액션 풋터 -->
-                        <div class="bento-card-footer">
-                            <div class="bento-action-btn">
-                                <span>사업 세부내용 보기</span>
-                                <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                            </div>
-                        </div>
+                <div class="v2-paired-row">
+                    <div class="v2-paired-text">
+                        <span class="v2-step-kicker">02 · EVENT MEDICAL</span>
+                        <h3 class="v2-step-title" data-ko="대회 현장 의무지원" data-en="Event Medical Support">대회 현장 의무지원</h3>
+                        <p class="v2-step-desc" data-ko="전국체전 · 총장기 · 마라톤 지원" data-en="National Games, President's Cup &amp; Marathon support.">전국체전 · 총장기 · 마라톤 지원</p>
                     </div>
-
-                    <!-- Wide Media Frame -->
-                    <div class="bento-media-slider" data-slider="res">
-                        <div class="bento-slide-track">
-                            <div class="bento-slide active">
-                                <img src="assets/images/insta/post_1.jpg" alt="제63차 대한비만학회 춘계학술대회 참가" class="bento-slide-img">
-                                <div class="bento-slide-caption">국내외 주요 학술대회 연구 발표</div>
+                    <div class="v2-paired-photos">
+                        <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/insta/post_31.jpg', '제38회 경희대학교 총장기 전국 남·여 고등학교 태권도대회 현장 의무지원')">
+                            <div class="v2-photo-frame">
+                                <img src="assets/images/insta/post_31.jpg" alt="경희대 총장기 전국 태권도대회 의무지원" loading="lazy">
+                                <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
                             </div>
-                            <div class="bento-slide">
-                                <img src="assets/images/insta/post_18.jpg" alt="World Congress on Kinesiology 학술대회 발표" class="bento-slide-img">
-                                <div class="bento-slide-caption">World Congress Kinesiology 참가</div>
+                            <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="태권도대회" data-en="Taekwondo">태권도대회</span><span data-ko="경희대 총장기 의무지원" data-en="KHU President's Cup medical coverage">경희대 총장기 의무지원</span></span>
+                        </button>
+                        <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/insta/post_17.jpg', '2025 Go Free Run 마라톤 현장 스포츠의학 의무지원')">
+                            <div class="v2-photo-frame">
+                                <img src="assets/images/insta/post_17.jpg" alt="Go Free Run 마라톤 현장지원" loading="lazy">
+                                <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
                             </div>
-                            <div class="bento-slide">
-                                <img src="assets/images/insta/post_30.jpg" alt="European College of Sport Science 발표" class="bento-slide-img">
-                                <div class="bento-slide-caption">ECSS 국제 스포츠의학 연구 교류</div>
-                            </div>
-                        </div>
-                        <div class="slider-dots">
-                            <span class="slider-dot active" role="button" tabindex="0" aria-label="연구 슬라이드 1" onclick="event.stopPropagation(); setSliderSlide('res', 0)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('res', 0);}"></span>
-                            <span class="slider-dot" role="button" tabindex="0" aria-label="연구 슬라이드 2" onclick="event.stopPropagation(); setSliderSlide('res', 1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('res', 1);}"></span>
-                            <span class="slider-dot" role="button" tabindex="0" aria-label="연구 슬라이드 3" onclick="event.stopPropagation(); setSliderSlide('res', 2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('res', 2);}"></span>
-                        </div>
+                            <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="마라톤" data-en="Marathon">마라톤</span><span data-ko="Go Free Run 현장 지원" data-en="Go Free Run medical support">Go Free Run 현장 지원</span></span>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Pillar 3: Service (서비스) -->
-                <div class="bento-card bento-card-srv" role="button" tabindex="0" onclick="openPillarModal('srv')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openPillarModal('srv');}" title="클릭하여 서비스 사업 세부내용 확인" aria-label="서비스(Service) - 실천적 스포츠 케어 및 현장 지원 세부내용 보기">
-                    <div class="bento-editorial-col">
-                        <div class="bento-card-header">
-                            <div class="bento-badge-row">
-                                <span class="bento-badge badge-srv">SERVICE</span>
-                            </div>
-                            <h3 class="bento-title">서비스</h3>
-                            <p class="bento-subtitle">실천적 스포츠 케어 및 현장 지원</p>
-                            <div class="bento-tags">
-                                <span>선수컨디셔닝</span>
-                                <span>현장의무지원</span>
-                                <span>선수재활</span>
-                            </div>
-                        </div>
-                        
-                        <!-- 인터랙티브 액션 풋터 -->
-                        <div class="bento-card-footer">
-                            <div class="bento-action-btn">
-                                <span>사업 세부내용 보기</span>
-                                <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
-                            </div>
-                        </div>
+                <div class="v2-paired-row">
+                    <div class="v2-paired-text">
+                        <span class="v2-step-kicker">03 · SPORTS REHABILITATION</span>
+                        <h3 class="v2-step-title" data-ko="스포츠재활 프로그램 운영" data-en="Sports Rehabilitation Program">스포츠재활 프로그램 운영</h3>
+                        <p class="v2-step-desc" data-ko="교직원 · 일반인 맞춤형 스포츠재활 및 기능 회복" data-en="Tailored sports rehabilitation &amp; functional recovery.">교직원 · 일반인 맞춤형 스포츠재활 및 기능 회복</p>
                     </div>
-
-                    <!-- Wide Media Frame -->
-                    <div class="bento-media-slider" data-slider="srv">
-                        <div class="bento-slide-track">
-                            <div class="bento-slide active">
-                                <img src="assets/images/insta/post_14.jpg" alt="제1회 라이언매치 대회 현장 의무지원" class="bento-slide-img">
-                                <div class="bento-slide-caption">대회 현장 스포츠의학 의무지원</div>
+                    <div class="v2-paired-photos">
+                        <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/activity/스재/rehab_09.jpg', '스포츠재활 — 햄스트링 가동성 제한 케이스 스터디')">
+                            <div class="v2-photo-frame">
+                                <img src="assets/images/activity/스재/rehab_09.jpg" alt="햄스트링 가동성 제한 케이스 스터디" style="object-position: center 62%;" loading="lazy">
+                                <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
                             </div>
-                            <div class="bento-slide">
-                                <img src="assets/images/insta/post_17.jpg" alt="Go Free Run 현장 스포츠의학 의무지원" class="bento-slide-img">
-                                <div class="bento-slide-caption">마라톤 & 러닝 이벤트 메디컬 케어</div>
+                            <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="스포츠재활" data-en="Sports Rehabilitation">스포츠재활</span><span data-ko="햄스트링 가동성 제한 케이스 스터디" data-en="Hamstring mobility limitation case study">햄스트링 가동성 제한 케이스 스터디</span></span>
+                        </button>
+                        <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/activity/스재/rehab_11.jpg', '스포츠재활 — FMS 실기 스터디')">
+                            <div class="v2-photo-frame">
+                                <img src="assets/images/activity/스재/rehab_11.jpg" alt="FMS 실기 스터디" style="object-position: center 60%;" loading="lazy">
+                                <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
                             </div>
-                            <div class="bento-slide">
-                                <img src="assets/images/insta/post_22.jpg" alt="제106회 전국체육대회 엘리트 선수단 출정식 및 파견" class="bento-slide-img">
-                                <div class="bento-slide-caption">전국체전 엘리트 선수단 전담 파견</div>
-                            </div>
-                        </div>
-                        <div class="slider-dots">
-                            <span class="slider-dot active" role="button" tabindex="0" aria-label="서비스 슬라이드 1" onclick="event.stopPropagation(); setSliderSlide('srv', 0)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('srv', 0);}"></span>
-                            <span class="slider-dot" role="button" tabindex="0" aria-label="서비스 슬라이드 2" onclick="event.stopPropagation(); setSliderSlide('srv', 1)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('srv', 1);}"></span>
-                            <span class="slider-dot" role="button" tabindex="0" aria-label="서비스 슬라이드 3" onclick="event.stopPropagation(); setSliderSlide('srv', 2)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();event.stopPropagation();setSliderSlide('srv', 2);}"></span>
-                        </div>
+                            <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="스포츠재활" data-en="Sports Rehabilitation">스포츠재활</span><span data-ko="FMS 실기 스터디" data-en="FMS practical study">FMS 실기 스터디</span></span>
+                        </button>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- ======================================================= -->
+    <!-- 3. 연구 (#research) — 좌우 비대칭 스플릿 -->
+    <!-- ======================================================= -->
+    <section id="research" class="v2-pillar-section is-alt-bg">
+        <div class="container">
+            <div class="v2-pillar-header">
+                <div class="v2-pillar-head-left">
+                    <span class="v2-pillar-eyebrow">RESEARCH</span>
+                    <h2 class="v2-pillar-title" data-ko="연구" data-en="Research">연구</h2>
+                </div>
+                <div class="v2-pillar-actions">
+                    <button type="button" class="v2-action-btn is-crimson" onclick="openResearchModal()">
+                        <span data-ko="연구 논문 64편 보기" data-en="View 64 Publications">연구 논문 64편 보기</span>
+                        <i class="fa-solid fa-book-open"></i>
+                    </button>
+                    <button type="button" class="v2-action-btn" onclick="openPillarModal('res')">
+                        <span data-ko="세부내용 보기" data-en="View Details">세부내용 보기</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
 
-            </section>
+            <div class="v2-research-split">
+                <div class="v2-research-list">
+                    <div class="v2-research-item">
+                        <span class="v2-step-kicker">01 · BIOMECHANICS</span>
+                        <h3 class="v2-step-title" data-ko="손상 기전 및 예방 연구" data-en="Injury Mechanism &amp; Prevention">손상 기전 및 예방 연구</h3>
+                        <p class="v2-step-desc" data-ko="생체역학적(Biomechanics) 분석 기반 부상 위험 요인 규명" data-en="Identifying injury risk factors through biomechanical analysis.">생체역학적(Biomechanics) 분석 기반 부상 위험 요인 규명</p>
+                    </div>
+                    <div class="v2-research-item">
+                        <span class="v2-step-kicker">02 · EPIDEMIOLOGY</span>
+                        <h3 class="v2-step-title" data-ko="대학 스포츠 부상 역학" data-en="Collegiate Injury Epidemiology">대학 스포츠 부상 역학</h3>
+                        <p class="v2-step-desc" data-ko="부상감시시스템(ISS) 기반 엘리트 선수단 손상 추이 분석" data-en="Tracking elite collegiate athlete injury trends via Injury Surveillance System (ISS).">부상감시시스템(ISS) 기반 엘리트 선수단 손상 추이 분석</p>
+                    </div>
+                    <div class="v2-research-item">
+                        <span class="v2-step-kicker">03 · CONFERENCES</span>
+                        <h3 class="v2-step-title" data-ko="국내외 학술대회 교류" data-en="Global Conferences">국내외 학술대회 교류</h3>
+                        <p class="v2-step-desc" data-ko="ECSS · WCK · 국내 주요 학회 발표" data-en="ECSS, WCK &amp; domestic presentations.">ECSS · WCK · 국내 주요 학회 발표</p>
+                    </div>
+                </div>
+
+                <div class="v2-research-wall">
+                    <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/insta/post_1.jpg', '제63차 대한비만학회 춘계학술대회 연구 발표')">
+                        <div class="v2-photo-frame">
+                            <img src="assets/images/insta/post_1.jpg" alt="대한비만학회 춘계학술대회 발표" loading="lazy">
+                            <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                        <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="국내 학회" data-en="Domestic">국내 학회</span><span data-ko="대한비만학회 춘계학술대회" data-en="63rd KSSO Spring Congress">대한비만학회 춘계학술대회</span></span>
+                    </button>
+                    <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/insta/post_18.jpg', 'World Congress on Kinesiology 국제 학술대회 발표')">
+                        <div class="v2-photo-frame">
+                            <img src="assets/images/insta/post_18.jpg" alt="World Congress on Kinesiology 발표" loading="lazy">
+                            <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                        <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="국제 학회" data-en="International">국제 학회</span><span>World Congress on Kinesiology</span></span>
+                    </button>
+                    <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/insta/post_30.jpg', 'European College of Sport Science (ECSS) 국제 스포츠의학 교류')">
+                        <div class="v2-photo-frame">
+                            <img src="assets/images/insta/post_30.jpg" alt="ECSS 국제 스포츠의학 발표" loading="lazy">
+                            <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                        <span class="v2-photo-caption"><span class="v2-photo-tag">ECSS</span><span data-ko="유럽스포츠과학회 교류" data-en="European College of Sport Science">유럽스포츠과학회 교류</span></span>
+                    </button>
+                    <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/insta/post_29.jpg', 'The Brain Awards for Lab 장려상 수상')">
+                        <div class="v2-photo-frame">
+                            <img src="assets/images/insta/post_29.jpg" alt="The Brain Awards for Lab 수상" loading="lazy">
+                            <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                        <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="연구 수상" data-en="Award">연구 수상</span><span>The Brain Awards for Lab</span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======================================================= -->
+    <!-- 4. 교육 (#education) — 3열 통합 아티클 -->
+    <!-- ======================================================= -->
+    <section id="education" class="v2-pillar-section">
+        <div class="container">
+            <div class="v2-pillar-header">
+                <div class="v2-pillar-head-left">
+                    <span class="v2-pillar-eyebrow">EDUCATION</span>
+                    <h2 class="v2-pillar-title" data-ko="교육" data-en="Education">교육</h2>
+                </div>
+                <div class="v2-pillar-actions">
+                    <button type="button" class="v2-action-btn is-crimson" onclick="openPillarModal('edu')">
+                        <span data-ko="세부내용 보기" data-en="View Details">세부내용 보기</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="v2-edu-articles">
+                <article class="v2-edu-article">
+                    <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/activity/신입기수/7M306109.png', '신입기수 100h observation 및 실무 기초 교육')">
+                        <div class="v2-photo-frame">
+                            <img src="assets/images/activity/신입기수/7M306109.png" alt="신입기수 100h observation" loading="lazy">
+                            <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </button>
+                    <div class="v2-edu-body">
+                        <span class="v2-step-kicker">01 · OBSERVATION</span>
+                        <h3 class="v2-step-title" data-ko="신입기수 100h observation" data-en="100h Observation">신입기수 100h observation</h3>
+                        <p class="v2-step-desc" data-ko="현장 관찰(Observation) 100시간 및 CPR·응급처치, AT 실무 기초 교육" data-en="100-hour clinical observation, CPR/first aid &amp; foundational AT training.">현장 관찰(Observation) 100시간 및 CPR·응급처치, AT 실무 기초 교육</p>
+                    </div>
+                </article>
+
+                <article class="v2-edu-article">
+                    <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/insta/seminars/2026_09/slide_04.jpg', '정기 In-service · 학술 세미나 현장')">
+                        <div class="v2-photo-frame">
+                            <img src="assets/images/insta/seminars/2026_09/slide_04.jpg" alt="정기 In-service · 세미나 현장" style="object-position: center 62%;" loading="lazy">
+                            <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </button>
+                    <div class="v2-edu-body">
+                        <span class="v2-step-kicker">02 · IN-SERVICE</span>
+                        <h3 class="v2-step-title" data-ko="정기 In-service · 세미나" data-en="In-Service &amp; Seminars">정기 In-service · 세미나</h3>
+                        <p class="v2-step-desc" data-ko="격주 임상 케이스 · 동문 초청 특강" data-en="Bi-weekly cases &amp; alumni lectures.">격주 임상 케이스 · 동문 초청 특강</p>
+                    </div>
+                </article>
+
+                <article class="v2-edu-article">
+                    <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/activity/스재/rehab_10.jpg', '부서별, 스포츠재활 스터디 및 FMS 기능 평가 실습')">
+                        <div class="v2-photo-frame">
+                            <img src="assets/images/activity/스재/rehab_10.jpg" alt="부서별, 스포츠재활 스터디" loading="lazy">
+                            <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                    </button>
+                    <div class="v2-edu-body">
+                        <span class="v2-step-kicker">03 · STUDY</span>
+                        <h3 class="v2-step-title" data-ko="부서별, 스포츠재활 스터디" data-en="Department &amp; Rehab Study">부서별, 스포츠재활 스터디</h3>
+                        <p class="v2-step-desc" data-ko="케이스 스터디, 실기 스터디" data-en="Case studies &amp; hands-on practicum.">케이스 스터디, 실기 스터디</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="v2-edu-strip-wrap">
+                <div class="v2-edu-strip">
+                    <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/insta/seminars/2026_09/slide_13.jpg', '2026년 9월 정기 세미나 — 대한항공 점보스 트레이너 실기 세미나')">
+                        <div class="v2-photo-frame">
+                            <img src="assets/images/insta/seminars/2026_09/slide_13.jpg" alt="대한항공 점보스 트레이너 실기 세미나" loading="lazy">
+                            <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                        <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="세미나" data-en="Seminar">세미나</span><span data-ko="대한항공 점보스 트레이너 실기 세미나" data-en="Korean Air Jumbos Trainer Practicum Seminar">대한항공 점보스 트레이너 실기 세미나</span></span>
+                    </button>
+                    <button type="button" class="v2-photo-card" onclick="openPhotoLightbox(INSERVICE_SLIDES['2026_2_3'], '이강인 전담 트레이너 박지현 동문 초청 특강 — 2026-2학기 3회차 In-service')">
+                        <div class="v2-photo-frame">
+                            <img src="assets/images/insta/inservices/2026_2_3/slide_02.jpg" alt="이강인 전담 트레이너 박지현 동문 초청 특강" style="object-position: center 65%;" loading="lazy">
+                            <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                        <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="특강" data-en="Lecture">특강</span><span data-ko="이강인 전담 트레이너 박지현 동문 초청 특강" data-en="Invited Lecture: Jihyun Park (Kang-in Lee Personal Trainer)">이강인 전담 트레이너 박지현 동문 초청 특강</span></span>
+                    </button>
+                    <button type="button" class="v2-photo-card" onclick="openPhotoLightbox('assets/images/activity/스재/rehab_04.jpg', '클럽벨 상지·견관절 회전 가동성 훈련')">
+                        <div class="v2-photo-frame">
+                            <img src="assets/images/activity/스재/rehab_04.jpg" alt="클럽벨 상지·견관절 가동성 훈련" style="object-position: center 74%;" loading="lazy">
+                            <span class="v2-photo-zoom"><i class="fa-solid fa-magnifying-glass-plus"></i></span>
+                        </div>
+                        <span class="v2-photo-caption"><span class="v2-photo-tag" data-ko="실기" data-en="Practicum">실기</span><span data-ko="클럽벨 상지·견관절 가동성" data-en="Clubbell shoulder mobility drill">클럽벨 상지·견관절 가동성</span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ======================================================= -->
     <!-- AT 센터 누적 기록: Editorial Archive Ledger -->
     <!-- ======================================================= -->
-    <section id="dashboard" class="editorial-metric-section">
+        <!-- ======================================================= -->
+    <!-- 5. 걸어온 길 (#journey: 누적기록 + 역사 통합) -->
+    <!-- ======================================================= -->
+    <section id="journey" class="v2-journey-section">
+        <div class="container">
+            <div class="v2-journey-master-header">
+                <span class="v2-journey-eyebrow">OUR JOURNEY</span>
+                <h2 class="v2-journey-title" data-ko="걸어온 길" data-en="Our Journey">걸어온 길</h2>
+                <p class="v2-journey-sub" data-ko="2013년 개소 이래 쌓아온 누적 기록과 경희대학교 AT Center를 빛낸 역대 구성원의 발자취입니다." data-en="Cumulative milestones since 2013 and the honor roll of KHU AT Center alumni and leaders.">2013년 개소 이래 쌓아온 누적 기록과 경희대학교 AT Center를 빛낸 역대 구성원의 발자취입니다.</p>
+            </div>
+        </div>
+        <div id="dashboard" class="editorial-metric-section">
         <div class="container relative-z">
             <div class="section-header">
                 <h2 class="section-title">누적기록</h2>
@@ -1586,6 +1696,7 @@
             </div>
 
             <!-- 좌우 비대칭 에디토리얼 스플릿 (좌: 173,316건 히어로 | 우: 547명 교육 · 64편 연구 2단 스택) -->
+            <div class="v2-journey-part-label"><span class="jp-num">PART 01</span><span class="jp-name" data-ko="누적기록" data-en="Achievements">누적기록</span><span class="jp-line"></span></div>
             <div class="asymmetric-ledger">
 
                 <!-- 좌측 히어로 블록: 서비스 대표 수치 -->
@@ -1675,7 +1786,7 @@
 
             </div>
         </div>
-    </section>
+    </div>
     <!-- New Generic Sport Modal -->
     <div id="new-sport-modal" class="modal" style="display: none;" onclick="closeSportModal()">
         <div class="modal-content sport-modal-container" style="padding: 0; background: #fff; max-width: 900px; border-radius: 20px;" onclick="event.stopPropagation()">
@@ -1717,7 +1828,8 @@
     </div>
 
 <!-- Awards Section: 명예의 전당 & 역대 기록 아카이브 (아이비리그 학술 아카이브 에디션) -->
-    <section id="awards" class="section-padding awards-stream-section">
+    
+        <div id="awards" class="section-padding awards-stream-section">
         <div class="container">
             <!-- 1. 섹션 메인 헤더 -->
             <div class="section-header text-center editorial-header">
@@ -1726,6 +1838,7 @@
             </div>
 
             <!-- 2. 11개년 학생 수상자 — 연도별 1:2 에디토리얼 헌액 무대 (2025 -> 2015) -->
+            <div class="v2-journey-part-label"><span class="jp-num">PART 02</span><span class="jp-name" data-ko="역사" data-en="History">역사</span><span class="jp-line"></span></div>
             <div class="award-carousel-container award-stage-v2">
                 <div class="honor-roll-topbar" id="stream-awards-header">
                     <h3 class="stream-sub-title" id="stream-awards-title">역대 수상자</h3>
@@ -1763,18 +1876,18 @@
                                     </div>
                                 </div>
                                 <div class="award-stage-frame">
-                                    <button type="button" class="award-stage-cell is-primary" onclick="openAlumniModal('유승아', '2025 AT Student of the Year')">
+                                    <button type="button" class="award-stage-cell is-primary">
                                         <span class="award-stage-label">AT Student of the Year</span>
-                                        <span class="award-stage-name"><span class="honor-name-text">유승아</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                        <span class="award-stage-name"><span class="honor-name-text">유승아</span></span>
                                     </button>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('유주승', '2025 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">유주승</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">유주승</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('조연지', '2025 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">조연지</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">조연지</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -1793,18 +1906,18 @@
                                     </div>
                                 </div>
                                 <div class="award-stage-frame">
-                                    <button type="button" class="award-stage-cell is-primary" onclick="openAlumniModal('한혜서', '2024 AT Student of the Year')">
+                                    <button type="button" class="award-stage-cell is-primary">
                                         <span class="award-stage-label">AT Student of the Year</span>
-                                        <span class="award-stage-name"><span class="honor-name-text">한혜서</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                        <span class="award-stage-name"><span class="honor-name-text">한혜서</span></span>
                                     </button>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('한혜서', '2024 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">한혜서</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">한혜서</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('이정재', '2024 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">이정재</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">이정재</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -1823,18 +1936,18 @@
                                     </div>
                                 </div>
                                 <div class="award-stage-frame">
-                                    <button type="button" class="award-stage-cell is-primary" onclick="openAlumniModal('차정수', '2023 AT Student of the Year')">
+                                    <button type="button" class="award-stage-cell is-primary">
                                         <span class="award-stage-label">AT Student of the Year</span>
-                                        <span class="award-stage-name"><span class="honor-name-text">차정수</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                        <span class="award-stage-name"><span class="honor-name-text">차정수</span></span>
                                     </button>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('문채연', '2023 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">문채연</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">문채연</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('한현구', '2023 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">한현구</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">한현구</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -1853,18 +1966,18 @@
                                     </div>
                                 </div>
                                 <div class="award-stage-frame">
-                                    <button type="button" class="award-stage-cell is-primary" onclick="openAlumniModal('박효진', '2022 AT Student of the Year')">
+                                    <button type="button" class="award-stage-cell is-primary">
                                         <span class="award-stage-label">AT Student of the Year</span>
-                                        <span class="award-stage-name"><span class="honor-name-text">박효진</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                        <span class="award-stage-name"><span class="honor-name-text">박효진</span></span>
                                     </button>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('이남송', '2022 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">이남송</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">이남송</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('유영수', '2022 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">유영수</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">유영수</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -1883,18 +1996,18 @@
                                     </div>
                                 </div>
                                 <div class="award-stage-frame">
-                                    <button type="button" class="award-stage-cell is-primary" onclick="openAlumniModal('김재원', '2021 AT Student of the Year')">
+                                    <button type="button" class="award-stage-cell is-primary">
                                         <span class="award-stage-label">AT Student of the Year</span>
-                                        <span class="award-stage-name"><span class="honor-name-text">김재원</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                        <span class="award-stage-name"><span class="honor-name-text">김재원</span></span>
                                     </button>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('김태진', '2021 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">김태진</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">김태진</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('최유빈', '2021 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">최유빈</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">최유빈</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -1913,18 +2026,18 @@
                                     </div>
                                 </div>
                                 <div class="award-stage-frame">
-                                    <button type="button" class="award-stage-cell is-primary" onclick="openAlumniModal('임선주', '2020 AT Student of the Year')">
+                                    <button type="button" class="award-stage-cell is-primary">
                                         <span class="award-stage-label">AT Student of the Year</span>
-                                        <span class="award-stage-name"><span class="honor-name-text">임선주</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                        <span class="award-stage-name"><span class="honor-name-text">임선주</span></span>
                                     </button>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('김승연', '2020 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">김승연</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">김승연</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('김승연', '2020 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">김승연</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">김승연</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -1943,18 +2056,18 @@
                                     </div>
                                 </div>
                                 <div class="award-stage-frame">
-                                    <button type="button" class="award-stage-cell is-primary" onclick="openAlumniModal('김동현', '2019 AT Student of the Year')">
+                                    <button type="button" class="award-stage-cell is-primary">
                                         <span class="award-stage-label">AT Student of the Year</span>
-                                        <span class="award-stage-name"><span class="honor-name-text">김동현</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                        <span class="award-stage-name"><span class="honor-name-text">김동현</span></span>
                                     </button>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('성락훈', '2019 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">성락훈</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">성락훈</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('임선주', '2019 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">임선주</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">임선주</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -1973,18 +2086,18 @@
                                     </div>
                                 </div>
                                 <div class="award-stage-frame">
-                                    <button type="button" class="award-stage-cell is-primary" onclick="openAlumniModal('오민섭', '2018 AT Student of the Year')">
+                                    <button type="button" class="award-stage-cell is-primary">
                                         <span class="award-stage-label">AT Student of the Year</span>
-                                        <span class="award-stage-name"><span class="honor-name-text">오민섭</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                        <span class="award-stage-name"><span class="honor-name-text">오민섭</span></span>
                                     </button>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('김동현', '2018 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">김동현</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">김동현</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('우태희', '2018 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">우태희</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">우태희</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -2006,23 +2119,23 @@
                                     <div class="award-stage-cell is-primary is-dual-cell">
                                         <span class="award-stage-label">AT Student of the Year <span class="award-stage-co" data-ko="· 공동 수상" data-en="· Co-winners">· 공동 수상</span></span>
                                         <div class="award-stage-dual-names">
-                                            <button type="button" class="award-stage-dual-btn" onclick="openAlumniModal('조재희', '2017 AT Student of the Year (공동 수상)')">
-                                                <span class="honor-name-text">조재희</span><span class="award-stage-arrow" aria-hidden="true">↗</span>
+                                            <button type="button" class="award-stage-dual-btn">
+                                                <span class="honor-name-text">조재희</span>
                                             </button>
                                             <span class="award-stage-dual-sep" aria-hidden="true">/</span>
-                                            <button type="button" class="award-stage-dual-btn" onclick="openAlumniModal('양창욱', '2017 AT Student of the Year (공동 수상)')">
-                                                <span class="honor-name-text">양창욱</span><span class="award-stage-arrow" aria-hidden="true">↗</span>
+                                            <button type="button" class="award-stage-dual-btn">
+                                                <span class="honor-name-text">양창욱</span>
                                             </button>
                                         </div>
                                     </div>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('조유진', '2017 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">조유진</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">조유진</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('오민섭', '2017 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">오민섭</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">오민섭</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -2041,18 +2154,18 @@
                                     </div>
                                 </div>
                                 <div class="award-stage-frame">
-                                    <button type="button" class="award-stage-cell is-primary" onclick="openAlumniModal('이선화', '2016 AT Student of the Year')">
+                                    <button type="button" class="award-stage-cell is-primary">
                                         <span class="award-stage-label">AT Student of the Year</span>
-                                        <span class="award-stage-name"><span class="honor-name-text">이선화</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                        <span class="award-stage-name"><span class="honor-name-text">이선화</span></span>
                                     </button>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('안효은', '2016 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">안효은</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">안효은</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('이서영', '2016 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">이서영</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">이서영</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -2071,18 +2184,18 @@
                                     </div>
                                 </div>
                                 <div class="award-stage-frame">
-                                    <button type="button" class="award-stage-cell is-primary" onclick="openAlumniModal('이현욱', '2015 AT Student of the Year')">
+                                    <button type="button" class="award-stage-cell is-primary">
                                         <span class="award-stage-label">AT Student of the Year</span>
-                                        <span class="award-stage-name"><span class="honor-name-text">이현욱</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                        <span class="award-stage-name"><span class="honor-name-text">이현욱</span></span>
                                     </button>
                                     <div class="award-stage-subrow">
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('신재윤', '2015 Inspiration')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Inspiration</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">신재윤</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">신재윤</span></span>
                                         </button>
-                                        <button type="button" class="award-stage-cell is-sub" onclick="openAlumniModal('김다영', '2015 Rookie of the Year')">
+                                        <button type="button" class="award-stage-cell is-sub">
                                             <span class="award-stage-label">Rookie of the Year</span>
-                                            <span class="award-stage-name"><span class="honor-name-text">김다영</span><span class="award-stage-arrow" aria-hidden="true">↗</span></span>
+                                            <span class="award-stage-name"><span class="honor-name-text">김다영</span></span>
                                         </button>
                                     </div>
                                 </div>
@@ -2207,12 +2320,15 @@
             </div>
 
         </div>
-    </section>
+    </div>
 
 
 
 
     <!-- Activities Gallery Section (부서별 & 센터 활동 사진 아카이브) -->
+    
+    </section>
+
     <section id="activities" class="section-padding bg-light activities-gallery-section">
         <div class="container">
             <div class="activities-top-bar">
@@ -7480,4 +7596,52 @@ window.showEditorialYear = function(year, btn) {
 <script src="assets/vendor/anime.umd.min.js"></script>
 <script src="assets/vendor/motion.min.js"></script>
 <script src="ui-motion-bklit.js?v=20261115_rev2"></script>
+    <script>
+    (function () {
+        const CAREER_KO_TO_EN = {
+            "현) 경희대학교 품새부": "Current: KHU Taekwondo Poomsae Team AT",
+            "현) 경희대학교 야구부": "Current: KHU Baseball Team AT",
+            "현) 경희대학교 스포츠재활 강사": "Current: KHU Sports Rehabilitation Instructor",
+            "현) 경희대학교 겨루기부": "Current: KHU Taekwondo Gyeorugi Team AT",
+            "현) 스텝업 트레이닝 센터 (동탄)": "Current: Step-Up Training Center (Dongtan)",
+            "현) 팀 제로베이스 (동탄)": "Current: Team ZeroBase (Dongtan)",
+            "현) 경희대학교 시범단": "Current: KHU Taekwondo Demo Team AT",
+            "현) 기계체조 국가대표팀": "Current: Korea National Artistic Gymnastics Team AT",
+            "현) 핸드볼 국가대표팀": "Current: Korea National Handball Team AT",
+            "현) University of Nebraska PhD 진행중": "Current: PhD Candidate, University of Nebraska",
+            "현) 롯데웰푸드 영양사": "Current: Nutritionist, Lotte Wellfood",
+            "현) HD 하이드로젠 (성남)": "Current: HD Hydrogen (Seongnam)",
+            "현) 국민대학교 스포츠건강재활학과 조교수": "Current: Assistant Professor, Kookmin University",
+            "현) 국민대학교 스포츠건강재활학과 교수": "Current: Professor, Kookmin University",
+            "현) 더프로 트레이닝센터 (서울)": "Current: The Pro Training Center (Seoul)",
+            "현) 진에어 객실승무원": "Current: Cabin Crew, Jin Air",
+            "현) 화성국민체육센터": "Current: Hwaseong National Sports Center",
+            "현) 스피드 스케이팅 국가대표팀": "Current: Korea National Speed Skating Team AT",
+            "현) 성남시청": "Current: Seongnam City Hall",
+            "현) 키움히어로즈 프로야구단": "Current: Kiwoom Heroes (KBO)"
+        };
+        function patchV2En(lang) {
+            document.querySelectorAll('#awards .award-stage-career').forEach(function (el) {
+                if (el.dataset.koOrig === undefined) {
+                    el.dataset.koOrig = el.textContent.trim();
+                }
+                const orig = el.dataset.koOrig;
+                if (lang === 'en') {
+                    el.textContent = CAREER_KO_TO_EN[orig] || orig.replace(/현\)\s*/g, 'Current: ').replace(/휴직/g, 'On Leave');
+                } else {
+                    el.textContent = orig;
+                }
+            });
+        }
+        window.addEventListener('DOMContentLoaded', function () {
+            if (typeof window.setSiteLanguage === 'function') {
+                const origSetLang = window.setSiteLanguage;
+                window.setSiteLanguage = function (lang) {
+                    origSetLang(lang);
+                    patchV2En(lang);
+                };
+            }
+        });
+    })();
+    </script>
 </body></html>
