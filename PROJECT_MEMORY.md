@@ -4483,3 +4483,11 @@ Observation 100시간 실무 과정,
 
 ## ⚡ Google Search Console 소유권 확인 메타 태그 추가 (2026-11-25)
 - **내용:** `index.html` `<head>`에 Google Search Console HTML 태그 인증용 `<meta name="google-site-verification" ... />` 추가 (구글 색인 생성 요청 및 파비콘 빠른 갱신 목적)
+
+---
+
+## ⚡ 태권도 겨루기부 보조 AT 박은지 프로필 사진 업로드 및 연동 (2026-11-25)
+- **프로필 사진 최적화 (`assets/profile_박은지.jpg`):**
+  - EXIF 회전(`Orientation: 6`) 보정 후 기존 보조 AT 사진(`profile_조연지.jpg` 등)과 동일한 상반신 인물 중심 정사각 구도로 크롭 및 `500×500` 웹 최적화 저장
+- **웹 연동 (`index.html`):**
+  - `태권도 겨루기부` 보조 AT 카드의 텍스트 폴백(`은지`)을 실물 사진(`has-photo`, `assets/profile_박은지.jpg?v=20261125_pej`)으로 교체
